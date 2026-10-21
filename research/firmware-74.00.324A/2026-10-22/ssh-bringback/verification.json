@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-22",
+  "target": "74.00.324A EU",
+  "status": "experimental",
+  "vehicle_tested": false,
+  "implementation_commit": "5a279b18636896f51c5c48bd5b2622d6cfb4d9cf",
+  "ssh": {
+    "port": 22,
+    "username": "cmu",
+    "password": "jci",
+    "oem_port_36000_unchanged": true,
+    "account_change": "RAM bind mount; only cmu password hash replaced; no manufacturing flash rewrite",
+    "host_key": "Existing device RSA key, never bundled",
+    "configures_wifi": false,
+    "boot_dependency": "stage_wifi -> stage_3 -> jciMMUI; not guaranteed for early boot/MMUI failures",
+    "logs": "Matching writable USB only; discarded without writable USB"
+  },
+  "original_target": {
+    "path": "/jci/scripts/stage_wifi.sh",
+    "bytes": 11,
+    "md5": "d740449dea568696660a62fce0fb35bd"
+  },
+  "validation": {
+    "full_installer_isolated_runs": 38,
+    "latest_targeted_ssh_controller_runs": 8,
+    "supervisor_mocked_commands": "passed: port coexistence, occupied port rejection, duplicate boot, RAM account overlay, startup rollback, firewall reset recovery, owned stop, USB logs",
+    "web_builder": "passed project validation/import/UI selection/MP3 identity/ZIP creation/manual-only start",
+    "zip": "31 entries; CRC clean; 24 source/base64/ZIP/SHA256 matches",
+    "shell": "All scripts bash -n; USB text assets LF without BOM",
+    "limits": "Supervisor uses mocked daemon, kernel mounts, firewall and proc metadata. Controller uses service stub. No real CMU or real sshd authentication test."
+  },
+  "sources": [
+    {
+      "path": "docs/usb/mzd/ssh/service.sh",
+      "sha256": "5d2918a4676f404795c63592040363dfa49177eaa737eb985474fe10d22a155e",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/docs/usb/mzd/ssh/service.sh"
+    },
+    {
+      "path": "docs/usb/mzd/ssh/sshd_config",
+      "sha256": "65172e3452713142b9599471583e59dbf029d329a82373df511d97527dadb7ac",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/docs/usb/mzd/ssh/sshd_config"
+    },
+    {
+      "path": "docs/usb/mzd/ssh/password.hash",
+      "sha256": "81995f3885cf607e8e258cccd38db7d098b7369c24b6d759b62ea4461e559a2d",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/docs/usb/mzd/ssh/password.hash"
+    },
+    {
+      "path": "docs/usb/mzd/ssh-job.sh",
+      "sha256": "251e86ba044e057c1b5c6864306df2e9f1fe6038c0e91692d82a9e06c406cf35",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/docs/usb/mzd/ssh-job.sh"
+    },
+    {
+      "path": "docs/usb/mzd/patches/ssh-bringback.sh",
+      "sha256": "a5f26482545ebf15c4ef53ead53e51e999241d2ee62b82619be744e0b628c4b9",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/docs/usb/mzd/patches/ssh-bringback.sh"
+    },
+    {
+      "path": "docs/usb/mzd/dispatch.sh",
+      "sha256": "03b6828ce66d5a8178a94cbd7bdd6bd1200869fd1d4ed5b5cc0e32e0a5ddb08b",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/docs/usb/mzd/dispatch.sh"
+    },
+    {
+      "path": "docs/usb/mzd/file-job.sh",
+      "sha256": "2394bd67b0f49eda4572737bcddc113801bd38f759c0b3ac2f72ee01379d1674",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/docs/usb/mzd/file-job.sh"
+    },
+    {
+      "path": "docs/usb/mzd/common.sh",
+      "sha256": "f27b9fd2dd99190370e381b1260d926bf99b810aa90adc73d67ac8858b5d0b1c",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/docs/usb/mzd/common.sh"
+    },
+    {
+      "path": "docs/usb/mzd/installer.sh",
+      "sha256": "fb94bfbfb6ff4a1922aeaa378d1d7d8764ea99697ccc426d37f9d31d9a9a2ad9",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/docs/usb/mzd/installer.sh"
+    },
+    {
+      "path": "docs/usb/mzd/start.sh",
+      "sha256": "d3195712916874c85a4e3a9d409f35c2fe74ea29ec4b2ffd0ab62b076b33db0a",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/docs/usb/mzd/start.sh"
+    },
+    {
+      "path": "web-tools/test-ssh-service.py",
+      "sha256": "4fefa845a686855b1d77c3a9944423dc2d153e3a5afc38c1e795d3d1d3d68c92",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/web-tools/test-ssh-service.py"
+    },
+    {
+      "path": "web-tools/test-usb-installer.py",
+      "sha256": "61108736b9d8859e186c58726ec6076c4f09220d922fdd2b2df967a8188545f2",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/web-tools/test-usb-installer.py"
+    },
+    {
+      "path": "web-tools/test-web-builder.js",
+      "sha256": "1afc0f10c6822761559fc7976aa15061f85e754fa46c8448fbfe746e8e320c74",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/5a279b18636896f51c5c48bd5b2622d6cfb4d9cf/web-tools/test-web-builder.js"
+    }
+  ]
+}
