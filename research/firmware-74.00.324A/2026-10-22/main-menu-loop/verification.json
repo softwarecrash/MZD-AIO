@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-22",
+  "status": "experimental",
+  "vehicle_tested": false,
+  "target": "74.00.324A EU",
+  "implementation_commit": "32ec2351fbd1faf1bfa0f7228d68611d36bc0017",
+  "patch": "main-menu-loop",
+  "target_file": "/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js",
+  "original_md5": "40ccb293b8c6f80960f0b953dd2e173e",
+  "patched_md5": "ae272c9befc1350b93f23511568f13c7",
+  "v70_reference_byte_identical": true,
+  "changed_lines": 2,
+  "behavior": "_offsetFocus: index below 0 wraps to 4; above 4 wraps to 0",
+  "validation": {
+    "focus_behavior_cases": 20,
+    "installer_isolated_runs": 46,
+    "builder": "passed: four testable patches selected for Install, unported locked, project import and ZIP",
+    "package": "33 ZIP entries, 26 assets; CRC and source/SHA256 comparisons passed in integration suite",
+    "shell": "bash -n, LF/BOM checks passed",
+    "limitations": "No vehicle test. Installer uses isolated filesystem and mocked mounts; SSH controller service is stubbed."
+  },
+  "sources": [
+    {
+      "path": "docs/usb/mzd/patches/main-menu-loop.sh",
+      "sha256": "f9c7e1599f4970b5f28e92a33e7cf9af8a2e2c2159a2bfd2998ab5921260e9f6",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/32ec2351fbd1faf1bfa0f7228d68611d36bc0017/docs/usb/mzd/patches/main-menu-loop.sh"
+    },
+    {
+      "path": "docs/usb/mzd/patches/main-menu-loop.sed",
+      "sha256": "9c108012b23ccb383fbf08a667d5ffa4dcabfedb1a170f4445521eb5e2e92450",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/32ec2351fbd1faf1bfa0f7228d68611d36bc0017/docs/usb/mzd/patches/main-menu-loop.sed"
+    },
+    {
+      "path": "docs/usb/mzd/common.sh",
+      "sha256": "e3f6a0d85c52738b0e509ec6f9ac0e1254554b5a9c15b42145322fff35bdaa15",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/32ec2351fbd1faf1bfa0f7228d68611d36bc0017/docs/usb/mzd/common.sh"
+    },
+    {
+      "path": "docs/usb/mzd/dispatch.sh",
+      "sha256": "315238d92b050a201ae58967243065c05fe84c3c6c12812f263e4ec62f2a870f",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/32ec2351fbd1faf1bfa0f7228d68611d36bc0017/docs/usb/mzd/dispatch.sh"
+    },
+    {
+      "path": "docs/usb/mzd/start.sh",
+      "sha256": "d7ed9376c5413b10fa5742298e57f1122c312a0b188543c6df96d72b774f746a",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/32ec2351fbd1faf1bfa0f7228d68611d36bc0017/docs/usb/mzd/start.sh"
+    },
+    {
+      "path": "web-tools/test-main-menu-loop.js",
+      "sha256": "5b69634616b4cd9ab7c5ce58d5137d8a13666acf2b23b9703218a521749a13d0",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/32ec2351fbd1faf1bfa0f7228d68611d36bc0017/web-tools/test-main-menu-loop.js"
+    },
+    {
+      "path": "web-tools/test-usb-installer.py",
+      "sha256": "c7b2bd5a69ff338af8eae90044a7e098dc87f5b02e0e1324e250b0e2e7f2c62e",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/32ec2351fbd1faf1bfa0f7228d68611d36bc0017/web-tools/test-usb-installer.py"
+    },
+    {
+      "path": "web-tools/test-web-builder.js",
+      "sha256": "ffe9e29f458cfe70cf2d35bd01372b980aec0f070e864d260f105ed0d2f2b60c",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/32ec2351fbd1faf1bfa0f7228d68611d36bc0017/web-tools/test-web-builder.js"
+    }
+  ]
+}
