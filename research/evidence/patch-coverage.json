@@ -1,0 +1,19 @@
+{
+  "open_pr_count": 28,
+  "missing_patch_fields": [
+    {
+      "pr": 203,
+      "file": "package-lock.json",
+      "status": "modified",
+      "sha": "417474fa158339c332205775e80d560ec46e9c2d"
+    },
+    {
+      "pr": 168,
+      "file": "package-lock.json",
+      "status": "modified",
+      "sha": "4d72810a032410a263a9534021c2532bc65dda18"
+    }
+  ],
+  "all_file_counts_match": true,
+  "patches_are_fragments": true
+}

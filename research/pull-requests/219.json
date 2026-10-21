@@ -1,0 +1,41 @@
+{
+  "number": 219,
+  "title": "Create SECURITY.md",
+  "state": "open",
+  "created_at": "2025-09-01T12:01:28Z",
+  "updated_at": "2025-09-01T12:01:28Z",
+  "changed_files": 1,
+  "additions": 21,
+  "deletions": 0,
+  "mergeable": true,
+  "mergeable_state": "clean",
+  "url": "https://github.com/Trevelopment/MZD-AIO/pull/219",
+  "author": "tevin1e12",
+  "body": "",
+  "head": {
+    "repo": "tevin1e12/MZD-AIO",
+    "ref": "patch-1",
+    "sha": "ee14237b81cebf23da830585c451dee91f88252d"
+  },
+  "base": {
+    "repo": "Trevelopment/MZD-AIO",
+    "ref": "master",
+    "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+  },
+  "files": [
+    {
+      "sha": "034e848032092eaf8ef96eac731b6ed5961987f3",
+      "filename": "SECURITY.md",
+      "status": "added",
+      "additions": 21,
+      "deletions": 0,
+      "changes": 21,
+      "blob_url": "https://github.com/Trevelopment/MZD-AIO/blob/ee14237b81cebf23da830585c451dee91f88252d/SECURITY.md",
+      "raw_url": "https://github.com/Trevelopment/MZD-AIO/raw/ee14237b81cebf23da830585c451dee91f88252d/SECURITY.md",
+      "contents_url": "https://api.github.com/repos/Trevelopment/MZD-AIO/contents/SECURITY.md?ref=ee14237b81cebf23da830585c451dee91f88252d",
+      "patch": "@@ -0,0 +1,21 @@\n+# Security Policy\n+\n+## Supported Versions\n+\n+Use this section to tell people about which versions of your project are\n+currently being supported with security updates.\n+\n+| Version | Supported          |\n+| ------- | ------------------ |\n+| 5.1.x   | :white_check_mark: |\n+| 5.0.x   | :x:                |\n+| 4.0.x   | :white_check_mark: |\n+| < 4.0   | :x:                |\n+\n+## Reporting a Vulnerability\n+\n+Use this section to tell people how to report a vulnerability.\n+\n+Tell them where to go, how often they can expect to get an update on a\n+reported vulnerability, what to expect if the vulnerability is accepted or\n+declined, etc."
+    }
+  ],
+  "reviews": [],
+  "inline_comments": []
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "repo": "mzd-evo/mzd-connect-1-root",
+    "url": "https://github.com/mzd-evo/mzd-connect-1-root",
+    "default_branch": "main",
+    "pushed_at": "2024-03-26T19:29:17Z",
+    "description": null
+  },
+  {
+    "repo": "shunceyb/mzd74-tweaks-no-touch",
+    "url": "https://github.com/shunceyb/mzd74-tweaks-no-touch",
+    "default_branch": "main",
+    "pushed_at": "2025-04-11T09:49:48Z",
+    "description": "Install Mazda AIO Tweaks on version 74+ without a working touchscreen"
+  },
+  {
+    "repo": "Trevelopment/MZD_Speedometer",
+    "url": "https://github.com/Trevelopment/MZD_Speedometer",
+    "default_branch": "master",
+    "pushed_at": "2019-03-04T03:25:53Z",
+    "license": "GPL-3.0",
+    "description": "Speedometer App for the MZD Infotainment System"
+  },
+  {
+    "repo": "Trevelopment/cmu-autorun",
+    "url": "https://github.com/Trevelopment/cmu-autorun",
+    "default_branch": "master",
+    "pushed_at": "2021-05-09T17:42:12Z",
+    "description": "MAZDA CMU SDCard apps for recovery"
+  },
+  {
+    "repo": "gartnera/headunit",
+    "url": "https://github.com/gartnera/headunit",
+    "default_branch": "master",
+    "pushed_at": "2020-11-20T03:41:49Z",
+    "license": "AGPL-3.0",
+    "description": "Headunit for Android Auto"
+  },
+  {
+    "repo": "Trevelopment/Mazda-Videoplayer",
+    "url": "https://github.com/Trevelopment/Mazda-Videoplayer",
+    "default_branch": "master",
+    "pushed_at": "2018-11-04T00:09:15Z",
+    "description": "Videoplayer app for Mazda cars with Mazda Connect v55+"
+  },
+  {
+    "repo": "silverchris/mazda-cmu-documentation",
+    "url": "https://github.com/silverchris/mazda-cmu-documentation",
+    "default_branch": "gh-pages",
+    "pushed_at": "2023-04-24T00:10:05Z",
+    "description": "Documentation of the hardware and software of the Mazda Infotainment system"
+  }
+]

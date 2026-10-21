@@ -1,0 +1,101 @@
+{
+  "number": 207,
+  "title": "Updated GNU/Linux Build Instructions",
+  "state": "open",
+  "created_at": "2024-06-13T13:29:34Z",
+  "updated_at": "2024-06-13T13:29:34Z",
+  "changed_files": 6,
+  "additions": 127,
+  "deletions": 45,
+  "mergeable": true,
+  "mergeable_state": "clean",
+  "url": "https://github.com/Trevelopment/MZD-AIO/pull/207",
+  "author": "KernelGhost",
+  "body": "Changes:\r\n- Updated previously-broken build instructions for GNU/Linux systems.\r\n- Added ability to create '.rpm' packages for Red Hat-based distributions.\r\n\r\nThank you for this excellent project. I had a lot of fun tweaking my Mazda Infotainment System!",
+  "head": {
+    "repo": "KernelGhost/MZD-AIO",
+    "ref": "master",
+    "sha": "a6e3816ddacbfb28065194f310ea950dd9dfda39"
+  },
+  "base": {
+    "repo": "Trevelopment/MZD-AIO",
+    "ref": "master",
+    "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+  },
+  "files": [
+    {
+      "sha": "7459557ce5707f9cc0ba53274d27e0b616a01fb0",
+      "filename": "package.json",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 3,
+      "changes": 5,
+      "blob_url": "https://github.com/Trevelopment/MZD-AIO/blob/a6e3816ddacbfb28065194f310ea950dd9dfda39/package.json",
+      "raw_url": "https://github.com/Trevelopment/MZD-AIO/raw/a6e3816ddacbfb28065194f310ea950dd9dfda39/package.json",
+      "contents_url": "https://api.github.com/repos/Trevelopment/MZD-AIO/contents/package.json?ref=a6e3816ddacbfb28065194f310ea950dd9dfda39",
+      "patch": "@@ -38,7 +38,7 @@\n     \"depcheck\": \"dependency-check app --entry main.js --unused --no-dev\",\n     \"lint\": \"standard\",\n     \"start\": \"electron ./app/main\",\n-    \"clean:linux\": \"rimraf releases/linux* release/*.deb release/*.AppImage\",\n+    \"clean:linux\": \"rimraf releases/linux* release/*.deb release/*.rpm release/*.AppImage\",\n     \"clean:osx\": \"rimraf releases/mac\",\n     \"clean:win\": \"rimraf releases/win*\",\n     \"clean\": \"npm run clean:linux && npm run clean:win && npm run clean:osx\",\n@@ -51,8 +51,7 @@\n     \"build:win\": \"npm run build:win32 && npm run build:win64\",\n     \"build:win64\": \"npm run prebuild && electron-builder --win --x64 && npm run postbuild\",\n     \"build:win32\": \"npm run prebuild && electron-builder --win --ia32 && npm run postbuild && npm run win32copy\",\n-    \"build:linux:x64\": \"npm run prebuild && electron-builder --linux deb AppImage --x64 && npm run postbuild\",\n-    \"build:linux:deb\": \"./scripts/build_linux_deb.sh\",\n+    \"build:linux:x64\": \"npm run prebuild && electron-builder --linux deb rpm AppImage --x64 && npm run postbuild\",\n     \"win32copy\": \" mv ./releases/MZD-AIO-TI_Setup_2.8.6.exe ./releases/MZD-AIO-TI_Setup_2.8.6_Win32.exe && mv ./releases/MZD-AIO-TI_Setup_2.8.6.exe.blockmap ./releases/MZD-AIO-TI_Setup_2.8.6_Win32.exe.blockmap\",\n     \"build\": \"electron-builder\",\n     \"release\": \"electron-builder\","
+    },
+    {
+      "sha": "ef2b84c7a63e46b9ccfd591d6d2b9407e10852ac",
+      "filename": "scripts/Dockerfile.linux",
+      "status": "modified",
+      "additions": 21,
+      "deletions": 7,
+      "changes": 28,
+      "blob_url": "https://github.com/Trevelopment/MZD-AIO/blob/a6e3816ddacbfb28065194f310ea950dd9dfda39/scripts%2FDockerfile.linux",
+      "raw_url": "https://github.com/Trevelopment/MZD-AIO/raw/a6e3816ddacbfb28065194f310ea950dd9dfda39/scripts%2FDockerfile.linux",
+      "contents_url": "https://api.github.com/repos/Trevelopment/MZD-AIO/contents/scripts%2FDockerfile.linux?ref=a6e3816ddacbfb28065194f310ea950dd9dfda39",
+      "patch": "@@ -1,11 +1,25 @@\n-FROM node:boron\n-MAINTAINER Misha Nasledov <misha@nasledov.com>\n+# Image Maintainers\n+LABEL maintainer=\"Misha Nasledov <misha@nasledov.com>, Rohan Barar <rohan.barar@gmail.com>\"\n \n-RUN apt-get update \\\n-    && apt-get -y install graphicsmagick icnsutils \\\n-    && apt-get clean\n+# Node.js Version 13 Base Image\n+FROM node:13\n \n+# Update sources list for apt package manager (base image contains outdated URLs)\n+RUN sed -i s/deb.debian.org/archive.debian.org/g /etc/apt/sources.list\n+RUN sed -i s/security.debian.org/archive.debian.org/g /etc/apt/sources.list\n+RUN sed -i s/stretch-updates/stretch/g /etc/apt/sources.list\n+\n+# Update and install required packages\n+RUN apt-get update\n+RUN apt-get -y upgrade\n+RUN apt-get -y install graphicsmagick icnsutils rpm\n+RUN apt-get clean\n+\n+# Copy the contents of the current directory into the '/work' directory inside the container\n ADD . /work\n \n-RUN cd /work \\\n-    && npm install\n+# Set the working directory to '/work'\n+WORKDIR /work\n+\n+# Install node.js packages and dependencies listed within 'package.json'\n+RUN npm install\n\\ No newline at end of file"
+    },
+    {
+      "sha": "714132e9797bdd0819f3aa50d11977015fadf9ae",
+      "filename": "scripts/README.md",
+      "status": "modified",
+      "additions": 93,
+      "deletions": 16,
+      "changes": 109,
+      "blob_url": "https://github.com/Trevelopment/MZD-AIO/blob/a6e3816ddacbfb28065194f310ea950dd9dfda39/scripts%2FREADME.md",
+      "raw_url": "https://github.com/Trevelopment/MZD-AIO/raw/a6e3816ddacbfb28065194f310ea950dd9dfda39/scripts%2FREADME.md",
+      "contents_url": "https://api.github.com/repos/Trevelopment/MZD-AIO/contents/scripts%2FREADME.md?ref=a6e3816ddacbfb28065194f310ea950dd9dfda39",
+      "patch": "@@ -1,23 +1,100 @@\n-build_linux_deb.sh\n-==================\n-This script will create a `docker` (http://www.docker.com/) container with all the dependencies to build `MZD-AIO-TI` and build it inside the container. On success, it will spit out the DEB in your current working directory.\n+# Build `MZD AIO Tweaks` for GNU/Linux\n+The following instructions utilise a [`podman`](https://podman.io/) container to build `MZD-AIO-TI`.\n \n-Usage:\n-$ `./scripts/build_linux_deb.sh`\n+Compiling applications within containers is beneficial because it:\n+- Prevents conflicts with newer versions of dependencies.\n+- Lowers the risk of compilation errors caused by idiosyncrasies between systems.\n+- Avoids cluttering the system with packages installed solely for the purpose of compiling the software.\n \n-The `build_linux_deb_helper.sh` script is written to be run in the Docker container, so please don't invoke it directly.\n+Note: The `build_linux.sh` script is written to be run in the `podman` container, so please do not invoke it directly.\n \n-This way of building stuff inside ephemeral containers is useful as it avoids people needing the correct dependencies on their own systems if they simply want to build it. It's particularly useful to get builds going on some sort of Continuous Integration solution such as Jenkins or Travis (TBD).\n+## Instructions\n+1. Ensure the dockerfile at `/MZD-AIO/scripts/Dockerfile.linux` contains the following:\n+    ```dockerfile\n+    # Image Maintainers\n+    LABEL maintainer=\"Misha Nasledov <misha@nasledov.com>, Rohan Barar <rohan.barar@gmail.com>\"\n \n-## Build DEB file\n+    # Node.js Version 13 Base Image\n+    FROM node:13\n \n-```bash\n-npm run-script build:linux:deb\n-```\n+    # Update sources list for apt package manager (base image contains outdated URLs)\n+    RUN sed -i s/deb.debian.org/archive.debian.org/g /etc/apt/sources.list\n+    RUN sed -i s/security.debian.org/archive.debian.org/g /etc/apt/sources.list\n+    RUN sed -i s/stretch-updates/stretch/g /etc/apt/sources.list\n \n-## Install\n+    # Update and install required packages\n+    RUN apt-get update\n+    RUN apt-get -y upgrade\n+    RUN apt-get -y install graphicsmagick icnsutils rpm\n+    RUN apt-get clean\n \n-```bash\n-sudo apt install libappindicator1 libindicator7\n-sudo dpkg -i MZD-AIO-TI-linux_2.7.0.deb\n-```\n+    # Copy the contents of the current directory into the '/work' directory inside the container\n+    ADD . /work\n+\n+    # Set the working directory to '/work'\n+    WORKDIR /work\n+\n+    # Install node.js packages and dependencies listed within 'package.json'\n+    RUN npm install\n+    ```\n+\n+2. Ensure the bash script at `/MZD-AIO/scripts/build_linux.sh` contains the following:\n+    ```bash\n+    #!/usr/bin/env bash\n+    set -xue\n+\n+    # Save the current working directory to the stack and change the working directory to '/work'\n+    pushd /work\n+\n+    # Build '.deb', '.rpm' and '.AppImage' files\n+    npm run-script build:linux:x64\n+\n+    # Move compiled packages to the output folder\n+    mv releases/*.{deb,rpm,AppImage} /output\n+    ```\n+\n+3. Mark the bash script at `/MZD-AIO/scripts/build_linux.sh` as executable.\n+    ```bash\n+    chmod +x /path/to/MZD-AIO/scripts/build_linux.sh\n+    ```\n+\n+4. Ensure you are within the root directory of the cloned repository.\n+    ```bash\n+    cd /path/to/MZD-AIO\n+    ```\n+\n+5. Build the image. Ignore the deprecation warnings.\n+    ```bash\n+    podman build -t build-mzd-aio-lnx -f ./scripts/Dockerfile.linux .\n+    ```\n+\n+6. Check your new image 'localhost/build-mzd-aio-lnx' is listed.\n+    ```bash\n+    podman images\n+    ```\n+\n+7. Create and run a container based on the 'build-mzd-aio-lnx' image.\n+    ```bash\n+    podman run -v ${PWD}:/output -t build-mzd-aio-lnx /work/scripts/build_linux.sh\n+    ```\n+\n+    _Note: If you are on a system with SELinux enabled (e.g. Fedora), you might need to add the ':z' option to the volume mount to allow `podman` to relabel the content for access by the container._\n+    ```bash\n+    podman run -v ${PWD}:/output:z -t build-mzd-aio-lnx /work/scripts/build_linux.sh\n+    ```\n+\n+8. Install the resulting `.deb` or `.rpm` file.\n+    - Debian-based GNU/Linux distributions:\n+        ```bash\n+        sudo apt install libappindicator1 libindicator7\n+        sudo dpkg -i MZD-AIO-TI-linux_2.8.6.deb\n+        ```\n+    - Red Hat-based GNU/Linux distributions:\n+        ```bash\n+        sudo dnf -i MZD-AIO-TI-linux_2.8.6.rpm\n+        ```\n+\n+9. (Optional) Remove `podman` images and containers.\n+    ```bash\n+    podman rmi --force <IMAGE_ID> <IMAGE_ID>\n+    ```"
+    },
+    {
+      "sha": "ec34cc5af9d42c3b1fce0830bce19a27b2e4e69f",
+      "filename": "scripts/build_linux.sh",
+      "status": "added",
+      "additions": 11,
+      "deletions": 0,
+      "changes": 11,
+      "blob_url": "https://github.com/Trevelopment/MZD-AIO/blob/a6e3816ddacbfb28065194f310ea950dd9dfda39/scripts%2Fbuild_linux.sh",
+      "raw_url": "https://github.com/Trevelopment/MZD-AIO/raw/a6e3816ddacbfb28065194f310ea950dd9dfda39/scripts%2Fbuild_linux.sh",
+      "contents_url": "https://api.github.com/repos/Trevelopment/MZD-AIO/contents/scripts%2Fbuild_linux.sh?ref=a6e3816ddacbfb28065194f310ea950dd9dfda39",
+      "patch": "@@ -0,0 +1,11 @@\n+#!/usr/bin/env bash\n+set -xue\n+\n+# Save the current working directory to the stack and change the working directory to '/work'\n+pushd /work\n+\n+# Build '.deb', '.rpm' and '.AppImage' files\n+npm run-script build:linux:x64\n+\n+# Move compiled packages to the output folder\n+mv releases/*.{deb,rpm,AppImage} /output\n\\ No newline at end of file"
+    },
+    {
+      "sha": "0e0c18bb901b434b83884fc157c81e38aad70987",
+      "filename": "scripts/build_linux_deb.sh",
+      "status": "removed",
+      "additions": 0,
+      "deletions": 12,
+      "changes": 12,
+      "blob_url": "https://github.com/Trevelopment/MZD-AIO/blob/409c724ed860497b2a34f9367cb4a019287846ea/scripts%2Fbuild_linux_deb.sh",
+      "raw_url": "https://github.com/Trevelopment/MZD-AIO/raw/409c724ed860497b2a34f9367cb4a019287846ea/scripts%2Fbuild_linux_deb.sh",
+      "contents_url": "https://api.github.com/repos/Trevelopment/MZD-AIO/contents/scripts%2Fbuild_linux_deb.sh?ref=409c724ed860497b2a34f9367cb4a019287846ea",
+      "patch": "@@ -1,12 +0,0 @@\n-#!/usr/bin/env bash\n-set -xue\n-\n-# prepare a container with this repository (parent directory)\n-docker build -t build-mzd-aio-lnx -f scripts/Dockerfile.linux .\n-# run the container with a volume to get the deb out. run our helper\n-# script which builds and puts the DEB into the container's /output volume\n-docker run \\\n-       -v ${PWD}:/work \\\n-       -v ${PWD}:/output \\\n-       -t build-mzd-aio-lnx \\\n-       /work/scripts/build_linux_deb_helper.sh"
+    },
+    {
+      "sha": "1dec003c4d600670740198021e2e0ea109c894a2",
+      "filename": "scripts/build_linux_deb_helper.sh",
+      "status": "removed",
+      "additions": 0,
+      "deletions": 7,
+      "changes": 7,
+      "blob_url": "https://github.com/Trevelopment/MZD-AIO/blob/409c724ed860497b2a34f9367cb4a019287846ea/scripts%2Fbuild_linux_deb_helper.sh",
+      "raw_url": "https://github.com/Trevelopment/MZD-AIO/raw/409c724ed860497b2a34f9367cb4a019287846ea/scripts%2Fbuild_linux_deb_helper.sh",
+      "contents_url": "https://api.github.com/repos/Trevelopment/MZD-AIO/contents/scripts%2Fbuild_linux_deb_helper.sh?ref=409c724ed860497b2a34f9367cb4a019287846ea",
+      "patch": "@@ -1,7 +0,0 @@\n-#!/usr/bin/env bash\n-set -xue\n-\n-pushd /work\n-npm run-script build:linux:x64\n-\n-mv releases/*.deb /output"
+    }
+  ],
+  "reviews": [],
+  "inline_comments": []
+}

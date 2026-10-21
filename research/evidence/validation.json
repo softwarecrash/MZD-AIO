@@ -1,0 +1,27 @@
+{
+  "snapshot_date": "2026-10-21",
+  "base_commit": "409c724ed860497b2a34f9367cb4a019287846ea",
+  "threads": 231,
+  "issues": 181,
+  "open_prs": 28,
+  "closed_prs": 22,
+  "comments": 655,
+  "expected_comments": 655,
+  "all_thread_numbers_1_through_231_present": true,
+  "all_open_pr_changed_file_counts_match": true,
+  "open_pr_review_count": 0,
+  "open_pr_inline_comment_count": 0,
+  "missing_api_patch_fields": [
+    203,
+    168
+  ],
+  "full_head_lockfiles_archived": [
+    203,
+    168
+  ],
+  "hardware_tests_performed": false,
+  "desktop_build_performed": false,
+  "local_markdown_links_checked": true,
+  "json_files_parsed": true,
+  "notification_tokens_redacted": true
+}

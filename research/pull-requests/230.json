@@ -1,0 +1,65 @@
+{
+  "number": 230,
+  "title": "Fix macOS startup and Wi-Fi AP configuration errors",
+  "state": "open",
+  "created_at": "2026-10-17T18:29:21Z",
+  "updated_at": "2026-10-17T18:29:21Z",
+  "changed_files": 3,
+  "additions": 24,
+  "deletions": 12,
+  "mergeable": true,
+  "mergeable_state": "clean",
+  "url": "https://github.com/Trevelopment/MZD-AIO/pull/230",
+  "author": "herasymchyk-oleksii",
+  "body": "## Summary\n\n- Skip the old updater when no update URL is configured, avoiding a startup failure on the packaged macOS app.\n- Contain Google Translate initialization failures so its `Performance.measure` exception does not close the app.\n- Write Wi-Fi AP settings to `02-start-wifiAP/wifiAP.config` after the recovery files finish copying. The previous literal `*-start-wifiAP` path caused `ENOENT`.\n\n## Verification\n\n- Built the macOS x64 app from the v2.8.6 source and verified its DMG checksum and app signature.\n- Confirmed the packaged app contains the Wi-Fi AP fix.\n- Ran a temporary-directory test that copies the recovery files and writes `wifiAP.config` to the expected directory.\n- Ran `node --check` and `git diff --check`.\n\nNo vehicle installation was tested.\n",
+  "head": {
+    "repo": "herasymchyk-oleksii/MZD-AIO",
+    "ref": "fix/macos-2.8.6-startup-wifi",
+    "sha": "1322731803c0197681c799de875309fda8bdfe23"
+  },
+  "base": {
+    "repo": "Trevelopment/MZD-AIO",
+    "ref": "master",
+    "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+  },
+  "files": [
+    {
+      "sha": "0d58653dd1c6d956e9baea48e3f95153fffddd44",
+      "filename": "app/assets/js/build-tweaks.js",
+      "status": "modified",
+      "additions": 13,
+      "deletions": 6,
+      "changes": 19,
+      "blob_url": "https://github.com/Trevelopment/MZD-AIO/blob/1322731803c0197681c799de875309fda8bdfe23/app%2Fassets%2Fjs%2Fbuild-tweaks.js",
+      "raw_url": "https://github.com/Trevelopment/MZD-AIO/raw/1322731803c0197681c799de875309fda8bdfe23/app%2Fassets%2Fjs%2Fbuild-tweaks.js",
+      "contents_url": "https://api.github.com/repos/Trevelopment/MZD-AIO/contents/app%2Fassets%2Fjs%2Fbuild-tweaks.js?ref=1322731803c0197681c799de875309fda8bdfe23",
+      "patch": "@@ -1517,18 +1517,23 @@ function buildAutorunInstaller (user) {\n function addWifiAP (user) {\n   filesComplete = true\n   opsComplete = true\n+  const wifiAPdir = `${tmpdir}/02-start-wifiAP`\n   if (user.autorun.autoADB || user.autorun.autoWIFI) {\n     copydir(`${approot}/files/tweaks/cmu-autorun/sdcard/recovery-extra`, `${tmpdir}`, (err) => {\n       if (err) {\n         errFlag = true\n         aioLog('ERROR COPYING AUTORUN FILES', err)\n+        return\n       }\n       if (!user.autorun.autoADB) {\n         rimraf.sync(`${tmpdir}/*-start-adb/`)\n         rimraf.sync(`${tmpdir}/adb`)\n       }\n       if (!user.autorun.autoWIFI) {\n-        rimraf.sync(`${tmpdir}/*-start-wifiAP/`)\n+        rimraf.sync(wifiAPdir)\n+        serialCheck(user)\n+      } else {\n+        promptWifiAP()\n       }\n     })\n   }\n@@ -1537,7 +1542,11 @@ function addWifiAP (user) {\n       if (err) { errFlag = true }\n     })\n   }\n-  if (user.autorun.autoWIFI) {\n+  if (!user.autorun.autoADB && !user.autorun.autoWIFI) {\n+    serialCheck(user)\n+  }\n+\n+  function promptWifiAP () {\n     bootbox.hideAll()\n     var wificonfig = '# This is your wifiAP.config file\\nexport NETWORK_WIFI_SSID=YourSSID\\nexport NETWORK_WIFI_PASSWORD=YourSSIDpassword\\n'\n     bootbox.prompt({\n@@ -1552,18 +1561,16 @@ function addWifiAP (user) {\n             title: 'Values Were Not Changed',\n             message: 'WiFi AP Will not be installed',\n             callback: () => {\n-              rimraf.sync(`${tmpdir}/*-start-wifiAP/`)\n+              rimraf.sync(wifiAPdir)\n               serialCheck(user)\n             }\n           })\n         } else {\n-          fs.writeFileSync(`${tmpdir}/*-start-wifiAP/wifiAP.config`, result + '\\n')\n+          fs.writeFileSync(`${wifiAPdir}/wifiAP.config`, result + '\\n')\n           serialCheck(user)\n         }\n       }\n     })\n-  } else {\n-    serialCheck(user)\n   }\n }\n "
+    },
+    {
+      "sha": "e8402c098f81d39905ea38d2792ec134c0c0add3",
+      "filename": "app/index.html",
+      "status": "modified",
+      "additions": 10,
+      "deletions": 5,
+      "changes": 15,
+      "blob_url": "https://github.com/Trevelopment/MZD-AIO/blob/1322731803c0197681c799de875309fda8bdfe23/app%2Findex.html",
+      "raw_url": "https://github.com/Trevelopment/MZD-AIO/raw/1322731803c0197681c799de875309fda8bdfe23/app%2Findex.html",
+      "contents_url": "https://api.github.com/repos/Trevelopment/MZD-AIO/contents/app%2Findex.html?ref=1322731803c0197681c799de875309fda8bdfe23",
+      "patch": "@@ -278,11 +278,16 @@\n         })\n \n       function googleTranslateElementInit() {\n-        new google.translate.TranslateElement({\n-          pageLanguage: 'en',\n-          includedLanguages: 'ar,bg,cs,da,de,es,fa,fi,fr,ga,haw,hi,hu,id,is,it,iw,ja,jv,ko,ku,la,lo,lt,lv,mn,ms,mt,ne,nl,no,pa,pl,pt,ro,ru,sk,sl,sm,sr,sv,th,tl,tr,uk,vi,zh-CN,zh-TW',\n-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE\n-        }, 'google_translate_element')\n+        try {\n+          new google.translate.TranslateElement({\n+            pageLanguage: 'en',\n+            includedLanguages: 'ar,bg,cs,da,de,es,fa,fi,fr,ga,haw,hi,hu,id,is,it,iw,ja,jv,ko,ku,la,lo,lt,lv,mn,ms,mt,ne,nl,no,pa,pl,pt,ro,ru,sk,sl,sm,sr,sv,th,tl,tr,uk,vi,zh-CN,zh-TW',\n+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE\n+          }, 'google_translate_element')\n+        } catch (e) {\n+          console.warn('Google Translate is unavailable:', e)\n+          $('#google_translate_element').text('Translation unavailable')\n+        }\n       }\n     } else {\n       $(function(){setTimeout(()=>{$(\".translator+div\").html(\"<h4>Offline</h4>\")},2000)})"
+    },
+    {
+      "sha": "ec93b9c461a5a9d994f8ff4ae2320bc6abdf6b70",
+      "filename": "app/main.js",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/Trevelopment/MZD-AIO/blob/1322731803c0197681c799de875309fda8bdfe23/app%2Fmain.js",
+      "raw_url": "https://github.com/Trevelopment/MZD-AIO/raw/1322731803c0197681c799de875309fda8bdfe23/app%2Fmain.js",
+      "contents_url": "https://api.github.com/repos/Trevelopment/MZD-AIO/contents/app%2Fmain.js?ref=1322731803c0197681c799de875309fda8bdfe23",
+      "patch": "@@ -270,7 +270,7 @@ function initialize () {\n     }\n     // Manage automatic updates\n     try {\n-      if (!process.execPath.includes('electron')) { // match(/[\\\\\\/]electron/)) {\n+      if (!process.execPath.includes('electron') && pjson.config.update && pjson.config.update.url) {\n         require('./lib/auto-update/update.js')({\n           url: (pjson.config.update) ? pjson.config.update.url || false : false,\n           version: app.getVersion()"
+    }
+  ],
+  "reviews": [],
+  "inline_comments": []
+}
