@@ -6,6 +6,6 @@
 - ZIP-Pruefungen gegen die unabhaengige Originalvorlage durchfuehren. Nur gegen selbst erzeugte Assets oder Dateianzahlen zu pruefen reicht nicht.
 - SSH ist auf ausdruecklichen Wunsch eine erlaubte eigene Erweiterung. Simulationen sind kein Nachweis einer funktionierenden Anmeldung oder eines funktionierenden Bootstarts auf der CMU. Solche Aussagen benoetigen einen Geraetetest.
 - Berichte und Protokolle gehoeren auf das Startmedium. Interne Original-Backups und gezielte Ruecknahme muessen erhalten bleiben.
-- Der aktuelle ZIP-Download bleibt gesperrt, bis die offenen Punkte im PORT-AUDIT.md behoben und die Paketfreigabe nachgewiesen sind.
+- Der Besitzer hat bestaetigt, dass kein vorheriges Paket installiert wurde, und die Downloadsperre ausdruecklich aufgehoben. Der korrigierte Stand ist ein experimentelles Testpaket fuer ihn. SSH darf enthalten sein; reale Verifikation folgt bei wieder erreichbarer CMU. Diese Freigabe ist kein Fahrzeug-Funktionsnachweis.
 
 Diese Vorgaben betreffen Fahrzeugdateien. Der HTML/JS-Web-Builder und notwendige Installer-Verwaltung bleiben eigene Projektsoftware.

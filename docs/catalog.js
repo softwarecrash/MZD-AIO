@@ -48,9 +48,9 @@ globalThis.MZD_CATALOG = [
     "id": "ssh-bringback",
     "title": "SSH-Zugang",
     "auditStatus": "NICHT_UNVERAENDERT",
-    "description": "Eigene SSH-Erweiterung auf Wunsch beibehalten. Kein Original-AIO-Port. Offline-Tests ersetzen keinen Geraetenachweis; neue Installation bleibt bis zur Pruefung von Anmeldung und Bootstart gesperrt.",
-    "selectable": false,
-    "releaseStatus": "unported",
+    "description": "Eigene SSH-Erweiterung: Port 22, cmu / jci. Auf Wunsch experimentell zum Testen verfuegbar. Anmeldung, Parallelbetrieb und Bootstart sind noch nicht an der CMU verifiziert.",
+    "selectable": true,
+    "releaseStatus": "experimental",
     "category": "system",
     "vehicleTested": false
   },

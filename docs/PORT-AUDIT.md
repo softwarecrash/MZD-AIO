@@ -1,6 +1,6 @@
 # Originaltreue-Audit vom 22.10.2026
 
-**USB-Download gesperrt.** Dieser Bericht ersetzt die vorherigen Paketfreigaben. Die CMU ist nicht erreichbar; es wurde nichts am Fahrzeug geaendert.
+**Korrigiertes Testpaket auf ausdruecklichen Wunsch wieder verfuegbar.** Der Besitzer bestaetigt, dass keines der bisherigen Pakete installiert wurde. Dieser Bericht ersetzt die vorherigen Freigabeaussagen. Die CMU ist nicht erreichbar; es wurde nichts am Fahrzeug geaendert.
 
 ## Ursache
 
@@ -16,7 +16,7 @@ Beim Listen-Kreistweak wurde eigenmaechtig eine neue Methode `_aioWrapListFocus`
 | Dieselbe Datei, Listendelay | Vier Werte: 1500/5000/500/1000 nach 150/300/200/300 | Entspricht den vier Befehlen in `07_shorterdelay-i.txt`. Nur dessen informeller Kommentar-Marker wird weggelassen, weil der Installer einen separaten Zustand fuehrt. Kein zusaetzliches Laufzeitverhalten. |
 | Dieselbe Datei, Listen im Kreis | Zuvor eigener Helfer und vier Aufrufe | Eigener Helfer entfernt. Jetzt ausschliesslich die acht Einfuegungen aus dem alten AIO-Tweak in vier bestehenden Handlern. Deren resultierende Funktionskoerper sind bytegleich zur Original-AIO-Vorlage. Keine neue Prototype-Methode. |
 | `/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js` | Zwei Grenzwerte in `_offsetFocus` | Entspricht exakt der Funktion im Original-AIO-Tweak. Keine weiteren Methoden, Layout- oder Zeitveraenderungen. Zusaetzliche Formatierungsunterschiede der alten Ersatzdatei werden nicht uebernommen. |
-| `/jci/scripts/stage_wifi.sh` | Zwei Zeilen fuer eigenen SSH-Start | Kein Original-AIO-Port, sondern eigener SSH-Boot-Hook. Auf ausdruecklichen Wunsch bleibt die SSH-Erweiterung erhalten. Geraetenachweis fehlt; neue Installation gesperrt. |
+| `/jci/scripts/stage_wifi.sh` | Zwei Zeilen fuer eigenen SSH-Start | Kein Original-AIO-Port, sondern eigener SSH-Boot-Hook. Auf ausdruecklichen Wunsch bleibt die SSH-Erweiterung erhalten. Geraetenachweis fehlt; auf Wunsch experimentell im Testpaket enthalten. |
 | `/config-mfg/passwd` bei aktivem SSH | RAM-Kopie per bind mount; nur cmu-Hash ersetzt | Eigene SSH-Implementierung, keine uebernommene AIO-Methode. Kein Flash-Neupacken. Tatsachlicher Mount und Anmeldung auf CMU unbestaetigt. |
 | Firewall bei aktivem SSH | Eigene TCP-22-Kette und Ueberwachung | Eigene SSH-Implementierung. OEM-Datei `/jci/scripts/jci-fw.sh` wird nicht gepatcht. Reales WLAN-/Firewall-Verhalten unbestaetigt. |
 | SSH-Konfiguration | Eigene Datei unter `/resources/aio-rework/services/ssh` | OEM-`sshd_config` und private OEM-Hostschluessel werden nicht ersetzt. Port 36000 bleibt in der Implementierung unveraendert; realer Parallelbetrieb noch offen. |
@@ -37,9 +37,9 @@ Weitere OEM-Dateien werden durch die bisher implementierten Patches nicht beschr
 
 Die Original-AIO-Listenlogik wird nicht still verbessert. Insbesondere wird ihr Verhalten bei stehengebliebenem Fokus beibehalten. Die frueheren Aussagen ueber zusaetzliche Absicherungen des eigenen Helfers gelten nicht fuer diesen Originalport.
 
-## Offene Freigabepunkte
+## Verbleibende Grenzen des Testpakets
 
-1. Ein bereits installiertes Paket mit dem verworfenen eigenen Listen-Helfer hat andere Dateihashes. Die korrigierte Portierung darf diesen Stand nicht als unveraendert akzeptieren oder blind ueberschreiben. Eine explizit gepruefte Ruecknahme dieser Altstaende steht aus. Deshalb bleibt der allgemeine ZIP-Download gesperrt.
-2. SSH ist auf Wunsch erhalten, aber die CMU ist nicht erreichbar. Simulationen belegen keine echte Passwortanmeldung, keinen funktionierenden Boot-Hook und keine tatsaechliche Kontenueberlagerung. Solange diese Geraetetests fehlen, bleibt SSH aus der neuen Installationsauswahl genommen.
+1. Der Besitzer hat bestaetigt, dass nichts installiert wurde. Er hat die Downloadsperre ausdruecklich aufgehoben. Eine Migration von bereits installierten verworfenen Listen-Helfern wird fuer seinen aktuellen Test nicht benoetigt; unbekannte Altstaende werden weiterhin abgewiesen.
+2. SSH bleibt auf ausdruecklichen Wunsch im experimentellen Testpaket. Die CMU ist nicht erreichbar. Simulationen belegen keine echte Passwortanmeldung, keinen funktionierenden Boot-Hook und keine tatsaechliche Kontenueberlagerung. Diese Punkte werden bei wieder erreichbarer CMU am Geraet geprueft.
 
 Maschinenlesbarer Nachweis: [port-audit.json](port-audit.json). Dauerhafte Arbeitsvorgaben: [AGENTS.md](../AGENTS.md).

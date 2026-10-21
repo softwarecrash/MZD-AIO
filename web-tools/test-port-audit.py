@@ -87,7 +87,7 @@ with tempfile.TemporaryDirectory(prefix='mzd-port-audit-') as temp:
     assert method(menu_expected.decode(), '_offsetFocus', 'MainMenuCtrl') == method(legacy_menu, '_offsetFocus', 'MainMenuCtrl')
 
 report = {
-    'status': 'offline_original_comparison_passed_download_still_blocked',
+    'status': 'offline_original_comparison_passed_owner_test_package',
     'mp3_reference_files': list(reference['files']),
     'mp3_archive_sha256': reference['archive_sha256'],
     'list2_all_eight_variants_match_original_aio_changes_only': True,
@@ -97,7 +97,7 @@ report = {
     'mainmenu_sha256': sha(menu_expected),
     'delay_marker_note': 'Original informational Shorter Delay Mod comment omitted; state is managed separately. No additional executable behavior.',
     'ssh': 'Explicitly permitted own implementation retained, not represented as original AIO port. Hardware login/boot not tested; CMU unreachable.',
-    'open_release_items': ['Real SSH device test', 'Safe rollback of previously published rejected custom list-loop variants'],
+    'open_release_items': ['Real SSH device test; owner confirmed no prior package was installed'],
     'sources': {str(x.relative_to(aio)): sha(x.read_bytes()) for x in [old_loop_path, aio / '07_shorterdelay-i.txt', aio / '07_listbeep-i.txt', aio / 'config/main-menu-loop/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js']}
 }
 a.output.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8', newline='\n')

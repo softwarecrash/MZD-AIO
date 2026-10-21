@@ -1,6 +1,6 @@
 # Aktueller Freigabestatus
 
-USB-Download gesperrt seit dem Originaltreue-Audit. Fruehere Freigabeaussagen weiter unten sind historische Implementierungsbeschreibungen und keine aktuelle Paketfreigabe. SSH bleibt auf ausdruecklichen Wunsch als eigene Erweiterung im Quellstand; die CMU ist nicht erreichbar, daher keine bestaetigte Anmeldung oder Boot-Funktion. Der Katalog sperrt die neue Installation bis zum Geraetenachweis.
+Der Besitzer hat keine bisherigen Pakete installiert und die Downloadsperre nach dem Originaltreue-Audit ausdruecklich aufgehoben. Der korrigierte Stand ist sein experimentelles Testpaket. SSH ist auf Wunsch enthalten; die CMU ist nicht erreichbar, daher sind Anmeldung und Bootstart weiterhin unbestaetigt.
 
 # MZD-AIO Web-Builder / 74.00.324A EU
 
@@ -107,4 +107,4 @@ Die selbst erfundene Methode _aioWrapListFocus und ihre zusaetzlichen Regeln wur
 
 Die alten Grenzregeln werden dabei nicht still verbessert. Der alte Tweak kann bereits bei stehengebliebenem Fokus einen Kreissprung versuchen. Diese Eigenschaft wird als Altverhalten dokumentiert, nicht eigenmaechtig veraendert.
 
-232 Verhaltensfaelle fuer acht Kombinationen pruefen die Originalportierung. Die frueheren 256 Faelle und Freigabe fuer die eigene Hilfsfunktion sind zurueckgezogen. Bereits mit dem zurueckgezogenen eigenen Helfer gepatchte Dateistaende werden nicht als aktuelle Portierung akzeptiert. Der oeffentliche ZIP-Download bleibt gesperrt; Altstand-Ruecknahme und Fahrzeugpruefung sind vor einer neuen Paketfreigabe zu klaeren.
+232 Verhaltensfaelle fuer acht Kombinationen pruefen die Originalportierung. Die frueheren 256 Faelle und Freigabe fuer die eigene Hilfsfunktion sind zurueckgezogen. Bereits mit dem zurueckgezogenen eigenen Helfer gepatchte Dateistaende werden nicht als aktuelle Portierung akzeptiert. Der Besitzer bestaetigt, dass kein verworfener Altstand installiert wurde. Fuer sein korrigiertes Testpaket ist deshalb keine Altstandmigration erforderlich. Fahrzeugpruefung bleibt offen.

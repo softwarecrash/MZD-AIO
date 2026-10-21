@@ -72,7 +72,7 @@
       + "4. Per USB-Tastatur eingeben: sh /mnt/sda1/tweaks.sh\n"
       + "   Falls Datei nicht gefunden: sda1 durch sdb1, sdc1 oder sdd1 ersetzen.\n"
       + "5. Berichte unter reports/<Zeit>-<PID>/ auf demselben Stick pruefen: run.log (Ausgabe und Fehler), status.txt (Exit-Code), preflight.txt (Dateivergleich, sofern erreicht). Auch fruehe Abbrueche werden protokolliert.\n\n"
-      + "Pruefen veraendert nichts. Install/Uninstall unterstuetzen Listenpiepsen, Listendelay, Hauptmenü im Kreis und Listen im Kreis, einzeln und gemeinsam. Experimentell; Fahrzeugtest offen. Vor Aenderungen im Terminal mit j bestaetigen.\n"
+      + "Pruefen veraendert nichts. Install/Uninstall unterstuetzen Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH, einzeln und gemeinsam. Experimentell; Fahrzeugtest offen. Vor Aenderungen im Terminal mit j bestaetigen.\n"
       + "SSH: Port 22, Benutzer cmu, Passwort jci. Der OEM-Dienst auf Port 36000 bleibt bestehen. Fremd belegter Port 22 fuehrt zum Abbruch. Kein zweiter eigener Listener. Der Start nach Neustart wird ueber stage_wifi eingerichtet. WLAN-Verbindung bleibt Aufgabe der Firmware.\n"
       + "SSH verwendet eine temporaere Kontenueberlagerung im RAM, keine Flash-Aenderung an Konten. Uninstall/Full System Restore entfernen Boot-Hook, eigenen Dienst, eigene Firewallfreigabe und Kontenueberlagerung. Keine persoenlichen Schluessel erforderlich.\n"
       + "SSH-Startberichte werden auf einen passenden beschreibbaren USB geschrieben. Ohne USB funktioniert der Zugang trotzdem; Laufzeitlogs werden dann verworfen, niemals intern gespeichert. Der Boot-Hook haengt von stage_3/jciMMUI ab: kein garantierter Rettungszugang bei fruehen Boot-/MMUI-Fehlern. WLAN muss funktionieren.\n"
@@ -80,7 +80,7 @@
       + "Originale bleiben intern unter /resources/aio-rework/backups/74.00.324A-EU/ erhalten; zusaetzliche Kopie auf diesem USB unter backups/. Installiert/Original wird automatisch erkannt.\n"
       + "Full System Restore ignoriert die Tweak-Auswahl und stellt alle derzeit unterstuetzten, von uns verwalteten Systemdateien wieder her. Alternativ direkt: sh /mnt/sda1/restore.sh . Ein neuer Stick reicht; die Originale liegen intern. Keine Wiederherstellung fremder AIO-Installationen oder Werksreset.\n"
       + "Der MP3-Konsolenzugang mit Tastatur ist der vom Besitzer bestaetigte Weg; dieses neu zusammengestellte Paket ist noch nicht am Fahrzeug getestet.\n"
-      + "Keine automatische SSH-Aktivierung oder automatischer Neustart. Nach erfolgreicher Aenderung CMU selbst neu starten. Logs bleiben auf dem Start-USB.\n\n"
+      + "SSH wird nur bei entsprechender Auswahl installiert und gestartet. Kein automatischer CMU-Neustart; nach erfolgreicher Aenderung selbst neu starten. Logs bleiben auf dem Start-USB.\n\n"
       + "Auswahl im Browser wieder oeffnen: project.json\n";
     files["patch-status.json"] = JSON.stringify({ target, action: clean.action, experimental: true, vehicleTested: false, patches: clean.tweaks }, null, 2) + "\n";
     files["package-manifest.json"] = JSON.stringify({ format: "mzd-aio-usb", version: 1, target,
@@ -89,5 +89,5 @@
       assets: Object.fromEntries(Object.entries(root.MZD_USB_ASSETS).map(([path, a]) => [path, { bytes: a.bytes, sha256: a.sha256 }])) }, null, 2) + "\n";
     return files;
   }
-  root.MzdBuilder = Object.freeze({ releaseReady: false, target, testableIds, project, parse, zip, draftFiles, usbFiles });
+  root.MzdBuilder = Object.freeze({ releaseReady: true, target, testableIds, project, parse, zip, draftFiles, usbFiles });
 })(globalThis);
