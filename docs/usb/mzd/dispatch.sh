@@ -18,7 +18,7 @@ if [ "$ACTION" != preflight ]; then
 fi
 SELECTED="$BASE/selected.txt"
 JOBS=0
-if [ "$ACTION" = restore ] || [ "$ACTION" = preflight ] || grep -qEx 'list-beep|shorter-delay' "$SELECTED"; then
+if [ "$ACTION" = restore ] || [ "$ACTION" = preflight ] || grep -qEx 'list-beep|shorter-delay|list-loop' "$SELECTED"; then
     mkdir -p "$REPORT/list2"
     sh "$BASE/file-job.sh" "$BASE" "$USB" "$REPORT/list2" "$ACTION" list2 "$SELECTED" || fail 'Dateigruppe Listen wurde nicht abgeschlossen. Teilberichte pruefen.'
     JOBS=$((JOBS+1))

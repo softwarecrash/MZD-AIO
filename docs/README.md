@@ -5,8 +5,8 @@ Statische HTML/CSS/JavaScript-Anwendung ohne Build-Schritt und ohne externe Brow
 ## Bedienung wie bei AIO
 
 - Pruefen / Preflight: 41 Funktionsgruppen durchsuchen; nur zum Testen freigegebene Patches sind auswaehlbar. Keine Systemdateiaenderung.
-- Install markiert automatisch alle zum Testen freigegebenen Patches (aktuell Listenpiepsen, Listendelay, Hauptmenü im Kreis und SSH). Einzelne koennen abgewaehlt werden. Nicht bearbeitete Tweaks bleiben in allen Modi gesperrt, auch beim Projektimport.
-- Installieren / Install: Listenpiepsen, Listendelay, Hauptmenü im Kreis und SSH, einzeln oder gemeinsam. Experimentell, offline geprueft, Fahrzeugtest offen.
+- Install markiert automatisch alle zum Testen freigegebenen Patches (aktuell Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH). Einzelne koennen abgewaehlt werden. Nicht bearbeitete Tweaks bleiben in allen Modi gesperrt, auch beim Projektimport.
+- Installieren / Install: Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH, einzeln oder gemeinsam. Experimentell, offline geprueft, Fahrzeugtest offen.
 - Deinstallieren / Uninstall: den ausgewaehlten portierten Tweak entfernen.
 - Full System Restore: alle von diesem Rework unterstuetzten Systemdateien aus internen Originalen wiederherstellen, unabhaengig von der Auswahl. Derzeit List2Ctrl.js. Kein Werksreset und keine pauschale Ruecknahme fremder/alter AIO-Installationen.
 - Apps To Resources: Standard fuer kuenftige neue Apps. Bestehende Systemdateien bleiben an ihrem Originalpfad. Noch keine Zusatz-App portiert.
@@ -41,7 +41,7 @@ Ein schreibgeschuetzt eingebundener Start-USB wird fuer Berichte beschreibbar ei
 
 ## Entwicklung und Quellen
 
-catalog.js enthaelt die 41 Gruppen. Listenpiepsen, Listendelay, Hauptmenü im Kreis und SSH sind experimental, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
+catalog.js enthaelt die 41 Gruppen. Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH sind experimental, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
 
 Die MP3s stammen bytegleich vom zuvor eingelesenen Besitzer-USB. Verwandte Technik: https://github.com/naijamesz/mazda-connect-root-refactor . Keine Schluessel oder persoenlichen Konfigurationen.
 
@@ -96,3 +96,11 @@ Die v74-Originaldatei MainMenuCtrl.js ist bytegleich zur alten v70-Ausgangsdatei
 Die Original-Pruefsumme 40ccb293b8c6f80960f0b953dd2e173e und die Ergebnis-Pruefsumme ae272c9befc1350b93f23511568f13c7 begrenzen den Patch auf den geprueften Stand. Eigene Dateigruppe mit Original, Zustand, USB-Zweitkopie und Vorgangsprotokoll; Install/Uninstall/Full System Restore benutzen denselben Manager. Fremde Aenderungen werden abgewiesen.
 
 Funktionstest: node web-tools/test-main-menu-loop.js <lokale MainMenuCtrl.js>. Prueft 20 Original-/Patch-Faelle fuer alle fuenf Positionen und beide Richtungen sowie exakt zwei geaenderte Zeilen. Fahrzeugtest bleibt offen.
+
+## Listen im Kreis
+
+Der Patch ergaenzt die vier bestehenden Commander-Handler fuer Drehen und Kippen. Ein gemeinsamer ES5-Helfer springt nur dann zum gegenueberliegenden Ende, wenn in der bisherigen Richtung kein weiterer aktivierter Eintrag existiert. Deaktivierte Eintraege werden uebersprungen. Ein stehengebliebener Fokus am Rand des sichtbaren Ausschnitts loest weiterhin normales Scrollen aus. Leere oder unvollstaendige Listen, Buchstabenindex, Umsortieren, Touch und gesperrtes Laden loesen keinen Kreissprung aus.
+
+Die AIO-Ersatzdatei wird nicht kopiert. Original, Listenpiepsen, Delay und Loop werden in fester Reihenfolge mit der aktiven Patchliste aufgebaut. Bestehende Beep-/Delay-Zustaende bleiben kompatibel; Uninstall entfernt nur ausgewaehlte Patches. Neue gemeinsame Helfer und Handler-Ergaenzungen entstehen nur auf Arbeitskopien. Strukturpruefungen erwarten genau die vier bekannten Handler. Kein diff/patch auf dem Fahrzeug erforderlich.
+
+Funktionstest: node web-tools/test-list-loop.js <lokale List2Ctrl.js>. Erzeugt acht Kombinationen und prueft 256 Faelle mit simulierten Fokus-/Scrollgrenzen. Die zurueckgemeldete fixtureDirectory kann an den Installer-Test mit --list-loop-only --list-loop-fixtures <Ordner> uebergeben werden (zusaetzlich zu ZIP und beiden Originaldateien). Dabei werden alle acht aktiven Zustaende, gezielte Ruecknahme, alte Beep-/Delay-Zustaende, Originalschutz und Restore von einem neuen Stick geprueft. Fahrzeugtest bleibt offen.

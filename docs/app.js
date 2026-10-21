@@ -36,7 +36,7 @@
     byId("release-info").textContent = mode === "restore"
       ? "Full System Restore stellt alle von diesem Rework verwalteten Systemdateien aus den internen Originalen wieder her. Die Tweak-Auswahl wird ignoriert."
       : mode === "preflight" ? "Prüfen verändert keine Systemdateien. Noch nicht bearbeitete Tweaks sind gesperrt."
-      : "Ausführbar: Listenpiepsen, Listendelay, Hauptmenü im Kreis und SSH. Experimentell; Fahrzeugtest offen. Andere aktive Patches bleiben beim Installieren und Deinstallieren erhalten.";
+      : "Ausführbar: Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH. Experimentell; Fahrzeugtest offen. Andere aktive Patches bleiben beim Installieren und Deinstallieren erhalten.";
     byId("selection-list").replaceChildren();
     for (const id of selected) { const li = document.createElement("li"); li.textContent = globalThis.MZD_CATALOG.find(p => p.id === id).title; byId("selection-list").append(li); }
   }

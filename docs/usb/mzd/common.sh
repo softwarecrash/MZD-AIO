@@ -5,7 +5,7 @@ case "$TARGET_ID" in
 list2)
 TARGET=/jci/gui/common/controls/List2/js/List2Ctrl.js
 RELATIVE=jci/gui/common/controls/List2/js/List2Ctrl.js
-FILE_PATCHES='list-beep shorter-delay'
+FILE_PATCHES='list-beep shorter-delay list-loop'
 ORIGINAL=e111883b9dcbeb6bb154521826fcacac
 ;;
 mainmenu)

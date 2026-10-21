@@ -14,6 +14,8 @@ p.add_argument('--zip', type=Path, required=True)
 p.add_argument('--original', type=Path, required=True, help='Locally backed-up v74 List2Ctrl.js')
 p.add_argument('--mainmenu-original', type=Path, required=True, help='Locally backed-up v74 MainMenuCtrl.js')
 p.add_argument('--ssh-only', action='store_true', help='Run only SSH orchestration against existing manager fixtures')
+p.add_argument('--list-loop-only', action='store_true', help='Test all List2 combinations and selective removal through the installer')
+p.add_argument('--list-loop-fixtures', type=Path, help='Variant directory produced by test-list-loop.js')
 p.add_argument('--bash', default='C:/Program Files/Git/bin/bash.exe')
 args = p.parse_args()
 root = Path(__file__).resolve().parents[1]
@@ -38,7 +40,7 @@ with zipfile.ZipFile(args.zip) as z:
     assert manifest['mode'] == 'preflight'
     assert manifest['entry'] == 'mp3-console-keyboard'
     assert manifest['command'] == 'sh /mnt/sda1/tweaks.sh'
-    assert len(z.namelist()) == 33
+    assert len(z.namelist()) == 36
     for name, entry in manifest['assets'].items():
         data = z.read(name)
         assert data == (root / 'docs/usb' / name).read_bytes()
@@ -132,7 +134,7 @@ fi
         write(auxiliary, 'original launcher\n')
         write(base / 'originals.md5', hashlib.md5(auxiliary.read_bytes()).hexdigest() + '  ' + bp(auxiliary) + '\n')
         write(base / 'selected.txt', 'list-beep\n')
-        write(base / 'allowed.txt', 'list-beep\nshorter-delay\nssh-bringback\nmain-menu-loop\nbackground\n')
+        write(base / 'allowed.txt', 'list-beep\nshorter-delay\nlist-loop\nssh-bringback\nmain-menu-loop\nbackground\n')
         write(base / 'action.txt', 'preflight\n')
         return usb
 
@@ -155,6 +157,49 @@ fi
         assert ' vfat rw ' not in mounts.read_text(), mounts.read_text()
         checks.append(text)
         return report
+
+    if args.list_loop_only:
+        assert args.list_loop_fixtures, '--list-loop-fixtures is required'
+        variants = [(args.list_loop_fixtures / f'{mask}.js').read_bytes() for mask in range(8)]
+        verification = json.loads((args.list_loop_fixtures / 'verification.json').read_text())
+        for mask, data in enumerate(variants):
+            assert hashlib.sha256(data).hexdigest() == verification['hashes'][str(mask)]
+        assert variants[0] == original and variants[1] == patched and variants[2] == delay and variants[3] == combined
+        names = ['list-beep', 'shorter-delay', 'list-loop']
+        write(usb / 'mzd/selected.txt', 'list-loop\n')
+        run('preflight', 0, 'Pruefung abgeschlossen')
+        assert target.read_bytes() == original and not backup.exists()
+        new_usb = package('USB stick B')
+        (new_usb / 'mzd/selected.txt').unlink()
+        (new_usb / 'mzd/allowed.txt').unlink()
+        current, backup_time, old_state = 0, None, None
+        steps = [3, 7, 3, 2, 6, 7, 5, 4, 0, 1, 5, 0]
+        for step, wanted in enumerate(steps):
+            if step == len(steps) - 1:
+                run('restore', 0, 'Original erfolgreich wiederhergestellt', stick=new_usb, restore=True)
+            else:
+                changed = current ^ wanted
+                chosen = [name for bit, name in enumerate(names) if changed & (1 << bit)]
+                write(usb / 'mzd/selected.txt', '\n'.join(chosen) + '\n')
+                action = 'install' if wanted & ~current else 'uninstall'
+                run(action, 0, 'Erfolgreich installiert' if action == 'install' else 'Ausgewaehlte Patches entfernt')
+            assert target.read_bytes() == variants[wanted], (current, wanted)
+            assert (backup / 'original').read_bytes() == original
+            stamp = (backup / 'original').stat().st_mtime_ns
+            if backup_time is None: backup_time = stamp
+            assert stamp == backup_time
+            state = (backup / 'state.txt').read_text()
+            assert state.splitlines()[2:] == ['patch=' + name for bit, name in enumerate(names) if wanted & (1 << bit)]
+            if step == 0: old_state = state
+            if step == 2: assert state == old_state  # Adding/removing loop preserves old beep+delay state exactly.
+            current = wanted
+        assert (new_usb / 'backups/74.00.324A-EU/jci/gui/common/controls/List2/js/List2Ctrl.js.backup/original').read_bytes() == original
+        target.write_bytes(original + b'// foreign change\n')
+        write(usb / 'mzd/selected.txt', 'list-loop\n')
+        run('install', 1, 'ausserhalb des Installers geaendert')
+        assert target.read_bytes() == original + b'// foreign change\n'
+        print('Passed', len(checks), 'list-loop installer runs: all eight states, selective removal, existing beep/delay state, immutable originals, new-stick restore and foreign-change rejection.')
+        raise SystemExit(0)
 
     if not args.ssh_only:
         run('preflight', 0, 'Pruefung abgeschlossen')

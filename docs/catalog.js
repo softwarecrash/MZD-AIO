@@ -140,10 +140,11 @@ globalThis.MZD_CATALOG = [
     "id": "list-loop",
     "title": "Listen im Kreis",
     "auditStatus": "ANPASSEN",
-    "description": "v74-List2Ctrl.js ist bytegleich zur v70-Vorlage; alte Auswahl <=6 und Wechselwirkung mit Delay-Mod beachten. Gesamtdateiersetzung nicht pauschal freigeben.",
+    "description": "Springt beim Drehen oder Kippen des Commanders vom letzten auswählbaren Listeneintrag zum ersten und zurück. Deaktivierte Einträge werden übersprungen. Mit Listenpiepsen und Listendelay kombinierbar.",
     "selectable": true,
-    "releaseStatus": "unported",
-    "category": "patches"
+    "releaseStatus": "experimental",
+    "category": "patches",
+    "vehicleTested": false
   },
   {
     "id": "list-beep",
