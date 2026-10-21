@@ -1,7 +1,7 @@
 {
   "date": "2026-10-22",
   "patch": "list-loop",
-  "status": "experimental",
+  "status": "withdrawn",
   "vehicle_tested": false,
   "firmware": "74.00.324A EU",
   "implementation_commit": "82e1baf41bbe224c9771762db59674106d99bdc8",
@@ -83,5 +83,6 @@
       "sha256": "0b5dec6bf19d634422b3f353c261e66c6bf10762cfb5141e9d9dd5811dc2bb81",
       "url": "https://github.com/softwarecrash/MZD-AIO/blob/82e1baf41bbe224c9771762db59674106d99bdc8/web-tools/test-web-builder.js"
     }
-  ]
+  ],
+  "superseded_by": "../port-audit/verification.json"
 }

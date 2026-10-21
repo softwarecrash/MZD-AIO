@@ -1,3 +1,5 @@
+**ZURUECKGEZOGEN:** Dieser historische Stand mit eigener Hilfsfunktion wurde im [Originaltreue-Audit](../port-audit/README.md) verworfen. Nicht als aktuelle Portierung verwenden.
+
 # Listen im Kreis / 74.00.324A EU
 
 Experimentell, Fahrzeugtest offen. Implementierung: [82e1baf](https://github.com/softwarecrash/MZD-AIO/commit/82e1baf41bbe224c9771762db59674106d99bdc8).
