@@ -3,22 +3,32 @@
   const byId = id => document.getElementById(id), core = globalThis.MzdBuilder;
   const selected = new Set(), labels = { TEXT_KANDIDAT: "Text-Kandidat", CSS_KANDIDAT: "CSS-Kandidat", ANPASSEN: "Anpassung nötig", NICHT_UNVERAENDERT: "Ersetzung überarbeiten", ASSET_PRUEFUNG: "Grafiken prüfen", LAUFZEIT_OFFEN: "Laufzeit offen", ALTEN_TWEAK_WEGLASSEN: "Alter Tweak entfällt" };
   const status = byId("project-status");
+  const categories = { patches: "Patches & Bedienung", ui: "Oberfläche & Design", apps: "Apps", system: "System & Diagnose" };
   function render() {
     const mode = byId("action").value;
     const query = byId("search").value.trim().toLocaleLowerCase("de"), filter = byId("filter").value;
     const rows = globalThis.MZD_CATALOG.filter(p => (p.title + " " + p.description).toLocaleLowerCase("de").includes(query) && (filter !== "selected" || selected.has(p.id)) && (filter !== "candidate" || ["TEXT_KANDIDAT", "CSS_KANDIDAT"].includes(p.auditStatus)));
     byId("catalog").replaceChildren();
+    const lists = {};
+    for (const [id, name] of Object.entries(categories)) {
+      const count = rows.filter(p => p.category === id).length;
+      if (!count) continue;
+      const section = document.createElement("section"), heading = document.createElement("h3"), list = document.createElement("div");
+      section.className = "category-group"; heading.className = "category-heading";
+      heading.textContent = name + " · " + count; list.className = "category-tweaks";
+      section.append(heading, list); byId("catalog").append(section); lists[id] = list;
+    }
     for (const patch of rows) {
       const card = document.createElement("article"); card.className = "tweak-card" + (selected.has(patch.id) ? " chosen" : "");
       const label = document.createElement("label"), checkbox = document.createElement("input"), title = document.createElement("span");
       checkbox.type = "checkbox"; checkbox.checked = selected.has(patch.id);
-      checkbox.disabled = !patch.selectable || mode === "restore" || (mode !== "preflight" && patch.id !== "list-beep");
+      checkbox.disabled = !patch.selectable || mode === "restore" || (mode !== "preflight" && !["list-beep", "shorter-delay"].includes(patch.id));
       title.textContent = patch.title; label.append(checkbox, title);
       checkbox.addEventListener("change", () => { if (checkbox.checked) selected.add(patch.id); else selected.delete(patch.id); status.textContent = ""; render(); });
       const badge = document.createElement("span"); badge.className = "patch-status";
-      badge.textContent = patch.id === "list-beep" ? "Experimentell · offline geprüft · Fahrzeugtest offen" : "In Planung · " + labels[patch.auditStatus];
+      badge.textContent = patch.releaseStatus === "experimental" ? "Experimentell · offline geprüft · Fahrzeugtest offen" : "In Planung · " + labels[patch.auditStatus];
       const description = document.createElement("p"); description.textContent = patch.description;
-      card.append(label, badge, description); byId("catalog").append(card);
+      card.append(label, badge, description); lists[patch.category].append(card);
     }
     byId("result-count").textContent = rows.length + " Tweaks · Prüfstand: 21.10.2026";
     byId("empty").hidden = rows.length > 0;
@@ -26,7 +36,7 @@
     byId("release-info").textContent = mode === "restore"
       ? "Full System Restore stellt alle von diesem Rework verwalteten Systemdateien aus den internen Originalen wieder her. Die Tweak-Auswahl wird ignoriert."
       : mode === "preflight" ? "Prüfen verändert keine Systemdateien. Andere Tweaks können hier bereits geplant werden."
-      : "Bisher ausführbar: Listenpiepsen. Experimentell, noch nicht am Fahrzeug bestätigt. Interne Originalsicherung und USB-Kopie werden automatisch geprüft.";
+      : "Ausführbar: Listenpiepsen und Listendelay, einzeln oder gemeinsam. Experimentell; Fahrzeugtest offen. Andere aktive Patches bleiben beim Installieren und Deinstallieren erhalten.";
     byId("selection-list").replaceChildren();
     for (const id of selected) { const li = document.createElement("li"); li.textContent = globalThis.MZD_CATALOG.find(p => p.id === id).title; byId("selection-list").append(li); }
   }

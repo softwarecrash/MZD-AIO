@@ -5,7 +5,7 @@ Statische HTML/CSS/JavaScript-Anwendung ohne Build-Schritt und ohne externe Brow
 ## Bedienung wie bei AIO
 
 - Pruefen / Auswahl planen: 41 Funktionsgruppen durchsuchen und Projekte als JSON speichern/oeffnen; keine Systemdateiaenderung.
-- Installieren / Install: derzeit nur Listenpiepsen deaktivieren. Experimentell, offline geprueft, Fahrzeugtest offen.
+- Installieren / Install: Listenpiepsen und Listendelay, einzeln oder gemeinsam. Experimentell, offline geprueft, Fahrzeugtest offen.
 - Deinstallieren / Uninstall: den ausgewaehlten portierten Tweak entfernen.
 - Full System Restore: alle von diesem Rework unterstuetzten Systemdateien aus internen Originalen wiederherstellen, unabhaengig von der Auswahl. Derzeit List2Ctrl.js. Kein Werksreset und keine pauschale Ruecknahme fremder/alter AIO-Installationen.
 - Apps To Resources: Standard fuer kuenftige neue Apps. Bestehende Systemdateien bleiben an ihrem Originalpfad. Noch keine Zusatz-App portiert.
@@ -40,7 +40,7 @@ Ein schreibgeschuetzt eingebundener Start-USB wird fuer Berichte beschreibbar ei
 
 ## Entwicklung und Quellen
 
-catalog.js enthaelt die 41 Gruppen. Listenpiepsen ist experimental, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
+catalog.js enthaelt die 41 Gruppen. Listenpiepsen und Listendelay sind experimental, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
 
 Die MP3s stammen bytegleich vom zuvor eingelesenen Besitzer-USB. Verwandte Technik: https://github.com/naijamesz/mazda-connect-root-refactor . Keine Schluessel oder persoenlichen Konfigurationen.
 
@@ -55,3 +55,16 @@ python web-tools/test-usb-installer.py --zip <ZIP> --original <gesicherte-v74-Li
 Die Shelltests verwenden nur Testkopien mit ersetzten Geraetepfaden und gemockten mount/df/sync. Geprueft werden Install/Uninstall, Full System Restore von neuem Stick, Wiederholung, Defekte, Abbruchfaelle und USB-Logs. Keine realen Mounts oder Fahrzeugzugriffe. Kein visueller Browsertest verfuegbar.
 
 Veroeffentlichung: GitHub Pages aus master/docs. Webentwicklung in web/html-js-builder.
+
+
+## Gruppen und kombinierbare Patches
+
+Der Katalog ist in Patches & Bedienung, Oberflaeche & Design, Apps sowie System & Diagnose gegliedert. Suche und Pruefstandfilter gelten ueber alle Gruppen. Die Gruppenzuordnung ist Teil der Katalogdaten.
+
+Die gemeinsame Dateiverwaltung benutzt das unveraenderliche interne Original und eine aktive Patchliste. patches/list-beep.sh und patches/shorter-delay.sh erzeugen gezielt gepruefte Textaenderungen auf Arbeitskopien. Install fuegt nur die Auswahl hinzu, Uninstall entfernt nur die Auswahl, Full System Restore entfernt alle von uns verwalteten Aenderungen. Nicht ausgewaehlte aktive Patches bleiben erhalten. Die CMU benoetigt weder diff, patch noch Git.
+
+state.txt liegt neben dem internen Original-Backup und enthaelt Formatversion, aktive Patch-IDs in fester Reihenfolge sowie den zuletzt erzeugten Dateihash. Dieser wird zur Laufzeit berechnet; es gibt keine Tabelle aller Kombinationen. Vor einem Eingriff wird die aktive Variante erneut aus dem Original aufgebaut und mit Zustand und Systemdatei verglichen. Unbekannte Aenderungen fuehren zum Abbruch.
+
+Vor dem Dateiaustausch wird ein transaction-Verzeichnis mit vorherigem und gewuenschtem Zustand geschrieben. Erst nach erfolgreichem Austausch folgt die Zustandsdatei. Ein unterbrochener Vorgang wird beim naechsten schreibenden Aufruf anhand beider rekonstruierter Varianten abgeglichen; bei unbekanntem Inhalt wird keine Systemdatei ueberschrieben. Pruefen meldet einen offenen Vorgang und schreibt keine interne Zustandskorrektur. Das ist eine Wiederanlauflogik, kein Nachweis fuer die Stromausfallsicherheit des CMU-Dateisystems.
+
+Listendelay aendert die vier originalen List2-Zeitparameter von 1500/5000/500/1000 auf 150/300/200/300 ms. Der alte AIO-Kommentar-Marker ist fuer den Zustand nicht erforderlich. Die Kombinationen Original, nur Beep, nur Delay und beide werden separat auf Inhalt und moderne JS-Syntax geprueft; der Fahrzeugtest steht aus.

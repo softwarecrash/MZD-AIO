@@ -7,7 +7,7 @@
     if (typeof name !== "string" || !name.trim() || name.trim().length > 80) throw new Error("Bitte einen Projektnamen mit 1 bis 80 Zeichen eingeben.");
     if (!Array.isArray(ids) || ids.some(id => typeof id !== "string" || !catalog.some(p => p.id === id && p.selectable))) throw new Error("Das Projekt enthält unbekannte oder nicht auswählbare Tweaks.");
     if (!["preflight", "install", "uninstall", "restore"].includes(action)) throw new Error("Unbekannte Aktion.");
-    if (["install", "uninstall"].includes(action) && (ids.length === 0 || ids.some(id => id !== "list-beep"))) throw new Error("Bisher ist nur Listenpiepsen als experimenteller Patch verfügbar. Andere Tweaks können im Prüfmodus geplant werden.");
+    if (["install", "uninstall"].includes(action) && (ids.length === 0 || ids.some(id => !["list-beep", "shorter-delay"].includes(id)))) throw new Error("Bisher sind Listenpiepsen und Listendelay als experimentelle Patches verfügbar. Andere Tweaks können im Prüfmodus geplant werden.");
     return { format: "mzd-aio-web-project", version: 1, name: name.trim(), status: "draft", target: { ...target }, action, tweaks: action === "restore" ? [] : [...new Set(ids)] };
   }
   function parse(text) {
@@ -65,7 +65,8 @@
       + "4. Per USB-Tastatur eingeben: sh /mnt/sda1/tweaks.sh\n"
       + "   Falls Datei nicht gefunden: sda1 durch sdb1, sdc1 oder sdd1 ersetzen.\n"
       + "5. Berichte unter reports/<Zeit>-<PID>/ auf demselben Stick pruefen: run.log (Ausgabe und Fehler), status.txt (Exit-Code), preflight.txt (Dateivergleich, sofern erreicht). Auch fruehe Abbrueche werden protokolliert.\n\n"
-      + "Pruefen veraendert nichts. Install/Uninstall unterstuetzen bisher nur Listenpiepsen, experimentell und noch nicht am Fahrzeug bestaetigt. Vor einer Aenderung im Terminal mit j bestaetigen. MD5 identifiziert Dateistaende, keine Signatur.\n"
+      + "Pruefen veraendert nichts. Install/Uninstall unterstuetzen Listenpiepsen und Listendelay, einzeln und gemeinsam. Experimentell; Fahrzeugtest offen. Vor Aenderungen im Terminal mit j bestaetigen.\n"
+      + "Install fuegt die Auswahl hinzu; Uninstall entfernt nur die Auswahl. Andere aktive Patches bleiben erhalten. Die Datei wird aus dem Original und der gespeicherten aktiven Patchliste neu erzeugt. Ihr zuletzt geschriebener Hash erkennt fremde Aenderungen.\n"
       + "Originale bleiben intern unter /resources/aio-rework/backups/74.00.324A-EU/ erhalten; zusaetzliche Kopie auf diesem USB unter backups/. Installiert/Original wird automatisch erkannt.\n"
       + "Full System Restore ignoriert die Tweak-Auswahl und stellt alle derzeit unterstuetzten, von uns verwalteten Systemdateien wieder her. Alternativ direkt: sh /mnt/sda1/restore.sh . Ein neuer Stick reicht; die Originale liegen intern. Keine Wiederherstellung fremder AIO-Installationen oder Werksreset.\n"
       + "Der MP3-Konsolenzugang mit Tastatur ist der vom Besitzer bestaetigte Weg; dieses neu zusammengestellte Paket ist noch nicht am Fahrzeug getestet.\n"

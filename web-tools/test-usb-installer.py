@@ -17,6 +17,13 @@ args = p.parse_args()
 root = Path(__file__).resolve().parents[1]
 original = args.original.read_bytes()
 patched = original.replace(b"    this._beep('Long', 'Multicontroller');", b"//  this._beep('Long', 'Multicontroller');")
+delay = original
+for before, after in [(b'1Timeout :                1500,', b'1Timeout :                150,'),
+                      (b'2Timeout :                5000,', b'2Timeout :                300,'),
+                      (b'1Interval :               500,', b'1Interval :               200,'),
+                      (b'2Interval :               1000,', b'2Interval :               300,')]:
+    delay = delay.replace(before, after)
+combined = delay.replace(b"    this._beep('Long', 'Multicontroller');", b"//  this._beep('Long', 'Multicontroller');")
 assert hashlib.md5(original).hexdigest() == 'e111883b9dcbeb6bb154521826fcacac'
 assert hashlib.md5(patched).hexdigest() == 'bb290d22840f82b1be14400ddb41f1b0'
 with zipfile.ZipFile(args.zip) as z:
@@ -25,7 +32,7 @@ with zipfile.ZipFile(args.zip) as z:
     assert manifest['mode'] == 'preflight'
     assert manifest['entry'] == 'mp3-console-keyboard'
     assert manifest['command'] == 'sh /mnt/sda1/tweaks.sh'
-    assert len(z.namelist()) == 18
+    assert len(z.namelist()) == 23
     for name, entry in manifest['assets'].items():
         data = z.read(name)
         assert data == (root / 'docs/usb' / name).read_bytes()
@@ -77,6 +84,9 @@ fi
 exec /bin/cp "$@"
 ''')
     write(mockbin / 'mv', f'''#!/bin/sh
+if [ -f {shlex.quote(bp(temp / 'fail-state'))} ] && [ "$1" = -f ]; then
+    case "$3" in */state.txt) echo 'Simulated state write failure' >&2; exit 1 ;; esac
+fi
 /bin/mv "$@" || exit 1
 if [ -f {shlex.quote(bp(temp / 'corrupt-commit'))} ] && [ "$1" = -f ]; then
     case "$2" in *.new) printf 'simulated corrupt write' > "$3" ;; esac
@@ -94,7 +104,7 @@ fi
         main = main.replace('/proc/mounts', shlex.quote(bp(mounts)))
         main = main.replace('PATH=/usr/sbin:/usr/bin:/sbin:/bin', 'PATH=' + shlex.quote(bp(mockbin)) + ':/usr/bin:/bin')
         write(base / 'start.sh', main)
-        worker = (base / 'installer.sh').read_text()
+        worker = (base / 'common.sh').read_text()
         for before, after in [
             ('TARGET=/jci/gui/common/controls/List2/js/List2Ctrl.js', 'TARGET=' + shlex.quote(bp(target))),
             ('RESOURCES=/tmp/mnt/resources', 'RESOURCES=' + shlex.quote(bp(resources))),
@@ -102,12 +112,12 @@ fi
             ('MOUNTS=/proc/mounts', 'MOUNTS=' + shlex.quote(bp(mounts))),
             ('LOCK=/tmp/mzd-aio-rework.lock', 'LOCK=' + shlex.quote(bp(lock))),
         ]: worker = worker.replace(before, after)
-        write(base / 'installer.sh', worker)
+        write(base / 'common.sh', worker)
         auxiliary = cmu / 'launcher.sh'
         write(auxiliary, 'original launcher\n')
         write(base / 'originals.md5', hashlib.md5(auxiliary.read_bytes()).hexdigest() + '  ' + bp(auxiliary) + '\n')
         write(base / 'selected.txt', 'list-beep\n')
-        write(base / 'allowed.txt', 'list-beep\nbackground\n')
+        write(base / 'allowed.txt', 'list-beep\nshorter-delay\nbackground\n')
         write(base / 'action.txt', 'preflight\n')
         return usb
 
@@ -141,7 +151,7 @@ fi
     usb_backup = usb / 'backups/74.00.324A-EU/jci/gui/common/controls/List2/js/List2Ctrl.js.backup/original'
     assert usb_backup.read_bytes() == original
     mtime = (backup / 'original').stat().st_mtime_ns
-    run('install', 0, 'bereits installiert')
+    run('install', 0, 'bereits vorhanden')
     assert (backup / 'original').stat().st_mtime_ns == mtime
     new_usb = package('USB stick B')
     (new_usb / 'mzd/selected.txt').unlink()
@@ -149,17 +159,46 @@ fi
     run('nonsense ignored', 0, 'Original erfolgreich wiederhergestellt', stick=new_usb, restore=True)
     assert target.read_bytes() == original
     assert (new_usb / 'backups/74.00.324A-EU/jci/gui/common/controls/List2/js/List2Ctrl.js.backup/original').read_bytes() == original
-    run('restore', 0, 'Originalzustand bereits vorhanden', stick=new_usb, restore=True)
+    run('restore', 0, 'bereits vorhanden', stick=new_usb, restore=True)
     run('install', 0, 'Erfolgreich installiert')
-    run('uninstall', 0, 'Original erfolgreich wiederhergestellt')
+    run('uninstall', 0, 'Ausgewaehlte Patches entfernt')
     assert target.read_bytes() == original
+    write(usb / 'mzd/selected.txt', 'shorter-delay\n')
+    run('install', 0, 'Erfolgreich installiert')
+    assert target.read_bytes() == delay
+    write(usb / 'mzd/selected.txt', 'list-beep\n')
+    run('install', 0, 'Erfolgreich installiert')
+    assert target.read_bytes() == combined
+    run('uninstall', 0, 'Ausgewaehlte Patches entfernt')
+    assert target.read_bytes() == delay
+    assert 'patch=shorter-delay' in (backup / 'state.txt').read_text()
+    write(usb / 'mzd/selected.txt', 'list-beep\nshorter-delay\n')
+    run('install', 0, 'Erfolgreich installiert')
+    assert target.read_bytes() == combined
+    write(usb / 'mzd/selected.txt', 'shorter-delay\n')
+    run('uninstall', 0, 'Ausgewaehlte Patches entfernt')
+    assert target.read_bytes() == patched
+    assert (backup / 'original').stat().st_mtime_ns == mtime
+    run('restore', 0, 'Original erfolgreich wiederhergestellt', stick=new_usb, restore=True)
+    assert target.read_bytes() == original
+    # The file commit may succeed while its state publication is interrupted.
+    write(usb / 'mzd/selected.txt', 'shorter-delay\n')
+    write(temp / 'fail-state', 'interrupt publication')
+    run('install', 1, 'Zustand konnte nicht gespeichert werden')
+    assert target.read_bytes() == delay and (backup / 'transaction').is_dir()
+    (temp / 'fail-state').unlink()
+    run('preflight', 1, 'Unterbrochener Vorgang erkannt')
+    run('install', 0, 'bereits vorhanden')
+    assert target.read_bytes() == delay and not (backup / 'transaction').exists()
+    run('restore', 0, 'Original erfolgreich wiederhergestellt', stick=new_usb, restore=True)
+    write(usb / 'mzd/selected.txt', 'list-beep\n')
     (backup / 'original').write_bytes(b'corrupt backup')
     run('install', 1, 'ist beschaedigt')
     assert target.read_bytes() == original
     assert (backup / 'original').read_bytes() == b'corrupt backup'
     (backup / 'original').write_bytes(original)
     target.write_bytes(b'unknown system state')
-    run('install', 1, 'anderweitig geaendert')
+    run('install', 1, 'ausserhalb des Installers geaendert')
     assert target.read_bytes() == b'unknown system state'
     target.write_bytes(original)
     # A USB initially mounted ro must also return to ro after its log is written.
@@ -183,12 +222,12 @@ fi
     run('install', 1, 'anderer Installer')
     assert lock.exists()
     lock.rmdir()
-    good_sed = (usb / 'mzd/list-beep.sed').read_bytes()
-    write(usb / 'mzd/list-beep.sed', 's/does-not-exist/unchanged/\n')
-    run('install', 1, 'Ergebnis passt nicht')
+    good_sed = (usb / 'mzd/patches/list-beep.sed').read_bytes()
+    write(usb / 'mzd/patches/list-beep.sed', 's/does-not-exist/unchanged/\n')
+    run('install', 1, 'Patchdefinition passt nicht')
     assert target.read_bytes() == original
     assert not list(target.parent.glob('.mzd-aio-*'))
-    (usb / 'mzd/list-beep.sed').write_bytes(good_sed)
+    (usb / 'mzd/patches/list-beep.sed').write_bytes(good_sed)
     write(temp / 'fail-mount', 'fail')
     run('install', 1, 'Partition nicht beschreibbar')
     assert target.read_bytes() == original
@@ -199,6 +238,7 @@ fi
     (temp / 'corrupt-commit').unlink()
     (backup / 'original').unlink()
     (backup / 'metadata.txt').unlink()
+    (backup / 'state.txt').unlink()
     backup.rmdir()
     target.write_bytes(patched)
     run('uninstall', 1, 'Originalsicherung fehlt')

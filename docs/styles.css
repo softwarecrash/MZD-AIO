@@ -111,3 +111,7 @@ input:focus-visible, select:focus-visible { outline: 3px solid #7ca77a; outline-
 .usb-instructions li { padding: 6px 0; font-size: 14px; line-height: 1.7; }
 .usb-instructions p { font-size: 13px; color: var(--muted); line-height: 1.7; }
 code { font-size: .9em; overflow-wrap: anywhere; background: #e7eadf; padding: 2px 5px; border-radius: 3px; }
+
+.category-group { margin-bottom: 20px; }
+.category-heading { font-size: 17px; font-weight: 650; margin: 12px 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.category-tweaks { display: grid; gap: 12px; }

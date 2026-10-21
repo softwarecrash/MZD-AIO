@@ -39,6 +39,7 @@ module.exports = async function test() {
   assert.equal(project.tweaks.length, 1);
   assert.equal(core.parse(JSON.stringify(project)).name, 'Test \u00e4');
   assert.equal(core.usbFiles(core.project('Install', ['list-beep'], 'install'))['mzd/action.txt'], 'install\n');
+  assert.equal(core.usbFiles(core.project('Both', ['list-beep', 'shorter-delay'], 'install'))['mzd/selected.txt'], 'list-beep\nshorter-delay\n');
   assert.equal(core.project('Restore', ['list-beep'], 'restore').tweaks.length, 0);
   assert.throws(() => core.project('Unsupported', ['background'], 'install'));
   assert.throws(() => core.project('Unknown action', ['list-beep'], 'unknown'));
@@ -52,15 +53,17 @@ module.exports = async function test() {
   for (const name of ['a', 'b', 'c', 'd']) {
     assert.deepEqual(files['mp3/' + name + '.mp3'], new Uint8Array(await fs.readFile(path.join(root, 'docs/usb/mp3', name + '.mp3'))));
   }
-  assert.equal(ids.catalog.children.length, 41);
-  const cb = ids.catalog.children[0].children[0].children[0];
+  const cards = () => ids.catalog.children.flatMap(group => group.children[1].children);
+  assert.equal(ids.catalog.children.length, 4);
+  assert.equal(cards().length, 41);
+  const cb = cards()[0].children[0].children[0];
   cb.checked = true; cb.events.change();
   assert.equal(ids['selection-list'].children.length, 1);
   ids['export-zip'].events.click();
   assert.equal(downloads[0].type, 'application/zip');
   ids.filter.value = 'selected'; ids.filter.events.change();
-  assert.equal(ids.catalog.children.length, 1);
-  ids.reset.events.click(); assert.equal(ids.catalog.children.length, 0);
+  assert.equal(cards().length, 1);
+  ids.reset.events.click(); assert.equal(cards().length, 0);
   await ids['import-file'].events.change({ target: { files: [{ size: 10, text: async () => JSON.stringify(project) }] } });
   assert.equal(ids['selection-list'].children.length, 1);
   await ids['import-file'].events.change({ target: { files: [{ size: 10, text: async () => '{invalid' }] } });
@@ -80,10 +83,10 @@ module.exports = async function test() {
   ids.action.value = 'install'; ids.action.events.change();
   assert.equal(ids['selection-list'].children.length, 1);
   assert.equal(ids['selection-list'].children[0].textContent, 'Listenpiepsen deaktivieren');
-  assert.equal(ids.catalog.children[0].children[0].children[0].disabled, true);
+  assert.equal(cards()[0].children[0].children[0].disabled, true);
   ids.action.value = 'restore'; ids.action.events.change();
   assert.equal(ids['selection-list'].children.length, 0);
-  assert.equal(ids.catalog.children[0].children[0].children[0].disabled, true);
+  assert.equal(cards()[0].children[0].children[0].disabled, true);
   ids['export-zip'].events.click();
   assert.equal(downloads.at(-1).type, 'application/zip');
   const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'mzd-builder-test-'));
