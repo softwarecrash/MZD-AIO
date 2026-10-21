@@ -76,4 +76,3 @@ module.exports = async function test() {
   return { passed: true, zipPath, checks: 'project validation, import, UI model, binary MP3 identity, ZIP creation, manual-only diagnostic sequence' };
 };
 if (require.main === module) module.exports().then(console.log).catch(error => { console.error(error); process.exitCode = 1; });
-
