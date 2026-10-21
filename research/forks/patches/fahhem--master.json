@@ -1,0 +1,39 @@
+{
+  "repository": "fahhem/MZD-AIO",
+  "head": "ebd50710d52fc4410aaa9191b600ea3b1151e6a2",
+  "branch": "master",
+  "base": "409c724ed860497b2a34f9367cb4a019287846ea",
+  "source": "https://github.com/Trevelopment/MZD-AIO/compare/409c724ed860497b2a34f9367cb4a019287846ea...ebd50710d52fc4410aaa9191b600ea3b1151e6a2",
+  "note": "Selected GitHub patch fragments, not a guaranteed applicable full diff. Lockfiles/binary/media and vendored headunit baseline omitted. See heads.json and tree-deltas for broader path coverage.",
+  "files": [
+    {
+      "filename": "app/config.json",
+      "status": "removed",
+      "sha": "35cb40d6e9ee2a15c1eaf0de2eba484ef5bc8c78",
+      "patch": "@@ -1,3 +0,0 @@\n-{\n-    \"debug\": false\n-}"
+    },
+    {
+      "filename": "app/package.json",
+      "status": "modified",
+      "sha": "2e847cccf7568c52b29b8d63367c4b84733400ac",
+      "patch": "@@ -37,7 +37,7 @@\n     \"crlf\": \"^1.1.1\",\n     \"devtron\": \"^1\",\n     \"drivelist\": \"5.2.7\",\n-    \"electron-updater\": \"^2.16.1\",\n+    \"electron-updater\": \"^2.18.2\",\n     \"electron-store\": \"^1.3.0\",\n     \"electron-context-menu\": \"^0.9.1\",\n     \"electron-debug\": \"^1\",\n@@ -50,7 +50,7 @@\n     \"rimraf\": \"^2\"\n   },\n   \"engines\": {\n-    \"node\": \"6.5.x\"\n+    \"node\": \"^6.5.x\"\n   },\n   \"electronVersion\": \"1.6.11\"\n }"
+    },
+    {
+      "filename": "package.json",
+      "status": "modified",
+      "sha": "b42ce4e28074654671aff54331b5897d700bb4a6",
+      "patch": "@@ -20,7 +20,7 @@\n     \"url\": \"https://gitlab.com/Trezdog44/MZD-AIO-TI/issues\"\n   },\n   \"engines\": {\n-    \"node\": \"6.5.x\"\n+    \"node\": \"^6.5.x\"\n   },\n   \"keywords\": [\n     \"Mazda\",\n@@ -168,7 +168,6 @@\n     }\n   },\n   \"devDependencies\": {\n-    \"async\": \"^2\",\n     \"chai\": \"^4\",\n     \"chai-as-promised\": \"^7\",\n     \"dependency-check\": \"^2\","
+    },
+    {
+      "filename": "scripts/build_linux_deb.sh",
+      "status": "modified",
+      "sha": "0e0c18bb901b434b83884fc157c81e38aad70987",
+      "patch": "@@ -5,6 +5,8 @@ set -xue\n docker build -t build-mzd-aio-lnx -f scripts/Dockerfile.linux .\n # run the container with a volume to get the deb out. run our helper\n # script which builds and puts the DEB into the container's /output volume\n-docker run -v ${PWD}:/output \\\n+docker run \\\n+       -v ${PWD}:/work \\\n+       -v ${PWD}:/output \\\n        -t build-mzd-aio-lnx \\\n        /work/scripts/build_linux_deb_helper.sh"
+    },
+    {
+      "filename": "scripts/build_linux_deb_helper.sh",
+      "status": "modified",
+      "sha": null
+    }
+  ]
+}

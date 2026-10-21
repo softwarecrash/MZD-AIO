@@ -1,0 +1,9 @@
+{
+  "repository": "haribala3831/MZD-AIO",
+  "head": "1bbca6ea270e2a84713b72a28f7d4cc8cc7c6a32",
+  "branch": "master",
+  "base": "409c724ed860497b2a34f9367cb4a019287846ea",
+  "source": "https://github.com/Trevelopment/MZD-AIO/compare/409c724ed860497b2a34f9367cb4a019287846ea...1bbca6ea270e2a84713b72a28f7d4cc8cc7c6a32",
+  "note": "Selected GitHub patch fragments, not a guaranteed applicable full diff. Lockfiles/binary/media and vendored headunit baseline omitted. See heads.json and tree-deltas for broader path coverage.",
+  "files": []
+}

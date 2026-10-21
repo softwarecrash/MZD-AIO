@@ -27,7 +27,7 @@ GitHubs Dateiliste liefert Patchfragmente. Bei PR #203 und #168 fehlt das Patchf
 
 - Komplette Textdiskussionen liegen im Snapshot und pro Vorgang als Markdown vor; Hauptbefunde sind im Ergebnisdokument gebündelt.
 - Verlinkte Screenshots, Videos, Binäranhänge und fremde Cloud-Backups sind **nicht** vollständig heruntergeladen/inhaltlich untersucht. Bild-only-Fehlerberichte ohne Text bleiben entsprechend unklar.
-- Externe Threads/Repositories sind zunächst Quellen und Ansatzpunkte. Das ist kein vollständiger Crawl aller Mazda-Foren oder aller Forks.
+- Externe Threads/Repositories sind zunächst Quellen und Ansatzpunkte. Ergänzend sind alle 121 Einträge der öffentlichen Forkliste untersucht: 119 erreichbar, 646 Branchreferenzen und 89 verschiedene Heads. Umfang, zwei nicht erreichbare Einträge und Grenzen der vertieften Prüfung: [Fork-Erfassung](forks/COVERAGE.md). Das ist kein vollständiger Crawl aller Mazda-Foren oder unverbundener Repositorykopien.
 - Die Issues sind öffentliches Nutzermaterial; Antworten können veraltet, spekulativ, widersprüchlich oder sachlich falsch sein. Nicht jede positive Meldung benennt genaue Firmware/Hardware.
 - Kein eigener Desktop-Build, kein Einspielen fremder PRs, kein Fahrzeug-/Prüfstandtest, kein Firmwareflash. Statische Prüfungen betreffen die ausdrücklich genannten Quelldateien.
 - Kein unbekannter Download wurde ausgeführt. Keine Nutzerdaten/Firmwaredumps aus einer CMU liegen vor.

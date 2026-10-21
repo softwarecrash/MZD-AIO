@@ -1,0 +1,6 @@
+{
+  "repo": "baktrak09/MZD-AIO",
+  "sha": "c6a9b361e2fe80b2eb1309b1db3f236aa14a4153",
+  "path": ".github/workflows/factory-aa-touch-tests.yml",
+  "content": "name: Factory AA Touch Smoke Tests\non:\n  push:\n    branches: [factory-aa-touch-fw70]\n  pull_request:\n    paths:\n      - 'app/files/tweaks/29_factoryaatouch-*.txt'\n      - 'app/files/tweaks/factory-aa-touch/**'\n      - 'app/assets/js/build-tweaks.js'\n      - 'tests/test_factory_aa_touch.py'\njobs:\n  smoke:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with:\n          python-version: '3.11'\n      - run: python -m unittest discover -s tests -p test_factory_aa_touch.py -v\n      - run: node --check app/assets/js/build-tweaks.js\n      - run: node --check app/controllers/home.js\n      - run: node tests/test_real_mzd_builder.js\n      - run: python tests/verify_factory_aa_usb.py --output factory-aa-touch-usb-preview\n      - uses: actions/upload-artifact@v4\n        with:\n          name: factory-aa-touch-usb-preview\n          path: factory-aa-touch-usb-preview/\n          if-no-files-found: error\n      - run: sh -n app/files/tweaks/29_factoryaatouch-i.txt\n      - run: sh -n app/files/tweaks/29_factoryaatouch-u.txt\n"
+}

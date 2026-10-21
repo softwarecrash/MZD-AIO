@@ -7,6 +7,7 @@ Stand: 21.10.2026. Ziel: AIO auf einen ausdrücklich benannten aktuellen Gen-6-F
 - [Ergebnisse und belastbare Ansatzpunkte](FINDINGS.md)
 - [Firmware- und Funktionsmatrix](FIRMWARE_MATRIX.md)
 - [Offene PRs mit Bewertung](PR_REVIEW.md)
+- [Alle Forks: v74-Ansätze, Desktop-Reparaturen und AA-Experimente](forks/README.md)
 - [Alle Issues und historischen PR-Diskussionen](ISSUE_INDEX.md)
 - [Quellcode-Landkarte](CODE_MAP.md)
 - [Quellen, Downloads und verknüpfte Projekte](SOURCES.md)

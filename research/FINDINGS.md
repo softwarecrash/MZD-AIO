@@ -107,3 +107,7 @@ Ein Laufwerksobjekt kann ohne verwendbaren Pfad zurückkommen; Dateierzeugung ka
 4. MP3-/Diagnosezugang als Einstieg für eine **zunächst nur lesende** Bestandsaufnahme am Prüfgerät.
 
 **Noch nicht vorhanden:** ein nachweislich vollständiges v74-AIO-Paket, ein eigener CMU-Test, ein getesteter Recoveryweg oder eine pauschale Kompatibilitätsfreigabe.
+
+## Ergänzung: Fork-Recherche
+
+Die [Fork-Auswertung](forks/README.md) enthält einen konkreten v74-Branch von Austin-Metke, Otamays v74-/WLAN-Anpassungen, mehrere Desktop-Neuaufbauten und baktrak09s AA-Experimente. Austins Commit nennt Nutzerberichte zu 74.00.324, übernimmt für einige Funktionen aber weiterhin vollständige v70-Dateien. Deshalb bleibt der genaue Datei-/Firmwareabgleich Voraussetzung; das ist noch kein nachgewiesener Gesamtport. Details, feste SHAs und Patchfragmente: [Bewertung](forks/FINDINGS.md).

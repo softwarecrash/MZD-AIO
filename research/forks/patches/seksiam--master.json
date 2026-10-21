@@ -1,0 +1,15 @@
+{
+  "repository": "seksiam/MZD-AIO",
+  "head": "624d2c8f4deb96c85d4432af1ba1fcde35e59408",
+  "branch": "master",
+  "base": "409c724ed860497b2a34f9367cb4a019287846ea",
+  "source": "https://github.com/Trevelopment/MZD-AIO/compare/409c724ed860497b2a34f9367cb4a019287846ea...624d2c8f4deb96c85d4432af1ba1fcde35e59408",
+  "note": "Selected GitHub patch fragments, not a guaranteed applicable full diff. Lockfiles/binary/media and vendored headunit baseline omitted. See heads.json and tree-deltas for broader path coverage.",
+  "files": [
+    {
+      "filename": "app/ไฟล์/ tweaks/17_videoplayer-i.txt",
+      "status": "renamed",
+      "sha": "5da17d21e95c24e96dba05049369496503364cac"
+    }
+  ]
+}

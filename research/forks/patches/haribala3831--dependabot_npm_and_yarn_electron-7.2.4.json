@@ -1,0 +1,16 @@
+{
+  "repository": "haribala3831/MZD-AIO",
+  "head": "9807683cbbb14dcf6bbb2d86d9fbd68912f09e6b",
+  "branch": "dependabot/npm_and_yarn/electron-7.2.4",
+  "base": "409c724ed860497b2a34f9367cb4a019287846ea",
+  "source": "https://github.com/Trevelopment/MZD-AIO/compare/409c724ed860497b2a34f9367cb4a019287846ea...9807683cbbb14dcf6bbb2d86d9fbd68912f09e6b",
+  "note": "Selected GitHub patch fragments, not a guaranteed applicable full diff. Lockfiles/binary/media and vendored headunit baseline omitted. See heads.json and tree-deltas for broader path coverage.",
+  "files": [
+    {
+      "filename": "package.json",
+      "status": "modified",
+      "sha": "a62ab59e67589f417741d1304d15d1787e498282",
+      "patch": "@@ -172,7 +172,7 @@\n     \"chai-as-promised\": \"^7.1.1\",\n     \"dependency-check\": \"^4.1.0\",\n     \"devtron\": \"^1\",\n-    \"electron\": \"^6.1.9\",\n+    \"electron\": \"^7.2.4\",\n     \"electron-builder\": \"^21.2.0\",\n     \"electron-debug\": \"^3.0.1\",\n     \"electron-is-dev\": \"^1.2.0\","
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "repository": "haribala3831/MZD-AIO",
+  "head": "6ebf7d51d6183671f5d31e2a0f96fc5e99be4487",
+  "branch": "dependabot/npm_and_yarn/jquery-3.5.0",
+  "base": "409c724ed860497b2a34f9367cb4a019287846ea",
+  "source": "https://github.com/Trevelopment/MZD-AIO/compare/409c724ed860497b2a34f9367cb4a019287846ea...6ebf7d51d6183671f5d31e2a0f96fc5e99be4487",
+  "note": "Selected GitHub patch fragments, not a guaranteed applicable full diff. Lockfiles/binary/media and vendored headunit baseline omitted. See heads.json and tree-deltas for broader path coverage.",
+  "files": [
+    {
+      "filename": "package.json",
+      "status": "modified",
+      "sha": "846f9d528406cc8b81844b78def22ee2e88ddc03",
+      "patch": "@@ -194,7 +194,7 @@\n     \"electron-store\": \"^4.0.0\",\n     \"extract-zip\": \"^1.7.0\",\n     \"global\": \"^4.3.2\",\n-    \"jquery\": \"^3.4.1\",\n+    \"jquery\": \"^3.5.0\",\n     \"mkdirp\": \"^0.5.5\",\n     \"node-abi\": \"^2.15.0\",\n     \"xml2js\": \"^0.4.23\""
+    }
+  ]
+}

@@ -1,0 +1,4765 @@
+{
+  "captured_on": "2026-10-21",
+  "upstream_base": "409c724ed860497b2a34f9367cb4a019287846ea",
+  "method": "Public forks endpoint (two pages, oldest first); git ls-remote --heads for every listed repository; compare unique heads; known upstream PR heads reuse prior archive.",
+  "repositories": [
+    {
+      "full_name": "burtay/MZD-AIO-TI-X",
+      "html_url": "https://github.com/burtay/MZD-AIO-TI-X",
+      "default_branch": "master",
+      "created_at": "2017-06-19T19:49:03Z",
+      "updated_at": "2017-06-19T19:49:12Z",
+      "pushed_at": "2017-06-05T00:59:33Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 175974,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "burtay/MZD-AIO-TI-X",
+      "error": "fatal: could not read Username for 'https://github.com': No such device or address"
+    },
+    {
+      "full_name": "SRaromicon/MZD-AIO-TI-X",
+      "html_url": "https://github.com/SRaromicon/MZD-AIO-TI-X",
+      "default_branch": "master",
+      "created_at": "2017-06-24T06:48:20Z",
+      "updated_at": "2017-06-24T06:48:24Z",
+      "pushed_at": "2017-06-05T00:59:33Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 175974,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "SRaromicon/MZD-AIO-TI-X",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "5f37a27ae3c869a1cdaedcc51fd18ab02cfb8c33"
+        }
+      ],
+      "seconds": 4.22
+    },
+    {
+      "full_name": "rnprojekt/MZD-AIO-TI-X",
+      "html_url": "https://github.com/rnprojekt/MZD-AIO-TI-X",
+      "default_branch": "master",
+      "created_at": "2017-07-02T15:16:12Z",
+      "updated_at": "2017-07-02T15:16:16Z",
+      "pushed_at": "2017-06-05T00:59:33Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 175974,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "rnprojekt/MZD-AIO-TI-X",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "5f37a27ae3c869a1cdaedcc51fd18ab02cfb8c33"
+        }
+      ],
+      "seconds": 4.24
+    },
+    {
+      "full_name": "artithw/MZD-AIO-TI-X",
+      "html_url": "https://github.com/artithw/MZD-AIO-TI-X",
+      "default_branch": "master",
+      "created_at": "2017-07-16T05:52:32Z",
+      "updated_at": "2017-07-16T05:52:36Z",
+      "pushed_at": "2017-06-05T00:59:33Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 175974,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "artithw/MZD-AIO-TI-X",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "5f37a27ae3c869a1cdaedcc51fd18ab02cfb8c33"
+        }
+      ],
+      "seconds": 4.23
+    },
+    {
+      "full_name": "rlewkowicz/MZD-AIO-TI-X",
+      "html_url": "https://github.com/rlewkowicz/MZD-AIO-TI-X",
+      "default_branch": "master",
+      "created_at": "2017-08-16T12:08:12Z",
+      "updated_at": "2017-08-16T12:08:16Z",
+      "pushed_at": "2017-07-29T08:13:35Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 81944,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "rlewkowicz/MZD-AIO-TI-X",
+      "heads": [
+        {
+          "name": "Yodog",
+          "sha": "5f37a27ae3c869a1cdaedcc51fd18ab02cfb8c33"
+        },
+        {
+          "name": "master",
+          "sha": "5f37a27ae3c869a1cdaedcc51fd18ab02cfb8c33"
+        }
+      ],
+      "seconds": 4.26
+    },
+    {
+      "full_name": "Techweenies/MZD-AIO-TI-X",
+      "html_url": "https://github.com/Techweenies/MZD-AIO-TI-X",
+      "default_branch": "master",
+      "created_at": "2017-09-09T02:51:53Z",
+      "updated_at": "2023-01-16T15:11:34Z",
+      "pushed_at": "2017-07-29T08:13:35Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 81944,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Techweenies/MZD-AIO-TI-X",
+      "heads": [
+        {
+          "name": "Yodog",
+          "sha": "5f37a27ae3c869a1cdaedcc51fd18ab02cfb8c33"
+        },
+        {
+          "name": "master",
+          "sha": "5f37a27ae3c869a1cdaedcc51fd18ab02cfb8c33"
+        }
+      ],
+      "seconds": 4.26
+    },
+    {
+      "full_name": "middleagedman/MZD-AIO",
+      "html_url": "https://github.com/middleagedman/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2017-09-24T00:00:08Z",
+      "updated_at": "2023-07-07T00:55:32Z",
+      "pushed_at": "2023-07-07T00:55:05Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157653,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "middleagedman/MZD-AIO",
+      "heads": [
+        {
+          "name": "Yodog",
+          "sha": "5f37a27ae3c869a1cdaedcc51fd18ab02cfb8c33"
+        },
+        {
+          "name": "master",
+          "sha": "711ccc54ea8b46ff2402174c890bb174c1ec662e"
+        }
+      ],
+      "seconds": 4.26
+    },
+    {
+      "full_name": "layot/MZD-AIO",
+      "html_url": "https://github.com/layot/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2017-10-02T18:57:56Z",
+      "updated_at": "2017-10-02T18:58:00Z",
+      "pushed_at": "2017-09-24T19:56:42Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 86293,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "layot/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "0ec99dd7863043d65c86f32686e133447ae76d30"
+        }
+      ],
+      "seconds": 4.26
+    },
+    {
+      "full_name": "davidste/MZD-AIO",
+      "html_url": "https://github.com/davidste/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2017-12-03T09:11:23Z",
+      "updated_at": "2017-12-03T09:11:28Z",
+      "pushed_at": "2017-11-30T03:05:42Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 86982,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "davidste/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "4b45727d8e5d09f0840a932a576c6251ca9c0bc1"
+        }
+      ],
+      "seconds": 4.26
+    },
+    {
+      "full_name": "ajdepersio/MZD-AIO",
+      "html_url": "https://github.com/ajdepersio/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2017-12-18T03:47:51Z",
+      "updated_at": "2017-12-18T03:47:55Z",
+      "pushed_at": "2017-11-30T03:05:42Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 86982,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "ajdepersio/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "4b45727d8e5d09f0840a932a576c6251ca9c0bc1"
+        }
+      ],
+      "seconds": 4.11
+    },
+    {
+      "full_name": "cezariuszmarek/MZD-AIO",
+      "html_url": "https://github.com/cezariuszmarek/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2017-12-22T15:29:29Z",
+      "updated_at": "2017-12-22T15:29:33Z",
+      "pushed_at": "2017-11-30T03:05:42Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 86982,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "cezariuszmarek/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "4b45727d8e5d09f0840a932a576c6251ca9c0bc1"
+        }
+      ],
+      "seconds": 4.22
+    },
+    {
+      "full_name": "mikesouza/MZD-AIO",
+      "html_url": "https://github.com/mikesouza/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-01-14T11:29:28Z",
+      "updated_at": "2018-01-14T11:29:32Z",
+      "pushed_at": "2017-12-26T12:56:33Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 89939,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "mikesouza/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "d2cb740bba2461068d5f935a73b2efbaa354747d"
+        }
+      ],
+      "seconds": 4.18
+    },
+    {
+      "full_name": "scottmatthewkiely/MZD-AIO",
+      "html_url": "https://github.com/scottmatthewkiely/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-01-31T00:00:02Z",
+      "updated_at": "2018-01-31T00:00:08Z",
+      "pushed_at": "2018-01-16T10:33:11Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 120037,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "scottmatthewkiely/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "8d0cc96174a699e021e9cfe630e4bf2abd50c3cf"
+        }
+      ],
+      "seconds": 4.16
+    },
+    {
+      "full_name": "fahhem/MZD-AIO",
+      "html_url": "https://github.com/fahhem/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-02-24T18:03:34Z",
+      "updated_at": "2021-11-15T11:32:04Z",
+      "pushed_at": "2018-02-24T18:14:10Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 119854,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "fahhem/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "ebd50710d52fc4410aaa9191b600ea3b1151e6a2"
+        }
+      ],
+      "seconds": 4.15
+    },
+    {
+      "full_name": "epadillac/MZD-AIO",
+      "html_url": "https://github.com/epadillac/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-03-13T00:56:15Z",
+      "updated_at": "2018-03-13T00:56:21Z",
+      "pushed_at": "2018-03-04T12:16:33Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 125958,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "epadillac/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "b07a725bb359d0ff799447f0fce80aec6ca1f87c"
+        }
+      ],
+      "seconds": 4.11
+    },
+    {
+      "full_name": "hori/MZD-AIO",
+      "html_url": "https://github.com/hori/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-04-03T04:36:02Z",
+      "updated_at": "2018-04-03T04:36:08Z",
+      "pushed_at": "2018-03-04T12:16:33Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 125958,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "hori/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "b07a725bb359d0ff799447f0fce80aec6ca1f87c"
+        }
+      ],
+      "seconds": 4.13
+    },
+    {
+      "full_name": "lukasz-skalski/MZD-AIO",
+      "html_url": "https://github.com/lukasz-skalski/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-04-17T11:16:30Z",
+      "updated_at": "2018-04-17T11:16:37Z",
+      "pushed_at": "2018-04-10T11:02:45Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 126796,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "lukasz-skalski/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "07850747268b750eb171f398868d72313b9a4359"
+        }
+      ],
+      "seconds": 4.12
+    },
+    {
+      "full_name": "anmolgarg/MZD-AIO",
+      "html_url": "https://github.com/anmolgarg/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-04-26T00:34:46Z",
+      "updated_at": "2018-04-26T00:34:52Z",
+      "pushed_at": "2018-04-10T11:02:45Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 126796,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "anmolgarg/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "07850747268b750eb171f398868d72313b9a4359"
+        }
+      ],
+      "seconds": 4
+    },
+    {
+      "full_name": "welldeep/MZD-AIO",
+      "html_url": "https://github.com/welldeep/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-05-29T08:44:24Z",
+      "updated_at": "2018-05-29T08:44:30Z",
+      "pushed_at": "2018-04-10T11:02:45Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 126796,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "welldeep/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "07850747268b750eb171f398868d72313b9a4359"
+        }
+      ],
+      "seconds": 4.05
+    },
+    {
+      "full_name": "prafulsurve/MZD-AIO",
+      "html_url": "https://github.com/prafulsurve/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-07-10T21:18:06Z",
+      "updated_at": "2018-07-10T21:18:12Z",
+      "pushed_at": "2018-04-10T11:02:45Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 126796,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "prafulsurve/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "07850747268b750eb171f398868d72313b9a4359"
+        }
+      ],
+      "seconds": 4.03
+    },
+    {
+      "full_name": "devocator/MZD-AIO",
+      "html_url": "https://github.com/devocator/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-08-03T11:53:15Z",
+      "updated_at": "2018-08-03T11:53:21Z",
+      "pushed_at": "2018-07-29T15:08:28Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 146027,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "devocator/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "3dfe2dd896adbf8166168d7bf685bbae49a1d9d4"
+        }
+      ],
+      "seconds": 4.04
+    },
+    {
+      "full_name": "seksiam/MZD-AIO",
+      "html_url": "https://github.com/seksiam/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-08-15T05:02:00Z",
+      "updated_at": "2018-08-23T03:28:28Z",
+      "pushed_at": "2018-08-23T03:28:26Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 146033,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "seksiam/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "624d2c8f4deb96c85d4432af1ba1fcde35e59408"
+        }
+      ],
+      "seconds": 4.02
+    },
+    {
+      "full_name": "ThanhVic/MZD-AIO",
+      "html_url": "https://github.com/ThanhVic/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-10-25T06:09:16Z",
+      "updated_at": "2018-10-25T06:09:22Z",
+      "pushed_at": "2018-09-30T18:45:43Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 148750,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "ThanhVic/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "ac05a8be588d2913c17bf9bd59be482bcf9f855e"
+        }
+      ],
+      "seconds": 3.95
+    },
+    {
+      "full_name": "gwaldo/MZD-AIO",
+      "html_url": "https://github.com/gwaldo/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-10-30T21:13:05Z",
+      "updated_at": "2019-08-01T15:35:19Z",
+      "pushed_at": "2019-08-01T15:35:11Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 151689,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "gwaldo/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "f3f9049cfc804014a912a601a962a573170becfe"
+        }
+      ],
+      "seconds": 3.98
+    },
+    {
+      "full_name": "dirong/MZD-AIO",
+      "html_url": "https://github.com/dirong/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2018-12-18T16:25:26Z",
+      "updated_at": "2018-12-18T16:25:32Z",
+      "pushed_at": "2018-11-20T08:51:03Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 148730,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "dirong/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "7e4427966f2167b9ec71f0403b0d427c504041ac"
+        }
+      ],
+      "seconds": 4.02
+    },
+    {
+      "full_name": "Tomi1979/MZD-AIO",
+      "html_url": "https://github.com/Tomi1979/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2019-01-13T13:36:00Z",
+      "updated_at": "2019-01-13T13:36:06Z",
+      "pushed_at": "2018-11-20T08:51:03Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 148730,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Tomi1979/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "7e4427966f2167b9ec71f0403b0d427c504041ac"
+        }
+      ],
+      "seconds": 4
+    },
+    {
+      "full_name": "aholovan/MZD-AIO",
+      "html_url": "https://github.com/aholovan/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2019-03-20T14:42:34Z",
+      "updated_at": "2019-03-20T14:42:43Z",
+      "pushed_at": "2019-02-25T12:30:49Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 152838,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "aholovan/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "f3f9049cfc804014a912a601a962a573170becfe"
+        }
+      ],
+      "seconds": 3.9
+    },
+    {
+      "full_name": "thanhmmo/MZD-AIO",
+      "html_url": "https://github.com/thanhmmo/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2019-03-25T08:43:30Z",
+      "updated_at": "2019-03-25T08:43:38Z",
+      "pushed_at": "2019-02-25T12:30:49Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 152838,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "thanhmmo/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "f3f9049cfc804014a912a601a962a573170becfe"
+        }
+      ],
+      "seconds": 3.96
+    },
+    {
+      "full_name": "oscarg933/MZD-AIO",
+      "html_url": "https://github.com/oscarg933/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2019-04-08T04:24:32Z",
+      "updated_at": "2019-04-08T04:26:34Z",
+      "pushed_at": "2019-04-08T04:24:49Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 152840,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "oscarg933/MZD-AIO",
+      "error": "fatal: could not read Username for 'https://github.com': No such device or address"
+    },
+    {
+      "full_name": "ipipwong01/MZD-AIO",
+      "html_url": "https://github.com/ipipwong01/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2019-05-07T14:41:47Z",
+      "updated_at": "2019-05-07T14:41:56Z",
+      "pushed_at": "2019-02-25T12:30:49Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 152838,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "ipipwong01/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "f3f9049cfc804014a912a601a962a573170becfe"
+        }
+      ],
+      "seconds": 3.98
+    },
+    {
+      "full_name": "Smok006/MZD-AIO",
+      "html_url": "https://github.com/Smok006/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2019-06-01T16:48:19Z",
+      "updated_at": "2024-03-29T22:27:56Z",
+      "pushed_at": "2024-03-29T22:27:47Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157658,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Smok006/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 3.95
+    },
+    {
+      "full_name": "vmallet/MZD-AIO",
+      "html_url": "https://github.com/vmallet/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2019-06-25T04:53:50Z",
+      "updated_at": "2019-06-25T04:53:57Z",
+      "pushed_at": "2019-02-25T12:30:49Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 152838,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "vmallet/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "f3f9049cfc804014a912a601a962a573170becfe"
+        }
+      ],
+      "seconds": 3.93
+    },
+    {
+      "full_name": "icc-x/MZD-AIO",
+      "html_url": "https://github.com/icc-x/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2019-07-12T04:38:58Z",
+      "updated_at": "2019-07-12T04:39:05Z",
+      "pushed_at": "2019-02-25T12:30:49Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 152838,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "icc-x/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "f3f9049cfc804014a912a601a962a573170becfe"
+        }
+      ],
+      "seconds": 4.13
+    },
+    {
+      "full_name": "tuyenmazda/MZD-AIO",
+      "html_url": "https://github.com/tuyenmazda/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2019-08-01T01:56:07Z",
+      "updated_at": "2019-08-01T02:05:22Z",
+      "pushed_at": "2019-02-25T12:30:49Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 152838,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "tuyenmazda/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "f3f9049cfc804014a912a601a962a573170becfe"
+        }
+      ],
+      "seconds": 4.08
+    },
+    {
+      "full_name": "dauden/MZD-AIO",
+      "html_url": "https://github.com/dauden/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2019-09-26T04:21:54Z",
+      "updated_at": "2019-09-26T04:21:56Z",
+      "pushed_at": "2019-08-26T16:42:57Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 151690,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "dauden/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "931b5a17538c046fabc639e92d4e5ede560909b5"
+        }
+      ],
+      "seconds": 4.09
+    },
+    {
+      "full_name": "jacob963210/MZD-AIO",
+      "html_url": "https://github.com/jacob963210/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2019-11-15T05:26:15Z",
+      "updated_at": "2019-11-15T05:26:17Z",
+      "pushed_at": "2019-08-26T16:42:57Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 151690,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "jacob963210/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "931b5a17538c046fabc639e92d4e5ede560909b5"
+        }
+      ],
+      "seconds": 4.08
+    },
+    {
+      "full_name": "mikow067/MZD-AIO",
+      "html_url": "https://github.com/mikow067/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2020-02-03T17:23:41Z",
+      "updated_at": "2020-02-03T17:24:16Z",
+      "pushed_at": "2019-08-26T16:42:57Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 151690,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "mikow067/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "931b5a17538c046fabc639e92d4e5ede560909b5"
+        }
+      ],
+      "seconds": 4.13
+    },
+    {
+      "full_name": "lptech/MZD-AIO",
+      "html_url": "https://github.com/lptech/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2020-05-08T17:18:54Z",
+      "updated_at": "2020-05-08T17:18:55Z",
+      "pushed_at": "2020-04-29T23:55:18Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 159937,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "lptech/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/jquery-3.5.0",
+          "sha": "6ebf7d51d6183671f5d31e2a0f96fc5e99be4487"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.1
+    },
+    {
+      "full_name": "csirek/MZD-AIO",
+      "html_url": "https://github.com/csirek/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2020-06-10T12:39:50Z",
+      "updated_at": "2020-06-10T12:39:52Z",
+      "pushed_at": "2020-04-29T23:55:18Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 159937,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "csirek/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/jquery-3.5.0",
+          "sha": "6ebf7d51d6183671f5d31e2a0f96fc5e99be4487"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.09
+    },
+    {
+      "full_name": "nlemu001/MZD-AIO",
+      "html_url": "https://github.com/nlemu001/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2020-07-03T07:02:33Z",
+      "updated_at": "2020-07-03T07:02:34Z",
+      "pushed_at": "2020-04-29T23:55:18Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 159937,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "nlemu001/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/jquery-3.5.0",
+          "sha": "6ebf7d51d6183671f5d31e2a0f96fc5e99be4487"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.08
+    },
+    {
+      "full_name": "haribala3831/MZD-AIO",
+      "html_url": "https://github.com/haribala3831/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2020-07-11T19:29:58Z",
+      "updated_at": "2020-07-11T19:46:20Z",
+      "pushed_at": "2020-07-11T19:46:14Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 160772,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "haribala3831/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/electron-7.2.4",
+          "sha": "9807683cbbb14dcf6bbb2d86d9fbd68912f09e6b"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/jquery-3.5.0",
+          "sha": "6ebf7d51d6183671f5d31e2a0f96fc5e99be4487"
+        },
+        {
+          "name": "master",
+          "sha": "1bbca6ea270e2a84713b72a28f7d4cc8cc7c6a32"
+        }
+      ],
+      "seconds": 4.25
+    },
+    {
+      "full_name": "pangfd/MZD-AIO",
+      "html_url": "https://github.com/pangfd/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2020-07-25T07:52:36Z",
+      "updated_at": "2020-07-25T07:52:38Z",
+      "pushed_at": "2020-07-16T07:40:50Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 160116,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "pangfd/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.19",
+          "sha": "b7f72e329a5137cda4931858c54c1495a498517b"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-7.2.4",
+          "sha": "9807683cbbb14dcf6bbb2d86d9fbd68912f09e6b"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/jquery-3.5.0",
+          "sha": "6ebf7d51d6183671f5d31e2a0f96fc5e99be4487"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.19",
+          "sha": "f609e3e27e8fd5ab5c3a0eea96c99d8971c6431e"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.14
+    },
+    {
+      "full_name": "tinkie101/MZD-AIO",
+      "html_url": "https://github.com/tinkie101/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2020-08-24T14:28:45Z",
+      "updated_at": "2020-08-24T14:28:46Z",
+      "pushed_at": "2020-08-20T18:52:29Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157652,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "tinkie101/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.19
+    },
+    {
+      "full_name": "devmau5/MZD-AIO",
+      "html_url": "https://github.com/devmau5/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2020-09-06T22:18:55Z",
+      "updated_at": "2020-09-06T22:18:57Z",
+      "pushed_at": "2020-09-06T12:30:33Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157748,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "devmau5/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/bl-3.0.1",
+          "sha": "3966021fb77c0339b3cebe6d74e941ad0a5da2a7"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/yargs-parser-13.1.2",
+          "sha": "d65eb451249541d0838ecdc4936c996599d5d712"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.12
+    },
+    {
+      "full_name": "timb-machine-mirrors/Trevelopment-MZD-AIO",
+      "html_url": "https://github.com/timb-machine-mirrors/Trevelopment-MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2020-09-13T19:56:29Z",
+      "updated_at": "2025-06-23T10:37:39Z",
+      "pushed_at": "2024-12-05T17:06:58Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157659,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "timb-machine-mirrors/Trevelopment-MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/bl-3.0.1",
+          "sha": "3966021fb77c0339b3cebe6d74e941ad0a5da2a7"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.11
+    },
+    {
+      "full_name": "Pakkapon/MZD-AIO",
+      "html_url": "https://github.com/Pakkapon/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-02-01T16:26:37Z",
+      "updated_at": "2021-02-01T16:26:38Z",
+      "pushed_at": "2021-01-28T19:35:31Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157951,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Pakkapon/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/bl-3.0.1",
+          "sha": "3966021fb77c0339b3cebe6d74e941ad0a5da2a7"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/highlight.js-9.18.5",
+          "sha": "2c7cd025b96f9fcec85cafe94adc377fd39ce374"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ini-1.3.7",
+          "sha": "fd5e6ed6140bd8e4387c15c202ad6f16270d2465"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-9.4.0",
+          "sha": "a4cb1bb98f1ce87e0cb67e2007dd5d40cc6d8e5e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/highlight.js-9.18.5",
+          "sha": "ed152b3ce4460177e630f438bd14f994ca7572a9"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ini-1.3.7",
+          "sha": "f00c747d984f59e708259039b0f3b6849cba7e08"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.11
+    },
+    {
+      "full_name": "fl3Xshtine/MZD-AIO",
+      "html_url": "https://github.com/fl3Xshtine/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-02-15T21:06:40Z",
+      "updated_at": "2021-02-15T21:06:41Z",
+      "pushed_at": "2021-02-05T22:29:41Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157652,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "fl3Xshtine/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.17
+    },
+    {
+      "full_name": "DanePillay-nel/MZD-AIO",
+      "html_url": "https://github.com/DanePillay-nel/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-02-22T20:03:35Z",
+      "updated_at": "2023-04-19T09:05:15Z",
+      "pushed_at": "2023-04-19T09:05:02Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157655,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "DanePillay-nel/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "711ccc54ea8b46ff2402174c890bb174c1ec662e"
+        }
+      ],
+      "seconds": 4.13
+    },
+    {
+      "full_name": "Wasan81022/MZD-AIO",
+      "html_url": "https://github.com/Wasan81022/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-03-05T13:13:18Z",
+      "updated_at": "2021-03-05T13:13:20Z",
+      "pushed_at": "2021-02-05T22:29:41Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157652,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Wasan81022/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 3.96
+    },
+    {
+      "full_name": "udida2000/MZD-AIO",
+      "html_url": "https://github.com/udida2000/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-04-25T14:18:35Z",
+      "updated_at": "2021-04-25T14:18:35Z",
+      "pushed_at": "2021-03-30T02:30:40Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157732,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "udida2000/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 3.9
+    },
+    {
+      "full_name": "matolek19/MZD-AIO",
+      "html_url": "https://github.com/matolek19/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-05-09T10:47:03Z",
+      "updated_at": "2021-05-09T10:47:03Z",
+      "pushed_at": "2021-05-07T13:38:44Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157911,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "matolek19/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 3.91
+    },
+    {
+      "full_name": "AjayaDahal/MZD-AIO",
+      "html_url": "https://github.com/AjayaDahal/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-05-15T02:38:47Z",
+      "updated_at": "2021-05-15T02:38:48Z",
+      "pushed_at": "2021-05-09T15:31:28Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157991,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "AjayaDahal/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 3.98
+    },
+    {
+      "full_name": "chengrao2021/MZD-AIO",
+      "html_url": "https://github.com/chengrao2021/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-05-16T05:44:55Z",
+      "updated_at": "2021-05-16T05:44:56Z",
+      "pushed_at": "2021-05-09T15:31:28Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157991,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "chengrao2021/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 3.92
+    },
+    {
+      "full_name": "chuongnx/MZD-AIO",
+      "html_url": "https://github.com/chuongnx/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-05-21T07:38:50Z",
+      "updated_at": "2021-05-21T07:38:51Z",
+      "pushed_at": "2021-05-09T15:31:28Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157991,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "chuongnx/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 3.92
+    },
+    {
+      "full_name": "phaz3E/MZD-AIO",
+      "html_url": "https://github.com/phaz3E/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-06-20T02:00:57Z",
+      "updated_at": "2021-06-20T02:00:58Z",
+      "pushed_at": "2021-06-10T23:33:14Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158151,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "phaz3E/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 3.91
+    },
+    {
+      "full_name": "Lobo18/MZD-AIO",
+      "html_url": "https://github.com/Lobo18/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-07-09T06:25:49Z",
+      "updated_at": "2021-07-09T06:25:49Z",
+      "pushed_at": "2021-06-10T23:33:14Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158151,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Lobo18/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 3.92
+    },
+    {
+      "full_name": "Farizov/MZD-AIO",
+      "html_url": "https://github.com/Farizov/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-07-21T17:29:32Z",
+      "updated_at": "2021-07-21T17:29:32Z",
+      "pushed_at": "2021-06-10T23:33:14Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158151,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Farizov/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.28
+    },
+    {
+      "full_name": "italiks/MZD-AIO",
+      "html_url": "https://github.com/italiks/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-08-07T12:25:32Z",
+      "updated_at": "2021-08-07T12:25:33Z",
+      "pushed_at": "2021-08-03T19:51:58Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158231,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "italiks/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.15",
+          "sha": "1823f0313d95f672956d43cde72865da38a778d7"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.2
+    },
+    {
+      "full_name": "ertek3069/MZD-AIO",
+      "html_url": "https://github.com/ertek3069/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-09-28T21:27:42Z",
+      "updated_at": "2021-09-28T21:27:43Z",
+      "pushed_at": "2021-08-31T20:35:52Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158312,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "ertek3069/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.23
+    },
+    {
+      "full_name": "itdonline/MZD-AIO",
+      "html_url": "https://github.com/itdonline/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-11-20T15:16:10Z",
+      "updated_at": "2021-11-20T15:16:11Z",
+      "pushed_at": "2021-10-12T22:09:30Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158399,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "itdonline/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-11.5.0",
+          "sha": "201f6acf0210d0a84538453ce7d3b6ddf0a95aec"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.2
+    },
+    {
+      "full_name": "knjasper/MZD-AIO",
+      "html_url": "https://github.com/knjasper/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-11-28T17:41:59Z",
+      "updated_at": "2021-11-28T17:42:00Z",
+      "pushed_at": "2021-10-12T22:09:30Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158399,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "knjasper/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-11.5.0",
+          "sha": "201f6acf0210d0a84538453ce7d3b6ddf0a95aec"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.14
+    },
+    {
+      "full_name": "GAR122992/MZD-AIO",
+      "html_url": "https://github.com/GAR122992/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-12-01T22:49:31Z",
+      "updated_at": "2021-12-01T22:49:32Z",
+      "pushed_at": "2021-10-12T22:09:30Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158399,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "GAR122992/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-11.5.0",
+          "sha": "201f6acf0210d0a84538453ce7d3b6ddf0a95aec"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.18
+    },
+    {
+      "full_name": "krevlorn/MZD-AIO",
+      "html_url": "https://github.com/krevlorn/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2021-12-26T17:19:35Z",
+      "updated_at": "2021-12-26T17:19:36Z",
+      "pushed_at": "2021-10-12T22:09:30Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158399,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "krevlorn/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-11.5.0",
+          "sha": "201f6acf0210d0a84538453ce7d3b6ddf0a95aec"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.19
+    },
+    {
+      "full_name": "jongpoole/MZD-AIO",
+      "html_url": "https://github.com/jongpoole/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2022-01-02T22:58:01Z",
+      "updated_at": "2022-01-02T22:58:02Z",
+      "pushed_at": "2021-10-12T22:09:30Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158399,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "jongpoole/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-11.5.0",
+          "sha": "201f6acf0210d0a84538453ce7d3b6ddf0a95aec"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.12
+    },
+    {
+      "full_name": "cesarcaro97/MZD-AIO",
+      "html_url": "https://github.com/cesarcaro97/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2022-02-04T22:03:06Z",
+      "updated_at": "2022-01-31T22:27:54Z",
+      "pushed_at": "2022-01-15T03:12:47Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158482,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "cesarcaro97/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-11.5.0",
+          "sha": "201f6acf0210d0a84538453ce7d3b6ddf0a95aec"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.04
+    },
+    {
+      "full_name": "JDStar/MZD-AIO",
+      "html_url": "https://github.com/JDStar/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2022-02-09T14:31:00Z",
+      "updated_at": "2022-02-09T06:24:57Z",
+      "pushed_at": "2022-01-15T03:12:47Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158482,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "JDStar/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-11.5.0",
+          "sha": "201f6acf0210d0a84538453ce7d3b6ddf0a95aec"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.09
+    },
+    {
+      "full_name": "Aask42/MZD-AIO",
+      "html_url": "https://github.com/Aask42/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2022-02-10T21:57:05Z",
+      "updated_at": "2025-01-02T23:15:02Z",
+      "pushed_at": "2025-01-02T23:14:55Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157674,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Aask42/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-11.5.0",
+          "sha": "201f6acf0210d0a84538453ce7d3b6ddf0a95aec"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.03
+    },
+    {
+      "full_name": "xray11279/MZD-AIO",
+      "html_url": "https://github.com/xray11279/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2022-06-07T01:14:45Z",
+      "updated_at": "2022-06-06T20:08:54Z",
+      "pushed_at": "2022-04-13T10:20:39Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158749,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "xray11279/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-13.6.6",
+          "sha": "69079109ce5c46a161d929df637153f75149ea0a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4
+    },
+    {
+      "full_name": "hilakornis/MZD-AIO",
+      "html_url": "https://github.com/hilakornis/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2022-08-07T10:54:08Z",
+      "updated_at": "2022-07-31T19:22:49Z",
+      "pushed_at": "2022-07-18T20:49:56Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158863,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "hilakornis/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.04
+    },
+    {
+      "full_name": "e11en/MZD-AIO",
+      "html_url": "https://github.com/e11en/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2022-11-01T20:16:57Z",
+      "updated_at": "2022-11-01T00:16:18Z",
+      "pushed_at": "2022-07-18T20:49:56Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158863,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "e11en/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 4.02
+    },
+    {
+      "full_name": "acidburn0zzz/MZD-AIO",
+      "html_url": "https://github.com/acidburn0zzz/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2022-11-16T21:09:45Z",
+      "updated_at": "2022-11-17T08:37:47Z",
+      "pushed_at": "2026-07-28T01:38:43Z",
+      "forks_count": 0,
+      "open_issues_count": 8,
+      "size": 157848,
+      "archived": false,
+      "disabled": false,
+      "description": "Fork of Desktop app for AIO ",
+      "repository": "acidburn0zzz/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/app-builder-lib-and-electron-builder-24.13.3",
+          "sha": "ae456bf979205a926920f61ce8112507d03ee16b"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/semver-and-drivelist-and-electron-store-and-electron-updater-and-node-abi-7.5.3",
+          "sha": "52442ee32b3353b59243e2b20b6869a30ea6032f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "6af80d937e6e45494f3d3dfffcc4e1b6cf5cac11"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "91e4922e78d437c915458efe9c6a40c645c8efa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/npm_and_yarn-c615dfa45a",
+          "sha": "ad42c33c2aa9a2ec5848fdbbb4c0efa8a15399de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "e69f5911fbef6ccba873b59c64e6bdac618a8f74"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/word-wrap-1.2.4",
+          "sha": "04b2b7ab33563221be2ba48ca29a9b21d9ab3e88"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/xml2js-0.5.0",
+          "sha": "7ae1466252a44ded0e5e984ec90eb21d47bfd842"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 3.95
+    },
+    {
+      "full_name": "tal166/MZD-AIO",
+      "html_url": "https://github.com/tal166/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2022-12-01T22:51:39Z",
+      "updated_at": "2022-11-30T12:09:37Z",
+      "pushed_at": "2022-11-10T16:57:28Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157732,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "tal166/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-18.3.7",
+          "sha": "0c626f3b4dbef80172ef28007e33ca18fd94d587"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "255fa84a0636c8b2ff5c88a90c0123ae7f37dc07"
+        }
+      ],
+      "seconds": 3.98
+    },
+    {
+      "full_name": "vongles/MZD-AIO",
+      "html_url": "https://github.com/vongles/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2023-01-22T18:20:42Z",
+      "updated_at": "2023-01-22T18:20:32Z",
+      "pushed_at": "2023-01-01T20:32:38Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158221,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "vongles/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "711ccc54ea8b46ff2402174c890bb174c1ec662e"
+        }
+      ],
+      "seconds": 4.09
+    },
+    {
+      "full_name": "Automated-Entity/MZD-AIO",
+      "html_url": "https://github.com/Automated-Entity/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2023-01-25T18:52:49Z",
+      "updated_at": "2023-01-24T17:42:21Z",
+      "pushed_at": "2023-01-01T20:32:38Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158221,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Automated-Entity/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-18.3.7",
+          "sha": "0c626f3b4dbef80172ef28007e33ca18fd94d587"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "711ccc54ea8b46ff2402174c890bb174c1ec662e"
+        }
+      ],
+      "seconds": 4.06
+    },
+    {
+      "full_name": "huyxuhao/MZD-AIO",
+      "html_url": "https://github.com/huyxuhao/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2023-09-12T05:58:48Z",
+      "updated_at": "2023-09-12T05:58:49Z",
+      "pushed_at": "2023-01-01T20:32:38Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158221,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "huyxuhao/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "711ccc54ea8b46ff2402174c890bb174c1ec662e"
+        }
+      ],
+      "seconds": 4.05
+    },
+    {
+      "full_name": "ddoylez/MZD-AIO",
+      "html_url": "https://github.com/ddoylez/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2023-09-26T19:46:07Z",
+      "updated_at": "2023-09-26T19:46:07Z",
+      "pushed_at": "2023-01-01T20:32:38Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158221,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "ddoylez/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "711ccc54ea8b46ff2402174c890bb174c1ec662e"
+        }
+      ],
+      "seconds": 4.05
+    },
+    {
+      "full_name": "Bestakes/MZD-AIO",
+      "html_url": "https://github.com/Bestakes/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2023-11-11T18:12:24Z",
+      "updated_at": "2023-11-11T18:12:24Z",
+      "pushed_at": "2023-01-01T20:32:38Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158221,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Bestakes/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-18.3.7",
+          "sha": "0c626f3b4dbef80172ef28007e33ca18fd94d587"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/y18n-4.0.1",
+          "sha": "7ee518dc78019c7201bfbb580b4c4cc544de5f72"
+        },
+        {
+          "name": "master",
+          "sha": "711ccc54ea8b46ff2402174c890bb174c1ec662e"
+        }
+      ],
+      "seconds": 4.06
+    },
+    {
+      "full_name": "tigerwang3133/MZD-AIO",
+      "html_url": "https://github.com/tigerwang3133/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2024-03-29T01:56:34Z",
+      "updated_at": "2024-04-26T01:10:59Z",
+      "pushed_at": "2024-03-29T01:57:00Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "tigerwang3133/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app-builder-lib-and-electron-builder-24.13.3",
+          "sha": "c5b60b9632faf08c9009f74ac280ded9b44d6885"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/semver-5.7.2",
+          "sha": "b7c300caa74a44fcfd8193063ba60119a97f1228"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-22.3.25",
+          "sha": "b11eaf1ea44a1a4d970e8ca8d0b31945f29f624d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "disable_touchscreen_completely",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.08
+    },
+    {
+      "full_name": "whleucka/MZD-AIO",
+      "html_url": "https://github.com/whleucka/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2024-04-12T15:24:42Z",
+      "updated_at": "2024-04-12T15:24:42Z",
+      "pushed_at": "2024-03-04T21:01:40Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "whleucka/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4
+    },
+    {
+      "full_name": "hanhha/MZD-AIO",
+      "html_url": "https://github.com/hanhha/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2024-06-05T15:40:45Z",
+      "updated_at": "2024-06-05T15:43:00Z",
+      "pushed_at": "2024-06-05T15:42:53Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157663,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "hanhha/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "0ac13af88b4d5b6e1a0771013bcef0935e7cf62b"
+        }
+      ],
+      "seconds": 3.94
+    },
+    {
+      "full_name": "Knoxville504/MZD-AIO",
+      "html_url": "https://github.com/Knoxville504/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2024-06-07T09:07:13Z",
+      "updated_at": "2024-06-07T09:07:13Z",
+      "pushed_at": "2024-06-07T09:08:03Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Knoxville504/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app-builder-lib-and-electron-builder-24.13.3",
+          "sha": "c5b60b9632faf08c9009f74ac280ded9b44d6885"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/semver-5.7.2",
+          "sha": "b7c300caa74a44fcfd8193063ba60119a97f1228"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-22.3.25",
+          "sha": "b11eaf1ea44a1a4d970e8ca8d0b31945f29f624d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "dfdddda",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.3
+    },
+    {
+      "full_name": "KernelGhost/MZD-AIO",
+      "html_url": "https://github.com/KernelGhost/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2024-06-13T13:04:58Z",
+      "updated_at": "2024-06-13T13:25:47Z",
+      "pushed_at": "2024-06-13T13:25:41Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157658,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "KernelGhost/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "a6e3816ddacbfb28065194f310ea950dd9dfda39"
+        }
+      ],
+      "seconds": 4.2
+    },
+    {
+      "full_name": "jdchaiken/MZD-AIO",
+      "html_url": "https://github.com/jdchaiken/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2024-07-29T00:41:04Z",
+      "updated_at": "2024-07-29T00:41:04Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "jdchaiken/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app-builder-lib-and-electron-builder-24.13.3",
+          "sha": "c5b60b9632faf08c9009f74ac280ded9b44d6885"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/semver-5.7.2",
+          "sha": "b7c300caa74a44fcfd8193063ba60119a97f1228"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-22.3.25",
+          "sha": "b11eaf1ea44a1a4d970e8ca8d0b31945f29f624d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.18
+    },
+    {
+      "full_name": "paulzay/MZD-AIO",
+      "html_url": "https://github.com/paulzay/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2024-08-27T09:23:54Z",
+      "updated_at": "2024-08-27T09:23:54Z",
+      "pushed_at": "2024-08-30T22:18:54Z",
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "size": 191046,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "paulzay/MZD-AIO",
+      "heads": [
+        {
+          "name": "imgbot",
+          "sha": "39cf938aa8b524cc147a8c842a1afd477879cc1d"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.15
+    },
+    {
+      "full_name": "samaltx/MZD-AIO",
+      "html_url": "https://github.com/samaltx/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2024-09-23T06:12:03Z",
+      "updated_at": "2024-09-23T06:12:03Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "samaltx/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.24
+    },
+    {
+      "full_name": "letranloc/MZD-AIO",
+      "html_url": "https://github.com/letranloc/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2024-10-11T08:34:44Z",
+      "updated_at": "2024-10-11T08:34:44Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "letranloc/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app-builder-lib-and-electron-builder-24.13.3",
+          "sha": "c5b60b9632faf08c9009f74ac280ded9b44d6885"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/semver-5.7.2",
+          "sha": "b7c300caa74a44fcfd8193063ba60119a97f1228"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-22.3.25",
+          "sha": "b11eaf1ea44a1a4d970e8ca8d0b31945f29f624d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.21
+    },
+    {
+      "full_name": "sydragos/MZD-AIO",
+      "html_url": "https://github.com/sydragos/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2024-11-10T05:37:55Z",
+      "updated_at": "2024-11-10T05:37:55Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "sydragos/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app-builder-lib-and-electron-builder-24.13.3",
+          "sha": "c5b60b9632faf08c9009f74ac280ded9b44d6885"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/semver-5.7.2",
+          "sha": "b7c300caa74a44fcfd8193063ba60119a97f1228"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-22.3.25",
+          "sha": "b11eaf1ea44a1a4d970e8ca8d0b31945f29f624d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.22
+    },
+    {
+      "full_name": "imhsz/MZD-AIO",
+      "html_url": "https://github.com/imhsz/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2024-11-23T06:50:01Z",
+      "updated_at": "2024-11-23T06:50:01Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "imhsz/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.19
+    },
+    {
+      "full_name": "ataetgi/mzd-aio",
+      "html_url": "https://github.com/ataetgi/mzd-aio",
+      "default_branch": "master",
+      "created_at": "2025-04-07T19:50:47Z",
+      "updated_at": "2025-04-07T19:50:47Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "ataetgi/mzd-aio",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.11
+    },
+    {
+      "full_name": "CJX9923/MZD-AIO",
+      "html_url": "https://github.com/CJX9923/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2025-05-11T10:55:32Z",
+      "updated_at": "2025-05-11T10:55:32Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "CJX9923/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app-builder-lib-and-electron-builder-24.13.3",
+          "sha": "c5b60b9632faf08c9009f74ac280ded9b44d6885"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/semver-5.7.2",
+          "sha": "b7c300caa74a44fcfd8193063ba60119a97f1228"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-22.3.25",
+          "sha": "b11eaf1ea44a1a4d970e8ca8d0b31945f29f624d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 3.99
+    },
+    {
+      "full_name": "CanadianSike/MZD-AIO",
+      "html_url": "https://github.com/CanadianSike/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2025-06-16T16:33:11Z",
+      "updated_at": "2025-06-16T16:33:12Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "CanadianSike/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.02
+    },
+    {
+      "full_name": "vehicle-stuff/MZD-AIO",
+      "html_url": "https://github.com/vehicle-stuff/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2025-06-20T12:04:29Z",
+      "updated_at": "2025-12-03T09:31:26Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "vehicle-stuff/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.05
+    },
+    {
+      "full_name": "sacredneobi/MZD-AIO",
+      "html_url": "https://github.com/sacredneobi/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2025-07-13T12:38:58Z",
+      "updated_at": "2025-07-13T12:38:58Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "sacredneobi/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.03
+    },
+    {
+      "full_name": "marcojoao/MZD-AIO",
+      "html_url": "https://github.com/marcojoao/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2025-08-29T10:06:59Z",
+      "updated_at": "2025-08-29T10:06:59Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "marcojoao/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.04
+    },
+    {
+      "full_name": "tevin1e12/MZD-AIO",
+      "html_url": "https://github.com/tevin1e12/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2025-09-01T11:09:22Z",
+      "updated_at": "2025-09-01T11:09:22Z",
+      "pushed_at": "2025-09-01T11:58:16Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158372,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "tevin1e12/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app-builder-lib-and-electron-builder-24.13.3",
+          "sha": "c5b60b9632faf08c9009f74ac280ded9b44d6885"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/semver-5.7.2",
+          "sha": "b7c300caa74a44fcfd8193063ba60119a97f1228"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-22.3.25",
+          "sha": "b11eaf1ea44a1a4d970e8ca8d0b31945f29f624d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        },
+        {
+          "name": "patch-1",
+          "sha": "ee14237b81cebf23da830585c451dee91f88252d"
+        }
+      ],
+      "seconds": 3.95
+    },
+    {
+      "full_name": "KeanuR88/MZD-AIO",
+      "html_url": "https://github.com/KeanuR88/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2025-09-01T21:34:56Z",
+      "updated_at": "2025-09-02T13:20:38Z",
+      "pushed_at": "2025-09-01T21:35:55Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158383,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "KeanuR88/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app-builder-lib-and-electron-builder-24.13.3",
+          "sha": "c5b60b9632faf08c9009f74ac280ded9b44d6885"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/semver-5.7.2",
+          "sha": "b7c300caa74a44fcfd8193063ba60119a97f1228"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-22.3.25",
+          "sha": "b11eaf1ea44a1a4d970e8ca8d0b31945f29f624d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "master",
+          "sha": "a88a1e54a6e1fd0bd1eff6ba28474879c5132f8b"
+        }
+      ],
+      "seconds": 3.99
+    },
+    {
+      "full_name": "ImMaxime/MZD-AIO",
+      "html_url": "https://github.com/ImMaxime/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2025-09-06T16:33:08Z",
+      "updated_at": "2025-09-06T16:33:08Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "ImMaxime/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.18
+    },
+    {
+      "full_name": "anderml1955/MZD-AIO",
+      "html_url": "https://github.com/anderml1955/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2025-10-02T05:16:20Z",
+      "updated_at": "2025-10-02T05:16:20Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "anderml1955/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.23
+    },
+    {
+      "full_name": "Raph-royalty/MZD-AIO",
+      "html_url": "https://github.com/Raph-royalty/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2025-10-17T11:36:58Z",
+      "updated_at": "2025-10-17T11:36:58Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Android Auto for Mazda",
+      "repository": "Raph-royalty/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.19
+    },
+    {
+      "full_name": "M-H-Mukit/MZD-AIO",
+      "html_url": "https://github.com/M-H-Mukit/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2025-12-27T23:33:15Z",
+      "updated_at": "2025-12-27T23:33:15Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "M-H-Mukit/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.18
+    },
+    {
+      "full_name": "sudosammy/MZD-AIO",
+      "html_url": "https://github.com/sudosammy/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-01-03T05:35:52Z",
+      "updated_at": "2026-01-03T05:35:52Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "sudosammy/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.1
+    },
+    {
+      "full_name": "javiersm/MZD-AIO",
+      "html_url": "https://github.com/javiersm/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-01-13T09:45:17Z",
+      "updated_at": "2026-01-16T05:40:52Z",
+      "pushed_at": "2026-01-16T05:40:49Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157740,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "javiersm/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "847c44ffd7e48e2705dc0e9ed9ede426f26d3296"
+        }
+      ],
+      "seconds": 4.1
+    },
+    {
+      "full_name": "keriaco-arch/MZD-AIO",
+      "html_url": "https://github.com/keriaco-arch/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-03-30T13:19:41Z",
+      "updated_at": "2026-03-30T13:19:41Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "keriaco-arch/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app-builder-lib-and-electron-builder-24.13.3",
+          "sha": "c5b60b9632faf08c9009f74ac280ded9b44d6885"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/semver-5.7.2",
+          "sha": "b7c300caa74a44fcfd8193063ba60119a97f1228"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-22.3.25",
+          "sha": "b11eaf1ea44a1a4d970e8ca8d0b31945f29f624d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.08
+    },
+    {
+      "full_name": "four44135/MZD-AIO",
+      "html_url": "https://github.com/four44135/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-05-06T03:08:19Z",
+      "updated_at": "2026-05-06T03:08:19Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "four44135/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.15
+    },
+    {
+      "full_name": "j00bi/MZD-AIO",
+      "html_url": "https://github.com/j00bi/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-05-09T05:38:28Z",
+      "updated_at": "2026-05-09T06:25:47Z",
+      "pushed_at": "2026-05-09T06:25:44Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158326,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "j00bi/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app-builder-lib-and-electron-builder-24.13.3",
+          "sha": "c5b60b9632faf08c9009f74ac280ded9b44d6885"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/semver-5.7.2",
+          "sha": "b7c300caa74a44fcfd8193063ba60119a97f1228"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-22.3.25",
+          "sha": "b11eaf1ea44a1a4d970e8ca8d0b31945f29f624d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "master",
+          "sha": "fe3c42cf4cd333cdd8ce46b812bcf6bf898ebe57"
+        }
+      ],
+      "seconds": 4.18
+    },
+    {
+      "full_name": "Mihanoidii/MZD-AIO",
+      "html_url": "https://github.com/Mihanoidii/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-05-23T14:58:37Z",
+      "updated_at": "2026-05-23T14:58:37Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Mihanoidii/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.16
+    },
+    {
+      "full_name": "axel92b/MZD-AIO",
+      "html_url": "https://github.com/axel92b/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-06-02T08:20:59Z",
+      "updated_at": "2026-06-02T08:20:59Z",
+      "pushed_at": "2026-06-02T08:47:29Z",
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "size": 157653,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "axel92b/MZD-AIO",
+      "heads": [
+        {
+          "name": "copilot/fix-app-opening-error",
+          "sha": "bcd2f17a7435d6d67e45551f83a17998e1205953"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.16
+    },
+    {
+      "full_name": "PingusPepan/MZD-AIO",
+      "html_url": "https://github.com/PingusPepan/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-06-09T16:03:33Z",
+      "updated_at": "2026-06-09T16:03:33Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "PingusPepan/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.2
+    },
+    {
+      "full_name": "grepmykeys/MZD-AIO",
+      "html_url": "https://github.com/grepmykeys/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-06-27T19:24:47Z",
+      "updated_at": "2026-06-28T05:51:38Z",
+      "pushed_at": "2026-06-28T05:52:51Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157705,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "grepmykeys/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "300c21ce36f18ebb5867bd44e5aa72332a414a0e"
+        }
+      ],
+      "seconds": 4.14
+    },
+    {
+      "full_name": "daraccrafter/MZD-AIO",
+      "html_url": "https://github.com/daraccrafter/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-08-09T07:05:58Z",
+      "updated_at": "2026-08-09T07:05:58Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "daraccrafter/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.09
+    },
+    {
+      "full_name": "baktrak09/MZD-AIO",
+      "html_url": "https://github.com/baktrak09/MZD-AIO",
+      "default_branch": "aio-modernization",
+      "created_at": "2026-08-15T11:39:58Z",
+      "updated_at": "2026-10-07T00:23:37Z",
+      "pushed_at": "2026-10-10T12:49:59Z",
+      "forks_count": 0,
+      "open_issues_count": 1,
+      "size": 170879,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "baktrak09/MZD-AIO",
+      "heads": [
+        {
+          "name": "aa-audio-diagnostics",
+          "sha": "8795738e5df78a79585f9cfdfcf0d7f6ed53c559"
+        },
+        {
+          "name": "aa-factory-audio-routing-test",
+          "sha": "2fedd8134229dfdb7f87c78905882e81fed985b7"
+        },
+        {
+          "name": "aa-factory-integration-repair",
+          "sha": "a0cbb953f6a550324de345406f37a60bd996c66e"
+        },
+        {
+          "name": "aa-focus-state-fix-20261008",
+          "sha": "1d4bcf45ae32685658b34c9892d14ec86bf3d73e"
+        },
+        {
+          "name": "aa-native-focus-stream-test",
+          "sha": "1838d2c7ec3f2ae489bb116464f7ef10033a9a92"
+        },
+        {
+          "name": "aio-modernization",
+          "sha": "a6ed0e5e915c25ed6a0b3d443b05f548f9baaeb1"
+        },
+        {
+          "name": "factory-aa-touch-fw70",
+          "sha": "c6a9b361e2fe80b2eb1309b1db3f236aa14a4153"
+        }
+      ],
+      "seconds": 4.17
+    },
+    {
+      "full_name": "napoviga/MZD-AIO",
+      "html_url": "https://github.com/napoviga/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-08-16T07:29:52Z",
+      "updated_at": "2026-08-16T07:29:52Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "napoviga/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.11
+    },
+    {
+      "full_name": "n3k0lai/MZD-AIO",
+      "html_url": "https://github.com/n3k0lai/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-08-31T13:47:04Z",
+      "updated_at": "2026-08-31T13:47:04Z",
+      "pushed_at": "2026-10-15T16:50:59Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157732,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "n3k0lai/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        },
+        {
+          "name": "rust-nix",
+          "sha": "4a9f9fdf440b02ae3d43bb5db587e71a50e3fb2d"
+        }
+      ],
+      "seconds": 4.02
+    },
+    {
+      "full_name": "Otamay/MZD-AIO",
+      "html_url": "https://github.com/Otamay/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-09-21T23:07:43Z",
+      "updated_at": "2026-09-21T23:41:42Z",
+      "pushed_at": "2026-09-21T23:41:36Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157698,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Otamay/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "f18ac13919a89e3ce869ac937751813f1d982e88"
+        }
+      ],
+      "seconds": 4.06
+    },
+    {
+      "full_name": "Perroabuelo/MZD-AIO",
+      "html_url": "https://github.com/Perroabuelo/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-09-27T18:45:34Z",
+      "updated_at": "2026-09-27T18:45:34Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Perroabuelo/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 3.99
+    },
+    {
+      "full_name": "nielsderdaele/MZD-AIO",
+      "html_url": "https://github.com/nielsderdaele/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-10-02T17:29:51Z",
+      "updated_at": "2026-10-02T17:29:52Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "nielsderdaele/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4.04
+    },
+    {
+      "full_name": "Austin-Metke/MZD-AIO",
+      "html_url": "https://github.com/Austin-Metke/MZD-AIO",
+      "default_branch": "main",
+      "created_at": "2026-10-02T20:52:46Z",
+      "updated_at": "2026-10-02T21:10:58Z",
+      "pushed_at": "2026-10-03T05:14:13Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158226,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Austin-Metke/MZD-AIO",
+      "heads": [
+        {
+          "name": "main",
+          "sha": "67788a600cb4b33b4e9a6adb1c562770bc53c2d3"
+        },
+        {
+          "name": "v74-support",
+          "sha": "3d2a1c984a4409e9d69de90c7b49997fa63253d1"
+        }
+      ],
+      "seconds": 3.97
+    },
+    {
+      "full_name": "sash04ek/MZD-AIO",
+      "html_url": "https://github.com/sash04ek/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-10-08T05:42:37Z",
+      "updated_at": "2026-10-08T05:42:37Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "sash04ek/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 4
+    },
+    {
+      "full_name": "herasymchyk-oleksii/MZD-AIO",
+      "html_url": "https://github.com/herasymchyk-oleksii/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-10-17T18:28:45Z",
+      "updated_at": "2026-10-17T18:28:45Z",
+      "pushed_at": "2026-10-18T07:47:01Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 157796,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "herasymchyk-oleksii/MZD-AIO",
+      "heads": [
+        {
+          "name": "dependabot/npm_and_yarn/ajv-6.12.6",
+          "sha": "a04b97aed52351e90731f39370d9e9797c4e657f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app-builder-lib-and-electron-builder-24.13.3",
+          "sha": "c5b60b9632faf08c9009f74ac280ded9b44d6885"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/ajv-6.12.6",
+          "sha": "9a1b17fd8df4b0ffcc1eaf255d30d6593a3b17de"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/lodash-4.17.21",
+          "sha": "f9e601d48943f045286f30b29061fe3b1d922f2a"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/semver-5.7.2",
+          "sha": "b7c300caa74a44fcfd8193063ba60119a97f1228"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/simple-get-3.1.1",
+          "sha": "abf21682d4f5c50434eeca7d66e111428bf744bb"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/app/thenify-3.3.1",
+          "sha": "92c149629e1e96ab40bfe35a6e666c7b06a349ba"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/async-3.2.2",
+          "sha": "329d0e331f566bdeb4a64372fc2648a3886da8e6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/decode-uri-component-0.2.2",
+          "sha": "1b16499cde6cdb3f899aec855b704a1b29eb7f8c"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/ejs-and-electron-builder-and-spectron-3.1.8",
+          "sha": "ccfed4817c5c6fb473d739af63402216eb7f5b89"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/electron-22.3.25",
+          "sha": "b11eaf1ea44a1a4d970e8ca8d0b31945f29f624d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/flat-and-mocha-5.0.2",
+          "sha": "25a921d2fbe313f9df02f467fa0fa3bb2ac9a16f"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/glob-parent-5.1.2",
+          "sha": "4b312e60b4f052eb09ffe19d720c19ea6fb327c6"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/handlebars-4.7.7",
+          "sha": "4856ea645bc56379a3e7d02ba06bd1de67cf375e"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/hosted-git-info-2.8.9",
+          "sha": "81d9a8e571a8ed3706bdc6db57a172d9944c09fa"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/json5-2.2.3",
+          "sha": "9783e230efa7b220ff91f5c9f5546bb099257125"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/lodash-4.17.21",
+          "sha": "5c39387fb57e6a832601f5cbd79c87638e7bdcd0"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/normalize-url-4.5.1",
+          "sha": "280f50df84510b92f106f903aea5abce269f7fdc"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/path-parse-1.0.7",
+          "sha": "4614c04be8400a5c09ce6cd299fcd960963cb202"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/pathval-1.1.1",
+          "sha": "9d24f458d2f50baa3bbb8e8e12be7dfd772dafa4"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/qs-6.5.3",
+          "sha": "8bbd81fab7f0aa09c7727dd3901a44852a46d7ae"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/shelljs-0.8.5",
+          "sha": "2565f3552c3798b350463ed75e1f16b3efd5f068"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/tar-4.4.19",
+          "sha": "a88b12ec1429fea20ad8445bf26f1807164cf23d"
+        },
+        {
+          "name": "dependabot/npm_and_yarn/thenify-3.3.1",
+          "sha": "19a18149c2166dcd93ff8e0d368d1fc88e6f8dbc"
+        },
+        {
+          "name": "design/modern-macos-interface",
+          "sha": "9a60352a467726bfc0ca369ab26a06dccfc14705"
+        },
+        {
+          "name": "fix/macos-2.8.6-startup-wifi",
+          "sha": "1322731803c0197681c799de875309fda8bdfe23"
+        },
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 3.96
+    },
+    {
+      "full_name": "Jimbobnz/MZD-AIO",
+      "html_url": "https://github.com/Jimbobnz/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-10-17T22:57:24Z",
+      "updated_at": "2026-10-17T22:57:24Z",
+      "pushed_at": "2024-06-13T13:29:34Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "Desktop app for AIO ",
+      "repository": "Jimbobnz/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "409c724ed860497b2a34f9367cb4a019287846ea"
+        }
+      ],
+      "seconds": 3.86
+    },
+    {
+      "full_name": "softwarecrash/MZD-AIO",
+      "html_url": "https://github.com/softwarecrash/MZD-AIO",
+      "default_branch": "master",
+      "created_at": "2026-10-21T08:49:08Z",
+      "updated_at": "2026-10-21T09:16:37Z",
+      "pushed_at": "2026-10-21T09:16:27Z",
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "size": 158370,
+      "archived": false,
+      "disabled": false,
+      "description": "MZD-AIO Rework",
+      "repository": "softwarecrash/MZD-AIO",
+      "heads": [
+        {
+          "name": "master",
+          "sha": "c129e5a126e266f09ca3808c403f7ec24737bed0"
+        }
+      ],
+      "seconds": 4.13
+    }
+  ]
+}

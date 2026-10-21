@@ -1,0 +1,16 @@
+{
+  "repository": "axel92b/MZD-AIO",
+  "head": "bcd2f17a7435d6d67e45551f83a17998e1205953",
+  "branch": "copilot/fix-app-opening-error",
+  "base": "409c724ed860497b2a34f9367cb4a019287846ea",
+  "source": "https://github.com/Trevelopment/MZD-AIO/compare/409c724ed860497b2a34f9367cb4a019287846ea...bcd2f17a7435d6d67e45551f83a17998e1205953",
+  "note": "Selected GitHub patch fragments, not a guaranteed applicable full diff. Lockfiles/binary/media and vendored headunit baseline omitted. See heads.json and tree-deltas for broader path coverage.",
+  "files": [
+    {
+      "filename": "package.json",
+      "status": "modified",
+      "sha": "dd6a487f51890eea1d6c4b2b8a7bda4426bc8eb3",
+      "patch": "@@ -37,7 +37,7 @@\n     \"coverage\": \"istanbul cover node_modules/.bin/_mocha -- --recursive\",\n     \"depcheck\": \"dependency-check app --entry main.js --unused --no-dev\",\n     \"lint\": \"standard\",\n-    \"start\": \"electron ./app/main\",\n+    \"start\": \"electron ./app\",\n     \"clean:linux\": \"rimraf releases/linux* release/*.deb release/*.AppImage\",\n     \"clean:osx\": \"rimraf releases/mac\",\n     \"clean:win\": \"rimraf releases/win*\","
+    }
+  ]
+}

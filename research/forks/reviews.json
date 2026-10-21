@@ -1,0 +1,194 @@
+[
+  {
+    "repository": "baktrak09/MZD-AIO",
+    "pull_request": 1,
+    "type": "reviews",
+    "items": []
+  },
+  {
+    "repository": "baktrak09/MZD-AIO",
+    "pull_request": 1,
+    "type": "comments",
+    "items": []
+  },
+  {
+    "repository": "axel92b/MZD-AIO",
+    "pull_request": 1,
+    "type": "reviews",
+    "items": []
+  },
+  {
+    "repository": "axel92b/MZD-AIO",
+    "pull_request": 1,
+    "type": "comments",
+    "items": []
+  },
+  {
+    "repository": "grepmykeys/MZD-AIO",
+    "pull_request": 1,
+    "type": "reviews",
+    "items": [
+      {
+        "id": 4586192060,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/1#pullrequestreview-4586192060",
+        "author": "codacy-production[bot]",
+        "body": "### Pull Request Overview\n\nWhile this PR successfully upgrades the application to Electron 29 and modernizes several legacy APIs (moving to @electron/remote and Promise-based dialogs), it introduces significant security risks and a potential runtime crash. Although automated analysis indicates the project is up to standards, the manual review reveals critical misconfigurations in the Electron sandbox environment.\n\nThe most concerning issues involve the bypass of Electron's security model. The implementation effectively forces 'nodeIntegration' to true while disabling 'contextIsolation', which exposes the host machine to arbitrary code execution risks. Additionally, a logic error in file cleanup during download cancellation will likely cause the main process to crash when attempting to remove files using directory-specific commands.\n\nThe CI pipeline is currently limited to linting. To ensure the stability of this major version jump, it is recommended to integrate functional tests that validate the newly migrated Promise-based APIs and crash handling logic.\n\n#### About this PR\n- The PR explicitly disables Electron security warnings while maintaining 'nodeIntegration: true'. This contradicts modern Electron security best practices and should be revisited alongside the contextIsolation configuration.\n- The new CI workflow (.github/workflows/ci.yml) only executes linting. Given the migration from legacy callback APIs to Promises and the move to Electron 29, functional tests (using the existing Mocha/Chai setup) should be integrated into the pipeline to prevent regressions.\n\n<details>\n<summary><b><code>1</code> comment outside of the diff</b></summary>\n\n<details>\n<summary><code>app/main.js</code></summary>\n\n> <sub>`line 574` :red_circle: HIGH RISK</sub>\n> `savePath` refers to a file, but `fs.rmdirSync` is designed for directories. This will cause an `ENOTDIR` error and crash the process when a download is cancelled. Use `fs.unlinkSync` instead.\n> \n> ```suggestion\n>             fs.unlinkSync(`${savePath}`)\n> ```\n\n</details>\n\n</details>\n\n#### Test suggestions\n- [ ] Missing: Verify Electron 29 environment initialization and @electron/remote module setup in main and renderer processes.\n- [ ] Missing: Validate the async/await flow and result handling for background image and theme selection dialogs.\n- [ ] Missing: Verify 'render-process-gone' correctly catches renderer crashes and displays the detailed error dialog.\n- [ ] Missing: Test that setWindowOpenHandler effectively blocks all window.open() calls from the renderer.\n- [ ] Missing: Verify successful Promise-based extraction of zip files and subsequent file deletion during the download process.\n- [x] Found: Check CI workflow execution for dependency installation and code linting on push/PR.\n- [ ] Missing: Automatable unit test for download cancellation handling to ensure file deletion (unlink) works without throwing ENOTDIR.\n- [ ] Missing: Automatable unit test for the zip extraction catch block to ensure error events are sent to the mainWindow.\n\n<details>\n<summary>Prompt proposal for missing tests</summary>\n\n```\nConsider implementing these tests if applicable:\n1. Missing: Verify Electron 29 environment initialization and @electron/remote module setup in main and renderer processes.\n2. Missing: Validate the async/await flow and result handling for background image and theme selection dialogs.\n3. Missing: Verify 'render-process-gone' correctly catches renderer crashes and displays the detailed error dialog.\n4. Missing: Test that setWindowOpenHandler effectively blocks all window.open() calls from the renderer.\n5. Missing: Verify successful Promise-based extraction of zip files and subsequent file deletion during the download process.\n6. Missing: Automatable unit test for download cancellation handling to ensure file deletion (unlink) works without throwing ENOTDIR.\n7. Missing: Automatable unit test for the zip extraction catch block to ensure error events are sent to the mainWindow.\n```\n\n</details>\n\n\n\n##\n\n<sub>`TIP` Improve review quality by [adding custom instructions](https://docs.codacy.com/codacy-ai/codacy-ai/#custom-instructions)</sub>\n<sub>`TIP` How was this review? [Give us feedback](https://tally.so/r/jaBlA1?org=upstateautomate&repo=MZD-AIO&pr=1)</sub>\n<!-- e34d5167-b092-49eb-b8c8-33859ab00079 -->",
+        "state": "COMMENTED",
+        "commit_id": "3319d3a4e22ad48f15f0cabcfebef7016e1540d3"
+      }
+    ]
+  },
+  {
+    "repository": "grepmykeys/MZD-AIO",
+    "pull_request": 1,
+    "type": "comments",
+    "items": [
+      {
+        "id": 3486743998,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/1#discussion_r3486743998",
+        "author": "codacy-production[bot]",
+        "body": "<sub>:red_circle: HIGH RISK</sub>\n\nDisabling `contextIsolation` while `nodeIntegration` is enabled is a significant security risk in Electron 29. It allows the renderer process to access Node.js internals directly. To properly modernize this app, you should enable `contextIsolation` and use `contextBridge` to securely expose necessary APIs.\n\nTry running the following prompt in your IDE agent:\n> Refactor the Electron window creation in app/main.js and the script in app/preload.js to support contextIsolation: true and nodeIntegration: false. Use contextBridge.exposeInMainWorld to safely expose required @electron/remote and IPC functionality to the renderer process.\n<!-- e34d5167-b092-49eb-b8c8-33859ab00079 -->",
+        "path": "app/main.js",
+        "commit_id": "2a159dc7f35ceb0a2acf7964fff7e0687828eff5",
+        "original_commit_id": "3319d3a4e22ad48f15f0cabcfebef7016e1540d3"
+      },
+      {
+        "id": 3486743999,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/1#discussion_r3486743999",
+        "author": "codacy-production[bot]",
+        "body": "<sub>:yellow_circle: MEDIUM RISK</sub>\n\nThe zip extraction error is caught but only logged to the console. If the extraction fails (e.g., due to disk space), the user won't know why the process stopped. It is better to notify the renderer process so an error message can be shown in the UI.\n\n```suggestion\n        }).catch((err) => {\n          console.error(err)\n          mainWindow.webContents.send('app-error', `Extraction failed: ${err.message}`)\n        })\n```\n<!-- e34d5167-b092-49eb-b8c8-33859ab00079 -->",
+        "path": "app/main.js",
+        "commit_id": "3319d3a4e22ad48f15f0cabcfebef7016e1540d3",
+        "original_commit_id": "3319d3a4e22ad48f15f0cabcfebef7016e1540d3"
+      },
+      {
+        "id": 3486744000,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/1#discussion_r3486744000",
+        "author": "codacy-production[bot]",
+        "body": "<sub>:yellow_circle: MEDIUM RISK</sub>\n\nThe logical OR operator `||` causes `nodeIntegration` to always evaluate to `true` when the config value is `false` (because false is falsy). Since the project supports Node 18+, use the nullish coalescing operator `??` to respect the configured boolean value.\n\n```suggestion\n        'nodeIntegration': pjson.config.nodeIntegration ?? true,\n```\n<!-- e34d5167-b092-49eb-b8c8-33859ab00079 -->",
+        "path": "app/main.js",
+        "commit_id": "3319d3a4e22ad48f15f0cabcfebef7016e1540d3",
+        "original_commit_id": "3319d3a4e22ad48f15f0cabcfebef7016e1540d3"
+      },
+      {
+        "id": 3486744002,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/1#discussion_r3486744002",
+        "author": "codacy-production[bot]",
+        "body": "<sub>:white_circle: LOW RISK</sub>\n\nNitpick: `continue-on-error: true` allows the CI to pass even if the linter finds errors. This makes the linting check ineffective for preventing code quality regressions.\n\nTry running the following prompt in your coding agent:\n> Remove `continue-on-error: true` from the lint step in `.github/workflows/ci.yml`.\n<!-- e34d5167-b092-49eb-b8c8-33859ab00079 -->",
+        "path": ".github/workflows/ci.yml",
+        "commit_id": "3319d3a4e22ad48f15f0cabcfebef7016e1540d3",
+        "original_commit_id": "3319d3a4e22ad48f15f0cabcfebef7016e1540d3"
+      }
+    ]
+  },
+  {
+    "repository": "grepmykeys/MZD-AIO",
+    "pull_request": 2,
+    "type": "reviews",
+    "items": [
+      {
+        "id": 4586740226,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/2#pullrequestreview-4586740226",
+        "author": "codacy-production[bot]",
+        "body": "### Pull Request Overview\n\nWhile the PR successfully updates version strings and repository URLs, there are critical implementation gaps that will lead to application crashes. Most notably, the migration to `@electron/remote` is incomplete; while initialized in the main process, it has not been enabled for the renderer's `webContents`, which will break all renderer-side Electron calls. Additionally, the `mkdirp` upgrade is incomplete, leaving the variable undefined and using deprecated synchronous methods.\n\nA significant concern is the mismatch between the PR description and the actual changes. The description claims to have updated `preload.js`, fixed `fs.rmdirSync` calls, and added CI workflows, but none of these changes are present in the provided diff. These missing requirements, combined with the logic errors in `installCS.js` and the fragile exception handling in `main.js`, suggest this PR is not yet ready for production.\n\n#### About this PR\n- There is a discrepancy between the PR description and the changes provided. The following items are mentioned but missing from the diff: updates to `preload.js`, the change from `fs.rmdirSync` to `fs.unlinkSync`, and the addition of GitHub Action CI/release workflows. Please ensure all intended files are committed.\n\n\n\n#### Test suggestions\n- [ ] Missing: Trigger a SyntaxError with 'Performance' in the message in the main process and verify the app remains running.\n- [ ] Missing: Verify successful directory creation in 'build-tweaks.js' using the new Promise-based mkdirp call.\n- [ ] Missing: Confirm '@electron/remote' is correctly initialized in the main process and accessible in renderers like 'aapatcher.js' and 'zoom.js'.\n- [ ] Missing: Verify that 'drivelist' v12 correctly enumerates USB drives on the target OS (Win/Mac/Linux).\n\n<details>\n<summary>Prompt proposal for missing tests</summary>\n\n```\nConsider implementing these tests if applicable:\n1. Missing: Trigger a SyntaxError with 'Performance' in the message in the main process and verify the app remains running.\n2. Missing: Verify successful directory creation in 'build-tweaks.js' using the new Promise-based mkdirp call.\n3. Missing: Confirm '@electron/remote' is correctly initialized in the main process and accessible in renderers like 'aapatcher.js' and 'zoom.js'.\n4. Missing: Verify that 'drivelist' v12 correctly enumerates USB drives on the target OS (Win/Mac/Linux).\n```\n\n</details>\n\n\n\n##\n\n<sub>`TIP` Improve review quality by [adding custom instructions](https://docs.codacy.com/codacy-ai/codacy-ai/#custom-instructions)</sub>\n<sub>`TIP` How was this review? [Give us feedback](https://tally.so/r/jaBlA1?org=upstateautomate&repo=MZD-AIO&pr=2)</sub>\n<!-- e34d5167-b092-49eb-b8c8-33859ab00079 -->",
+        "state": "COMMENTED",
+        "commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44"
+      },
+      {
+        "id": 4586744102,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/2#pullrequestreview-4586744102",
+        "author": "coderabbitai[bot]",
+        "body": "**Actionable comments posted: 3**\n\n<details>\n<summary>🤖 Prompt for all review comments with AI agents</summary>\n\n```\nVerify each finding against current code. Fix only still-valid issues, skip the\nrest with a brief reason, keep changes minimal, and validate.\n\nInline comments:\nIn `@app/assets/js/notifications.js`:\n- Around line 25-26: The update recovery links in notifications.js are using\nclick-only anchors, which removes native link behavior and keyboard\naccessibility. Update the markup in the update-available and snackbarstay paths\nso the anchor has a real href pointing to the releases URL, and keep the\nshell.openExternal(...) handler as the onclick delegate. Use the existing update\nlink generation in this module to preserve the current URL while restoring\nproper link semantics.\n\nIn `@app/main.js`:\n- Around line 28-31: The uncaughtException guard in main should be narrowed\nbecause the current SyntaxError check is too broad and can swallow unrelated\nerrors. Update the filter in the main process exception handler to match only\nthe specific electron-updater performance timing failure, using the existing\nuncaughtException logic and the e instanceof SyntaxError branch as the locator.\nKeep the benign network-request case ignored, but let all other SyntaxError\ncases continue to the normal crash path.\n\nIn `@app/package.json`:\n- Around line 38-48: Regenerate the lockfile for the app dependencies so it\nmatches the updated declarations in package.json. Update app/package-lock.json\nto reflect the bumped versions for drivelist, electron-updater, and mkdirp, and\nensure the lock entries tied to those packages no longer reference the older\nresolved versions. Verify the package-lock is consistent with npm ci by aligning\nthe affected dependency records and their transitive metadata.\n```\n\n</details>\n\n<details>\n<summary>🪄 Autofix (Beta)</summary>\n\nFix all unresolved CodeRabbit comments on this PR:\n\n- [ ] <!-- {\"checkboxId\": \"4b0d0e0a-96d7-4f10-b296-3a18ea78f0b9\"} --> Push a commit to this branch (recommended)\n- [ ] <!-- {\"checkboxId\": \"ff5b1114-7d8c-49e6-8ac1-43f82af23a33\"} --> Create a new PR with the fixes\n\n</details>\n\n---\n\n<details>\n<summary>ℹ️ Review info</summary>\n\n<details>\n<summary>⚙️ Run configuration</summary>\n\n**Configuration used**: defaults\n\n**Review profile**: CHILL\n\n**Plan**: Pro\n\n**Run ID**: `e49cda39-f0d7-4ce3-a3f4-87e0a5709205`\n\n</details>\n\n<details>\n<summary>📥 Commits</summary>\n\nReviewing files that changed from the base of the PR and between 93028f355e0395357e2772609471ba37317c9ce3 and 70b213b555d3ffa6920273be271cf71d7673fb44.\n\n</details>\n\n<details>\n<summary>📒 Files selected for processing (9)</summary>\n\n* `app/assets/js/aapatcher.js`\n* `app/assets/js/build-tweaks.js`\n* `app/assets/js/index.js`\n* `app/assets/js/installCS.js`\n* `app/assets/js/notifications.js`\n* `app/assets/js/zoom.js`\n* `app/main.js`\n* `app/package.json`\n* `package.json`\n\n</details>\n\n</details>\n\n<!-- This is an auto-generated comment by CodeRabbit for review status -->",
+        "state": "COMMENTED",
+        "commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44"
+      },
+      {
+        "id": 4586744112,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/2#pullrequestreview-4586744112",
+        "author": "copilot-pull-request-reviewer[bot]",
+        "body": "## Pull request overview\n\nThis PR cuts the **v2.9.0** release, bundling several stability fixes required to run the app on modern Electron (14+) and Node 22. The most impactful changes migrate deprecated `electron.remote` usage to the standalone `@electron/remote` package, modernize the `mkdirp` and `drivelist` APIs, harden the main-process crash handler against benign `electron-updater` timing errors, and point update-error links at the new `upstateautomate/MZD-AIO` repository.\n\n**Changes:**\n- Replace `electron.remote` with `require('@electron/remote')` across renderer scripts and bump native/utility deps (`drivelist` v12, `mkdirp` v3, `electron-updater` ^6.8.9).\n- Make `uncaughtException` ignore benign `Performance` `SyntaxError`s and add an `unhandledRejection` logger in `main.js`.\n- Bump version to `2.9.0` and update release URLs in `notifications.js`.\n\n### Reviewed changes\n\nCopilot reviewed 9 out of 9 changed files in this pull request and generated 1 comment.\n\n<details>\n<summary>Show a summary per file</summary>\n\n| File | Description |\r\n| ---- | ----------- |\r\n| package.json | Version bump to 2.9.0; bump `drivelist` to ^12 and `mkdirp` to ^3 |\r\n| app/package.json | Version bump; bump `drivelist`, `electron-updater`, `mkdirp`; `@electron/remote` dependency present |\r\n| app/main.js | Skip `app.quit()` for benign `Performance` `SyntaxError`; add `unhandledRejection` logger |\r\n| app/assets/js/zoom.js | Use `@electron/remote` for `Menu` |\r\n| app/assets/js/notifications.js | Update update-error links to `upstateautomate/MZD-AIO` |\r\n| app/assets/js/installCS.js | Use `@electron/remote` for `app`/`dialog` |\r\n| app/assets/js/index.js | Split `electron` and `@electron/remote` imports |\r\n| app/assets/js/build-tweaks.js | Migrate `mkdirp` callback API to promise API (introduces a runtime defect — see comment) |\r\n| app/assets/js/aapatcher.js | Use `@electron/remote` for `app`/`dialog` |\n</details>\n\n\n\n\n\n\n\n---\n\n💡 <a href=\"/upstateautomate/MZD-AIO/new/master?filename=.github/instructions/*.instructions.md\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Add Copilot custom instructions</a> for smarter, more guided reviews. <a href=\"https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot\" class=\"Link--inTextBlock\" target=\"_blank\" rel=\"noopener noreferrer\">Learn how to get started</a>.",
+        "state": "COMMENTED",
+        "commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44"
+      }
+    ]
+  },
+  {
+    "repository": "grepmykeys/MZD-AIO",
+    "pull_request": 2,
+    "type": "comments",
+    "items": [
+      {
+        "id": 3487127588,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/2#discussion_r3487127588",
+        "author": "codacy-production[bot]",
+        "body": "<sub>:red_circle: HIGH RISK</sub>\n\nDirectly injecting HTML with inline 'onclick' handlers is insecure and can lead to XSS vulnerabilities. Furthermore, because `shell` is declared with `const`, it will not be accessible to inline HTML event handlers, resulting in a ReferenceError when the link is clicked. It is recommended to use jQuery to create the element and bind the event listener programmatically.\n\nTry running the following prompt in your IDE agent:\n> In `app/assets/js/notifications.js`, refactor the `.html()` call on line 25 and the `snackbarstay` call on line 26 to avoid raw HTML injection with inline `onclick` handlers. Use jQuery to create the anchor elements and attach the `shell.openExternal` call using `.on('click', ...)`. Use the URL: `https://github.com/upstateautomate/MZD-AIO/releases`.\n\n##\n\n[See Issue in Codacy](https://app.codacy.com/gh/upstateautomate/MZD-AIO/pull-requests/2/issues#issue-4d0ef8c344996445bbaba3456641c011)\n<!-- e34d5167-b092-49eb-b8c8-33859ab00079 -->",
+        "path": "app/assets/js/notifications.js",
+        "commit_id": "0b4a103b9af0bae3d37c0704e1915903ec66a8cf",
+        "original_commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44"
+      },
+      {
+        "id": 3487127590,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/2#discussion_r3487127590",
+        "author": "codacy-production[bot]",
+        "body": "<sub>:red_circle: HIGH RISK</sub>\n\nThe variable 'mkdirp' is not defined in this scope. Additionally, the upgrade to 'mkdirp@3.0.1' introduces breaking changes to the synchronous API. While the promise-based syntax on line 63 is correct, the 'mkdirp.sync' call on line 79 will fail at runtime.\n\nTry running the following prompt in your IDE agent:\n> In `app/assets/js/build-tweaks.js`, add `const { mkdirp, mkdirpSync } = require('mkdirp')` at the top of the file. Then update line 63 to use the promise-based `mkdirp()` and line 79 to use `mkdirpSync()` instead of `mkdirp.sync()`.\n\n##\n\n[See Issue in Codacy](https://app.codacy.com/gh/upstateautomate/MZD-AIO/pull-requests/2/issues#issue-ac6a85e40bab5c4ec58c5e2d5ff3ca9b)\n<!-- e34d5167-b092-49eb-b8c8-33859ab00079 -->",
+        "path": "app/assets/js/build-tweaks.js",
+        "commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44",
+        "original_commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44"
+      },
+      {
+        "id": 3487127591,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/2#discussion_r3487127591",
+        "author": "codacy-production[bot]",
+        "body": "<sub>:red_circle: HIGH RISK</sub>\n\nWhen migrating to `@electron/remote`, you must enable it for each webContents in the main process. Try running the following prompt in your coding agent: > Add `require('@electron/remote/main').enable(mainWindow.webContents)` after the BrowserWindow instance is created in `app/main.js`.\n<!-- e34d5167-b092-49eb-b8c8-33859ab00079 -->",
+        "path": "app/main.js",
+        "commit_id": "0b4a103b9af0bae3d37c0704e1915903ec66a8cf",
+        "original_commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44"
+      },
+      {
+        "id": 3487127592,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/2#discussion_r3487127592",
+        "author": "codacy-production[bot]",
+        "body": "<sub>:yellow_circle: MEDIUM RISK</sub>\n\nThe `csInstaller` function is missing the `done` callback parameter required by its internal logic. Callers will never be notified of completion.\n<!-- e34d5167-b092-49eb-b8c8-33859ab00079 -->",
+        "path": "app/assets/js/installCS.js",
+        "commit_id": "0b4a103b9af0bae3d37c0704e1915903ec66a8cf",
+        "original_commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44"
+      },
+      {
+        "id": 3487130761,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/2#discussion_r3487130761",
+        "author": "coderabbitai[bot]",
+        "body": "_🎯 Functional Correctness_ | _🟠 Major_ | _⚡ Quick win_\n\n**Restore a real `href` on these update links.**\n\nThese anchors are now click-only. Without `href`, they lose native link semantics and usually aren't keyboard-focusable, which turns the update recovery path into an accessibility blocker. Keep the new URL, but render it as a real link and let `onclick` delegate to `shell.openExternal(...)`.\n\n<details>\n<summary>Suggested fix</summary>\n\n```diff\n-  $('`#update-available`').html('<a onclick=\"shell.openExternal(\\'https://github.com/upstateautomate/MZD-AIO/releases\\')\" class=\"link\">ERROR: CLICK HERE FOR UPDATE.</a>')\n-  snackbarstay(`<a onclick=\"shell.openExternal(\\'https://github.com/upstateautomate/MZD-AIO/releases\\')\" class=\"link\">UPDATE ERROR: CLICK HERE TO DOWNLOAD THE LATEST UPDATE.</a>`)\n+  $('`#update-available`').html('<a href=\"https://github.com/upstateautomate/MZD-AIO/releases\" onclick=\"shell.openExternal(this.href); return false;\" class=\"link\">ERROR: CLICK HERE FOR UPDATE.</a>')\n+  snackbarstay(`<a href=\"https://github.com/upstateautomate/MZD-AIO/releases\" onclick=\"shell.openExternal(this.href); return false;\" class=\"link\">UPDATE ERROR: CLICK HERE TO DOWNLOAD THE LATEST UPDATE.</a>`)\n```\n</details>\n\n<!-- suggestion_start -->\n\n<details>\n<summary>📝 Committable suggestion</summary>\n\n> ‼️ **IMPORTANT**\n> Carefully review the code before committing. Ensure that it accurately replaces the highlighted code, contains no missing lines, and has no issues with indentation. Thoroughly test & benchmark the code to ensure it meets the requirements.\n\n```suggestion\n  $('`#update-available`').html('<a href=\"https://github.com/upstateautomate/MZD-AIO/releases\" onclick=\"shell.openExternal(this.href); return false;\" class=\"link\">ERROR: CLICK HERE FOR UPDATE.</a>')\n  snackbarstay(`<a href=\"https://github.com/upstateautomate/MZD-AIO/releases\" onclick=\"shell.openExternal(this.href); return false;\" class=\"link\">UPDATE ERROR: CLICK HERE TO DOWNLOAD THE LATEST UPDATE.</a>`)\n```\n\n</details>\n\n<!-- suggestion_end -->\n\n<details>\n<summary>🤖 Prompt for AI Agents</summary>\n\n```\nVerify each finding against current code. Fix only still-valid issues, skip the\nrest with a brief reason, keep changes minimal, and validate.\n\nIn `@app/assets/js/notifications.js` around lines 25 - 26, The update recovery\nlinks in notifications.js are using click-only anchors, which removes native\nlink behavior and keyboard accessibility. Update the markup in the\nupdate-available and snackbarstay paths so the anchor has a real href pointing\nto the releases URL, and keep the shell.openExternal(...) handler as the onclick\ndelegate. Use the existing update link generation in this module to preserve the\ncurrent URL while restoring proper link semantics.\n```\n\n</details>\n\n<!-- fingerprinting:phantom:poseidon:grasshopper -->\n\n<!-- cr-indicator-types:potential_issue -->\n\n<!-- cr-comment:v1:31ad34624ed14233029f7eaa -->\n\n<!-- This is an auto-generated comment by CodeRabbit -->",
+        "path": "app/assets/js/notifications.js",
+        "commit_id": "0b4a103b9af0bae3d37c0704e1915903ec66a8cf",
+        "original_commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44"
+      },
+      {
+        "id": 3487130766,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/2#discussion_r3487130766",
+        "author": "coderabbitai[bot]",
+        "body": "_🩺 Stability & Availability_ | _🟠 Major_ | _⚡ Quick win_\n\n<details>\n<summary>🧩 Analysis chain</summary>\n\n🏁 Script executed:\n\n```shell\n#!/bin/bash\nset -euo pipefail\n\n# Map the file and read the relevant section with line numbers.\nwc -l app/main.js\nsed -n '1,120p' app/main.js\n\n# Look for related exception handling and updater references.\nrg -n \"uncaughtException|unhandledRejection|electron-updater|Performance\" app/main.js .\n```\n\nRepository: upstateautomate/MZD-AIO\n\nLength of output: 6619\n\n---\n\n\n\n</details>\n\n**Narrow the uncaught SyntaxError filter**  \nThis already logs the exception, but `message.includes('Performance')` is still too broad for an `uncaughtException` handler. Restrict it to the specific `electron-updater` failure so unrelated `SyntaxError`s still reach the normal crash path.\n\n<details>\n<summary>🤖 Prompt for AI Agents</summary>\n\n```\nVerify each finding against current code. Fix only still-valid issues, skip the\nrest with a brief reason, keep changes minimal, and validate.\n\nIn `@app/main.js` around lines 28 - 31, The uncaughtException guard in main should\nbe narrowed because the current SyntaxError check is too broad and can swallow\nunrelated errors. Update the filter in the main process exception handler to\nmatch only the specific electron-updater performance timing failure, using the\nexisting uncaughtException logic and the e instanceof SyntaxError branch as the\nlocator. Keep the benign network-request case ignored, but let all other\nSyntaxError cases continue to the normal crash path.\n```\n\n</details>\n\n<!-- fingerprinting:phantom:poseidon:grasshopper -->\n\n<!-- cr-indicator-types:potential_issue -->\n\n<!-- cr-comment:v1:4f28e4ac006edcf4534e9354 -->\n\n<!-- This is an auto-generated comment by CodeRabbit -->",
+        "path": "app/main.js",
+        "commit_id": "0b4a103b9af0bae3d37c0704e1915903ec66a8cf",
+        "original_commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44"
+      },
+      {
+        "id": 3487130767,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/2#discussion_r3487130767",
+        "author": "coderabbitai[bot]",
+        "body": "_🩺 Stability & Availability_ | _🟠 Major_ | _⚡ Quick win_\n\n<details>\n<summary>🧩 Analysis chain</summary>\n\n🏁 Script executed:\n\n```shell\n#!/bin/bash\npython - <<'PY'\nimport json\nwith open('app/package-lock.json') as f:\n    lock = json.load(f)\npackages = lock.get('packages', {})\nfor name in ('drivelist', 'electron-updater', 'mkdirp'):\n    pkg = packages.get(f'node_modules/{name}')\n    print(f'{name}: {pkg.get(\"version\") if pkg else \"MISSING\"}')\nPY\n```\n\nRepository: upstateautomate/MZD-AIO\n\nLength of output: 222\n\n---\n\n🏁 Script executed:\n\n```shell\n#!/bin/bash\nset -euo pipefail\n\nprintf 'package.json version and dependency lines:\\n'\nsed -n '1,120p' app/package.json | nl -ba | sed -n '1,120p'\n\nprintf '\\npackage-lock metadata and relevant dependency entries:\\n'\npython3 - <<'PY'\nimport json\nfrom pathlib import Path\n\nlock = json.loads(Path('app/package-lock.json').read_text())\nprint('lockfileVersion:', lock.get('lockfileVersion'))\nprint('top-level keys:', sorted(lock.keys()))\ndeps = lock.get('dependencies', {})\nfor name in ('drivelist', 'electron-updater', 'mkdirp'):\n    node = deps.get(name)\n    if node is None:\n        print(f'{name}: MISSING in dependencies')\n    else:\n        print(f'{name}: version={node.get(\"version\")} resolved={node.get(\"resolved\")} requires={node.get(\"requires\")}')\nPY\n```\n\nRepository: upstateautomate/MZD-AIO\n\nLength of output: 244\n\n---\n\n🏁 Script executed:\n\n```shell\n#!/bin/bash\nset -euo pipefail\npython3 - <<'PY'\nimport json\nfrom pathlib import Path\n\nlock = json.loads(Path('app/package-lock.json').read_text())\nprint('lockfileVersion:', lock.get('lockfileVersion'))\nprint('top-level keys:', sorted(lock.keys()))\nprint('\\nroot package dependencies from package-lock.json:')\nfor name in ('drivelist', 'electron-updater', 'mkdirp'):\n    for container_name in ('dependencies', 'packages'):\n        container = lock.get(container_name, {})\n        key = name if container_name == 'dependencies' else f'node_modules/{name}'\n        node = container.get(key)\n        if node is not None:\n            print(f'{name} via {container_name}: version={node.get(\"version\")} resolved={node.get(\"resolved\")} requires={node.get(\"requires\")}')\n            break\n    else:\n        print(f'{name}: MISSING')\n\nprint('\\napp/package.json dependency section:')\npkg = json.loads(Path('app/package.json').read_text())\nfor k, v in pkg.get('dependencies', {}).items():\n    if k in ('drivelist', 'electron-updater', 'mkdirp'):\n        print(f'{k}: {v}')\nPY\n```\n\nRepository: upstateautomate/MZD-AIO\n\nLength of output: 1102\n\n---\n\n\n\n</details>\n\n**Regenerate `app/package-lock.json` with these dependency bumps.**\n\n`app/package-lock.json` still pins `drivelist@8.0.9`, `electron-updater@4.2.0`, and `mkdirp@0.5.1`, so `npm ci` will keep installing the old API surface instead of the versions declared in `app/package.json`.\n\n<details>\n<summary>🤖 Prompt for AI Agents</summary>\n\n```\nVerify each finding against current code. Fix only still-valid issues, skip the\nrest with a brief reason, keep changes minimal, and validate.\n\nIn `@app/package.json` around lines 38 - 48, Regenerate the lockfile for the app\ndependencies so it matches the updated declarations in package.json. Update\napp/package-lock.json to reflect the bumped versions for drivelist,\nelectron-updater, and mkdirp, and ensure the lock entries tied to those packages\nno longer reference the older resolved versions. Verify the package-lock is\nconsistent with npm ci by aligning the affected dependency records and their\ntransitive metadata.\n```\n\n</details>\n\n<!-- fingerprinting:phantom:poseidon:grasshopper -->\n\n<!-- cr-indicator-types:potential_issue -->\n\n<!-- cr-comment:v1:61740eadb2ffd992f26d94cd -->\n\n<!-- This is an auto-generated comment by CodeRabbit -->",
+        "path": "app/package.json",
+        "commit_id": "0b4a103b9af0bae3d37c0704e1915903ec66a8cf",
+        "original_commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44"
+      },
+      {
+        "id": 3487130780,
+        "url": "https://github.com/grepmykeys/MZD-AIO/pull/2#discussion_r3487130780",
+        "author": "Copilot",
+        "body": "This promise-based call will throw `TypeError: mkdirp is not a function` at runtime. With mkdirp v3, the default CommonJS import (`const mkdirp = require('mkdirp')` in `index.js`, which `build-tweaks.js` shares via the global script scope) resolves to a namespace object of named exports, not a callable function. That is why the other call sites in this file use `mkdirp.sync(...)` (the `sync` named export) and continue to work, but calling `mkdirp(...)` directly does not. Because the error is thrown synchronously before a promise is returned, the `.catch()` here won't handle it, and `buildTweaksConfig()` will never run — breaking the compile flow. Use the callable async export `mkdirp.mkdirp(...)` (or `mkdirp.sync(...)`), or change the import in `index.js` to `const { mkdirp } = require('mkdirp')` (the function still carries a `.sync` method).",
+        "path": "app/assets/js/build-tweaks.js",
+        "commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44",
+        "original_commit_id": "70b213b555d3ffa6920273be271cf71d7673fb44"
+      }
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "repository": "baktrak09/MZD-AIO",
+  "head": "2fedd8134229dfdb7f87c78905882e81fed985b7",
+  "branch": "aa-factory-audio-routing-test",
+  "base": "a6ed0e5e915c25ed6a0b3d443b05f548f9baaeb1",
+  "source": "https://github.com/baktrak09/MZD-AIO/compare/a6ed0e5e915c25ed6a0b3d443b05f548f9baaeb1...2fedd8134229dfdb7f87c78905882e81fed985b7",
+  "note": "Selected GitHub patch fragments, not a guaranteed applicable full diff. Lockfiles/binary/media and vendored headunit baseline omitted. See heads.json and tree-deltas for broader path coverage.",
+  "files": []
+}

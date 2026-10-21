@@ -1,0 +1,6 @@
+{
+  "repo": "grepmykeys/MZD-AIO",
+  "sha": "300c21ce36f18ebb5867bd44e5aa72332a414a0e",
+  "path": ".github/workflows/ci.yml",
+  "content": "name: CI\n\non:\n  push:\n    branches: [master, 'claude/**']\n  pull_request:\n    branches: [master]\n\njobs:\n  install:\n    runs-on: ${{ matrix.os }}\n\n    strategy:\n      matrix:\n        os: [windows-latest, macos-latest, ubuntu-latest]\n        node: ['22']\n\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v4\n        with:\n          node-version: ${{ matrix.node }}\n          cache: 'npm'\n\n      - name: Install Linux system dependencies\n        if: matrix.os == 'ubuntu-latest'\n        run: sudo apt-get install -y libudev-dev\n\n      - name: Install dependencies\n        run: npm install --ignore-scripts\n\n      - name: Lint\n        run: npm run lint\n        continue-on-error: true\n"
+}

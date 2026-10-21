@@ -1,0 +1,16 @@
+{
+  "repository": "hanhha/MZD-AIO",
+  "head": "0ac13af88b4d5b6e1a0771013bcef0935e7cf62b",
+  "branch": "master",
+  "base": "409c724ed860497b2a34f9367cb4a019287846ea",
+  "source": "https://github.com/Trevelopment/MZD-AIO/compare/409c724ed860497b2a34f9367cb4a019287846ea...0ac13af88b4d5b6e1a0771013bcef0935e7cf62b",
+  "note": "Selected GitHub patch fragments, not a guaranteed applicable full diff. Lockfiles/binary/media and vendored headunit baseline omitted. See heads.json and tree-deltas for broader path coverage.",
+  "files": [
+    {
+      "filename": "app/index.html",
+      "status": "modified",
+      "sha": "512400f6828661871745d8d4353f1c22e7b67892",
+      "patch": "@@ -263,7 +263,8 @@\n     }\n     firstTimeVisit()\n     if (navigator.onLine) {\n-      var translateUrl = \"https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit\"\n+      //var translateUrl = \"https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit\"\n+      var translateUrl = \"https://foo.example.com/\"\n       $.getScript(translateUrl)\n         .done(function(script, textStatus) {\n           console.debug(textStatus)"
+    }
+  ]
+}

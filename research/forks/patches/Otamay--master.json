@@ -1,0 +1,28 @@
+{
+  "repository": "Otamay/MZD-AIO",
+  "head": "f18ac13919a89e3ce869ac937751813f1d982e88",
+  "branch": "master",
+  "base": "409c724ed860497b2a34f9367cb4a019287846ea",
+  "source": "https://github.com/Trevelopment/MZD-AIO/compare/409c724ed860497b2a34f9367cb4a019287846ea...f18ac13919a89e3ce869ac937751813f1d982e88",
+  "note": "Selected GitHub patch fragments, not a guaranteed applicable full diff. Lockfiles/binary/media and vendored headunit baseline omitted. See heads.json and tree-deltas for broader path coverage.",
+  "files": [
+    {
+      "filename": "app/files/tweaks/00_start.txt",
+      "status": "modified",
+      "sha": "19c246db11ee90f2c4848293b2db657aa4299438",
+      "patch": "@@ -104,7 +104,7 @@ compatibility_check()\n     else\n       echo 5 && return # 59.00.502+ is another level because it is not compatible with USB Audio Mod\n     fi\n-  elif [ $_VER -eq 70 ]\n+  elif [ $_VER -eq 70 -o $_VER -eq 74 ]\n   then\n     if [ $_VER_EXT -le 360 ]\n     then"
+    },
+    {
+      "filename": "app/files/tweaks/00_wifi.txt",
+      "status": "modified",
+      "sha": "bdc636c2edc731c4fb83607edd1eee6d510b1dd4",
+      "patch": "@@ -2,6 +2,20 @@ backup_org /jci/gui/apps/syssettings/js/syssettingsApp.js\n # Enable WIFI\n log_message \"==========**************** START ENABLE WIFI ... *************===========\"\n \n+if [ $CMU_VER -eq 74 ]; then\n+    WIFI_STRING_TO_REPLACE=\"^[[:space:]]\\+((false === this._supportedWirelessCarPlay) && ((region != framework.localize.REGIONS\\['NorthAmerica'\\]) && (region != framework.localize.REGIONS\\['Japan'\\]))))[[:space:]]*$\"\n+    LN=$(grep -n \"${WIFI_STRING_TO_REPLACE}\" /jci/gui/apps/syssettings/js/syssettingsApp.js | cut -d\":\" -f1)\n+    if [ ! -z \"${LN}\" ]; then\n+\tcp /jci/gui/apps/syssettings/js/syssettingsApp.js \"${MYDIR}/bakups/test/syssettingsApp_WIFI-before.js\"\n+\tlog_message \"===              Found wifi validation on line ${LN}                   ===\"\n+\tsed -i \"${LN}s/^\\([[:space:]]*\\).*/\\1(true))/\" /jci/gui/apps/syssettings/js/syssettingsApp.js\n+\tlog_message \"===                      Wifi for NA enabled                          ===\"\n+\tshow_message \"=== Wifi enabled ===\"\n+    else\n+\tlog_message \"===               ERROR: Line For Wifi Fix Not Found                  ===\"\n+    fi\n+    cp /jci/gui/apps/syssettings/js/syssettingsApp.js \"${MYDIR}/bakups/test/syssettingsApp_WIFI-after.js\"\n+else\n if grep -Fq \"(framework.localize.REGIONS['NorthAmerica'])\" /jci/gui/apps/syssettings/js/syssettingsApp.js\n then\n   cp /jci/gui/apps/syssettings/js/syssettingsApp.js \"${MYDIR}/bakups/test/syssettingsApp_WIFI-before.js\"\n@@ -19,6 +33,7 @@ then\n else\n   log_message \"===                       Wifi already active                         ===\"\n fi\n+fi\n \n log_message \"===============************* END ENABLE WIFI *************===============\"\n log_message \" \""
+    },
+    {
+      "filename": "app/files/tweaks/config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js",
+      "status": "modified",
+      "sha": "789acc3bfc74d52c10ee080bab7fbbae361d55f8",
+      "patch": "@@ -2318,7 +2318,7 @@ FuelConsumptionCtrl.prototype.setFuelEfficiency = function(fuelEfficiencyData)\n           }\n           else\n           {\n-            this.fuelEfficiencyValue.innerHTML = this.properties.fuelEfficiencyData.fuelEfficienc + \"</br></br></br>0.0\";\n+            this.fuelEfficiencyValue.innerHTML = this.properties.fuelEfficiencyData.fuelEfficiency + \"</br></br></br>0.0\";\n           }\n           this.fuelEfficiencyUnit.innerHTML = fuelEfficiencyUnitText + \"</br></br></br>\" + newFuelEfficiencyUnitText;\n           // **** End of the fuel efficiency tweak"
+    }
+  ]
+}

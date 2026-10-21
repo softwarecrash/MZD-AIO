@@ -1,0 +1,9 @@
+{
+  "repository": "baktrak09/MZD-AIO",
+  "head": "a6ed0e5e915c25ed6a0b3d443b05f548f9baaeb1",
+  "branch": "aio-modernization",
+  "base": "409c724ed860497b2a34f9367cb4a019287846ea",
+  "source": "https://github.com/Trevelopment/MZD-AIO/compare/409c724ed860497b2a34f9367cb4a019287846ea...a6ed0e5e915c25ed6a0b3d443b05f548f9baaeb1",
+  "note": "Selected GitHub patch fragments, not a guaranteed applicable full diff. Lockfiles/binary/media and vendored headunit baseline omitted. See heads.json and tree-deltas for broader path coverage.",
+  "files": []
+}

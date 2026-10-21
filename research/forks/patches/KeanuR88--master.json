@@ -1,0 +1,9 @@
+{
+  "repository": "KeanuR88/MZD-AIO",
+  "head": "a88a1e54a6e1fd0bd1eff6ba28474879c5132f8b",
+  "branch": "master",
+  "base": "409c724ed860497b2a34f9367cb4a019287846ea",
+  "source": "https://github.com/Trevelopment/MZD-AIO/compare/409c724ed860497b2a34f9367cb4a019287846ea...a88a1e54a6e1fd0bd1eff6ba28474879c5132f8b",
+  "note": "Selected GitHub patch fragments, not a guaranteed applicable full diff. Lockfiles/binary/media and vendored headunit baseline omitted. See heads.json and tree-deltas for broader path coverage.",
+  "files": []
+}
