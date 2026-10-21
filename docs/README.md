@@ -38,3 +38,9 @@ Die MP3s stammen bytegleich vom zuvor eingelesenen Besitzer-USB. Sie laden js/ru
 Die Quellen liegen unter docs/usb. Nach Aenderungen `python web-tools/build-usb-assets.py` ausfuehren: usb-assets.js enthaelt diese Dateien eingebettet fuer netzwerkfreien ZIP-Export. Kein Fetch, CDN oder Server fuer die Paketgenerierung erforderlich. Manifest-SHA256 dienen der Nachpruefbarkeit; sie sind keine Signatur. MD5 wird fuer den Dateistandsvergleich verwendet, weil das Geraet dieses Werkzeug bereitstellt.
 
 Tests: `node web-tools/test-web-builder.js` erzeugt ein ZIP in einem temporaeren Ordner und meldet seinen Pfad. Danach `python web-tools/test-usb-preflight.py --zip <Pfad>` ausfuehren. Der Shelltest verwendet ausschliesslich eine abgeaenderte Testkopie mit synthetischen Dateien und prueft Firmware-Abbrueche, Auswahlvalidierung, Hashabweichungen und unveraenderte Fixtures. Kein echter Fahrzeug-/Browser-Renderingtest.
+
+## Ablage von Berichten und Logs
+
+Verbindlich fuer den Starter und weitere Installationsschritte: Berichte, Logs und spaetere Sicherungen gehoeren auf das Medium mit dem gestarteten Paket, unabhaengig vom aktuellen Arbeitsverzeichnis und dessen Mountnamen. Keine automatische Ausweichablage im internen CMU-Speicher.
+
+Der Starter bestimmt den USB-Pfad aus seinem eigenen Verzeichnis. Pro Lauf entsteht reports/<Zeit>-<PID>/ mit run.log (stdout und stderr ab Beginn der Pruefungen), status.txt (Exit-Code) und preflight.txt, wenn der Dateivergleich erreicht wird. Auch Root-/Firmware-/Auswahlfehler landen im run.log. Die Ausgabe wird am Ende zusaetzlich in der Konsole angezeigt. Ist das Startmedium nicht beschreibbar, erfolgt ein Abbruch vor den Pruefungen. Tests decken fruehe Fehler, einen anderen Arbeitsordner, Leerzeichen im USB-Pfad sowie ein blockiertes Berichtsverzeichnis ab.

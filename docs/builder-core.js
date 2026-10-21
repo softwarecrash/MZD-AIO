@@ -61,7 +61,7 @@
       + "3. Im Fenster Konsole oeffnen druecken. Nach etwa 14 Sekunden erscheint das OEM-Testmenue; dort TERMINAL waehlen und auf die Shell warten.\n"
       + "4. Per USB-Tastatur eingeben: sh /mnt/sda1/mzd/start.sh\n"
       + "   Falls Datei nicht gefunden: sda1 durch sdb1, sdc1 oder sdd1 ersetzen.\n"
-      + "5. Ausgabe und reports/<Zeit>-<PID>/preflight.txt auf dem Stick pruefen.\n\n"
+      + "5. Berichte unter reports/<Zeit>-<PID>/ auf demselben Stick pruefen: run.log (Ausgabe und Fehler), status.txt (Exit-Code), preflight.txt (Dateivergleich, sofern erreicht). Auch fruehe Abbrueche werden protokolliert.\n\n"
       + "Dieser Stand startet nur die Vorpruefung: Firmware, Auswahl und drei OEM-Dateihashes. Keine Tweaks werden installiert. MD5 identifiziert bekannte Dateistaende und ist keine Signatur.\n"
       + "Der MP3-Konsolenzugang mit Tastatur ist der vom Besitzer bestaetigte Weg; dieses neu zusammengestellte Paket ist noch nicht am Fahrzeug getestet.\n"
       + "Kein automatischer Shellbefehl, kein RAM-Hook, keine SSH-Aktivierung, keine Aenderung von OEM-Dateien. Berichte werden auf USB geschrieben.\n\n"

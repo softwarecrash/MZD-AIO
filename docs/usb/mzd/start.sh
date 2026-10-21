@@ -8,6 +8,28 @@ umask 077
 BASE=$(CDPATH= cd "$(dirname "$0")" && pwd)
 USB=$(CDPATH= cd "$BASE/.." && pwd)
 fail() { echo "ABBRUCH: $*" >&2; exit 1; }
+# Resolve the package location, never the caller's current directory.
+# Open the USB log BEFORE root, firmware or selection checks can fail.
+STAMP=$(date +%Y%m%d-%H%M%S 2>/dev/null || printf undated)
+REPORT="$USB/reports/$STAMP-$$"
+mkdir -p "$USB/reports" && mkdir "$REPORT" || fail 'Berichtsordner auf dem Startmedium nicht anlegbar. Kein interner Ersatzspeicher.'
+: > "$REPORT/run.log" || fail 'Startmedium ist nicht beschreibbar. Kein interner Ersatzspeicher.'
+exec 3>&1 4>&2
+exec > "$REPORT/run.log" 2>&1
+finish() {
+    CODE=$?
+    trap - 0
+    set +e
+    printf 'exit_code=%s\n' "$CODE" > "$REPORT/status.txt"
+    printf '\nexit_code=%s\n' "$CODE"
+    cat "$REPORT/run.log" >&3
+    printf '\nBerichte: %s\n' "$REPORT" >&3
+    exit "$CODE"
+}
+trap finish 0
+trap 'exit 130' INT
+trap 'exit 143' TERM
+printf 'MZD-AIO / Startmedium: %s\nModus: preflight\n' "$USB"
 [ "$(id -u)" = 0 ] || fail 'Root-Konsole erforderlich.'
 for tool in grep md5sum date mkdir cat; do command -v "$tool" >/dev/null || fail "Werkzeug fehlt: $tool"; done
 [ -r "$BASE/selected.txt" ] || fail 'Auswahldatei fehlt.'
@@ -21,9 +43,6 @@ while IFS= read -r patch || [ -n "$patch" ]; do
     case "$patch" in -*|*[!a-z0-9-]*) fail 'Ungueltige Tweak-ID.' ;; esac
     grep -qxF "$patch" "$BASE/allowed.txt" || fail "Unbekannte Auswahl: $patch"
 done < "$BASE/selected.txt"
-STAMP=$(date +%Y%m%d-%H%M%S)
-REPORT="$USB/reports/$STAMP-$$"
-mkdir -p "$REPORT" || fail 'USB-Stick ist nicht beschreibbar.'
 RESULT=0
 {
     echo 'MZD-AIO WEB / V74 VORPRUEFUNG'

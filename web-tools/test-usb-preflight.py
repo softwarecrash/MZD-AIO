@@ -36,7 +36,7 @@ def bash_path(path):
 source = (root / 'docs/usb/mzd/start.sh').read_text(encoding='utf-8')
 with tempfile.TemporaryDirectory(prefix='mzd-preflight-') as temporary:
     temp = Path(temporary)
-    package = temp / 'usb/mzd'
+    package = temp / 'usb stick/mzd'
     package.mkdir(parents=True)
     fixture = temp / 'List2Ctrl.js'
     fixture.write_bytes(b'ORIGINAL FIXTURE\n')
@@ -50,9 +50,15 @@ with tempfile.TemporaryDirectory(prefix='mzd-preflight-') as temporary:
     script = source.replace('[ "$(id -u)" = 0 ]', ':').replace('/jci/version.ini', bash_path(firmware))
     (package / 'start.sh').write_text(script, encoding='utf-8', newline='\n')
     def run(expected, text):
-        result = subprocess.run([args.bash, '--noprofile', '--norc', str(package / 'start.sh')], capture_output=True, text=True)
+        before = set((package.parent / 'reports').glob('*'))
+        result = subprocess.run([args.bash, '--noprofile', '--norc', str(package / 'start.sh')], cwd=temp, capture_output=True, text=True)
         assert result.returncode == expected, result.stdout + result.stderr
         assert text in result.stdout + result.stderr, result.stdout + result.stderr
+        created = set((package.parent / 'reports').glob('*')) - before
+        assert len(created) == 1
+        report = created.pop()
+        assert text in (report / 'run.log').read_text()
+        assert (report / 'status.txt').read_text().strip() == 'exit_code=' + str(expected)
     run(0, 'originals=match')
     assert fixture.read_bytes() == b'ORIGINAL FIXTURE\n'
     fixture.write_bytes(b'UNKNOWN FILE STATE\n')
@@ -70,5 +76,13 @@ with tempfile.TemporaryDirectory(prefix='mzd-preflight-') as temporary:
     (package / 'selected.txt').write_text('$(touch bad)\n', encoding='utf-8', newline='\n')
     run(1, 'Ungueltige Tweak-ID')
     assert not (package / 'bad').exists()
-    assert list((temp / 'usb/reports').glob('*/preflight.txt'))
-print('Passed: ZIP CRC, binary assets, MP3 payload mounts, manifest hashes, firmware gates, selection rejection, preflight reports and unchanged fixtures.')
+    (package / 'selected.txt').unlink()
+    run(1, 'Auswahldatei fehlt')
+    assert list((package.parent / 'reports').glob('*/preflight.txt'))
+    # An unavailable report destination must stop without an internal fallback.
+    (package.parent / 'reports').rename(package.parent / 'saved-reports')
+    (package.parent / 'reports').write_text('blocked')
+    result = subprocess.run([args.bash, str(package / 'start.sh')], cwd=temp, capture_output=True, text=True)
+    assert result.returncode == 1
+    assert 'Kein interner Ersatzspeicher' in result.stdout + result.stderr
+print('Passed: ZIP/MP3 integrity, firmware gates, early-error USB logs, exit codes, source-relative report paths (spaces and different cwd), unavailable storage and unchanged fixtures.')
