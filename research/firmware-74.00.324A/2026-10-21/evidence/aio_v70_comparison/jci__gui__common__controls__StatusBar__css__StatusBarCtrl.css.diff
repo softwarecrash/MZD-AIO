@@ -1,0 +1,11 @@
+--- AIO_v70/StatusBarCtrl.css.org
++++ CMU_74.00.324A/jci/gui/common/controls/StatusBar/css/StatusBarCtrl.css
+@@ -39,7 +39,7 @@
+ .StatusBarCtrlRemoteUIBtn_AA_focused {
+   background-image: url(../images/Android_Auto_Hover.png);
+   background-position: -1px -1px;
+-  width: 62px;
++  width:  62px;
+   height: 62px;
+ }
+ 

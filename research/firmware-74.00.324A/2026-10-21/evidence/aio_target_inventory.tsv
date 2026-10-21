@@ -1,0 +1,320 @@
+device_path	acquisition	archive	size	sha256	aio_references
+/bin/adb	not_in_completed_archives				24_castscreen-i.txt:18; 24_castscreen-i.txt:19
+/bin/fsync	acquired	03_root_system.tar.gz	0		00_sd-cid.txt:8; 00_start.txt:26; 00_start.txt:34; 08_orderflac-i.txt:60; 08_orderflac-i.txt:67; 08_orderflac-u.txt:10
+/bin/sh	acquired	03_root_system.tar.gz	0		00__casdk-i.txt:34; 00__casdk-i.txt:36; 00__casdk-u.txt:50; 00_intro.txt:1; 19_speedo-i1.txt:81; 19_speedo-i1.txt:85; 25_androidauto-i.txt:46; 25_androidauto-i.txt:49
+/config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css	not_in_completed_archives				22_fuel-i.txt:8; 22_fuelMPG-i.txt:8
+/config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png	not_in_completed_archives				22_fuel-i.txt:10; 22_fuelMPG-i.txt:10
+/config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.MPG.js	not_in_completed_archives				22_fuelMPG-i.txt:12
+/config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js	not_in_completed_archives				22_fuel-i.txt:12
+/config/MainMenuTweaks/DefaultSmallFocused.css	not_in_completed_archives				20_mainmenu-i.txt:84
+/config/MainMenuTweaks/FlatLine.css	not_in_completed_archives				20_mainmenu-i.txt:36
+/config/MainMenuTweaks/FlatLineSmallFocused.css	not_in_completed_archives				20_mainmenu-i.txt:82
+/config/MainMenuTweaks/Inverted.css	not_in_completed_archives				20_mainmenu-i.txt:32
+/config/MainMenuTweaks/InvertedSmallFocused.css	not_in_completed_archives				20_mainmenu-i.txt:79
+/config/MainMenuTweaks/StarA.css	not_in_completed_archives				20_mainmenu-i.txt:24
+/config/MainMenuTweaks/StarASmallFocused.css	not_in_completed_archives				20_mainmenu-i.txt:73
+/config/MainMenuTweaks/StarB.css	not_in_completed_archives				20_mainmenu-i.txt:28
+/config/MainMenuTweaks/StarBSmallFocused.css	not_in_completed_archives				20_mainmenu-i.txt:76
+/config/OffScreenBackground.png	not_in_completed_archives				00_offbackground-i.txt:5; 00_offbackground-i.txt:7; 00_offbackground-u.txt:7
+/config/USBAudioMod/*.png	not_in_completed_archives				26_usbaudiomod-i.txt:13
+/config/USBAudioMod/NowPlaying4Ctrl.js	not_in_completed_archives				26_usbaudiomod-i.txt:9
+/config/USBAudioMod/USBAudioMod.css	not_in_completed_archives				26_usbaudiomod-i.txt:20
+/config/USBAudioMod/usbaudioApp.js	not_in_completed_archives				26_usbaudiomod-i.txt:11
+/config/aio-app/data_persist/*	not_in_completed_archives				27_aioapp-i.txt:67
+/config/aio-app/jci/gui/apps/_aiotweaks	not_in_completed_archives				27_aioapp-i.txt:66
+/config/androidauto/data_persist/dev/*	not_in_completed_archives				25_androidauto-i.txt:58
+/config/androidauto/jci/gui/apps/_androidauto	not_in_completed_archives				25_androidauto-i.txt:57
+/config/androidautob/data_persist/dev/bin	not_in_completed_archives				25_androidautob-i.txt:3
+/config/androidautob/data_persist/dev/bin/headunit	not_in_completed_archives				25_androidautob-i.txt:1
+/config/androidautohud	not_in_completed_archives				25_androidautohud-i.txt:2
+/config/androidautohud/*	not_in_completed_archives				25_androidautohud-i.txt:4
+/config/androidautowifi	not_in_completed_archives				25_androidautowifi-i.txt:2
+/config/androidautowifi/*	not_in_completed_archives				25_androidautowifi-i.txt:4
+/config/audio_order_AND_no_More_Disclaimer/both/jci/gui/apps/system/js/systemApp.	not_in_completed_archives				02_disclaimer-i.txt:42; 02_disclaimer-i.txt:43; 09_audioorder-i.txt:41
+/config/audio_order_AND_no_More_Disclaimer/both/jci/gui/apps/system/js/systemApp.js	not_in_completed_archives				02_disclaimer-i.txt:46; 02_disclaimer-i.txt:47; 09_audioorder-i.txt:44
+/config/audio_order_AND_no_More_Disclaimer/only_change_audio_order/jci/gui/apps/system/js/systemApp.	not_in_completed_archives				02_disclaimer-u.txt:31; 09_audioorder-i.txt:50
+/config/audio_order_AND_no_More_Disclaimer/only_change_audio_order/jci/gui/apps/system/js/systemApp.js	not_in_completed_archives				02_disclaimer-u.txt:34; 09_audioorder-i.txt:53
+/config/audio_order_AND_no_More_Disclaimer/only_no_More_Disclaimer/jci/gui/apps/system/js/systemApp.	not_in_completed_archives				02_disclaimer-i.txt:53; 09_audioorder-u.txt:30
+/config/audio_order_AND_no_More_Disclaimer/only_no_More_Disclaimer/jci/gui/apps/system/js/systemApp.js	not_in_completed_archives				02_disclaimer-i.txt:56; 09_audioorder-u.txt:33
+/config/audio_order_AND_no_More_Disclaimer/systemApp.js.audio	not_in_completed_archives				09_audioorder-i.txt:34; 09_audioorder-i.txt:41; 09_audioorder-i.txt:44; 09_audioorder-i.txt:50; 09_audioorder-i.txt:53
+/config/audio_order_AND_no_More_Disclaimer/systemApp.js.disclaimer	not_in_completed_archives				02_disclaimer-i.txt:35
+/config/background.png	not_in_completed_archives				00_background.txt:12; 00_background.txt:14
+/config/bigger-album-art/big-albm.css	not_in_completed_archives				14_bgart-i.txt:16
+/config/bigger-album-art/full-titles.css	not_in_completed_archives				14_bgart-i.txt:20
+/config/bigger-album-art/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png	not_in_completed_archives				14_bgart-i.txt:7
+/config/bigger-album-art/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png	not_in_completed_archives				14_bgart-i.txt:8
+/config/bigger-album-art/no-albm.css	not_in_completed_archives				14_bgart-i.txt:26
+/config/bin/add_app_json.js	not_in_completed_archives				00__node-i.txt:5; 00_start.txt:430; 00_start.txt:432
+/config/bin/node	not_in_completed_archives				00__node-i.txt:4; 00_start.txt:430; 00_start.txt:432; 00_start.txt:433; 00_start.txt:482; 00_start.txt:484; 00_start.txt:485
+/config/bin/remove_app_json.js	not_in_completed_archives				00__node-i.txt:6; 00_start.txt:482; 00_start.txt:484
+/config/blank-album-art-frame/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png	not_in_completed_archives				16_blnkframe-i.txt:5
+/config/blank-album-art-frame/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png	not_in_completed_archives				16_blnkframe-i.txt:6
+/config/blank-album-art-frame/jci/gui/common/images/no_artwork_icon.png	not_in_completed_archives				16_blnkframe-i.txt:7
+/config/bootanimation/jci/resources/LoopLogo.ivf	not_in_completed_archives				13_boot-i.txt:16; 13_boot-i.txt:53; 13_boot-i.txt:95
+/config/bootanimation/jci/resources/LoopLogoCinema.ivf	not_in_completed_archives				13_boot-i.txt:36; 13_boot-i.txt:73
+/config/bootanimation/jci/resources/LoopLogoFiat.ivf	not_in_completed_archives				13_boot-i.txt:28
+/config/bootanimation/jci/resources/LoopLogoMatrix.ivf	not_in_completed_archives				13_boot-i.txt:20; 13_boot-i.txt:57; 13_boot-i.txt:99
+/config/bootanimation/jci/resources/LoopLogoRace.ivf	not_in_completed_archives				13_boot-i.txt:44; 13_boot-i.txt:81
+/config/bootanimation/jci/resources/LoopLogoZ.ivf	not_in_completed_archives				13_boot-i.txt:111; 13_boot-i.txt:32; 13_boot-i.txt:69
+/config/bootanimation/jci/resources/TranIntroM.ivf	not_in_completed_archives				13_boot-i.txt:135
+/config/bootanimation/jci/resources/TranLogo.ivf	not_in_completed_archives				13_boot-i.txt:85
+/config/bootanimation/jci/resources/TranLogo124Spider.ivf	not_in_completed_archives				13_boot-i.txt:65
+/config/bootanimation/jci/resources/TranLogoCarFlash.ivf	not_in_completed_archives				13_boot-i.txt:107
+/config/bootanimation/jci/resources/TranLogoCrissCross.ivf	not_in_completed_archives				13_boot-i.txt:40; 13_boot-i.txt:77
+/config/bootanimation/jci/resources/TranLogoEnd.ivf	not_in_completed_archives				13_boot-i.txt:139
+/config/bootanimation/jci/resources/TranLogoEndCinema.ivf	not_in_completed_archives				13_boot-i.txt:115
+/config/bootanimation/jci/resources/TranLogoEndCrissCross.ivf	not_in_completed_archives				13_boot-i.txt:119
+/config/bootanimation/jci/resources/TranLogoEndRace.ivf	not_in_completed_archives				13_boot-i.txt:103; 13_boot-i.txt:123
+/config/bootanimation/jci/resources/TranLogoEndSpace.ivf	not_in_completed_archives				13_boot-i.txt:127
+/config/bootanimation/jci/resources/TranLogoRace.ivf	not_in_completed_archives				13_boot-i.txt:24; 13_boot-i.txt:61
+/config/bootanimation/jci/resources/TranRace.ivf	not_in_completed_archives				13_boot-i.txt:131
+/config/castscreen-receiver/*.sh	not_in_completed_archives				24_castscreen-i.txt:6
+/config/castscreen-receiver/adb	not_in_completed_archives				24_castscreen-i.txt:8
+/config/castscreen-receiver/cs_receiver_arm	not_in_completed_archives				24_castscreen-i.txt:7
+/config/color-schemes	not_in_completed_archives				21_colors-i.txt:4; 21_colors-i2.txt:11; 21_colors-i2.txt:4
+/config/color-schemes/Blue/_skin_jci_bluedemo.zip	not_in_completed_archives				21_colors-i.txt:11; 21_colors-i.txt:9; 21_colors-i2.txt:16
+/config/color-schemes/Red/jci	not_in_completed_archives				21_colors-u.txt:4
+/config/color-schemes/speedometer	not_in_completed_archives				21_colors-i2.txt:7
+/config/color-schemes/theme/jci	not_in_completed_archives				21_theme-i.txt:5
+/config/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/css/StatusBarCtrl.v1.css	not_in_completed_archives				20_date-iv1.txt:52
+/config/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/images/StatusBarBg.v2.2.png	not_in_completed_archives				20_date-iv3.3.txt:84
+/config/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js	not_in_completed_archives				20_date-iv3.3.txt:117
+/config/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.v1.js	not_in_completed_archives				20_date-iv1.txt:54
+/config/date-to-statusbar_mod/jci/gui/common/images/icons/IcnSbRoaming.v2.png	not_in_completed_archives				20_date-iv1.txt:56; 20_date-iv3.3.txt:86
+/config/date-to-statusbar_mod/jci/gui/framework/js/Utility.v1.js	not_in_completed_archives				20_date-iv1.txt:58
+/config/date-to-statusbar_mod/jci/gui/framework/js/Utility.v2.1.js	not_in_completed_archives				20_date-iv3.3.txt:102
+/config/date-to-statusbar_mod/jci/gui/framework/js/Utility.v2.2.js	not_in_completed_archives				20_date-iv3.3.txt:98
+/config/date-to-statusbar_mod/jci/gui/framework/js/Utility.v2.3.js	not_in_completed_archives				20_date-iv3.3.txt:93
+/config/get_sd_cid/cmu_sd_cid_getter_v3	not_in_completed_archives				00_sd-cid.txt:7
+/config/jci-fw.sh.test	not_in_completed_archives				00_sshbringback.txt:25; 00_sshbringback.txt:26
+/config/jci/gui/addon-common	not_in_completed_archives				00_start.txt:369; 00_start.txt:388
+/config/jci/gui/apps/system/js/systemApp.70.js	not_in_completed_archives				00_59patch.txt:12
+/config/jci/gui/apps/system/js/systemApp.js	not_in_completed_archives				00_59patch.txt:8
+/config/jci/opera/opera_dir/userjs/*.js	not_in_completed_archives				17_videoplayer-i.txt:30; 19_speedo-i1.txt:108; 25_androidauto-i.txt:73; 28_mzdmeter-i.txt:22
+/config/jci/opera/opera_dir/userjs/additionalApps.js	not_in_completed_archives				27_aioapp-i.txt:29
+/config/jci/opera/opera_dir/userjs/aio.js	not_in_completed_archives				17_videoplayer-i.txt:35; 27_aioapp-i.txt:34
+/config/jci/storage/psindex.dat	not_in_completed_archives				00_storage-i.txt:25; 00_storage-i.txt:27
+/config/list-loop/jci/gui/common/controls/List2/js/List2Ctrl.js	not_in_completed_archives				06_listloop-i.txt:16
+/config/main-menu-loop/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js	not_in_completed_archives				05_mainloop-i.txt:9
+/config/media-order-patching/data_persist/*	not_in_completed_archives				08_orderflac-i.txt:42
+/config/media-order-patching/data_persist/dev/bin/flac-usb-recovery	not_in_completed_archives				08_orderflac-i.txt:45
+/config/media-order-patching/jci/lib/checksum.	not_in_completed_archives				08_orderflac-i.txt:63
+/config/media-order-patching/jci/lib/libmc_user.	not_in_completed_archives				08_orderflac-i.txt:56
+/config/media-order-patching/usr/lib/gstreamer-0.10/libgstflac.so	not_in_completed_archives				08_orderflac-i.txt:57
+/config/media-order-patching/usr/lib/libFLAC.so.8.3.0	not_in_completed_archives				08_orderflac-i.txt:58
+/config/message_replies/jci/settings/configurations/*	not_in_completed_archives				11_msgreplies-i.txt:7
+/config/multicontroller/Multicontroller.js	not_in_completed_archives				00_multicontroller-i.txt:9
+/config/mzdmeter/jci/gui/apps/*	not_in_completed_archives				28_mzdmeter-i.txt:42
+/config/mzdmeter/paa	not_in_completed_archives				28_mzdmeter-i.txt:45
+/config/safety-warning-reverse-camera/jci/nativegui/images/*.png	not_in_completed_archives				03_warning-i.txt:6
+/config/speedometer/barThemes.css	not_in_completed_archives				19_speedo-i1.txt:132; 19_speedo-i1.txt:134
+/config/speedometer/jci/fonts	not_in_completed_archives				19_speedo-i1.txt:57
+/config/speedometer/jci/gui/apps/_speedometer	not_in_completed_archives				19_speedo-i1.txt:44
+/config/speedometer/speedometer-config.js	not_in_completed_archives				19_speedo-i1.txt:61; 19_speedo-i1.txt:63
+/config/speedometer/speedometer-controls.js	not_in_completed_archives				19_speedo-i1.txt:72; 19_speedo-i1.txt:74
+/config/ssh_bringback/authorized_keys	not_in_completed_archives				00_sshbringback.txt:35
+/config/ssh_bringback/config-update.sh	not_in_completed_archives				00_sshbringback.txt:37
+/config/ssh_bringback/jci-fw.sh	not_in_completed_archives				00_sshbringback.txt:28
+/config/ssh_bringback/mksquashfs	not_in_completed_archives				00_sshbringback.txt:38
+/config/ssh_bringback/passwd	not_in_completed_archives				00_sshbringback.txt:34
+/config/ssh_bringback/passwd_update.sh	not_in_completed_archives				00_sshbringback.txt:39
+/config/ssh_bringback/sshd_config	not_in_completed_archives				00_sshbringback.txt:36
+/config/swapfile/swapfile	not_in_completed_archives				18_swapfile-i.txt:8
+/config/test_mode/controls	not_in_completed_archives				12_diag-i.txt:31
+/config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/*	not_in_completed_archives				04_sensor-i.txt:6
+/config/transparent-parking-sensor/jci/nativegui/images/MiniView/*	not_in_completed_archives				04_sensor-i.txt:10
+/config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/*	not_in_completed_archives				04_sensor-i.txt:8
+/config/videoplayer/jci/gui/apps/_videoplayer	not_in_completed_archives				17_videoplayer-i.txt:68
+/config/videoplayer/usr/lib/gstreamer-0.10/*	not_in_completed_archives				17_videoplayer-i.txt:89
+/config/videoplayer/usr/lib/libFLAC.so.8.3.0	not_in_completed_archives				17_videoplayer-i.txt:90
+/data/asound.conf	not_in_completed_archives				25_androidauto-i.txt:91; 25_androidauto-i.txt:94; 25_androidauto-u.txt:76; 25_androidauto-u.txt:79
+/etc/asound.conf	acquired	03_root_system.tar.gz	0		25_androidauto-i.txt:89; 25_androidauto-i.txt:90; 25_androidauto-i.txt:91; 25_androidauto-i.txt:94; 25_androidauto-u.txt:74; 25_androidauto-u.txt:75; 25_androidauto-u.txt:76; 25_androidauto-u.txt:79
+/etc/asound.conf.org	not_in_completed_archives				25_androidauto-i.txt:86; 25_androidauto-i.txt:93; 25_androidauto-u.txt:71; 25_androidauto-u.txt:78
+/etc/fstab	not_in_completed_archives				18_swapfile2-i.txt:66
+/etc/profile	acquired	03_root_system.tar.gz	1059	8ef2b68acd1392215455f78e627b95366e5d4970bcf400d6b92b4a0f6d78558f	00_end.txt:2; 17_videoplayer-i.txt:100; 17_videoplayer-i.txt:97; 17_videoplayer-i.txt:99
+/etc/profile.org	not_in_completed_archives				00_start.txt:278
+/etc/ssh	acquired	03_root_system.tar.gz	0		00_sshbringback.txt:36
+/jci/casdk	not_in_completed_archives				00__casdk-i.txt:28; 00__casdk-i.txt:29; 00__casdk-i.txt:30; 00__casdk-u.txt:38; 00__casdk-u.txt:40; 00__casdk-u.txt:41; 00__casdk-u.txt:43
+/jci/casdk/casdk.aio	not_in_completed_archives				00__casdk-i.txt:82; 00__casdk-i.txt:83; 00__casdkapps-i.txt:2; 00__casdkapps-u.txt:2; 00_start.txt:40; 00_start.txt:42
+/jci/fonts	acquired	02_jci_complete.tar.gz	0		19_speedo-i1.txt:58
+/jci/gui	acquired	02_jci_complete.tar.gz	0		00_start.txt:388
+/jci/gui/addon-common	not_in_completed_archives				00_start.txt:373; 00_start.txt:375; 00_start.txt:376; 00_start.txt:380; 00_start.txt:382; 00_start.txt:389; 17_videoplayer-u.txt:45; 19_speedo-u.txt:44; 27_aioapp-u.txt:55
+/jci/gui/addon-common/jquery.min.js	not_in_completed_archives				00_start.txt:386
+/jci/gui/addon-common/websocketd	not_in_completed_archives				00_start.txt:386; 17_videoplayer-i.txt:47; 17_videoplayer-i.txt:55; 17_videoplayer-i.txt:63; 19_speedo-i1.txt:99; 27_aioapp-i.txt:59
+/jci/gui/addon-player	not_in_completed_archives				19_speedo-i1.txt:23
+/jci/gui/addon-speedometer	not_in_completed_archives				19_speedo-i1.txt:24
+/jci/gui/apps	acquired	02_jci_complete.tar.gz	0		00_intro.txt:36; 28_mzdmeter-i.txt:42
+/jci/gui/apps/_*	not_in_completed_archives				19_speedo-i1.txt:54; 19_speedo-i1.txt:55
+/jci/gui/apps/_aiotweaks	not_in_completed_archives				27_aioapp-i.txt:18; 27_aioapp-i.txt:72; 27_aioapp-u.txt:60
+/jci/gui/apps/_aiotweaks/js/AIO-startup.js	not_in_completed_archives				27_aioapp-screenoff.txt:1
+/jci/gui/apps/_aiotweaks/js/mzd.js	not_in_completed_archives				27_aioapp-i.txt:81
+/jci/gui/apps/_androidauto	not_in_completed_archives				25_androidauto-i.txt:18; 25_androidauto-i.txt:65; 25_androidauto-u.txt:16
+/jci/gui/apps/_mzdmeter	not_in_completed_archives				28_mzdmeter-i.txt:17; 28_mzdmeter-i.txt:43; 28_mzdmeter-u.txt:49
+/jci/gui/apps/_mzdmeter/sh/mzdmonitor.sh	not_in_completed_archives				28_mzdmeter-i.txt:33
+/jci/gui/apps/_speedometer	not_in_completed_archives				19_speedo-i1.txt:26; 19_speedo-i1.txt:50; 19_speedo-u.txt:49; 21_colors-i2.txt:5
+/jci/gui/apps/_speedometer/css/StatusBarSpeedometer.css	not_in_completed_archives				19_speedo-digiclock.txt:2; 19_speedo-sbhiderev.txt:2
+/jci/gui/apps/_speedometer/css/_speedometerApp.css	not_in_completed_archives				19_speedo-i1.txt:134
+/jci/gui/apps/_speedometer/js	not_in_completed_archives				19_speedo-i1.txt:63; 19_speedo-i1.txt:67; 19_speedo-i1.txt:74
+/jci/gui/apps/_speedometer/js/speedometer-config.js	not_in_completed_archives				19_speedo-i1.txt:16; 19_speedo-i1.txt:18
+/jci/gui/apps/_speedometer/js/speedometer-startup.js	not_in_completed_archives				19_sbfuelbar.txt:1; 19_sbfuelbar.txt:5; 19_speedo-analog.txt:3; 19_speedo-dutch.txt:3; 19_speedo-english.txt:3; 19_speedo-french.txt:3; 19_speedo-i1.txt:113; 19_speedo-i1.txt:129; 19_speedo-i1.txt:140; 19_speedo-i1.txt:141; 19_speedo-i1.txt:142; 19_speedo-i1.txt:143; 19_speedo-i1.txt:144; 19_speedo-i1.txt:150; 19_speedo-i1.txt:162; 19_speedo-i1.txt:168; 19_speedo-i1.txt:174; 19_speedo-i1.txt:180; 19_speedo-i1.txt:186; 19_speedo-i1.txt:192; 19_speedo-i1.txt:198; 19_speedo-i2.txt:13; 19_speedo-i2.txt:23; 19_speedo-i2.txt:28; 19_speedo-i2.txt:3; 19_speedo-i2.txt:33; 19_speedo-i2.txt:38; 19_speedo-i2.txt:43; 19_speedo-i2.txt:48; 19_speedo-i2.txt:53; 19_speedo-i2.txt:8; 19_speedo-italian.txt:3; 19_speedo-kml.txt:2; 19_speedo-lrgtxt.txt:2; 19_speedo-mph.txt:3; 19_speedo-old_background.txt:3; 19_speedo-own_background.txt:6; 19_speedo-polish.txt:3; 19_speedo-sbdonthide.txt:2; 19_speedo-slovak.txt:3; 19_speedo-small_speedo_off.txt:3; 19_speedo-spanish.txt:3; 19_speedo-temp.txt:2; 19_speedo-turkish.txt:3; 19_speedo_bar.txt:2
+/jci/gui/apps/_speedometer/js/speedometer.js	not_in_completed_archives				19_speedo-i2.txt:18
+/jci/gui/apps/_speedometer/sh/speedometer.sh	not_in_completed_archives				19_speedo-i1.txt:99
+/jci/gui/apps/_speedometer/templates/SpeedoMeter/images	not_in_completed_archives				21_colors-i2.txt:7
+/jci/gui/apps/_videoplayer	not_in_completed_archives				17_videoplayer-i.txt:20; 17_videoplayer-i.txt:77; 17_videoplayer-u.txt:51; 27_aioapp-u.txt:13
+/jci/gui/apps/_videoplayer/js/videoplayer-v3.js	not_in_completed_archives				17_videoplayer-i.txt:81; 17_videoplayer-i.txt:82; 17_videoplayer-i.txt:83; 17_videoplayer-i.txt:86
+/jci/gui/apps/custom	not_in_completed_archives				00__casdk-i.txt:87; 00__casdk-i.txt:89; 00__casdk-i.txt:90; 00__casdk-u.txt:81; 00__casdk-u.txt:84
+/jci/gui/apps/custom/apps	not_in_completed_archives				00__casdkapps-u.txt:8
+/jci/gui/apps/custom/apps/app.terminal/terminal.sh	not_in_completed_archives				00__casdkapps-i.txt:77
+/jci/gui/apps/diag	acquired	02_jci_complete.tar.gz	0		12_diag-i.txt:31
+/jci/gui/apps/diag/controls/Test/css/TestCtrl.css	acquired	02_jci_complete.tar.gz	10424	e9ec8080c4dc28c1e67d149e94c5543208991d251faba2e860b8e24cf2d28eb5	12_diag-i.txt:5; 12_diag-u.txt:35
+/jci/gui/apps/diag/controls/Test/js/TestCtrl.js	acquired	02_jci_complete.tar.gz	58289	df87cee00c412c8c6461f26cc000bbf66e64f46eaacfc85900c0773f119dc458	12_diag-i.txt:4; 12_diag-u.txt:31
+/jci/gui/apps/diag/js/diagApp.js	acquired	02_jci_complete.tar.gz	19593	a1e127b245049fa0fccd6237b4f83e3861dad65e02a6853672aa02e6ea89e67e	12_diag-i.txt:1; 12_diag-i.txt:10; 12_diag-i.txt:12; 12_diag-i.txt:14; 12_diag-i.txt:15; 12_diag-i.txt:36; 12_diag-u.txt:10; 12_diag-u.txt:12; 12_diag-u.txt:14; 12_diag-u.txt:15; 12_diag-u.txt:41; 12_diag-u.txt:6
+/jci/gui/apps/ecoenergy/controls/FuelConsumption/css	acquired	02_jci_complete.tar.gz	0		22_fuel-i.txt:8; 22_fuelMPG-i.txt:8
+/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css	acquired	02_jci_complete.tar.gz	17981	0ffd2cceda8987fd8759adbf948891dd9f5dc593be02910fa6854d51806e3bdc	22_fuel-i.txt:1; 22_fuel-i.txt:29; 22_fuel-u.txt:20; 22_fuel-u.txt:5; 22_fuelMPG-i.txt:1; 22_fuelMPG-i.txt:16
+/jci/gui/apps/ecoenergy/controls/FuelConsumption/images	acquired	02_jci_complete.tar.gz	0		22_fuel-i.txt:10; 22_fuel-u.txt:15; 22_fuelMPG-i.txt:10
+/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png	acquired	02_jci_complete.tar.gz	32694	5f2cae2d84509954f647db35c3dc3c60e79e0184ba31857871f256ba43efee77	22_fuel-i.txt:2; 22_fuel-u.txt:13; 22_fuelMPG-i.txt:2
+/jci/gui/apps/ecoenergy/controls/FuelConsumption/js	acquired	02_jci_complete.tar.gz	0		22_fuel-i.txt:12
+/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js	acquired	02_jci_complete.tar.gz	93545	d21a2a959e0e574c56bffd87429d09e8c9c5b9e61c92223f9196f132cf41640e	22_fuel-i.txt:16; 22_fuel-i.txt:20; 22_fuel-i.txt:3; 22_fuel-i.txt:30; 22_fuel-u.txt:21; 22_fuel-u.txt:9; 22_fuelMPG-i.txt:12; 22_fuelMPG-i.txt:17; 22_fuelMPG-i.txt:3
+/jci/gui/apps/syssettings/js/syssettingsApp.js	acquired	02_jci_complete.tar.gz	276511	a83dd588b54531475024b7cd048be1d0e11556abd68bbbcc334cc5ede7534cd1	00_wifi.txt:1; 00_wifi.txt:10; 00_wifi.txt:12; 00_wifi.txt:18; 00_wifi.txt:5; 00_wifi.txt:7; 00_wifi.txt:8
+/jci/gui/apps/system/controls/MainMenu/css/MainMenuCtrl.css	acquired	02_jci_complete.tar.gz	7376	3b0af7f47e7ea0e9f69aa435594ae8c8a5a5feb439abab8fae32993c3dda26e2	20_mainmenu-i.txt:1; 20_mainmenu-i.txt:10; 20_mainmenu-i.txt:110; 20_mainmenu-i.txt:119; 20_mainmenu-i.txt:129; 20_mainmenu-i.txt:137; 20_mainmenu-i.txt:14; 20_mainmenu-i.txt:142; 20_mainmenu-i.txt:24; 20_mainmenu-i.txt:28; 20_mainmenu-i.txt:32; 20_mainmenu-i.txt:36; 20_mainmenu-i.txt:41; 20_mainmenu-i.txt:56; 20_mainmenu-i.txt:73; 20_mainmenu-i.txt:76; 20_mainmenu-i.txt:79; 20_mainmenu-i.txt:8; 20_mainmenu-i.txt:82; 20_mainmenu-i.txt:84; 20_mainmenu-i.txt:90; 20_mainmenu-u.txt:7
+/jci/gui/apps/system/controls/MainMenu/js	acquired	02_jci_complete.tar.gz	0		05_mainloop-i.txt:9
+/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js	acquired	02_jci_complete.tar.gz	21842	2a7864e33d7fdef00513c6dc52859362d1d5898b2bd882fa924166bc0dc12065	05_mainloop-i.txt:1; 05_mainloop-i.txt:10; 05_mainloop-u.txt:5
+/jci/gui/apps/system/controls/OffScreen/images	acquired	02_jci_complete.tar.gz	0		00_offbackground-i.txt:7; 00_offbackground-u.txt:7
+/jci/gui/apps/system/controls/OffScreen/images/OffScreenBackground.png	acquired	02_jci_complete.tar.gz	9012	e0fbbf2a1ed0895ec422bc15d10d8c572dd8023e85541e464ab4ac1ea7aefb3a	00_offbackground-i.txt:1; 00_offbackground-u.txt:5
+/jci/gui/apps/system/js	acquired	02_jci_complete.tar.gz	0		00_59patch.txt:8; 00__casdkapps-i.txt:104; 02_disclaimer-i.txt:35; 02_disclaimer-i.txt:46; 02_disclaimer-i.txt:56; 09_audioorder-i.txt:34; 09_audioorder-u.txt:33
+/jci/gui/apps/system/js/systemApp.js	acquired	02_jci_complete.tar.gz	142069	23106b04bd6bad514dd879b217a34a0f0289d58f86a0ae022488be6a022ca8e1	00_59patch.txt:12; 00_59patch.txt:3; 00_59patch.txt:5; 00__casdkapps-i.txt:101; 00__casdkapps-i.txt:108; 00__casdkapps-i.txt:99; 00_reconnectmsg-i.txt:1; 00_reconnectmsg-i.txt:6; 00_reconnectmsg-i.txt:8; 00_reconnectmsg-i.txt:9; 02_disclaimer-i.txt:1; 02_disclaimer-i.txt:42; 02_disclaimer-i.txt:43; 02_disclaimer-i.txt:47; 02_disclaimer-i.txt:53; 02_disclaimer-i.txt:63; 02_disclaimer-i.txt:67; 02_disclaimer-u.txt:31; 02_disclaimer-u.txt:34; 02_disclaimer-u.txt:37; 09_audioorder-i.txt:1; 09_audioorder-i.txt:41; 09_audioorder-i.txt:44; 09_audioorder-i.txt:50; 09_audioorder-i.txt:53; 09_audioorder-i.txt:63; 09_audioorder-u.txt:30; 09_audioorder-u.txt:36
+/jci/gui/apps/system/js/systemApp.js.audio	not_in_completed_archives				02_disclaimer-i.txt:38; 02_disclaimer-i.txt:43; 02_disclaimer-i.txt:47; 02_disclaimer-u.txt:27; 02_disclaimer-u.txt:31; 02_disclaimer-u.txt:34; 09_audioorder-u.txt:40; 09_audioorder-u.txt:41
+/jci/gui/apps/system/js/systemApp.js.disclaimer	not_in_completed_archives				02_disclaimer-u.txt:41; 02_disclaimer-u.txt:42; 09_audioorder-i.txt:37; 09_audioorder-u.txt:26
+/jci/gui/apps/usbaudio/js	acquired	02_jci_complete.tar.gz	0		26_usbaudiomod-i.txt:11
+/jci/gui/apps/usbaudio/js/usbaudioApp.js	acquired	02_jci_complete.tar.gz	321247	bb91bcd57da8f8c48e27a54c57d2c3f6c8cb788413ee9471878ba9d8c660892f	26_usbaudiomod-i.txt:15; 26_usbaudiomod-i.txt:5; 26_usbaudiomod-u.txt:10
+/jci/gui/common/controls/InCall2/images	acquired	02_jci_complete.tar.gz	0		14_bgart-i.txt:7; 16_blnkframe-i.txt:5; 16_blnkframe-u.txt:5
+/jci/gui/common/controls/List2/css/List2Ctrl.css	acquired	02_jci_complete.tar.gz	230485	b9bfd6b120a1984379a8d63a98c5bc0f347fd080c3f9f72c9376f10553ff74f8	20_uistyle-i.txt:1; 20_uistyle-i.txt:10; 20_uistyle-i.txt:16; 20_uistyle-i.txt:32; 20_uistyle-i.txt:69; 20_uistyle-i.txt:71; 20_uistyle-i.txt:72; 20_uistyle-i.txt:77; 20_uistyle-u.txt:10; 20_uistyle-u.txt:7
+/jci/gui/common/controls/List2/js	acquired	02_jci_complete.tar.gz	0		06_listloop-i.txt:16
+/jci/gui/common/controls/List2/js/List2Ctrl.js	acquired	02_jci_complete.tar.gz	475746	52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f	06_listloop-i.txt:1; 06_listloop-i.txt:25; 06_listloop-i.txt:26; 06_listloop-i.txt:27; 06_listloop-i.txt:28; 06_listloop-i.txt:29; 06_listloop-i.txt:7; 06_listloop-u.txt:12; 06_listloop-u.txt:13; 06_listloop-u.txt:14; 06_listloop-u.txt:15; 06_listloop-u.txt:16; 06_listloop-u.txt:6; 06_listloop-u.txt:8; 07_listbeep-i.txt:1; 07_listbeep-i.txt:7; 07_listbeep-i.txt:8; 07_listbeep-u.txt:6; 07_listbeep-u.txt:7; 07_shorterdelay-i.txt:1; 07_shorterdelay-i.txt:10; 07_shorterdelay-i.txt:11; 07_shorterdelay-i.txt:12; 07_shorterdelay-i.txt:13; 07_shorterdelay-i.txt:7; 07_shorterdelay-i.txt:9; 07_shorterdelay-u.txt:10; 07_shorterdelay-u.txt:11; 07_shorterdelay-u.txt:6; 07_shorterdelay-u.txt:7; 07_shorterdelay-u.txt:8; 07_shorterdelay-u.txt:9; 08_sysbeep-i.txt:11; 08_sysbeep-i.txt:7; 08_sysbeep-i.txt:9; 08_sysbeep-u.txt:5; 08_sysbeep-u.txt:7
+/jci/gui/common/controls/NowPlaying4/css/NowPlaying4Ctrl.css	acquired	02_jci_complete.tar.gz	15982	9bd8b0717b179e7d12867b7d3d54983c6a7ca11e837b02cd95d10e2191b689d0	14_bgart-i.txt:1; 14_bgart-i.txt:11; 14_bgart-i.txt:14; 14_bgart-i.txt:16; 14_bgart-i.txt:20; 14_bgart-i.txt:26; 14_bgart-i.txt:30; 14_bgart-u.txt:6; 14_bgart-u.txt:9; 20_uistyle-i.txt:11; 20_uistyle-i.txt:13; 20_uistyle-i.txt:2; 20_uistyle-i.txt:34; 20_uistyle-i.txt:78; 20_uistyle-u.txt:8; 26_usbaudiomod-i.txt:18; 26_usbaudiomod-i.txt:20; 26_usbaudiomod-i.txt:4; 26_usbaudiomod-u.txt:16
+/jci/gui/common/controls/NowPlaying4/images	acquired	02_jci_complete.tar.gz	0		14_bgart-i.txt:8; 16_blnkframe-i.txt:6; 16_blnkframe-u.txt:6
+/jci/gui/common/controls/NowPlaying4/js	acquired	02_jci_complete.tar.gz	0		26_usbaudiomod-i.txt:9
+/jci/gui/common/controls/NowPlaying4/js/NowPlaying4Ctrl.js	acquired	02_jci_complete.tar.gz	91880	27988b729eb4e0d0f7a5ee3121784a6be1f84c28f8f81031f6f0b06eacfb3c87	26_usbaudiomod-i.txt:3; 26_usbaudiomod-u.txt:6
+/jci/gui/common/controls/Sbn/css/SbnCtrl.all.css	not_in_completed_archives				20_date-u.txt:31
+/jci/gui/common/controls/Sbn/css/SbnCtrl.css	acquired	02_jci_complete.tar.gz	5782	de19fe94ba73e3179d98099bc416624050243f3eb5a51068882691f843a5f56a	20_date-iv1.txt:3; 20_date-iv3.3.txt:19; 20_date-iv3.3.txt:2; 20_date-iv3.3.txt:22; 20_date-u.txt:5; 20_date2status-u.txt:11; 20_statusbar_tweaks-i.txt:13; 20_statusbar_tweaks-i.txt:2; 20_statusbar_tweaks-i.txt:34
+/jci/gui/common/controls/SbnBar/css/SbnBarCtrl.css	not_in_completed_archives				20_statusbar_tweaks-u.txt:7
+/jci/gui/common/controls/StatusBar/css/StatusBarCtrl.css	acquired	02_jci_complete.tar.gz	4661	97466fd1f3abe45c9719662ad8639359e9a8a9ea8cacf3d7f424cc8a1e6e8a91	20_date-iv1.txt:4; 20_date-iv1.txt:52; 20_date-iv1.txt:53; 20_date-iv3.3.txt:18; 20_date-iv3.3.txt:3; 20_date-iv3.3.txt:39; 20_date-u.txt:9; 20_date2status-u.txt:12; 20_statusbar_tweaks-i.txt:1; 20_statusbar_tweaks-i.txt:12; 20_statusbar_tweaks-i.txt:15; 20_statusbar_tweaks-u.txt:6
+/jci/gui/common/controls/StatusBar/images	acquired	02_jci_complete.tar.gz	0		20_date-u.txt:19; 20_date2status-u.txt:28
+/jci/gui/common/controls/StatusBar/images/StatusBarBg.png	acquired	02_jci_complete.tar.gz	1451	e14203d37d5c9b376240abc7f03419d0f5c4bbd921f0d638d4e63a49c59c8555	20_date-iv1.txt:5; 20_date-iv3.3.txt:4; 20_date-iv3.3.txt:84; 20_date-iv3.3.txt:85; 20_date-u.txt:17; 20_date2status-u.txt:26
+/jci/gui/common/controls/StatusBar/js	acquired	02_jci_complete.tar.gz	0		20_date-iv3.3.txt:117
+/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js	acquired	02_jci_complete.tar.gz	32442	bd9e4e3deead409026951542d6424105fce2ef3186447e2efc0b43ca022873a7	12_diag-i.txt:17; 12_diag-i.txt:2; 12_diag-i.txt:21; 12_diag-i.txt:37; 12_diag-u.txt:17; 12_diag-u.txt:21; 12_diag-u.txt:22; 12_diag-u.txt:42; 12_diag-u.txt:7; 20_date-iv1.txt:2; 20_date-iv1.txt:54; 20_date-iv1.txt:55; 20_date-iv3.3.txt:1; 20_date-u.txt:13; 20_date2status-u.txt:15
+/jci/gui/common/controls/Ump3/css/Ump3Ctrl.css	acquired	02_jci_complete.tar.gz	16436	995b63d57189f029afab6daa37a46911a7250524e01cc3d72018cb317a210d17	15_btnbackground-i.txt:1; 15_btnbackground-i.txt:13; 15_btnbackground-i.txt:25; 15_btnbackground-i.txt:35; 15_btnbackground-i.txt:45; 15_btnbackground-i.txt:56; 15_btnbackground-i.txt:65; 15_btnbackground-i.txt:7; 15_btnbackground-i.txt:9; 15_btnbackground-u.txt:22
+/jci/gui/common/controls/Ump3/images/UMP_Bg.png	acquired	02_jci_complete.tar.gz	1070	9645dbd986be8581e09d458a6987c932ea9c6790b9b74a6fc418874b814555f4	15_btnbackground-u.txt:6
+/jci/gui/common/controls/Ump3/images/UMP_Bg.png.org	not_in_completed_archives				15_btnbackground-u.txt:8
+/jci/gui/common/controls/Ump3/images/UMP_Bg_Arch.png	acquired	02_jci_complete.tar.gz	7910	9ad16cc5ac0ce6eb2a04ee1037173ff5bbf806ce9286b9b53e639b723305e31f	15_btnbackground-u.txt:10
+/jci/gui/common/controls/Ump3/images/UMP_Bg_Arch.png.org	not_in_completed_archives				15_btnbackground-u.txt:12
+/jci/gui/common/controls/Ump3/images/UMP_Btn_Separator.png	acquired	02_jci_complete.tar.gz	311	3625ad77662ff5291dc418a6ca7bc87ccffec8db47e413996939ba7c85843f64	15_btnbackground-u.txt:14
+/jci/gui/common/controls/Ump3/images/UMP_Btn_Separator.png.org	not_in_completed_archives				15_btnbackground-u.txt:16
+/jci/gui/common/css	acquired	02_jci_complete.tar.gz	0		00_bgrotator-u.txt:14
+/jci/gui/common/css/common.css	acquired	02_jci_complete.tar.gz	1257	807d2215bf76c94978ce1e8aeb0f268665b14a6d326e89836ef641c79a8cc4d1	00_bgrotator-i.txt:1; 00_bgrotator-i.txt:10; 00_bgrotator-i.txt:31; 00_bgrotator-i.txt:8; 00_bgrotator-u.txt:12; 00_bgrotator-u.txt:5; 00_bgrotator-u.txt:9; 20_uistyle-i.txt:12; 20_uistyle-i.txt:3; 20_uistyle-i.txt:60; 20_uistyle-u.txt:9
+/jci/gui/common/images	acquired	02_jci_complete.tar.gz	0		00_background.txt:14; 16_blnkframe-i.txt:7; 16_blnkframe-u.txt:7; 19_speedo-i1.txt:155; 21_colors-i2.txt:11
+/jci/gui/common/images/*.aio	not_in_completed_archives				19_speedo-i1.txt:41; 21_colors-i.txt:6; 21_colors-i2.txt:10; 21_colors-u.txt:12
+/jci/gui/common/images/Blue.aio	not_in_completed_archives				19_speedo-i1.txt:160
+/jci/gui/common/images/Green.aio	not_in_completed_archives				19_speedo-i1.txt:166
+/jci/gui/common/images/Orange.aio	not_in_completed_archives				19_speedo-i1.txt:172
+/jci/gui/common/images/Pink.aio	not_in_completed_archives				19_speedo-i1.txt:178
+/jci/gui/common/images/Purple.aio	not_in_completed_archives				19_speedo-i1.txt:184
+/jci/gui/common/images/Silver.aio	not_in_completed_archives				19_speedo-i1.txt:190
+/jci/gui/common/images/Yellow.aio	not_in_completed_archives				19_speedo-i1.txt:196
+/jci/gui/common/images/background.png	acquired	02_jci_complete.tar.gz	190791	807b79209e0540fa4d0b8fe76a32b87f9e229089ecc722f874476001f85353b6	00_background.txt:7
+/jci/gui/common/images/icons	acquired	02_jci_complete.tar.gz	0		20_date-u.txt:24; 20_date2status-u.txt:23; 26_usbaudiomod-i.txt:13
+/jci/gui/common/images/icons/IcnSbRoaming.png	acquired	02_jci_complete.tar.gz	853	22f53bbe6d132b5a4ad92f46dfe51bd6d6630b1bb7be22e273fa77f4a2cb1add	20_date-iv1.txt:56; 20_date-iv1.txt:57; 20_date-iv1.txt:6; 20_date-iv3.3.txt:5; 20_date-iv3.3.txt:86; 20_date-iv3.3.txt:87; 20_date-u.txt:22; 20_date2status-u.txt:21
+/jci/gui/common/images/icons/IcnUmpUSBMenu_Ds.png	not_in_completed_archives				26_usbaudiomod-u.txt:18
+/jci/gui/common/images/icons/IcnUmpUSBMenu_En.png	not_in_completed_archives				26_usbaudiomod-u.txt:19
+/jci/gui/common/js	acquired	02_jci_complete.tar.gz	0		00_multicontroller-i.txt:9
+/jci/gui/common/js/Common.js	acquired	02_jci_complete.tar.gz	98348	376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351	01_touchscreen-i.txt:1; 01_touchscreen-i.txt:19; 01_touchscreen-i.txt:21; 01_touchscreen-u.txt:10; 01_touchscreen-u.txt:12; 08_sysbeep-i.txt:1; 08_sysbeep-i.txt:15; 08_sysbeep-i.txt:18; 08_sysbeep-i.txt:20; 08_sysbeep-i.txt:22; 08_sysbeep-i.txt:24; 08_sysbeep-i.txt:31; 08_sysbeep-u.txt:10; 08_sysbeep-u.txt:12; 08_sysbeep-u.txt:14; 08_sysbeep-u.txt:16; 10_pausemute-i.txt:11; 10_pausemute-i.txt:12; 10_pausemute-i.txt:17; 10_pausemute-i.txt:18; 10_pausemute-i.txt:7; 10_pausemute-u.txt:11; 10_pausemute-u.txt:13; 10_pausemute-u.txt:6; 10_pausemute-u.txt:8; 12_diag-i.txt:24; 12_diag-i.txt:26; 12_diag-i.txt:28; 12_diag-i.txt:29; 12_diag-i.txt:3; 12_diag-i.txt:38; 12_diag-u.txt:24; 12_diag-u.txt:26; 12_diag-u.txt:27; 12_diag-u.txt:29; 12_diag-u.txt:43; 12_diag-u.txt:8
+/jci/gui/common/js/Multicontroller.js	acquired	02_jci_complete.tar.gz	14326	5f0b33754e346a645faeced4b99cf3c6ba4ec1ebc89add09b09b915a9fe8095d	00_multicontroller-i.txt:1; 00_multicontroller-i.txt:13
+/jci/gui/framework/js/Utility.js	acquired	02_jci_complete.tar.gz	21569	58d64a3a972e99ea077595cbe3d2172c0db79df2c9d0a76880695785f42de5fa	20_date-iv1.txt:1; 20_date-iv1.txt:58; 20_date-iv1.txt:59; 20_date-iv3.3.txt:102; 20_date-iv3.3.txt:103; 20_date-iv3.3.txt:6; 20_date-iv3.3.txt:93; 20_date-iv3.3.txt:94; 20_date-iv3.3.txt:98; 20_date-iv3.3.txt:99; 20_date-u.txt:27; 20_date2status-u.txt:6
+/jci/gui/index.html	acquired	02_jci_complete.tar.gz	3379	b0e116b941f29078ced19b864a1b888cf76d8bc3e4974af081efca4693e5c420	00_start.txt:654; 00_start.txt:657
+/jci/gui/speedometer	not_in_completed_archives				19_speedo-i1.txt:25
+/jci/lib/libmc_user.so	not_in_completed_archives				08_orderflac-i.txt:3; 08_orderflac-i.txt:56; 08_orderflac-i.txt:59; 08_orderflac-i.txt:60; 08_orderflac-i.txt:66; 08_orderflac-i.txt:67; 08_orderflac-i.txt:73; 08_orderflac-u.txt:10; 08_orderflac-u.txt:11; 08_orderflac-u.txt:14; 08_orderflac-u.txt:9
+/jci/lib/libmc_user.so.org	not_in_completed_archives				08_orderflac-i.txt:66; 08_orderflac-u.txt:7; 08_orderflac-u.txt:9
+/jci/nativegui/images	acquired	02_jci_complete.tar.gz	0		03_warning-i.txt:6; 03_warning-u.txt:6
+/jci/nativegui/images/HorizontalSensors	acquired	02_jci_complete.tar.gz	0		04_sensor-i.txt:6; 04_sensor-u.txt:8
+/jci/nativegui/images/HorizontalSensors/*.png	not_in_completed_archives				04_sensor-i.txt:7; 04_sensor-u.txt:9
+/jci/nativegui/images/MiniView	acquired	02_jci_complete.tar.gz	0		04_sensor-i.txt:10; 04_sensor-u.txt:10
+/jci/nativegui/images/MiniView/*.png	not_in_completed_archives				04_sensor-i.txt:11; 04_sensor-u.txt:11
+/jci/nativegui/images/VerticalSensors	acquired	02_jci_complete.tar.gz	0		04_sensor-i.txt:8; 04_sensor-u.txt:6
+/jci/nativegui/images/VerticalSensors/*.png	not_in_completed_archives				04_sensor-i.txt:9; 04_sensor-u.txt:7
+/jci/nng	acquired	02_jci_complete.tar.gz	0		00_sd-cid.txt:10; 00_sd-cid.txt:11
+/jci/nng/SD_CID.txt	not_in_completed_archives				00_sd-cid.txt:13; 00_sd-cid.txt:14; 00_sd-cid.txt:16
+/jci/nng/cmu_sd_cid_getter	not_in_completed_archives				00_sd-cid.txt:15; 00_sd-cid.txt:7; 00_sd-cid.txt:8; 00_sd-cid.txt:9
+/jci/nng/ux	acquired	02_jci_complete.tar.gz	0		21_colors-i.txt:11; 21_colors-i2.txt:16
+/jci/nng/ux/_skin_jci_bluedemo.zip	not_in_completed_archives				21_colors-u.txt:6; 21_colors-u.txt:8
+/jci/opera/opera_dir/userjs	acquired	02_jci_complete.tar.gz	0		00__casdk-i.txt:56; 00__casdk-i.txt:57; 17_videoplayer-i.txt:30; 17_videoplayer-i.txt:35; 19_speedo-i1.txt:108; 19_speedo-i1.txt:109; 25_androidauto-i.txt:73; 25_androidauto-i.txt:74; 27_aioapp-i.txt:29; 27_aioapp-i.txt:34; 28_mzdmeter-i.txt:22
+/jci/opera/opera_dir/userjs/CustomApplicationsProxy.js	not_in_completed_archives				00__casdk-i.txt:59; 00__casdk-u.txt:65; 00__casdk-u.txt:68; 17_videoplayer-u.txt:22; 19_speedo-u.txt:20; 25_androidauto-u.txt:33; 27_aioapp-u.txt:23; 28_mzdmeter-u.txt:17
+/jci/opera/opera_dir/userjs/additionalApps.*	not_in_completed_archives				17_videoplayer-u.txt:38; 19_speedo-u.txt:35; 25_androidauto-u.txt:58; 27_aioapp-u.txt:48; 28_mzdmeter-u.txt:42
+/jci/opera/opera_dir/userjs/additionalApps.js	not_in_completed_archives				00__casdk-i.txt:62; 00__casdk-i.txt:64; 00__casdk-u.txt:77; 17_videoplayer-i.txt:31; 27_aioapp-i.txt:30; 28_mzdmeter-i.txt:23
+/jci/opera/opera_dir/userjs/additionalApps.js.org	not_in_completed_archives				00__casdk-i.txt:64; 00__casdk-u.txt:74; 00__casdk-u.txt:77
+/jci/opera/opera_dir/userjs/additionalApps.json	not_in_completed_archives				00_intro.txt:28
+/jci/opera/opera_dir/userjs/aio-startup.js	not_in_completed_archives				27_aioapp-i.txt:23; 27_aioapp-u.txt:63
+/jci/opera/opera_dir/userjs/aio.js	not_in_completed_archives				00__casdk-i.txt:58; 17_videoplayer-i.txt:36; 27_aioapp-i.txt:35; 27_aioapp-u.txt:49
+/jci/opera/opera_dir/userjs/app.js	not_in_completed_archives				17_videoplayer-u.txt:39; 19_speedo-u.txt:36; 25_androidauto-u.txt:59; 28_mzdmeter-u.txt:43
+/jci/opera/opera_dir/userjs/fps.js	acquired	02_jci_complete.tar.gz	1188	52441fa1be73ddeeee0ec94e021ddf141bf4990c779753cb952deccd9477a065	00_start.txt:696; 00_start.txt:698; 00_start.txt:699
+/jci/opera/opera_dir/userjs/fps.js.org	not_in_completed_archives				00_start.txt:698
+/jci/opera/opera_dir/userjs/nativeApps.js	not_in_completed_archives				00__casdk-i.txt:70; 00__casdk-i.txt:73; 00__casdk-i.txt:74; 00__casdk-u.txt:69; 00_start.txt:466; 00_start.txt:468; 00_start.txt:528; 00_start.txt:530; 17_videoplayer-u.txt:22; 19_speedo-u.txt:20; 25_androidauto-u.txt:33; 27_aioapp-u.txt:23; 28_mzdmeter-u.txt:17
+/jci/opera/opera_dir/userjs/speedometer-startup.js	not_in_completed_archives				19_speedo-i1.txt:39; 19_speedo-u.txt:51; 28_mzdmeter-u.txt:46
+/jci/opera/opera_dir/userjs/speedometer.js	not_in_completed_archives				19_speedo-i1.txt:40
+/jci/opera/opera_home/opera.ini	acquired	02_jci_complete.tar.gz	2045	a6db0eb9a67198dd0c55cae34ad7459a42241392421710196acba6313a2a988e	00__casdk-i.txt:17; 00__casdk-i.txt:20; 00__casdk-i.txt:21; 00_start.txt:662; 00_start.txt:664; 00_start.txt:667; 00_start.txt:670; 00_start.txt:671; 00_start.txt:674; 00_start.txt:677; 00_start.txt:679; 00_start.txt:681; 00_start.txt:682; 00_start.txt:687; 00_start.txt:689; 00_start.txt:692
+/jci/opera/opera_home/opera.ini.org	not_in_completed_archives				00_start.txt:668; 00_start.txt:670; 00_start.txt:674
+/jci/opera/opera_home/pstorage	not_in_completed_archives				00__casdk-u.txt:33; 00_storage-i.txt:18; 00_storage-i.txt:23; 00_storage-i.txt:27; 00_storage-u.txt:11
+/jci/opera/opera_home/pstorage/psindex.dat	not_in_completed_archives				00__casdk-u.txt:24; 00__casdk-u.txt:29; 00_storage-i.txt:13; 00_storage-i.txt:15; 00_storage-u.txt:2; 00_storage-u.txt:7
+/jci/opera/opera_home/pstorage/psindex.dat.org	not_in_completed_archives				00__casdk-u.txt:26; 00__casdk-u.txt:29; 00__casdk-u.txt:30; 00_storage-i.txt:11; 00_storage-i.txt:15; 00_storage-u.txt:4; 00_storage-u.txt:7; 00_storage-u.txt:8
+/jci/resources	acquired	02_jci_complete.tar.gz	0		13_boot-i.txt:139; 13_boot-i.txt:85
+/jci/resources/ExitLogo.ivf	acquired	02_jci_complete.tar.gz	317440	6bed695628af4c5666132ce1c6422321ae4adc2dd6f70f415406575d9282f75a	13_boot-i.txt:9; 13_boot-u.txt:17
+/jci/resources/LoopLogo.ivf	acquired	02_jci_complete.tar.gz	151428	0514b571198140ef98033aed42cd5c4743b4ad333acced4e1230a10c59381d1f	13_boot-i.txt:1; 13_boot-u.txt:5
+/jci/resources/TranLogo.ivf	acquired	02_jci_complete.tar.gz	1240681	2583aa193728b71e4876f119de0f2fbdd30d040cae1b79ecc39d174b73df4aeb	13_boot-i.txt:49; 13_boot-i.txt:53; 13_boot-i.txt:57; 13_boot-i.txt:6; 13_boot-i.txt:61; 13_boot-i.txt:65; 13_boot-i.txt:69; 13_boot-i.txt:73; 13_boot-i.txt:77; 13_boot-i.txt:81; 13_boot-u.txt:9
+/jci/resources/TranLogoEnd.ivf	acquired	02_jci_complete.tar.gz	164238	2a65000eb66cab60f03efd925f9851fb59dcef1862f6839b88943f2a647fea4b	13_boot-i.txt:103; 13_boot-i.txt:107; 13_boot-i.txt:111; 13_boot-i.txt:115; 13_boot-i.txt:119; 13_boot-i.txt:123; 13_boot-i.txt:127; 13_boot-i.txt:131; 13_boot-i.txt:135; 13_boot-i.txt:7; 13_boot-i.txt:91; 13_boot-i.txt:95; 13_boot-i.txt:99; 13_boot-u.txt:13
+/jci/resources/newLoopLogo.ivf	acquired	02_jci_complete.tar.gz	39269	212ca9cedc57e958c93566fbd350d443702aac23705ead21b8965d7c4a8ca2cf	13_boot-i.txt:2; 13_boot-i.txt:4; 13_boot-u.txt:21
+/jci/scripts	acquired	02_jci_complete.tar.gz	0		00_sshbringback.txt:28; 24_castscreen-i.txt:13; 24_castscreen-i.txt:6; 24_castscreen-i.txt:7; 24_castscreen-i.txt:8
+/jci/scripts/adb	not_in_completed_archives				24_castscreen-i.txt:10; 24_castscreen-i.txt:17; 24_castscreen-i.txt:19; 24_castscreen-u.txt:11
+/jci/scripts/castscreen-1.0.1.apk	not_in_completed_archives				24_castscreen-i.txt:12
+/jci/scripts/castscreen-1.0.apk	not_in_completed_archives				24_castscreen-i.txt:11
+/jci/scripts/cs_receiver_arm	not_in_completed_archives				24_castscreen-i.txt:15; 24_castscreen-u.txt:12
+/jci/scripts/cs_receiver_conn_arm	not_in_completed_archives				24_castscreen-i.txt:9; 24_castscreen-u.txt:13
+/jci/scripts/jci-factoryreset.sh	acquired	02_jci_complete.tar.gz	1075	ec5f5db938b73eb045451fb2bfa20241bf667560afbda52e8d57d70737a653eb	00_factory-reset-end.txt:37
+/jci/scripts/jci-fw.sh	acquired	02_jci_complete.tar.gz	5761	c1f41c3662d88f8bc2619b1799f6a5c50e0d2ba95d6ce2411067da0898ffdaa0	00_sshbringback.txt:25; 00_sshbringback.txt:29; 00_sshbringback.txt:41; 24_castscreen-i.txt:1; 24_castscreen-i.txt:51; 24_castscreen-i.txt:56; 27_aioapp-i.txt:77
+/jci/scripts/jci-wifiap.sh	acquired	02_jci_complete.tar.gz	4607	cc872cf87e9d7d7d0db16479e46da49c78a74573659f56bc0732f6bde79de053	27_aioapp-i.txt:78
+/jci/scripts/mirroring.sh	not_in_completed_archives				24_castscreen-i.txt:16; 24_castscreen-i.txt:33; 24_castscreen-i.txt:38; 24_castscreen-i.txt:42; 24_castscreen-u.txt:14
+/jci/scripts/set_lvds_speed_restriction_config.sh	acquired	02_jci_complete.tar.gz	786	de5e2caf4553dcd7d11c08176b870691ff278b74b63f1ac72666c3d9a4cde121	01_touchscreen-i.txt:15; 01_touchscreen-u.txt:6
+/jci/scripts/set_speed_restriction_config.sh	acquired	02_jci_complete.tar.gz	814	68ff2bf6ff6eff11bdc24029c4b328f051f54618f3def12381ee541d1d62f130	01_touchscreen-i.txt:11; 01_touchscreen-i.txt:9; 01_touchscreen-u.txt:7
+/jci/scripts/show_version.sh	acquired	02_jci_complete.tar.gz	279	9110488158e512f068380b395a48c2c103a95728c204c3b11611cf9fb8c45b60	00_start.txt:567
+/jci/scripts/stage_wifi.sh	acquired	02_jci_complete.tar.gz	11	2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f	00_intro.txt:30
+/jci/scripts/wait_adb_arm.sh	not_in_completed_archives				24_castscreen-i.txt:14; 24_castscreen-u.txt:10
+/jci/settings/configurations	acquired	02_jci_complete.tar.gz	0		11_msgreplies-i.txt:7
+/jci/settings/configurations/blm_msg-system.xml	acquired	02_jci_complete.tar.gz	77550	7cb2e42d680e5f62c32f99bc42ce1ab1a9a95821c101b07b90ccd38e3c0f53fd	11_msgreplies-i.txt:1; 11_msgreplies-i.txt:8; 11_msgreplies-u.txt:5
+/jci/sm/sm.conf	acquired	02_jci_complete.tar.gz	46290	fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84	00_start.txt:590; 00_start.txt:646; 00_start.txt:649; 00_start.txt:650; 00_start.txt:654; 00_start.txt:656; 00_start.txt:657; 11_msgreplies-i.txt:11; 11_msgreplies-i.txt:13; 25_androidauto-i.txt:33; 25_androidauto-i.txt:35; 25_androidauto-i.txt:36; 25_androidauto-i.txt:37; 25_androidauto-i.txt:38; 25_androidauto-u.txt:12; 25_androidauto-u.txt:82; 25_androidauto-u.txt:84; 25_androidauto-u.txt:85; 25_androidauto-u.txt:93
+/jci/sm/sm.conf.org	not_in_completed_archives				00_start.txt:647; 00_start.txt:649
+/jci/tools/jci-dialog	acquired	02_jci_complete.tar.gz	39367	864ff455c75a2739fcda8286cf2d7f478dba38b25fb48e78c546cbde2b453051	00__casdk-u.txt:99; 00__casdkapps-i.txt:118; 00__casdkapps-i.txt:19; 00__casdkapps-i.txt:33; 00__casdkapps-u.txt:44; 00_end.txt:30; 00_end.txt:33; 00_factory-reset-end.txt:28; 00_factory-reset-end.txt:40; 00_start.txt:329; 00_start.txt:336; 00_start.txt:598; 02_disclaimer-i.txt:23; 09_audioorder-i.txt:22; 20_date-iv3.3.txt:112
+/jci/version.ini	acquired	02_jci_complete.tar.gz	14625	7613d9b53aaf53bbc54a996737d38efe72bdf589f5839bb0d29622d6668dc340	00_start.txt:19; 00_start.txt:7; 00_start.txt:8; 00_start.txt:84; 00_start.txt:85; 00_start.txt:9
+/tmp/mnt/resources/aio	not_in_completed_archives				00__casdk-i.txt:80; 00__casdk-u.txt:89; 00_start.txt:368; 00_start.txt:369; 00_start.txt:370
+/tmp/mnt/resources/aio/addon-common	not_in_completed_archives				00_start.txt:366; 00_start.txt:376; 00_start.txt:383; 17_videoplayer-u.txt:46; 19_speedo-u.txt:45; 27_aioapp-u.txt:56
+/tmp/mnt/resources/aio/apps	not_in_completed_archives				00_start.txt:164; 00_start.txt:731
+/tmp/mnt/resources/aio/apps/_aiotweaks	not_in_completed_archives				27_aioapp-i.txt:19; 27_aioapp-u.txt:61
+/tmp/mnt/resources/aio/apps/_androidauto	not_in_completed_archives				25_androidauto-i.txt:19; 25_androidauto-u.txt:19
+/tmp/mnt/resources/aio/apps/_speedometer	not_in_completed_archives				19_speedo-i1.txt:27; 19_speedo-u.txt:50
+/tmp/mnt/resources/aio/apps/_videoplayer	not_in_completed_archives				17_videoplayer-i.txt:21; 17_videoplayer-u.txt:52
+/tmp/mnt/resources/aio/autorun/mzd-casdk.start	not_in_completed_archives				00__casdk-i.txt:39; 00__casdk-i.txt:48
+/tmp/mnt/resources/aio/mzd-casdk	not_in_completed_archives				00__casdk-i.txt:90
+/tmp/mnt/resources/aio/mzd-casdk/apps	not_in_completed_archives				00_intro.txt:34
+/tmp/mnt/resources/aio/mzd-casdk/data	not_in_completed_archives				00__casdk-i.txt:96; 00__casdk-i.txt:97
+/tmp/mnt/resources/dev	not_in_completed_archives				00__casdk-i.txt:81
+/tmp/mnt/resources/dev/bin	not_in_completed_archives				00__node-i.txt:1; 00__node-i.txt:4; 00__node-i.txt:5; 00__node-i.txt:6
+/tmp/mnt/resources/dev/bin/add_app_json.js	not_in_completed_archives				00__node-i.txt:5
+/tmp/mnt/resources/dev/bin/node	not_in_completed_archives				00__node-i.txt:4
+/tmp/mnt/resources/dev/bin/remove_app_json.js	not_in_completed_archives				00__node-i.txt:6
+/tmp/mnt/resources/dev/org_files	not_in_completed_archives				00_intro.txt:38
+/tmp/mnt/resources/swapfile	not_in_completed_archives				18_swapfile-u.txt:26; 18_swapfile-u.txt:29; 18_swapfile-u.txt:30; 18_swapfile2-i.txt:12; 18_swapfile2-i.txt:19; 18_swapfile2-i.txt:20; 18_swapfile2-i.txt:21; 18_swapfile2-i.txt:9
+/usr/bin/gst-inspect	acquired	03_root_system.tar.gz	8592	23c971c1c8adfecdafad44f2e9c0c1cffabf1a33b726483c0f7f8b335e77d0bc	17_videoplayer-i.txt:107
+/usr/lib	acquired	03_root_system.tar.gz	0		08_orderflac-i.txt:58; 17_videoplayer-i.txt:90
+/usr/lib/gstreamer-0.10	acquired	03_root_system.tar.gz	0		08_orderflac-i.txt:57; 17_videoplayer-i.txt:89
+/usr/lib/gstreamer-0.10/libgstautodetect.so	not_in_completed_archives				17_videoplayer-i.txt:91
+/usr/lib/gstreamer-0.10/libgstflac.so	not_in_completed_archives				08_orderflac-i.txt:74; 08_orderflac-u.txt:15; 17_videoplayer-i.txt:92
+/usr/lib/imx-mm/video-codec	acquired	03_root_system.tar.gz	0		17_videoplayer-i.txt:104
+/usr/lib/libFLAC.so.8	not_in_completed_archives				08_orderflac-i.txt:76; 08_orderflac-u.txt:17; 17_videoplayer-i.txt:94
+/usr/lib/libFLAC.so.8.3.0	not_in_completed_archives				08_orderflac-i.txt:75; 08_orderflac-i.txt:76; 08_orderflac-u.txt:16; 17_videoplayer-i.txt:93; 17_videoplayer-i.txt:94

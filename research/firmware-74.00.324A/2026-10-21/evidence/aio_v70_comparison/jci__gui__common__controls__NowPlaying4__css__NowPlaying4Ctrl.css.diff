@@ -1,0 +1,25 @@
+--- AIO_v70/NowPlaying4Ctrl.css.org
++++ CMU_74.00.324A/jci/gui/common/controls/NowPlaying4/css/NowPlaying4Ctrl.css
+@@ -814,22 +814,3 @@
+   font-size: 35px;
+   color: white;
+ }
+-
+-.NowPlaying4CtrlTitleImageDiv {
+-  position: inherit;
+-  top: 22px;
+-  left: 25px;
+-  width: 36px;
+-  height: 36px;
+-}
+-
+-.NowPlaying4CtrlTitleImage {
+-  position: absolute;
+-  top: 0px;
+-  bottom: 0px;
+-  left: 0px;
+-  right: 0px;
+-  margin: auto;
+-  max-width: 36px;
+-  max-height: 36px;
+-}

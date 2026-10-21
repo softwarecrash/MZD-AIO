@@ -1,0 +1,388 @@
+--- AIO_v70/TestCtrl.js.org
++++ CMU_74.00.324A/jci/gui/apps/diag/controls/Test/js/TestCtrl.js
+@@ -40,6 +40,12 @@
+     // control DOM elements
+     this.input = null;
+     this.data = null;
++    this.table1 = null;
++    this.table2 = null;
++    this.table3 = null;
++    this.divTable1 = null;
++    this.divTable2 = null;
++    this.divTable3 = null;
+     this.status = null;
+     this.btnEnter = null;
+     this.btnExit = null;
+@@ -79,13 +85,13 @@
+     this.divElt = document.createElement('div');
+     this.divElt.id = this.id;
+     this.divElt.className = "TestCtrl";
+-    
++
+     //  title
+     this.title = document.createElement('div');
+     this.title.className = "title";
+     this.title.appendChild(document.createTextNode('Test Screen'));
+     this.divElt.appendChild(this.title);
+-    
++
+     // input
+     this.input = document.createElement('div');
+     this.input.className = "input";
+@@ -110,36 +116,64 @@
+         this.data.style.color = "white";
+     }
+     this.divElt.appendChild(this.data);
+-    
++
++    // data divTable1
++    this.divTable1 = document.createElement('div');
++    this.divTable1.className = "divTable1";
++
++    // data divTable2
++    this.divTable2 = document.createElement('div');
++    this.divTable2.className = "divTable2";
++
++    // data divTable3
++    this.divTable3 = document.createElement('div');
++    this.divTable3.className = "divTable3";
++
++    // data table1
++    this.table1 = document.createElement('table');
++    this.table1.className = "table1";
++    this.table1.style.color = "white";
++    this.table1.border = "5px solid black";
++
++    // data table2
++    this.table2 = document.createElement('table');
++    this.table2.className = "table2";
++    this.table2.style.color = "white";
++
++    // data table3
++    this.table3 = document.createElement('table');
++    this.table3.className = "table3";
++    this.table3.style.color = "white";
++
+     // status window
+     this.status = document.createElement('div');
+     this.status.className = "status";
+     this.status.innerText = "Status Window";
+     this.status.style.color = "grey";
+-   
++
+     this.divElt.appendChild(this.status);
+-    
++
+     // btn del
+     this.btnDel = document.createElement('div');
+     this.btnDel.className = 'del';
+     this.btnDel.addEventListener(TestCtrl.prototype._MOUSEDOWNEVENT, this.delHandler, false);
+     this.btnDel.innerText = "DEL";
+     this.divElt.appendChild(this.btnDel);
+-    
++
+     // btn enter
+     this.btnEnter = document.createElement('div');
+     this.btnEnter.className = 'enter';
+     this.btnEnter.addEventListener(TestCtrl.prototype._MOUSEDOWNEVENT, this.enterHandler, false);
+     this.btnEnter.innerText = "ENTER";
+     this.divElt.appendChild(this.btnEnter);
+-    
++
+     // btn Clear
+     this.btnClear = document.createElement('div');
+     this.btnClear.className = 'clear';
+     this.btnClear.addEventListener(TestCtrl.prototype._MOUSEDOWNEVENT, this.clearHandler, false);
+     this.btnClear.innerText = "CLEAR";
+     this.divElt.appendChild(this.btnClear);
+-    
++
+     // btn exit
+     this.btnExit = document.createElement('div');
+     this.btnExit.className = 'exit';
+@@ -147,7 +181,7 @@
+     //Setting Button Lable - arsu
+     this.btnExit.innerText = this.properties.buttonValue; 
+     this.divElt.appendChild(this.btnExit);
+-    
++
+     // buttons
+     this.btns = new Array();
+     for (var i=0; i<10; i++)
+@@ -160,7 +194,7 @@
+         this.btns[i].addEventListener(TestCtrl.prototype._MOUSEDOWNEVENT, this.btnSelectCallback, false);
+         this.divElt.appendChild(temp);
+     }
+-    
++
+     // Add it to the DOM
+     this.parentDiv.appendChild(this.divElt);
+ }
+@@ -470,7 +504,6 @@
+     {
+         var val = e;
+         this.status.innerText = val;
+-        //log.info("Status Data = "+val);
+         this.status.style.color = "white";
+     }
+     else
+@@ -488,14 +521,252 @@
+     {
+         var val = e;
+         log.debug("Data window = "+val);
+-        this.data.innerText = val;
+-        this.data.style.color = "white";
++        if (74 == this.properties.value)
++        {
++            this.setUblox(val);
++        }
++        else
++        {
++            this.data.innerText = val;
++            this.data.style.color = "white";
++        }
+     }
+     else
+     {
+         this.data.innerText = "Data Window";
+         this.data.style.color = "grey";
+     }
++}
++
++TestCtrl.prototype.setUblox = function(e)
++{
++    const DEG_DEG = "°";
++    const UBLOX = {
++                    version:         0,
++                    ublox_status:    1,
++                    ant_status:      2,
++                    ublox_mode:      3,
++                    utcTime:         4,
++                    lat_deg:         5,
++                    lat_min:         6,
++                    lat_sec:         7,
++                    lon_deg:         8,
++                    lon_min:         9,
++                    lon_sec:        10,
++                    gSpeed:         11,
++                    slope:          12,
++                    headMot:        13,
++                    headVeh:        14,
++                    GyroSts:        15,
++                    AccelSts:       16,
++                    SpeedSts:       17,
++                    aclLA_X:        18,
++                    aclLA_Y:        19,
++                    aclLA_Z:        20,
++                    antLA_X:        21,
++                    antLA_Y:        22,
++                    antLA_Z:        23,
++                    svinfo:         24,
++                };
++    const svinfo = {
++                    svType:     0,
++                    svId:       1,
++                    elev:       2,
++                    azim:       3,
++                    cno:        4,
++                    stat:       5,
++                };
++
++    var ubloxa = e.split(/\n/);
++
++    var title = [
++        [
++            ["SV Type",   "min-width: 64px; text-align: center;", ""],
++            ["SVid",      "min-width: 36px; text-align: center;", ""],
++            ["Elevation", "min-width: 62px; text-align: center;", ""],
++            ["Azimuth",   "min-width: 62px; text-align: center;", ""],
++            ["C/N",    "min-width: 28px; text-align: center;", ""],
++            ["Status",    "width: 9999px; text-align: center;",   ""],
++        ],
++        [
++            ["SV Type",   "min-width: 64px; text-align: left;", ""             ],
++            ["SVid",      "min-width: 36px; text-align: right;", ""            ],
++            ["Elevation", "min-width: 62px; text-align: right;", DEG_DEG + "　"],
++            ["Azimuth",   "min-width: 62px; text-align: right;", DEG_DEG + "　"],
++            ["C/N",    "min-width: 28px; text-align: right;", ""            ],
++            ["Status",    "width: 9999px; text-align: center;", ""             ],
++        ],
++    ];
++
++    if (ubloxa.length > UBLOX.svinfo)
++    {
++        this.data.style.color = "white";
++
++        // table1の行の削除
++        while (this.table1.rows.length > 0)
++        {
++            this.table1.deleteRow(0);
++        }
++
++        // table2の行削除
++        while (this.table2.rows.length > 0)
++        {
++            this.table2.deleteRow(0);
++        }
++
++        // table3の行削除
++        while (this.table3.rows.length > 0)
++        {
++            this.table3.deleteRow(0);
++        }
++
++        // data領域クリア
++        this.data.textContent = null;
++
++        // 状態テーブル
++        // guide行
++        var row = this.table1.insertRow(-1);
++        var col = row.insertCell(-1);   // col1
++        col.style.height = "1px";
++        col.style.width = "90px";
++        col.innerText = "";
++        var col = row.insertCell(-1);   // col2
++        col.style.height = "1px";
++        col.style.width = "80px";
++        col.innerText = "";
++        var col = row.insertCell(-1);   // col3
++        col.style.height = "1px";
++        col.style.width = "83px";
++        col.innerText = "";
++        var col = row.insertCell(-1);   // col4
++        col.style.height = "1px";
++        col.style.width = "107px";
++        col.innerText = "";
++        // 1行目
++        var row = this.table1.insertRow(-1);
++        var col = row.insertCell(-1);   // col1-4
++        col.innerText = "NEO-M8L FM version: " + ubloxa[UBLOX.version];
++        col.colSpan = 4;
++        // 2行目
++        var row = this.table1.insertRow(-1);
++        var col = row.insertCell(-1);   // col1-2
++        col.innerText = "NEO-M8L status: " + ubloxa[UBLOX.ublox_status];
++        col.colSpan = 2;
++        var col = row.insertCell(-1);   // col3-4
++        col.innerText = "Antenna status: " + ubloxa[UBLOX.ant_status];
++        col.colSpan = 2;
++        // 3行目
++        var row = this.table1.insertRow(-1);
++        var col = row.insertCell(-1);   // col1-2
++        col.innerText = "NEO-M8L mode: " + ubloxa[UBLOX.ublox_mode];
++        col.colSpan = 2;
++        var col = row.insertCell(-1);   // col3
++        col.innerText = "Gyro status:";
++        col.colSpan = 1;
++        var col = row.insertCell(-1);   // col4
++        col.innerText = ubloxa[UBLOX.GyroSts];
++        col.colSpan = 1;
++        // 4行目
++        var row = this.table1.insertRow(-1);
++        var col = row.insertCell(-1);   // col1-2
++        col.innerText = "Ground Speed: " + ubloxa[UBLOX.gSpeed] + "km/h";
++        col.colSpan = 2;
++        var col = row.insertCell(-1);   // col3
++        col.innerText = "Accel status:";
++        col.colSpan = 1;
++        var col = row.insertCell(-1);   // col4
++        col.innerText = ubloxa[UBLOX.AccelSts];
++        col.colSpan = 1;
++        // 5行目
++        var row = this.table1.insertRow(-1);
++        var col = row.insertCell(-1);   // col1-2
++        col.innerText = "Slope: " + ubloxa[UBLOX.slope] + DEG_DEG;
++        col.colSpan = 2;
++        var col = row.insertCell(-1);   // col3
++        col.innerText = "Speed status:";
++        col.colSpan = 1;
++        var col = row.insertCell(-1);   // col4
++        col.innerText = ubloxa[UBLOX.SpeedSts];
++        col.colSpan = 1;
++        // 6行目
++        var row = this.table1.insertRow(-1);
++        var col = row.insertCell(-1);   // col1-2
++        col.innerText = "Heading of motion: " + ubloxa[UBLOX.headMot] + DEG_DEG;
++        col.colSpan = 2;
++        var col = row.insertCell(-1);   // col3-4
++        col.innerText = "Latitude:  " + ubloxa[UBLOX.lat_deg] + DEG_DEG + ubloxa[UBLOX.lat_min] + "'" + ubloxa[UBLOX.lat_sec] + "\"";
++        col.colSpan = 2;
++        // 7行目
++        var row = this.table1.insertRow(-1);
++        var col = row.insertCell(-1);   // col1-2
++        col.innerText = "Heading of vehicle: " + ubloxa[UBLOX.headVeh] + DEG_DEG;
++        col.colSpan = 2;
++        var col = row.insertCell(-1);   // col3-4
++        col.innerText = "Longitude: " + ubloxa[UBLOX.lon_deg] + DEG_DEG + ubloxa[UBLOX.lon_min] + "'" + ubloxa[UBLOX.lon_sec] + "\"";
++        col.colSpan = 2;
++        // 8行目
++        var row = this.table1.insertRow(-1);
++        var col = row.insertCell(-1);   // col1-4
++        col.innerText = "UTC+0 Time: " + ubloxa[UBLOX.utcTime];
++        col.colSpan = 4;
++        // 9行目
++        var row = this.table1.insertRow(-1);
++        var col = row.insertCell(-1);   // col1-4
++        col.innerText = "Accelerometer Lever Arm: X:" + ubloxa[UBLOX.aclLA_X] + "cm Y:" + ubloxa[UBLOX.aclLA_Y] + "cm Z:" + ubloxa[UBLOX.aclLA_Z] + "cm";
++        col.colSpan = 4;
++        // 10行目
++        var row = this.table1.insertRow(-1);
++        var col = row.insertCell(-1);   // col1-4
++        col.innerText = "GNSS Antenna Lever Arm: X:" + ubloxa[UBLOX.antLA_X] + "cm Y:" + ubloxa[UBLOX.antLA_Y] + "cm Z:" + ubloxa[UBLOX.antLA_Z] + "cm";
++        col.colSpan = 4;
++
++        this.divTable1.appendChild(this.table1);
++        this.data.appendChild(this.divTable1);
++
++        // 衛星情報テーブル(ヘッダ)
++        var  row = this.table2.insertRow(-1);
++        for (var j = 0; j < title[0].length; j++)
++        {
++            var th = document.createElement('th');
++            th.innerText = title[0][j][0];
++            th.setAttribute("style", title[0][j][1]);
++            row.appendChild(th);
++        }
++        this.divTable2.appendChild(this.table2);
++        this.data.appendChild(this.divTable2);
++
++        var len = title[1].length;
++        var tcnt = parseInt((ubloxa.length - UBLOX.svinfo) / len, 10);
++        // 衛星情報テーブル(データ)
++        for (var i = 0; i < tcnt; i++)
++        {
++            var  row = this.table3.insertRow(-1);
++            for (var j = 0; j < len; j++)
++            {
++                var col = row.insertCell(-1);
++                col.innerText = ubloxa[UBLOX.svinfo + len * i + j] + title[1][j][2];
++                col.setAttribute("style", title[1][j][1]);
++            }
++        }
++        for (var i = 0; i < (8 - tcnt); i++)
++        {
++            var  row = this.table3.insertRow(-1);
++            for (var j = 0; j < len; j++)
++            {
++                var col = row.insertCell(-1);
++                col.innerHTML = "<br>";
++                col.setAttribute("style", title[1][j][1]);
++            }
++        }
++        this.divTable3.appendChild(this.table3);
++        this.data.appendChild(this.divTable3);
++    }
++    else
++    {
++        this.data.innerText = e;
++        this.data.style.color = "white";
++    }
++
+ }
+ 
+ TestCtrl.prototype.setInput = function(e)
+@@ -1573,4 +1844,4 @@
+ 	}
+ }
+ 
+-framework.registerCtrlLoaded("TestCtrl");+framework.registerCtrlLoaded("TestCtrl");

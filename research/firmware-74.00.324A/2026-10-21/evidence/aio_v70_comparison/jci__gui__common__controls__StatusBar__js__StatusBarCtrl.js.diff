@@ -1,0 +1,35 @@
+--- AIO_v70/StatusBarCtrl.js.org
++++ CMU_74.00.324A/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js
+@@ -480,7 +480,8 @@
+     {
+     	icon._display = "none";
+     }
+-    if ((framework.getCurrentApp() != "androidauto") && (framework.getCurrentApp() != "carplay"))
++    if (!((framework.getCurrentApp() == "androidauto") && (framework.getCurrCtxtId() == "AndroidAutoUI")) &&
++        !((framework.getCurrentApp() == "carplay") && (framework.getCurrCtxtId() == "CarPlayUI")))
+     {
+         icon.style.display = icon._display;
+     }
+@@ -678,15 +679,13 @@
+     log.debug("transitionVisible " + delay + " " + duration + " " + mthd + " " + sbVisible);
+     log.debug("status bar is currently " + (this._sbVisible ? "visible" : "hidden"));
+ 
+-    if ((framework.getCurrentApp() == "androidauto") || (framework.getCurrentApp() == "carplay"))
+-    {
+-        if (framework.getCurrentApp() == "carplay")
+-        {
+-            if((sbVisible == true) && (mthd == "fade"))
+-            {
+-                log.debug("transitionVisible return");
+-                return;
+-            }
++    if (((framework.getCurrentApp() == "androidauto") && (framework.getCurrCtxtId() == "AndroidAutoUI")) || 
++        ((framework.getCurrentApp() == "carplay") && (framework.getCurrCtxtId() == "CarPlayUI")))
++    {
++        if((sbVisible == true) && (mthd == "fade"))
++        {
++            log.debug("transitionVisible return");
++            return;
+         }
+         if((framework.getCurrentApp() == "androidauto"))
+         {

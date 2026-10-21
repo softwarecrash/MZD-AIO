@@ -1,0 +1,1303 @@
+--- AIO_v70/List2Ctrl.css.org
++++ CMU_74.00.324A/jci/gui/common/controls/List2/css/List2Ctrl.css
+@@ -414,7 +414,7 @@
+   display: block;
+   position: absolute;
+   top: 65px;
+-  line-height: 32px;
++  line-height: 29px;
+   font-size: 28px;
+   color: white;
+   left: 31px;
+@@ -507,39 +507,6 @@
+   left: 0;
+   background-position: 50% 50%;
+   background-repeat: no-repeat;
+-}
+-.List2CtrlTitle.style12 .line1 {
+-  width: 571px;
+-  height: 50px;
+-  left: 31px;
+-  top: 14px;
+-  display: block;
+-  position: absolute;
+-  top: 0;
+-  line-height: 69px;
+-  font-size: 40px;
+-  color: white;
+-  left: 31px;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  direction: ltr;
+-}
+-.List2CtrlTitle.style12 .count {
+-  display: block;
+-  position: absolute;
+-  top: 26px;
+-  line-height: 34px;
+-  font-size: 28px;
+-  color: white;
+-  left: 604px;
+-  width: 72px;
+-  height: 34px;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  direction: ltr;
+ }
+ .List2CtrlTitle.bold {
+   font-family: "Tipperary", Arial, Helvetica, sans-serif;
+@@ -2459,312 +2426,6 @@
+   left: 613px;
+   top: 5.5px;
+ }
+-.List2Ctrl.normalItems .ListItem.style30a .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 5.5px;
+-}
+-.List2Ctrl.normalItems .ListItem.style30a .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  width: 343px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems .ListItem.style30a .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 88px;
+-  left: 420px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems .ListItem.style30a .label2 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: center;
+-  width: 53px;
+-  left: 515px;
+-}
+-.List2Ctrl.normalItems .ListItem.style30a .label2.disabled {
+-  color: #929497;
+-}
+-.List2Ctrl.normalItems .ListItem.style30a .label3 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 94px;
+-  left: 573px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems .ListItem.style35 .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 35px;
+-  width: 244px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems .ListItem.style35 .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 35px;
+-  text-align: right;
+-  width: 180px;
+-  left: 317px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems .ListItem.style35 .label2 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 157px;
+-  left: 499px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems .ListItem.style35 .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 5.5px;
+-}
+-.List2Ctrl.normalItems .ListItem.style36 .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 35px;
+-  width: 225px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems .ListItem.style36 .label1 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 35px;
+-  text-align: right;
+-  width: 174px;
+-  left: 298px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems .ListItem.style36 .label2 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 35px;
+-  width: 137px;
+-  left: 529px;
+-  direction: ltr;
+-  text-align: left;
+-}
+-.List2Ctrl.normalItems .ListItem.style36 .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 474px;
+-  top: 5.5px;
+-}
+-.List2Ctrl.normalItems .ListItem.style37 .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 5.5px;
+-}
+-.List2Ctrl.normalItems .ListItem.style37 .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  width: 446px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems .ListItem.style37 .image2 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 500px;
+-  top: 5.5px;
+-  left: 519px;
+-}
+-.List2Ctrl.normalItems .ListItem.style37 .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 94px;
+-  left: 572px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems .ListItem.style37a .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 5.5px;
+-}
+-.List2Ctrl.normalItems .ListItem.style37a .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  width: 446px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems .ListItem.style37a .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: center;
+-  width: 53px;
+-  left: 515px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems .ListItem.style37a .label1.disabled {
+-  color: #929497;
+-}
+-.List2Ctrl.normalItems .ListItem.style37a .label2 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 94px;
+-  left: 572px;
+-  direction: ltr;
+-}
+ .List2Ctrl.normalItems .ListItem.style38 .image1 {
+   display: block;
+   position: absolute;
+@@ -4760,312 +4421,6 @@
+   left: 613px;
+   top: 5.5px;
+ }
+-.List2Ctrl.normalItems.smallItemText .ListItem.style30a .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 5.5px;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style30a .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  width: 343px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style30a .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 88px;
+-  left: 420px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style30a .label2 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: center;
+-  width: 53px;
+-  left: 515px;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style30a .label2.disabled {
+-  color: #929497;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style30a .label3 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 94px;
+-  left: 573px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style35 .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 35px;
+-  width: 244px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style35 .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 35px;
+-  text-align: right;
+-  width: 180px;
+-  left: 317px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style35 .label2 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 157px;
+-  left: 499px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style35 .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 5.5px;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style36 .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 35px;
+-  width: 225px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style36 .label1 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 35px;
+-  text-align: right;
+-  width: 174px;
+-  left: 298px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style36 .label2 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 35px;
+-  width: 137px;
+-  left: 529px;
+-  direction: ltr;
+-  text-align: left;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style36 .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 474px;
+-  top: 5.5px;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style37 .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 5.5px;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style37 .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  width: 446px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style37 .image2 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 500px;
+-  top: 5.5px;
+-  left: 519px;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style37 .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 94px;
+-  left: 572px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style37a .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 5.5px;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style37a .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  width: 446px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style37a .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: center;
+-  width: 53px;
+-  left: 515px;
+-  direction: ltr;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style37a .label1.disabled {
+-  color: #929497;
+-}
+-.List2Ctrl.normalItems.smallItemText .ListItem.style37a .label2 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 64px;
+-  line-height: 64px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 94px;
+-  left: 572px;
+-  direction: ltr;
+-}
+ .List2Ctrl.normalItems.smallItemText .ListItem.style38 .image1 {
+   display: block;
+   position: absolute;
+@@ -7262,312 +6617,6 @@
+   left: 613px;
+   top: 14.5px;
+ }
+-.List2Ctrl.thickItems .ListItem.style30a .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 14.5px;
+-}
+-.List2Ctrl.thickItems .ListItem.style30a .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  width: 343px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems .ListItem.style30a .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 88px;
+-  left: 420px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems .ListItem.style30a .label2 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: center;
+-  width: 53px;
+-  left: 515px;
+-}
+-.List2Ctrl.thickItems .ListItem.style30a .label2.disabled {
+-  color: #929497;
+-}
+-.List2Ctrl.thickItems .ListItem.style30a .label3 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 94px;
+-  left: 573px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems .ListItem.style35 .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 35px;
+-  width: 244px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems .ListItem.style35 .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 35px;
+-  text-align: right;
+-  width: 180px;
+-  left: 317px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems .ListItem.style35 .label2 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 157px;
+-  left: 499px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems .ListItem.style35 .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 14.5px;
+-}
+-.List2Ctrl.thickItems .ListItem.style36 .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 35px;
+-  width: 225px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems .ListItem.style36 .label1 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 35px;
+-  text-align: right;
+-  width: 174px;
+-  left: 298px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems .ListItem.style36 .label2 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 35px;
+-  width: 137px;
+-  left: 529px;
+-  direction: ltr;
+-  text-align: left;
+-}
+-.List2Ctrl.thickItems .ListItem.style36 .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 474px;
+-  top: 14.5px;
+-}
+-.List2Ctrl.thickItems .ListItem.style37 .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 14.5px;
+-}
+-.List2Ctrl.thickItems .ListItem.style37 .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  width: 446px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems .ListItem.style37 .image2 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 500px;
+-  top: 14.5px;
+-  left: 519px;
+-}
+-.List2Ctrl.thickItems .ListItem.style37 .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 94px;
+-  left: 572px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems .ListItem.style37a .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 14.5px;
+-}
+-.List2Ctrl.thickItems .ListItem.style37a .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  width: 446px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems .ListItem.style37a .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: center;
+-  width: 53px;
+-  left: 515px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems .ListItem.style37a .label1.disabled {
+-  color: #929497;
+-}
+-.List2Ctrl.thickItems .ListItem.style37a .label2 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 94px;
+-  left: 572px;
+-  direction: ltr;
+-}
+ .List2Ctrl.thickItems .ListItem.style38 .image1 {
+   display: block;
+   position: absolute;
+@@ -9563,312 +8612,6 @@
+   left: 613px;
+   top: 14.5px;
+ }
+-.List2Ctrl.thickItems.smallItemText .ListItem.style30a .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 14.5px;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style30a .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  width: 343px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style30a .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 88px;
+-  left: 420px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style30a .label2 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: center;
+-  width: 53px;
+-  left: 515px;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style30a .label2.disabled {
+-  color: #929497;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style30a .label3 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 94px;
+-  left: 573px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style35 .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 35px;
+-  width: 244px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style35 .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 35px;
+-  text-align: right;
+-  width: 180px;
+-  left: 317px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style35 .label2 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 157px;
+-  left: 499px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style35 .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 14.5px;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style36 .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 35px;
+-  width: 225px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style36 .label1 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 35px;
+-  text-align: right;
+-  width: 174px;
+-  left: 298px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style36 .label2 {
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 35px;
+-  width: 137px;
+-  left: 529px;
+-  direction: ltr;
+-  text-align: left;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style36 .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 474px;
+-  top: 14.5px;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style37 .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 14.5px;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style37 .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  width: 446px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style37 .image2 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 500px;
+-  top: 14.5px;
+-  left: 519px;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style37 .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 94px;
+-  left: 572px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style37a .image1 {
+-  display: block;
+-  position: absolute;
+-  background-position: 50% 50%;
+-  background-repeat: no-repeat;
+-  width: 53px;
+-  height: 53px;
+-  left: 18px;
+-  top: 14.5px;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style37a .line1 {
+-  position: absolute;
+-  display: block;
+-  color: white;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  width: 446px;
+-  left: 71px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style37a .label1 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: center;
+-  width: 53px;
+-  left: 515px;
+-  direction: ltr;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style37a .label1.disabled {
+-  color: #929497;
+-}
+-.List2Ctrl.thickItems.smallItemText .ListItem.style37a .label2 {
+-  max-width: 237px;
+-  display: block;
+-  position: absolute;
+-  text-align: right;
+-  overflow: hidden;
+-  white-space: pre;
+-  text-overflow: ellipsis;
+-  top: 0;
+-  height: 82px;
+-  line-height: 82px;
+-  font-size: 28px;
+-  text-align: right;
+-  width: 94px;
+-  left: 572px;
+-  direction: ltr;
+-}
+ .List2Ctrl.thickItems.smallItemText .ListItem.style38 .image1 {
+   display: block;
+   position: absolute;

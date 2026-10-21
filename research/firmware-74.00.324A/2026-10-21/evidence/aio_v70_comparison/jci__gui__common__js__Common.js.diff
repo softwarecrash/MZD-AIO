@@ -1,0 +1,116 @@
+--- AIO_v70/Common.js.org
++++ CMU_74.00.324A/jci/gui/common/js/Common.js
+@@ -771,6 +771,18 @@
+     {
+         // ... call that API!
+         response = this._cachedTemplate.xmdataList2Ctrl[apiName]();
++        result = response.charAt(0).toUpperCase() + response.slice(1);  // make sure first letter is uppercase
++    }
++    if (this._cachedTemplate && this._cachedTemplate.templateName === "netmgmtList2Tmplt" && this._cachedTemplate.netmgmtList2Ctrl && apiName)
++    {
++        // ... call that API!
++        response = this._cachedTemplate.netmgmtList2Ctrl[apiName]();
++        result = response.charAt(0).toUpperCase() + response.slice(1);  // make sure first letter is uppercase
++    }
++    if (this._cachedTemplate && this._cachedTemplate.templateName === "carplayList2Tmplt" && this._cachedTemplate.carplayList2Ctrl && apiName)
++    {
++        // ... call that API!
++        response = this._cachedTemplate.carplayList2Ctrl[apiName]();
+         result = response.charAt(0).toUpperCase() + response.slice(1);  // make sure first letter is uppercase
+     }
+     // Compose result & send to MMUI
+@@ -927,6 +939,40 @@
+             result = response.charAt(0).toUpperCase() + response.slice(1); // first letter uppercase
+         }
+     }
++    if (this._cachedTemplate && this._cachedTemplate.templateName == "netmgmtList2Tmplt")
++    {
++        // Does the list have data and support VUI?
++        if (this._cachedTemplate.netmgmtList2Ctrl.dataList && this._cachedTemplate.netmgmtList2Ctrl.dataList.vuiSupport == true)
++        {
++            log.info("Sending Line Number to List: " + number);
++            // List will return a result
++            var response = this._cachedTemplate.netmgmtList2Ctrl.selectLine(number);
++
++            if (response == "selected")
++            {
++                return; // No event from Common if "selected" is response
++            }
++
++            result = response.charAt(0).toUpperCase() + response.slice(1); // first letter uppercase
++        }
++    }
++    if (this._cachedTemplate && this._cachedTemplate.templateName == "carplayList2Tmplt")
++    {
++        // Does the list have data and support VUI?
++        if (this._cachedTemplate.carplayList2Ctrl.dataList && this._cachedTemplate.carplayList2Ctrl.dataList.vuiSupport == true)
++        {
++            log.info("Sending Line Number to List: " + number);
++            // List will return a result
++            var response = this._cachedTemplate.carplayList2Ctrl.selectLine(number);
++
++            if (response == "selected")
++            {
++                return; // No event from Common if "selected" is response
++            }
++
++            result = response.charAt(0).toUpperCase() + response.slice(1); // first letter uppercase
++        }
++    }
+ 
+     log.info("SelectLineResult is ", number, result);
+     var params = {
+@@ -1759,6 +1805,30 @@
+             }
+ 
+         }
++        // validate that this is a List and the List is configured to show line numbers
++        if (this._cachedTemplate && this._cachedTemplate.templateName == "netmgmtList2Tmplt")
++        {
++            if ((this._cachedTemplate.netmgmtList2Ctrl.dataList) &&
++                (this._cachedTemplate.netmgmtList2Ctrl.dataList.vuiSupport == true) &&
++                (this._cachedTemplate.netmgmtList2Ctrl.properties.numberedList == true) &&
++                (this._cachedTemplate.netmgmtList2Ctrl.dataList.hasOwnProperty('itemCount') && this._cachedTemplate.netmgmtList2Ctrl.dataList.itemCount > 0))
++            {
++                this.leftBtn.showLineNumbers(this._lineNumberData.count, this._lineNumberData.style);
++            }
++
++        }
++        // validate that this is a List and the List is configured to show line numbers
++        if (this._cachedTemplate && this._cachedTemplate.templateName == "carplayList2Tmplt")
++        {
++            if ((this._cachedTemplate.carplayList2Ctrl.dataList) &&
++                (this._cachedTemplate.carplayList2Ctrl.dataList.vuiSupport == true) &&
++                (this._cachedTemplate.carplayList2Ctrl.properties.numberedList == true) &&
++                (this._cachedTemplate.carplayList2Ctrl.dataList.hasOwnProperty('itemCount') && this._cachedTemplate.carplayList2Ctrl.dataList.itemCount > 0))
++            {
++                this.leftBtn.showLineNumbers(this._lineNumberData.count, this._lineNumberData.style);
++            }
++
++        }
+     }
+     else
+     {
+@@ -2461,11 +2531,18 @@
+ {
+     if (msg && msg.params && msg.params.payload)
+     {
+-        var isMuted = msg.params.payload.volumeOnOffStatus === "VolumeOff";
+-        if (isMuted !== this._isMuted)
+-        {
+-            this._isMuted = isMuted;
++        if (msg.params.payload.volumeOnOffStatus === "AndroidAutoVolumeOff")
++        {
+             this._isMutedChanged();
++        }
++        else
++        {
++            var isMuted = msg.params.payload.volumeOnOffStatus === "VolumeOff";
++            if (isMuted !== this._isMuted)
++            {
++                this._isMuted = isMuted;
++                this._isMutedChanged();
++            }
+         }
+     }
+ };

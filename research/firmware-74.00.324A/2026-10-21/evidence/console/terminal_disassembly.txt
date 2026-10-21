@@ -1,0 +1,26 @@
+
+CALL execl
+0000dddc: pop {r4, r5, r6, r7, pc}
+0000dde0: movw r6, #0x570
+0000dde4: movw r0, #0x7674
+0000dde8: movt r6, #2
+0000ddec: mov r2, #1
+0000ddf0: ldr r1, [r6, #0x300]
+0000ddf4: movt r0, #1
+0000ddf8: bl #0xb744
+0000ddfc: movw r0, #0x767c
+0000de00: ldr r1, [r6, #0x300]
+0000de04: mov r2, #1
+0000de08: movt r0, #1
+0000de0c: bl #0xb744
+0000de10: mov r0, r5
+0000de14: mov r1, r5
+0000de18: mov r2, r7
+0000de1c: bl #0xb30c
+0000de20: cmp r0, #0
+0000de24: beq #0xdd68
+0000de28: movw r0, #0x7688
+0000de2c: movt r0, #1
+0000de30: bl #0xb3fc
+0000de34: mov r0, #1
+0000de38: bl #0xb768

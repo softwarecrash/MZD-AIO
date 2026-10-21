@@ -1,0 +1,9 @@
+--- AIO_v70/profile.org
++++ CMU_74.00.324A/etc/profile
+@@ -22,3 +22,6 @@
+ 
+ # required for valgrind
+ export VALGRIND_LIB=/tmp/mnt/resources/dev/usr/lib/valgrind
++
++# DeviceManager log setting
++export DEVMGR_LOG_PREF="DEVMGR_LOG -f/tmp/devmgr_debug.txt -m12 -l1 -m13 -l1 -m16 -l1 -m17 -l1"

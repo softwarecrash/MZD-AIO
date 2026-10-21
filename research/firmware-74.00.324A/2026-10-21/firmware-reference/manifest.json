@@ -1,0 +1,355 @@
+{
+  "firmware": "74.00.324A EU",
+  "selection": "Existing literal AIO targets, v70 comparison targets, and console entry-point dependencies. Selected regular OEM files only; no user data, keys or full partitions.",
+  "files": {
+    "jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js": {
+      "bytes": 93545,
+      "sha256": "d21a2a959e0e574c56bffd87429d09e8c9c5b9e61c92223f9196f132cf41640e",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png": {
+      "bytes": 32694,
+      "sha256": "5f2cae2d84509954f647db35c3dc3c60e79e0184ba31857871f256ba43efee77",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css": {
+      "bytes": 17981,
+      "sha256": "0ffd2cceda8987fd8759adbf948891dd9f5dc593be02910fa6854d51806e3bdc",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/apps/diag/controls/Test/js/TestCtrl.js": {
+      "bytes": 58289,
+      "sha256": "df87cee00c412c8c6461f26cc000bbf66e64f46eaacfc85900c0773f119dc458",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/apps/diag/controls/Test/css/TestCtrl.css": {
+      "bytes": 10424,
+      "sha256": "e9ec8080c4dc28c1e67d149e94c5543208991d251faba2e860b8e24cf2d28eb5",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/apps/diag/js/diagApp.js": {
+      "bytes": 19593,
+      "sha256": "a1e127b245049fa0fccd6237b4f83e3861dad65e02a6853672aa02e6ea89e67e",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/apps/syssettings/js/syssettingsApp.js": {
+      "bytes": 276511,
+      "sha256": "a83dd588b54531475024b7cd048be1d0e11556abd68bbbcc334cc5ede7534cd1",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/apps/system/controls/OffScreen/images/OffScreenBackground.png": {
+      "bytes": 9012,
+      "sha256": "e0fbbf2a1ed0895ec422bc15d10d8c572dd8023e85541e464ab4ac1ea7aefb3a",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js": {
+      "bytes": 21842,
+      "sha256": "2a7864e33d7fdef00513c6dc52859362d1d5898b2bd882fa924166bc0dc12065",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/apps/system/controls/MainMenu/css/MainMenuCtrl.css": {
+      "bytes": 7376,
+      "sha256": "3b0af7f47e7ea0e9f69aa435594ae8c8a5a5feb439abab8fae32993c3dda26e2",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/apps/system/js/systemApp.js": {
+      "bytes": 142069,
+      "sha256": "23106b04bd6bad514dd879b217a34a0f0289d58f86a0ae022488be6a022ca8e1",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/apps/usbaudio/js/usbaudioApp.js": {
+      "bytes": 321247,
+      "sha256": "bb91bcd57da8f8c48e27a54c57d2c3f6c8cb788413ee9471878ba9d8c660892f",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/index.html": {
+      "bytes": 3379,
+      "sha256": "b0e116b941f29078ced19b864a1b888cf76d8bc3e4974af081efca4693e5c420",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/framework/js/Utility.js": {
+      "bytes": 21569,
+      "sha256": "58d64a3a972e99ea077595cbe3d2172c0db79df2c9d0a76880695785f42de5fa",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/controls/Ump3/images/UMP_Bg.png": {
+      "bytes": 1070,
+      "sha256": "9645dbd986be8581e09d458a6987c932ea9c6790b9b74a6fc418874b814555f4",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/controls/Ump3/images/UMP_Bg_Arch.png": {
+      "bytes": 7910,
+      "sha256": "9ad16cc5ac0ce6eb2a04ee1037173ff5bbf806ce9286b9b53e639b723305e31f",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/controls/Ump3/images/UMP_Btn_Separator.png": {
+      "bytes": 311,
+      "sha256": "3625ad77662ff5291dc418a6ca7bc87ccffec8db47e413996939ba7c85843f64",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/controls/Ump3/css/Ump3Ctrl.css": {
+      "bytes": 16436,
+      "sha256": "995b63d57189f029afab6daa37a46911a7250524e01cc3d72018cb317a210d17",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/controls/Sbn/css/SbnCtrl.css": {
+      "bytes": 5782,
+      "sha256": "de19fe94ba73e3179d98099bc416624050243f3eb5a51068882691f843a5f56a",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/controls/List2/js/List2Ctrl.js": {
+      "bytes": 475746,
+      "sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/controls/List2/css/List2Ctrl.css": {
+      "bytes": 230485,
+      "sha256": "b9bfd6b120a1984379a8d63a98c5bc0f347fd080c3f9f72c9376f10553ff74f8",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/controls/NowPlaying4/js/NowPlaying4Ctrl.js": {
+      "bytes": 91880,
+      "sha256": "27988b729eb4e0d0f7a5ee3121784a6be1f84c28f8f81031f6f0b06eacfb3c87",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/controls/NowPlaying4/css/NowPlaying4Ctrl.css": {
+      "bytes": 15982,
+      "sha256": "9bd8b0717b179e7d12867b7d3d54983c6a7ca11e837b02cd95d10e2191b689d0",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js": {
+      "bytes": 32442,
+      "sha256": "bd9e4e3deead409026951542d6424105fce2ef3186447e2efc0b43ca022873a7",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/controls/StatusBar/images/StatusBarBg.png": {
+      "bytes": 1451,
+      "sha256": "e14203d37d5c9b376240abc7f03419d0f5c4bbd921f0d638d4e63a49c59c8555",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/controls/StatusBar/css/StatusBarCtrl.css": {
+      "bytes": 4661,
+      "sha256": "97466fd1f3abe45c9719662ad8639359e9a8a9ea8cacf3d7f424cc8a1e6e8a91",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/js/Multicontroller.js": {
+      "bytes": 14326,
+      "sha256": "5f0b33754e346a645faeced4b99cf3c6ba4ec1ebc89add09b09b915a9fe8095d",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/js/Common.js": {
+      "bytes": 98348,
+      "sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/images/background.png": {
+      "bytes": 190791,
+      "sha256": "807b79209e0540fa4d0b8fe76a32b87f9e229089ecc722f874476001f85353b6",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/images/icons/IcnSbRoaming.png": {
+      "bytes": 853,
+      "sha256": "22f53bbe6d132b5a4ad92f46dfe51bd6d6630b1bb7be22e273fa77f4a2cb1add",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/gui/common/css/common.css": {
+      "bytes": 1257,
+      "sha256": "807d2215bf76c94978ce1e8aeb0f268665b14a6d326e89836ef641c79a8cc4d1",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/scripts/run-terminal.sh": {
+      "bytes": 639,
+      "sha256": "58e408d158522238faef07952c60eaf73de9cb6adfaa7744409e0bb0e050a26c",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/scripts/startSystemScripts.sh": {
+      "bytes": 670,
+      "sha256": "4a0bf43f5512da3e7d9068d8d4715f040eb981a99cfe943314b78f6dd98faa13",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/scripts/jci-factoryreset.sh": {
+      "bytes": 1075,
+      "sha256": "ec5f5db938b73eb045451fb2bfa20241bf667560afbda52e8d57d70737a653eb",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/scripts/jci-wifiap.sh": {
+      "bytes": 4607,
+      "sha256": "cc872cf87e9d7d7d0db16479e46da49c78a74573659f56bc0732f6bde79de053",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/scripts/set_speed_restriction_config.sh": {
+      "bytes": 814,
+      "sha256": "68ff2bf6ff6eff11bdc24029c4b328f051f54618f3def12381ee541d1d62f130",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/scripts/stage_wifi.sh": {
+      "bytes": 11,
+      "sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/scripts/jci-fw.sh": {
+      "bytes": 5761,
+      "sha256": "c1f41c3662d88f8bc2619b1799f6a5c50e0d2ba95d6ce2411067da0898ffdaa0",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/scripts/systemHooks.sh": {
+      "bytes": 4447,
+      "sha256": "42578f6e3f4320b83249de11a65003b64ab0f5bd3b07d51b9dab27d3a206651a",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/scripts/show_version.sh": {
+      "bytes": 279,
+      "sha256": "9110488158e512f068380b395a48c2c103a95728c204c3b11611cf9fb8c45b60",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/scripts/set_lvds_speed_restriction_config.sh": {
+      "bytes": 786,
+      "sha256": "de5e2caf4553dcd7d11c08176b870691ff278b74b63f1ac72666c3d9a4cde121",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/sm/sm.conf": {
+      "bytes": 46290,
+      "sha256": "fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/opera/opera_dir/userjs/fps.js": {
+      "bytes": 1188,
+      "sha256": "52441fa1be73ddeeee0ec94e021ddf141bf4990c779753cb952deccd9477a065",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/opera/opera_home/opera.ini": {
+      "bytes": 2045,
+      "sha256": "a6db0eb9a67198dd0c55cae34ad7459a42241392421710196acba6313a2a988e",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/tools/jci-systemDialog": {
+      "bytes": 43354,
+      "sha256": "e9b092debd4e22d5dc1e4d4ddc8a5a9301fe49339d47d2d7e6175fb75ea1b79b",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o755"
+    },
+    "jci/tools/jci-dialog": {
+      "bytes": 39367,
+      "sha256": "864ff455c75a2739fcda8286cf2d7f478dba38b25fb48e78c546cbde2b453051",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o755"
+    },
+    "jci/version.ini": {
+      "bytes": 14625,
+      "sha256": "7613d9b53aaf53bbc54a996737d38efe72bdf589f5839bb0d29622d6668dc340",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o644"
+    },
+    "etc/profile": {
+      "bytes": 1059,
+      "sha256": "8ef2b68acd1392215455f78e627b95366e5d4970bcf400d6b92b4a0f6d78558f",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o775"
+    },
+    "usr/bin/terminal": {
+      "bytes": 69488,
+      "sha256": "c8f2cbf5ad8db30775d9ed8ddde3ca8dfd6c343acfdba0939d47c7b918e26bc1",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o755"
+    },
+    "usr/bin/rungetty": {
+      "bytes": 140,
+      "sha256": "0b205e203510bef6d20b910f31c88a7f9c141048c41b1704eed20b880d67ac82",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o755"
+    },
+    "usr/bin/runlogin": {
+      "bytes": 194,
+      "sha256": "b77e4dadaa1173578e58d319dd3d37bb24117cb9b3baf73731c401f5a47360b8",
+      "source_archive": "01_aio_console_priority.tar.gz",
+      "mode": "0o755"
+    },
+    "jci/settings/configurations/blm_msg-system.xml": {
+      "bytes": 77550,
+      "sha256": "7cb2e42d680e5f62c32f99bc42ce1ab1a9a95821c101b07b90ccd38e3c0f53fd",
+      "source_archive": "02_jci_complete.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/resources/TranLogoEnd.ivf": {
+      "bytes": 164238,
+      "sha256": "2a65000eb66cab60f03efd925f9851fb59dcef1862f6839b88943f2a647fea4b",
+      "source_archive": "02_jci_complete.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/resources/ExitLogo.ivf": {
+      "bytes": 317440,
+      "sha256": "6bed695628af4c5666132ce1c6422321ae4adc2dd6f70f415406575d9282f75a",
+      "source_archive": "02_jci_complete.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/resources/TranLogo.ivf": {
+      "bytes": 1240681,
+      "sha256": "2583aa193728b71e4876f119de0f2fbdd30d040cae1b79ecc39d174b73df4aeb",
+      "source_archive": "02_jci_complete.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/resources/LoopLogo.ivf": {
+      "bytes": 151428,
+      "sha256": "0514b571198140ef98033aed42cd5c4743b4ad333acced4e1230a10c59381d1f",
+      "source_archive": "02_jci_complete.tar.gz",
+      "mode": "0o775"
+    },
+    "jci/resources/newLoopLogo.ivf": {
+      "bytes": 39269,
+      "sha256": "212ca9cedc57e958c93566fbd350d443702aac23705ead21b8965d7c4a8ca2cf",
+      "source_archive": "02_jci_complete.tar.gz",
+      "mode": "0o775"
+    },
+    "usr/bin/gst-inspect": {
+      "bytes": 8592,
+      "sha256": "23c971c1c8adfecdafad44f2e9c0c1cffabf1a33b726483c0f7f8b335e77d0bc",
+      "source_archive": "03_root_system.tar.gz",
+      "mode": "0o755"
+    }
+  },
+  "missing_targets": []
+}

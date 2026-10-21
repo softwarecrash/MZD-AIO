@@ -1,0 +1,50 @@
+MAZDA USB-TEST v1 -- WICHTIG VOR DEM KOPIEREN
+
+Ordner ZUM_USB_KOPIEREN oeffnen und dessen gesamten INHALT in das
+Hauptverzeichnis des USB-Sticks kopieren. Vorhandenes js/run.js ersetzen.
+Der Originalstand des Sticks liegt separat im Ordner original und als
+original_usb.tar.gz auf dem Notebook.
+
+Nach dem jetzigen MCU-Neustart funktioniert aus diesem Paket automatisch:
+MP3 abspielen -> neues Testfenster -> Diagnose/Testmenue 11 anfordern.
+Danach erscheint ohne Vorbereitung weiterhin das originale Testmenue.
+
+Die komplette Kette Konsole -> SSH ist noch KEIN reiner USB-Kaltstart.
+Dafuer enthaelt das Paket einen optionalen, temporaeren RAM-Hook.
+Dieser muss einmal aus einer Root-Konsole gestartet werden:
+
+  sh /mnt/sda1/keyboardless/install-ram-hook.sh
+
+Falls der Stick anders gemountet ist, sda1 entsprechend ersetzen.
+Diese EINMALIGE Eingabe braucht noch eine Tastatur oder einen bereits
+funktionierenden Befehlszugang. Der MP3-Code kann sie nicht selbst tippen.
+
+Nach dieser Vorbereitung auf einen anderen MP3-Titel wechseln und den
+Ausloesertitel erneut waehlen, alternativ im neuen Fenster auf
+'Erneut starten' tippen. Jetzt soll Test 11 unmittelbar das Terminal
+oeffnen, dessen Startskript wiederum SSH auf Port 2223 startet.
+Die Befehle im Terminal werden bei diesem zweiten Schritt automatisch
+ausgefuehrt. Das ist der eigentliche Test ohne Tastatureingabe.
+
+Auf dem Notebook VERBINDEN-TEST.cmd starten und die aktuelle MCU-IP eingeben.
+Eine NEUE Anmeldung auf Port 2223 und folgende Dateien bestaetigen den Test:
+
+  cat /tmp/mzd-keyboardless-test/result.txt
+  cat /tmp/mzd-keyboardless-test/run-id.txt
+
+Erwartet: terminal_entry_started und ssh_started.
+Nur ein offenes Terminal oder alter SSH-Zugriff auf Port 2222 reicht nicht.
+
+Rueckgaengig:
+  sh /tmp/mzd-keyboardless-test/uninstall-ram-hook.sh
+oder die MCU neu starten. Danach ist die Vorbereitung erneut erforderlich.
+
+Die Einrichtung schreibt temporaere Dateien unter /tmp und ueberlagert
+das Diagnose-Startskript per Bind-Mount. OEM-Dateien im Flash bleiben
+erhalten. Es werden keine Passwoerter geaendert und kein dauerhafter
+Autostart eingerichtet. Der private Notebook-Schluessel liegt NICHT
+im Kopierordner. Nur der bisherige oeffentliche Schluessel wird verwendet.
+
+Pruefstatus: Shell-Syntax und JavaScript-Ablauf lokal geprueft.
+Der komplette Test ist noch nicht auf der MCU erprobt.
+Weitere technische Einzelheiten: README-TEST.txt.

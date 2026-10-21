@@ -1,0 +1,753 @@
+--- AIO_v70/syssettingsApp.js.org
++++ CMU_74.00.324A/jci/gui/apps/syssettings/js/syssettingsApp.js
+@@ -234,6 +234,7 @@
+     this._cachedNaviStatus = "Unavailable";
+
+     this._cachedDayLightSavingsTime = "Off";
+
+     this._cachedCurrentTime = null;
+
++    this._prevcachedTime = null;
+     this._cachedMeridiem = null;
+
+     this._cachedTimeZoneIndex = 14;                        //Eastern Time UTC + 5:00
+
+     this._cachedTimeZoneList = null;
+
+@@ -286,7 +287,10 @@
+     this._cachedAppleCarPlayCheckedDisable = false;
+
+     // CRI-886
+
+     this._cachedAppleCarPlayDuringDisable = false;
+
+-
+
++    this._dbg_cnt = 0;
++
++    this._supportedWirelessCarPlay = false;
+
++
+     //DEVICES TAB
+
+     this._DevicesTabCtxtDataList = {
+
+         itemCountKnown : true,
+
+@@ -294,11 +298,27 @@
+         items: [
+
+             // Note: appData values here are the EventIds that will be sent to MMUI on item selection
+
+             { appData : 'SelectBluetooth', text1Id : 'Bluetooth',   itemStyle : 'style01', hasCaret : false },
+
++            { appData : 'SetAppleCarPlay', text1Id : 'CarPlayApple',   itemStyle : 'styleOnOff', hasCaret : false, value : this._cachedAppleCarPlayChecked},
+
+             { appData : 'SetAndroidAuto', text1Id : 'AndroidAuto',   itemStyle : 'styleOnOff', hasCaret : false, value : this._cachedAndroidAutoChecked},
+
+-            { appData : 'SetAppleCarPlay', text1Id : 'CarPlayApple',   itemStyle : 'styleOnOff', hasCaret : false, value : this._cachedAppleCarPlayChecked},
+
+             { appData : 'SelectNetworkManagement', text1Id : 'NetworkManagement',   itemStyle : 'style01', hasCaret : false },
+
+         ]
+
+     };
+
++
+
++    /*
+
++    // Note: _DevicesTabCtxtDataList for supporting WirelessCarPlay
+
++    //       When supporting WirelessCarPlay, it will be set again later, so once set the value when unsupported.
+
++    this._DevicesTabCtxtDataList = {
+
++        itemCountKnown : true,
+
++        itemCount : 4,
+
++        items: [
+
++            // Note: appData values here are the EventIds that will be sent to MMUI on item selection
+
++            { appData : 'SelectBluetooth', text1Id : 'Bluetooth',   itemStyle : 'style01', hasCaret : false },
+
++            { appData : 'SelectAppleCarPlay', text1Id : 'CarPlayApple',   itemStyle : 'style01', hasCaret : false },
+
++            { appData : 'SetAndroidAuto', text1Id : 'AndroidAuto',   itemStyle : 'styleOnOff', hasCaret : false, value : this._cachedAndroidAutoChecked},
+
++            { appData : 'SelectNetworkManagement', text1Id : 'NetworkManagement',   itemStyle : 'style01', hasCaret : false },
+
++        ]
+
++    };
+
++    */
+
+     
+
+     //DISPLAY TAB
+
+     this._DisplayTabCtxtDataList = {
+
+@@ -1126,7 +1146,9 @@
+ 	"AndroidAutoAvailable" : this._AndroidAutoAvailableMsgHandler.bind(this),
+
+ 	"AndroidAutoConnection" : this._AndroidAutoConnectionMsgHandler.bind(this),
+
+ 	"AndroidAutoSettings" : this._AndroidAutoSettingsMsgHandler.bind(this),
+
++	"AndroidAutoConnectCancel" : this._AndroidAutoConnectCancelMsgHandler.bind(this),
+
+ 	"AppleCarPlayAvailable" : this._AppleCarPlayAvailableMsgHandler.bind(this),
+
++	"AppleWirelessCarPlayAvailable" : this._AppleWirelessCarPlayAvailableMsgHandler.bind(this),
+
+ 	"AppleCarPlayConnection" : this._AppleCarPlayConnectionMsgHandler.bind(this),
+
+ 	"AppleCarPlaySettings" : this._AppleCarPlaySettingsMsgHandler.bind(this),
+
+     }; // end of this._messageTable 
+
+@@ -1165,7 +1187,7 @@
+                     buttonCount : 1,
+
+                     buttonConfig : {
+
+                         button1 : {
+
+-                            labelId : "common.Yes", 
+
++                            labelId : "common.Ok", 
+
+                             appData : "Global.Yes" 
+
+                         }
+
+                     },
+
+@@ -1433,6 +1455,32 @@
+             "noLongerDisplayedFunction": null,  
+
+         }, // end of "LanguageConf"
+
+         
+
++        //CRI-700 start
+
++        "VRNotSupported" : {
+
++            "template" : "Dialog3Tmplt",
+
++            "sbNameId" : "SystemSettings",
+
++            "leftBtnStyle" : "goBack",
+
++            "controlProperties": {
+
++                "Dialog3Ctrl" : {
+
++                    contentStyle  : "style02", 
+
++                    "fullScreen" : true,
+
++                    defaultSelectCallback :  this._dialogDefaultSelectCallback.bind(this),
+
++                    buttonCount : 1,
+
++                    buttonConfig : {
+
++                        button1 : {
+
++                            labelId : "common.Ok", 
+
++                            appData : "Global.Yes" 
+
++                        }
+
++                    },
+
++                    text1Id : 'VRUK',     
+
++                } // end of properties for "Dialog3Ctrl"                                       
+
++            }, // end of list of controlProperties
+
++            "readyFunction" : this._VRNotSupportedCtxtTmpltReadyToDisplay.bind(this),
+
++            "displayedFunction": null,  
+
++            "noLongerDisplayedFunction": null,  
+
++        }, // end of "VRNotSupported"
+
++        //CRI-700 end
+
++        
+
+         "LanguageConf" : {
+
+             "template" : "Dialog3Tmplt",
+
+             "sbNameId" : "SystemSettings",
+
+@@ -1946,6 +1994,19 @@
+         case "ConfirmDisableCarPlay" :
+
+             framework.sendEventToMmui("common", appData);
+
+             break;  
+
++        //CRI-700 start
+
++        case "VRNotSupported" :
+
++            switch(appData)
+
++            {
+
++                case 'Global.Yes': 
+
++                    framework.sendEventToMmui(this.uiaId, "SetLanguage", { payload : { languageID : this._cachedLanguage} });    
+
++                    break;
+
++                default:
+
++                    log.error("Invalid appData for VRNotSupported.");
+
++                    break;
+
++            }
+
++            break;   
+
++        //CRI-700 end
+
+         default:
+
+             log.debug("Dialog does not have any event.");
+
+             break;
+
+@@ -2693,6 +2754,15 @@
+     this._EnableDisableControlItems(); 
+
+ }
+
+ 
+
++//CRI-700 start
+
++// LanguageConf For VRNotSupported Context
+
++syssettingsApp.prototype._VRNotSupportedCtxtTmpltReadyToDisplay = function(params)
+
++{
+
++    log.debug("VRNotSupportedCtxtTmpltReadyToDisplay");
+
++    this._EnableDisableControlItems(); 
+
++}
+
++//CRI-700 end
+
++
+
+   
+
+ // LanguageConf Context
+
+ syssettingsApp.prototype._LanguageConfCtxtTmpltReadyToDisplay = function(params)
+
+@@ -3362,6 +3432,19 @@
+             else
+
+             {
+
+                 this._updateTimeEpoch();
+
++                if (3 > this._dbg_cnt)
++                {
++                    var diffTime = Math.abs(this._cachedCurrentTime - this._prevcachedTime);
++                    if(diffTime >= 60)
++                    {
++                        var time = new Date(this._cachedCurrentTime * 1000);
++                        var hours = time.getHours();
++                        var min = time.getMinutes();
++                        log.error('<I> update clock time: ' + hours + " : " + min);
++                        this._dbg_cnt++;
++                        this._prevcachedTime = this._cachedCurrentTime;
++                    }
++                }
+             }
+
+         }
+
+     }
+
+@@ -4242,12 +4325,30 @@
+     this._SetCommunicationSettingsResetStatus();
+
+ }
+
+ 
+
++syssettingsApp.prototype._AndroidAutoConnectCancelMsgHandler = function(msg)
+
++{
+
++    log.debug("AndroidAutoConnectCancelMsgHandler called...");
+
++    this._cachedAndroidAutoChecked = 1;
+
++    this._cachedAndroidAutoCheckedDisable = false;
+
++
+
++    this._SetDevicesTabStatus();
+
++}
+
++
+
+ syssettingsApp.prototype._AppleCarPlayAvailableMsgHandler = function(msg)
+
+ {
+
+     if (msg && msg.params && msg.params.payload)
+
+     {
+
+         this._cachedAppleCarPlayHidden = msg.params.payload.enable === "On" ? false : true;
+
+         log.debug("msg.params.payload.enable :" + msg.params.payload.enable + " this._cachedAppleCarPlayHidden :" + this._cachedAppleCarPlayHidden);
+
++    }
+
++}
+
++
+
++syssettingsApp.prototype._AppleWirelessCarPlayAvailableMsgHandler = function(msg)
+
++{
+
++    if (msg && msg.params && msg.params.payload)
+
++    {
+
++        this._supportedWirelessCarPlay = msg.params.payload.enable === "On" ? true : false;
+
++        log.debug("msg.params.payload.enable :" + msg.params.payload.enable + " this._supportedWirelessCarPlay :" + this._supportedWirelessCarPlay);
+
+     }
+
+ }
+
+ 
+
+@@ -4277,6 +4378,7 @@
+     var tmplt = this._currentContextTemplate;
+
+     if (tmplt && tmplt.list2Ctrl && this._currentContext.ctxtId === "DevicesTab")
+
+     {
+
++        this._disableSpeedRestricted = framework.common.getAtSpeedValue();
+
+         if (0 <= this._IndexOfAndroidAuto)
+
+         {
+
+             if (this._cachedAndroidAutoDisable)
+
+@@ -4287,22 +4389,64 @@
+             else
+
+             {
+
+                 tmplt.list2Ctrl.dataList.items[this._IndexOfAndroidAuto].itemStyle = 'styleOnOff';
+
+-                tmplt.list2Ctrl.dataList.items[this._IndexOfAndroidAuto].disabled = this._cachedAndroidAutoCheckedDisable;
+
+                 tmplt.list2Ctrl.dataList.items[this._IndexOfAndroidAuto].value = this._cachedAndroidAutoChecked;
+
++
+
++                // Note:SpeedRestricted for AndroidAuto supported only WirelessCarPlay supported boards
+
++                if (true === this._supportedWirelessCarPlay)
+
++                {
+
++                    if (true === this._disableSpeedRestricted)
+
++                    {
+
++                        tmplt.list2Ctrl.dataList.items[this._IndexOfAndroidAuto].disabled = true;
+
++                    }
+
++                    else
+
++                    {
+
++                        tmplt.list2Ctrl.dataList.items[this._IndexOfAndroidAuto].disabled = this._cachedAndroidAutoCheckedDisable;
+
++                    }
+
++                }
+
++                else
+
++                {
+
++                    tmplt.list2Ctrl.dataList.items[this._IndexOfAndroidAuto].disabled = this._cachedAndroidAutoCheckedDisable;
+
++                }
+
+             }
+
+         }
+
+         if (0 <= this._IndexOfAppleCarPlay)
+
+         {
+
+-            if (this._cachedAppleCarPlayDisable)
+
+-            {
+
++            if (true === this._supportedWirelessCarPlay)
+
++            {
+
++                tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].appData = 'SelectAppleCarPlay';
+
+                 tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].itemStyle = 'style01';
+
+-                tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].disabled = true;
+
++
+
++                if (true === this._disableSpeedRestricted)
+
++                {
+
++                    tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].disabled = true;
+
++                }
+
++                else
+
++                {
+
++                    tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].disabled = false;
+
++                }
+
+             }
+
+             else
+
+             {
+
+-                tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].itemStyle = 'styleOnOff';
+
+-                tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].disabled = this._cachedAppleCarPlayCheckedDisable;
+
+-                tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].value = this._cachedAppleCarPlayChecked;
+
++                tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].appData = 'SetAppleCarPlay';
+
++                if (true === this._cachedAppleCarPlayDisable)
+
++                {
+
++                    tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].itemStyle = 'style01';
+
++                    tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].disabled = true;
+
++                }
+
++                else
+
++                {
+
++                    tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].itemStyle = 'styleOnOff';
+
++                    tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].value = this._cachedAppleCarPlayChecked;
+
++
+
++                    if (true === this._disableSpeedRestricted)
+
++                    {
+
++                        tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].disabled = true;
+
++                    }
+
++                    else
+
++                    {
+
++                        tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].disabled = this._cachedAppleCarPlayCheckedDisable;
+
++                    }
+
++                }
+
+             }
+
+         }
+
+         tmplt.list2Ctrl.updateItems(0, tmplt.list2Ctrl.dataList.items.length - 1);
+
+@@ -4389,7 +4533,56 @@
+                 switch (this._currentContext.ctxtId)
+
+                 {
+
+                     case "DevicesTab":
+
+-                        //Network Management - is only available in Japan region
+
++                        // AppleCarPlay
+
++                        if (0 <= this._IndexOfAppleCarPlay)
+
++                        {
+
++                            if (true === this._disableSpeedRestricted)
+
++                            {
+
++                                tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].disabled = true;
+
++                            }
+
++                            else
+
++                            {
+
++                                if (true === this._supportedWirelessCarPlay)
+
++                                {
+
++                                    tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].disabled = false;
+
++                                }
+
++                                else
+
++                                {
+
++                                    if (true === this._cachedAppleCarPlayDisable)
+
++                                    {
+
++                                        tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].disabled = true;
+
++                                    }
+
++                                    else
+
++                                    {
+
++                                        tmplt.list2Ctrl.dataList.items[this._IndexOfAppleCarPlay].disabled = this._cachedAppleCarPlayCheckedDisable;
+
++                                    }
+
++                                }
+
++                            }
+
++                        }
+
++                        // AndroidAuto
+
++                        if (0 <= this._IndexOfAndroidAuto)
+
++                        {
+
++                            // Note:SpeedRestricted for AndroidAuto supported only WirelessCarPlay supported boards
+
++                            if (true === this._supportedWirelessCarPlay)
+
++                            {
+
++                                if (true === this._disableSpeedRestricted)
+
++                                {
+
++                                    tmplt.list2Ctrl.dataList.items[this._IndexOfAndroidAuto].disabled = true;
+
++                                }
+
++                                else
+
++                                {
+
++                                    if (true === this._cachedAndroidAutoDisable)
+
++                                    {
+
++                                        tmplt.list2Ctrl.dataList.items[this._IndexOfAndroidAuto].disabled = true;
+
++                                    }
+
++                                    else
+
++                                    {
+
++                                        tmplt.list2Ctrl.dataList.items[this._IndexOfAndroidAuto].disabled = this._cachedAndroidAutoCheckedDisable;
+
++                                    }
+
++                                }
+
++                            }
+
++                        }
+
++                        //Network Management
+
+                         if (0 <= this._IndexOfNetworkManagement)
+
+                         {
+
+                             tmplt.list2Ctrl.dataList.items[this._IndexOfNetworkManagement].disabled = this._disableSpeedRestricted;
+
+@@ -4605,6 +4798,9 @@
+                         //dialog.setDisabled("button1", this._disableSpeedRestricted);
+
+                         dialog.setDisabled("button2", this._disableSpeedRestricted);
+
+                         break;
+
++                    //CRI-700 start
+
++                    //case "VRNotSupported" : //memo:"No speed restriction in this context"
+
++                    //CRI-700 end
+
+                     default :
+
+                         log.debug("No speed restriction in this context");
+
+                 }
+
+@@ -5252,6 +5448,31 @@
+                 itemStyle : 'style01',
+
+                 hasCaret: false
+
+             });
+
++            if(true !== this._cachedAppleCarPlayHidden)
+
++            {
+
++                // AppleCarPlay
+
++                if (true === this._supportedWirelessCarPlay)
+
++                {
+
++                    items.push({
+
++                        appData : 'SelectAppleCarPlay',
+
++                        text1Id : 'CarPlayApple',
+
++                        itemStyle : 'style01',
+
++                        disabled : false ,
+
++                        hasCaret: false,
+
++                    });
+
++                }
+
++                else
+
++                {
+
++                    items.push({
+
++                        appData : 'SetAppleCarPlay',
+
++                        text1Id : 'CarPlayApple',
+
++                        itemStyle : 'styleOnOff',
+
++                        hasCaret: false,
+
++                        value : this._cachedAppleCarPlayChecked
+
++                    });
+
++                }
+
++                this._IndexOfAppleCarPlay = ++index;
+
++            }
+
+             if(true !== this._cachedAndroidAutoHidden)
+
+             {
+
+                 // AndroidAuto
+
+@@ -5264,20 +5485,9 @@
+                 });
+
+                 this._IndexOfAndroidAuto = ++index;
+
+             }
+
+-            if(true !== this._cachedAppleCarPlayHidden)
+
+-            {
+
+-                // AppleCarPlay
+
+-                items.push({
+
+-                    appData : 'SetAppleCarPlay',
+
+-                    text1Id : 'CarPlayApple',
+
+-                    itemStyle : 'styleOnOff',
+
+-                    hasCaret: false,
+
+-                    value : this._cachedAppleCarPlayChecked
+
+-                });
+
+-                this._IndexOfAppleCarPlay = ++index;
+
+-            }
+
+-            if((region != (framework.localize.REGIONS['NorthAmerica']) && (region != (framework.localize.REGIONS['Japan']))))
+
+-            {// Wi-fi is not available in Japan and NorthAmerica region
+
++            if ((true === this._supportedWirelessCarPlay) ||
+
++                ((false === this._supportedWirelessCarPlay) && ((region != framework.localize.REGIONS['NorthAmerica']) && (region != framework.localize.REGIONS['Japan']))))
+
++            {
+
+                 items.push({
+
+                     appData : 'SelectNetworkManagement',
+
+                     text1Id : 'NetworkManagement',
+

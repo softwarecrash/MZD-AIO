@@ -1,0 +1,8 @@
+{
+  "mode": "aio-focused",
+  "excluded": [
+    "/tmp/mnt/resources/natp",
+    "/tmp/mnt/resources/gracenotedb"
+  ],
+  "reason": "User explicitly requested omitting large resource datasets. Files remain unchanged on MCU."
+}

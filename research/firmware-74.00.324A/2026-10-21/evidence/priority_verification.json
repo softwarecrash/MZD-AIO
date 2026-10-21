@@ -1,0 +1,56 @@
+[
+  {
+    "path": "/jci/gui/common/js/Common.js",
+    "matches_remote": true,
+    "md5": "60680f8a729b3a8eef1df0080c249e7c",
+    "sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351"
+  },
+  {
+    "path": "/jci/gui/apps/system/js/systemApp.js",
+    "matches_remote": true,
+    "md5": "383d7e688256e09b825ced9e3eb69ee9",
+    "sha256": "23106b04bd6bad514dd879b217a34a0f0289d58f86a0ae022488be6a022ca8e1"
+  },
+  {
+    "path": "/jci/scripts/systemHooks.sh",
+    "matches_remote": true,
+    "md5": "c0df4eb77b8def721b6032786583f6fa",
+    "sha256": "42578f6e3f4320b83249de11a65003b64ab0f5bd3b07d51b9dab27d3a206651a"
+  },
+  {
+    "path": "/jci/scripts/run-terminal.sh",
+    "matches_remote": true,
+    "md5": "b7d9d5c51f61c29006c8dcb50c269c91",
+    "sha256": "58e408d158522238faef07952c60eaf73de9cb6adfaa7744409e0bb0e050a26c"
+  },
+  {
+    "path": "/jci/sm/sm.conf",
+    "matches_remote": true,
+    "md5": "74d9fc389b74fb01d0cfc2615a82c782",
+    "sha256": "fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84"
+  },
+  {
+    "path": "/jci/opera/opera_home/opera.ini",
+    "matches_remote": true,
+    "md5": "0b231a90ab646755155b5e49b8a57934",
+    "sha256": "a6db0eb9a67198dd0c55cae34ad7459a42241392421710196acba6313a2a988e"
+  },
+  {
+    "path": "/usr/bin/terminal",
+    "matches_remote": true,
+    "md5": "56c0051940c1ad0da4194dc3d48dbdaa",
+    "sha256": "c8f2cbf5ad8db30775d9ed8ddde3ca8dfd6c343acfdba0939d47c7b918e26bc1"
+  },
+  {
+    "path": "/etc/profile",
+    "matches_remote": true,
+    "md5": "d4b0c4427b4bd1daba354e1d70ea860a",
+    "sha256": "8ef2b68acd1392215455f78e627b95366e5d4970bcf400d6b92b4a0f6d78558f"
+  },
+  {
+    "path": "/jci/version.ini",
+    "matches_remote": true,
+    "md5": "f1206c54138a508d04626ddf57051ce0",
+    "sha256": "7613d9b53aaf53bbc54a996737d38efe72bdf589f5839bb0d29622d6668dc340"
+  }
+]

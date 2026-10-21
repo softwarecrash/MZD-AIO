@@ -1,0 +1,394 @@
+/lib/ld-linux.so.3
+|1C'$7
+Plmu
+[%GAM
+JEK	
+9)#J
+N)vM0
+^=_G3
+gII"
+$iU_
+libwayland-cursor.so.0
+wl_proxy_destroy
+__gmon_start__
+_Jv_RegisterClasses
+wl_buffer_interface
+wl_shm_pool_interface
+wl_proxy_marshal
+wl_proxy_marshal_constructor
+wl_cursor_theme_destroy
+wl_cursor_frame
+wl_cursor_theme_load
+_fini
+wl_cursor_theme_get_cursor
+wl_cursor_image_get_buffer
+libxkbcommon.so.0
+xkb_context_new
+xkb_map_unref
+xkb_state_unref
+xkb_map_new_from_string
+xkb_state_serialize_mods
+xkb_map_mod_get_index
+xkb_context_unref
+xkb_keysym_to_utf8
+xkb_state_update_mask
+xkb_state_new
+xkb_key_get_syms
+libcairo.so.2
+pixman_image_get_stride
+pixman_image_get_data
+pixman_image_get_height
+pixman_image_get_width
+cairo_surface_mark_dirty
+cairo_format_stride_for_width
+cairo_set_source_rgb
+cairo_fill
+cairo_matrix_scale
+cairo_image_surface_create
+cairo_show_text
+cairo_set_source
+cairo_scaled_font_text_to_glyphs
+cairo_pattern_add_color_stop_rgb
+cairo_set_source_surface
+cairo_clip
+cairo_device_flush
+cairo_close_path
+cairo_set_line_width
+cairo_rectangle
+cairo_mask
+cairo_reset_clip
+cairo_image_surface_get_width
+cairo_create
+cairo_image_surface_get_stride
+cairo_set_source_rgba
+cairo_set_font_size
+cairo_surface_set_user_data
+cairo_pattern_set_filter
+cairo_matrix_translate
+cairo_stroke_preserve
+cairo_image_surface_create_for_data
+cairo_pattern_destroy
+cairo_font_extents
+cairo_pattern_create_linear
+cairo_pop_group_to_source
+cairo_translate
+cairo_image_surface_get_height
+cairo_move_to
+cairo_get_scaled_font
+cairo_matrix_init_translate
+cairo_line_to
+cairo_image_surface_create_from_png
+cairo_text_extents
+cairo_surface_get_user_data
+cairo_paint
+cairo_set_scaled_font
+cairo_select_font_face
+cairo_show_glyphs
+cairo_set_operator
+cairo_scaled_font_reference
+cairo_arc
+cairo_rel_line_to
+cairo_pattern_create_for_surface
+cairo_stroke
+cairo_surface_reference
+cairo_destroy
+cairo_pattern_set_matrix
+cairo_surface_destroy
+cairo_push_group
+cairo_image_surface_get_data
+cairo_surface_get_device
+libpthread.so.0
+__errno_location
+fcntl
+libpixman-1.so.0
+libfreetype.so.6
+libpng12.so.0
+png_set_tRNS_to_alpha
+png_error
+png_set_filler
+png_get_valid
+png_get_IHDR
+png_set_palette_to_rgb
+png_read_end
+png_create_info_struct
+png_set_expand_gray_1_2_4_to_8
+png_set_read_user_transform_fn
+png_set_interlace_handling
+png_read_info
+png_get_rowbytes
+png_set_read_fn
+png_get_io_ptr
+png_destroy_read_struct
+png_set_gray_to_rgb
+png_set_strip_16
+png_read_update_info
+png_set_packing
+png_read_image
+png_create_read_struct
+libz.so.1
+libgobject-2.0.so.0
+libglib-2.0.so.0
+libGLESv2.so.2
+libutil.so.1
+forkpty
+libEGL.so.1
+wl_callback_interface
+wl_proxy_add_listener
+libwayland-egl.so.0
+libwayland-client.so.0
+wl_list_length
+wl_pointer_interface
+wl_proxy_set_user_data
+wl_list_remove
+wl_data_device_interface
+wl_data_source_interface
+wl_array_release
+wl_registry_interface
+wl_list_empty
+wl_seat_interface
+wl_shm_interface
+wl_display_connect
+wl_surface_interface
+wl_proxy_get_user_data
+wl_display_dispatch_pending
+wl_display_disconnect
+wl_region_interface
+wl_shell_interface
+wl_compositor_interface
+wl_array_add
+wl_list_init
+wl_output_interface
+wl_data_device_manager_interface
+wl_shell_surface_interface
+wl_array_init
+wl_keyboard_interface
+wl_display_dispatch
+wl_list_insert
+wl_display_get_fd
+wl_display_flush
+libffi.so.6
+librt.so.1
+libm.so.6
+raise
+libc.so.6
+epoll_create
+strcpy
+exit
+execl
+fopen
+strncmp
+ftruncate
+timerfd_create
+__strdup
+perror
+epoll_wait
+unlink
+abort
+socketpair
+__assert_fail
+mkstemp
+strtol
+mmap
+fgets
+strlen
+memset
+strnlen
+memcpy
+fclose
+strtoul
+malloc
+getenv
+__ctype_b_loc
+stderr
+ioctl
+timerfd_settime
+munmap
+fwrite
+fread
+epoll_ctl
+strchr
+fprintf
+epoll_create1
+fdopen
+memmove
+pipe2
+strcmp
+__libc_start_main
+setenv
+snprintf
+free
+__exidx_start
+__exidx_end
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+GLIBC_2.4
+PNG12_0
+GLIBC_2.8
+GLIBC_2.9
+@ #!
+!1C "
+data_source_target, %s
+Unknown SGR code: %d
+Wayland Terminal
+Unknown parameter: ?%d
+Unknown parameter: %d
+-,./?%&#:_=+@~
+[%d;%d%c
+%c%c
+%c%d%c
+TERM
+COLORTERM
+exec failed: %m
+failed to fork and create pty (%m).
+Unknown OSC escape code %d
+[?6c
+[%d;%dR
+[3;%d;%dt
+[4;%d;%dt
+[9;%d;%dt
+]l%s
+Unimplemented windowOp %d
+Unknown CSI escape: %c
+Unknown escape code: %c
+Unknown HASH escape #%c
+Unknown character set %c
+Unknown special escape %c%c
+text/plain;charset=utf-8
+Warning: buffer too small to encode UTF8 character
+SHELL
+/bin/bash
+weston.ini
+failed to create display: %m
+terminal
+fullscreen
+font
+shell
+mono
+xterm
+font-size
+term
+pointer_surface_frame_callback
+frame_callback
+failed to compile keymap
+failed to create XKB state
+Control
+Mod1
+Shift
+cursor index out of range
+callback == input->cursor_frame_cb
+window.c
+could not set timerfd
+: %m
+creating a buffer file for %d B failed: %m
+mmap failed: %m
+tried to create surface of width: %d, height: %d
+/usr/share/weston/icon_window.png
+/usr/share/weston/sign_close.png
+/usr/share/weston/sign_maximize.png
+/usr/share/weston/sign_minimize.png
+callback == window->frame_cb
+Minimize stub
+toytoolkit warning: %d windows exist.
+toytoolkit warning: deferred tasks exist.
+Failed to create XKB context
+cursor-theme
+could not load cursor '%s'
+wl_compositor
+wl_output
+wl_seat
+wl_shell
+wl_shm
+wl_data_device_manager
+text_cursor_position
+workspace_manager
+could not create timerfd
+: %m
+Close
+Move to workspace above
+Move to workspace below
+Fullscreen
+bottom_left_corner
+sw-resize
+bottom_right_corner
+se-resize
+bottom_side
+s-resize
+grabbing
+closedhand
+208530c400c041818281048008011002
+left_ptr
+default
+top_left_arrow
+left-arrow
+left_side
+w-resize
+right_side
+e-resize
+top_left_corner
+nw-resize
+top_right_corner
+ne-resize
+top_side
+n-resize
+ibeam
+text
+hand1
+pointer
+pointing_hand
+e29285e634086352946a0e7090d73106
+watch
+wait
+0426c94ea35c87780ff01dc239897213
+notify
+move_surface
+state
+handle_key
+couldn't open %s
+malformed section header: %s
+invalid integer: %s
+false
+true
+invalid bool: %s
+config-parser.c
+malformed config line: %s
+XDG_CONFIG_HOME
+HOME
+HOME is not set, using cwd.
+%s%s%s
+%s/%s
+/.config/
+handle_option
+option-parser.c
+/weston-shared-XXXXXX
+XDG_RUNTIME_DIR
+sans
+1.2.44
+aeabi
+weston-terminal
+.shstrtab
+.interp
+.note.ABI-tag
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.ARM.exidx
+.init_array
+.fini_array
+.jcr
+.dynamic
+.got
+.data
+.bss
+.ARM.attributes
+.gnu_debuglink

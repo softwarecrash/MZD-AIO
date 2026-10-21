@@ -1,0 +1,7 @@
+--- AIO_v70/SbnCtrl.css.org
++++ CMU_74.00.324A/jci/gui/common/controls/Sbn/css/SbnCtrl.css
+@@ -1,4 +1,3 @@
+-@charset "utf-8";
+ /* CSS Document */
+ .SbnCtrl {
+   position: absolute;

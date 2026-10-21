@@ -1,0 +1,384 @@
+--- AIO_v70/usbaudioApp.js.org
++++ CMU_74.00.324A/jci/gui/apps/usbaudio/js/usbaudioApp.js
+@@ -1740,6 +1740,8 @@
+     var selectCallback = this._umpDefaultSelectCallback.bind(this);//selectCallback make sure that function is called whenever the control is selected (either via Multicontroller or touch)
+     var holdStartCallback = this._umpHoldStartCallback.bind(this);
+     var holdStopCallback = this._umpHoldStopCallback.bind(this);
++    var pressCallback = this._umpPressCallback.bind(this);
++    var releaseCallback = this._umpReleaseCallback.bind(this);
+     var slideCallback = this._umpSlideCallback.bind(this);
+     //@formatter:off
+     this._scrubberConfig = {
+@@ -1825,7 +1827,9 @@
+         disabled : false,
+         appData:"repeat",
+         autoStateChange :   "false",
+-        selectCallback: selectCallback
++        selectCallback: selectCallback,
++        pressCallback: pressCallback,
++        releaseCallback: releaseCallback
+     };
+ 
+     this._umpButtonConfig["shuffle"] =
+@@ -1844,7 +1848,9 @@
+         disabled : false,
+         appData:"shuffle",
+         autoStateChange :   "false",
+-        selectCallback: selectCallback
++        selectCallback: selectCallback,
++        pressCallback: pressCallback,
++        releaseCallback: releaseCallback
+     };
+ 
+     this._umpButtonConfig["GenerateMoreLikeThis"] =
+@@ -1866,7 +1872,9 @@
+         label : null,
+         selectCallback: selectCallback,
+         holdStartCallback : holdStartCallback,
+-        holdStopCallback : holdStopCallback
++        holdStopCallback : holdStopCallback,
++        pressCallback: pressCallback,
++        releaseCallback: releaseCallback
+     };
+ 
+     this._umpButtonConfig["playpause"] =
+@@ -1886,7 +1894,9 @@
+         disabled : false,
+         appData : "playpause",
+         autoStateChange :   "false",
+-        selectCallback: selectCallback
++        selectCallback: selectCallback,
++        pressCallback: pressCallback,
++        releaseCallback: releaseCallback
+     };
+ 
+     this._umpButtonConfig["next"] =
+@@ -1898,7 +1908,9 @@
+         label : null,
+         selectCallback: selectCallback,
+         holdStartCallback : holdStartCallback,
+-        holdStopCallback : holdStopCallback
++        holdStopCallback : holdStopCallback,
++        pressCallback: pressCallback,
++        releaseCallback: releaseCallback
+     };
+ 
+     this._umpButtonConfig["settings"] =
+@@ -3293,25 +3305,34 @@
+             framework.sendEventToMmui(this.uiaId, "SelectRootFolder");
+             break;
+         case "playpause":
+-            if (params.state == "Play")
+-            {
+-                framework.sendEventToMmui("Common", "Global.Resume");
+-            }
+-            else if (params.state == "Pause")
+-            {
+-                framework.sendEventToMmui("Common", "Global.Pause");
+-            }
+-            else
+-            {
+-                log.warn("usbaudio: Uknown state of ump playpause button");
+-                framework.sendEventToMmui("Common", "Global.Play");
++            if (!this._isIAP2Device(this._connectedDevs.selectedDevType))
++            {
++                if (params.state == "Play")
++                {
++                    framework.sendEventToMmui("Common", "Global.Resume");
++                }
++                else if (params.state == "Pause")
++                {
++                    framework.sendEventToMmui("Common", "Global.Pause");
++                }
++                else
++                {
++                    log.warn("usbaudio: Uknown state of ump playpause button");
++                    framework.sendEventToMmui("Common", "Global.Play");
++                }
+             }
+             break;
+         case "shuffle":
+-            framework.sendEventToMmui(this.uiaId, "Shuffle");
++            if (!this._isIAP2Device(this._connectedDevs.selectedDevType))
++            {
++                framework.sendEventToMmui(this.uiaId, "Shuffle");
++            }
+             break;
+         case "repeat":
+-            framework.sendEventToMmui(this.uiaId, "Repeat");
++            if (!this._isIAP2Device(this._connectedDevs.selectedDevType))
++            {
++                framework.sendEventToMmui(this.uiaId, "Repeat");
++            }
+             break;
+         case "GenerateMoreLikeThis":
+             framework.sendEventToMmui(this.uiaId, "GenerateMoreLikeThis");
+@@ -3321,10 +3342,16 @@
+             framework.sendEventToMmui(this.uiaId, "SongList");
+             break;
+         case "next":
+-            framework.sendEventToMmui("Common", "Global.Next");
++            if (!this._isIAP2Device(this._connectedDevs.selectedDevType))
++            {
++                framework.sendEventToMmui("Common", "Global.Next");
++            }
+             break;
+         case "prev":
+-            framework.sendEventToMmui("Common", "Global.Previous");
++            if (!this._isIAP2Device(this._connectedDevs.selectedDevType))
++            {
++                framework.sendEventToMmui("Common", "Global.Previous");
++            }
+             break;
+         case "source":
+             framework.sendEventToMmui(this.uiaId, "SelectSourceMenu");
+@@ -3366,15 +3393,18 @@
+ 
+ usbaudioApp.prototype._umpHoldStartCallback = function (ctrlObj, appData, params)
+ {
+-    log.debug("_umpHoldStartCallback called...", appData);
+-
+-    if (appData == "next")
+-    {
+-        framework.sendEventToMmui("Common", "Global.NextHoldStart");
+-    }
+-    else if (appData == "prev")
+-    {
+-        framework.sendEventToMmui("Common", "Global.PreviousHoldStart");
++    log.info("_umpHoldStartCallback called...", appData);
++
++    if (!this._isIAP2Device(this._connectedDevs.selectedDevType))
++    {
++        if (appData == "next")
++        {
++            framework.sendEventToMmui("Common", "Global.NextHoldStart");
++        }
++        else if (appData == "prev")
++        {
++            framework.sendEventToMmui("Common", "Global.PreviousHoldStart");
++        }
+     }
+ };
+ 
+@@ -3382,15 +3412,18 @@
+ {
+     log.debug("_umpHoldStopCallback called...", appData);
+     //Take no action if app has changed.
+-    if(framework._currentAppUiaId === 'usbaudio')
+-    {
+-        if (appData == "next")
+-        {
+-            framework.sendEventToMmui("Common", "Global.NextHoldStop");
+-        }
+-        else if (appData == "prev")
+-        {
+-            framework.sendEventToMmui("Common", "Global.PreviousHoldStop");
++    if (!this._isIAP2Device(this._connectedDevs.selectedDevType))
++    {
++        if(framework._currentAppUiaId === 'usbaudio')
++        {
++            if (appData == "next")
++            {
++                framework.sendEventToMmui("Common", "Global.NextHoldStop");
++            }
++            else if (appData == "prev")
++            {
++                framework.sendEventToMmui("Common", "Global.PreviousHoldStop");
++            }
+         }
+     }
+ };
+@@ -3626,7 +3659,10 @@
+     }
+     if(this._connectedDevs.B.deviceId == msg.params.payload.deviceId) 
+     {
+-        this._connectedDevs.B.showGracenote = true;
++        if (msg.params.payload.hasOwnProperty("reason") && (msg.params.payload.reason !== "System"))
++        {
++            this._connectedDevs.B.showGracenote = true;
++        }
+     }
+ };
+ 
+@@ -3695,6 +3731,13 @@
+         fileEmpty = this._connectedDevs.B.fileEmpty;
+         fileEmptyRadio = this._connectedDevs.B.fileEmptyRadio;
+         clearItemRadio = this._connectedDevs.B.clearItemRadio;
++
++        if (this._currentContext && this._currentContext.ctxtId && this._currentContextTemplate && this._currentContext.ctxtId == "NowPlaying")
++        {
++            this._PlaybackReady(playbackReady);
++            this._removeGracenote();
++            this._currentContextTemplate.nowPlaying4Ctrl.umpCtrl.setButtonDisabled("GenerateMoreLikeThis", !this._canGenerateMLT());
++        }
+     }
+ 
+     this._connectedDevs.selectedDevType = type;
+@@ -3802,8 +3845,13 @@
+         }
+         else if (msg.params.payload.usb == "B")
+         {
+-            this._connectedDevs.B.name = "";
+-            this._connectedDevs.B.deviceId = null;
++            if (msg.params.payload.reason !== "System")
++            {
++                this._connectedDevs.B.name = "";
++                this._connectedDevs.B.deviceId = null;
++                this._connectedDevs.B.showGracenote = true;
++            }
++
+             this._connectedDevs.B.type = null;
+             this._connectedDevs.B.playbackReady = false;
+             this._connectedDevs.B.folderBrowsingPossible = false;
+@@ -3811,7 +3859,6 @@
+             this._connectedDevs.B.mltPossible = false;
+             this._connectedDevs.B.tooMuchFiles = false;
+             this._connectedDevs.B.endOfListState = false;
+-            this._connectedDevs.B.showGracenote = true;
+             this._connectedDevs.B.RepeatShuffleReady = false;
+             this._connectedDevs.B.fileEmpty = false;
+             this._connectedDevs.B.fileEmptyRadio = false;
+@@ -3849,6 +3896,33 @@
+                     text1Id : SbnString,
+                     text1SubMap: {"usbName": msg.params.payload.name}
+                 });
++            }
++            else if (this._connectedDevs.B.connectionReason == "System")
++            {
++                if(this._connectedDevs.deviceSelected  == this._connectedDevs.B.deviceId)
++                {
++                    this._connectedDevs.selId = 0;
++                    this._connectedDevs.selectedDevType = "";
++                    this._connectedDevs.playbackReady = false;    
++                    this._connectedDevs.folderBrowsingPossible = false;
++                    this._connectedDevs.mdBrowsingPossible = false;
++                    this._connectedDevs.mltPossible = false;
++                    this._connectedDevs.tooMuchFiles = false;
++                    this._connectedDevs.endOfListState = false;
++                    this._connectedDevs.showGracenote = true;
++                    this._connectedDevs.RepeatShuffleReady = false;
++                    this._connectedDevs.songListPossible = false;
++                    this._connectedDevs.fileEmpty = false;
++                    this._connectedDevs.fileEmptyRadio = false;
++                    this._connectedDevs.clearItemRadio = false;
++    
++                    if (this._currentContext && this._currentContext.ctxtId && this._currentContextTemplate && this._currentContext.ctxtId == "NowPlaying")
++                    {
++                        this._PlaybackReady(false);
++                    
++                        this._currentContextTemplate.nowPlaying4Ctrl.umpCtrl.setButtonDisabled("GenerateMoreLikeThis", !this._canGenerateMLT());
++                    }
++                }
+             }
+         }
+     }
+@@ -4223,7 +4297,7 @@
+             this._currentContextTemplate.nowPlaying4Ctrl.umpCtrl.setButtonDisabled("GenerateMoreLikeThis", !this._canGenerateMLT());
+             if (this._connectedDevs.showGracenote == true)
+             {
+-                this._currentContextTemplate.nowPlaying4Ctrl.setDetailLine3({detailText: "Powered By Gracenote®"});
++                this._currentContextTemplate.nowPlaying4Ctrl.setDetailLine3({detailTextId: "Gracenote"});
+                 this._gracenoteTimeout = setTimeout(this._removeGracenote.bind(this), this._gracenoteTimeoutTime);
+             }
+         }
+@@ -6041,7 +6115,7 @@
+         }
+         if (this._connectedDevs.showGracenote == true && songDetails.title && songDetails.artist && songDetails.album && this._connectedDevs.mltPossible)
+         {
+-            tmplt.nowPlaying4Ctrl.setDetailLine3({detailText: "Powered By Gracenote®"});
++            tmplt.nowPlaying4Ctrl.setDetailLine3({detailTextId: "Gracenote"});
+             this._gracenoteTimeout = setTimeout(this._removeGracenote.bind(this), this._gracenoteTimeoutTime);
+         }
+     }
+@@ -6078,7 +6152,7 @@
+ 
+     if (this._currentContext.ctxtId == "NowPlaying" && this._currentContextTemplate)
+     {
+-        this._currentContextTemplate.nowPlaying4Ctrl.setDetailLine3({detailText: ""});
++        this._currentContextTemplate.nowPlaying4Ctrl.setDetailLine3({detailTextId: ""});
+     }
+ };
+ 
+@@ -6366,7 +6440,7 @@
+         this._currentContextTemplate.nowPlaying4Ctrl.umpCtrl.setButtonDisabled("GenerateMoreLikeThis", !isReady);
+         if (this._connectedDevs.showGracenote == true && isReady == true)
+         {
+-            this._currentContextTemplate.nowPlaying4Ctrl.setDetailLine3({detailText: "Powered By Gracenote®"});
++            this._currentContextTemplate.nowPlaying4Ctrl.setDetailLine3({detailTextId: "Gracenote"});
+             this._gracenoteTimeout = setTimeout(this._removeGracenote.bind(this), this._gracenoteTimeoutTime);
+         }
+     }
+@@ -7154,7 +7228,7 @@
+                 objectIndex = md_info[index].item_id;
+             }
+             else if(params.hasOwnProperty("params") && params.params.hasOwnProperty("browseContextReply") && 
+-              params.params.browseContextReply.hasOwnProperty("itemList") && params.params.browseContextReply.itemList.length == 0)
++              params.params.browseContextReply.totalCount == 0)
+             {
+                 // After specifying an empty Playlist with VR,
+                 // if you switch to  "current folder" screen and execute "back", metadata is not displayed. 
+@@ -7865,4 +7939,64 @@
+     return ret;
+ }
+ 
++usbaudioApp.prototype._umpPressCallback = function (ctrlObj, appData, params)
++{
++    log.info("_umpPressCallback called...", appData);
++    //Take no action if app has changed.
++    if(framework.getCurrentApp() === 'usbaudio')
++    {
++        switch (appData)
++        {
++            case "playpause":
++                framework.sendEventToMmui(this.uiaId, "PlayPausePress");
++                break;
++            case "shuffle":
++                framework.sendEventToMmui(this.uiaId, "RandomPlayPress");
++                break;
++            case "repeat":
++                framework.sendEventToMmui(this.uiaId, "RepeatPress");
++                break;
++            case "next":
++                framework.sendEventToMmui(this.uiaId, "ScanNextTrackPress");
++                break;
++            case "prev":
++                framework.sendEventToMmui(this.uiaId, "ScanPreviousTrackPress");
++                break;
++            default:
++                log.warn("usbaudio: Unrecognized ump button clicked");
++                break;
++        }
++    }
++};
++
++usbaudioApp.prototype._umpReleaseCallback = function (ctrlObj, appData, params)
++{
++    log.info("_umpReleaseCallback called...", appData);
++    //Take no action if app has changed.
++    if(framework.getCurrentApp() === 'usbaudio')
++    {
++        switch (appData)
++        {
++            case "playpause":
++                framework.sendEventToMmui(this.uiaId, "PlayPauseRelease");
++                break;
++            case "shuffle":
++                framework.sendEventToMmui(this.uiaId, "RandomPlayRelease");
++                break;
++            case "repeat":
++                framework.sendEventToMmui(this.uiaId, "RepeatRelease");
++                break;
++            case "next":
++                framework.sendEventToMmui(this.uiaId, "ScanNextTrackRelease");
++                break;
++            case "prev":
++                framework.sendEventToMmui(this.uiaId, "ScanPreviousTrackRelease");
++                break;
++            default:
++                log.warn("usbaudio: Unrecognized ump button clicked");
++                break;
++        }
++    }
++};
++
+ framework.registerAppLoaded("usbaudio", null, true);

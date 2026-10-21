@@ -1,0 +1,5 @@
+* text eol=lf
+firmware-reference/** -text -whitespace
+evidence/aio_v70_comparison/*.diff -whitespace
+evidence/console/*.txt -whitespace
+usb-test/**/*.mp3 -text -diff

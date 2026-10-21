@@ -1,0 +1,695 @@
+--- AIO_v70/systemApp.js.org
++++ CMU_74.00.324A/jci/gui/apps/system/js/systemApp.js
+@@ -280,7 +280,29 @@
+                 } // end of properties for "DialogCtrl"                                       
+             }, // end of list of controlProperties
+         }, // end of "NoConnectionNotify"
+-
++        "NoDeviceWCP" : {
++            "template" : "Dialog3Tmplt",
++            "controlProperties": {
++                "Dialog3Ctrl" : {
++                    contentStyle : "style13",
++                    defaultSelectCallback :  this._selectCallbackNoDevice.bind(this),
++                    buttonCount : 2,
++                    initialFocus : 1,
++                    buttonConfig : {
++                        button1 : {
++                            labelId : "common.No",
++                            appData : "Global.GoBack"
++                        },
++                        button2 : {
++                            labelId : "Connect",
++                            appData : "SelectConnect"
++                        },
++                    },
++                    text1Id : 'DeviceErr',
++                    text2Id : 'NoDeviceText',
++                } // end of properties for "DialogCtrl"
++            }, // end of list of controlProperties
++        }, // end of "NoConnectionNotify"
+         "DisplayOff" : {
+             "hideHomeBtn" : true,
+             "template" : "OffScreenTmplt",
+@@ -567,6 +589,18 @@
+         //Health Check Counter 
+         "HealthCheckCounter"          : this._HealthCheckCounterMsgHandler.bind(this),
+         //FQIR-4475 add end
++
++        // Indicates Available / Unavailable for WCP, communication items, entertainment items, navi, and settings.
++        "StatusMenuCarPlayWifi"       : this._StatusMenuCarPlayWifiMsgHandler.bind(this),
++
++        // Add or remove certain menu items.
++        "StatusMenuVisibleCarPlay"    : this._StatusMenuVisibleCarPlayMsgHandler.bind(this),
++
++        // Add or remove certain menu items.
++        "StatusMenuVisibleCarPlayWifi": this._StatusMenuVisibleCarPlayWifiMsgHandler.bind(this),
++
++        // Add or remove certain menu items.
++        "StatusMenuVisibleAndroidAuto": this._StatusMenuVisibleAndroidAutoMsgHandler.bind(this),
+     };
+     //@formatter:on
+ 
+@@ -654,7 +688,8 @@
+         { appData : { appName : 'pandora',        isVisible : false, audioSourceId : 'Pandora',      mmuiEvent : 'SelectPandora'      }, text1Id : 'Pandora',         disabled : true,   itemStyle : 'style01',   hasCaret: false },
+         { appData : { appName : 'stitcher',       isVisible : true,  audioSourceId : 'Stitcher',     mmuiEvent : 'SelectStitcher'     }, text1Id : 'StitcherItem',    disabled : true,   itemStyle : 'style01',   hasCaret: false },
+         { appData : { appName : 'btaudio',        isVisible : true,  audioSourceId : 'BTAudio',      mmuiEvent : 'SelectBTAudio'      }, text1Id : 'Bluetooth',       disabled : false,  itemStyle : 'style01',   hasCaret: false },
+-        { appData : { appName : 'carplay',        isVisible : false, audioSourceId : 'CarPlay',      mmuiEvent : 'SelectCarPlay'      }, text1Id : 'USB1CarPlay',     disabled : true,   itemStyle : 'style01',   hasCaret: false },	
++        { appData : { appName : 'carplay',        isVisible : false, audioSourceId : 'CarPlayWifi',  mmuiEvent : 'SelectCarPlayWifi'  }, text1Id : 'CarPlay',        disabled : true,   itemStyle : 'style01',   hasCaret: false },
++        { appData : { appName : 'carplay',        isVisible : false, audioSourceId : 'CarPlay',      mmuiEvent : 'SelectCarPlay'      }, text1Id : 'USB1CarPlay',     disabled : true,   itemStyle : 'style01',   hasCaret: false },
+         { appData : { appName : 'androidauto',    isVisible : false, audioSourceId : 'AndroidAuto',  mmuiEvent : 'SelectAndroidAuto'  }, text1Id : 'USB1AndroidAuto',  disabled : true,   itemStyle : 'style01',   hasCaret: false },
+         { appData : { appName : '',               isVisible : true,  audioSourceId : 'USB_A',        mmuiEvent : 'SelectUSBA'         }, text1Id : 'UsbAudioA',       disabled : true,   itemStyle : 'style01',   hasCaret: false },
+         { appData : { appName : '',               isVisible : true,  audioSourceId : 'USB_B',        mmuiEvent : 'SelectUSBB'         }, text1Id : 'UsbAudioB',       disabled : true,   itemStyle : 'style01',   hasCaret: false },
+@@ -807,7 +842,7 @@
+ 
+ systemApp.prototype._StatusMenuMsgHandler = function(msg)
+ {
+-    log.debug("Received StatusMenu message: " + msg.params.payload.statusMenu.appName + " " + msg.params.payload.statusMenu.appStatus);
++    log.info("Received StatusMenu message: " + msg.params.payload.statusMenu.appName + " " + msg.params.payload.statusMenu.appStatus);
+ 
+     // Update menu items associated with the given appName of the message. Menu items can appear
+     // in several different contexts or appear multiple times: this function searches all those places.
+@@ -821,13 +856,10 @@
+     // Update the static menu lists so they are correctly enable next time the context is shown
+     this._enableAppListItem(appName, isDisabled, this._masterApplicationDataList);
+     this._enableAppListItem(appName, isDisabled, this._communicationsDataList);
+-    this._enableAppListItem(appName, isDisabled, this._masterEntertainmentDataList);
+-
+-    // check if we should worry about speed restriction for carplay/androidauto icon
+-    //For car play/android auto app _setRemoteButtonIcon is called to display or hide car play/android auto icon in status bar
+-    if(appName === "carplay" || appName === "androidauto")
+-    {
+-        this._setRemoteUIButton(appName,!isDisabled);
++
++    if (appName !== "carplay" && appName !== "androidauto")
++    {
++        this._enableAppListItem(appName, isDisabled, this._masterEntertainmentDataList);
+     }
+ 
+     // Update the menu list in the current context if needed
+@@ -835,8 +867,12 @@
+     {
+         switch (this._currentContext.ctxtId)
+         {
++            case "Entertainment":
++                if (appName === "carplay" || appName === "androidauto")
++                {
++                    break;
++                }
+             case "Communication":
+-            case "Entertainment":
+             case "Applications":
+             case "VehicleStatusMonitor":
+                 if (this._currentContextTemplate && this._currentContextTemplate.list2Ctrl)
+@@ -987,6 +1023,7 @@
+ 
+ systemApp.prototype._StatusMenuVisibleMsgHandler = function(msg)
+ {
++    log.info("Received StatusMenuVisible message: ");
+     if (msg.params && msg.params.payload)
+     {
+         log.debug("Received StatusMenuVisible message: " + msg.params.payload.appName + " " + msg.params.payload.state);
+@@ -1009,8 +1046,7 @@
+                 }
+                 else
+                 {
+-                    // visibility does not depend on this flag. // using status menu msg
+-                    this._masterEntertainmentDataList.items[i].appData.isVisible = false;
++                    log.debug("CarPlay of AndroidAuto, nothing to do");
+                 }
+             }
+         }
+@@ -1557,6 +1593,8 @@
+             }
+         }
+     }
++
++    this._verifyCarPlayWifiIcon(audioSource, isPlaying, dataList);
+ };
+ 
+ systemApp.prototype._StatusUpdateAudioSourceMsgHandler = function(msg)
+@@ -1565,10 +1603,16 @@
+     {
+         var audioSource = msg.params.payload.statusAudio.audioSource;
+         var isPlaying = msg.params.payload.statusAudio.audioActive === "Play";
+-
+-// TEST AndroidAuto
+-//audioSource = "AndroidAuto";
+-// TEST AndroidAuto
++        var audioSourceApp;
++
++        if (msg.params.payload.statusAudio.audioSource !== "CarPlayWifi")
++        {
++            audioSourceApp = msg.params.payload.statusAudio.audioSource;
++        }
++        else
++        {
++            audioSourceApp = "CarPlay";
++        }
+ 
+         // Set the icon in the masterEntertainment data list so it is persisted between template instances
+         this._updateEntertainmentNowPlayingIcon(audioSource, isPlaying, this._masterEntertainmentDataList);
+@@ -1582,16 +1626,75 @@
+         }
+ 
+         // Set the icon in the masterApplications data list so it is persisted between template instances
+-        this._updateApplicationsNowPlayingIcon(audioSource, isPlaying, this._masterApplicationDataList);
++        this._updateApplicationsNowPlayingIcon(audioSourceApp, isPlaying, this._masterApplicationDataList);
+ 
+         // Update current context if needed
+         if (this._currentContext && this._currentContext.ctxtId === "Applications" && this._currentContextTemplate)
+         {
+             var list = this._currentContextTemplate.list2Ctrl;
+-            this._updateApplicationsNowPlayingIcon(audioSource, isPlaying, list.dataList);
++            this._updateApplicationsNowPlayingIcon(audioSourceApp, isPlaying, list.dataList);
+             list.updateItems(0, list.dataList.items.length - 1);
+         }
+     }
++};
++
++systemApp.prototype._verifyCarPlayWifiIcon = function(audioSource, isPlaying, dataList)
++{
++    var carPlayWifiIndex = -1;
++
++    for (var i = 0; i < dataList.items.length; ++i)
++    {
++        if (this._isCarPlayWifiMenu(dataList.items[i]))
++        {
++            carPlayWifiIndex = i;
++            break;
++        }
++    }
++
++    log.debug("_verifyCarPlayWifiIcon() : Index of CarPlay Menu for Wifi : " + carPlayWifiIndex);
++
++    if (-1 === carPlayWifiIndex)
++    {
++        return; // CarPlay Menu for Wifi is NOT Exist. no need to verify.
++    }
++
++    // Need to Fix index of Speeker Icon
++    for (var i = 0; i < dataList.items.length; ++i)
++    {
++        if (((audioSource === "CarPlay") && (dataList.items[i].appData.audioSourceId === "CarPlay" || dataList.items[i].appData.audioSourceId === "CarPlayWifi")) ||
++            ((audioSource === "CarPlayWifi") && (dataList.items[i].appData.audioSourceId === audioSource)))
++        {
++            dataList.items[i].image1 = ""; // anyway, Remove speeker Icon from USB CarPlay menu.
++
++            if (isPlaying)
++            {
++                // Set Speeker Icon to Wifi CarPlay menu.
++                dataList.items[carPlayWifiIndex].image1 = "common/images/icons/IcnListEntNowPlaying_En.png";
++            }
++            else
++            {
++                // UnSet Speeker Icon to Wifi CarPlay menu.
++                dataList.items[carPlayWifiIndex].image1 = "";
++            }
++
++            log.info("_verifyCarPlayWifiIcon() : Speeker Icon of Wifi CarPlay menu = " + dataList.items[carPlayWifiIndex].image1);
++            break;
++        }
++    }
++
++};
++
++systemApp.prototype._isCarPlayWifiMenu = function(item)
++{
++    var isCarPlayWifiMenu = false;
++
++    if ((item.appData.appName == 'carplay') && (item.appData.audioSourceId == 'CarPlayWifi') && item.appData.isVisible)
++    {
++        isCarPlayWifiMenu = true;
++    }
++
++    log.debug("_isCarPlayWifiMenu() : " + isCarPlayWifiMenu);
++    return isCarPlayWifiMenu;
+ };
+ 
+ systemApp.prototype._StatusUpdateMissedCallCountMsgHandler = function(msg)
+@@ -2529,6 +2632,7 @@
+             case "USB_A":
+             case "USB_B":
+             case "USBAudio":
++            case "AndroidAuto":
+                 this._currentContextTemplate.dialog3Ctrl.setText1Id("ReconnectUSB");
+                 break;
+ 
+@@ -2542,6 +2646,10 @@
+ 
+             case "TV":
+                 this._currentContextTemplate.dialog3Ctrl.setText1Id("ReconnectTV");
++                break;
++
++            case "CarPlay":
++                this._currentContextTemplate.dialog3Ctrl.setText1Id("ReconnectingAC");
+                 break;
+ 
+             default:
+@@ -2583,6 +2691,7 @@
+             case "USB_A":
+             case "USB_B":
+             case "USBAudio":
++            case "AndroidAuto":
+                 this._currentContextTemplate.dialog3Ctrl.setText1Id("ReconnectFailedUSB");
+                 break;
+ 
+@@ -2596,6 +2705,10 @@
+ 
+             case "TV":
+                 this._currentContextTemplate.dialog3Ctrl.setText1Id("ReconnectFailedTV");
++                break;
++
++            case "CarPlay":
++                this._currentContextTemplate.dialog3Ctrl.setText1Id("UnableReconnectAC");
+                 break;
+ 
+             default:
+@@ -2743,5 +2856,427 @@
+ }
+ //FQIR-4475 add end
+ 
++systemApp.prototype._StatusMenuCarPlayWifiMsgHandler = function(msg)
++{
++    if (msg.params && msg.params.payload)
++    {
++        log.info("Received StatusMenuCarPlayWifi message: " + msg.params.payload.appName +
++                  " " + msg.params.payload.appStatus);
++
++        // Update menu items associated with the given appName of the message. Menu items can appear
++        // in several different contexts or appear multiple times: this function searches all those places.
++
++        var appName = msg.params.payload.appName;
++        var isDisabled = msg.params.payload.appStatus !== "Available";
++        var deviceName = msg.params.payload.deviceName;
++
++        //Update the Availability Status of Speed Restricted Apps 
++        this._StatusMenuChanged(appName,isDisabled);
++
++        // Update the static menu lists so they are correctly enable next time the context is shown
++        if (appName === "carplay")
++        {
++            var mmuiEvent = "SelectCarPlayWifi";
++            for (var i = 0; i < this._masterEntertainmentDataList.items.length; ++i)
++            {
++                if (this._masterEntertainmentDataList.items[i].appData.mmuiEvent === mmuiEvent)
++                {
++                    // display or not connected carplay deviceName
++                    this._displayDeviceNameEntCarPlayMenu(this._masterEntertainmentDataList.items[i], !isDisabled, deviceName);
++                    break;
++                }
++                else
++                {
++                    log.debug("appName : " + this._masterEntertainmentDataList.items[i].appData.appName + " is not target.");
++                }
++            }
++            // Update carplay icon of HomeScreen
++            this._setRemoteUIButton(appName, !isDisabled);
++ 
++            // Update the Entertainment context if it is currently displayed.
++            if (this._currentContext &&
++                this._currentContext.ctxtId === "Entertainment" &&
++                this._currentContextTemplate)
++            {
++                var dataList = this._buildEntertainmentDataList();
++                this._currentContextTemplate.list2Ctrl.setDataList(dataList);
++                this._currentContextTemplate.list2Ctrl.updateItems(0, dataList.items.length - 1);
++            }
++            else
++            {
++                log.debug("context is not Entertainment. nothingto do.");
++            }
++        }
++        else
++        {
++            log.warn("appName is not carplpay. nothing to do.");
++        }
++    }
++    else
++    {
++        log.error("msg.params is NULL");
++    }
++};
++
++systemApp.prototype._StatusMenuVisibleCarPlayMsgHandler = function(msg)
++{
++    if (msg.params && msg.params.payload)
++    {
++        log.info("Received StatusMenuVisibleCarPlay message: " +
++        msg.params.payload.appName + " " + msg.params.payload.state + " " + msg.params.payload.deviceName);
++
++        var appName = msg.params.payload.appName;
++        var deviceName = msg.params.payload.deviceName;
++
++        // Update the static menu lists so they are correctly enable next time the context is shown
++        if (appName === "carplay")
++        {
++            var isDisabled = msg.params.payload.state !== "Visible";
++
++            this._enableEntertainmentListItemCarPlay(isDisabled, deviceName);
++            // Update carplay icon of HomeScreen
++            this._setRemoteUIButton(appName, !isDisabled);
++
++            // Update the menu list in the current context if needed
++            if (this._currentContext)
++            {
++                switch (this._currentContext.ctxtId)
++                {
++                    case "Entertainment":
++                        if (this._currentContextTemplate && this._currentContextTemplate.list2Ctrl)
++                        {
++                            var dataList = this._currentContextTemplate.list2Ctrl.dataList;
++                            for (var i = 0; i < dataList.items.length; ++i)
++                            {
++                                var updateListForCarPlay = false;
++                                // change only for entertainment list // make better change later
++                                if(dataList.items[i].text1Id == 'USB1CarPlay' || dataList.items[i].text1Id == 'UsbAudioA')
++                                {
++                                    updateListForCarPlay = true;
++
++                                    var CPIndex = this._USB1EntIndex-2;   //Entertainment list index of USB CarPlay
++                                    var CPWifiIndex = CPIndex-1;          //Entertainment List index of Wifi CarPlay
++
++                                    // if carplay is available change state of USB1 (carPlay disabled -> USB enabled and vice-a-versa)
++                                    if (isDisabled)
++                                    {
++                                        // replace ietm with USB. Master list is already upto date. Updated with _enableAppListItem()
++                                        dataList.items[i] = this._masterEntertainmentDataList.items[this._USB1EntIndex];
++                                        // retain usb state
++                                        isDisabled = this._masterEntertainmentDataList.items[this._USB1EntIndex].disabled;
++                                        // display or not connectede carplay deviceName
++                                        this._displayDeviceNameEntCarPlayMenu(this._masterEntertainmentDataList.items[CPWifiIndex], !isDisabled, deviceName);
++                                    }
++                                    else
++                                    {
++                                        if (this._isCarPlayWifiMenu(this._masterEntertainmentDataList.items[CPWifiIndex]))
++                                        {
++                                            // display or not connectede carplay deviceName
++                                            this._displayDeviceNameEntCarPlayMenu(this._masterEntertainmentDataList.items[CPWifiIndex], !isDisabled, deviceName);
++
++                                            // if "Apple CarPlay" menu is visible and with device then USBCarPlay menu should be invisible
++                                            isDisabled = true;
++                                            dataList.items[i] = this._masterEntertainmentDataList.items[this._USB1EntIndex];
++                                        }
++                                        else
++                                        {
++                                            dataList.items[i] = this._masterEntertainmentDataList.items[CPIndex];
++                                        }
++                                    }
++                                }
++                                if ((dataList.items[i].appData.appName.indexOf(appName) === 0 && dataList.items[i].text1Id == 'USB1CarPlay') || updateListForCarPlay)
++                                {
++                                    if(this._AtSpeedDisabled)// At speed : Available status will be skipped for the speed restricted apps
++                                    {
++                                        var speedRestrictedAppName = null;
++                                        var isNoAppAtSpeed = true;
++
++                                        for(var j = 0; j < this._SpeedRestrictedApps.length; ++j)
++                                        {
++                                            speedRestrictedAppName = this._SpeedRestrictedApps[j].appName;
++                                            log.info("speedRestrictedAppName : "+speedRestrictedAppName + " checking for AppName : "+dataList.items[i].appData.appName);
++                                            if(speedRestrictedAppName === dataList.items[i].appData.appName)
++                                            {
++                                                isNoAppAtSpeed = false;// App found with At Speed
++                                                break;
++                                            }
++                                            else
++                                            {
++                                                log.debug("appName : " + dataList.items[i].appData.appName + " is not target.");
++                                            }
++                                        }
++                                        if(isNoAppAtSpeed)
++                                        {
++                                            dataList.items[i].disabled = isDisabled;
++                                            if (isDisabled)
++                                            {
++                                                // Clear nowplaying icon just in case it was still shown for this now unavailable item
++                                                dataList.items[i].image1 = "";
++                                            }
++                                            else
++                                            {
++                                                log.debug("isDisabled : " + isDisabled + ". nothig to do.");
++                                            }
++                                            this._currentContextTemplate.list2Ctrl.updateItems(i, i);
++                                        }
++                                        else
++                                        {
++                                            log.debug("isNoAppAtSpeed : " + isNoAppAtSpeed + ". nothig to do.");
++                                        }
++                                    }
++                                    else
++                                    {
++                                        dataList.items[i].disabled = isDisabled;
++                                        if (isDisabled)
++                                        {
++                                            // Clear nowplaying icon just in case it was still shown for this now unavailable item
++                                            dataList.items[i].image1 = "";
++                                        }
++                                        else
++                                        {
++                                            log.debug("isDisabled : " + isDisabled + ". nothig to do.");
++                                        }
++                                        this._currentContextTemplate.list2Ctrl.updateItems(i, i);
++                                    }
++                                    log.debug("Updated current screen based on StatusMenu message: " + msg.params.payload.appName + " " + msg.params.payload.state);
++                                }
++                            }
++                        }
++                        else
++                        {
++                            log.error("_currentContextTemplate is NULL");
++                        }
++                        break;
++                    default:
++                        log.debug("context is not Entertainment. nothing to do.");
++                        break;
++                }
++            }
++            else
++            {
++                log.error("_currentContext is NNLL");
++            }
++        }
++        else
++        {
++            log.warn("appName is not carplay. nothing to do.");
++        }
++    }
++    else
++    {
++        log.error("msg.params is NULL");
++    }
++};
++
++systemApp.prototype._displayDeviceNameEntCarPlayMenu = function(EntCarPlayItem, isAvailable, name)
++{
++	log.info("_displayDeviceName_EntCarPlayMenu  EntCarPlayItem=" + EntCarPlayItem + ", isAvailable=" + isAvailable + ", deviceName=" + name);
++
++    if (isAvailable && typeof name === "string" && name.length > 0)
++    {
++        EntCarPlayItem.text1Id = "APDevice";
++        EntCarPlayItem.text1SubMap = { "device name": name };
++    }
++    else
++    {
++        EntCarPlayItem.text1Id = "CarPlay";
++        EntCarPlayItem.text1SubMap = null;
++    }
++
++    // Update the Entertainment context if it is currently displayed.
++    if (this._currentContext && this._currentContext.ctxtId === "Entertainment" && this._currentContextTemplate)
++    {
++        var list = this._currentContextTemplate.list2Ctrl;
++        for (var i = 0; i < list.dataList.items.length; ++i)
++        {
++            if (list.dataList.items[i].appData.appName === 'carplay' && list.dataList.items[i].appData.mmuiEvent === 'SelectCarPlayWifi')
++            {
++                list.dataList.items[i] = EntCarPlayItem;
++                list.updateItems(i, i);
++                break;
++            }
++        }
++    }
++    else
++    {
++        log.debug("context is not Entertainment. nothingto do.");
++    }
++};
++
++systemApp.prototype._StatusMenuVisibleCarPlayWifiMsgHandler = function(msg)
++{
++    if (msg.params && msg.params.payload)
++    {
++        log.info("Received StatusMenuVisibleCarPlayWifi message: " + msg.params.payload.appName + " " + msg.params.payload.state);
++
++        var appName = msg.params.payload.appName;
++
++        // Update the static menu lists so they are correctly enable next time the context is shown
++        if (appName === "carplay")
++        {
++            var isVisible = msg.params.payload.state === "Visible";
++            var mmuiEvent = "SelectCarPlayWifi";
++            for (var i = 0; i < this._masterEntertainmentDataList.items.length; ++i)
++            {
++                if (this._masterEntertainmentDataList.items[i].appData.mmuiEvent === mmuiEvent)
++                {
++                    this._masterEntertainmentDataList.items[i].appData.isVisible = isVisible;
++
++                    // if isVisible is true, Force Available "Apple Carplay" menu.
++                    this._masterEntertainmentDataList.items[i].disabled = !isVisible;
++                    break;
++                }
++                else
++                {
++                    log.debug("appName : " + this._masterEntertainmentDataList.items[i].appData.appName + " is not target.");
++                }
++            }
++
++            // Update the Entertainment context if it is currently displayed.
++            if (this._currentContext &&
++                this._currentContext.ctxtId === "Entertainment" &&
++                this._currentContextTemplate)
++            {
++                var dataList = this._buildEntertainmentDataList();
++                this._currentContextTemplate.list2Ctrl.setDataList(dataList);
++                this._currentContextTemplate.list2Ctrl.updateItems(0, dataList.items.length - 1);
++            }
++            else
++            {
++                log.debug("context is not Entertainment. nothingto do.");
++            }
++        }
++        else
++        {
++            log.warn("appName is not carplay. nothing to do.");
++        }
++    }
++    else
++    {
++        log.error("msg.params is NULL");
++    }
++};
++
++systemApp.prototype._StatusMenuVisibleAndroidAutoMsgHandler = function(msg)
++{
++    if (msg.params && msg.params.payload)
++    {
++        log.info("Received StatusMenuVisibleAndroidAuto message: " + msg.params.payload.appName + " " + msg.params.payload.state);
++
++        var appName = msg.params.payload.appName;
++
++        // Update the static menu lists so they are correctly enable next time the context is shown
++        if (appName === "androidauto")
++        {
++            var isDisabled = msg.params.payload.state !== "Visible";
++
++            this._enableAppListItem(appName, isDisabled, this._masterEntertainmentDataList);
++            // Update androidauto icon of HomeScreen
++            this._setRemoteUIButton(appName, !isDisabled);
++
++            // Update the Entertainment context if it is currently displayed.
++            if (this._currentContext &&
++                this._currentContext.ctxtId === "Entertainment" &&
++                this._currentContextTemplate)
++            {
++                var dataList = this._buildEntertainmentDataList();
++                this._currentContextTemplate.list2Ctrl.setDataList(dataList);
++                this._currentContextTemplate.list2Ctrl.updateItems(0, dataList.items.length - 1);
++            }
++            else
++            {
++                log.debug("context is not Entertainment. nothingto do.");
++            }
++        }
++        else
++        {
++            log.warn("appName is not carplay. nothing to do.");
++        }
++    }
++    else
++    {
++        log.error("msg.params is NULL");
++    }
++};
++
++systemApp.prototype._enableEntertainmentListItemCarPlay = function(isDisabled, deviceName)
++{
++    var dataList = this._masterEntertainmentDataList;
++
++    for (var i = 0; i < dataList.items.length; ++i)
++    {
++        if ((dataList.items[i].appData.appName.indexOf("carplay") === 0) &&
++            dataList.items[i].text1Id == 'USB1CarPlay')
++        {
++            if (this._AtSpeedDisabled) // At speed : Available status will be skipped for the speed restricted apps
++            {
++                var speedRestrictedAppName = null;
++                var isNoAppAtSpeed = true;
++                for(var j = 0; j < this._SpeedRestrictedApps.length; ++j)
++                {
++                    speedRestrictedAppName = this._SpeedRestrictedApps[j].appName;
++                    log.info("speedRestrictedAppName : "+speedRestrictedAppName + " checking for AppName : "+dataList.items[i].appData.appName);
++                    if(speedRestrictedAppName === dataList.items[i].appData.appName)
++                    {
++                        isNoAppAtSpeed = false;// App found with At Speed
++                        break;
++                    }
++                    else
++                    {
++                       log.debug("appName : " + dataList.items[i].appData.appName + " is not target.");
++                    }
++                }
++                if (isNoAppAtSpeed)
++                {
++                    dataList.items[i].disabled = isDisabled;
++                }
++                else
++                {
++                    log.debug("isNoAppAtSpeed : " + isNoAppAtSpeed + ". nothig to do.");
++                }
++            }
++            else
++            {
++                dataList.items[i].disabled = isDisabled;
++            }
++
++            // Care about "Apple Carplay" menu
++            var CPWifiIndex = i-1; //Entertainment List index of "Apple CarPlay"
++            if (this._isCarPlayWifiMenu(dataList.items[CPWifiIndex]))
++            {
++                // display or not connectede carplay deviceName
++                this._displayDeviceNameEntCarPlayMenu(dataList.items[CPWifiIndex], !isDisabled, deviceName);
++                // if "Apple CarPlay" menu is visible and with device then USBCarPlay menu should be invisible
++                dataList.items[i].appData.isVisible = false;
++                dataList.items[this._USB1EntIndex].appData.isVisible = true;
++            }
++            else
++            {
++                // if carplay is available change state of USB1 (carPlay disabled -> USB enabled and vice-a-versa)
++                dataList.items[i].appData.isVisible = !isDisabled;
++                // next one should be usb1Audio.
++                // bad practive - hardcoded values
++                dataList.items[this._USB1EntIndex].appData.isVisible = isDisabled;;
++            }
++            log.debug("Updated cached list item based on StatusMenu message: carplay" + !isDisabled);
++        }
++    }
++
++    //Even though vehicle configuration can not be changed in between after boot up but just to make sure it has updated configuration
++    //Reading the value again and checking the same with existing one.
++    var vehicleConfigurationType = framework.getSharedData("syssettings","VehicleConfigData");
++    //Need to update _applicationsCtxtWiseAppNames (ApplicationStructure) if vehicle configuration has changed.
++    if (vehicleConfigurationType !== this._vehicleConfigurationType)
++    {
++        log.info("VehicleConfigurationType is changed to "+vehicleConfigurationType);
++        this._vehicleConfigurationType = vehicleConfigurationType;
++        this._updateApplicationStructure(vehicleConfigurationType);
++    }
++    else
++    {
++        log.debug("VehicleConfigurationType is not changed.");
++    }
++};
++
+ // Tell framework that system app has finished loading
+ framework.registerAppLoaded("system", null, true);

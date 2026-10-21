@@ -1,0 +1,408 @@
+/lib/ld-linux.so.3
+N)/N=
+JEKan
+librt.so.1
+__gmon_start__
+_Jv_RegisterClasses
+libwayland-client.so.0
+_fini
+wl_pointer_interface
+wl_buffer_interface
+wl_proxy_set_user_data
+wl_shm_pool_interface
+wl_registry_interface
+wl_proxy_destroy
+wl_seat_interface
+wl_shm_interface
+_init
+wl_display_connect
+wl_surface_interface
+wl_proxy_get_user_data
+wl_display_disconnect
+wl_shell_interface
+wl_compositor_interface
+wl_touch_interface
+wl_proxy_add_listener
+wl_proxy_marshal
+wl_proxy_marshal_constructor
+wl_callback_interface
+wl_display_dispatch
+wl_display_get_fd
+libwayland-ivi-client.so.0
+wl_ivi_interface
+libwayland-ivi-shell-client.so.1
+wl_ivi_animation_group_interface
+wl_ivi_shell_interface
+libcairo.so.2
+cairo_set_source_rgb
+cairo_show_text
+cairo_set_line_width
+cairo_rectangle
+cairo_create
+cairo_set_font_size
+cairo_image_surface_create_for_data
+cairo_move_to
+cairo_text_extents
+cairo_paint
+cairo_select_font_face
+cairo_set_operator
+cairo_stroke
+cairo_destroy
+cairo_surface_destroy
+libstdc++.so.6
+_ZdlPv
+__gxx_personality_v0
+__cxa_end_cleanup
+_Znwj
+libm.so.6
+libgcc_s.so.1
+__aeabi_unwind_cpp_pr1
+__aeabi_ui2d
+__aeabi_d2uiz
+__aeabi_dmul
+__aeabi_ddiv
+__aeabi_dadd
+__aeabi_dsub
+libpthread.so.0
+close
+system
+libc.so.6
+sprintf
+ftruncate
+unlink
+abort
+__assert_fail
+mkstemp
+memcpy
+umask
+stderr
+munmap
+fprintf
+strcmp
+__libc_start_main
+__exidx_start
+__exidx_end
+_edata
+__bss_start
+__bss_start__
+__bss_end__
+__end__
+GLIBC_2.4
+CXXABI_1.3
+GLIBCXX_3.4
+GCC_3.5
+HDCP TOGGLE
+SPEED TOGGLE
+DEV MODE TOGGLE
+CPUGAUGE TOGGLE
+DISPLAY TOGGLE
+RESET MAP
+RESET VIP
+USB DRIVER
+TAUSIM TOGGLE
+TERMINAL
+WIFI AP TOGGLE
+USERTTY TOGGLE
+LVDS SPEED TOGG
+*.vcf FILE TOGGLE
+DelBDSFiles TOGGLE
+NNG DEBUG TOGGLE
+HCI LOG TOGGLE
+NAVIGATE TOGGLE
+jci-systemDialog
+ERROR : %s %s %d : ws_create_window() failed
+jci-systemDialog.cpp
+/jci/scripts/systemHooks.sh %d
+/jci/tools/jci-dialog --title='Result' --text='HDCP has been toggled: ENABLE' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='HDCP has been toggled: DISABLE' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='Speed Restriction has been toggled: ENABLE' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='Speed Restriction has been toggled: DISABLE' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='Developer Mode has been toggled: ON' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='Developer Mode has been toggled: OFF' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='CPUGAUGE has been toggled: ON' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='CPUGAUGE has been toggled: OFF' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='Display Configuration has been toggled: VISTEON' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='Display Configuration has been toggled: JCI' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='TAUSIM has been toggled: ON' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='TAUSIM has been toggled: OFF' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='WIFI AP has been toggled: ON' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='WIFI AP has been toggled: OFF' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='USERTTY has been toggled: ENABLE' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='USERTTY has been toggled: DISABLE' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='LVDS Speed Restriction has been toggled: ENABLE' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='LVDS Speed Restriction has been toggled: DISABLE' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='*.vcf file setting has been toggled: ENABLE \n CMU requires long ACC to take affect' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='*.vcf file setting has been toggled: DISABLE \n CMU requires long ACC to take affect' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='DeleteBDSFiles setting has been toggled: ENABLE \n CMU requires long ACC to take affect' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='DeleteBDSFiles setting has been toggled: DISABLE \n CMU requires long ACC to take affect' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='NNG Debug setting has been toggled: ON \n' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='NNG Debug setting has been toggled: OFF \n' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='HCI Log has been toggled: ON \n' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='HCI Log has been toggled: OFF \n' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='NaviGate has been toggled: ON \n' --no-cancel &
+/jci/tools/jci-dialog --title='Result' --text='NaviGate has been toggled: OFF \n' --no-cancel &
+Information
+Cancel
+Previous
+Choose a script you would like to run.
+ERROR : %s %s %d : ws_display_create() failed
+jci_systemDialog
+ERROR : %s %s %d : wl_display_connect() failed
+ws.cpp
+wl_registry
+wl_compositor
+ERROR : %s %s %d : wl_display_bind('wl_compositor') failed
+wl_shell
+ERROR : %s %s %d : wl_display_bind('wl_shell') failed
+wl_shm
+ERROR : %s %s %d : wl_display_bind('wl_shm') failed
+wl_seat
+wl_ivi
+wl_ivi_shell
+ERROR : %s %s %d : wl_display_bind('wl_ivi_shell') failed
+__null != _ws_display
+__null != ws_window
+ERROR : %s %s %d : mkstemp() failed
+ERROR : %s %s %d : ftruncate() failed
+ERROR : %s %s %d : unlink() failed
+ERROR : %s %s %d : mmap() failed
+ERROR : %s %s %d : wl_shm_create_pool() failed
+ERROR : %s %s %d : wl_shm_create_buffer() failed
+ERROR : %s %s %d : malloc() failed
+/tmp/wayland-shm-XXXXXX
+ERROR : %s %s %d : wl_buffer_get_user_data() failed
+ws_destroy_shm_buffer
+ws_create_shm_buffer
+void ws_window_t::ws_window_set_key_handle(ws_window_t*, void (*)(ws_window_t*, uint32_t, uint32_t))
+ws_window_t::ws_window_t(ws_display_t*, int32_t, int32_t, char*, int, int, int, int)
+handle_interface
+ws_display_t
+ws_display_t::ws_display_t()
+aeabi
+GCC: (GNU) 4.5.2 20101026 (prerelease)
+.symtab
+.strtab
+.shstrtab
+.interp
+.note.ABI-tag
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.init
+.text
+.fini
+.rodata
+.ARM.extab
+.ARM.exidx
+.init_array
+.fini_array
+.dynamic
+.data
+.ARM.attributes
+.comment
+call_gmon_start
+__JCR_LIST__
+__do_global_dtors_aux
+completed.5809
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+_ZL7scripts
+_ZZN16jci_systemDialogC1EP12ws_display_tiiiPKcS3_S3_S3_E8__func__
+_ZZ4mainE8__func__
+wl_fixed_to_double
+wl_fixed_from_double
+wl_fixed_from_int
+wl_display_get_registry
+wl_registry_add_listener
+wl_registry_bind
+wl_callback_add_listener
+wl_callback_destroy
+wl_compositor_create_surface
+wl_shm_pool_create_buffer
+wl_shm_pool_destroy
+wl_shm_create_pool
+wl_buffer_set_user_data
+wl_buffer_get_user_data
+wl_buffer_destroy
+wl_surface_set_user_data
+wl_surface_get_user_data
+wl_surface_destroy
+wl_surface_attach
+wl_surface_damage
+wl_surface_frame
+wl_surface_commit
+wl_seat_add_listener
+wl_seat_get_pointer
+wl_seat_get_touch
+wl_pointer_add_listener
+wl_pointer_set_user_data
+wl_pointer_destroy
+wl_touch_add_listener
+wl_touch_set_user_data
+wl_touch_destroy
+wl_ivi_register_surface
+wl_ivi_shell_create_animation_group
+wl_ivi_animation_group_start
+wl_ivi_animation_group_destroy
+wl_ivi_animation_group_animate_scalar
+wl_ivi_animation_group_animate_cubicbezier2d
+_ZZN12ws_display_tC1EvE12__FUNCTION__
+_ZZN12ws_display_tC1EvE19__PRETTY_FUNCTION__
+_ZZN12ws_display_t16handle_interfaceEP11wl_registryjPKcjE12__FUNCTION__
+_ZZN11ws_window_tC1EP12ws_display_tiiPciiiiE19__PRETTY_FUNCTION__
+_ZZN11ws_window_t24ws_window_set_key_handleEPS_PFvS0_jjEE19__PRETTY_FUNCTION__
+_ZZN11ws_window_t20ws_create_shm_bufferEjE12__FUNCTION__
+_ZZN11ws_window_t21ws_destroy_shm_bufferEvE12__FUNCTION__
+__JCR_END__
+_GLOBAL_OFFSET_TABLE_
+__init_array_end
+__init_array_start
+_DYNAMIC
+data_start
+_ZN11ws_window_tD1Ev
+cairo_select_font_face
+cairo_show_text
+wl_proxy_add_listener
+cairo_set_operator
+_ZN11ws_window_t16ws_mouse_defaultEPS_j14ws_mouse_eventjj
+mmap@@GLIBC_2.4
+abort@@GLIBC_2.4
+__libc_csu_fini
+_ZN11ws_window_t15ws_draw_defaultEPS_j
+_ZN11ws_window_t18ws_window_set_dataEPv
+_ZN12ws_display_t19touch_handle_motionEPvP8wl_touchjiii
+_start
+_ZN16jci_systemDialog10ws_tm_drawEP11ws_window_tj
+wl_proxy_destroy
+__libc_start_main@@GLIBC_2.4
+_ZN12ws_display_tC2Ev
+__aeabi_dmul@@GCC_3.5
+wl_touch_interface
+_ZN11ws_window_tC2EP12ws_display_tiiPciiii
+_ZN12ws_display_tD1Ev
+_ZN16jci_systemDialog5rerunEv
+_ZN12ws_display_t19pointer_handle_axisEPvP10wl_pointerjji
+__gmon_start__
+_Jv_RegisterClasses
+_ZN11ws_window_t25ws_window_set_draw_handleEPFiPS_jE
+cairo_destroy
+_ZN11ws_window_tD2Ev
+_ZdlPv@@GLIBCXX_3.4
+wl_display_disconnect
+_ZN16jci_systemDialogC1EP12ws_display_tiiiPKcS3_S3_S3_
+_fini
+system@@GLIBC_2.4
+wl_pointer_interface
+start_index
+__cxa_end_cleanup@@CXXABI_1.3
+wl_buffer_interface
+__assert_fail@@GLIBC_2.4
+_ZN12ws_display_t18touch_handle_frameEPvP8wl_touch
+_IO_stdin_used
+cairo_paint
+_ZN11ws_window_t14ws_key_defaultEPS_jj
+_ZN12ws_display_t28ws_registry_handle_interfaceEPvP11wl_registryjPKcj
+_ZN12ws_display_t14ws_mouse_stateC1Ev
+_ZN12ws_display_t24registry_global_listenerE
+wl_display_dispatch
+_ZN16jci_systemDialog8ws_mouseEP11ws_window_tj14ws_mouse_eventjj
+cairo_set_source_rgb
+__data_start
+mkstemp@@GLIBC_2.4
+_ZN12ws_display_t20pointer_handle_leaveEPvP10wl_pointerjP10wl_surface
+__bss_start__
+__aeabi_ddiv@@GCC_3.5
+umask@@GLIBC_2.4
+_ZN16jci_systemDialog11rectangle_tC1Ev
+_ZN11ws_window_t24ws_window_disable_redrawEv
+wl_ivi_interface
+__aeabi_dadd@@GCC_3.5
+__exidx_end
+cairo_rectangle
+cairo_set_font_size
+unlink@@GLIBC_2.4
+_ZN12ws_display_t15touch_handle_upEPvP8wl_touchjji
+_ZN16jci_systemDialogC2EP12ws_display_tiiiPKcS3_S3_S3_
+memcpy@@GLIBC_2.4
+cairo_create
+wl_ivi_animation_group_interface
+__dso_handle
+_ZN12ws_display_t20pointer_handle_enterEPvP10wl_pointerjP10wl_surfaceii
+__end__
+wl_proxy_set_user_data
+__libc_csu_init
+__bss_end__
+wl_shm_pool_interface
+_ZN12ws_display_t35ws_registry_handle_interface_removeEPvP11wl_registryj
+wl_callback_interface
+_ZN11ws_window_t20ws_create_shm_bufferEj
+__aeabi_d2uiz@@GCC_3.5
+_Znwj@@GLIBCXX_3.4
+close@@GLIBC_2.4
+_ZN12ws_display_t17touch_handle_downEPvP8wl_touchjjP10wl_surfaceiii
+wl_shm_interface
+_ZN12ws_display_t16pointer_listenerE
+_ZN11ws_window_t26ws_window_set_mouse_handleEPFvPS_j14ws_mouse_eventjjE
+wl_display_connect
+wl_registry_interface
+wl_proxy_marshal
+_ZN11ws_window_t23ws_window_enable_redrawEv
+wl_shell_interface
+__bss_start
+fprintf@@GLIBC_2.4
+wl_surface_interface
+_ZN16jci_systemDialog5mouseEP11ws_window_tj14ws_mouse_eventjj
+cairo_image_surface_create_for_data
+__aeabi_dsub@@GCC_3.5
+_ZN12ws_display_t14touch_listenerE
+_bss_end__
+_ZN16jci_systemDialog8jci_drawEv
+_ZN11ws_window_t27ws_window_get_cairo_surfaceEv
+_ZN12ws_display_t24seat_handle_capabilitiesEPvP7wl_seatj
+_ZN12ws_display_tD2Ev
+ftruncate@@GLIBC_2.4
+_ZN11ws_window_t18ws_window_get_dataEv
+wl_seat_interface
+_ZN16jci_systemDialog3runEv
+_ZN11ws_window_t21ws_destroy_shm_bufferEv
+_ZN16jci_systemDialog11rectangle_tC2Ev
+wl_compositor_interface
+_ZN12ws_display_tC1Ev
+__aeabi_ui2d@@GCC_3.5
+cairo_set_line_width
+_ZN11ws_window_t7ws_drawEPvP11wl_callbackj
+wl_proxy_marshal_constructor
+_ZN11ws_window_t24ws_window_set_key_handleEPS_PFvS0_jjE
+cairo_surface_destroy
+stderr@@GLIBC_2.4
+munmap@@GLIBC_2.4
+_ZN11ws_window_t12ws_set_alphaEPKcjj
+wl_ivi_shell_interface
+cairo_text_extents
+_ZN12ws_display_t14ws_mouse_stateC2Ev
+_ZN12ws_display_t19touch_handle_cancelEPvP8wl_touch
+wl_display_get_fd
+_ZN12ws_display_t22ws_handle_mouse_buttonEPvP10wl_pointerjjjj
+_edata
+__gxx_personality_v0@@CXXABI_1.3
+_ZN12ws_display_t16handle_interfaceEP11wl_registryjPKcj
+__exidx_start
+_ZN12ws_display_t13seat_listenerE
+__aeabi_unwind_cpp_pr1@@GCC_3.5
+wl_proxy_get_user_data
+_ZN12ws_display_t22ws_handle_mouse_motionEPvP10wl_pointerjii
+strcmp@@GLIBC_2.4
+cairo_stroke
+_ZN12ws_display_t14ws_display_runEv
+_ZN11ws_window_t4drawEP11wl_callbackj
+sprintf@@GLIBC_2.4
+_ZN11ws_window_tC1EP12ws_display_tiiPciiii
+_init
+_ZN11ws_window_t13ws_window_runEv
+cairo_move_to
+_ZN12ws_display_t20ws_event_mask_updateEjPv

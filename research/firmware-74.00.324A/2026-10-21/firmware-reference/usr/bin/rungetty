@@ -1,0 +1,8 @@
+#!/bin/sh
+
+while [ true ]
+do
+    $(setsid /bin/cttyhack /sbin/getty -n -l /usr/bin/runlogin -L 115200 /dev/console vt100)
+    wait $!
+done
+

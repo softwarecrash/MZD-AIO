@@ -1,0 +1,6 @@
+*.key.json
+*.pub
+*.tar.gz
+*.zip
+__pycache__/
+private-snapshot/
