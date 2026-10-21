@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-22",
+  "patch": "list-loop",
+  "status": "experimental",
+  "vehicle_tested": false,
+  "firmware": "74.00.324A EU",
+  "implementation_commit": "82e1baf41bbe224c9771762db59674106d99bdc8",
+  "original_file": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+  "original_md5": "e111883b9dcbeb6bb154521826fcacac",
+  "composition_order": [
+    "list-beep",
+    "shorter-delay",
+    "list-loop"
+  ],
+  "validation": {
+    "behavior_cases": 256,
+    "combination_variants": 8,
+    "targeted_installer_runs": 14,
+    "builder": "passed: five test patches, automatic Install selection, unported locks, import and ZIP",
+    "package": "36 entries; 29 source/base64/ZIP SHA256 matches and CRC passed",
+    "formatting_followup": "Final helper-source EOF formatting changed; all eight generated variant hashes remain byte-identical to the 14-run installer fixtures",
+    "shell": "bash -n; LF and BOM checks passed",
+    "limits": "Behavior executes actual OEM handlers/helper with mocked focus/scroll operations. Installer uses isolated files and mocked mount commands. No real UI, actual CMU or vehicle test."
+  },
+  "offline_variant_bits": {
+    "0": "list-beep",
+    "1": "shorter-delay",
+    "2": "list-loop"
+  },
+  "offline_variant_sha256": {
+    "0": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "1": "f546e128996cdc42fb04b1cecacf768b8f4affe7362d8b498c349d794c558e59",
+    "2": "5a41a407f217a662d470611ec5ffe85a14a0ec2e5ace30e3329ae37b60d4e5bd",
+    "3": "28d28761d473b10388a4ac340f85029eb493cfc621408bd2ba8f3581940335f2",
+    "4": "c82cf9aa0df676c0e4044e6c1f5818beb151d489dc5e24d9cb8798c532d7fe82",
+    "5": "24b1b12a05a6daabeaf3e525a3d123fb2141e35c0e0fa31ecf1beb85f4d2e4cc",
+    "6": "f86a93b131ad6a949d6d01951a227e0e59558b2a0c739820671619632633d424",
+    "7": "9c79e73850bcfa7a563d2c4d1bc990ba5c8c092e7f745c3da634c7b1e67734a6"
+  },
+  "sources": [
+    {
+      "path": "docs/usb/mzd/patches/list-loop.sh",
+      "sha256": "8859356852e09f68615cbcd61730c4a9d99600a808ad71e4aa68268cabd3a10c",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/82e1baf41bbe224c9771762db59674106d99bdc8/docs/usb/mzd/patches/list-loop.sh"
+    },
+    {
+      "path": "docs/usb/mzd/patches/list-loop.awk",
+      "sha256": "93b7b272025fb3c15b33e555d149dbbb0bd41b874cea8a67071b8cedbf16ee68",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/82e1baf41bbe224c9771762db59674106d99bdc8/docs/usb/mzd/patches/list-loop.awk"
+    },
+    {
+      "path": "docs/usb/mzd/patches/list-loop-helper.js",
+      "sha256": "d96c4e0036b913c997142204aef8e13ab20bddfa96bcc15c305935649a4cfdd5",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/82e1baf41bbe224c9771762db59674106d99bdc8/docs/usb/mzd/patches/list-loop-helper.js"
+    },
+    {
+      "path": "docs/usb/mzd/common.sh",
+      "sha256": "6428368b5f009e998e9b70f4709a1eab1a2277b9240115099e9c55b458335ccf",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/82e1baf41bbe224c9771762db59674106d99bdc8/docs/usb/mzd/common.sh"
+    },
+    {
+      "path": "docs/usb/mzd/dispatch.sh",
+      "sha256": "85229ed573b099e99241c416814e48ee2ff6dfaaf35f3aac0bc6586bf10913f5",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/82e1baf41bbe224c9771762db59674106d99bdc8/docs/usb/mzd/dispatch.sh"
+    },
+    {
+      "path": "docs/usb/mzd/start.sh",
+      "sha256": "5b496e8f0f0d45255593afbb84d45e1cbe3438287e8a745555ee00d37413d5cc",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/82e1baf41bbe224c9771762db59674106d99bdc8/docs/usb/mzd/start.sh"
+    },
+    {
+      "path": "web-tools/test-list-loop.js",
+      "sha256": "f057aa4c82d5cda8974e4ab59585517de1605c9e49442a74515b34b36feec376",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/82e1baf41bbe224c9771762db59674106d99bdc8/web-tools/test-list-loop.js"
+    },
+    {
+      "path": "web-tools/test-usb-installer.py",
+      "sha256": "760727b8da7a636ea6026df8babded27c5e7c6fed1f5b0d89c82d39b99f8b65d",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/82e1baf41bbe224c9771762db59674106d99bdc8/web-tools/test-usb-installer.py"
+    },
+    {
+      "path": "web-tools/test-web-builder.js",
+      "sha256": "0b5dec6bf19d634422b3f353c261e66c6bf10762cfb5141e9d9dd5811dc2bb81",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/82e1baf41bbe224c9771762db59674106d99bdc8/web-tools/test-web-builder.js"
+    }
+  ]
+}
