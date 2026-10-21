@@ -130,10 +130,11 @@ globalThis.MZD_CATALOG = [
     "id": "main-menu-loop",
     "title": "Hauptmenü im Kreis",
     "auditStatus": "ANPASSEN",
-    "description": "v74-MainMenuCtrl.js ist bytegleich zur AIO-v70-Vorlage. Kopierte Tweakdatei entfernt keine erkannten OEM-Methoden; trotzdem komplette Ersetzung und Gruppenbedingung <=7 durch hashgebundenen v74-Patch ersetzen.",
+    "description": "Lässt die Auswahl im Hauptmenü vom letzten Symbol zum ersten und umgekehrt springen. Ändert gezielt nur die beiden Grenzen der Auswahl; normale Listen bleiben unverändert.",
     "selectable": true,
-    "releaseStatus": "unported",
-    "category": "patches"
+    "releaseStatus": "experimental",
+    "category": "patches",
+    "vehicleTested": false
   },
   {
     "id": "list-loop",

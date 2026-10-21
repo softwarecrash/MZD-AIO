@@ -5,8 +5,8 @@ Statische HTML/CSS/JavaScript-Anwendung ohne Build-Schritt und ohne externe Brow
 ## Bedienung wie bei AIO
 
 - Pruefen / Preflight: 41 Funktionsgruppen durchsuchen; nur zum Testen freigegebene Patches sind auswaehlbar. Keine Systemdateiaenderung.
-- Install markiert automatisch alle zum Testen freigegebenen Patches (aktuell Listenpiepsen, Listendelay und SSH). Einzelne koennen abgewaehlt werden. Nicht bearbeitete Tweaks bleiben in allen Modi gesperrt, auch beim Projektimport.
-- Installieren / Install: Listenpiepsen, Listendelay und SSH, einzeln oder gemeinsam. Experimentell, offline geprueft, Fahrzeugtest offen.
+- Install markiert automatisch alle zum Testen freigegebenen Patches (aktuell Listenpiepsen, Listendelay, Hauptmenü im Kreis und SSH). Einzelne koennen abgewaehlt werden. Nicht bearbeitete Tweaks bleiben in allen Modi gesperrt, auch beim Projektimport.
+- Installieren / Install: Listenpiepsen, Listendelay, Hauptmenü im Kreis und SSH, einzeln oder gemeinsam. Experimentell, offline geprueft, Fahrzeugtest offen.
 - Deinstallieren / Uninstall: den ausgewaehlten portierten Tweak entfernen.
 - Full System Restore: alle von diesem Rework unterstuetzten Systemdateien aus internen Originalen wiederherstellen, unabhaengig von der Auswahl. Derzeit List2Ctrl.js. Kein Werksreset und keine pauschale Ruecknahme fremder/alter AIO-Installationen.
 - Apps To Resources: Standard fuer kuenftige neue Apps. Bestehende Systemdateien bleiben an ihrem Originalpfad. Noch keine Zusatz-App portiert.
@@ -23,7 +23,7 @@ Die 41 Gruppen fassen Install-/Uninstall-Snippets, Sprachen und Anzeigevarianten
 
 `sh /mnt/sda1/restore.sh` startet ebenfalls Full System Restore, ignoriert dabei Aktion und Auswahl im Paket. Ein neuer Stick genuegt; die Originale liegen intern auf der CMU.
 
-Der MP3-Konsolenzugang mit Tastatur ist vom Besitzer bestaetigt. Das neue Installerpaket ist noch nicht am Fahrzeug bestaetigt. Keine RAM-Hooks, SSH-Aktivierung oder automatische Watchdog-/Opera-/Berechtigungsaenderung. Alte Anleitungen sind kein Firmware-Kompatibilitaetsnachweis.
+Der MP3-Konsolenzugang mit Tastatur ist vom Besitzer bestaetigt. Das neue Installerpaket ist noch nicht am Fahrzeug bestaetigt. SSH wird nur bei Auswahl aktiviert. Keine automatische Watchdog-/Opera-/Berechtigungsaenderung. Alte Anleitungen sind kein Firmware-Kompatibilitaetsnachweis.
 
 ## Sicherungen
 
@@ -41,7 +41,7 @@ Ein schreibgeschuetzt eingebundener Start-USB wird fuer Berichte beschreibbar ei
 
 ## Entwicklung und Quellen
 
-catalog.js enthaelt die 41 Gruppen. Listenpiepsen, Listendelay und SSH sind experimental, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
+catalog.js enthaelt die 41 Gruppen. Listenpiepsen, Listendelay, Hauptmenü im Kreis und SSH sind experimental, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
 
 Die MP3s stammen bytegleich vom zuvor eingelesenen Besitzer-USB. Verwandte Technik: https://github.com/naijamesz/mazda-connect-root-refactor . Keine Schluessel oder persoenlichen Konfigurationen.
 
@@ -85,6 +85,14 @@ Runtime-Ausgaben werden nur auf einen passenden beschreibbaren USB mit mzd/ssh-l
 
 Verbindung nach Ermitteln der CMU-IP: ssh cmu@CMU_IP. Falls ein aktueller Client den alten RSA-Hostalgorithmus ablehnt: ssh -o HostKeyAlgorithms=+ssh-rsa cmu@CMU_IP. Passwort interaktiv eingeben; keine private Schluesseldatei noetig.
 
-Full System Restore bearbeitet jetzt Listen und SSH als getrennte Aufgaben. Eine Bestaetigung gilt fuer das Paket. Jede Aufgabe hat eigene Originale, Zustand und Vorgangsdatensaetze. Das Paket ist keine atomare Transaktion ueber alle Aufgaben; Fehler koennen bereits abgeschlossene Teilaufgaben zuruecklassen. summary.txt und die Teilberichte sagen dies ausdruecklich.
+Full System Restore bearbeitet Listen, Hauptmenue und SSH als getrennte Aufgaben. Eine Bestaetigung gilt fuer das Paket. Jede Aufgabe hat eigene Originale, Zustand und Vorgangsdatensaetze. Das Paket ist keine atomare Transaktion ueber alle Aufgaben; Fehler koennen bereits abgeschlossene Teilaufgaben zuruecklassen. summary.txt und die Teilberichte sagen dies ausdruecklich.
 
-Laufzeittest: python web-tools/test-ssh-service.py. Der echte Supervisor laeuft dort mit simulierten netstat/sshd/mount/iptables-Kommandos, ohne echten Netzwerk-Listener oder Kontenaenderung. Installer-Test: python web-tools/test-usb-installer.py --zip <ZIP> --original <List2Ctrl.js>; --ssh-only prueft die SSH-Orchestrierung mit vorhandenen Manager-Fixtures. Dort wird ausschliesslich fuer den Controller ein Dummy-Service benutzt; die Supervisor-Logik wird separat real ausgefuehrt, waehrend Kernel/Daemon-Befehle simuliert sind.
+Laufzeittest: python web-tools/test-ssh-service.py. Der echte Supervisor laeuft dort mit simulierten netstat/sshd/mount/iptables-Kommandos, ohne echten Netzwerk-Listener oder Kontenaenderung. Installer-Test: python web-tools/test-usb-installer.py --zip <ZIP> --original <List2Ctrl.js> --mainmenu-original <MainMenuCtrl.js>; --ssh-only ueberspringt die umfangreiche List2-Suite. Dort wird ausschliesslich fuer den SSH-Controller ein Dummy-Service benutzt; die Supervisor-Logik wird separat real ausgefuehrt, waehrend Kernel/Daemon-Befehle simuliert sind.
+
+## Hauptmenue im Kreis
+
+Die v74-Originaldatei MainMenuCtrl.js ist bytegleich zur alten v70-Ausgangsdatei. Das bedeutet nicht, dass der Tweak wirkungslos ist: Der Patch aendert in _offsetFocus genau die beiden Begrenzungen (unter 0 auf 4; ueber 4 auf 0). Die alte komplette Ersatzdatei wird nicht kopiert. Normale Listen, Haltezeiten und Layout bleiben unveraendert.
+
+Die Original-Pruefsumme 40ccb293b8c6f80960f0b953dd2e173e und die Ergebnis-Pruefsumme ae272c9befc1350b93f23511568f13c7 begrenzen den Patch auf den geprueften Stand. Eigene Dateigruppe mit Original, Zustand, USB-Zweitkopie und Vorgangsprotokoll; Install/Uninstall/Full System Restore benutzen denselben Manager. Fremde Aenderungen werden abgewiesen.
+
+Funktionstest: node web-tools/test-main-menu-loop.js <lokale MainMenuCtrl.js>. Prueft 20 Original-/Patch-Faelle fuer alle fuenf Positionen und beide Richtungen sowie exakt zwei geaenderte Zeilen. Fahrzeugtest bleibt offen.

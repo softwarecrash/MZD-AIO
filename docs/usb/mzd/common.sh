@@ -8,6 +8,12 @@ RELATIVE=jci/gui/common/controls/List2/js/List2Ctrl.js
 FILE_PATCHES='list-beep shorter-delay'
 ORIGINAL=e111883b9dcbeb6bb154521826fcacac
 ;;
+mainmenu)
+TARGET=/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js
+RELATIVE=jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js
+FILE_PATCHES='main-menu-loop'
+ORIGINAL=40ccb293b8c6f80960f0b953dd2e173e
+;;
 ssh)
 TARGET=/jci/scripts/stage_wifi.sh
 RELATIVE=jci/scripts/stage_wifi.sh

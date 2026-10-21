@@ -20,6 +20,7 @@ assert set(assets) == {'mp3/a.mp3', 'mp3/b.mp3', 'mp3/c.mp3', 'mp3/d.mp3',
                        'mzd/installer.sh', 'mzd/common.sh', 'mzd/save-original.sh', 'mzd/originals.md5',
                        'mzd/patches/list-beep.sh', 'mzd/patches/list-beep.sed',
                        'mzd/patches/shorter-delay.sh', 'mzd/patches/shorter-delay.sed',
+                       'mzd/patches/main-menu-loop.sh', 'mzd/patches/main-menu-loop.sed',
                        'mzd/dispatch.sh', 'mzd/file-job.sh', 'mzd/ssh-job.sh', 'mzd/patches/ssh-bringback.sh',
                        'mzd/ssh/service.sh', 'mzd/ssh/sshd_config', 'mzd/ssh/password.hash', 'mzd/ssh-log-marker.txt'}
 (root / 'docs/usb-assets.js').write_text(

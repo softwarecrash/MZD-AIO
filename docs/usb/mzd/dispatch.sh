@@ -23,6 +23,11 @@ if [ "$ACTION" = restore ] || [ "$ACTION" = preflight ] || grep -qEx 'list-beep|
     sh "$BASE/file-job.sh" "$BASE" "$USB" "$REPORT/list2" "$ACTION" list2 "$SELECTED" || fail 'Dateigruppe Listen wurde nicht abgeschlossen. Teilberichte pruefen.'
     JOBS=$((JOBS+1))
 fi
+if [ "$ACTION" = restore ] || grep -qx 'main-menu-loop' "$SELECTED"; then
+    mkdir -p "$REPORT/mainmenu"
+    sh "$BASE/file-job.sh" "$BASE" "$USB" "$REPORT/mainmenu" "$ACTION" mainmenu "$SELECTED" || fail 'Dateigruppe Hauptmenue wurde nicht abgeschlossen. Teilberichte pruefen.'
+    JOBS=$((JOBS+1))
+fi
 if [ "$ACTION" = restore ] || grep -qx 'ssh-bringback' "$SELECTED"; then
     sh "$BASE/ssh-job.sh" "$BASE" "$USB" "$REPORT/ssh" "$ACTION" "$SELECTED" || fail 'SSH-Aufgabe wurde nicht abgeschlossen. Teilberichte pruefen.'
     JOBS=$((JOBS+1))

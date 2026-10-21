@@ -12,11 +12,16 @@ import zipfile
 p = argparse.ArgumentParser(description=__doc__)
 p.add_argument('--zip', type=Path, required=True)
 p.add_argument('--original', type=Path, required=True, help='Locally backed-up v74 List2Ctrl.js')
+p.add_argument('--mainmenu-original', type=Path, required=True, help='Locally backed-up v74 MainMenuCtrl.js')
 p.add_argument('--ssh-only', action='store_true', help='Run only SSH orchestration against existing manager fixtures')
 p.add_argument('--bash', default='C:/Program Files/Git/bin/bash.exe')
 args = p.parse_args()
 root = Path(__file__).resolve().parents[1]
 original = args.original.read_bytes()
+menu_original = args.mainmenu_original.read_bytes()
+assert hashlib.md5(menu_original).hexdigest() == '40ccb293b8c6f80960f0b953dd2e173e'
+menu_patched = menu_original.replace(b'if (index < 0)\n    {\n        index = 0;', b'if (index < 0)\n    {\n        index = 4;').replace(b'if (index > 4)\n    {\n        index = 4;', b'if (index > 4)\n    {\n        index = 0;')
+assert hashlib.md5(menu_patched).hexdigest() == 'ae272c9befc1350b93f23511568f13c7'
 patched = original.replace(b"    this._beep('Long', 'Multicontroller');", b"//  this._beep('Long', 'Multicontroller');")
 delay = original
 for before, after in [(b'1Timeout :                1500,', b'1Timeout :                150,'),
@@ -33,7 +38,7 @@ with zipfile.ZipFile(args.zip) as z:
     assert manifest['mode'] == 'preflight'
     assert manifest['entry'] == 'mp3-console-keyboard'
     assert manifest['command'] == 'sh /mnt/sda1/tweaks.sh'
-    assert len(z.namelist()) == 31
+    assert len(z.namelist()) == 33
     for name, entry in manifest['assets'].items():
         data = z.read(name)
         assert data == (root / 'docs/usb' / name).read_bytes()
@@ -59,6 +64,9 @@ with tempfile.TemporaryDirectory(prefix='mzd-installer-') as temporary:
     target = cmu / 'jci/gui/common/controls/List2/js/List2Ctrl.js'
     target.parent.mkdir(parents=True)
     target.write_bytes(original)
+    menu_target = cmu / 'jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js'
+    menu_target.parent.mkdir(parents=True)
+    menu_target.write_bytes(menu_original)
     ssh_stage = cmu / 'jci/scripts/stage_wifi.sh'
     write(ssh_stage, '#!/bin/sh\n\n')
     version = cmu / 'version.ini'
@@ -112,6 +120,7 @@ fi
         worker = (base / 'common.sh').read_text()
         for before, after in [
             ('TARGET=/jci/gui/common/controls/List2/js/List2Ctrl.js', 'TARGET=' + shlex.quote(bp(target))),
+            ('TARGET=/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js', 'TARGET=' + shlex.quote(bp(menu_target))),
             ('TARGET=/jci/scripts/stage_wifi.sh', 'TARGET=' + shlex.quote(bp(ssh_stage))),
             ('RESOURCES=/tmp/mnt/resources', 'RESOURCES=' + shlex.quote(bp(resources))),
             ('ROOT_MOUNT=/', 'ROOT_MOUNT=' + shlex.quote(bp(cmu))),
@@ -123,7 +132,7 @@ fi
         write(auxiliary, 'original launcher\n')
         write(base / 'originals.md5', hashlib.md5(auxiliary.read_bytes()).hexdigest() + '  ' + bp(auxiliary) + '\n')
         write(base / 'selected.txt', 'list-beep\n')
-        write(base / 'allowed.txt', 'list-beep\nshorter-delay\nssh-bringback\nbackground\n')
+        write(base / 'allowed.txt', 'list-beep\nshorter-delay\nssh-bringback\nmain-menu-loop\nbackground\n')
         write(base / 'action.txt', 'preflight\n')
         return usb
 
@@ -251,6 +260,31 @@ fi
         new_usb = package('USB stick B')
         (new_usb / 'mzd/selected.txt').unlink()
         (new_usb / 'mzd/allowed.txt').unlink()
+    # Main-menu boundaries are a separate managed file, not a List2 replacement.
+    menu_backup = resources / 'aio-rework/backups/74.00.324A-EU/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js.backup'
+    write(usb / 'mzd/selected.txt', 'main-menu-loop\n')
+    run('preflight', 0, 'Pruefung abgeschlossen')
+    assert menu_target.read_bytes() == menu_original and not menu_backup.exists()
+    run('install', 0, 'Erfolgreich installiert')
+    assert menu_target.read_bytes() == menu_patched and target.read_bytes() == original
+    assert (menu_backup / 'original').read_bytes() == menu_original
+    assert (usb / 'backups/74.00.324A-EU/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js.backup/original').read_bytes() == menu_original
+    menu_time = (menu_backup / 'original').stat().st_mtime_ns
+    run('install', 0, 'bereits vorhanden')
+    assert (menu_backup / 'original').stat().st_mtime_ns == menu_time
+    write(usb / 'mzd/selected.txt', 'main-menu-loop\nlist-beep\nshorter-delay\n')
+    run('install', 0, 'Erfolgreich installiert')
+    assert menu_target.read_bytes() == menu_patched and target.read_bytes() == combined
+    write(usb / 'mzd/selected.txt', 'main-menu-loop\n')
+    run('uninstall', 0, 'Ausgewaehlte Patches entfernt')
+    assert menu_target.read_bytes() == menu_original and target.read_bytes() == combined
+    run('install', 0, 'Erfolgreich installiert')
+    run('restore', 0, 'Original erfolgreich wiederhergestellt', stick=new_usb, restore=True)
+    assert menu_target.read_bytes() == menu_original and target.read_bytes() == original
+    menu_target.write_bytes(menu_original + b'// foreign change\n')
+    run('install', 1, 'ausserhalb des Installers geaendert')
+    assert menu_target.read_bytes() == menu_original + b'// foreign change\n'
+    menu_target.write_bytes(menu_original)
     # Controller integration uses a fake service; the real supervisor has its
     # own test suite with fake kernel/sshd commands, never a real listener.
     ssh_fault = temp / 'ssh-port-busy'
