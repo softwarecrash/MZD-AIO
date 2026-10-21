@@ -3,11 +3,13 @@
   "use strict";
   const target = Object.freeze({ firmware: "74.00.324A", region: "EU" });
   const catalog = root.MZD_CATALOG;
+  const testableIds = Object.freeze(catalog.filter(p => p.selectable && p.releaseStatus === "experimental").map(p => p.id));
   function project(name, ids, action = "preflight") {
     if (typeof name !== "string" || !name.trim() || name.trim().length > 80) throw new Error("Bitte einen Projektnamen mit 1 bis 80 Zeichen eingeben.");
     if (!Array.isArray(ids) || ids.some(id => typeof id !== "string" || !catalog.some(p => p.id === id && p.selectable))) throw new Error("Das Projekt enthält unbekannte oder nicht auswählbare Tweaks.");
+    if (ids.some(id => !testableIds.includes(id))) throw new Error("Noch nicht bearbeitete Tweaks sind gesperrt. Bitte nur zum Testen freigegebene Patches auswählen.");
     if (!["preflight", "install", "uninstall", "restore"].includes(action)) throw new Error("Unbekannte Aktion.");
-    if (["install", "uninstall"].includes(action) && (ids.length === 0 || ids.some(id => !["list-beep", "shorter-delay", "ssh-bringback"].includes(id)))) throw new Error("Listenpiepsen, Listendelay und SSH sind experimentell verfügbar. Andere Tweaks können im Prüfmodus geplant werden.");
+    if (["install", "uninstall"].includes(action) && ids.length === 0) throw new Error("Bitte mindestens einen zum Testen freigegebenen Patch auswählen.");
     return { format: "mzd-aio-web-project", version: 1, name: name.trim(), status: "draft", target: { ...target }, action, tweaks: action === "restore" ? [] : [...new Set(ids)] };
   }
   function parse(text) {
@@ -82,5 +84,5 @@
       assets: Object.fromEntries(Object.entries(root.MZD_USB_ASSETS).map(([path, a]) => [path, { bytes: a.bytes, sha256: a.sha256 }])) }, null, 2) + "\n";
     return files;
   }
-  root.MzdBuilder = Object.freeze({ target, project, parse, zip, draftFiles, usbFiles });
+  root.MzdBuilder = Object.freeze({ target, testableIds, project, parse, zip, draftFiles, usbFiles });
 })(globalThis);

@@ -4,7 +4,8 @@ Statische HTML/CSS/JavaScript-Anwendung ohne Build-Schritt und ohne externe Brow
 
 ## Bedienung wie bei AIO
 
-- Pruefen / Auswahl planen: 41 Funktionsgruppen durchsuchen und Projekte als JSON speichern/oeffnen; keine Systemdateiaenderung.
+- Pruefen / Preflight: 41 Funktionsgruppen durchsuchen; nur zum Testen freigegebene Patches sind auswaehlbar. Keine Systemdateiaenderung.
+- Install markiert automatisch alle zum Testen freigegebenen Patches (aktuell Listenpiepsen, Listendelay und SSH). Einzelne koennen abgewaehlt werden. Nicht bearbeitete Tweaks bleiben in allen Modi gesperrt, auch beim Projektimport.
 - Installieren / Install: Listenpiepsen, Listendelay und SSH, einzeln oder gemeinsam. Experimentell, offline geprueft, Fahrzeugtest offen.
 - Deinstallieren / Uninstall: den ausgewaehlten portierten Tweak entfernen.
 - Full System Restore: alle von diesem Rework unterstuetzten Systemdateien aus internen Originalen wiederherstellen, unabhaengig von der Auswahl. Derzeit List2Ctrl.js. Kein Werksreset und keine pauschale Ruecknahme fremder/alter AIO-Installationen.

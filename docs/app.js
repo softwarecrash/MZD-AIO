@@ -22,20 +22,20 @@
       const card = document.createElement("article"); card.className = "tweak-card" + (selected.has(patch.id) ? " chosen" : "");
       const label = document.createElement("label"), checkbox = document.createElement("input"), title = document.createElement("span");
       checkbox.type = "checkbox"; checkbox.checked = selected.has(patch.id);
-      checkbox.disabled = !patch.selectable || mode === "restore" || (mode !== "preflight" && !["list-beep", "shorter-delay", "ssh-bringback"].includes(patch.id));
+      checkbox.disabled = mode === "restore" || !core.testableIds.includes(patch.id);
       title.textContent = patch.title; label.append(checkbox, title);
       checkbox.addEventListener("change", () => { if (checkbox.checked) selected.add(patch.id); else selected.delete(patch.id); status.textContent = ""; render(); });
       const badge = document.createElement("span"); badge.className = "patch-status";
-      badge.textContent = patch.releaseStatus === "experimental" ? "Experimentell · offline geprüft · Fahrzeugtest offen" : "In Planung · " + labels[patch.auditStatus];
+      badge.textContent = patch.releaseStatus === "experimental" ? "Zum Testen freigegeben · Fahrzeugtest offen" : "Gesperrt · In Planung · " + labels[patch.auditStatus];
       const description = document.createElement("p"); description.textContent = patch.description;
       card.append(label, badge, description); lists[patch.category].append(card);
     }
-    byId("result-count").textContent = rows.length + " Tweaks · Prüfstand: 21.10.2026";
+    byId("result-count").textContent = rows.length + " Tweaks · " + core.testableIds.length + " zum Testen freigegeben";
     byId("empty").hidden = rows.length > 0;
     byId("selection-count").textContent = selected.size + " Tweaks ausgewählt";
     byId("release-info").textContent = mode === "restore"
       ? "Full System Restore stellt alle von diesem Rework verwalteten Systemdateien aus den internen Originalen wieder her. Die Tweak-Auswahl wird ignoriert."
-      : mode === "preflight" ? "Prüfen verändert keine Systemdateien. Andere Tweaks können hier bereits geplant werden."
+      : mode === "preflight" ? "Prüfen verändert keine Systemdateien. Noch nicht bearbeitete Tweaks sind gesperrt."
       : "Ausführbar: Listenpiepsen, Listendelay und SSH. Experimentell; Fahrzeugtest offen. Andere aktive Patches bleiben beim Installieren und Deinstallieren erhalten.";
     byId("selection-list").replaceChildren();
     for (const id of selected) { const li = document.createElement("li"); li.textContent = globalThis.MZD_CATALOG.find(p => p.id === id).title; byId("selection-list").append(li); }
@@ -50,9 +50,11 @@
   byId("action").addEventListener("change", () => {
     const mode = byId("action").value;
     if (mode === "restore") selected.clear();
-    else if (mode !== "preflight") {
-      for (const id of selected) if (!["list-beep", "shorter-delay", "ssh-bringback"].includes(id)) selected.delete(id);
-      if (!selected.size) selected.add("list-beep");
+    else if (mode === "install") {
+      selected.clear();
+      core.testableIds.forEach(id => selected.add(id));
+    } else {
+      for (const id of selected) if (!core.testableIds.includes(id)) selected.delete(id);
     }
     status.textContent = ""; render();
   });
