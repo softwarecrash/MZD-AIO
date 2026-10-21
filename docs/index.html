@@ -1,61 +1,17 @@
 <!doctype html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Der neue MZD-AIO Web-Builder: eine erste Grundlage für die Konfiguration direkt im Browser.">
-    <meta name="color-scheme" content="light">
-    <title>MZD-AIO · Web-Builder</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="app.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="./" aria-label="MZD-AIO Startseite"><span class="brand-mark" aria-hidden="true">M</span> MZD-AIO <span class="brand-suffix">/ WEB</span></a>
-      <nav aria-label="Hauptnavigation">
-        <a href="#projekt">Projekt</a>
-        <a href="https://github.com/softwarecrash/MZD-AIO">GitHub <span aria-hidden="true">↗</span></a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> DER NEUE WEB-BUILDER</p>
-          <h1 id="hero-title">Dein MZD.<br>Deine Auswahl.</h1>
-          <p class="intro">MZD-AIO kommt in den Browser. Die neue Grundlage für deine Konfiguration — mit HTML und JavaScript, direkt auf deinem Rechner.</p>
-          <div class="pills" aria-label="Projektmerkmale"><span>Ohne Installation</span><span>Open Source</span><span>Firmware-Rework v74</span></div>
-          <div class="hero-note"><span class="note-line" aria-hidden="true"></span><p>Ein neuer Anfang für einen Klassiker.<br><strong>Die erste Version steht. Der Builder wächst.</strong></p></div>
-        </div>
-
-        <section class="project-card" id="projekt" aria-labelledby="project-title">
-          <div class="card-top"><span class="eyebrow">DEIN PROJEKT</span><span class="badge">PROTOTYP</span></div>
-          <h2 id="project-title">Fangen wir an.</h2>
-          <p class="card-description">Lege die Grundlage für deine spätere Auswahl fest.</p>
-          <form id="project-form">
-            <label for="project-name">Projektname</label>
-            <input id="project-name" name="project-name" value="Mein Mazda" maxlength="80" required autocomplete="off">
-            <label for="firmware">Ziel-Firmware</label>
-            <select id="firmware" name="firmware"><option value="74.00.324A">74.00.324A · Europa</option></select>
-            <div class="firmware-info"><span aria-hidden="true">↳</span><p>Ausgangspunkt des aktuellen Reworks.<br>Die Tweak-Kompatibilität wird noch geprüft.</p></div>
-            <button type="submit">Projektdatei speichern <span aria-hidden="true">↓</span></button>
-            <p class="form-hint">Speichert eine JSON-Datei mit deinen Einstellungen. Installationspakete und die Tweak-Auswahl folgen später.</p>
-            <p id="project-status" class="project-status" role="status" aria-live="polite"></p>
-          </form>
-          <noscript><p>Zum Speichern der Projektdatei bitte JavaScript aktivieren.</p></noscript>
-        </section>
-      </section>
-
-      <section class="next-section" aria-labelledby="next-title">
-        <div class="section-heading"><p class="eyebrow">DIE RICHTUNG STEHT</p><h2 id="next-title">Vom Projekt zum USB-Stick.</h2></div>
-        <ol class="roadmap">
-          <li><span class="step-number">01</span><h3>Ziel festlegen</h3><p>Firmware und Region bilden die Grundlage deiner Konfiguration.</p><span class="step-label">Erste Grundlage</span></li>
-          <li><span class="step-number">02</span><h3>Tweaks auswählen</h3><p>Geprüfte Optionen für Oberfläche, Bedienung und weitere Funktionen.</p><span class="step-label">Geplant</span></li>
-          <li><span class="step-number">03</span><h3>Paket erstellen</h3><p>Passende Dateien direkt im Browser für den USB-Stick zusammenstellen.</p><span class="step-label">Geplant</span></li>
-        </ol>
-      </section>
-    </main>
-
-    <footer><a class="footer-brand" href="./">MZD-AIO <span>/ WEB</span></a><p>Von der Community. Für dein Projekt.</p><a href="https://github.com/softwarecrash/MZD-AIO">Quellcode auf GitHub ↗</a></footer>
-  </body>
-</html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="MZD-AIO Web-Builder für Firmware 74.00.324A EU. Tweaks planen und lokal exportieren."><meta name="color-scheme" content="light"><title>MZD-AIO · Web-Builder</title><link rel="stylesheet" href="styles.css"><script src="catalog.js" defer></script><script src="builder-core.js" defer></script><script src="app.js" defer></script></head>
+<body>
+<header class="site-header"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true">M</span>MZD-AIO <span class="brand-suffix">/ WEB</span></a><nav aria-label="Hauptnavigation"><a href="#tweaks">Tweaks</a><a href="https://github.com/softwarecrash/MZD-AIO">GitHub ↗</a></nav></header>
+<main>
+<section class="builder-intro"><p class="eyebrow"><span class="status-dot"></span> FIRMWARE 74.00.324A · EU</p><h1>Dein MZD.<br>Deine Auswahl.</h1><p class="intro">Stelle dein Projekt direkt im Browser zusammen. Ohne Installation, auf Windows, macOS und Linux.</p><div class="notice"><strong>Der v74-Rework läuft.</strong> Du kannst deine Auswahl bereits planen und exportieren. Alle Tweaks sind noch in Anpassung; der Export enthält keine installierbaren Fahrzeugdateien.</div></section>
+<div class="builder-layout">
+<section id="tweaks" aria-labelledby="catalog-title"><div class="section-heading"><p class="eyebrow">01 / AUSWAHL</p><h2 id="catalog-title">Was möchtest du ändern?</h2></div>
+<div class="filters"><label for="search">Tweaks suchen<input type="search" id="search" placeholder="Zum Beispiel: Listen, Hintergrund …"></label><label for="filter">Prüfstand<select id="filter"><option value="all">Alle Tweaks</option><option value="candidate">Portierungskandidaten</option><option value="selected">Meine Auswahl</option></select></label></div>
+<p id="result-count" class="result-count" aria-live="polite"></p><div id="catalog" class="catalog"></div><p id="empty" hidden>Keine passenden Tweaks gefunden.</p></section>
+<aside class="project-card builder-summary" aria-labelledby="project-title"><p class="eyebrow">02 / DEIN PROJEKT</p><h2 id="project-title">Bereit für den nächsten Schritt.</h2><label for="project-name">Projektname</label><input id="project-name" maxlength="80" value="Mein Mazda" autocomplete="off"><p class="firmware-fixed">74.00.324A · Europa</p><p id="selection-count">0 Tweaks ausgewählt</p><ul id="selection-list" class="selection-list"></ul><p id="release-info" class="notice small">Noch kein installierbares Paket verfügbar.</p><button id="export-zip" type="button">Entwurf als ZIP herunterladen ↓</button><button id="export-json" class="secondary" type="button">Projekt speichern (JSON)</button><label class="import-label" for="import-file">Projekt öffnen<input type="file" id="import-file" accept=".json,application/json"></label><button id="reset" class="text-button" type="button">Auswahl zurücksetzen</button><p class="form-hint">Die Verarbeitung erfolgt lokal. Der ZIP-Entwurf enthält deine Auswahl, Prüfhinweise und eine README.</p><p id="project-status" class="project-status" role="status" aria-live="polite"></p></aside>
+</div>
+<section class="next-section"><div class="section-heading"><p class="eyebrow">SO GEHT ES WEITER</p><h2>Ein Patch nach dem anderen.</h2></div><ol class="roadmap"><li><span class="step-number">01</span><h3>Offline prüfen</h3><p>Originaldateien vergleichen, gezielte Änderungen und Rücknahme testen.</p></li><li><span class="step-number">02</span><h3>Am Fahrzeug bestätigen</h3><p>Jeden angepassten Patch einzeln auf der Ziel-Firmware erproben.</p></li><li><span class="step-number">03</span><h3>Im Builder freigeben</h3><p>Bestätigte Patches werden später als installierbares USB-Paket angeboten.</p></li></ol><a class="audit-link" href="https://github.com/softwarecrash/MZD-AIO/blob/rework/firmware-74.00.324a/research/firmware-74.00.324A/2026-10-21/patch-audit/README.md">Aktuellen Prüfbericht lesen ↗</a></section>
+<noscript><p>Bitte JavaScript aktivieren, um Tweaks auszuwählen und Projekte zu exportieren.</p></noscript>
+</main><footer><a class="footer-brand" href="./">MZD-AIO <span>/ WEB</span></a><p>Open Source · Browserlokal · v74 EU</p><a href="https://github.com/softwarecrash/MZD-AIO">Quellcode ↗</a></footer>
+</body></html>

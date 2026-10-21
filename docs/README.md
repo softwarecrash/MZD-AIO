@@ -1,24 +1,26 @@
 # MZD-AIO Web-Builder
 
-Erste statische Seite für einen zukünftigen Builder mit HTML, CSS und JavaScript. Sie benötigt weder Node.js noch einen Build-Schritt und lässt sich direkt mit `index.html` oder über einen statischen Webserver öffnen.
+Statische HTML/CSS/JavaScript-Anwendung fuer GitHub Pages. Keine Installation, kein Build-Schritt und keine externen Laufzeitabhaengigkeiten. `index.html` kann auch lokal geoeffnet werden.
 
-Die Seite zeigt den Entwicklungsstand und kann eine Projektkonfiguration als JSON herunterladen. Tweak-Auswahl, Kompatibilitätsprüfung und USB-Installationspakete sind noch nicht implementiert. Es werden keine Fahrzeugdaten verarbeitet und keine Server-Anfragen für die Konfiguration ausgeführt.
+## Funktionsumfang
 
-## Lokale Vorschau
+- Festes Ziel: Firmware 74.00.324A EU.
+- 41 Tweak-Eintraege aus der Offline-Pruefung vom 21.10.2026; drei interne Installer-Pruefbereiche sind keine Benutzeroptionen.
+- Suche, Filter fuer Portierungskandidaten und Auswahl, Projektimport/-export als JSON.
+- ZIP-Export als ausdruecklicher Projektentwurf mit project.json, patch-status.json und README.txt. Keine Installer oder Fahrzeug-Payloads.
+- Verarbeitung ausschliesslich im Browser; keine Telemetrie, kein Upload und keine automatische Speicherung.
 
-Im Repository-Verzeichnis:
+## Aufbau
 
-```sh
-python -m http.server 8765 --bind 127.0.0.1 --directory docs
-```
+- catalog.js: Katalog mit stabilen IDs, Auditbefund und Portierungsstatus.
+- builder-core.js: Projektvalidierung, Import und ZIP-Erzeugung (STORE, UTF-8, CRC32).
+- app.js: Bedienoberflaeche und Downloads; importierte Texte werden als Text ausgegeben.
+- styles.css / index.html: responsives Layout ohne Framework.
 
-Dann `http://127.0.0.1:8765` im Browser öffnen.
+`releaseStatus: unported` gilt fuer alle Eintraege. Ein Audit-Kandidat ist noch kein freigegebener Patch. Vor Einfuehrung installierbarer Pakete sind Payload-Manifest, Originalhashes, Sicherung, Ruecknahme und Fahrzeugbestaetigung umzusetzen. Der aktuelle ZIP-Export bleibt davon getrennt.
 
-## Dateien
+## Pruefung dieses Stands
 
-- `index.html`: Struktur und Inhalte
-- `styles.css`: responsive Darstellung
-- `app.js`: browserlokaler JSON-Export und Eingabeprüfung
-- `.nojekyll`: Vorbereitung für statisches GitHub-Pages-Hosting
+JavaScript-Syntax, Modellvalidierung, JSON-Roundtrip, Ablehnung falscher Firmware/unbekannter Tweaks sowie Auswahl, Filter, Reset, Download und Importfehler im simulierten DOM geprueft. Erzeugtes ZIP unabhaengig mit Python zipfile auf CRC, UTF-8, Dateiliste und JSON-Inhalte geprueft. Kein visueller Test im echten Browser verfuegbar.
 
-Der Web-Entwicklungsbranch heißt `web/html-js-builder`. Der Hauptbranch dieses Repositorys heißt derzeit `master`. Für GitHub Pages kann später die Quelle `master` mit dem Ordner `/docs` eingestellt werden. Das Anlegen dieses Ordners allein aktiviert kein Hosting.
+Veroeffentlichung: GitHub Pages aus `master/docs`.
