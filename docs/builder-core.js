@@ -3,15 +3,17 @@
   "use strict";
   const target = Object.freeze({ firmware: "74.00.324A", region: "EU" });
   const catalog = root.MZD_CATALOG;
-  function project(name, ids) {
+  function project(name, ids, action = "preflight") {
     if (typeof name !== "string" || !name.trim() || name.trim().length > 80) throw new Error("Bitte einen Projektnamen mit 1 bis 80 Zeichen eingeben.");
     if (!Array.isArray(ids) || ids.some(id => typeof id !== "string" || !catalog.some(p => p.id === id && p.selectable))) throw new Error("Das Projekt enthält unbekannte oder nicht auswählbare Tweaks.");
-    return { format: "mzd-aio-web-project", version: 1, name: name.trim(), status: "draft", target: { ...target }, tweaks: [...new Set(ids)] };
+    if (!["preflight", "install", "uninstall", "restore"].includes(action)) throw new Error("Unbekannte Aktion.");
+    if (["install", "uninstall"].includes(action) && (ids.length === 0 || ids.some(id => id !== "list-beep"))) throw new Error("Bisher ist nur Listenpiepsen als experimenteller Patch verfügbar. Andere Tweaks können im Prüfmodus geplant werden.");
+    return { format: "mzd-aio-web-project", version: 1, name: name.trim(), status: "draft", target: { ...target }, action, tweaks: action === "restore" ? [] : [...new Set(ids)] };
   }
   function parse(text) {
     const value = JSON.parse(text);
     if (!value || value.format !== "mzd-aio-web-project" || value.version !== 1 || value.target?.firmware !== target.firmware || value.target?.region !== target.region) throw new Error("Unterstützt werden nur MZD-AIO-Projekte für 74.00.324A EU (Format 1).");
-    return project(value.name, value.tweaks);
+    return project(value.name, value.tweaks, value.action);
   }
   function crc32(bytes) {
     let crc = 0xffffffff;
@@ -38,7 +40,7 @@
     return result;
   }
   function draftFiles(value) {
-    const clean = project(value.name, value.tweaks), selected = clean.tweaks.map(id => catalog.find(p => p.id === id));
+    const clean = project(value.name, value.tweaks, value.action), selected = clean.tweaks.map(id => catalog.find(p => p.id === id));
     return {
       "project.json": JSON.stringify(clean, null, 2) + "\n",
       "patch-status.json": JSON.stringify({ target, installable: false, patches: selected }, null, 2) + "\n",
@@ -46,7 +48,7 @@
     };
   }
   function usbFiles(value) {
-    const clean = project(value.name, value.tweaks), files = draftFiles(clean);
+    const clean = project(value.name, value.tweaks, value.action), files = draftFiles(clean);
     if (!root.MZD_USB_ASSETS) throw new Error("USB-Dateien fehlen. Bitte die Seite neu laden.");
     for (const [path, asset] of Object.entries(root.MZD_USB_ASSETS)) {
       const raw = atob(asset.base64), bytes = Uint8Array.from(raw, c => c.charCodeAt(0));
@@ -54,20 +56,25 @@
       files[path] = bytes;
     }
     files["mzd/selected.txt"] = clean.tweaks.join("\n") + (clean.tweaks.length ? "\n" : "");
+    files["mzd/action.txt"] = clean.action + "\n";
     files["mzd/allowed.txt"] = catalog.filter(p => p.selectable).map(p => p.id).join("\n") + "\n";
-    files["README.txt"] = "MZD-AIO WEB / MP3-KONSOLENSTART + VORPRUEFUNG\n74.00.324A EU\n\n"
+    files["README.txt"] = "MZD-AIO WEB / 74.00.324A EU\nAktion: " + clean.action + "\n\n"
       + "1. ZIP vollstaendig ins Hauptverzeichnis eines FAT32-USB-Sticks entpacken.\n"
       + "2. USB-Audio oeffnen und mp3/a.mp3 abspielen. Falls das Fenster nicht erscheint, b.mp3, c.mp3 oder d.mp3 versuchen. Diese verwenden sda1 bis sdd1.\n"
       + "3. Im Fenster Konsole oeffnen druecken. Nach etwa 14 Sekunden erscheint das OEM-Testmenue; dort TERMINAL waehlen und auf die Shell warten.\n"
-      + "4. Per USB-Tastatur eingeben: sh /mnt/sda1/mzd/start.sh\n"
+      + "4. Per USB-Tastatur eingeben: sh /mnt/sda1/tweaks.sh\n"
       + "   Falls Datei nicht gefunden: sda1 durch sdb1, sdc1 oder sdd1 ersetzen.\n"
       + "5. Berichte unter reports/<Zeit>-<PID>/ auf demselben Stick pruefen: run.log (Ausgabe und Fehler), status.txt (Exit-Code), preflight.txt (Dateivergleich, sofern erreicht). Auch fruehe Abbrueche werden protokolliert.\n\n"
-      + "Dieser Stand startet nur die Vorpruefung: Firmware, Auswahl und drei OEM-Dateihashes. Keine Tweaks werden installiert. MD5 identifiziert bekannte Dateistaende und ist keine Signatur.\n"
+      + "Pruefen veraendert nichts. Install/Uninstall unterstuetzen bisher nur Listenpiepsen, experimentell und noch nicht am Fahrzeug bestaetigt. Vor einer Aenderung im Terminal mit j bestaetigen. MD5 identifiziert Dateistaende, keine Signatur.\n"
+      + "Originale bleiben intern unter /resources/aio-rework/backups/74.00.324A-EU/ erhalten; zusaetzliche Kopie auf diesem USB unter backups/. Installiert/Original wird automatisch erkannt.\n"
+      + "Full System Restore ignoriert die Tweak-Auswahl und stellt alle derzeit unterstuetzten, von uns verwalteten Systemdateien wieder her. Alternativ direkt: sh /mnt/sda1/restore.sh . Ein neuer Stick reicht; die Originale liegen intern. Keine Wiederherstellung fremder AIO-Installationen oder Werksreset.\n"
       + "Der MP3-Konsolenzugang mit Tastatur ist der vom Besitzer bestaetigte Weg; dieses neu zusammengestellte Paket ist noch nicht am Fahrzeug getestet.\n"
-      + "Kein automatischer Shellbefehl, kein RAM-Hook, keine SSH-Aktivierung, keine Aenderung von OEM-Dateien. Berichte werden auf USB geschrieben.\n\n"
+      + "Keine automatische SSH-Aktivierung oder automatischer Neustart. Nach erfolgreicher Aenderung CMU selbst neu starten. Logs bleiben auf dem Start-USB.\n\n"
       + "Auswahl im Browser wieder oeffnen: project.json\n";
-    files["package-manifest.json"] = JSON.stringify({ format: "mzd-aio-usb-preflight", version: 1, target,
-      installable: false, mode: "preflight", entry: "mp3-console-keyboard", command: "sh /mnt/sda1/mzd/start.sh",
+    files["patch-status.json"] = JSON.stringify({ target, action: clean.action, experimental: true, vehicleTested: false, patches: clean.tweaks }, null, 2) + "\n";
+    files["package-manifest.json"] = JSON.stringify({ format: "mzd-aio-usb", version: 1, target,
+      installable: clean.action !== "preflight", mode: clean.action, experimental: true, vehicleTested: false,
+      entry: "mp3-console-keyboard", command: "sh /mnt/sda1/tweaks.sh", appsToResources: true,
       assets: Object.fromEntries(Object.entries(root.MZD_USB_ASSETS).map(([path, a]) => [path, { bytes: a.bytes, sha256: a.sha256 }])) }, null, 2) + "\n";
     return files;
   }

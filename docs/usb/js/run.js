@@ -10,7 +10,7 @@
     panel.appendChild(title);
     var status = document.createElement("div");
     status.style.cssText = "font-size:17px;margin:12px 0;white-space:pre-wrap;";
-    status.textContent = "Konsole oeffnen, im Testmenue TERMINAL waehlen und auf die Shell warten.\nDann per Tastatur eingeben:\nsh /mnt/sda1/mzd/start.sh\nBei anderem USB-Pfad: sdb1, sdc1 oder sdd1.";
+    status.textContent = "Konsole oeffnen, im Testmenue TERMINAL waehlen und auf die Shell warten.\nDann per Tastatur eingeben:\nsh /mnt/sda1/tweaks.sh\nBei anderem USB-Pfad: sdb1, sdc1 oder sdd1.";
     panel.appendChild(status);
     var button = document.createElement("button");
     button.textContent = "Konsole oeffnen";

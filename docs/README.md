@@ -1,46 +1,57 @@
-# MZD-AIO Web-Builder
+# MZD-AIO Web-Builder / 74.00.324A EU
 
-Statische HTML/CSS/JavaScript-Anwendung fuer GitHub Pages. Keine Installation, kein Build-Schritt und keine externen Laufzeitabhaengigkeiten. `index.html` kann auch lokal geoeffnet werden.
+Statische HTML/CSS/JavaScript-Anwendung ohne Build-Schritt und ohne externe Browser-Abhaengigkeiten. Funktioniert auch beim lokalen Oeffnen von index.html. Keine Telemetrie, kein Upload.
 
-## Funktionsumfang
+## Bedienung wie bei AIO
 
-- Festes Ziel: Firmware 74.00.324A EU.
-- 41 Tweak-Eintraege aus der Offline-Pruefung vom 21.10.2026; drei interne Installer-Pruefbereiche sind keine Benutzeroptionen.
-- Suche, Filter fuer Portierungskandidaten und Auswahl, Projektimport/-export als JSON.
-- ZIP-Export mit vier originalen MP3-Triggern, Konsolenfenster und manuell gestartetem Vorpruefer. Keine Tweak-Installation.
-- Verarbeitung ausschliesslich im Browser; keine Telemetrie, kein Upload und keine automatische Speicherung.
+- Pruefen / Auswahl planen: 41 Funktionsgruppen durchsuchen und Projekte als JSON speichern/oeffnen; keine Systemdateiaenderung.
+- Installieren / Install: derzeit nur Listenpiepsen deaktivieren. Experimentell, offline geprueft, Fahrzeugtest offen.
+- Deinstallieren / Uninstall: den ausgewaehlten portierten Tweak entfernen.
+- Full System Restore: alle von diesem Rework unterstuetzten Systemdateien aus internen Originalen wiederherstellen, unabhaengig von der Auswahl. Derzeit List2Ctrl.js. Kein Werksreset und keine pauschale Ruecknahme fremder/alter AIO-Installationen.
+- Apps To Resources: Standard fuer kuenftige neue Apps. Bestehende Systemdateien bleiben an ihrem Originalpfad. Noch keine Zusatz-App portiert.
 
-## Aufbau
+Die 41 Gruppen fassen Install-/Uninstall-Snippets, Sprachen und Anzeigevarianten der 125 alten Skriptdateien zusammen. Drei interne Pruefbereiche sind keine Tweaks. Noch nicht portierte Tweaks sind nur im Pruef-/Planungsmodus auswaehlbar.
 
-- catalog.js: Katalog mit stabilen IDs, Auditbefund und Portierungsstatus.
-- builder-core.js: Projektvalidierung, Import und ZIP-Erzeugung (STORE, UTF-8, CRC32).
-- app.js: Bedienoberflaeche und Downloads; importierte Texte werden als Text ausgegeben.
-- styles.css / index.html: responsives Layout ohne Framework.
+## USB-Start mit Tastatur
 
-`releaseStatus: unported` gilt fuer alle Eintraege. Ein Audit-Kandidat ist noch kein freigegebener Patch. Vor Einfuehrung installierbarer Pakete sind Payload-Manifest, Originalhashes, Sicherung, Ruecknahme und Fahrzeugbestaetigung umzusetzen. Der aktuelle Patcher laeuft ausschliesslich im Vorpruefmodus.
+1. ZIP ins Hauptverzeichnis eines FAT32-Sticks entpacken.
+2. USB-Audio: mp3/a.mp3 abspielen; alternativ b/c/d fuer andere Mountpunkte.
+3. Konsole oeffnen, im OEM-Testmenue TERMINAL waehlen, auf die Shell warten.
+4. `sh /mnt/sda1/tweaks.sh` eingeben. Ggf. sdb1/sdc1/sdd1 verwenden.
+5. Vor Aenderungen mit j und Enter bestaetigen; sonst Abbruch. Nach Erfolg CMU selbst neu starten.
 
-## Pruefung dieses Stands
+`sh /mnt/sda1/restore.sh` startet ebenfalls Full System Restore, ignoriert dabei Aktion und Auswahl im Paket. Ein neuer Stick genuegt; die Originale liegen intern auf der CMU.
 
-JavaScript-Syntax, Modellvalidierung, JSON-Roundtrip, Ablehnung falscher Firmware/unbekannter Tweaks sowie Auswahl, Filter, Reset, Download und Importfehler im simulierten DOM geprueft. Erzeugtes ZIP unabhaengig mit Python zipfile auf CRC, UTF-8, Dateiliste und JSON-Inhalte geprueft. Kein visueller Test im echten Browser verfuegbar.
+Der MP3-Konsolenzugang mit Tastatur ist vom Besitzer bestaetigt. Das neue Installerpaket ist noch nicht am Fahrzeug bestaetigt. Keine RAM-Hooks, SSH-Aktivierung oder automatische Watchdog-/Opera-/Berechtigungsaenderung. Alte Anleitungen sind kein Firmware-Kompatibilitaetsnachweis.
 
-Veroeffentlichung: GitHub Pages aus `master/docs`.
+## Sicherungen
 
-## USB-Paket / bestaetigter Zugang mit Tastatur
+Originale liegen intern unter `/resources/aio-rework/backups/74.00.324A-EU/<vollstaendiger Systempfad>.backup/` mit original und metadata.txt. Neue Sicherungen werden separat vorbereitet, geprueft und dann uebernommen. Vorhandene Originale werden nicht ueberschrieben. Beschaedigte oder unpassende Sicherungen fuehren zum Abbruch.
 
-ZIP vollstaendig in das Hauptverzeichnis eines FAT32-Sticks entpacken. mp3/a.mp3 (alternativ b/c/d fuer die Mountpunkte sdb1/sdc1/sdd1) abspielen, Konsole oeffnen, im OEM-Testmenue TERMINAL waehlen und auf die Shell warten. Mit USB-Tastatur `sh /mnt/sda1/mzd/start.sh` eingeben; Mountpunkt gegebenenfalls anpassen.
+Eine zweite gepruefte Kopie liegt unter backups/ auf dem Start-USB. Vor dem Dateieingriff muessen beide Kopien passen. USB-Kopien uebernehmen keine Unix-Rechte: FAT32 stellt sie nicht dar. Interne Sicherungen erhalten die Attribute. Keine mitgelieferten alten Ersatzdateien.
 
-`start.sh` prueft UID, Firmware 74.00.324, Patch A, EU, die ausgewaehlten IDs und drei bekannte OEM-Dateihashes. Ergebnis liegt auf USB unter reports/<Zeit>-<PID>/preflight.txt. Rueckgabe 0: bekannte Dateistaende; 1: Voraussetzung fehlt; 2: OEM-Dateien weichen ab. Keine Watchdog-/Firewall-/SSH-Aenderungen, keine Remounts oder OEM-Schreibzugriffe. Es wird nichts installiert. Ein Dateihash-Treffer bestaetigt keine Tweak-Laufzeitkompatibilitaet.
+Original und installierter Zustand werden per Hash erkannt. Unbekannte Dateien werden nicht ueberschrieben. Ergebnisse werden neben dem Ziel vorbereitet und geprueft, dann per rename uebernommen. Bei fehlgeschlagener Nachpruefung folgt die automatische Ruecknahme zum vorherigen Dateistand. Das ist kein Nachweis fuer Stromausfallsicherheit von relfs.
 
-Der Konsolenzugang ist vom Besitzer am Fahrzeug bestaetigt. Das neu zusammengestellte Paket wurde nur lokal getestet. Kein automatischer Shellstart, kein RAM-Hook.
+## Logs immer auf dem Startmedium
 
-Die MP3s stammen bytegleich vom zuvor eingelesenen Besitzer-USB. Sie laden js/run.js aus dem jeweiligen Mountpunkt. Verwandte Technik: https://github.com/naijamesz/mazda-connect-root-refactor . Es werden keine Schluessel oder persoenlichen Konfigurationen ausgeliefert.
+Pro Lauf entsteht reports/<Zeit>-<PID>/ mit run.log (stdout/stderr, auch fruehe Fehler), summary.txt (lesbares Ergebnis), status.txt (Exit-Code) und ggf. platform.md5, preflight.txt und before.js. Der Ort folgt dem Paketpfad, unabhaengig vom Arbeitsverzeichnis. Keine interne Ausweichablage fuer Logs.
 
-Die Quellen liegen unter docs/usb. Nach Aenderungen `python web-tools/build-usb-assets.py` ausfuehren: usb-assets.js enthaelt diese Dateien eingebettet fuer netzwerkfreien ZIP-Export. Kein Fetch, CDN oder Server fuer die Paketgenerierung erforderlich. Manifest-SHA256 dienen der Nachpruefbarkeit; sie sind keine Signatur. MD5 wird fuer den Dateistandsvergleich verwendet, weil das Geraet dieses Werkzeug bereitstellt.
+Ein schreibgeschuetzt eingebundener Start-USB wird fuer Berichte beschreibbar eingebunden. Ist das unmoeglich, folgt ein Abbruch. Nur benoetigte interne Partitionen werden fuer Sicherung/Dateiwechsel beschreibbar eingebunden; ihr vorheriger ro-Zustand wird beim Abschluss wiederhergestellt. Eine Sperre unter /tmp verhindert parallele Installer. SIGKILL oder Stromverlust koennen die Abschlussroutine verhindern.
 
-Tests: `node web-tools/test-web-builder.js` erzeugt ein ZIP in einem temporaeren Ordner und meldet seinen Pfad. Danach `python web-tools/test-usb-preflight.py --zip <Pfad>` ausfuehren. Der Shelltest verwendet ausschliesslich eine abgeaenderte Testkopie mit synthetischen Dateien und prueft Firmware-Abbrueche, Auswahlvalidierung, Hashabweichungen und unveraenderte Fixtures. Kein echter Fahrzeug-/Browser-Renderingtest.
+## Entwicklung und Quellen
 
-## Ablage von Berichten und Logs
+catalog.js enthaelt die 41 Gruppen. Listenpiepsen ist experimental, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
 
-Verbindlich fuer den Starter und weitere Installationsschritte: Berichte, Logs und spaetere Sicherungen gehoeren auf das Medium mit dem gestarteten Paket, unabhaengig vom aktuellen Arbeitsverzeichnis und dessen Mountnamen. Keine automatische Ausweichablage im internen CMU-Speicher.
+Die MP3s stammen bytegleich vom zuvor eingelesenen Besitzer-USB. Verwandte Technik: https://github.com/naijamesz/mazda-connect-root-refactor . Keine Schluessel oder persoenlichen Konfigurationen.
 
-Der Starter bestimmt den USB-Pfad aus seinem eigenen Verzeichnis. Pro Lauf entsteht reports/<Zeit>-<PID>/ mit run.log (stdout und stderr ab Beginn der Pruefungen), status.txt (Exit-Code) und preflight.txt, wenn der Dateivergleich erreicht wird. Auch Root-/Firmware-/Auswahlfehler landen im run.log. Die Ausgabe wird am Ende zusaetzlich in der Konsole angezeigt. Ist das Startmedium nicht beschreibbar, erfolgt ein Abbruch vor den Pruefungen. Tests decken fruehe Fehler, einen anderen Arbeitsordner, Leerzeichen im USB-Pfad sowie ein blockiertes Berichtsverzeichnis ab.
+Nach USB-Aenderungen: `python web-tools/build-usb-assets.py`. usb-assets.js ist generiert, damit der Browser ohne Fetch/CDN/Server exportieren kann. SHA256 im Manifest dienen der Nachpruefbarkeit, nicht als Signatur. Die CMU-Dateistandspruefung verwendet das vorhandene md5sum.
+
+Tests: `node web-tools/test-web-builder.js` erzeugt ein temporaeres ZIP und meldet den Pfad. Dann:
+
+```text
+python web-tools/test-usb-installer.py --zip <ZIP> --original <gesicherte-v74-List2Ctrl.js>
+```
+
+Die Shelltests verwenden nur Testkopien mit ersetzten Geraetepfaden und gemockten mount/df/sync. Geprueft werden Install/Uninstall, Full System Restore von neuem Stick, Wiederholung, Defekte, Abbruchfaelle und USB-Logs. Keine realen Mounts oder Fahrzeugzugriffe. Kein visueller Browsertest verfuegbar.
+
+Veroeffentlichung: GitHub Pages aus master/docs. Webentwicklung in web/html-js-builder.

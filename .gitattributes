@@ -174,3 +174,4 @@ headunit binary
 
 # Browser USB assets require Unix line endings.
 docs/usb/mzd/originals.md5 text eol=lf
+docs/usb/mzd/*.sed text eol=lf

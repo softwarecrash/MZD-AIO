@@ -9,8 +9,8 @@ const { Blob } = require('node:buffer');
 module.exports = async function test() {
   const root = path.resolve(__dirname, '..');
   const html = await fs.readFile(path.join(root, 'docs/index.html'), 'utf8');
-  assert(html.includes('USB-Testpaket mit MP3 herunterladen'));
-  assert(html.includes('sh /mnt/sda1/mzd/start.sh'));
+  assert(html.includes('USB-Paket mit MP3 herunterladen'));
+  assert(html.includes('sh /mnt/sda1/tweaks.sh'));
   assert(html.includes('usb-assets.js'));
   class Element {
     constructor() { this.children = []; this.events = {}; this.value = ''; this.files = []; this.style = {}; }
@@ -27,6 +27,8 @@ module.exports = async function test() {
   };
   document.getElementById('project-name').value = 'Mein Mazda';
   document.getElementById('filter').value = 'all';
+  document.getElementById('action').value = 'preflight';
+  ids.action.selectedOptions = [{ textContent: 'Prüfen' }];
   const downloads = [], ctx = { document, TextEncoder, Blob, atob, Uint8Array,
     URL: { createObjectURL(blob) { downloads.push(blob); return 'blob:test'; }, revokeObjectURL() {} }, setTimeout() {} };
   vm.createContext(ctx);
@@ -36,6 +38,10 @@ module.exports = async function test() {
   const core = ctx.MzdBuilder, project = core.project('Test \u00e4', ['list-beep', 'list-beep']);
   assert.equal(project.tweaks.length, 1);
   assert.equal(core.parse(JSON.stringify(project)).name, 'Test \u00e4');
+  assert.equal(core.usbFiles(core.project('Install', ['list-beep'], 'install'))['mzd/action.txt'], 'install\n');
+  assert.equal(core.project('Restore', ['list-beep'], 'restore').tweaks.length, 0);
+  assert.throws(() => core.project('Unsupported', ['background'], 'install'));
+  assert.throws(() => core.project('Unknown action', ['list-beep'], 'unknown'));
   for (const bad of [{ ...project, name: '' }, { ...project, tweaks: ['unknown'] },
     { ...project, tweaks: ['pause-on-mute'] }, { ...project, target: { firmware: '70', region: 'EU' } }]) {
     assert.throws(() => core.parse(JSON.stringify(bad)));
@@ -70,6 +76,16 @@ module.exports = async function test() {
   assert.equal(events[0][1], 'SelectDiagnostics');
   assert.equal(events[1][1], 'ActivateJCITest');
   assert.equal(events[2][2].payload.testId, 11);
+  ids.filter.value = 'all'; ids.filter.events.change();
+  ids.action.value = 'install'; ids.action.events.change();
+  assert.equal(ids['selection-list'].children.length, 1);
+  assert.equal(ids['selection-list'].children[0].textContent, 'Listenpiepsen deaktivieren');
+  assert.equal(ids.catalog.children[0].children[0].children[0].disabled, true);
+  ids.action.value = 'restore'; ids.action.events.change();
+  assert.equal(ids['selection-list'].children.length, 0);
+  assert.equal(ids.catalog.children[0].children[0].children[0].disabled, true);
+  ids['export-zip'].events.click();
+  assert.equal(downloads.at(-1).type, 'application/zip');
   const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'mzd-builder-test-'));
   const zipPath = path.join(temp, 'usb-test.zip');
   await fs.writeFile(zipPath, core.zip(files));

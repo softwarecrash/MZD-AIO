@@ -133,7 +133,8 @@ globalThis.MZD_CATALOG = [
     "auditStatus": "TEXT_KANDIDAT",
     "description": "Textänderung trifft, ist wiederholbar ohne weitere Änderung und mit den direkten Uninstall-Ausdrücken bytegenau rücknehmbar. JavaScript-Syntax geprüft; Fahrzeugtest offen.",
     "selectable": true,
-    "releaseStatus": "unported"
+    "releaseStatus": "experimental",
+    "vehicleTested": false
   },
   {
     "id": "shorter-delay",
