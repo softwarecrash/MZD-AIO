@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-21",
+  "implementation_commit": "3205a72d25f7ebdc776075115ad11257623c381e",
+  "isolated_integration_runs_passed": 21,
+  "extra_storage_failure_check_passed": true,
+  "javascript_model_and_ui_simulation_passed": true,
+  "binary_mp3_and_zip_integrity_passed": true,
+  "actual_vehicle_test": false,
+  "actual_browser_rendering_test": false,
+  "mount_df_sync_mocked": true,
+  "checks": [
+    "install and uninstall exact original roundtrip",
+    "repeat install preserves original backup",
+    "new-stick full restore ignores action and absent selection",
+    "corrupt backup and unknown target rejected",
+    "wrong firmware patch and region rejected",
+    "unknown and unported selections rejected",
+    "parallel lock preserved",
+    "invalid generated patch rejected before commit",
+    "failed root remount does not change target",
+    "post-commit corruption triggers verified rollback",
+    "missing original backup rejected",
+    "read-only USB mount state restored",
+    "early failures logged on source USB",
+    "unwritable report destination stops without internal fallback"
+  ]
+}

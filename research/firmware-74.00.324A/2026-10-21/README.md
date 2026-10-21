@@ -52,3 +52,7 @@ Der Test startet einen separaten schlüsselbasierten SSH-Server auf Port `2223`,
 5. Den USB-Kaltstart gesondert untersuchen; den experimentellen RAM-Hook nicht als gelösten Kaltstart ausgeben.
 
 Referenz für die AIO-Vergleiche: [Trevelopment/MZD-AIO](https://github.com/Trevelopment/MZD-AIO), Commit `409c724ed860497b2a34f9367cb4a019287846ea`. Grundlage der Gerätebefunde sind die in dieser Sitzung erstellten Sicherungen des eigenen Geräts.
+
+## Erster ausfuehrbarer Patch
+
+[Listenpiepsen fuer v74](patches/list-beep/README.md) ist mit automatischer interner Originalsicherung, USB-Kopie, Uninstall und Full System Restore implementiert. 21 isolierte Integrationslaeufe bestanden; experimentell, Fahrzeugtest offen. Die Implementierung des Web-Branches ist im Manifest fest verlinkt.

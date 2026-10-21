@@ -1,0 +1,50 @@
+{
+  "id": "list-beep",
+  "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+  "firmware": "74.00.324A",
+  "region": "EU",
+  "status": "experimental",
+  "vehicle_tested": false,
+  "actions": [
+    "install",
+    "uninstall",
+    "full-system-restore"
+  ],
+  "original": {
+    "md5": "e111883b9dcbeb6bb154521826fcacac",
+    "sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f"
+  },
+  "patched": {
+    "md5": "bb290d22840f82b1be14400ddb41f1b0",
+    "sha256": "f546e128996cdc42fb04b1cecacf768b8f4affe7362d8b498c349d794c558e59"
+  },
+  "implementation_commit": "3205a72d25f7ebdc776075115ad11257623c381e",
+  "implementation_files": {
+    "docs/usb/mzd/installer.sh": {
+      "sha256": "73ab4ca2aea4da29f5621f75b75fba2ffaea08bf9bc840dee96c2f585aef27e9",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/3205a72d25f7ebdc776075115ad11257623c381e/docs/usb/mzd/installer.sh"
+    },
+    "docs/usb/mzd/start.sh": {
+      "sha256": "60183ba6a5963d464733c5ec714e4c3303122a17f405e9d1c85c72cc2d7a95be",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/3205a72d25f7ebdc776075115ad11257623c381e/docs/usb/mzd/start.sh"
+    },
+    "docs/usb/tweaks.sh": {
+      "sha256": "ddeb4091fb28483bfd17886df6516da01a85158915566d66886e8cef23d9d292",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/3205a72d25f7ebdc776075115ad11257623c381e/docs/usb/tweaks.sh"
+    },
+    "docs/usb/restore.sh": {
+      "sha256": "44f8bbd864362067d49750e000178834b2c81a63a11ac8975a4bef047457174a",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/3205a72d25f7ebdc776075115ad11257623c381e/docs/usb/restore.sh"
+    },
+    "web-tools/test-usb-installer.py": {
+      "sha256": "ec05c9cdc2b51c25d0c667a6b6b4f455451896c009db3be43d7f12f1560ed942",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/3205a72d25f7ebdc776075115ad11257623c381e/web-tools/test-usb-installer.py"
+    },
+    "web-tools/test-web-builder.js": {
+      "sha256": "16a51b2ac1e75e8edf769a169dcecff40537351a9e5166bf77fa70bc42a3fc94",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/3205a72d25f7ebdc776075115ad11257623c381e/web-tools/test-web-builder.js"
+    }
+  },
+  "internal_backup": "/resources/aio-rework/backups/74.00.324A-EU/jci/gui/common/controls/List2/js/List2Ctrl.js.backup/",
+  "usb_backup": "backups/74.00.324A-EU/jci/gui/common/controls/List2/js/List2Ctrl.js.backup/"
+}
