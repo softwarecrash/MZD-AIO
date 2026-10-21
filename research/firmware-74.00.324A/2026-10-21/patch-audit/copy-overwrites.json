@@ -1,0 +1,5114 @@
+[
+  {
+    "script": "00_59patch.txt",
+    "line": 8,
+    "sources": [
+      "${MYDIR}/config/jci/gui/apps/system/js/systemApp.js"
+    ],
+    "destination": "/jci/gui/apps/system/js/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/system/js/systemApp.js",
+        "source": "config/jci/gui/apps/system/js/systemApp.js",
+        "bytes": 93598,
+        "replacement_sha256": "4e20c5e27ec383f5c1797c05e2110abe495a6ef8c90efb90198c18f80b1d579f",
+        "oem_size": 142069,
+        "same_as_oem": false,
+        "oem_methods_removed": [
+          "_HealthCheckCounterMsgHandler",
+          "_StatusMenuCarPlayWifiMsgHandler",
+          "_StatusMenuVisibleAndroidAutoMsgHandler",
+          "_StatusMenuVisibleCarPlayMsgHandler",
+          "_StatusMenuVisibleCarPlayWifiMsgHandler",
+          "_displayDeviceNameEntCarPlayMenu",
+          "_enableEntertainmentListItemCarPlay",
+          "_isCarPlayWifiMenu",
+          "_remoteUIButtonFocused",
+          "_remoteUIButtonSelected",
+          "_sendRemoteUiButtonStatus",
+          "_setRemoteUIButton",
+          "_updateApplicationsNowPlayingIcon",
+          "_verifyCarPlayWifiIcon"
+        ]
+      }
+    ]
+  },
+  {
+    "script": "00_59patch.txt",
+    "line": 12,
+    "sources": [
+      "${MYDIR}/config/jci/gui/apps/system/js/systemApp.70.js"
+    ],
+    "destination": "/jci/gui/apps/system/js/systemApp.js",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/system/js/systemApp.js",
+        "source": "config/jci/gui/apps/system/js/systemApp.70.js",
+        "bytes": 104450,
+        "replacement_sha256": "7c31c8a92a89ea61b7efb26e0071676b9176c84c84575d94d190fd9d38a98a02",
+        "oem_size": 142069,
+        "same_as_oem": false,
+        "oem_methods_removed": [
+          "_StatusMenuCarPlayWifiMsgHandler",
+          "_StatusMenuVisibleAndroidAutoMsgHandler",
+          "_StatusMenuVisibleCarPlayMsgHandler",
+          "_StatusMenuVisibleCarPlayWifiMsgHandler",
+          "_displayDeviceNameEntCarPlayMenu",
+          "_enableEntertainmentListItemCarPlay",
+          "_isCarPlayWifiMenu",
+          "_verifyCarPlayWifiIcon"
+        ]
+      }
+    ]
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 14,
+    "sources": [
+      "${BACKUP_FILE}"
+    ],
+    "destination": "${MYDIR}/org_files/",
+    "overwrites": []
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 15,
+    "sources": [
+      "${BACKUP_FILE}"
+    ],
+    "destination": "${FILE}",
+    "overwrites": []
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 32,
+    "sources": [
+      "${BACKUP_FILE}"
+    ],
+    "destination": "${MYDIR}/org_files/",
+    "overwrites": []
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 33,
+    "sources": [
+      "${BACKUP_FILE}"
+    ],
+    "destination": "${FILE}",
+    "overwrites": []
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 114,
+    "sources": [
+      "/jci/gui/apps/diag/js/diagApp.js.org2"
+    ],
+    "destination": "/jci/gui/apps/diag/diagApp.js",
+    "overwrites": []
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 125,
+    "sources": [
+      "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js.org2"
+    ],
+    "destination": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js.org",
+    "overwrites": []
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 150,
+    "sources": [
+      "/jci/gui/common/js/Common.js.org2"
+    ],
+    "destination": "/jci/gui/common/js/Common.js.org",
+    "overwrites": []
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 193,
+    "sources": [
+      "${MYDIR}/config_org/BackgroundRotator/jci/gui/common/css/common.css"
+    ],
+    "destination": "/jci/gui/common/css/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/css/common.css",
+        "source": "config_org/BackgroundRotator/jci/gui/common/css/common.css",
+        "bytes": 1257,
+        "replacement_sha256": "807d2215bf76c94978ce1e8aeb0f268665b14a6d326e89836ef641c79a8cc4d1",
+        "oem_size": 1257,
+        "same_as_oem": true
+      }
+    ]
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 368,
+    "sources": [
+      "${MYDIR}/config_org/safety-warning-reverse-camera/jci/nativegui/images"
+    ],
+    "destination": "/jci/nativegui",
+    "overwrites": [
+      {
+        "target": "/jci/nativegui/images/SafetyText_CH_Cantonese.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CH_Cantonese.png",
+        "bytes": 7978,
+        "replacement_sha256": "e02c4ee5dcfbfb3847eef85f86c37c8ea0d9e2cacf24d97a746628b49393c79c",
+        "oem_size": 7978
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_CN_Chinese.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CN_Chinese.png",
+        "bytes": 8129,
+        "replacement_sha256": "d0792cffe3868c3e74cefdd4330ef62836417de9fdf3bdf96e7327be1f9625b0",
+        "oem_size": 11415
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_CN_Croatian.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CN_Croatian.png",
+        "bytes": 12813,
+        "replacement_sha256": "08ad5643b63d1fe42cefec6ee285c5e4a3bc1923f906281e62daa1d613c73555",
+        "oem_size": 12813
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_CN_French.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CN_French.png",
+        "bytes": 8229,
+        "replacement_sha256": "a903f22179f761e2484f8ffa151aa061316e3bbf6ee2524df5e24e2f2dadd966",
+        "oem_size": 7354
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_CZ_Czech.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CZ_Czech.png",
+        "bytes": 11959,
+        "replacement_sha256": "ca9762150acc35eca8db74536366733dae0dcf75ee9b8d790b8f517a1d0eba53",
+        "oem_size": 11959
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_DA_Danish.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_DA_Danish.png",
+        "bytes": 6851,
+        "replacement_sha256": "8a629044bb255c7c80c4aa5de7bb65b56cf235498b1e4c08629d665101b9141a",
+        "oem_size": 6825
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_DE_German.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_DE_German.png",
+        "bytes": 8553,
+        "replacement_sha256": "9efb92ceca48b6e4f822d387ca8a500390517286b9e0ece772c0065f06c32e6c",
+        "oem_size": 7402
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_FR_French.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_FR_French.png",
+        "bytes": 8229,
+        "replacement_sha256": "a903f22179f761e2484f8ffa151aa061316e3bbf6ee2524df5e24e2f2dadd966",
+        "oem_size": 7354
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_HB_Hebrew.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_HB_Hebrew.png",
+        "bytes": 22640,
+        "replacement_sha256": "d6466ed15a7ac70e3bb3f86ed9197352e6cd3ee111f9b982a5cc3dd28df176dd",
+        "oem_size": 22640
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_HK_Cantonese.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_HK_Cantonese.png",
+        "bytes": 9617,
+        "replacement_sha256": "d920f95edc2a750bf7694f13a5041ecb8344d8884d239b9689f69bb3cce93fc2",
+        "oem_size": 9617
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_IT_Italian.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_IT_Italian.png",
+        "bytes": 6901,
+        "replacement_sha256": "4917fda167207a683886d633e4e5b688c460a93218def0bb2d4ebc46b78ce6bb",
+        "oem_size": 7408
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_JA_Japanese.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_JA_Japanese.png",
+        "bytes": 8798,
+        "replacement_sha256": "5509076dc0d21306cb9c445414109d7b67afeddf0633ca4e241502e8229d50f7",
+        "oem_size": 8798
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_KO_Korean.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_KO_Korean.png",
+        "bytes": 7978,
+        "replacement_sha256": "e02c4ee5dcfbfb3847eef85f86c37c8ea0d9e2cacf24d97a746628b49393c79c",
+        "oem_size": 7978
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_LT_Lithuanian.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_LT_Lithuanian.png",
+        "bytes": 10321,
+        "replacement_sha256": "a0787fd15d4fc3e9e2589a674bc5f2fe4bdc261441932a435410b9ba27932e2a",
+        "oem_size": 10321
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_MN_Chinese.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_MN_Chinese.png",
+        "bytes": 8129,
+        "replacement_sha256": "d0792cffe3868c3e74cefdd4330ef62836417de9fdf3bdf96e7327be1f9625b0",
+        "oem_size": 8129
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_NA_Spanish.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_NA_Spanish.png",
+        "bytes": 8093,
+        "replacement_sha256": "d47f7ba640267a38b1e4d2276da06229033a73cbd93cd8d4a5c656ddbb494848",
+        "oem_size": 6692
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_NL_Dutch.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_NL_Dutch.png",
+        "bytes": 6967,
+        "replacement_sha256": "1440a73200f4b8d02747d4f8d9d6eae40d97d016e54dba5ccc4f7cfa4809e1e7",
+        "oem_size": 6967
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_PL_Polish.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_PL_Polish.png",
+        "bytes": 9304,
+        "replacement_sha256": "d3dd8dca97a71634b1131e42d731ec832075eaf8c05272bcb904aaa133451fb6",
+        "oem_size": 9304
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_RU_Russian.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_RU_Russian.png",
+        "bytes": 8712,
+        "replacement_sha256": "d34564f86ec12d6d2e0e9285bfa9dbc78187b890b11abe7d5d3fc108b6107d7f",
+        "oem_size": 7819
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_SK_Slovak.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_SK_Slovak.png",
+        "bytes": 8391,
+        "replacement_sha256": "45abd6cd3e680095d4d0a26243a73d017a769fc5d069c651af5f0c466fbbfc6f",
+        "oem_size": 8561
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_SP_Spanish.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_SP_Spanish.png",
+        "bytes": 8093,
+        "replacement_sha256": "d47f7ba640267a38b1e4d2276da06229033a73cbd93cd8d4a5c656ddbb494848",
+        "oem_size": 6692
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_SW_Swedish.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_SW_Swedish.png",
+        "bytes": 12329,
+        "replacement_sha256": "ca57f89e8c4717184949c4a8b7dfd4fa1cc13d839f7a802d2f8937d9cc8858b1",
+        "oem_size": 12329
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_TH_Thai.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_TH_Thai.png",
+        "bytes": 30383,
+        "replacement_sha256": "8181550162ae94fdbcdc38c9d71f6ee635a466bf40025d39af4a08a5663fe82e",
+        "oem_size": 30383
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_TR_Turkish.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_TR_Turkish.png",
+        "bytes": 8063,
+        "replacement_sha256": "da1c9946f52b52bee70ba0f6f5f381dcdcc7e3fde865b05ab1d7abe790068219",
+        "oem_size": 6952
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_TW_Chinese.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_TW_Chinese.png",
+        "bytes": 9213,
+        "replacement_sha256": "5e7feaff30d499dfb612c6c444048992681762aaacda3e0bb8dca59f609db3e4",
+        "oem_size": 11255
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_TW_Mandarin.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_TW_Mandarin.png",
+        "bytes": 13549,
+        "replacement_sha256": "25628f2584a1f6c06bdbc7c99e4b5d3d25cb30694eccff5cb0479dcbde786846",
+        "oem_size": 13549
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_UK_English.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_UK_English.png",
+        "bytes": 7962,
+        "replacement_sha256": "661c1d8bcf8b45f1bcd567d91bf85f2c7f35a962c8616ec63452d532cdf8407f",
+        "oem_size": 7962
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_UK_Ukrainian.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_UK_Ukrainian.png",
+        "bytes": 11220,
+        "replacement_sha256": "b58afd5c6178791c9852cd808b7284936b6518aec9b1357300ae7b31738f8423",
+        "oem_size": 11220
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_US_English.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_US_English.png",
+        "bytes": 7978,
+        "replacement_sha256": "e02c4ee5dcfbfb3847eef85f86c37c8ea0d9e2cacf24d97a746628b49393c79c",
+        "oem_size": 7978
+      }
+    ]
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 370,
+    "sources": [
+      "${MYDIR}/config_org/transparent-parking-sensor/jci/nativegui/images"
+    ],
+    "destination": "/jci/nativegui",
+    "overwrites": [
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackCtr_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackCtr_1_lg.png",
+        "bytes": 27817,
+        "replacement_sha256": "57f072ef0d33c11f26931749e20919a9cdbbaedd5b6e60172c317ee40c4e4a6c",
+        "oem_size": 27817
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackCtr_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackCtr_2_lg.png",
+        "bytes": 27714,
+        "replacement_sha256": "d4baf0786f63b940f458bcb20bceb69c666554bbf7cd3c3db28d76d29fdd357a",
+        "oem_size": 27714
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackCtr_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackCtr_3_lg.png",
+        "bytes": 24614,
+        "replacement_sha256": "f659d640fd3bb3ca83ece7c704067ccfcb6b1f84346934b8724e715e69f924b1",
+        "oem_size": 24614
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackCtr_4_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackCtr_4_lg.png",
+        "bytes": 19722,
+        "replacement_sha256": "f24d2b7acc196711cd74d6b8482db59172933163cc069826256edb404775b06c",
+        "oem_size": 19722
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/Background_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/Background_lg.png",
+        "bytes": 56227,
+        "replacement_sha256": "9ae3f7f8ec316fcaede9dec56aeb98b14eff643a616ff4c590f6d9286e182c0f",
+        "oem_size": 56227
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackLt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackLt_1_lg.png",
+        "bytes": 11070,
+        "replacement_sha256": "8fc97b40a254fc1209a6eb814a91b309832f3f807f2ae4c57f18ea9fe7554b86",
+        "oem_size": 11070
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackLt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackLt_2_lg.png",
+        "bytes": 8701,
+        "replacement_sha256": "f46d77ac434bb452e21f8bcf2c22160be9f8ba390f800089de21ac65a12bb012",
+        "oem_size": 8701
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackLt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackLt_3_lg.png",
+        "bytes": 5848,
+        "replacement_sha256": "8d01b8f18a9ddaff61e3eae4c34300ef982a4c397eb9a25918bf55d7771b51f1",
+        "oem_size": 5848
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackRt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackRt_1_lg.png",
+        "bytes": 11047,
+        "replacement_sha256": "d70949ecbdf9c724f8c7964116404fec3e48f27776425ce207c34dd6c59ed939",
+        "oem_size": 11047
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackRt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackRt_2_lg.png",
+        "bytes": 8978,
+        "replacement_sha256": "9787902a003f8597a0d2abd13c8d6db6c589f9474a813668b29f604ac309c639",
+        "oem_size": 8978
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackRt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackRt_3_lg.png",
+        "bytes": 5666,
+        "replacement_sha256": "6af8122951a6b4174477a3ab9592f4df86bcba2dae2724c444409b8073b384c6",
+        "oem_size": 5666
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/Car_Ds_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/Car_Ds_lg.png",
+        "bytes": 52239,
+        "replacement_sha256": "76e7fb7406e7122e5cc4a153af41e1705d363ae342121d77f66f8ef55ca1ec86",
+        "oem_size": 52239
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/Car_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/Car_lg.png",
+        "bytes": 64297,
+        "replacement_sha256": "c9c0d4b6a089ea69cb218434a8231aaa6acb523a395aa2bce2b15b1ea8323e91",
+        "oem_size": 64297
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontCtr_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontCtr_1_lg.png",
+        "bytes": 23380,
+        "replacement_sha256": "f802ccd498dd8f66215a74af362b12d00e32e1442dfa7a103e3b2a0868f21f67",
+        "oem_size": 23380
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontCtr_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontCtr_2_lg.png",
+        "bytes": 20483,
+        "replacement_sha256": "47b8dcfcc36cf6cd3b21049b0bd3ea549fd4fe6f52cb2bbc937282b9f8d4a7c6",
+        "oem_size": 20483
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontCtr_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontCtr_3_lg.png",
+        "bytes": 15766,
+        "replacement_sha256": "135b2e08bf6d3b2e6f7462df7e3717981403510b1902a1e35a599d407acafb7e",
+        "oem_size": 15766
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontCtr_4_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontCtr_4_lg.png",
+        "bytes": 10819,
+        "replacement_sha256": "b6a7e4ffc62a17d3c2f3f43be55905e5cb1c8b629b53956d23ab03b757c07f16",
+        "oem_size": 10819
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontLt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontLt_1_lg.png",
+        "bytes": 13111,
+        "replacement_sha256": "e3861bc719c7ce17a6624d682be3a08d36f628c868b235719cd3e2bba1d57f00",
+        "oem_size": 13111
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontLt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontLt_2_lg.png",
+        "bytes": 10215,
+        "replacement_sha256": "06d174cd43f4a21fb1d7aa7a79e9aa5ee7a717556da8af105f043eedc8bf7a32",
+        "oem_size": 10215
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontLt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontLt_3_lg.png",
+        "bytes": 6862,
+        "replacement_sha256": "a2f7820abef636c3b0adcebc88ea60db6ce969c8aa4900a784bff41793096c3d",
+        "oem_size": 6862
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontRt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontRt_1_lg.png",
+        "bytes": 13624,
+        "replacement_sha256": "79316e9db9b39521181980609d4ecea5bc927b817b1103ea48bcdf4c3392b1e8",
+        "oem_size": 13624
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontRt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontRt_2_lg.png",
+        "bytes": 10299,
+        "replacement_sha256": "e1f1c49824c78f3cebcdf0f67e669657891a7023decc9811074d80b7149a3d4f",
+        "oem_size": 10299
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontRt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontRt_3_lg.png",
+        "bytes": 6792,
+        "replacement_sha256": "dd0ddcaeb753e109907d2bddb2f3d89845e3dbbaf3e30009d6f70a24b7d33bf5",
+        "oem_size": 6792
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackCtr_1_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackCtr_1_sm.png",
+        "bytes": 6492,
+        "replacement_sha256": "a6a1f6bc29ee915ca69faf27c22ed76a06c75efe50abb9177d0bde4aa228f5cb",
+        "oem_size": 6492
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackCtr_2_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackCtr_2_sm.png",
+        "bytes": 6201,
+        "replacement_sha256": "ef15beba6a50492069c10a9caf5ab9ed8bd0301711b83e90676a434ffa054f5e",
+        "oem_size": 6201
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackCtr_3_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackCtr_3_sm.png",
+        "bytes": 5375,
+        "replacement_sha256": "ba594e2f07559adf0f1fdd8d23e140d88b11205f6677c8c48fef2a8b2cbff2e7",
+        "oem_size": 5375
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackCtr_4_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackCtr_4_sm.png",
+        "bytes": 4326,
+        "replacement_sha256": "3ee98e70f49748799bdf14de9da4beab5088c268bd7d63114fee8a92f44808da",
+        "oem_size": 4326
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/Background_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/Background_sm.png",
+        "bytes": 15477,
+        "replacement_sha256": "99372643929b5eb53ebc4f8635f049300a86176d96b538c2ad70c5b0d5441ecc",
+        "oem_size": 15477
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/Background_sm_4s.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/Background_sm_4s.png",
+        "bytes": 9358,
+        "replacement_sha256": "9ca0831a39a5700f6735b95fec52b4e843152d84ba84816af15ec9c0cb8553df",
+        "oem_size": 9358
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackLt_1_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackLt_1_sm.png",
+        "bytes": 3006,
+        "replacement_sha256": "cea0216f291a3613136f71898a6398b7cd057a8a31d6bc3726cabca241e702fd",
+        "oem_size": 3006
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackLt_2_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackLt_2_sm.png",
+        "bytes": 2618,
+        "replacement_sha256": "ba05601796ae621f78ecd39d6c743c9b1788976fd75778c667084a3e45f1d08e",
+        "oem_size": 2618
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackLt_3_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackLt_3_sm.png",
+        "bytes": 2181,
+        "replacement_sha256": "12bae78a156358361c8722ab2d44917089241ef794952027821b13a34b78a93a",
+        "oem_size": 2181
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackRt_1_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackRt_1_sm.png",
+        "bytes": 2992,
+        "replacement_sha256": "dd3dec136fc0a084030569667bbc9451d3f40c78bbc6497f346e2d8b85c60f96",
+        "oem_size": 2992
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackRt_2_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackRt_2_sm.png",
+        "bytes": 2656,
+        "replacement_sha256": "eb9e564bfb194828cb38666c6100d4b4dc8627d0e6fff2f7af23a5173dd77ee3",
+        "oem_size": 2656
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackRt_3_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackRt_3_sm.png",
+        "bytes": 2206,
+        "replacement_sha256": "e8d196cfc839205e8d5259faae7cca26a3eb35f07273eeff88469b243a3c7e83",
+        "oem_size": 2206
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/Car_Ds_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/Car_Ds_sm.png",
+        "bytes": 11722,
+        "replacement_sha256": "0aa40d25a1c218b01db7ff4f9f1777eba7d6928abeb52d3af06dfdf9c4b5fe74",
+        "oem_size": 11722
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/Car_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/Car_sm.png",
+        "bytes": 13509,
+        "replacement_sha256": "1784c506755f3e62d4187c1c158d55843c192864fb736a9ea7dd7e2c12bfc053",
+        "oem_size": 13509
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontCtr_1_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontCtr_1_sm.png",
+        "bytes": 5440,
+        "replacement_sha256": "6571902deb545fbda82731345a7ebc2b75505af22c1cb9b221d6cf1b785f8aa3",
+        "oem_size": 5440
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontCtr_2_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontCtr_2_sm.png",
+        "bytes": 4678,
+        "replacement_sha256": "bb2bcb0a25b28a4c04a58a6eb8db2533a8ea186343082f9d7ca868957155c4b7",
+        "oem_size": 4678
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontCtr_3_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontCtr_3_sm.png",
+        "bytes": 3785,
+        "replacement_sha256": "8a4a542297b834f1f5ef884a859a185c48266b366a972da44bfb5039c27df3fd",
+        "oem_size": 3785
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontCtr_4_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontCtr_4_sm.png",
+        "bytes": 2940,
+        "replacement_sha256": "4cccd6708a8bdef44678f6fed5108e229d2409b4cb91cad39443666e2437ebd0",
+        "oem_size": 2940
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontLt_1_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontLt_1_sm.png",
+        "bytes": 3342,
+        "replacement_sha256": "fb9f2ab8d658cec007ccef5597845d68ceb504d5b86adff65e09619ba6c707f9",
+        "oem_size": 3342
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontLt_2_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontLt_2_sm.png",
+        "bytes": 2996,
+        "replacement_sha256": "602c6ef8204b5c49f40a81a1310a834d3cabfdb5580e93c88e337867eb2205a3",
+        "oem_size": 2996
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontLt_3_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontLt_3_sm.png",
+        "bytes": 2442,
+        "replacement_sha256": "cf4de78463c83acc4c1d381fa588e142d011a3917e9ead9095607a2ffdcfe89e",
+        "oem_size": 2442
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontRt_1_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontRt_1_sm.png",
+        "bytes": 3384,
+        "replacement_sha256": "d7560f91fb8c82c383199e936d0e6dd4adecb2db4df8fda55fbeaf3c0bc4624b",
+        "oem_size": 3384
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontRt_2_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontRt_2_sm.png",
+        "bytes": 3036,
+        "replacement_sha256": "d6868557b02fc1335ba5cbb1fd6bce70a4665ec32305d1110e97abde97db1b6a",
+        "oem_size": 3036
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontRt_3_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontRt_3_sm.png",
+        "bytes": 2524,
+        "replacement_sha256": "ba5163d3aeda0d8f160aba05ee2706e0761397384ca41e3d10efeef6a34c3c21",
+        "oem_size": 2524
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackCtr_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackCtr_1_lg.png",
+        "bytes": 16372,
+        "replacement_sha256": "936f0afbc57b081e95eac7c0334495911917590a2ac200754167472ab76ac1e0",
+        "oem_size": 16372
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackCtr_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackCtr_2_lg.png",
+        "bytes": 16408,
+        "replacement_sha256": "99a6cee528310e18ac79247cf9911e510bfb97487d315efd2d98f05da13b1dab",
+        "oem_size": 16408
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackCtr_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackCtr_3_lg.png",
+        "bytes": 14631,
+        "replacement_sha256": "92beb9dad66dbf1023df9c6dd3c9186e0113c0e123ca15d8db0058eee5f5ecd8",
+        "oem_size": 14631
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackCtr_4_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackCtr_4_lg.png",
+        "bytes": 11603,
+        "replacement_sha256": "a611eafa0de761ea641fb2419f75997579954e5f84bddfab5c31201b3b36c800",
+        "oem_size": 11603
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/Background_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/Background_lg.png",
+        "bytes": 86093,
+        "replacement_sha256": "08037ba225a7f40453298e9279cc63f0848497888fdca027186fdbe36ce9679f",
+        "oem_size": 86093
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/Background_lg_4s.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/Background_lg_4s.png",
+        "bytes": 71005,
+        "replacement_sha256": "b7a18e6e3ef198afcc8afb7cddc341ddbbf15aff1b068696f903cb66cef87839",
+        "oem_size": 71005
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackLt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackLt_1_lg.png",
+        "bytes": 8104,
+        "replacement_sha256": "e5f4444b467abd7271be3cddcf17e1ab98e48adcf8515492dd8e2a47bc41d55b",
+        "oem_size": 8104
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackLt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackLt_2_lg.png",
+        "bytes": 7558,
+        "replacement_sha256": "ec0ded722e338063f50abdb4b812dfb11ddc63b6452e78cf8b80d21d824d070c",
+        "oem_size": 7558
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackLt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackLt_3_lg.png",
+        "bytes": 6093,
+        "replacement_sha256": "12f12dd60a02d1ed41af1b9d5f876802d1da10e127e975862bc58293a047c3a5",
+        "oem_size": 6093
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackRt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackRt_1_lg.png",
+        "bytes": 6933,
+        "replacement_sha256": "a2521513d5280916fe30aaf8c4242eec73d6bb461fc26da4d0476096ae05f304",
+        "oem_size": 6933
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackRt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackRt_2_lg.png",
+        "bytes": 5939,
+        "replacement_sha256": "d2fb0b8477861613a3971afd41f3f1d91421cbd6b6a82303d2ad8cb42d226d08",
+        "oem_size": 5939
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackRt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackRt_3_lg.png",
+        "bytes": 4350,
+        "replacement_sha256": "cf5fd36e7d989f1d8951e992c071b48e618a3eab4e094662627d0ddf437275e4",
+        "oem_size": 4350
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/Car_Ds_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/Car_Ds_lg.png",
+        "bytes": 33329,
+        "replacement_sha256": "a4fd9c10b1be99340f67d842194bce89d518713f2d69fdce8ce83f260b6bb97e",
+        "oem_size": 33329
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/Car_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/Car_lg.png",
+        "bytes": 38335,
+        "replacement_sha256": "fb09aca40320c422a1718aaeb5c3edfc7b9e368d8076f75a3c88bef53e4ca423",
+        "oem_size": 38335
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontCtr_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontCtr_1_lg.png",
+        "bytes": 13787,
+        "replacement_sha256": "a3dce913c911f03d07585b43a1c27e56a2cb3814a7617a86f5a54d510ef94b68",
+        "oem_size": 13787
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontCtr_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontCtr_2_lg.png",
+        "bytes": 11944,
+        "replacement_sha256": "5a52bcc0af7e6b76e714e003aac5f02c6ae88e8fd1cd3d5bf6817491720df0be",
+        "oem_size": 11944
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontCtr_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontCtr_3_lg.png",
+        "bytes": 10680,
+        "replacement_sha256": "a4224fa6486dbbc3e81b6f260900bc9a4b10d9e6f534426bb8075f59eb51ab7e",
+        "oem_size": 10680
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontCtr_4_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontCtr_4_lg.png",
+        "bytes": 6596,
+        "replacement_sha256": "895855ae29aca94968e657ca156985548426a316f8a0f3864b4039239b027af7",
+        "oem_size": 6596
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontLt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontLt_1_lg.png",
+        "bytes": 9460,
+        "replacement_sha256": "8448f92e1a14b02c7f4d89de790a3d9853510f2512ea59964d94e92aaaea632d",
+        "oem_size": 9460
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontLt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontLt_2_lg.png",
+        "bytes": 8235,
+        "replacement_sha256": "ea6b373a761282ce42d76fc6952be0aa475c983c72b61b1341a0202fcd569927",
+        "oem_size": 8235
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontLt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontLt_3_lg.png",
+        "bytes": 6509,
+        "replacement_sha256": "e7ab1c585ead6dddbcb3509c7a5b40caf50ab9364b865885635d307adba92c02",
+        "oem_size": 6509
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontRt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontRt_1_lg.png",
+        "bytes": 9438,
+        "replacement_sha256": "a9e82cfac56aba4c19988b5a0b0c4757be98c5208c3eebf11c7263a218b0c2ee",
+        "oem_size": 9438
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontRt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontRt_2_lg.png",
+        "bytes": 8451,
+        "replacement_sha256": "461b3a5d275474eba3eb6593a873b23323e06901a6182cab7929bbb9ed9a897c",
+        "oem_size": 8451
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontRt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontRt_3_lg.png",
+        "bytes": 6737,
+        "replacement_sha256": "735a6604329f278f921f0506172d08f72b581742a76a84eb2aa94186eac05c34",
+        "oem_size": 6737
+      }
+    ]
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 372,
+    "sources": [
+      "${MYDIR}/config_org/blank-album-art-frame/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png"
+    ],
+    "destination": "/jci/gui/common/controls/InCall2/images",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png",
+        "source": "config_org/blank-album-art-frame/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png",
+        "bytes": 772,
+        "replacement_sha256": "fb8b57bed02ad4bf18626c4ddbd57feba5112072f11ab835ed3f1d411217452a",
+        "oem_size": 772,
+        "same_as_oem": true
+      }
+    ]
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 373,
+    "sources": [
+      "${MYDIR}/config_org/blank-album-art-frame/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png"
+    ],
+    "destination": "/jci/gui/common/controls/NowPlaying4/images",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png",
+        "source": "config_org/blank-album-art-frame/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png",
+        "bytes": 772,
+        "replacement_sha256": "fb8b57bed02ad4bf18626c4ddbd57feba5112072f11ab835ed3f1d411217452a",
+        "oem_size": 675,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 374,
+    "sources": [
+      "${MYDIR}/config_org/blank-album-art-frame/jci/gui/common/images/no_artwork_icon.png"
+    ],
+    "destination": "/jci/gui/common/images",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/images/no_artwork_icon.png",
+        "source": "config_org/blank-album-art-frame/jci/gui/common/images/no_artwork_icon.png",
+        "bytes": 202,
+        "replacement_sha256": "9624907723ff48a5a411e461d38c4426141e7364805e1548db0f3e3cdccba731",
+        "oem_size": 202,
+        "same_as_oem": true
+      }
+    ]
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 379,
+    "sources": [
+      "${MYDIR}/config/color-schemes/Red/jci"
+    ],
+    "destination": "/",
+    "overwrites": []
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 394,
+    "sources": [
+      "${MYDIR}/config_org/background.png"
+    ],
+    "destination": "/jci/gui/common/images",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/images/background.png",
+        "source": "config_org/background.png",
+        "bytes": 36382,
+        "replacement_sha256": "6b115dffdeab2dc2e0ae658c52c2d67f0e1c68dc800f4fd7189b831bd2339b4a",
+        "oem_size": 190791,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 425,
+    "sources": [
+      "/jci/opera/opera_home/pstorage/psindex.dat.org"
+    ],
+    "destination": "/jci/opera/opera_home/pstorage/psindex.dat",
+    "overwrites": []
+  },
+  {
+    "script": "00__casdk-i.txt",
+    "line": 29,
+    "sources": [
+      "${MYDIR}/casdk/scripts/*"
+    ],
+    "destination": "/jci/casdk",
+    "overwrites": []
+  },
+  {
+    "script": "00__casdk-i.txt",
+    "line": 56,
+    "sources": [
+      "${MYDIR}/casdk/proxy/CustomApplicationsProxy.js"
+    ],
+    "destination": "/jci/opera/opera_dir/userjs/",
+    "overwrites": []
+  },
+  {
+    "script": "00__casdk-i.txt",
+    "line": 57,
+    "sources": [
+      "${MYDIR}/casdk/proxy/aio.js"
+    ],
+    "destination": "/jci/opera/opera_dir/userjs/",
+    "overwrites": []
+  },
+  {
+    "script": "00__casdk-i.txt",
+    "line": 79,
+    "sources": [
+      "${MYDIR}/casdk/resources"
+    ],
+    "destination": "/tmp/mnt",
+    "overwrites": []
+  },
+  {
+    "script": "00__casdkapps-i.txt",
+    "line": 104,
+    "sources": [
+      "${MYDIR}/casdk/patch/systemApp.js"
+    ],
+    "destination": "/jci/gui/apps/system/js/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/system/js/systemApp.js",
+        "source": "casdk/patch/systemApp.js",
+        "bytes": 93598,
+        "replacement_sha256": "4e20c5e27ec383f5c1797c05e2110abe495a6ef8c90efb90198c18f80b1d579f",
+        "oem_size": 142069,
+        "same_as_oem": false,
+        "oem_methods_removed": [
+          "_HealthCheckCounterMsgHandler",
+          "_StatusMenuCarPlayWifiMsgHandler",
+          "_StatusMenuVisibleAndroidAutoMsgHandler",
+          "_StatusMenuVisibleCarPlayMsgHandler",
+          "_StatusMenuVisibleCarPlayWifiMsgHandler",
+          "_displayDeviceNameEntCarPlayMenu",
+          "_enableEntertainmentListItemCarPlay",
+          "_isCarPlayWifiMenu",
+          "_remoteUIButtonFocused",
+          "_remoteUIButtonSelected",
+          "_sendRemoteUiButtonStatus",
+          "_setRemoteUIButton",
+          "_updateApplicationsNowPlayingIcon",
+          "_verifyCarPlayWifiIcon"
+        ]
+      }
+    ]
+  },
+  {
+    "script": "00__casdkapps-i.txt",
+    "line": 108,
+    "sources": [
+      "${MYDIR}/casdk/patch/systemApp.70.js"
+    ],
+    "destination": "/jci/gui/apps/system/js/systemApp.js",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/system/js/systemApp.js",
+        "source": "casdk/patch/systemApp.70.js",
+        "bytes": 104453,
+        "replacement_sha256": "61bea4636bf78f900a8471bb83b1239ff988edb1a7939310143588200d783798",
+        "oem_size": 142069,
+        "same_as_oem": false,
+        "oem_methods_removed": [
+          "_StatusMenuCarPlayWifiMsgHandler",
+          "_StatusMenuVisibleAndroidAutoMsgHandler",
+          "_StatusMenuVisibleCarPlayMsgHandler",
+          "_StatusMenuVisibleCarPlayWifiMsgHandler",
+          "_displayDeviceNameEntCarPlayMenu",
+          "_enableEntertainmentListItemCarPlay",
+          "_isCarPlayWifiMenu",
+          "_verifyCarPlayWifiIcon"
+        ]
+      }
+    ]
+  },
+  {
+    "script": "00_background.txt",
+    "line": 7,
+    "sources": [
+      "/jci/gui/common/images/background.png"
+    ],
+    "destination": "${MYDIR}/bakups/background.png",
+    "overwrites": []
+  },
+  {
+    "script": "00_background.txt",
+    "line": 14,
+    "sources": [
+      "${MYDIR}/config/background.png"
+    ],
+    "destination": "/jci/gui/common/images",
+    "overwrites": []
+  },
+  {
+    "script": "00_backup.txt",
+    "line": 20,
+    "sources": [
+      "/jci"
+    ],
+    "destination": "${BACKUPDIR}",
+    "overwrites": []
+  },
+  {
+    "script": "00_bgrotator-i.txt",
+    "line": 31,
+    "sources": [
+      "/jci/gui/common/css/common.css"
+    ],
+    "destination": "${MYDIR}/bakups/test/common_after-background.css",
+    "overwrites": []
+  },
+  {
+    "script": "00_bgrotator-u.txt",
+    "line": 14,
+    "sources": [
+      "${MYDIR}/config_org/BackgroundRotator/jci/gui/common/css/common.css"
+    ],
+    "destination": "/jci/gui/common/css",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/css/common.css",
+        "source": "config_org/BackgroundRotator/jci/gui/common/css/common.css",
+        "bytes": 1257,
+        "replacement_sha256": "807d2215bf76c94978ce1e8aeb0f268665b14a6d326e89836ef641c79a8cc4d1",
+        "oem_size": 1257,
+        "same_as_oem": true
+      }
+    ]
+  },
+  {
+    "script": "00_multicontroller-i.txt",
+    "line": 9,
+    "sources": [
+      "${MYDIR}/config/multicontroller/Multicontroller.js"
+    ],
+    "destination": "/jci/gui/common/js/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/js/Multicontroller.js",
+        "source": "config/multicontroller/Multicontroller.js",
+        "bytes": 15080,
+        "replacement_sha256": "baeb039e5b4c71bc8bc7689c117296c5f3727443e550c834a00eca5416f2195b",
+        "oem_size": 14326,
+        "same_as_oem": false,
+        "oem_methods_removed": []
+      }
+    ]
+  },
+  {
+    "script": "00_offbackground-i.txt",
+    "line": 7,
+    "sources": [
+      "${MYDIR}/config/OffScreenBackground.png"
+    ],
+    "destination": "/jci/gui/apps/system/controls/OffScreen/images/",
+    "overwrites": []
+  },
+  {
+    "script": "00_offbackground-u.txt",
+    "line": 7,
+    "sources": [
+      "${MYDIR}/config/OffScreenBackground.png"
+    ],
+    "destination": "/jci/gui/apps/system/controls/OffScreen/images/",
+    "overwrites": []
+  },
+  {
+    "script": "00_sd-cid.txt",
+    "line": 7,
+    "sources": [
+      "${MYDIR}/config/get_sd_cid/cmu_sd_cid_getter_v3"
+    ],
+    "destination": "/jci/nng/cmu_sd_cid_getter",
+    "overwrites": []
+  },
+  {
+    "script": "00_sd-cid.txt",
+    "line": 13,
+    "sources": [
+      "/jci/nng/SD_CID.txt"
+    ],
+    "destination": "${MYDIR}/SD_CID.txt",
+    "overwrites": []
+  },
+  {
+    "script": "00_sd-cid.txt",
+    "line": 14,
+    "sources": [
+      "/jci/nng/SD_CID.txt"
+    ],
+    "destination": "/mnt/sd_nav/SD_CID.txt",
+    "overwrites": []
+  },
+  {
+    "script": "00_sshbringback.txt",
+    "line": 25,
+    "sources": [
+      "/jci/scripts/jci-fw.sh"
+    ],
+    "destination": "${MYDIR}/config/jci-fw.sh.test",
+    "overwrites": []
+  },
+  {
+    "script": "00_sshbringback.txt",
+    "line": 28,
+    "sources": [
+      "${MYDIR}/config/ssh_bringback/jci-fw.sh"
+    ],
+    "destination": "/jci/scripts",
+    "overwrites": [
+      {
+        "target": "/jci/scripts/jci-fw.sh",
+        "source": "config/ssh_bringback/jci-fw.sh",
+        "bytes": 4908,
+        "replacement_sha256": "ab3e635f8321667548cb7ac2d65fc24a182e96c31855de14ffdba7ba41c4c5fc",
+        "oem_size": 5761,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "00_sshbringback.txt",
+    "line": 34,
+    "sources": [
+      "${MYDIR}/config/ssh_bringback/passwd"
+    ],
+    "destination": "/tmp",
+    "overwrites": []
+  },
+  {
+    "script": "00_sshbringback.txt",
+    "line": 35,
+    "sources": [
+      "${MYDIR}/config/ssh_bringback/authorized_keys"
+    ],
+    "destination": "/tmp",
+    "overwrites": []
+  },
+  {
+    "script": "00_sshbringback.txt",
+    "line": 36,
+    "sources": [
+      "${MYDIR}/config/ssh_bringback/sshd_config"
+    ],
+    "destination": "/etc/ssh",
+    "overwrites": [
+      {
+        "target": "/etc/ssh/sshd_config",
+        "source": "config/ssh_bringback/sshd_config",
+        "bytes": 3360,
+        "replacement_sha256": "787cc3087dfa71440216af03664323b2985ef905ac49caaf65170bb238af6b7c",
+        "oem_size": 1803
+      }
+    ]
+  },
+  {
+    "script": "00_sshbringback.txt",
+    "line": 37,
+    "sources": [
+      "${MYDIR}/config/ssh_bringback/config-update.sh"
+    ],
+    "destination": "/tmp",
+    "overwrites": []
+  },
+  {
+    "script": "00_sshbringback.txt",
+    "line": 38,
+    "sources": [
+      "${MYDIR}/config/ssh_bringback/mksquashfs"
+    ],
+    "destination": "/tmp",
+    "overwrites": []
+  },
+  {
+    "script": "00_sshbringback.txt",
+    "line": 39,
+    "sources": [
+      "${MYDIR}/config/ssh_bringback/passwd_update.sh"
+    ],
+    "destination": "/tmp",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 55,
+    "sources": [
+      "${MYDIR}/casdk/apps/app.${CASDK_APP}"
+    ],
+    "destination": "/tmp/mnt/resources/aio/mzd-casdk/apps",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 195,
+    "sources": [
+      "${FILE}"
+    ],
+    "destination": "${MYDIR}/bakups/test/${FNAME}_before.${FEXT}",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 207,
+    "sources": [
+      "${FILE}"
+    ],
+    "destination": "${BACKUP_FILE}",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 214,
+    "sources": [
+      "${BACKUP_FILE}"
+    ],
+    "destination": "${MYDIR}/bakups/",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 232,
+    "sources": [
+      "${FILE}"
+    ],
+    "destination": "${MYDIR}/bakups/test/${FNAME}_before-restore.${FEXT}",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 238,
+    "sources": [
+      "${BACKUP_FILE}"
+    ],
+    "destination": "${FILE}",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 241,
+    "sources": [
+      "${BACKUP_FILE}"
+    ],
+    "destination": "${MYDIR}/bakups/",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 254,
+    "sources": [
+      "${NEW_BKUP_FILE}"
+    ],
+    "destination": "${FILE}",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 297,
+    "sources": [
+      "${FALLBK}"
+    ],
+    "destination": "${NEWBKUP}",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 307,
+    "sources": [
+      "${FALLBK}"
+    ],
+    "destination": "${NEWBKUP}",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 369,
+    "sources": [
+      "${MYDIR}/config/jci/gui/addon-common"
+    ],
+    "destination": "/tmp/mnt/resources/aio",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 388,
+    "sources": [
+      "${MYDIR}/config/jci/gui/addon-common/"
+    ],
+    "destination": "/jci/gui/",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 441,
+    "sources": [
+      "${ADDITIONAL_APPS_JSON}"
+    ],
+    "destination": "${MYDIR}/bakups/test/additionalApps${1}-2._delete_last_line.json",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 449,
+    "sources": [
+      "${ADDITIONAL_APPS_JSON}"
+    ],
+    "destination": "${MYDIR}/bakups/test/additionalApps${1}-3._add_comma_to_last_line.json",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 460,
+    "sources": [
+      "${ADDITIONAL_APPS_JSON}"
+    ],
+    "destination": "${MYDIR}/bakups/test/additionalApps${1}-4._add_entry_to_last_line.json",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 465,
+    "sources": [
+      "${ADDITIONAL_APPS_JSON}"
+    ],
+    "destination": "${MYDIR}/bakups/test/additionalApps${1}-5._after.json",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 496,
+    "sources": [
+      "${ADDITIONAL_APPS_JSON}"
+    ],
+    "destination": "${MYDIR}/bakups/test/additionalApps${1}-2._delete_last_line.json",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 510,
+    "sources": [
+      "${ADDITIONAL_APPS_JSON}"
+    ],
+    "destination": "${MYDIR}/bakups/test/additionalApps${1}-3._delete_app_entry.json",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 527,
+    "sources": [
+      "${ADDITIONAL_APPS_JSON}"
+    ],
+    "destination": "${MYDIR}/bakups/test/additionalApps${1}-4._after.json",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 590,
+    "sources": [
+      "/jci/sm/sm.conf"
+    ],
+    "destination": "${MYDIR}",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 649,
+    "sources": [
+      "/jci/sm/sm.conf"
+    ],
+    "destination": "/jci/sm/sm.conf.org",
+    "overwrites": []
+  },
+  {
+    "script": "00_start.txt",
+    "line": 664,
+    "sources": [
+      "${MYDIR}/config_org/v70/opera.ini.org"
+    ],
+    "destination": "/jci/opera/opera_home/opera.ini",
+    "overwrites": [
+      {
+        "target": "/jci/opera/opera_home/opera.ini",
+        "source": "config_org/v70/opera.ini.org",
+        "bytes": 2045,
+        "replacement_sha256": "a6db0eb9a67198dd0c55cae34ad7459a42241392421710196acba6313a2a988e",
+        "oem_size": 2045,
+        "same_as_oem": true
+      }
+    ]
+  },
+  {
+    "script": "00_start.txt",
+    "line": 670,
+    "sources": [
+      "/jci/opera/opera_home/opera.ini"
+    ],
+    "destination": "/jci/opera/opera_home/opera.ini.org",
+    "overwrites": []
+  },
+  {
+    "script": "00_storage-i.txt",
+    "line": 15,
+    "sources": [
+      "/jci/opera/opera_home/pstorage/psindex.dat"
+    ],
+    "destination": "/jci/opera/opera_home/pstorage/psindex.dat.org",
+    "overwrites": []
+  },
+  {
+    "script": "00_storage-i.txt",
+    "line": 23,
+    "sources": [
+      "${MYDIR}/casdk/storage/psindex.dat"
+    ],
+    "destination": "/jci/opera/opera_home/pstorage/",
+    "overwrites": []
+  },
+  {
+    "script": "00_storage-i.txt",
+    "line": 27,
+    "sources": [
+      "${MYDIR}/config/jci/storage/psindex.dat"
+    ],
+    "destination": "/jci/opera/opera_home/pstorage/",
+    "overwrites": []
+  },
+  {
+    "script": "00_storage-u.txt",
+    "line": 7,
+    "sources": [
+      "/jci/opera/opera_home/pstorage/psindex.dat.org"
+    ],
+    "destination": "/jci/opera/opera_home/pstorage/psindex.dat",
+    "overwrites": []
+  },
+  {
+    "script": "00_wifi.txt",
+    "line": 7,
+    "sources": [
+      "/jci/gui/apps/syssettings/js/syssettingsApp.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/syssettingsApp_WIFI-before.js",
+    "overwrites": []
+  },
+  {
+    "script": "00_wifi.txt",
+    "line": 18,
+    "sources": [
+      "/jci/gui/apps/syssettings/js/syssettingsApp.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/syssettingsApp_WIFI-after.js",
+    "overwrites": []
+  },
+  {
+    "script": "02_disclaimer-i.txt",
+    "line": 35,
+    "sources": [
+      "${MYDIR}/config/audio_order_AND_no_More_Disclaimer/systemApp.js.disclaimer"
+    ],
+    "destination": "/jci/gui/apps/system/js/",
+    "overwrites": []
+  },
+  {
+    "script": "02_disclaimer-i.txt",
+    "line": 53,
+    "sources": [
+      "${MYDIR}/config/audio_order_AND_no_More_Disclaimer/only_no_More_Disclaimer/jci/gui/apps/system/js/systemApp.${TRACKORDER_DISCLAIMER_FILE}.js"
+    ],
+    "destination": "/jci/gui/apps/system/js/systemApp.js",
+    "overwrites": []
+  },
+  {
+    "script": "02_disclaimer-i.txt",
+    "line": 56,
+    "sources": [
+      "${MYDIR}/config/audio_order_AND_no_More_Disclaimer/only_no_More_Disclaimer/jci/gui/apps/system/js/systemApp.js"
+    ],
+    "destination": "/jci/gui/apps/system/js/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/system/js/systemApp.js",
+        "source": "config/audio_order_AND_no_More_Disclaimer/only_no_More_Disclaimer/jci/gui/apps/system/js/systemApp.js",
+        "bytes": 78997,
+        "replacement_sha256": "5240997fd5917ee6ce12ea3952a3364c1bc7950233a96755811507dacf85b7f8",
+        "oem_size": 142069,
+        "same_as_oem": false,
+        "oem_methods_removed": [
+          "_HealthCheckCounterMsgHandler",
+          "_StatusMenuCarPlayWifiMsgHandler",
+          "_StatusMenuVisibleAndroidAutoMsgHandler",
+          "_StatusMenuVisibleCarPlayMsgHandler",
+          "_StatusMenuVisibleCarPlayWifiMsgHandler",
+          "_TimedSBN_VRLoadingMsgHandler",
+          "_disclaimerTimedout",
+          "_displayDeviceNameEntCarPlayMenu",
+          "_displayedDisclaimer",
+          "_displayedDisclaimerOut",
+          "_enableEntertainmentListItemCarPlay",
+          "_isCarPlayWifiMenu",
+          "_noLongerDisplayedDisclaimer",
+          "_remoteUIButtonFocused",
+          "_remoteUIButtonSelected",
+          "_selectCallbackDisclaimer",
+          "_sendRemoteUiButtonStatus",
+          "_setRemoteUIButton",
+          "_updateApplicationStructure",
+          "_updateApplicationsNowPlayingIcon",
+          "_verifyCarPlayWifiIcon"
+        ]
+      }
+    ]
+  },
+  {
+    "script": "02_disclaimer-i.txt",
+    "line": 63,
+    "sources": [
+      "/jci/gui/apps/system/js/systemApp.js"
+    ],
+    "destination": "${MYDIR}",
+    "overwrites": []
+  },
+  {
+    "script": "02_disclaimer-i.txt",
+    "line": 67,
+    "sources": [
+      "/jci/gui/apps/system/js/systemApp.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/systemApp_after-disclaimer.js",
+    "overwrites": []
+  },
+  {
+    "script": "03_warning-i.txt",
+    "line": 6,
+    "sources": [
+      "${MYDIR}/config/safety-warning-reverse-camera/jci/nativegui/images/*.png"
+    ],
+    "destination": "/jci/nativegui/images/",
+    "overwrites": [
+      {
+        "target": "/jci/nativegui/images/SafetyText_CH_Cantonese.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CH_Cantonese.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 7978
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_CN_Chinese.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CN_Chinese.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 11415
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_CN_Croatian.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CN_Croatian.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 12813
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_CN_French.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CN_French.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 7354
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_CZ_Czech.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CZ_Czech.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 11959
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_DA_Danish.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_DA_Danish.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 6825
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_DE_German.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_DE_German.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 7402
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_FR_French.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_FR_French.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 7354
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_HB_Hebrew.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_HB_Hebrew.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 22640
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_HK_Cantonese.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_HK_Cantonese.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 9617
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_IT_Italian.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_IT_Italian.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 7408
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_JA_Japanese.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_JA_Japanese.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 8798
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_KO_Korean.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_KO_Korean.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 7978
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_LT_Lithuanian.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_LT_Lithuanian.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 10321
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_MN_Chinese.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_MN_Chinese.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 8129
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_NA_Spanish.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_NA_Spanish.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 6692
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_NL_Dutch.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_NL_Dutch.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 6967
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_PL_Polish.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_PL_Polish.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 9304
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_RU_Russian.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_RU_Russian.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 7819
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_SK_Slovak.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_SK_Slovak.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 8561
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_SP_Spanish.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_SP_Spanish.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 6692
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_SW_Swedish.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_SW_Swedish.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 12329
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_TH_Thai.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_TH_Thai.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 30383
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_TR_Turkish.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_TR_Turkish.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 6952
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_TW_Chinese.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_TW_Chinese.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 11255
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_TW_Mandarin.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_TW_Mandarin.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 13549
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_UK_English.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_UK_English.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 7962
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_UK_Ukrainian.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_UK_Ukrainian.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 11220
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_US_English.png",
+        "source": "config/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_US_English.png",
+        "bytes": 3031,
+        "replacement_sha256": "009b4ac1f36eb2b5d91125e79ba9dcff7f1a24cfe19169b7e6aa2fe3209e339c",
+        "oem_size": 7978
+      }
+    ]
+  },
+  {
+    "script": "03_warning-u.txt",
+    "line": 6,
+    "sources": [
+      "${MYDIR}/config_org/safety-warning-reverse-camera/jci/nativegui/images/*.png"
+    ],
+    "destination": "/jci/nativegui/images/",
+    "overwrites": [
+      {
+        "target": "/jci/nativegui/images/SafetyText_CH_Cantonese.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CH_Cantonese.png",
+        "bytes": 7978,
+        "replacement_sha256": "e02c4ee5dcfbfb3847eef85f86c37c8ea0d9e2cacf24d97a746628b49393c79c",
+        "oem_size": 7978
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_CN_Chinese.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CN_Chinese.png",
+        "bytes": 8129,
+        "replacement_sha256": "d0792cffe3868c3e74cefdd4330ef62836417de9fdf3bdf96e7327be1f9625b0",
+        "oem_size": 11415
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_CN_Croatian.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CN_Croatian.png",
+        "bytes": 12813,
+        "replacement_sha256": "08ad5643b63d1fe42cefec6ee285c5e4a3bc1923f906281e62daa1d613c73555",
+        "oem_size": 12813
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_CN_French.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CN_French.png",
+        "bytes": 8229,
+        "replacement_sha256": "a903f22179f761e2484f8ffa151aa061316e3bbf6ee2524df5e24e2f2dadd966",
+        "oem_size": 7354
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_CZ_Czech.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_CZ_Czech.png",
+        "bytes": 11959,
+        "replacement_sha256": "ca9762150acc35eca8db74536366733dae0dcf75ee9b8d790b8f517a1d0eba53",
+        "oem_size": 11959
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_DA_Danish.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_DA_Danish.png",
+        "bytes": 6851,
+        "replacement_sha256": "8a629044bb255c7c80c4aa5de7bb65b56cf235498b1e4c08629d665101b9141a",
+        "oem_size": 6825
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_DE_German.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_DE_German.png",
+        "bytes": 8553,
+        "replacement_sha256": "9efb92ceca48b6e4f822d387ca8a500390517286b9e0ece772c0065f06c32e6c",
+        "oem_size": 7402
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_FR_French.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_FR_French.png",
+        "bytes": 8229,
+        "replacement_sha256": "a903f22179f761e2484f8ffa151aa061316e3bbf6ee2524df5e24e2f2dadd966",
+        "oem_size": 7354
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_HB_Hebrew.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_HB_Hebrew.png",
+        "bytes": 22640,
+        "replacement_sha256": "d6466ed15a7ac70e3bb3f86ed9197352e6cd3ee111f9b982a5cc3dd28df176dd",
+        "oem_size": 22640
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_HK_Cantonese.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_HK_Cantonese.png",
+        "bytes": 9617,
+        "replacement_sha256": "d920f95edc2a750bf7694f13a5041ecb8344d8884d239b9689f69bb3cce93fc2",
+        "oem_size": 9617
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_IT_Italian.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_IT_Italian.png",
+        "bytes": 6901,
+        "replacement_sha256": "4917fda167207a683886d633e4e5b688c460a93218def0bb2d4ebc46b78ce6bb",
+        "oem_size": 7408
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_JA_Japanese.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_JA_Japanese.png",
+        "bytes": 8798,
+        "replacement_sha256": "5509076dc0d21306cb9c445414109d7b67afeddf0633ca4e241502e8229d50f7",
+        "oem_size": 8798
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_KO_Korean.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_KO_Korean.png",
+        "bytes": 7978,
+        "replacement_sha256": "e02c4ee5dcfbfb3847eef85f86c37c8ea0d9e2cacf24d97a746628b49393c79c",
+        "oem_size": 7978
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_LT_Lithuanian.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_LT_Lithuanian.png",
+        "bytes": 10321,
+        "replacement_sha256": "a0787fd15d4fc3e9e2589a674bc5f2fe4bdc261441932a435410b9ba27932e2a",
+        "oem_size": 10321
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_MN_Chinese.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_MN_Chinese.png",
+        "bytes": 8129,
+        "replacement_sha256": "d0792cffe3868c3e74cefdd4330ef62836417de9fdf3bdf96e7327be1f9625b0",
+        "oem_size": 8129
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_NA_Spanish.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_NA_Spanish.png",
+        "bytes": 8093,
+        "replacement_sha256": "d47f7ba640267a38b1e4d2276da06229033a73cbd93cd8d4a5c656ddbb494848",
+        "oem_size": 6692
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_NL_Dutch.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_NL_Dutch.png",
+        "bytes": 6967,
+        "replacement_sha256": "1440a73200f4b8d02747d4f8d9d6eae40d97d016e54dba5ccc4f7cfa4809e1e7",
+        "oem_size": 6967
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_PL_Polish.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_PL_Polish.png",
+        "bytes": 9304,
+        "replacement_sha256": "d3dd8dca97a71634b1131e42d731ec832075eaf8c05272bcb904aaa133451fb6",
+        "oem_size": 9304
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_RU_Russian.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_RU_Russian.png",
+        "bytes": 8712,
+        "replacement_sha256": "d34564f86ec12d6d2e0e9285bfa9dbc78187b890b11abe7d5d3fc108b6107d7f",
+        "oem_size": 7819
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_SK_Slovak.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_SK_Slovak.png",
+        "bytes": 8391,
+        "replacement_sha256": "45abd6cd3e680095d4d0a26243a73d017a769fc5d069c651af5f0c466fbbfc6f",
+        "oem_size": 8561
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_SP_Spanish.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_SP_Spanish.png",
+        "bytes": 8093,
+        "replacement_sha256": "d47f7ba640267a38b1e4d2276da06229033a73cbd93cd8d4a5c656ddbb494848",
+        "oem_size": 6692
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_SW_Swedish.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_SW_Swedish.png",
+        "bytes": 12329,
+        "replacement_sha256": "ca57f89e8c4717184949c4a8b7dfd4fa1cc13d839f7a802d2f8937d9cc8858b1",
+        "oem_size": 12329
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_TH_Thai.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_TH_Thai.png",
+        "bytes": 30383,
+        "replacement_sha256": "8181550162ae94fdbcdc38c9d71f6ee635a466bf40025d39af4a08a5663fe82e",
+        "oem_size": 30383
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_TR_Turkish.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_TR_Turkish.png",
+        "bytes": 8063,
+        "replacement_sha256": "da1c9946f52b52bee70ba0f6f5f381dcdcc7e3fde865b05ab1d7abe790068219",
+        "oem_size": 6952
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_TW_Chinese.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_TW_Chinese.png",
+        "bytes": 9213,
+        "replacement_sha256": "5e7feaff30d499dfb612c6c444048992681762aaacda3e0bb8dca59f609db3e4",
+        "oem_size": 11255
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_TW_Mandarin.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_TW_Mandarin.png",
+        "bytes": 13549,
+        "replacement_sha256": "25628f2584a1f6c06bdbc7c99e4b5d3d25cb30694eccff5cb0479dcbde786846",
+        "oem_size": 13549
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_UK_English.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_UK_English.png",
+        "bytes": 7962,
+        "replacement_sha256": "661c1d8bcf8b45f1bcd567d91bf85f2c7f35a962c8616ec63452d532cdf8407f",
+        "oem_size": 7962
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_UK_Ukrainian.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_UK_Ukrainian.png",
+        "bytes": 11220,
+        "replacement_sha256": "b58afd5c6178791c9852cd808b7284936b6518aec9b1357300ae7b31738f8423",
+        "oem_size": 11220
+      },
+      {
+        "target": "/jci/nativegui/images/SafetyText_US_English.png",
+        "source": "config_org/safety-warning-reverse-camera/jci/nativegui/images/SafetyText_US_English.png",
+        "bytes": 7978,
+        "replacement_sha256": "e02c4ee5dcfbfb3847eef85f86c37c8ea0d9e2cacf24d97a746628b49393c79c",
+        "oem_size": 7978
+      }
+    ]
+  },
+  {
+    "script": "04_sensor-i.txt",
+    "line": 6,
+    "sources": [
+      "${MYDIR}/config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/*"
+    ],
+    "destination": "/jci/nativegui/images/HorizontalSensors/",
+    "overwrites": [
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackCtr_1_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackCtr_1_lg.png",
+        "bytes": 18311,
+        "replacement_sha256": "7c5bdefa154e7ce7148ba798ed0c14e84e6484cacf7569f90b6cf72415a49885",
+        "oem_size": 27817
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackCtr_2_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackCtr_2_lg.png",
+        "bytes": 19602,
+        "replacement_sha256": "4424873edfac8568238bc2de55b6452870155cba59e1d21274bed080c2eab96b",
+        "oem_size": 27714
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackCtr_3_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackCtr_3_lg.png",
+        "bytes": 18143,
+        "replacement_sha256": "4ff87b1d3fd7792278152081f55b3dbe5556212984fb3ce5a509835538e4013d",
+        "oem_size": 24614
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackCtr_4_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackCtr_4_lg.png",
+        "bytes": 12018,
+        "replacement_sha256": "0a5081db1631fb8e16e3fdb3ee4828240ad9e703017b3022907dd828e356e9ec",
+        "oem_size": 19722
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/Background_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/Background_lg.png",
+        "bytes": 56227,
+        "replacement_sha256": "9ae3f7f8ec316fcaede9dec56aeb98b14eff643a616ff4c590f6d9286e182c0f",
+        "oem_size": 56227
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackLt_1_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackLt_1_lg.png",
+        "bytes": 9099,
+        "replacement_sha256": "f03c118f84d639379ac11ffc7750b0f2b2fe40f6faafd7caacf48a521e75eee4",
+        "oem_size": 11070
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackLt_2_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackLt_2_lg.png",
+        "bytes": 8098,
+        "replacement_sha256": "0cfcbfaac34b5edc7dbed4d7d4e50c0ba6b584f2a6ea74decf7b1adeeb0d716a",
+        "oem_size": 8701
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackLt_3_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackLt_3_lg.png",
+        "bytes": 6282,
+        "replacement_sha256": "28f5d0c46ad5b18a5a519044a312c4323bd229ddd86a270d24748d4195879839",
+        "oem_size": 5848
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackRt_1_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackRt_1_lg.png",
+        "bytes": 6816,
+        "replacement_sha256": "cd1aa2f239412512cf989248c43567db8bd70c53efa5d783c4161eb8ae8b9538",
+        "oem_size": 11047
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackRt_2_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackRt_2_lg.png",
+        "bytes": 5556,
+        "replacement_sha256": "51ce387cc0c40736872224dc7fc2cf00694de69ffbec0942295c8a1dab30e805",
+        "oem_size": 8978
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackRt_3_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackRt_3_lg.png",
+        "bytes": 3735,
+        "replacement_sha256": "2a1cfcb81e5185c32951a29dc816d2140ba55c5d9b6ef0aef2abf626e986db1c",
+        "oem_size": 5666
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/Car_Ds_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/Car_Ds_lg.png",
+        "bytes": 52239,
+        "replacement_sha256": "76e7fb7406e7122e5cc4a153af41e1705d363ae342121d77f66f8ef55ca1ec86",
+        "oem_size": 52239
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/Car_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/Car_lg.png",
+        "bytes": 64297,
+        "replacement_sha256": "c9c0d4b6a089ea69cb218434a8231aaa6acb523a395aa2bce2b15b1ea8323e91",
+        "oem_size": 64297
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontCtr_1_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontCtr_1_lg.png",
+        "bytes": 14969,
+        "replacement_sha256": "5408b03a5cac52ef2424246acb473c17a49fe201c8b247131ed616ebc1afd24e",
+        "oem_size": 23380
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontCtr_2_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontCtr_2_lg.png",
+        "bytes": 13691,
+        "replacement_sha256": "0ffeed1012bd7b7c6a0d5e0bd286b4dd8dfffe8926dd425362c8eb5ecc666b8b",
+        "oem_size": 20483
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontCtr_3_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontCtr_3_lg.png",
+        "bytes": 12754,
+        "replacement_sha256": "88f16c630bbc5ff6cc31d23018464bacb555b35797bb5768e68a9950f30729c7",
+        "oem_size": 15766
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontCtr_4_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontCtr_4_lg.png",
+        "bytes": 5953,
+        "replacement_sha256": "430b7c6e239798a5e67d6d343c55bf76000414dd12a8172d1e90becefd3bd03a",
+        "oem_size": 10819
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontLt_1_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontLt_1_lg.png",
+        "bytes": 10659,
+        "replacement_sha256": "a79bce6b67684f0f5dce01e5ec4a2b2fea1072fcfd4e909453f02ec75516c773",
+        "oem_size": 13111
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontLt_2_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontLt_2_lg.png",
+        "bytes": 9133,
+        "replacement_sha256": "e8e8604f87c28e4178e16e7daffc28fac4f3dffbe88b79bdde97f0976eee1621",
+        "oem_size": 10215
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontLt_3_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontLt_3_lg.png",
+        "bytes": 6766,
+        "replacement_sha256": "f469e83d64ce1df85f960a10ee8357d995749d50141fb08fa8fa165f14fb0b2f",
+        "oem_size": 6862
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontRt_1_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontRt_1_lg.png",
+        "bytes": 10776,
+        "replacement_sha256": "d2c8dd88d5b6621c61f120d89da0f5da54344ccfe3987cfebe8ff56dc290a73e",
+        "oem_size": 13624
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontRt_2_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontRt_2_lg.png",
+        "bytes": 9131,
+        "replacement_sha256": "51bceccf9919b76ffb7aa985134818d91824dfa6dd2b00204a4e636e3ddb928c",
+        "oem_size": 10299
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontRt_3_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontRt_3_lg.png",
+        "bytes": 6881,
+        "replacement_sha256": "61684a1fc879d05407bc8670cde62b1421d9fbbe977a510204ecb5cc5d70d283",
+        "oem_size": 6792
+      }
+    ]
+  },
+  {
+    "script": "04_sensor-i.txt",
+    "line": 8,
+    "sources": [
+      "${MYDIR}/config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/*"
+    ],
+    "destination": "/jci/nativegui/images/VerticalSensors/",
+    "overwrites": [
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackCtr_1_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackCtr_1_lg.png",
+        "bytes": 17320,
+        "replacement_sha256": "82d39dfec46eb0677f66c194f264552a101ecbe6758c348985a477564c9a2098",
+        "oem_size": 16372
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackCtr_2_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackCtr_2_lg.png",
+        "bytes": 17036,
+        "replacement_sha256": "d8e3278e69547bf46adb928df50adfb67eed5a20ccafe766f698639d387acfe8",
+        "oem_size": 16408
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackCtr_3_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackCtr_3_lg.png",
+        "bytes": 15038,
+        "replacement_sha256": "273b3f79063ededf935354b52f4b07c7582e391172b3f721c37d93d47e3692aa",
+        "oem_size": 14631
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackCtr_4_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackCtr_4_lg.png",
+        "bytes": 10979,
+        "replacement_sha256": "ff2ca8e7bf0f58e1b2e9d3347bf32547c40dd0cbf6a44ed21e02f25c19595aad",
+        "oem_size": 11603
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/Background_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/Background_lg.png",
+        "bytes": 86093,
+        "replacement_sha256": "08037ba225a7f40453298e9279cc63f0848497888fdca027186fdbe36ce9679f",
+        "oem_size": 86093
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/Background_lg_4s.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/Background_lg_4s.png",
+        "bytes": 71005,
+        "replacement_sha256": "b7a18e6e3ef198afcc8afb7cddc341ddbbf15aff1b068696f903cb66cef87839",
+        "oem_size": 71005
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackLt_1_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackLt_1_lg.png",
+        "bytes": 8618,
+        "replacement_sha256": "5c0b4fc27b90c3b73637ed61bc0a013da6548302c9a660a16838573b7cb9801a",
+        "oem_size": 8104
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackLt_2_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackLt_2_lg.png",
+        "bytes": 7813,
+        "replacement_sha256": "02052ea517abb8865b0e006b78d50bf49d8466b5aee8b160a84526e4283f4fc8",
+        "oem_size": 7558
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackLt_3_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackLt_3_lg.png",
+        "bytes": 6147,
+        "replacement_sha256": "275dda7d855ce2c3816b607438aaa0027cce5282cd8cda0862b0beb5d15e48ba",
+        "oem_size": 6093
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackRt_1_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackRt_1_lg.png",
+        "bytes": 6125,
+        "replacement_sha256": "f04d9b94f2668f8d76e6dc4d435447e476cbce0bacfa998773b7d75a038773cd",
+        "oem_size": 6933
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackRt_2_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackRt_2_lg.png",
+        "bytes": 5167,
+        "replacement_sha256": "b866af3302bb457827754868b6823dcacea0aa1804c636bae362669e2a792036",
+        "oem_size": 5939
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackRt_3_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackRt_3_lg.png",
+        "bytes": 3638,
+        "replacement_sha256": "bbec938e432c557c49822edb901c2873a7929a5ecf0fc396f9e6f988ca5582fa",
+        "oem_size": 4350
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/Car_Ds_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/Car_Ds_lg.png",
+        "bytes": 33329,
+        "replacement_sha256": "a4fd9c10b1be99340f67d842194bce89d518713f2d69fdce8ce83f260b6bb97e",
+        "oem_size": 33329
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/Car_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/Car_lg.png",
+        "bytes": 38335,
+        "replacement_sha256": "fb09aca40320c422a1718aaeb5c3edfc7b9e368d8076f75a3c88bef53e4ca423",
+        "oem_size": 38335
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontCtr_1_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontCtr_1_lg.png",
+        "bytes": 13529,
+        "replacement_sha256": "72aa796b4f0f69592d3f320c4a6a6ef5d26d75e253b2d47fd78c05fc26cc53ee",
+        "oem_size": 13787
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontCtr_2_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontCtr_2_lg.png",
+        "bytes": 11968,
+        "replacement_sha256": "7c0edb447e0f33c1f980150469e35f27e792ff689d097dbbe320de2f88bcf705",
+        "oem_size": 11944
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontCtr_3_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontCtr_3_lg.png",
+        "bytes": 11705,
+        "replacement_sha256": "894185c7c3bd4817caf044ee37487a02202fcdf692a8dcb2880b5771aa11d474",
+        "oem_size": 10680
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontCtr_4_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontCtr_4_lg.png",
+        "bytes": 5634,
+        "replacement_sha256": "fcaca51bf6b96f9b2ad840d7413f7c5100f76b1e619aa19c55ce567c860ad400",
+        "oem_size": 6596
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontLt_1_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontLt_1_lg.png",
+        "bytes": 9400,
+        "replacement_sha256": "55123d5b1952a3bc66764a176241f22aa21a9024f83f95a2b248c0fcf7839140",
+        "oem_size": 9460
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontLt_2_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontLt_2_lg.png",
+        "bytes": 8304,
+        "replacement_sha256": "fc8a47f750c93fe086e515d6aaa07a259343af805daecefae48067ca3c708681",
+        "oem_size": 8235
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontLt_3_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontLt_3_lg.png",
+        "bytes": 6449,
+        "replacement_sha256": "6a0978c4d6370354a069b9e0b67cf34645981a6282363831fcf88de25070b2b9",
+        "oem_size": 6509
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontRt_1_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontRt_1_lg.png",
+        "bytes": 9499,
+        "replacement_sha256": "33745d1d25a021d07bee98171642dcb8602e81282f1c36fa9d823e531b395685",
+        "oem_size": 9438
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontRt_2_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontRt_2_lg.png",
+        "bytes": 8480,
+        "replacement_sha256": "fd8059cefb411f6f765bb86f098236e5eb4e4f4bf11be118639a86a4a6a2d0e7",
+        "oem_size": 8451
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontRt_3_lg.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontRt_3_lg.png",
+        "bytes": 6579,
+        "replacement_sha256": "864b544cf5e5c332dbdf22f22c4f4df964a02082a37d9b8ed09a46f00ad3c997",
+        "oem_size": 6737
+      }
+    ]
+  },
+  {
+    "script": "04_sensor-i.txt",
+    "line": 10,
+    "sources": [
+      "${MYDIR}/config/transparent-parking-sensor/jci/nativegui/images/MiniView/*"
+    ],
+    "destination": "/jci/nativegui/images/MiniView/",
+    "overwrites": [
+      {
+        "target": "/jci/nativegui/images/MiniView/BackCtr_1_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/BackCtr_1_sm.png",
+        "bytes": 6219,
+        "replacement_sha256": "5e45f853b9a04c0e9a7346d011e26ca670761827d4e48f1bb2e2ead3841e9da0",
+        "oem_size": 6492
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackCtr_2_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/BackCtr_2_sm.png",
+        "bytes": 6042,
+        "replacement_sha256": "584ee09e55464885deb90906c598a4fb627e008292b16325412c2c6a4380b4e5",
+        "oem_size": 6201
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackCtr_3_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/BackCtr_3_sm.png",
+        "bytes": 5016,
+        "replacement_sha256": "e8e46acc3d51385e5dffdb51ceac2e6ce002ab19d394b52790ad312d462ec110",
+        "oem_size": 5375
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackCtr_4_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/BackCtr_4_sm.png",
+        "bytes": 3192,
+        "replacement_sha256": "2a4739720c3f63a5c4112f4c3695039fb6d1728e2753f552a420cade9e6d1ca1",
+        "oem_size": 4326
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/Background_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/Background_sm.png",
+        "bytes": 14330,
+        "replacement_sha256": "1ba9691984a6b2365716b92c8df9afb8592b2461777559fee7c1b7c32af25e0b",
+        "oem_size": 15477
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/Background_sm_4s.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/Background_sm_4s.png",
+        "bytes": 7380,
+        "replacement_sha256": "8d780d91faf49ab067ca08d17f7a36a72574e6ef28281eb3b0fcbef109e6b2eb",
+        "oem_size": 9358
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackLt_1_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/BackLt_1_sm.png",
+        "bytes": 1844,
+        "replacement_sha256": "7c142235515b73f9a5f3587db4d92a0ce6b575cfc030e3c1a13590e146a00d2c",
+        "oem_size": 3006
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackLt_2_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/BackLt_2_sm.png",
+        "bytes": 1500,
+        "replacement_sha256": "b80d892449b0c16297778d1c379fb72288404274083854d42ed91934daf60fdf",
+        "oem_size": 2618
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackLt_3_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/BackLt_3_sm.png",
+        "bytes": 936,
+        "replacement_sha256": "bcd04ddea3af3aaeb42d6b41358ce14a872534b9de668e22819e5253d3974e3f",
+        "oem_size": 2181
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackRt_1_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/BackRt_1_sm.png",
+        "bytes": 1967,
+        "replacement_sha256": "06dee94538a44cc4c3517e98fb47839957b227bfae6dccb49b57afd2cbe6b9c5",
+        "oem_size": 2992
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackRt_2_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/BackRt_2_sm.png",
+        "bytes": 1557,
+        "replacement_sha256": "4598ef689ce8e8e1e1f83b1f6430d59ec8ba5f4ea38cb9795c23871be2331993",
+        "oem_size": 2656
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackRt_3_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/BackRt_3_sm.png",
+        "bytes": 974,
+        "replacement_sha256": "90e72c6b77fd72caf2f55232ba4e26625cebfba31b33d58ebb03ed513bdc4e9a",
+        "oem_size": 2206
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/Car_Ds_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/Car_Ds_sm.png",
+        "bytes": 10758,
+        "replacement_sha256": "3a2874d260fd67b6b30a5684d8c4e46030d179ebec3afb80cb3108169d141c36",
+        "oem_size": 11722
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/Car_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/Car_sm.png",
+        "bytes": 12568,
+        "replacement_sha256": "9556a408bcd7fb3106244d152d65b4e9548f5cb29b71c06a52584a3f6597a0bf",
+        "oem_size": 13509
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontCtr_1_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontCtr_1_sm.png",
+        "bytes": 4234,
+        "replacement_sha256": "72878e4f308db7c8604bb40e6991222ae0da0e55e6ec2f6b6080db8161f3ccff",
+        "oem_size": 5440
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontCtr_2_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontCtr_2_sm.png",
+        "bytes": 3786,
+        "replacement_sha256": "3acf02240cb286411d60407431b9a6a16e8e00e573f90bd46c1cef379c4bb565",
+        "oem_size": 4678
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontCtr_3_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontCtr_3_sm.png",
+        "bytes": 2871,
+        "replacement_sha256": "c27ed96ae00d5122f83f0237962fbedb1451bec3fa5cd42540e9d52e40ad63db",
+        "oem_size": 3785
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontCtr_4_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontCtr_4_sm.png",
+        "bytes": 1663,
+        "replacement_sha256": "44034066c6ba745bce4372df3663669f4b7f3985b7e217b03b808e42ba8fb76e",
+        "oem_size": 2940
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontLt_1_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontLt_1_sm.png",
+        "bytes": 2214,
+        "replacement_sha256": "be0c3cdabc1c2f3d95f3e6e9d48a91f19cbb48d8f5f7b4ece92c3f032e77ab11",
+        "oem_size": 3342
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontLt_2_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontLt_2_sm.png",
+        "bytes": 1755,
+        "replacement_sha256": "995fab7dc6fd49af3cc1dc5109881adfa8a5183fb606b24713ff98441ef14d17",
+        "oem_size": 2996
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontLt_3_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontLt_3_sm.png",
+        "bytes": 1090,
+        "replacement_sha256": "29a94425f39e8cc2db6ae3d4be6c655ff8152c691ddbeb4a9b65f16b000ee3b6",
+        "oem_size": 2442
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontRt_1_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontRt_1_sm.png",
+        "bytes": 2270,
+        "replacement_sha256": "7332a72d0be07e6c07c752a10f067289149034ebdae8fb019805fa07664831d6",
+        "oem_size": 3384
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontRt_2_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontRt_2_sm.png",
+        "bytes": 1807,
+        "replacement_sha256": "46f2f0314d47a2c9790dda7ce250af8599b0350c25b12989c54db2b953e037d4",
+        "oem_size": 3036
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontRt_3_sm.png",
+        "source": "config/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontRt_3_sm.png",
+        "bytes": 1140,
+        "replacement_sha256": "49d5b1f41211dc0e4a67c8c116fe04a5689b04788c3c946e5bebb7859c7f78a8",
+        "oem_size": 2524
+      }
+    ]
+  },
+  {
+    "script": "04_sensor-u.txt",
+    "line": 6,
+    "sources": [
+      "${MYDIR}/config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/*"
+    ],
+    "destination": "/jci/nativegui/images/VerticalSensors/",
+    "overwrites": [
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackCtr_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackCtr_1_lg.png",
+        "bytes": 16372,
+        "replacement_sha256": "936f0afbc57b081e95eac7c0334495911917590a2ac200754167472ab76ac1e0",
+        "oem_size": 16372
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackCtr_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackCtr_2_lg.png",
+        "bytes": 16408,
+        "replacement_sha256": "99a6cee528310e18ac79247cf9911e510bfb97487d315efd2d98f05da13b1dab",
+        "oem_size": 16408
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackCtr_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackCtr_3_lg.png",
+        "bytes": 14631,
+        "replacement_sha256": "92beb9dad66dbf1023df9c6dd3c9186e0113c0e123ca15d8db0058eee5f5ecd8",
+        "oem_size": 14631
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackCtr_4_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackCtr_4_lg.png",
+        "bytes": 11603,
+        "replacement_sha256": "a611eafa0de761ea641fb2419f75997579954e5f84bddfab5c31201b3b36c800",
+        "oem_size": 11603
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/Background_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/Background_lg.png",
+        "bytes": 86093,
+        "replacement_sha256": "08037ba225a7f40453298e9279cc63f0848497888fdca027186fdbe36ce9679f",
+        "oem_size": 86093
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/Background_lg_4s.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/Background_lg_4s.png",
+        "bytes": 71005,
+        "replacement_sha256": "b7a18e6e3ef198afcc8afb7cddc341ddbbf15aff1b068696f903cb66cef87839",
+        "oem_size": 71005
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackLt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackLt_1_lg.png",
+        "bytes": 8104,
+        "replacement_sha256": "e5f4444b467abd7271be3cddcf17e1ab98e48adcf8515492dd8e2a47bc41d55b",
+        "oem_size": 8104
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackLt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackLt_2_lg.png",
+        "bytes": 7558,
+        "replacement_sha256": "ec0ded722e338063f50abdb4b812dfb11ddc63b6452e78cf8b80d21d824d070c",
+        "oem_size": 7558
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackLt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackLt_3_lg.png",
+        "bytes": 6093,
+        "replacement_sha256": "12f12dd60a02d1ed41af1b9d5f876802d1da10e127e975862bc58293a047c3a5",
+        "oem_size": 6093
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackRt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackRt_1_lg.png",
+        "bytes": 6933,
+        "replacement_sha256": "a2521513d5280916fe30aaf8c4242eec73d6bb461fc26da4d0476096ae05f304",
+        "oem_size": 6933
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackRt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackRt_2_lg.png",
+        "bytes": 5939,
+        "replacement_sha256": "d2fb0b8477861613a3971afd41f3f1d91421cbd6b6a82303d2ad8cb42d226d08",
+        "oem_size": 5939
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/BackRt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/BackRt_3_lg.png",
+        "bytes": 4350,
+        "replacement_sha256": "cf5fd36e7d989f1d8951e992c071b48e618a3eab4e094662627d0ddf437275e4",
+        "oem_size": 4350
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/Car_Ds_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/Car_Ds_lg.png",
+        "bytes": 33329,
+        "replacement_sha256": "a4fd9c10b1be99340f67d842194bce89d518713f2d69fdce8ce83f260b6bb97e",
+        "oem_size": 33329
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/Car_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/Car_lg.png",
+        "bytes": 38335,
+        "replacement_sha256": "fb09aca40320c422a1718aaeb5c3edfc7b9e368d8076f75a3c88bef53e4ca423",
+        "oem_size": 38335
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontCtr_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontCtr_1_lg.png",
+        "bytes": 13787,
+        "replacement_sha256": "a3dce913c911f03d07585b43a1c27e56a2cb3814a7617a86f5a54d510ef94b68",
+        "oem_size": 13787
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontCtr_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontCtr_2_lg.png",
+        "bytes": 11944,
+        "replacement_sha256": "5a52bcc0af7e6b76e714e003aac5f02c6ae88e8fd1cd3d5bf6817491720df0be",
+        "oem_size": 11944
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontCtr_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontCtr_3_lg.png",
+        "bytes": 10680,
+        "replacement_sha256": "a4224fa6486dbbc3e81b6f260900bc9a4b10d9e6f534426bb8075f59eb51ab7e",
+        "oem_size": 10680
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontCtr_4_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontCtr_4_lg.png",
+        "bytes": 6596,
+        "replacement_sha256": "895855ae29aca94968e657ca156985548426a316f8a0f3864b4039239b027af7",
+        "oem_size": 6596
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontLt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontLt_1_lg.png",
+        "bytes": 9460,
+        "replacement_sha256": "8448f92e1a14b02c7f4d89de790a3d9853510f2512ea59964d94e92aaaea632d",
+        "oem_size": 9460
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontLt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontLt_2_lg.png",
+        "bytes": 8235,
+        "replacement_sha256": "ea6b373a761282ce42d76fc6952be0aa475c983c72b61b1341a0202fcd569927",
+        "oem_size": 8235
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontLt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontLt_3_lg.png",
+        "bytes": 6509,
+        "replacement_sha256": "e7ab1c585ead6dddbcb3509c7a5b40caf50ab9364b865885635d307adba92c02",
+        "oem_size": 6509
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontRt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontRt_1_lg.png",
+        "bytes": 9438,
+        "replacement_sha256": "a9e82cfac56aba4c19988b5a0b0c4757be98c5208c3eebf11c7263a218b0c2ee",
+        "oem_size": 9438
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontRt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontRt_2_lg.png",
+        "bytes": 8451,
+        "replacement_sha256": "461b3a5d275474eba3eb6593a873b23323e06901a6182cab7929bbb9ed9a897c",
+        "oem_size": 8451
+      },
+      {
+        "target": "/jci/nativegui/images/VerticalSensors/FrontRt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/VerticalSensors/FrontRt_3_lg.png",
+        "bytes": 6737,
+        "replacement_sha256": "735a6604329f278f921f0506172d08f72b581742a76a84eb2aa94186eac05c34",
+        "oem_size": 6737
+      }
+    ]
+  },
+  {
+    "script": "04_sensor-u.txt",
+    "line": 8,
+    "sources": [
+      "${MYDIR}/config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/*"
+    ],
+    "destination": "/jci/nativegui/images/HorizontalSensors/",
+    "overwrites": [
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackCtr_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackCtr_1_lg.png",
+        "bytes": 27817,
+        "replacement_sha256": "57f072ef0d33c11f26931749e20919a9cdbbaedd5b6e60172c317ee40c4e4a6c",
+        "oem_size": 27817
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackCtr_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackCtr_2_lg.png",
+        "bytes": 27714,
+        "replacement_sha256": "d4baf0786f63b940f458bcb20bceb69c666554bbf7cd3c3db28d76d29fdd357a",
+        "oem_size": 27714
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackCtr_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackCtr_3_lg.png",
+        "bytes": 24614,
+        "replacement_sha256": "f659d640fd3bb3ca83ece7c704067ccfcb6b1f84346934b8724e715e69f924b1",
+        "oem_size": 24614
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackCtr_4_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackCtr_4_lg.png",
+        "bytes": 19722,
+        "replacement_sha256": "f24d2b7acc196711cd74d6b8482db59172933163cc069826256edb404775b06c",
+        "oem_size": 19722
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/Background_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/Background_lg.png",
+        "bytes": 56227,
+        "replacement_sha256": "9ae3f7f8ec316fcaede9dec56aeb98b14eff643a616ff4c590f6d9286e182c0f",
+        "oem_size": 56227
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackLt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackLt_1_lg.png",
+        "bytes": 11070,
+        "replacement_sha256": "8fc97b40a254fc1209a6eb814a91b309832f3f807f2ae4c57f18ea9fe7554b86",
+        "oem_size": 11070
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackLt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackLt_2_lg.png",
+        "bytes": 8701,
+        "replacement_sha256": "f46d77ac434bb452e21f8bcf2c22160be9f8ba390f800089de21ac65a12bb012",
+        "oem_size": 8701
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackLt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackLt_3_lg.png",
+        "bytes": 5848,
+        "replacement_sha256": "8d01b8f18a9ddaff61e3eae4c34300ef982a4c397eb9a25918bf55d7771b51f1",
+        "oem_size": 5848
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackRt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackRt_1_lg.png",
+        "bytes": 11047,
+        "replacement_sha256": "d70949ecbdf9c724f8c7964116404fec3e48f27776425ce207c34dd6c59ed939",
+        "oem_size": 11047
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackRt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackRt_2_lg.png",
+        "bytes": 8978,
+        "replacement_sha256": "9787902a003f8597a0d2abd13c8d6db6c589f9474a813668b29f604ac309c639",
+        "oem_size": 8978
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/BackRt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/BackRt_3_lg.png",
+        "bytes": 5666,
+        "replacement_sha256": "6af8122951a6b4174477a3ab9592f4df86bcba2dae2724c444409b8073b384c6",
+        "oem_size": 5666
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/Car_Ds_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/Car_Ds_lg.png",
+        "bytes": 52239,
+        "replacement_sha256": "76e7fb7406e7122e5cc4a153af41e1705d363ae342121d77f66f8ef55ca1ec86",
+        "oem_size": 52239
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/Car_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/Car_lg.png",
+        "bytes": 64297,
+        "replacement_sha256": "c9c0d4b6a089ea69cb218434a8231aaa6acb523a395aa2bce2b15b1ea8323e91",
+        "oem_size": 64297
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontCtr_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontCtr_1_lg.png",
+        "bytes": 23380,
+        "replacement_sha256": "f802ccd498dd8f66215a74af362b12d00e32e1442dfa7a103e3b2a0868f21f67",
+        "oem_size": 23380
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontCtr_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontCtr_2_lg.png",
+        "bytes": 20483,
+        "replacement_sha256": "47b8dcfcc36cf6cd3b21049b0bd3ea549fd4fe6f52cb2bbc937282b9f8d4a7c6",
+        "oem_size": 20483
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontCtr_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontCtr_3_lg.png",
+        "bytes": 15766,
+        "replacement_sha256": "135b2e08bf6d3b2e6f7462df7e3717981403510b1902a1e35a599d407acafb7e",
+        "oem_size": 15766
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontCtr_4_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontCtr_4_lg.png",
+        "bytes": 10819,
+        "replacement_sha256": "b6a7e4ffc62a17d3c2f3f43be55905e5cb1c8b629b53956d23ab03b757c07f16",
+        "oem_size": 10819
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontLt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontLt_1_lg.png",
+        "bytes": 13111,
+        "replacement_sha256": "e3861bc719c7ce17a6624d682be3a08d36f628c868b235719cd3e2bba1d57f00",
+        "oem_size": 13111
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontLt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontLt_2_lg.png",
+        "bytes": 10215,
+        "replacement_sha256": "06d174cd43f4a21fb1d7aa7a79e9aa5ee7a717556da8af105f043eedc8bf7a32",
+        "oem_size": 10215
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontLt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontLt_3_lg.png",
+        "bytes": 6862,
+        "replacement_sha256": "a2f7820abef636c3b0adcebc88ea60db6ce969c8aa4900a784bff41793096c3d",
+        "oem_size": 6862
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontRt_1_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontRt_1_lg.png",
+        "bytes": 13624,
+        "replacement_sha256": "79316e9db9b39521181980609d4ecea5bc927b817b1103ea48bcdf4c3392b1e8",
+        "oem_size": 13624
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontRt_2_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontRt_2_lg.png",
+        "bytes": 10299,
+        "replacement_sha256": "e1f1c49824c78f3cebcdf0f67e669657891a7023decc9811074d80b7149a3d4f",
+        "oem_size": 10299
+      },
+      {
+        "target": "/jci/nativegui/images/HorizontalSensors/FrontRt_3_lg.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/HorizontalSensors/FrontRt_3_lg.png",
+        "bytes": 6792,
+        "replacement_sha256": "dd0ddcaeb753e109907d2bddb2f3d89845e3dbbaf3e30009d6f70a24b7d33bf5",
+        "oem_size": 6792
+      }
+    ]
+  },
+  {
+    "script": "04_sensor-u.txt",
+    "line": 10,
+    "sources": [
+      "${MYDIR}/config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/*"
+    ],
+    "destination": "/jci/nativegui/images/MiniView/",
+    "overwrites": [
+      {
+        "target": "/jci/nativegui/images/MiniView/BackCtr_1_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackCtr_1_sm.png",
+        "bytes": 6492,
+        "replacement_sha256": "a6a1f6bc29ee915ca69faf27c22ed76a06c75efe50abb9177d0bde4aa228f5cb",
+        "oem_size": 6492
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackCtr_2_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackCtr_2_sm.png",
+        "bytes": 6201,
+        "replacement_sha256": "ef15beba6a50492069c10a9caf5ab9ed8bd0301711b83e90676a434ffa054f5e",
+        "oem_size": 6201
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackCtr_3_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackCtr_3_sm.png",
+        "bytes": 5375,
+        "replacement_sha256": "ba594e2f07559adf0f1fdd8d23e140d88b11205f6677c8c48fef2a8b2cbff2e7",
+        "oem_size": 5375
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackCtr_4_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackCtr_4_sm.png",
+        "bytes": 4326,
+        "replacement_sha256": "3ee98e70f49748799bdf14de9da4beab5088c268bd7d63114fee8a92f44808da",
+        "oem_size": 4326
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/Background_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/Background_sm.png",
+        "bytes": 15477,
+        "replacement_sha256": "99372643929b5eb53ebc4f8635f049300a86176d96b538c2ad70c5b0d5441ecc",
+        "oem_size": 15477
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/Background_sm_4s.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/Background_sm_4s.png",
+        "bytes": 9358,
+        "replacement_sha256": "9ca0831a39a5700f6735b95fec52b4e843152d84ba84816af15ec9c0cb8553df",
+        "oem_size": 9358
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackLt_1_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackLt_1_sm.png",
+        "bytes": 3006,
+        "replacement_sha256": "cea0216f291a3613136f71898a6398b7cd057a8a31d6bc3726cabca241e702fd",
+        "oem_size": 3006
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackLt_2_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackLt_2_sm.png",
+        "bytes": 2618,
+        "replacement_sha256": "ba05601796ae621f78ecd39d6c743c9b1788976fd75778c667084a3e45f1d08e",
+        "oem_size": 2618
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackLt_3_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackLt_3_sm.png",
+        "bytes": 2181,
+        "replacement_sha256": "12bae78a156358361c8722ab2d44917089241ef794952027821b13a34b78a93a",
+        "oem_size": 2181
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackRt_1_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackRt_1_sm.png",
+        "bytes": 2992,
+        "replacement_sha256": "dd3dec136fc0a084030569667bbc9451d3f40c78bbc6497f346e2d8b85c60f96",
+        "oem_size": 2992
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackRt_2_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackRt_2_sm.png",
+        "bytes": 2656,
+        "replacement_sha256": "eb9e564bfb194828cb38666c6100d4b4dc8627d0e6fff2f7af23a5173dd77ee3",
+        "oem_size": 2656
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/BackRt_3_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/BackRt_3_sm.png",
+        "bytes": 2206,
+        "replacement_sha256": "e8d196cfc839205e8d5259faae7cca26a3eb35f07273eeff88469b243a3c7e83",
+        "oem_size": 2206
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/Car_Ds_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/Car_Ds_sm.png",
+        "bytes": 11722,
+        "replacement_sha256": "0aa40d25a1c218b01db7ff4f9f1777eba7d6928abeb52d3af06dfdf9c4b5fe74",
+        "oem_size": 11722
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/Car_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/Car_sm.png",
+        "bytes": 13509,
+        "replacement_sha256": "1784c506755f3e62d4187c1c158d55843c192864fb736a9ea7dd7e2c12bfc053",
+        "oem_size": 13509
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontCtr_1_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontCtr_1_sm.png",
+        "bytes": 5440,
+        "replacement_sha256": "6571902deb545fbda82731345a7ebc2b75505af22c1cb9b221d6cf1b785f8aa3",
+        "oem_size": 5440
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontCtr_2_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontCtr_2_sm.png",
+        "bytes": 4678,
+        "replacement_sha256": "bb2bcb0a25b28a4c04a58a6eb8db2533a8ea186343082f9d7ca868957155c4b7",
+        "oem_size": 4678
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontCtr_3_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontCtr_3_sm.png",
+        "bytes": 3785,
+        "replacement_sha256": "8a4a542297b834f1f5ef884a859a185c48266b366a972da44bfb5039c27df3fd",
+        "oem_size": 3785
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontCtr_4_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontCtr_4_sm.png",
+        "bytes": 2940,
+        "replacement_sha256": "4cccd6708a8bdef44678f6fed5108e229d2409b4cb91cad39443666e2437ebd0",
+        "oem_size": 2940
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontLt_1_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontLt_1_sm.png",
+        "bytes": 3342,
+        "replacement_sha256": "fb9f2ab8d658cec007ccef5597845d68ceb504d5b86adff65e09619ba6c707f9",
+        "oem_size": 3342
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontLt_2_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontLt_2_sm.png",
+        "bytes": 2996,
+        "replacement_sha256": "602c6ef8204b5c49f40a81a1310a834d3cabfdb5580e93c88e337867eb2205a3",
+        "oem_size": 2996
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontLt_3_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontLt_3_sm.png",
+        "bytes": 2442,
+        "replacement_sha256": "cf4de78463c83acc4c1d381fa588e142d011a3917e9ead9095607a2ffdcfe89e",
+        "oem_size": 2442
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontRt_1_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontRt_1_sm.png",
+        "bytes": 3384,
+        "replacement_sha256": "d7560f91fb8c82c383199e936d0e6dd4adecb2db4df8fda55fbeaf3c0bc4624b",
+        "oem_size": 3384
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontRt_2_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontRt_2_sm.png",
+        "bytes": 3036,
+        "replacement_sha256": "d6868557b02fc1335ba5cbb1fd6bce70a4665ec32305d1110e97abde97db1b6a",
+        "oem_size": 3036
+      },
+      {
+        "target": "/jci/nativegui/images/MiniView/FrontRt_3_sm.png",
+        "source": "config_org/transparent-parking-sensor/jci/nativegui/images/MiniView/FrontRt_3_sm.png",
+        "bytes": 2524,
+        "replacement_sha256": "ba5163d3aeda0d8f160aba05ee2706e0761397384ca41e3d10efeef6a34c3c21",
+        "oem_size": 2524
+      }
+    ]
+  },
+  {
+    "script": "05_mainloop-i.txt",
+    "line": 9,
+    "sources": [
+      "${MYDIR}/config/main-menu-loop/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js"
+    ],
+    "destination": "/jci/gui/apps/system/controls/MainMenu/js/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js",
+        "source": "config/main-menu-loop/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js",
+        "bytes": 21811,
+        "replacement_sha256": "60852586c374a4994bc6f4672218354a57c99453f723dd3065d5d3f6a76068b7",
+        "oem_size": 21842,
+        "same_as_oem": false,
+        "oem_methods_removed": []
+      }
+    ]
+  },
+  {
+    "script": "06_listloop-i.txt",
+    "line": 16,
+    "sources": [
+      "${MYDIR}/config/list-loop/jci/gui/common/controls/List2/js/List2Ctrl.js"
+    ],
+    "destination": "/jci/gui/common/controls/List2/js/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+        "source": "config/list-loop/jci/gui/common/controls/List2/js/List2Ctrl.js",
+        "bytes": 477283,
+        "replacement_sha256": "81eebc20dfcb6365c178a9483f854ad779bdf478fe95f88f0155e7d93cc928f9",
+        "oem_size": 475746,
+        "same_as_oem": false,
+        "oem_methods_removed": []
+      }
+    ]
+  },
+  {
+    "script": "08_orderflac-i.txt",
+    "line": 42,
+    "sources": [
+      "${MYDIR}/config/media-order-patching/data_persist/*"
+    ],
+    "destination": "/tmp/mnt/data_persist/",
+    "overwrites": []
+  },
+  {
+    "script": "08_orderflac-i.txt",
+    "line": 56,
+    "sources": [
+      "${MYDIR}/config/media-order-patching/jci/lib/libmc_user.${TRACKORDER_FLAC_FILE}.so"
+    ],
+    "destination": "/jci/lib/libmc_user.so",
+    "overwrites": []
+  },
+  {
+    "script": "08_orderflac-i.txt",
+    "line": 57,
+    "sources": [
+      "${MYDIR}/config/media-order-patching/usr/lib/gstreamer-0.10/libgstflac.so"
+    ],
+    "destination": "/usr/lib/gstreamer-0.10",
+    "overwrites": []
+  },
+  {
+    "script": "08_orderflac-i.txt",
+    "line": 58,
+    "sources": [
+      "${MYDIR}/config/media-order-patching/usr/lib/libFLAC.so.8.3.0"
+    ],
+    "destination": "/usr/lib",
+    "overwrites": []
+  },
+  {
+    "script": "08_orderflac-i.txt",
+    "line": 66,
+    "sources": [
+      "/jci/lib/libmc_user.so.org"
+    ],
+    "destination": "/jci/lib/libmc_user.so",
+    "overwrites": []
+  },
+  {
+    "script": "08_orderflac-u.txt",
+    "line": 9,
+    "sources": [
+      "/jci/lib/libmc_user.so.org"
+    ],
+    "destination": "/jci/lib/libmc_user.so",
+    "overwrites": []
+  },
+  {
+    "script": "08_sysbeep-i.txt",
+    "line": 31,
+    "sources": [
+      "/jci/gui/common/js/Common.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/Common_after-nobeeps.js",
+    "overwrites": []
+  },
+  {
+    "script": "09_audioorder-i.txt",
+    "line": 34,
+    "sources": [
+      "${MYDIR}/config/audio_order_AND_no_More_Disclaimer/systemApp.js.audio"
+    ],
+    "destination": "/jci/gui/apps/system/js/",
+    "overwrites": []
+  },
+  {
+    "script": "09_audioorder-i.txt",
+    "line": 63,
+    "sources": [
+      "/jci/gui/apps/system/js/systemApp.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/systemApp_after-audiosources.js",
+    "overwrites": []
+  },
+  {
+    "script": "09_audioorder-u.txt",
+    "line": 30,
+    "sources": [
+      "${MYDIR}/config/audio_order_AND_no_More_Disclaimer/only_no_More_Disclaimer/jci/gui/apps/system/js/systemApp.${TRACKORDER_AUDIO_FILE}.js"
+    ],
+    "destination": "/jci/gui/apps/system/js/systemApp.js",
+    "overwrites": []
+  },
+  {
+    "script": "09_audioorder-u.txt",
+    "line": 33,
+    "sources": [
+      "${MYDIR}/config/audio_order_AND_no_More_Disclaimer/only_no_More_Disclaimer/jci/gui/apps/system/js/systemApp.js"
+    ],
+    "destination": "/jci/gui/apps/system/js/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/system/js/systemApp.js",
+        "source": "config/audio_order_AND_no_More_Disclaimer/only_no_More_Disclaimer/jci/gui/apps/system/js/systemApp.js",
+        "bytes": 78997,
+        "replacement_sha256": "5240997fd5917ee6ce12ea3952a3364c1bc7950233a96755811507dacf85b7f8",
+        "oem_size": 142069,
+        "same_as_oem": false,
+        "oem_methods_removed": [
+          "_HealthCheckCounterMsgHandler",
+          "_StatusMenuCarPlayWifiMsgHandler",
+          "_StatusMenuVisibleAndroidAutoMsgHandler",
+          "_StatusMenuVisibleCarPlayMsgHandler",
+          "_StatusMenuVisibleCarPlayWifiMsgHandler",
+          "_TimedSBN_VRLoadingMsgHandler",
+          "_disclaimerTimedout",
+          "_displayDeviceNameEntCarPlayMenu",
+          "_displayedDisclaimer",
+          "_displayedDisclaimerOut",
+          "_enableEntertainmentListItemCarPlay",
+          "_isCarPlayWifiMenu",
+          "_noLongerDisplayedDisclaimer",
+          "_remoteUIButtonFocused",
+          "_remoteUIButtonSelected",
+          "_selectCallbackDisclaimer",
+          "_sendRemoteUiButtonStatus",
+          "_setRemoteUIButton",
+          "_updateApplicationStructure",
+          "_updateApplicationsNowPlayingIcon",
+          "_verifyCarPlayWifiIcon"
+        ]
+      }
+    ]
+  },
+  {
+    "script": "11_msgreplies-i.txt",
+    "line": 7,
+    "sources": [
+      "${MYDIR}/config/message_replies/jci/settings/configurations/*"
+    ],
+    "destination": "/jci/settings/configurations",
+    "overwrites": [
+      {
+        "target": "/jci/settings/configurations/blm_msg-system.xml",
+        "source": "config/message_replies/jci/settings/configurations/blm_msg-system.xml",
+        "bytes": 73020,
+        "replacement_sha256": "e6261303109723611ca64d109f25dae98afce9686b67b6435f55e4f651e951c5",
+        "oem_size": 77550,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "12_diag-i.txt",
+    "line": 31,
+    "sources": [
+      "${MYDIR}/config/test_mode/controls"
+    ],
+    "destination": "/jci/gui/apps/diag",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/diag/controls/Test/css/TestCtrl.css",
+        "source": "config/test_mode/controls/Test/css/TestCtrl.css",
+        "bytes": 9312,
+        "replacement_sha256": "f22d64a20b5bbb3e2a96e3648c1f4b01f66ee42e9d90b175ad8d37f0e5c883e1",
+        "oem_size": 10424,
+        "same_as_oem": false
+      },
+      {
+        "target": "/jci/gui/apps/diag/controls/Test/js/TestCtrl.js",
+        "source": "config/test_mode/controls/Test/js/TestCtrl.js",
+        "bytes": 48252,
+        "replacement_sha256": "ddd63514487d6bbf7ac22f8c3c2223c337b3c39ebef1aa14578464163c66dc13",
+        "oem_size": 58289,
+        "same_as_oem": false,
+        "oem_methods_removed": [
+          "setUblox"
+        ]
+      }
+    ]
+  },
+  {
+    "script": "12_diag-i.txt",
+    "line": 36,
+    "sources": [
+      "/jci/gui/apps/diag/js/diagApp.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/diagApp_diagmenu-after.js",
+    "overwrites": []
+  },
+  {
+    "script": "12_diag-i.txt",
+    "line": 37,
+    "sources": [
+      "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/StatusBarCtrl_diagmenu-after.js",
+    "overwrites": []
+  },
+  {
+    "script": "12_diag-i.txt",
+    "line": 38,
+    "sources": [
+      "/jci/gui/common/js/Common.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/Common_diagmenu-after.js",
+    "overwrites": []
+  },
+  {
+    "script": "12_diag-u.txt",
+    "line": 6,
+    "sources": [
+      "/jci/gui/apps/diag/js/diagApp.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/diagApp_diagmenu-before.js",
+    "overwrites": []
+  },
+  {
+    "script": "12_diag-u.txt",
+    "line": 7,
+    "sources": [
+      "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/StatusBarCtrl_diagmenu-before.js",
+    "overwrites": []
+  },
+  {
+    "script": "12_diag-u.txt",
+    "line": 8,
+    "sources": [
+      "/jci/gui/common/js/Common.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/Common_diagmenu-before.js",
+    "overwrites": []
+  },
+  {
+    "script": "12_diag-u.txt",
+    "line": 41,
+    "sources": [
+      "/jci/gui/apps/diag/js/diagApp.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/diagApp_diagmenu-after.js",
+    "overwrites": []
+  },
+  {
+    "script": "12_diag-u.txt",
+    "line": 42,
+    "sources": [
+      "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/StatusBarCtrl_diagmenu-after.js",
+    "overwrites": []
+  },
+  {
+    "script": "12_diag-u.txt",
+    "line": 43,
+    "sources": [
+      "/jci/gui/common/js/Common.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/Common_diagmenu-after.js",
+    "overwrites": []
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 16,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogo.ivf"
+    ],
+    "destination": "$LOOP_LOGO",
+    "overwrites": []
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 20,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogoMatrix.ivf"
+    ],
+    "destination": "$LOOP_LOGO",
+    "overwrites": []
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 24,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogoRace.ivf"
+    ],
+    "destination": "$LOOP_LOGO",
+    "overwrites": []
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 28,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogoFiat.ivf"
+    ],
+    "destination": "$LOOP_LOGO",
+    "overwrites": []
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 32,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogoZ.ivf"
+    ],
+    "destination": "$LOOP_LOGO",
+    "overwrites": []
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 36,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogoCinema.ivf"
+    ],
+    "destination": "$LOOP_LOGO",
+    "overwrites": []
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 40,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogoCrissCross.ivf"
+    ],
+    "destination": "$LOOP_LOGO",
+    "overwrites": []
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 44,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogoRace.ivf"
+    ],
+    "destination": "$LOOP_LOGO",
+    "overwrites": []
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 53,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogo.ivf"
+    ],
+    "destination": "/jci/resources/TranLogo.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogo.ivf",
+        "source": "config/bootanimation/jci/resources/LoopLogo.ivf",
+        "bytes": 151428,
+        "replacement_sha256": "0514b571198140ef98033aed42cd5c4743b4ad333acced4e1230a10c59381d1f",
+        "oem_size": 1240681
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 57,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogoMatrix.ivf"
+    ],
+    "destination": "/jci/resources/TranLogo.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogo.ivf",
+        "source": "config/bootanimation/jci/resources/LoopLogoMatrix.ivf",
+        "bytes": 830773,
+        "replacement_sha256": "53f6fb79537900365bd8402daea392dd66039caf486ab992f42a88c8dc1daebf",
+        "oem_size": 1240681
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 61,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogoRace.ivf"
+    ],
+    "destination": "/jci/resources/TranLogo.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogo.ivf",
+        "source": "config/bootanimation/jci/resources/TranLogoRace.ivf",
+        "bytes": 266263,
+        "replacement_sha256": "83a66f2f5690d49bed5da67940c81205b951b13353f1837f14919f7dcb71a865",
+        "oem_size": 1240681
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 65,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogo124Spider.ivf"
+    ],
+    "destination": "/jci/resources/TranLogo.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogo.ivf",
+        "source": "config/bootanimation/jci/resources/TranLogo124Spider.ivf",
+        "bytes": 769042,
+        "replacement_sha256": "dd4537a9d14f5bed8dafcd69b86df83250b4a8ba6afe79da9f16ddb6062a22fd",
+        "oem_size": 1240681
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 69,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogoZ.ivf"
+    ],
+    "destination": "/jci/resources/TranLogo.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogo.ivf",
+        "source": "config/bootanimation/jci/resources/LoopLogoZ.ivf",
+        "bytes": 321345,
+        "replacement_sha256": "91139d9593055110d5db5a0e8eb5bf86c55beba76fabaef5246d91c35b8b55a5",
+        "oem_size": 1240681
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 73,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogoCinema.ivf"
+    ],
+    "destination": "/jci/resources/TranLogo.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogo.ivf",
+        "source": "config/bootanimation/jci/resources/LoopLogoCinema.ivf",
+        "bytes": 305610,
+        "replacement_sha256": "0f8bd0902445e45022faa9ec57f3c53031b23402533b64c76a4ed5858f62e545",
+        "oem_size": 1240681
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 77,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogoCrissCross.ivf"
+    ],
+    "destination": "/jci/resources/TranLogo.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogo.ivf",
+        "source": "config/bootanimation/jci/resources/TranLogoCrissCross.ivf",
+        "bytes": 559398,
+        "replacement_sha256": "b855173dfcb66ea8d65743851b93cda9710b5d9f25dd9ae36ac42ea79027cc43",
+        "oem_size": 1240681
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 81,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogoRace.ivf"
+    ],
+    "destination": "/jci/resources/TranLogo.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogo.ivf",
+        "source": "config/bootanimation/jci/resources/LoopLogoRace.ivf",
+        "bytes": 219177,
+        "replacement_sha256": "c35b8ab30742f32bf100082516abeeb04665320171d4ed611d6c954d8ef0bb63",
+        "oem_size": 1240681
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 85,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogo.ivf"
+    ],
+    "destination": "/jci/resources/",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogo.ivf",
+        "source": "config/bootanimation/jci/resources/TranLogo.ivf",
+        "bytes": 1240681,
+        "replacement_sha256": "2583aa193728b71e4876f119de0f2fbdd30d040cae1b79ecc39d174b73df4aeb",
+        "oem_size": 1240681
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 95,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogo.ivf"
+    ],
+    "destination": "/jci/resources/TranLogoEnd.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogoEnd.ivf",
+        "source": "config/bootanimation/jci/resources/LoopLogo.ivf",
+        "bytes": 151428,
+        "replacement_sha256": "0514b571198140ef98033aed42cd5c4743b4ad333acced4e1230a10c59381d1f",
+        "oem_size": 164238
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 99,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogoMatrix.ivf"
+    ],
+    "destination": "/jci/resources/TranLogoEnd.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogoEnd.ivf",
+        "source": "config/bootanimation/jci/resources/LoopLogoMatrix.ivf",
+        "bytes": 830773,
+        "replacement_sha256": "53f6fb79537900365bd8402daea392dd66039caf486ab992f42a88c8dc1daebf",
+        "oem_size": 164238
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 103,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogoEndRace.ivf"
+    ],
+    "destination": "/jci/resources/TranLogoEnd.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogoEnd.ivf",
+        "source": "config/bootanimation/jci/resources/TranLogoEndRace.ivf",
+        "bytes": 705402,
+        "replacement_sha256": "61af6be7ce1ca54c5c8e9ea2fc5928f7d4bc0a00db85855d84054d7a67e688e1",
+        "oem_size": 164238
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 107,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogoCarFlash.ivf"
+    ],
+    "destination": "/jci/resources/TranLogoEnd.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogoEnd.ivf",
+        "source": "config/bootanimation/jci/resources/TranLogoCarFlash.ivf",
+        "bytes": 1671492,
+        "replacement_sha256": "940a1e245f8367fe0dd6a8a415d2117232019f5760b7c60547c1b7bfedac1a6a",
+        "oem_size": 164238
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 111,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/LoopLogoZ.ivf"
+    ],
+    "destination": "/jci/resources/TranLogoEnd.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogoEnd.ivf",
+        "source": "config/bootanimation/jci/resources/LoopLogoZ.ivf",
+        "bytes": 321345,
+        "replacement_sha256": "91139d9593055110d5db5a0e8eb5bf86c55beba76fabaef5246d91c35b8b55a5",
+        "oem_size": 164238
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 115,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogoEndCinema.ivf"
+    ],
+    "destination": "/jci/resources/TranLogoEnd.ivf",
+    "overwrites": []
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 119,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogoEndCrissCross.ivf"
+    ],
+    "destination": "/jci/resources/TranLogoEnd.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogoEnd.ivf",
+        "source": "config/bootanimation/jci/resources/TranLogoEndCrissCross.ivf",
+        "bytes": 1313006,
+        "replacement_sha256": "d9c7f76401e08e10d43cf4634cd80282941620622a5af0aa74090077edce444e",
+        "oem_size": 164238
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 123,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogoEndRace.ivf"
+    ],
+    "destination": "/jci/resources/TranLogoEnd.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogoEnd.ivf",
+        "source": "config/bootanimation/jci/resources/TranLogoEndRace.ivf",
+        "bytes": 705402,
+        "replacement_sha256": "61af6be7ce1ca54c5c8e9ea2fc5928f7d4bc0a00db85855d84054d7a67e688e1",
+        "oem_size": 164238
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 127,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogoEndSpace.ivf"
+    ],
+    "destination": "/jci/resources/TranLogoEnd.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogoEnd.ivf",
+        "source": "config/bootanimation/jci/resources/TranLogoEndSpace.ivf",
+        "bytes": 1347505,
+        "replacement_sha256": "84326412e1c25c2448b593631f90d17d7e74138a43d4ea901f5911f8b95a4666",
+        "oem_size": 164238
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 131,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranRace.ivf"
+    ],
+    "destination": "/jci/resources/TranLogoEnd.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogoEnd.ivf",
+        "source": "config/bootanimation/jci/resources/TranRace.ivf",
+        "bytes": 357830,
+        "replacement_sha256": "c2cd4556f3ef03f9c63c434600e082b4b24f3cde707db50cfe3f73ab008367a8",
+        "oem_size": 164238
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 135,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranIntroM.ivf"
+    ],
+    "destination": "/jci/resources/TranLogoEnd.ivf",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogoEnd.ivf",
+        "source": "config/bootanimation/jci/resources/TranIntroM.ivf",
+        "bytes": 611989,
+        "replacement_sha256": "bc8cd2fbc14e07734e2d77d5c671b135d84a53c61e7e4a373fe144636876d7bc",
+        "oem_size": 164238
+      }
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "line": 139,
+    "sources": [
+      "${MYDIR}/config/bootanimation/jci/resources/TranLogoEnd.ivf"
+    ],
+    "destination": "/jci/resources/",
+    "overwrites": [
+      {
+        "target": "/jci/resources/TranLogoEnd.ivf",
+        "source": "config/bootanimation/jci/resources/TranLogoEnd.ivf",
+        "bytes": 164238,
+        "replacement_sha256": "2a65000eb66cab60f03efd925f9851fb59dcef1862f6839b88943f2a647fea4b",
+        "oem_size": 164238
+      }
+    ]
+  },
+  {
+    "script": "14_bgart-i.txt",
+    "line": 7,
+    "sources": [
+      "${MYDIR}/config/bigger-album-art/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png"
+    ],
+    "destination": "/jci/gui/common/controls/InCall2/images",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png",
+        "source": "config/bigger-album-art/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png",
+        "bytes": 3244,
+        "replacement_sha256": "bed2d0c81d1ad1d023f17e18533d9446c573bf1db9fa09aaec5fe22e3a492af5",
+        "oem_size": 772,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "14_bgart-i.txt",
+    "line": 8,
+    "sources": [
+      "${MYDIR}/config/bigger-album-art/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png"
+    ],
+    "destination": "/jci/gui/common/controls/NowPlaying4/images",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png",
+        "source": "config/bigger-album-art/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png",
+        "bytes": 3244,
+        "replacement_sha256": "bed2d0c81d1ad1d023f17e18533d9446c573bf1db9fa09aaec5fe22e3a492af5",
+        "oem_size": 675,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "16_blnkframe-i.txt",
+    "line": 5,
+    "sources": [
+      "${MYDIR}/config/blank-album-art-frame/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png"
+    ],
+    "destination": "/jci/gui/common/controls/InCall2/images",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png",
+        "source": "config/blank-album-art-frame/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png",
+        "bytes": 3244,
+        "replacement_sha256": "bed2d0c81d1ad1d023f17e18533d9446c573bf1db9fa09aaec5fe22e3a492af5",
+        "oem_size": 772,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "16_blnkframe-i.txt",
+    "line": 6,
+    "sources": [
+      "${MYDIR}/config/blank-album-art-frame/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png"
+    ],
+    "destination": "/jci/gui/common/controls/NowPlaying4/images",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png",
+        "source": "config/blank-album-art-frame/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png",
+        "bytes": 3244,
+        "replacement_sha256": "bed2d0c81d1ad1d023f17e18533d9446c573bf1db9fa09aaec5fe22e3a492af5",
+        "oem_size": 675,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "16_blnkframe-i.txt",
+    "line": 7,
+    "sources": [
+      "${MYDIR}/config/blank-album-art-frame/jci/gui/common/images/no_artwork_icon.png"
+    ],
+    "destination": "/jci/gui/common/images",
+    "overwrites": []
+  },
+  {
+    "script": "16_blnkframe-u.txt",
+    "line": 5,
+    "sources": [
+      "${MYDIR}/config_org/blank-album-art-frame/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png"
+    ],
+    "destination": "/jci/gui/common/controls/InCall2/images",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png",
+        "source": "config_org/blank-album-art-frame/jci/gui/common/controls/InCall2/images/NowPlayingImageFrame.png",
+        "bytes": 772,
+        "replacement_sha256": "fb8b57bed02ad4bf18626c4ddbd57feba5112072f11ab835ed3f1d411217452a",
+        "oem_size": 772,
+        "same_as_oem": true
+      }
+    ]
+  },
+  {
+    "script": "16_blnkframe-u.txt",
+    "line": 6,
+    "sources": [
+      "${MYDIR}/config_org/blank-album-art-frame/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png"
+    ],
+    "destination": "/jci/gui/common/controls/NowPlaying4/images",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png",
+        "source": "config_org/blank-album-art-frame/jci/gui/common/controls/NowPlaying4/images/NowPlayingImageFrame.png",
+        "bytes": 772,
+        "replacement_sha256": "fb8b57bed02ad4bf18626c4ddbd57feba5112072f11ab835ed3f1d411217452a",
+        "oem_size": 675,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "16_blnkframe-u.txt",
+    "line": 7,
+    "sources": [
+      "${MYDIR}/config_org/blank-album-art-frame/jci/gui/common/images/no_artwork_icon.png"
+    ],
+    "destination": "/jci/gui/common/images",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/images/no_artwork_icon.png",
+        "source": "config_org/blank-album-art-frame/jci/gui/common/images/no_artwork_icon.png",
+        "bytes": 202,
+        "replacement_sha256": "9624907723ff48a5a411e461d38c4426141e7364805e1548db0f3e3cdccba731",
+        "oem_size": 202,
+        "same_as_oem": true
+      }
+    ]
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 12,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_videoplayer-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 30,
+    "sources": [
+      "${MYDIR}/config/jci/opera/opera_dir/userjs/*.js"
+    ],
+    "destination": "/jci/opera/opera_dir/userjs/",
+    "overwrites": []
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 35,
+    "sources": [
+      "${MYDIR}/config/jci/opera/opera_dir/userjs/aio.js"
+    ],
+    "destination": "/jci/opera/opera_dir/userjs/",
+    "overwrites": []
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 68,
+    "sources": [
+      "${MYDIR}/config/videoplayer/jci/gui/apps/_videoplayer"
+    ],
+    "destination": "/jci/gui/apps",
+    "overwrites": []
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 89,
+    "sources": [
+      "${MYDIR}/config/videoplayer/usr/lib/gstreamer-0.10/*"
+    ],
+    "destination": "/usr/lib/gstreamer-0.10/",
+    "overwrites": []
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 90,
+    "sources": [
+      "${MYDIR}/config/videoplayer/usr/lib/libFLAC.so.8.3.0"
+    ],
+    "destination": "/usr/lib/",
+    "overwrites": []
+  },
+  {
+    "script": "17_videoplayer-u.txt",
+    "line": 10,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_videoplayer-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "17_videoplayer-u.txt",
+    "line": 57,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_videoplayer-after.sh",
+    "overwrites": []
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 16,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_swap-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 57,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_swap-after.sh",
+    "overwrites": []
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 6,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_swap-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 24,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_swap-after.sh",
+    "overwrites": []
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 67,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_swap-after.sh",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 8,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_speedometer-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 18,
+    "sources": [
+      "/jci/gui/apps/_speedometer/js/speedometer-config.js"
+    ],
+    "destination": "/tmp/root",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 44,
+    "sources": [
+      "${MYDIR}/config/speedometer/jci/gui/apps/_speedometer"
+    ],
+    "destination": "/jci/gui/apps",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 57,
+    "sources": [
+      "${MYDIR}/config/speedometer/jci/fonts"
+    ],
+    "destination": "/jci",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 63,
+    "sources": [
+      "${MYDIR}/config/speedometer/speedometer-config.js"
+    ],
+    "destination": "/jci/gui/apps/_speedometer/js",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 67,
+    "sources": [
+      "/tmp/root/speedometer-config.js"
+    ],
+    "destination": "/jci/gui/apps/_speedometer/js",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 74,
+    "sources": [
+      "${MYDIR}/config/speedometer/speedometer-controls.js"
+    ],
+    "destination": "/jci/gui/apps/_speedometer/js",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 101,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_speedometer-after.sh",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 108,
+    "sources": [
+      "${MYDIR}/config/jci/opera/opera_dir/userjs/*.js"
+    ],
+    "destination": "/jci/opera/opera_dir/userjs/",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "line": 53,
+    "sources": [
+      "/jci/gui/apps/_speedometer/js/speedometer-startup.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "line": 54,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi-after_speedo.sh",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-u.txt",
+    "line": 9,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_speedometer-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "19_speedo-u.txt",
+    "line": 56,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_speedometer-after.sh",
+    "overwrites": []
+  },
+  {
+    "script": "20_date-iv1.txt",
+    "line": 52,
+    "sources": [
+      "${MYDIR}/config/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/css/StatusBarCtrl.v1.css"
+    ],
+    "destination": "/jci/gui/common/controls/StatusBar/css/StatusBarCtrl.css",
+    "overwrites": []
+  },
+  {
+    "script": "20_date-iv1.txt",
+    "line": 54,
+    "sources": [
+      "${MYDIR}/config/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.v1.js"
+    ],
+    "destination": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js",
+        "source": "config/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.v1.js",
+        "bytes": 25965,
+        "replacement_sha256": "d06934a7ab246ea0be7479d625bcbb15d102af25968d4e092b159d17c30d90d9",
+        "oem_size": 32442,
+        "same_as_oem": false,
+        "oem_methods_removed": [
+          "_remoteUiBtnFocused",
+          "_remoteUiBtnSelected",
+          "handleControllerEvent",
+          "hideRemoteUiButton",
+          "setupCPAAMode",
+          "showRemoteUiButton"
+        ]
+      }
+    ]
+  },
+  {
+    "script": "20_date-iv1.txt",
+    "line": 56,
+    "sources": [
+      "${MYDIR}/config/date-to-statusbar_mod/jci/gui/common/images/icons/IcnSbRoaming.v2.png"
+    ],
+    "destination": "/jci/gui/common/images/icons/IcnSbRoaming.png",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/images/icons/IcnSbRoaming.png",
+        "source": "config/date-to-statusbar_mod/jci/gui/common/images/icons/IcnSbRoaming.v2.png",
+        "bytes": 240,
+        "replacement_sha256": "ea08f5e70997f2202634ec2d2ec577aa90e2224192656be979407ebb4bc5dee4",
+        "oem_size": 853,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "20_date-iv1.txt",
+    "line": 58,
+    "sources": [
+      "${MYDIR}/config/date-to-statusbar_mod/jci/gui/framework/js/Utility.v1.js"
+    ],
+    "destination": "/jci/gui/framework/js/Utility.js",
+    "overwrites": [
+      {
+        "target": "/jci/gui/framework/js/Utility.js",
+        "source": "config/date-to-statusbar_mod/jci/gui/framework/js/Utility.v1.js",
+        "bytes": 22543,
+        "replacement_sha256": "51d9697654a93bd5f85473e2cabf10b9a86dd01e64d9dfe6f415011d9e9e1890",
+        "oem_size": 21569,
+        "same_as_oem": false,
+        "oem_methods_removed": []
+      }
+    ]
+  },
+  {
+    "script": "20_date-iv3.3.txt",
+    "line": 84,
+    "sources": [
+      "${MYDIR}/config/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/images/StatusBarBg.v2.2.png"
+    ],
+    "destination": "/jci/gui/common/controls/StatusBar/images/StatusBarBg.png",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/StatusBar/images/StatusBarBg.png",
+        "source": "config/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/images/StatusBarBg.v2.2.png",
+        "bytes": 1446,
+        "replacement_sha256": "4181a950ba6d291a265929923258d5311200bb2efb3deb8e6b89dbfabb68a11a",
+        "oem_size": 1451,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "20_date-iv3.3.txt",
+    "line": 86,
+    "sources": [
+      "${MYDIR}/config/date-to-statusbar_mod/jci/gui/common/images/icons/IcnSbRoaming.v2.png"
+    ],
+    "destination": "/jci/gui/common/images/icons/IcnSbRoaming.png",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/images/icons/IcnSbRoaming.png",
+        "source": "config/date-to-statusbar_mod/jci/gui/common/images/icons/IcnSbRoaming.v2.png",
+        "bytes": 240,
+        "replacement_sha256": "ea08f5e70997f2202634ec2d2ec577aa90e2224192656be979407ebb4bc5dee4",
+        "oem_size": 853,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "20_date-iv3.3.txt",
+    "line": 93,
+    "sources": [
+      "${MYDIR}/config/date-to-statusbar_mod/jci/gui/framework/js/Utility.v2.3.js"
+    ],
+    "destination": "/jci/gui/framework/js/Utility.js",
+    "overwrites": [
+      {
+        "target": "/jci/gui/framework/js/Utility.js",
+        "source": "config/date-to-statusbar_mod/jci/gui/framework/js/Utility.v2.3.js",
+        "bytes": 22947,
+        "replacement_sha256": "6df80713e0a6f6b35dc47b665d3849a6569eade925966cd379f309a5750e3b1f",
+        "oem_size": 21569,
+        "same_as_oem": false,
+        "oem_methods_removed": []
+      }
+    ]
+  },
+  {
+    "script": "20_date-iv3.3.txt",
+    "line": 98,
+    "sources": [
+      "${MYDIR}/config/date-to-statusbar_mod/jci/gui/framework/js/Utility.v2.2.js"
+    ],
+    "destination": "/jci/gui/framework/js/Utility.js",
+    "overwrites": [
+      {
+        "target": "/jci/gui/framework/js/Utility.js",
+        "source": "config/date-to-statusbar_mod/jci/gui/framework/js/Utility.v2.2.js",
+        "bytes": 22861,
+        "replacement_sha256": "5101a2529ae3d1a1127188e403ecda2bb211f0ae6cfd9152fb132038feac766a",
+        "oem_size": 21569,
+        "same_as_oem": false,
+        "oem_methods_removed": []
+      }
+    ]
+  },
+  {
+    "script": "20_date-iv3.3.txt",
+    "line": 102,
+    "sources": [
+      "${MYDIR}/config/date-to-statusbar_mod/jci/gui/framework/js/Utility.v2.1.js"
+    ],
+    "destination": "/jci/gui/framework/js/Utility.js",
+    "overwrites": [
+      {
+        "target": "/jci/gui/framework/js/Utility.js",
+        "source": "config/date-to-statusbar_mod/jci/gui/framework/js/Utility.v2.1.js",
+        "bytes": 22543,
+        "replacement_sha256": "51d9697654a93bd5f85473e2cabf10b9a86dd01e64d9dfe6f415011d9e9e1890",
+        "oem_size": 21569,
+        "same_as_oem": false,
+        "oem_methods_removed": []
+      }
+    ]
+  },
+  {
+    "script": "20_date-iv3.3.txt",
+    "line": 117,
+    "sources": [
+      "${MYDIR}/config/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js"
+    ],
+    "destination": "/jci/gui/common/controls/StatusBar/js",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js",
+        "source": "config/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js",
+        "bytes": 32933,
+        "replacement_sha256": "f753f0cc8c40c52e0ed86a467b227a1eb28a57485c30ce3268db2b824f4162a5",
+        "oem_size": 32442,
+        "same_as_oem": false,
+        "oem_methods_removed": []
+      }
+    ]
+  },
+  {
+    "script": "20_date-u.txt",
+    "line": 19,
+    "sources": [
+      "${MYDIR}/config_org/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/images/StatusBarBg.png"
+    ],
+    "destination": "/jci/gui/common/controls/StatusBar/images/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/StatusBar/images/StatusBarBg.png",
+        "source": "config_org/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/images/StatusBarBg.png",
+        "bytes": 15931,
+        "replacement_sha256": "648fbd3f37b1224feac8112c7c856d16feb6bfa7f1f0bc7d3340a2fb26b85919",
+        "oem_size": 1451,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "20_date-u.txt",
+    "line": 24,
+    "sources": [
+      "${MYDIR}/config_org/date-to-statusbar_mod/jci/gui/common/images/icons/IcnSbRoaming.png"
+    ],
+    "destination": "/jci/gui/common/images/icons/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/images/icons/IcnSbRoaming.png",
+        "source": "config_org/date-to-statusbar_mod/jci/gui/common/images/icons/IcnSbRoaming.png",
+        "bytes": 15352,
+        "replacement_sha256": "c2bbcd60e60acffb2cea7ab497c9af376e86516572100cff76a1221456e38ae0",
+        "oem_size": 853,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "20_date2status-u.txt",
+    "line": 23,
+    "sources": [
+      "${MYDIR}/config_org/date-to-statusbar_mod/jci/gui/common/images/icons/IcnSbRoaming.png"
+    ],
+    "destination": "/jci/gui/common/images/icons/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/images/icons/IcnSbRoaming.png",
+        "source": "config_org/date-to-statusbar_mod/jci/gui/common/images/icons/IcnSbRoaming.png",
+        "bytes": 15352,
+        "replacement_sha256": "c2bbcd60e60acffb2cea7ab497c9af376e86516572100cff76a1221456e38ae0",
+        "oem_size": 853,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "20_date2status-u.txt",
+    "line": 28,
+    "sources": [
+      "${MYDIR}/config_org/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/images/StatusBarBg.png"
+    ],
+    "destination": "/jci/gui/common/controls/StatusBar/images/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/StatusBar/images/StatusBarBg.png",
+        "source": "config_org/date-to-statusbar_mod/jci/gui/common/controls/StatusBar/images/StatusBarBg.png",
+        "bytes": 15931,
+        "replacement_sha256": "648fbd3f37b1224feac8112c7c856d16feb6bfa7f1f0bc7d3340a2fb26b85919",
+        "oem_size": 1451,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "20_mainmenu-i.txt",
+    "line": 142,
+    "sources": [
+      "/jci/gui/apps/system/controls/MainMenu/css/MainMenuCtrl.css"
+    ],
+    "destination": "${MYDIR}/bakups/test/MainMenuCtrl_after.css",
+    "overwrites": []
+  },
+  {
+    "script": "20_uistyle-i.txt",
+    "line": 77,
+    "sources": [
+      "/jci/gui/common/controls/List2/css/List2Ctrl.css"
+    ],
+    "destination": "${MYDIR}/bakups/test/List2Ctrl_after.css",
+    "overwrites": []
+  },
+  {
+    "script": "20_uistyle-i.txt",
+    "line": 78,
+    "sources": [
+      "/jci/gui/common/controls/NowPlaying4/css/NowPlaying4Ctrl.css"
+    ],
+    "destination": "${MYDIR}/bakups/test/NowPlaying4Ctrl_after.css",
+    "overwrites": []
+  },
+  {
+    "script": "21_colors-i.txt",
+    "line": 4,
+    "sources": [
+      "${MYDIR}/config/color-schemes/${COLORTHEME}/jci"
+    ],
+    "destination": "/",
+    "overwrites": []
+  },
+  {
+    "script": "21_colors-i.txt",
+    "line": 11,
+    "sources": [
+      "${MYDIR}/config/color-schemes/Blue/_skin_jci_bluedemo.zip"
+    ],
+    "destination": "/jci/nng/ux/",
+    "overwrites": []
+  },
+  {
+    "script": "21_colors-i2.txt",
+    "line": 4,
+    "sources": [
+      "${MYDIR}/config/color-schemes/${COLORTHEME}/jci"
+    ],
+    "destination": "/",
+    "overwrites": []
+  },
+  {
+    "script": "21_colors-i2.txt",
+    "line": 7,
+    "sources": [
+      "${MYDIR}/config/color-schemes/speedometer/${COLORTHEME}/*"
+    ],
+    "destination": "/jci/gui/apps/_speedometer/templates/SpeedoMeter/images/",
+    "overwrites": []
+  },
+  {
+    "script": "21_colors-i2.txt",
+    "line": 11,
+    "sources": [
+      "${MYDIR}/config/color-schemes/${COLORTHEME}/jci/gui/common/images/${COLORTHEME}.aio"
+    ],
+    "destination": "/jci/gui/common/images/",
+    "overwrites": []
+  },
+  {
+    "script": "21_colors-i2.txt",
+    "line": 16,
+    "sources": [
+      "${MYDIR}/config/color-schemes/Blue/_skin_jci_bluedemo.zip"
+    ],
+    "destination": "/jci/nng/ux/",
+    "overwrites": []
+  },
+  {
+    "script": "21_colors-u.txt",
+    "line": 4,
+    "sources": [
+      "${MYDIR}/config/color-schemes/Red/jci"
+    ],
+    "destination": "/",
+    "overwrites": []
+  },
+  {
+    "script": "21_theme-i.txt",
+    "line": 5,
+    "sources": [
+      "${MYDIR}/config/color-schemes/theme/jci"
+    ],
+    "destination": "/",
+    "overwrites": []
+  },
+  {
+    "script": "22_fuel-i.txt",
+    "line": 8,
+    "sources": [
+      "${MYDIR}/config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css"
+    ],
+    "destination": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css",
+        "source": "config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css",
+        "bytes": 17027,
+        "replacement_sha256": "5a6c7c0f63c25879d01fac47b2236f5f00ea2cccc8ced0a3a72dad7d758b70b8",
+        "oem_size": 17981,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "22_fuel-i.txt",
+    "line": 10,
+    "sources": [
+      "${MYDIR}/config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png"
+    ],
+    "destination": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png",
+        "source": "config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png",
+        "bytes": 46132,
+        "replacement_sha256": "efc60e21046b82a4e46b57e4c5db577f827e671e1bb4ba1e585f662f62613cc7",
+        "oem_size": 32694,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "22_fuel-i.txt",
+    "line": 12,
+    "sources": [
+      "${MYDIR}/config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js"
+    ],
+    "destination": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js",
+        "source": "config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js",
+        "bytes": 95112,
+        "replacement_sha256": "18451f9f691f6a5b997197aebe0cb6ce9890ece0ce6849005bfb67073a5e9bcb",
+        "oem_size": 93545,
+        "same_as_oem": false,
+        "oem_methods_removed": []
+      }
+    ]
+  },
+  {
+    "script": "22_fuel-i.txt",
+    "line": 29,
+    "sources": [
+      "/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css"
+    ],
+    "destination": "${MYDIR}/bakups/test/FuelConsumptionCtrl-after.css",
+    "overwrites": []
+  },
+  {
+    "script": "22_fuel-i.txt",
+    "line": 30,
+    "sources": [
+      "/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/FuelConsumptionCtrl-after.js",
+    "overwrites": []
+  },
+  {
+    "script": "22_fuel-u.txt",
+    "line": 15,
+    "sources": [
+      "${MYDIR}/config_org/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png"
+    ],
+    "destination": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png",
+        "source": "config_org/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png",
+        "bytes": 32694,
+        "replacement_sha256": "5f2cae2d84509954f647db35c3dc3c60e79e0184ba31857871f256ba43efee77",
+        "oem_size": 32694,
+        "same_as_oem": true
+      }
+    ]
+  },
+  {
+    "script": "22_fuel-u.txt",
+    "line": 20,
+    "sources": [
+      "/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css"
+    ],
+    "destination": "${MYDIR}/bakups/test/FuelConsumptionCtrl-after.css",
+    "overwrites": []
+  },
+  {
+    "script": "22_fuel-u.txt",
+    "line": 21,
+    "sources": [
+      "/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/FuelConsumptionCtrl-after.js",
+    "overwrites": []
+  },
+  {
+    "script": "22_fuelMPG-i.txt",
+    "line": 8,
+    "sources": [
+      "${MYDIR}/config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css"
+    ],
+    "destination": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css",
+        "source": "config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css",
+        "bytes": 17027,
+        "replacement_sha256": "5a6c7c0f63c25879d01fac47b2236f5f00ea2cccc8ced0a3a72dad7d758b70b8",
+        "oem_size": 17981,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "22_fuelMPG-i.txt",
+    "line": 10,
+    "sources": [
+      "${MYDIR}/config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png"
+    ],
+    "destination": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png",
+        "source": "config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png",
+        "bytes": 46132,
+        "replacement_sha256": "efc60e21046b82a4e46b57e4c5db577f827e671e1bb4ba1e585f662f62613cc7",
+        "oem_size": 32694,
+        "same_as_oem": false
+      }
+    ]
+  },
+  {
+    "script": "22_fuelMPG-i.txt",
+    "line": 12,
+    "sources": [
+      "${MYDIR}/config/FuelConsumptionTweak/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.MPG.js"
+    ],
+    "destination": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js",
+    "overwrites": []
+  },
+  {
+    "script": "22_fuelMPG-i.txt",
+    "line": 16,
+    "sources": [
+      "/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css"
+    ],
+    "destination": "${MYDIR}/bakups/test/FuelConsumptionCtrl-after.css",
+    "overwrites": []
+  },
+  {
+    "script": "22_fuelMPG-i.txt",
+    "line": 17,
+    "sources": [
+      "/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js"
+    ],
+    "destination": "${MYDIR}/bakups/test/FuelConsumptionCtrl-after.js",
+    "overwrites": []
+  },
+  {
+    "script": "24_castscreen-i.txt",
+    "line": 6,
+    "sources": [
+      "${MYDIR}/config/castscreen-receiver/*.sh"
+    ],
+    "destination": "/jci/scripts",
+    "overwrites": []
+  },
+  {
+    "script": "24_castscreen-i.txt",
+    "line": 7,
+    "sources": [
+      "${MYDIR}/config/castscreen-receiver/cs_receiver_arm"
+    ],
+    "destination": "/jci/scripts",
+    "overwrites": []
+  },
+  {
+    "script": "24_castscreen-i.txt",
+    "line": 8,
+    "sources": [
+      "${MYDIR}/config/castscreen-receiver/adb"
+    ],
+    "destination": "/jci/scripts",
+    "overwrites": []
+  },
+  {
+    "script": "24_castscreen-i.txt",
+    "line": 25,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_castscreen-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "24_castscreen-i.txt",
+    "line": 46,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_castscreen-after.sh",
+    "overwrites": []
+  },
+  {
+    "script": "24_castscreen-u.txt",
+    "line": 7,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_castscreen-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "24_castscreen-u.txt",
+    "line": 21,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_castscreen-after.sh",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 9,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_androidauto-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 35,
+    "sources": [
+      "/jci/sm/sm.conf"
+    ],
+    "destination": "${MYDIR}/bakups/test/sm_androidauto-before.conf",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 38,
+    "sources": [
+      "/jci/sm/sm.conf"
+    ],
+    "destination": "${MYDIR}/bakups/test/sm_androidauto-after_fix.conf",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 57,
+    "sources": [
+      "${MYDIR}/config/androidauto/jci/gui/apps/_androidauto"
+    ],
+    "destination": "/jci/gui/apps",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 58,
+    "sources": [
+      "${MYDIR}/config/androidauto/data_persist/dev/*"
+    ],
+    "destination": "/tmp/mnt/data_persist/dev",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 73,
+    "sources": [
+      "${MYDIR}/config/jci/opera/opera_dir/userjs/*.js"
+    ],
+    "destination": "/jci/opera/opera_dir/userjs/",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 99,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_androidauto-after.sh",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidauto-u.txt",
+    "line": 11,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_androidauto-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidauto-u.txt",
+    "line": 12,
+    "sources": [
+      "/jci/sm/sm.conf"
+    ],
+    "destination": "${MYDIR}/bakups/test/sm_androidauto-before.conf",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidauto-u.txt",
+    "line": 92,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_androidauto-after.sh",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidauto-u.txt",
+    "line": 93,
+    "sources": [
+      "/jci/sm/sm.conf"
+    ],
+    "destination": "${MYDIR}/bakups/test/sm_androidauto-after.conf",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidautob-i.txt",
+    "line": 3,
+    "sources": [
+      "${MYDIR}/config/androidautob/data_persist/dev/bin"
+    ],
+    "destination": "/tmp/mnt/data_persist/dev",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidautohud-i.txt",
+    "line": 4,
+    "sources": [
+      "${MYDIR}/config/androidautohud/*"
+    ],
+    "destination": "/tmp/mnt/data_persist/dev/bin",
+    "overwrites": []
+  },
+  {
+    "script": "25_androidautowifi-i.txt",
+    "line": 4,
+    "sources": [
+      "${MYDIR}/config/androidautowifi/*"
+    ],
+    "destination": "/tmp/mnt/data_persist/dev/bin",
+    "overwrites": []
+  },
+  {
+    "script": "26_usbaudiomod-i.txt",
+    "line": 9,
+    "sources": [
+      "${MYDIR}/config/USBAudioMod/NowPlaying4Ctrl.js"
+    ],
+    "destination": "/jci/gui/common/controls/NowPlaying4/js/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/common/controls/NowPlaying4/js/NowPlaying4Ctrl.js",
+        "source": "config/USBAudioMod/NowPlaying4Ctrl.js",
+        "bytes": 75334,
+        "replacement_sha256": "be66daba60458fd007dcdf5214f342114988625e3125ec95041f84be07c77748",
+        "oem_size": 91880,
+        "same_as_oem": false,
+        "oem_methods_removed": [
+          "_clearTitleImage",
+          "setTitleImagePath"
+        ]
+      }
+    ]
+  },
+  {
+    "script": "26_usbaudiomod-i.txt",
+    "line": 11,
+    "sources": [
+      "${MYDIR}/config/USBAudioMod/usbaudioApp.js"
+    ],
+    "destination": "/jci/gui/apps/usbaudio/js/",
+    "overwrites": [
+      {
+        "target": "/jci/gui/apps/usbaudio/js/usbaudioApp.js",
+        "source": "config/USBAudioMod/usbaudioApp.js",
+        "bytes": 198327,
+        "replacement_sha256": "c5f02f3d9b9ac374308ad3bbc5662262dece4032c9d2ec8d60ae8ccc6f71ff52",
+        "oem_size": 321247,
+        "same_as_oem": false,
+        "oem_methods_removed": [
+          "_AppleMusicRadiosContextReady",
+          "_AppleMusicRadiosCtxtContextIn",
+          "_AppleMusicRadiosCtxtContextOut",
+          "_BrowseArtistAlbumsInfoMsgHandler",
+          "_ClearTrackMetadataMsgHandler",
+          "_DbUpdateMsgHandler",
+          "_FolderBrowsingPossibleMsgHandler",
+          "_MetadataBrowsingPossibleMsgHandler",
+          "_MltPossibleMsgHandler",
+          "_PlaybackInterruptedMsgHandler",
+          "_PlaybackReady",
+          "_RepeatShuffleReady",
+          "_SendScreenTitleMsgHandler",
+          "_SetAppleFriendlyNameMsgHandler",
+          "_SetSongsListIndexMsgHandler",
+          "_SongListPossibleMsgHandler",
+          "_TooMuchFilesMsgHandler",
+          "_USBAudioCtxtIn",
+          "_appsdkGetCurrentFolderItems",
+          "_canGenerateMLT",
+          "_clearTrackInfo",
+          "_convertAlbumId",
+          "_convertAlbumIdCallback",
+          "_convertEmptyToUnknown",
+          "_countArtistAlbums",
+          "_countArtistAlbumsCallback",
+          "_createAlbumDisambiguateMdInfo",
+          "_createAlbumFilter",
+          "_createFilter",
+          "_disableCtrlBtnOnAudioInterrupted",
+          "_enableMLT",
+          "_enableUMASSMenu",
+          "_enableiPodMenu",
+          "_existBrowsingTable",
+          "_getAudiobookType",
+          "_getAudiobookTypeCallback",
+          "_getContextId",
+          "_getCurrentlyFocussedButton",
+          "_getFolderItemsCallback",
+          "_getItemInfoCallback",
+          "_getListItemByText",
+          "_isAppleDevice",
+          "_isIAP2Device",
+          "_removeExtention",
+          "_setCurrentlyFocussedButton",
+          "_setFilter",
+          "_setFocussedButton",
+          "_setIdLevel",
+          "_setIdLevelForMdInfoList",
+          "_setSongListCategory",
+          "_thereIsMoreThanOneArtist",
+          "_thereIsOnlyOneArtist",
+          "_umpFocusCallback",
+          "_umpPressCallback",
+          "_umpReleaseCallback",
+          "getWinkProperties"
+        ]
+      }
+    ]
+  },
+  {
+    "script": "26_usbaudiomod-i.txt",
+    "line": 13,
+    "sources": [
+      "${MYDIR}/config/USBAudioMod/*.png"
+    ],
+    "destination": "/jci/gui/common/images/icons/",
+    "overwrites": []
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 10,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_aio-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 29,
+    "sources": [
+      "${MYDIR}/config/jci/opera/opera_dir/userjs/additionalApps.js"
+    ],
+    "destination": "/jci/opera/opera_dir/userjs/",
+    "overwrites": []
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 34,
+    "sources": [
+      "${MYDIR}/config/jci/opera/opera_dir/userjs/aio.js"
+    ],
+    "destination": "/jci/opera/opera_dir/userjs/",
+    "overwrites": []
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 66,
+    "sources": [
+      "${MYDIR}/config/aio-app/jci/gui/apps/_aiotweaks"
+    ],
+    "destination": "/jci/gui/apps",
+    "overwrites": []
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 67,
+    "sources": [
+      "${MYDIR}/config/aio-app/data_persist/*"
+    ],
+    "destination": "/tmp/mnt/data_persist/",
+    "overwrites": []
+  },
+  {
+    "script": "27_aioapp-u.txt",
+    "line": 9,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi-aio_before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "27_aioapp-u.txt",
+    "line": 68,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi-aio_after.sh",
+    "overwrites": []
+  },
+  {
+    "script": "28_mzdmeter-i.txt",
+    "line": 9,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_mzd-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "28_mzdmeter-i.txt",
+    "line": 22,
+    "sources": [
+      "${MYDIR}/config/jci/opera/opera_dir/userjs/*.js"
+    ],
+    "destination": "/jci/opera/opera_dir/userjs/",
+    "overwrites": []
+  },
+  {
+    "script": "28_mzdmeter-i.txt",
+    "line": 42,
+    "sources": [
+      "${MYDIR}/config/mzdmeter/jci/gui/apps/*"
+    ],
+    "destination": "/jci/gui/apps/",
+    "overwrites": []
+  },
+  {
+    "script": "28_mzdmeter-i.txt",
+    "line": 45,
+    "sources": [
+      "${MYDIR}/config/mzdmeter/paa"
+    ],
+    "destination": "/",
+    "overwrites": []
+  },
+  {
+    "script": "28_mzdmeter-u.txt",
+    "line": 9,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_mzd-before.sh",
+    "overwrites": []
+  },
+  {
+    "script": "28_mzdmeter-u.txt",
+    "line": 54,
+    "sources": [
+      "${STAGE_WIFI}"
+    ],
+    "destination": "${MYDIR}/bakups/test/stage_wifi_mzd-after.sh",
+    "overwrites": []
+  }
+]

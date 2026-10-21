@@ -1,0 +1,22 @@
+[
+  {
+    "firmware": "70.00.100",
+    "compatibility_group": 6,
+    "test": "only original compatibility_check function; local synthetic version.ini; no installer execution"
+  },
+  {
+    "firmware": "70.00.360",
+    "compatibility_group": 6,
+    "test": "only original compatibility_check function; local synthetic version.ini; no installer execution"
+  },
+  {
+    "firmware": "70.00.361",
+    "compatibility_group": 7,
+    "test": "only original compatibility_check function; local synthetic version.ini; no installer execution"
+  },
+  {
+    "firmware": "74.00.324",
+    "compatibility_group": 0,
+    "test": "only original compatibility_check function; local synthetic version.ini; no installer execution"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "firmware": "74.00.324A EU",
+  "fork_commit": "75cedd23ed711aa2a34b4367a0446e28ab46d41e",
+  "script_count": 125,
+  "scripts_match_fork": true,
+  "vehicle_access": false,
+  "full_installers_executed": false,
+  "sed_engine": "GNU sed, Git for Windows; stdin/stdout only; restricted expressions",
+  "method_limitations": [
+    "Only direct sed/cp statements are parsed; dynamic commands and shell branches are not executed.",
+    "Every sed command is probed independently on pristine firmware bytes, not on a complete installed state.",
+    "No-change can be an expected already-installed/cleanup/alternate-branch case.",
+    "GNU sed and modern JavaScript parsing do not prove BusyBox/Opera runtime compatibility.",
+    "Copy analysis covers locally available, statically resolvable payload paths only.",
+    "No patch is approved for use on the vehicle by this audit."
+  ],
+  "probe_counts": {
+    "target_not_in_text_fixture": 41,
+    "no_change_on_pristine_file": 133,
+    "unresolved_target": 7,
+    "changes_pristine_file": 36,
+    "requires_option_expansion": 27,
+    "not_executed_expression_not_whitelisted": 3
+  }
+}

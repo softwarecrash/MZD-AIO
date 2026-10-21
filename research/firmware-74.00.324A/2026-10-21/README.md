@@ -12,6 +12,10 @@ Dieser Tagesordner enthält die heutige Geräteauslesung, Analyse und den vorber
 - 24 gezielt zugeordnete Textdateien wurden mit den in AIO enthaltenen v70-Vorlagen verglichen; 15 unterscheiden sich. Unterschiede allein beweisen weder Kompatibilität noch Inkompatibilität einzelner Patches.
 - Der USB-Test wurde lokal auf Shell-Syntax und JavaScript-Ablauf geprüft, aber noch nicht am Fahrzeug ausgeführt. Ein tastaturloser USB-Kaltstart ist noch nicht gelöst.
 
+## Patchpruefung
+
+Die [Offline-Pruefung aller 125 AIO-Skripte](patch-audit/README.md) dokumentiert 44 Pruefbereiche, konkrete v74-Konflikte und begrenzte lokale Texttests. Es besteht noch keine Freigabe fuer die Installation am Fahrzeug.
+
 ## Inhalt
 
 | Ordner | Inhalt |

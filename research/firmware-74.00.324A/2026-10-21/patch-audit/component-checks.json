@@ -1,0 +1,117 @@
+[
+  {
+    "component": "touchscreen-common",
+    "install_script": "01_touchscreen-i.txt",
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "s/ .Global.AtSpeed/ \\/\\/\"Global.AtSpeed/g"
+    ],
+    "scope": "selected text component only; branches modelled explicitly; not full installer",
+    "changed": true,
+    "idempotent_in_model": true,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "f13bc1298b44bff202449460a5b25eed57ef6254e21be54bd8027d4cf5478671",
+    "uninstall_script": "01_touchscreen-u.txt",
+    "text_round_trip_exact": true
+  },
+  {
+    "component": "list-beep",
+    "install_script": "07_listbeep-i.txt",
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/    this._beep('Long', 'Multicontroller');/\\/\\/  this._beep('Long', 'Multicontroller');/g"
+    ],
+    "scope": "selected text component only; branches modelled explicitly; not full installer",
+    "changed": true,
+    "idempotent_in_model": true,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "f546e128996cdc42fb04b1cecacf768b8f4affe7362d8b498c349d794c558e59",
+    "uninstall_script": "07_listbeep-u.txt",
+    "text_round_trip_exact": true
+  },
+  {
+    "component": "shorter-delay",
+    "install_script": "07_shorterdelay-i.txt",
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "/Shorter Delay Mod/d",
+      "s/autoscrollTier1Timeout :                1500,/autoscrollTier1Timeout :                150,/g",
+      "s/autoscrollTier2Timeout :                5000,/autoscrollTier2Timeout :                300,/g",
+      "s/autoscrollTier1Interval :               500,/autoscrollTier1Interval :               200,/g",
+      "s/autoscrollTier2Interval :               1000,/autoscrollTier2Interval :               300,/g",
+      "/autoscrollTier2Interval :               300,/ a\\        \\/\\/Shorter Delay Mod"
+    ],
+    "scope": "selected text component only; branches modelled explicitly; not full installer",
+    "changed": true,
+    "idempotent_in_model": true,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "a84dd60f7e0ca057e5d9719782309d7562b613c7dc32153b903572567a8ce2fc",
+    "uninstall_script": "07_shorterdelay-u.txt",
+    "text_round_trip_exact": true
+  },
+  {
+    "component": "system-beep",
+    "install_script": "08_sysbeep-i.txt",
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "s/    framework.sendEventToMmui(\"system\", \"PlayAudioBeep\", args);/    \\/\\/ framework.sendEventToMmui(\"system\", \"PlayAudioBeep\", args); \\/\\/ No More Beeps/g"
+    ],
+    "scope": "selected text component only; branches modelled explicitly; not full installer",
+    "changed": true,
+    "idempotent_in_model": true,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "b63812dcd3e839a676853c84036d54d71ce7f42e13818a767c27ae656862eeae"
+  },
+  {
+    "component": "reconnect-message",
+    "install_script": "00_reconnectmsg-i.txt",
+    "target": "/jci/gui/apps/system/js/systemApp.js",
+    "expressions": [
+      "/this._currentContextTemplate.dialog3Ctrl.setText1Id(\"ReconnectFailedBTAudio\")/ a\\        framework.sendEventToMmui(\"common\", \"Global.Yes\"); // Disable_Reconnect_Msg"
+    ],
+    "scope": "selected text component only; branches modelled explicitly; not full installer",
+    "changed": true,
+    "idempotent_in_model": true,
+    "before_sha256": "23106b04bd6bad514dd879b217a34a0f0289d58f86a0ae022488be6a022ca8e1",
+    "after_sha256": "4490099c05ba2e72fcd8b0ea2f4ea5ed4547c5d2500404023fad9e684c973b20"
+  },
+  {
+    "component": "diag-settle",
+    "install_script": "12_diag-i.txt",
+    "target": "/jci/gui/apps/diag/js/diagApp.js",
+    "expressions": [
+      "s/\"settleTime\" : 20000,/\"settleTime\" : 1000,/g"
+    ],
+    "scope": "selected text component only; branches modelled explicitly; not full installer",
+    "changed": true,
+    "idempotent_in_model": true,
+    "before_sha256": "a1e127b245049fa0fccd6237b4f83e3861dad65e02a6853672aa02e6ea89e67e",
+    "after_sha256": "959ebd396b22695df9480527cfcaf6d343852510e45d8835dd3515c09dfdcf78"
+  },
+  {
+    "component": "diag-hold",
+    "install_script": "12_diag-i.txt",
+    "target": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js",
+    "expressions": [
+      "s/\"holdTimeout\" : 5000,/\"holdTimeout\" : 1000,/g"
+    ],
+    "scope": "selected text component only; branches modelled explicitly; not full installer",
+    "changed": true,
+    "idempotent_in_model": true,
+    "before_sha256": "bd9e4e3deead409026951542d6424105fce2ef3186447e2efc0b43ca022873a7",
+    "after_sha256": "cc4d1becd2372df394d212a73833b04608771661b6fdbf697e403d18727d508e"
+  },
+  {
+    "component": "diag-entry",
+    "install_script": "12_diag-i.txt",
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "/this._diagEntrySequence = 1;/ a\\framework.sendEventToMmui(\"syssettings\", \"SelectDiagnostics\"); // Sumire Racing"
+    ],
+    "scope": "selected text component only; branches modelled explicitly; not full installer",
+    "changed": true,
+    "idempotent_in_model": true,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "d133f1ab80844762756006cd6de259b2adc8bd49ff35793a1c99b571f5814a6f"
+  }
+]

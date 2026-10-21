@@ -1,0 +1,2815 @@
+[
+  {
+    "script": "00_59patch.txt",
+    "source_blob_sha": "aee62f32ce1e0837fe6d923eecf96a9bd60a88cf",
+    "source_sha256": "b00179a7503b1738a693ccdeb2cb6956111c039a6fb63d52a2c15c31bd89e619",
+    "lines": 17,
+    "backup_calls": [
+      {
+        "line": 5,
+        "argument": "/jci/gui/apps/system/js/systemApp.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 3,
+        "condition": "if [ $COMPAT_GROUP -gt 2 ] && ! grep -Fq \"app.casdkapps\" /jci/gui/apps/system/js/systemApp.js"
+      },
+      {
+        "line": 6,
+        "condition": "if [ $COMPAT_GROUP -lt 6 ]"
+      },
+      {
+        "line": 10,
+        "condition": "elif [ $COMPAT_GROUP -eq 6 ]"
+      }
+    ],
+    "sed_probes": [],
+    "copy_commands": [
+      0,
+      1
+    ]
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "source_blob_sha": "a41f7f8aadf64026809637e61e745656c00ee460",
+    "source_sha256": "01a0ded3f9a1a6b0dd1ac4f309009adfa91baf72cdbdb76c22f5e6666ea719a7",
+    "lines": 444,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      0,
+      1,
+      2
+    ],
+    "copy_commands": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
+  {
+    "script": "00__aioapp.txt",
+    "source_blob_sha": "c8256e68b2b13106ea47e782f565e15edea46557",
+    "source_sha256": "273aae2af12493992eb98ebe114784996ec048bcd58123cd10f9be21f9ded1ed",
+    "lines": 12,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      3,
+      4
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "00__casdk-i.txt",
+    "source_blob_sha": "5aeeee9cfc2b7e7c7e4e86e6f0cf73382700ebb0",
+    "source_sha256": "0b200bb47b33f1733ee7eb8b999279870bb90fcbdb12f570d09fe3e35ed0bff8",
+    "lines": 98,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "copy_commands": [
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  {
+    "script": "00__casdk-u.txt",
+    "source_blob_sha": "043d1a3dcb331e23c666def8b8e64bb7f3f7550d",
+    "source_sha256": "8fd20d169c5a43e0ab15de883166e80841a86f767e4c6fa77ee3c39014f96668",
+    "lines": 101,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "00__casdkapps-i.txt",
+    "source_blob_sha": "94985547b1c3ef4e8c67109e4769a27b9a4ebc5f",
+    "source_sha256": "0d87c19b41c78f8a39fd2fb39c3434ce11c043b213706ee9fef42c729f823364",
+    "lines": 120,
+    "backup_calls": [
+      {
+        "line": 101,
+        "argument": "/jci/gui/apps/system/js/systemApp.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 99,
+        "condition": "if [ $COMPAT_GROUP -gt 2 ] && ! grep -Fq \"app.casdkapps\" /jci/gui/apps/system/js/systemApp.js"
+      },
+      {
+        "line": 102,
+        "condition": "if [ $COMPAT_GROUP -lt 6 ]"
+      },
+      {
+        "line": 106,
+        "condition": "elif [ $COMPAT_GROUP -eq 6 ]"
+      }
+    ],
+    "sed_probes": [
+      23
+    ],
+    "copy_commands": [
+      22,
+      23
+    ]
+  },
+  {
+    "script": "00__casdkapps-u.txt",
+    "source_blob_sha": "91e3e52b75dba5a3f05dd2a19d9160dd3529e881",
+    "source_sha256": "4694bfeafeb37247c09d121843db4dd9287095897eacb7c91de3b93fa091d4e8",
+    "lines": 46,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      24,
+      25
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "00__node-i.txt",
+    "source_blob_sha": "bdc96c8fef9fa69c809f7109ea7b5560c95a6fdf",
+    "source_sha256": "8c05ac851538d2dc6e3ce09074b04f4afa19602ee68ff4401533c44f5f5d27b4",
+    "lines": 6,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "00_background.txt",
+    "source_blob_sha": "dce049c0d3df861734e1ee077cd69e3a75bbb17f",
+    "source_sha256": "8dee693f9ba4d3b9b068b13e23e71c0bca10f0db85f1511199264b0611f384c5",
+    "lines": 22,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      24,
+      25
+    ]
+  },
+  {
+    "script": "00_backup.txt",
+    "source_blob_sha": "c6de38131f7810707489f8e1181bbd0bf5cf8f3d",
+    "source_sha256": "cd545fbf34021f2a1109e72449e345a498da109a181b221e8889d6977860722d",
+    "lines": 39,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      26
+    ]
+  },
+  {
+    "script": "00_bgrotator-i.txt",
+    "source_blob_sha": "e1e8a5ce7d399a57d42ddfc76413a5dd7d3b6d37",
+    "source_sha256": "3e7e83ac68cceb98398b257e9df49bab519d95c5099c90235dcd9972059e0fc8",
+    "lines": 34,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/common/css/common.css"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      26
+    ],
+    "copy_commands": [
+      27
+    ]
+  },
+  {
+    "script": "00_bgrotator-u.txt",
+    "source_blob_sha": "f1ff3f2ae3b54dd86d51b3da69976b47f2889d74",
+    "source_sha256": "f492c34c3796d5ebbfd2e4e295faba7c5f1512986b4e10840491d6fb5963eeeb",
+    "lines": 21,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 12,
+        "argument": "/jci/gui/common/css/common.css)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [
+      27
+    ],
+    "copy_commands": [
+      28
+    ]
+  },
+  {
+    "script": "00_end.txt",
+    "source_blob_sha": "e58f6c2f237f953f2337486ed66a3247d9a5c4be",
+    "source_sha256": "7e40e5fc9e02759825c5b37444f0794f092cb8632535cd3285117645bb6268b3",
+    "lines": 36,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 2,
+        "argument": "/etc/profile"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "00_factory-reset-end.txt",
+    "source_blob_sha": "f3218c38bbfaba265ebfe2c3518324763bdd33c9",
+    "source_sha256": "9d3b9d4f4ddffc71f30570360313cc01578ef629b30dea873f3f473b692e84a8",
+    "lines": 44,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "00_intro.txt",
+    "source_blob_sha": "0518e3c9bba3993ebc336651579ee79e81b6f135",
+    "source_sha256": "51206c9097bf8bd6d863624c4ea95aebaff731a8c0f4b02f46e744a7dac85395",
+    "lines": 38,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "00_multicontroller-i.txt",
+    "source_blob_sha": "9cdace20cd0d5b6617ee549dd5aeb07a61ec9f8d",
+    "source_sha256": "3b492be84dfe322d9d26d86b19968d6ffc27ee4417d98ae895ccb4b808c7bc28",
+    "lines": 16,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/common/js/Multicontroller.js"
+      }
+    ],
+    "restore_calls": [
+      {
+        "line": 13,
+        "argument": "/jci/gui/common/js/Multicontroller.js"
+      }
+    ],
+    "version_checks": [
+      {
+        "line": 6,
+        "condition": "if [ $COMPAT_GROUP -le 6 ]"
+      }
+    ],
+    "sed_probes": [],
+    "copy_commands": [
+      29
+    ]
+  },
+  {
+    "script": "00_offbackground-i.txt",
+    "source_blob_sha": "009fbd2ef5d9a2088f13eb8ccd742cc95088f1df",
+    "source_sha256": "2a4c5d86b4ad1c1e45ecd67dca7da65c1a728b3872d31e02258c396bab9b2cb9",
+    "lines": 15,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/apps/system/controls/OffScreen/images/OffScreenBackground.png"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      30
+    ]
+  },
+  {
+    "script": "00_offbackground-u.txt",
+    "source_blob_sha": "0d6499eab2dd37f48a50ab09a6b9172138d61e01",
+    "source_sha256": "c34a1a35341191f37eba8818f032b64b4da18a2b6dafc1868abe61925a606b9f",
+    "lines": 13,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 5,
+        "argument": "/jci/gui/apps/system/controls/OffScreen/images/OffScreenBackground.png)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      31
+    ]
+  },
+  {
+    "script": "00_reconnectmsg-i.txt",
+    "source_blob_sha": "b5c3d6e917d0eb1c407eb527c7b17a096a48f3e8",
+    "source_sha256": "cd9cbf487f054c77fa3ffae17f7702b164b59c16e77c0a07f93aa37a8bbcd56b",
+    "lines": 13,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/apps/system/js/systemApp.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      28
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "00_sd-cid.txt",
+    "source_blob_sha": "75cb690c3bcaa58afc9b54504dfb327ccd1fd96b",
+    "source_sha256": "6fbc6d802369fe90c84a5d8f423e716bfec141278e753f49a7111cddd69080d0",
+    "lines": 22,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      32,
+      33,
+      34
+    ]
+  },
+  {
+    "script": "00_sshbringback.txt",
+    "source_blob_sha": "9fb628200cca343823b3518c292f3ed0a7cb95e8",
+    "source_sha256": "557d3a2ac70307fff3a7099bc09ce899f63227a50545f5b814d97bc1cd5dac28",
+    "lines": 54,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 8,
+        "condition": "if [ \"${CMU_SW_VER}\" = \"56.00.511A-EU\" ] \\"
+      },
+      {
+        "line": 9,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.512A-EU\" ] \\"
+      },
+      {
+        "line": 10,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.513B-EU\" ] \\"
+      },
+      {
+        "line": 11,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.511A-ADR\" ] \\"
+      },
+      {
+        "line": 12,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.512A-ADR\" ] \\"
+      },
+      {
+        "line": 13,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.513C-ADR\" ] \\"
+      },
+      {
+        "line": 14,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.514A-ADR\" ] \\"
+      },
+      {
+        "line": 15,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.521A-EU\" ] \\"
+      },
+      {
+        "line": 16,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.513C-EU\" ] \\"
+      },
+      {
+        "line": 17,
+        "condition": "|| [ $COMPAT_GROUP -ne 1 ] \\"
+      }
+    ],
+    "sed_probes": [],
+    "copy_commands": [
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ]
+  },
+  {
+    "script": "00_start.txt",
+    "source_blob_sha": "d4dcc1985c3ba36ab4041015c3e6d9ff24b142d5",
+    "source_sha256": "242763f64dc479d0f61152484bd3f9c17ce6e8c310db50dceda6dfe98952ed35",
+    "lines": 742,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 201,
+        "condition": "if [ $COMPAT_GROUP -gt 5 ] && [ $APPS2RESOURCES -eq 1 ]"
+      },
+      {
+        "line": 270,
+        "condition": "if [ $COMPAT_GROUP -ne 6 ] || [ ! -d \"${MYDIR}/config_org/v70/\" ]"
+      },
+      {
+        "line": 602,
+        "condition": "if [ $COMPAT_GROUP -eq 0 ] && [ $CMU_VER -lt 55 ]"
+      },
+      {
+        "line": 612,
+        "condition": "if [ $COMPAT_GROUP -gt 6 ]"
+      },
+      {
+        "line": 616,
+        "condition": "elif [ $COMPAT_GROUP -ne 0 ]"
+      }
+    ],
+    "sed_probes": [
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "copy_commands": [
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65
+    ]
+  },
+  {
+    "script": "00_storage-i.txt",
+    "source_blob_sha": "b985ec0874aaaa3c4be19d2996d3441e802a4ced",
+    "source_sha256": "f675a395656c5306592f1788c6988082a9aba6777684354602bba0c0d490b6ea",
+    "lines": 36,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      66,
+      67,
+      68
+    ]
+  },
+  {
+    "script": "00_storage-u.txt",
+    "source_blob_sha": "0466481ba9935de50f97e3f6cbf363063d90c5c8",
+    "source_sha256": "51bfa777e5d334c219cf2bb4bcbc4c10a2bce307c6f3bff6eca9d77b60ea0b81",
+    "lines": 20,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      69
+    ]
+  },
+  {
+    "script": "00_wifi.txt",
+    "source_blob_sha": "33f0db992769011fedcd30c5820d75e35350985c",
+    "source_sha256": "596dc0a07f56d4efef5322dbafc2444be709464cfda282184bb65ba499716eeb",
+    "lines": 24,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/apps/syssettings/js/syssettingsApp.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      43
+    ],
+    "copy_commands": [
+      70,
+      71
+    ]
+  },
+  {
+    "script": "01_touchscreen-i.txt",
+    "source_blob_sha": "2a3491e0b2953673aa1c9926e98bae280bef63c0",
+    "source_sha256": "d75d55a25b2a7127431dda38e687391a3db05aa5b1f7d301c4ac3eef1024740b",
+    "lines": 30,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/common/js/Common.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      44
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "01_touchscreen-u.txt",
+    "source_blob_sha": "3738f8d0b047dbcda66dc136f4573ec007ec3a3d",
+    "source_sha256": "f28dbf0bcdacc461ed82b9640a4c22b5ca87fb5ddfd294c4a01da6a1fbb60b64",
+    "lines": 16,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      45
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "02_disclaimer-i.txt",
+    "source_blob_sha": "569dfa1d61d8bb4efc54672235762867d438278f",
+    "source_sha256": "646448f9234746344bdf23e18439c8e2b55bbd5fb2fd9068cc497e8d907f6681",
+    "lines": 71,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/apps/system/js/systemApp.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 7,
+        "condition": "if [ $COMPAT_GROUP -eq 1 ]"
+      },
+      {
+        "line": 10,
+        "condition": "elif [ $COMPAT_GROUP -ge 2 ] && [ $COMPAT_GROUP -le 5 ]"
+      },
+      {
+        "line": 15,
+        "condition": "elif [ $COMPAT_GROUP -eq 6 ]"
+      },
+      {
+        "line": 20,
+        "condition": "elif [ $COMPAT_GROUP -gt 6 ]"
+      }
+    ],
+    "sed_probes": [],
+    "copy_commands": [
+      72,
+      73,
+      74,
+      75,
+      76
+    ]
+  },
+  {
+    "script": "02_disclaimer-u.txt",
+    "source_blob_sha": "05d0a92eebdce9896fd7ec153e261f14e6a77f98",
+    "source_sha256": "f55af266980d1a0c92b01932b9d59b491929ebcc7c669048e3440df76c940df5",
+    "lines": 44,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 37,
+        "argument": "/jci/gui/apps/system/js/systemApp.js)"
+      }
+    ],
+    "version_checks": [
+      {
+        "line": 7,
+        "condition": "if [ $COMPAT_GROUP -eq 1 ]"
+      },
+      {
+        "line": 10,
+        "condition": "elif [ $COMPAT_GROUP -ge 2 ] && [ $COMPAT_GROUP -le 5 ]"
+      },
+      {
+        "line": 15,
+        "condition": "elif [ $COMPAT_GROUP -eq 6 ]"
+      }
+    ],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "03_warning-i.txt",
+    "source_blob_sha": "5c0ffb8dcca64dab38e2e75cd9a7ce742896c837",
+    "source_sha256": "200aae908390dfd85b3f9a9697dc8e88065dd3ac9562399ee855683ebe433fc1",
+    "lines": 10,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      77
+    ]
+  },
+  {
+    "script": "03_warning-u.txt",
+    "source_blob_sha": "42c906a966fb8c4b47c34c2e8a5c15abd1e889ea",
+    "source_sha256": "6543d5982bbf9af72a85cf9ced1bd85dbad743c8c7a9d85202d9e3388d8625d4",
+    "lines": 10,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      78
+    ]
+  },
+  {
+    "script": "04_sensor-i.txt",
+    "source_blob_sha": "b8889e09589b0d4b46881cf863874544235b3974",
+    "source_sha256": "eb485e1210cad60b0dc356799578920f3e9e985275fb291f285e4744d4086ae4",
+    "lines": 14,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      79,
+      80,
+      81
+    ]
+  },
+  {
+    "script": "04_sensor-u.txt",
+    "source_blob_sha": "cf80cf29305ab7d212730813bd11304b34e0da68",
+    "source_sha256": "d7eb0519dba40be178c1707e22259619f403aeda2a7532d70fc496a60a8acb39",
+    "lines": 14,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      82,
+      83,
+      84
+    ]
+  },
+  {
+    "script": "05_mainloop-i.txt",
+    "source_blob_sha": "f45a82a45c99d4c1d76762feedc9486a113450f1",
+    "source_sha256": "3870cb8eeca75516222e44f45806f4a569e1755b4dc97fdd335cd88772bf0acc",
+    "lines": 14,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 6,
+        "condition": "if [ $COMPAT_GROUP -le 7 ]"
+      }
+    ],
+    "sed_probes": [],
+    "copy_commands": [
+      85
+    ]
+  },
+  {
+    "script": "05_mainloop-u.txt",
+    "source_blob_sha": "8ea228d61f2f90cfbf1a4cdd447a4d92269a3125",
+    "source_sha256": "0a8197ae2dfed3de573d1601b000d998bbe00b3be6031ef83a900682f2b4c900",
+    "lines": 12,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 5,
+        "argument": "/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "06_listloop-i.txt",
+    "source_blob_sha": "12cd359d9ee5f4392a0ad370d098ac4241f7f3fe",
+    "source_sha256": "b66f48be0da40dcb2206cf1fd0c8cb2f9e2b7c8ed111fbf3de18d33bf8a3db2c",
+    "lines": 34,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/common/controls/List2/js/List2Ctrl.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 14,
+        "condition": "if [ $COMPAT_GROUP -le 6 ]"
+      }
+    ],
+    "sed_probes": [
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "copy_commands": [
+      86
+    ]
+  },
+  {
+    "script": "06_listloop-u.txt",
+    "source_blob_sha": "29d6fc3b981a0f327c5bd1f6d222dc9e44b48e93",
+    "source_sha256": "72fb86fff577836678c40de52f480636207da1b6584fbd27e2383de0957539d8",
+    "lines": 23,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 8,
+        "argument": "/jci/gui/common/controls/List2/js/List2Ctrl.js)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [
+      51,
+      52,
+      53,
+      54,
+      55
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "07_listbeep-i.txt",
+    "source_blob_sha": "bbb1724f13da4939c5e4d466a49ad632568e9937",
+    "source_sha256": "cde872dba6099ddf164ab6320b778a2608f3a054afa034c532a1639d67c7ee24",
+    "lines": 12,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/common/controls/List2/js/List2Ctrl.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      56
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "07_listbeep-u.txt",
+    "source_blob_sha": "d41d4ad70e1cb74835708ca2202176742f50ac54",
+    "source_sha256": "a98c0ab142b31e2604cc504a3eaef8f7f9aaaa6f5fcbbae6194617dc634a42a7",
+    "lines": 10,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      57
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "07_shorterdelay-i.txt",
+    "source_blob_sha": "0b6c4e9f89b3372debd7bb82afcf504a6909827d",
+    "source_sha256": "e61ef2f61bd650470aa5be63baa026d9241977a485ecf1d97722ce6114ac1230",
+    "lines": 17,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/common/controls/List2/js/List2Ctrl.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "07_shorterdelay-u.txt",
+    "source_blob_sha": "842747d5c00c6b3dc71594497195abe2bedf40a6",
+    "source_sha256": "692b2e1a8d7db276aa2d388ef5356e396a98e253d2ee916b983e91c04ce2ab69",
+    "lines": 14,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      64,
+      65,
+      66,
+      67,
+      68
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "08_orderflac-i.txt",
+    "source_blob_sha": "1639c3a601ce1d3fd8ef5318714066c53bd796d5",
+    "source_sha256": "5289cc6b487b5d0914a4b8a3ea081f8acf203a7af469cdd629596eb55b341b5d",
+    "lines": 81,
+    "backup_calls": [
+      {
+        "line": 3,
+        "argument": "/jci/lib/libmc_user.so"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 1,
+        "condition": "if [ $COMPAT_GROUP -lt 5 ]"
+      },
+      {
+        "line": 9,
+        "condition": "if [ \"${CMU_SW_VER}\" = \"56.00.100A-ADR\" ] \\"
+      },
+      {
+        "line": 10,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.240B-ADR\" ] \\"
+      },
+      {
+        "line": 11,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.230A-EU\" ] \\"
+      },
+      {
+        "line": 12,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"55.00.650A-NA\" ] \\"
+      },
+      {
+        "line": 13,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"55.00.753A-NA\" ] \\"
+      },
+      {
+        "line": 14,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"55.00.760A-NA\" ]"
+      },
+      {
+        "line": 19,
+        "condition": "if [ \"${CMU_SW_VER}\" = \"56.00.511A-EU\" ] \\"
+      },
+      {
+        "line": 20,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.512A-EU\" ] \\"
+      },
+      {
+        "line": 21,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"58.00.250A-NA\" ] \\"
+      },
+      {
+        "line": 22,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.513C-EU\" ] \\"
+      },
+      {
+        "line": 23,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.513B-EU\" ] \\"
+      },
+      {
+        "line": 24,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.513C-ADR\" ] \\"
+      },
+      {
+        "line": 25,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.521A-NA\" ]"
+      },
+      {
+        "line": 29,
+        "condition": "elif [ \"${CMU_SW_VER}\" = \"59.00.326A-ADR\" ] \\"
+      },
+      {
+        "line": 30,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"59.00.330A-ADR\" ] \\"
+      },
+      {
+        "line": 31,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"59.00.342A-ADR\" ] \\"
+      },
+      {
+        "line": 32,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"59.00.441A-NA\" ] \\"
+      },
+      {
+        "line": 33,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"59.00.443C-EU\" ] \\"
+      },
+      {
+        "line": 34,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"59.00.331A-EU\" ]"
+      }
+    ],
+    "sed_probes": [],
+    "copy_commands": [
+      87,
+      88,
+      89,
+      90,
+      91
+    ]
+  },
+  {
+    "script": "08_orderflac-u.txt",
+    "source_blob_sha": "c42a9630c8df860b011c22006c5acd5666fc30e0",
+    "source_sha256": "0f47284d678642332471141e7857a9914b04e697a465c0d75f7851a2bf8eef52",
+    "lines": 23,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 1,
+        "condition": "if [ $COMPAT_GROUP -lt 5 ]"
+      }
+    ],
+    "sed_probes": [],
+    "copy_commands": [
+      92
+    ]
+  },
+  {
+    "script": "08_sysbeep-i.txt",
+    "source_blob_sha": "27d47797c6196e2f50162d3198eb2e10abd397d1",
+    "source_sha256": "9d8f589ce01ba2038bd728e0b8cd48ac7903117689554eaba20ec69a4e9d5464",
+    "lines": 34,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/common/js/Common.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      69,
+      70,
+      71
+    ],
+    "copy_commands": [
+      93
+    ]
+  },
+  {
+    "script": "08_sysbeep-u.txt",
+    "source_blob_sha": "f9611a270fa36acacf5adf5fcf2b048274aeed2d",
+    "source_sha256": "9b9bb5bb4031bac4f8041fec7d4268dfe727e273047cc76bae8ef0cba346c458",
+    "lines": 21,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      72,
+      73,
+      74
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "09_audioorder-i.txt",
+    "source_blob_sha": "e2a615e6d595d8238730b4e25984653e0b6ffd90",
+    "source_sha256": "827eb5b0f68c76aead9bb38c2a80c9590ffd08d4061ea963f3a89502cf28e303",
+    "lines": 66,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/apps/system/js/systemApp.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 6,
+        "condition": "if [ $COMPAT_GROUP -eq 1 ]"
+      },
+      {
+        "line": 9,
+        "condition": "elif [ $COMPAT_GROUP -ge 2 ] && [ $COMPAT_GROUP -le 5 ]"
+      },
+      {
+        "line": 14,
+        "condition": "elif [ $COMPAT_GROUP -eq 6 ]"
+      },
+      {
+        "line": 19,
+        "condition": "elif [ $COMPAT_GROUP -gt 6 ]"
+      }
+    ],
+    "sed_probes": [],
+    "copy_commands": [
+      94,
+      95
+    ]
+  },
+  {
+    "script": "09_audioorder-u.txt",
+    "source_blob_sha": "493d68302e036e38686c7d4e8cec26d86abd84c3",
+    "source_sha256": "0501149ca1c1e57209d0f47eaf7f5f3c531e24f1a53b1fbfb9ed1dfd9034aa85",
+    "lines": 43,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 36,
+        "argument": "/jci/gui/apps/system/js/systemApp.js)"
+      }
+    ],
+    "version_checks": [
+      {
+        "line": 6,
+        "condition": "if [ $COMPAT_GROUP -eq 1 ]"
+      },
+      {
+        "line": 9,
+        "condition": "elif [ $COMPAT_GROUP -ge 2 ] && [ $COMPAT_GROUP -le 5 ]"
+      },
+      {
+        "line": 14,
+        "condition": "elif [ $COMPAT_GROUP -eq 6 ]"
+      }
+    ],
+    "sed_probes": [],
+    "copy_commands": [
+      96,
+      97
+    ]
+  },
+  {
+    "script": "10_pausemute-i.txt",
+    "source_blob_sha": "98b465c3c0fb07c133361efe5988c275f4b95ec7",
+    "source_sha256": "0cd806da20c52cb03e9c842c09b6298e062a80a8d597bf89cb3c6c7e7f42cbec",
+    "lines": 23,
+    "backup_calls": [
+      {
+        "line": 7,
+        "argument": "/jci/gui/common/js/Common.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 2,
+        "condition": "if [ $COMPAT_GROUP -gt 5 ]"
+      }
+    ],
+    "sed_probes": [
+      75
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "10_pausemute-u.txt",
+    "source_blob_sha": "695c5062239e3fae3928720ce00854c3979ff2b2",
+    "source_sha256": "6adafd36702f98e2b8409fe5c51b4af69e8b249ccfb0e3a3810627384e38e360",
+    "lines": 22,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 13,
+        "argument": "/jci/gui/common/js/Common.js)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [
+      76
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "11_msgreplies-i.txt",
+    "source_blob_sha": "b07f330588c72a863128cffb6e7af7b2beca14ad",
+    "source_sha256": "c60fd8aafca8428e223df2e1b99905542ff48534cbdff9ca34199a2d28cafb99",
+    "lines": 17,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/settings/configurations/blm_msg-system.xml"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      77
+    ],
+    "copy_commands": [
+      98
+    ]
+  },
+  {
+    "script": "11_msgreplies-u.txt",
+    "source_blob_sha": "d29868e599bf6cff6ce39265fd6b41bbcfd0c4c7",
+    "source_sha256": "309f5847ccb3d0a4d70b3fad4c402b1c5e7ab557fb9f9215ca9d86db42432f1e",
+    "lines": 11,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 5,
+        "argument": "/jci/settings/configurations/blm_msg-system.xml)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "12_diag-i.txt",
+    "source_blob_sha": "a168a774456466ea161f50e3aee9fb41b902a097",
+    "source_sha256": "0a4e07a90171be2b714c4fea8de8e6bbf2df6df387add2823f209434cdec0acd",
+    "lines": 41,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/apps/diag/js/diagApp.js"
+      },
+      {
+        "line": 2,
+        "argument": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js"
+      },
+      {
+        "line": 3,
+        "argument": "/jci/gui/common/js/Common.js"
+      },
+      {
+        "line": 4,
+        "argument": "/jci/gui/apps/diag/controls/Test/js/TestCtrl.js"
+      },
+      {
+        "line": 5,
+        "argument": "/jci/gui/apps/diag/controls/Test/css/TestCtrl.css"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      78,
+      79,
+      80
+    ],
+    "copy_commands": [
+      99,
+      100,
+      101,
+      102
+    ]
+  },
+  {
+    "script": "12_diag-u.txt",
+    "source_blob_sha": "e6482694efad0838522132ba2a770853f58a0331",
+    "source_sha256": "1bb1f626ff67d2cb8420c9072189e5bbf65f280372a4b4a0ae9260dc63b65efe",
+    "lines": 46,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 31,
+        "argument": "/jci/gui/apps/diag/controls/Test/js/TestCtrl.js)"
+      },
+      {
+        "line": 35,
+        "argument": "/jci/gui/apps/diag/controls/Test/css/TestCtrl.css)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [
+      81,
+      82,
+      83
+    ],
+    "copy_commands": [
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    ]
+  },
+  {
+    "script": "13_boot-i.txt",
+    "source_blob_sha": "0027621a50fe7ab664d8a72896fe9036320434a3",
+    "source_sha256": "dc7db307b0d4f6b2d60cf19cf5440996c314742d386a0e8a5e6ceebef029a3a2",
+    "lines": 146,
+    "backup_calls": [
+      {
+        "line": 6,
+        "argument": "/jci/resources/TranLogo.ivf"
+      },
+      {
+        "line": 7,
+        "argument": "/jci/resources/TranLogoEnd.ivf"
+      },
+      {
+        "line": 8,
+        "argument": "\"$LOOP_LOGO\""
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137
+    ]
+  },
+  {
+    "script": "13_boot-u.txt",
+    "source_blob_sha": "b851ed3925c9dec25a91755f27050060c0be1752",
+    "source_sha256": "873beb206bce12be298ba82b988d2c98882badffb6a2dd68d37f100a0c643dcc",
+    "lines": 28,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 5,
+        "argument": "/jci/resources/LoopLogo.ivf)"
+      },
+      {
+        "line": 9,
+        "argument": "/jci/resources/TranLogo.ivf)"
+      },
+      {
+        "line": 13,
+        "argument": "/jci/resources/TranLogoEnd.ivf)"
+      },
+      {
+        "line": 17,
+        "argument": "/jci/resources/ExitLogo.ivf)"
+      },
+      {
+        "line": 21,
+        "argument": "/jci/resources/newLoopLogo.ivf)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "14_bgart-i.txt",
+    "source_blob_sha": "68ed8a92f34b0ffcd475eec057d56efffd1c1159",
+    "source_sha256": "38f5edb50dbdb40ad1f5f8d92f807760d59a10cc72bc51443eff806a95e45301",
+    "lines": 35,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/common/controls/NowPlaying4/css/NowPlaying4Ctrl.css"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      138,
+      139
+    ]
+  },
+  {
+    "script": "14_bgart-u.txt",
+    "source_blob_sha": "3a1b4aa8fb0956ff965d29b116960b5bf975e95b",
+    "source_sha256": "a5169a0331916218425086c54f139b4c7d5781f0e37c76739b94acd4637fb77b",
+    "lines": 17,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 9,
+        "argument": "/jci/gui/common/controls/NowPlaying4/css/NowPlaying4Ctrl.css)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "15_btnbackground-i.txt",
+    "source_blob_sha": "a8196f1b93d38d841a40ac13976b5a2d89bc14e7",
+    "source_sha256": "9620a2153ece147ac771d90edd03d83972c4ec0c9d3948c536df980c73fdf828",
+    "lines": 68,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/common/controls/Ump3/css/Ump3Ctrl.css"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      84
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "15_btnbackground-u.txt",
+    "source_blob_sha": "85896de8daa1f3a1634bd10242b193eed636e3df",
+    "source_sha256": "c9538ad62b6c9b98b7aa1ded8af39aa1d215fee8d17ea2c02aa88adba31213fb",
+    "lines": 26,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 6,
+        "argument": "/jci/gui/common/controls/Ump3/images/UMP_Bg.png)"
+      },
+      {
+        "line": 10,
+        "argument": "/jci/gui/common/controls/Ump3/images/UMP_Bg_Arch.png)"
+      },
+      {
+        "line": 14,
+        "argument": "/jci/gui/common/controls/Ump3/images/UMP_Btn_Separator.png)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [
+      85
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "16_blnkframe-i.txt",
+    "source_blob_sha": "2cfe21a98553fda9d9175ddd084ec8875ce3bc92",
+    "source_sha256": "d4e9db2a147f9cbf80407a2ade87f543461c8036ddc8f8f2d703e5a5f40bdf7a",
+    "lines": 11,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      140,
+      141,
+      142
+    ]
+  },
+  {
+    "script": "16_blnkframe-u.txt",
+    "source_blob_sha": "e9719f87ad92ab80b62507a06fa944ad509879ca",
+    "source_sha256": "2099c3e9a7c77ad9f2b0b10c41aca1823067b72ef99f8af9093398afbdfa722f",
+    "lines": 11,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      143,
+      144,
+      145
+    ]
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "source_blob_sha": "8d28288b97138e6431053bded09d258ae39acee9",
+    "source_sha256": "8e92101d1668c0b0f475dd63ee2d9ac393e4cb06547815a58a67c7cbea6facc8",
+    "lines": 111,
+    "backup_calls": [
+      {
+        "line": 99,
+        "argument": "/etc/profile"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 84,
+        "condition": "if $VP_V4LSINK && [ $COMPAT_GROUP -lt 6 ]"
+      }
+    ],
+    "sed_probes": [
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97
+    ],
+    "copy_commands": [
+      146,
+      147,
+      148,
+      149,
+      150,
+      151
+    ]
+  },
+  {
+    "script": "17_videoplayer-u.txt",
+    "source_blob_sha": "24d06f74256d4edb95284442f144773475636f5c",
+    "source_sha256": "4aba07d81818e88d4ab4e2043df787c0cf2fe1482aabfadd1bc55a3dac36c9dd",
+    "lines": 61,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      98,
+      99,
+      100
+    ],
+    "copy_commands": [
+      152,
+      153
+    ]
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "source_blob_sha": "94e1ad42d2f49b34ef75f58673bdf0fc49fe567b",
+    "source_sha256": "2d44202b8e9bfc15e52d43b371dc90ca06f74267fb6a404a45b4787c6b558ccb",
+    "lines": 60,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113
+    ],
+    "copy_commands": [
+      154,
+      155
+    ]
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "source_blob_sha": "8024a759ea13c8ba3f782541bfd0b10049f4f1ff",
+    "source_sha256": "80bdb23321dd89164a8daf01c302d1fefa37de137bfb14a7cc53da5f21c90555",
+    "lines": 37,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125
+    ],
+    "copy_commands": [
+      156,
+      157
+    ]
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "source_blob_sha": "d7db84e4943e822371086afd39a7073dff08feba",
+    "source_sha256": "69d2a6842fc3466c9cb15758eac2628b6070b1258884338866a8ce0b69c4dd06",
+    "lines": 71,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138
+    ],
+    "copy_commands": [
+      158
+    ]
+  },
+  {
+    "script": "19_sbfuelbar.txt",
+    "source_blob_sha": "fcbd47df92f45ac6e1aa379b5c2f8306b8ab4f5d",
+    "source_sha256": "7e14d8fdc983a785a2c127ba13050d5ef355b8b6f996be6d9a1d4738c685e4b8",
+    "lines": 7,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      139,
+      140
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-analog.txt",
+    "source_blob_sha": "a49a2d9c4bdb36dd8ddf59827343712d2650d420",
+    "source_sha256": "be81efd34529e56aa58eb0bfb0cd59840ca9d40e4807ee005cd35e4683e1919a",
+    "lines": 4,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      141
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-digiclock.txt",
+    "source_blob_sha": "0fddc686c2400d42d0006e4706879d8f6332c6e0",
+    "source_sha256": "763f6c05eff2554f0f6906694146417e9775b6744a73521c7237f0913bb6d81f",
+    "lines": 3,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      142
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-dutch.txt",
+    "source_blob_sha": "8a9280e1736656474782aef6ebbf5c2225234d2e",
+    "source_sha256": "fe1801beb16310c2b6757389eb4e368e186bc44b74400bf1122c5185aafa220f",
+    "lines": 4,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      143
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-english.txt",
+    "source_blob_sha": "7ce755fb9b98e3822443d1836aa36fee22805468",
+    "source_sha256": "8b127e7e9fea177d790741e048b590685f929c1f991ec9f165dc7fb9b31f8f4e",
+    "lines": 4,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      144
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-french.txt",
+    "source_blob_sha": "8e61b87aba49080b74fef04bf98a6debe5606c00",
+    "source_sha256": "4ef417647147bb9cc723e361b58f07a130323b5b9093f7baee5bd43eb64e878c",
+    "lines": 4,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      145
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "source_blob_sha": "706ea610274d85340b3bb0fa246d24aa16753eeb",
+    "source_sha256": "ae07ee39deee3810e3f2a054e8620b50fce838062e20bbc9780e74e27b2ea567",
+    "lines": 200,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 127,
+        "condition": "if [ ! -d /mnt/sd_nav/content/speedcam ] || [ $COMPAT_GROUP -ne 1  ]"
+      }
+    ],
+    "sed_probes": [
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168
+    ],
+    "copy_commands": [
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167
+    ]
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "source_blob_sha": "55e9b98e7d1432d575ac6a02944a7a775eb2257d",
+    "source_sha256": "bbeb91ad99c99db82de34dba4a65171250f79582fbba02fcbcae45031d908158",
+    "lines": 58,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178
+    ],
+    "copy_commands": [
+      168,
+      169
+    ]
+  },
+  {
+    "script": "19_speedo-italian.txt",
+    "source_blob_sha": "a16e24afa119514fccfac254ebec00831d96ac33",
+    "source_sha256": "e381bea756d8cafcc2759b7c3af84beaf9e75993a5c6663a2e6472337d5b8c75",
+    "lines": 4,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      179
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-kml.txt",
+    "source_blob_sha": "4d351c44df2796e48173b944e5cc620f3a7c19f3",
+    "source_sha256": "15f11ee5d419d7ddd25711f284c3a928b84d8ece5d68c3e43c747d9d6eb45b41",
+    "lines": 3,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      180
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-lrgtxt.txt",
+    "source_blob_sha": "6e7c780049c611db4e72e43a7cc6f9d339e05730",
+    "source_sha256": "73b97527997b34bdd5bf43323691324ff44872268fcb69afcc65b7521d986cae",
+    "lines": 3,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      181
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-mph.txt",
+    "source_blob_sha": "55e5317bc27b68072949d51e7dca4b7418faca76",
+    "source_sha256": "e6f44f873ec8bed92748e3700a3879fc664dc8312e507e30b35a38e1c594a332",
+    "lines": 4,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      182
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-old_background.txt",
+    "source_blob_sha": "1fad4a190057d0560644dfe4f503c1b47d71bfee",
+    "source_sha256": "fc16d75ebc1c5bb71724b2fc23fcf575f53a05f90eb2cfc4310fa42cf52fc458",
+    "lines": 4,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      183
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-own_background.txt",
+    "source_blob_sha": "ea2589f70feb93f426f9a41af60260bd72c8c067",
+    "source_sha256": "23091ee46e3eb89b6f8017a384dabd2fd78f2888a6907d8162043c79c1850c42",
+    "lines": 8,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      184
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-polish.txt",
+    "source_blob_sha": "eb926ddb5ecc8988dc369d21af05c7789089525e",
+    "source_sha256": "aad29802e95cd4041af6abe44d47e7df99e194acfc89922b95cee1148e5f6c29",
+    "lines": 4,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      185
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-sbdonthide.txt",
+    "source_blob_sha": "22396992a0933171d23226bb375ef7e427d8b5a2",
+    "source_sha256": "2fd763defcfbcc9874f0178b43438167977201586460ddfa7ec0bd789af4d3b1",
+    "lines": 3,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      186
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-sbhiderev.txt",
+    "source_blob_sha": "b83e4b4d9d7994e7ec97b744866f1ef8a01dcb96",
+    "source_sha256": "06920123455d4340e70a9288e9517ea15a1f7cbe0f99ed6b46405b4caab00904",
+    "lines": 3,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      187
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-slovak.txt",
+    "source_blob_sha": "93e7afd87c56cca59200f37d058604ddb0ce3f2d",
+    "source_sha256": "6474ef7ac6df21bfa573a50473418651768036f8997d391ac877752b06a1d957",
+    "lines": 4,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      188
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-small_speedo_off.txt",
+    "source_blob_sha": "70920963e0f74d1902bee0461bc8120cf5fa6aa5",
+    "source_sha256": "54ef549da58eb808569687b081d09f53272dbf894feeb0f33fda56d00c50d567",
+    "lines": 4,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      189
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-spanish.txt",
+    "source_blob_sha": "776c03464e7d887e81a84c84ae254907f4ead1c9",
+    "source_sha256": "304731680775c6e865f7974f41ef68d3654acc323dd2bd6ba52f296218c293a2",
+    "lines": 4,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      190
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-temp.txt",
+    "source_blob_sha": "ffc2a3c8047535cafd25e509da0a51be6347867f",
+    "source_sha256": "6b36ed97e28487ce758f3f5ddc6a635a349e2735e545dfa5c41d27a3ad018bbd",
+    "lines": 3,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      191
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-turkish.txt",
+    "source_blob_sha": "f2af968916850de41f6a7206259bd5b0c151c615",
+    "source_sha256": "a20a11bab5838d2d3a65ee3bdf7d45c5749b3d6df1de7c2eff9c0f4c27558e98",
+    "lines": 4,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      192
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "19_speedo-u.txt",
+    "source_blob_sha": "3053bcc64413f55628d9dd5d92cbbdef43e3f1c8",
+    "source_sha256": "8b4e4debcec02bbd9bdc3bef2a39f7de6399bdb87d5525e7d357d57a66535056",
+    "lines": 60,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      193,
+      194,
+      195
+    ],
+    "copy_commands": [
+      170,
+      171
+    ]
+  },
+  {
+    "script": "19_speedo_bar.txt",
+    "source_blob_sha": "dcd0b291f58d06c8e5146ae2cb8db92fe0e04f09",
+    "source_sha256": "bb8922ece42fa494b85b9ba1624c184ce4891cf2af74754f6fda4672a03049e5",
+    "lines": 3,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      196
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "20_date-iv1.txt",
+    "source_blob_sha": "877232518344941f74bb75d3cdb1f364412072af",
+    "source_sha256": "921bd7b65e463115d0cf4bd8fbdfddfed046b0a45494182296d99c1296b44ebd",
+    "lines": 68,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/framework/js/Utility.js"
+      },
+      {
+        "line": 2,
+        "argument": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js"
+      },
+      {
+        "line": 3,
+        "argument": "/jci/gui/common/controls/Sbn/css/SbnCtrl.css"
+      },
+      {
+        "line": 4,
+        "argument": "/jci/gui/common/controls/StatusBar/css/StatusBarCtrl.css"
+      },
+      {
+        "line": 5,
+        "argument": "/jci/gui/common/controls/StatusBar/images/StatusBarBg.png"
+      },
+      {
+        "line": 6,
+        "argument": "/jci/gui/common/images/icons/IcnSbRoaming.png"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 13,
+        "condition": "if [ \"${CMU_SW_VER}\" = \"56.00.100A-ADR\" ] \\"
+      },
+      {
+        "line": 14,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.230A-ADR\" ] \\"
+      },
+      {
+        "line": 15,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.240B-ADR\" ] \\"
+      },
+      {
+        "line": 16,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.511A-ADR\" ] \\"
+      },
+      {
+        "line": 17,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.512A-ADR\" ] \\"
+      },
+      {
+        "line": 18,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.513C-ADR\" ] \\"
+      },
+      {
+        "line": 19,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.514A-ADR\" ] \\"
+      },
+      {
+        "line": 20,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.521A-EU\" ] \\"
+      },
+      {
+        "line": 21,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.230A-EU\" ] \\"
+      },
+      {
+        "line": 22,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.210A-EU\" ] \\"
+      },
+      {
+        "line": 23,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.511A-EU\" ] \\"
+      },
+      {
+        "line": 24,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.512A-EU\" ] \\"
+      },
+      {
+        "line": 25,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.513B-EU\" ] \\"
+      },
+      {
+        "line": 26,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.513C-EU\" ] \\"
+      },
+      {
+        "line": 27,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"55.00.650A-NA\" ] \\"
+      },
+      {
+        "line": 28,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"55.00.753A-NA\" ] \\"
+      },
+      {
+        "line": 29,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"55.00.760A-NA\" ] \\"
+      },
+      {
+        "line": 30,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.521A-NA\" ] \\"
+      },
+      {
+        "line": 31,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.401A-JP\" ] \\"
+      },
+      {
+        "line": 32,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"56.00.403A-JP\" ]"
+      },
+      {
+        "line": 38,
+        "condition": "if [ \"${CMU_SW_VER}\" = \"59.00.331A-EU\" ] \\"
+      },
+      {
+        "line": 39,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"58.00.250A-NA\" ] \\"
+      },
+      {
+        "line": 40,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"59.00.330A-NA\" ] \\"
+      },
+      {
+        "line": 41,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"59.00.441A-NA\" ] \\"
+      },
+      {
+        "line": 42,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"59.00.443A-NA\" ] \\"
+      },
+      {
+        "line": 43,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"59.00.330A-EU\" ] \\"
+      },
+      {
+        "line": 44,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"59.00.443C-ADR\" ] \\"
+      },
+      {
+        "line": 45,
+        "condition": "|| [ \"${CMU_SW_VER}\" = \"59.00.326A-ADR\" ]"
+      }
+    ],
+    "sed_probes": [],
+    "copy_commands": [
+      172,
+      173,
+      174,
+      175
+    ]
+  },
+  {
+    "script": "20_date-iv3.3.txt",
+    "source_blob_sha": "ef3fe58c16fa64e06cba9ab2846f691895cfc884",
+    "source_sha256": "f1738c4ccc1473310310f91ff64e8faa1b22d0d7da117758dc229ebd3d2550fd",
+    "lines": 125,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js"
+      },
+      {
+        "line": 2,
+        "argument": "/jci/gui/common/controls/Sbn/css/SbnCtrl.css"
+      },
+      {
+        "line": 3,
+        "argument": "/jci/gui/common/controls/StatusBar/css/StatusBarCtrl.css"
+      },
+      {
+        "line": 6,
+        "argument": "/jci/gui/framework/js/Utility.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 109,
+        "condition": "if [ $COMPAT_GROUP -gt 6 ]"
+      }
+    ],
+    "sed_probes": [],
+    "copy_commands": [
+      176,
+      177,
+      178,
+      179,
+      180,
+      181
+    ]
+  },
+  {
+    "script": "20_date-u.txt",
+    "source_blob_sha": "c88a5154350c014c924c9ea00d17971ae4d85a62",
+    "source_sha256": "3eafcfcf71bb2db0dde8747ca858f16ec004a21241f47b6a163f00358627eff8",
+    "lines": 34,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 5,
+        "argument": "/jci/gui/common/controls/Sbn/css/SbnCtrl.css)"
+      },
+      {
+        "line": 9,
+        "argument": "/jci/gui/common/controls/StatusBar/css/StatusBarCtrl.css)"
+      },
+      {
+        "line": 13,
+        "argument": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js)"
+      },
+      {
+        "line": 17,
+        "argument": "/jci/gui/common/controls/StatusBar/images/StatusBarBg.png)"
+      },
+      {
+        "line": 22,
+        "argument": "/jci/gui/common/images/icons/IcnSbRoaming.png)"
+      },
+      {
+        "line": 27,
+        "argument": "/jci/gui/framework/js/Utility.js)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      182,
+      183
+    ]
+  },
+  {
+    "script": "20_date2status-u.txt",
+    "source_blob_sha": "8b32f68313d5459c1e0f250ac5ff779311a079d7",
+    "source_sha256": "8becd032ca0f517ea45659fc8b3465d9aa39a10183f1590db102536dbc5a890c",
+    "lines": 33,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 6,
+        "argument": "/jci/gui/framework/js/Utility.js)"
+      },
+      {
+        "line": 15,
+        "argument": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js)"
+      },
+      {
+        "line": 21,
+        "argument": "/jci/gui/common/images/icons/IcnSbRoaming.png)"
+      },
+      {
+        "line": 26,
+        "argument": "/jci/gui/common/controls/StatusBar/images/StatusBarBg.png)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      184,
+      185
+    ]
+  },
+  {
+    "script": "20_mainmenu-i.txt",
+    "source_blob_sha": "8fae6c38646568582ac605d08ac8896e8bee0fde",
+    "source_sha256": "b457c76037d38a2935b320c913242ae92e8f085453e34a00d67fc6f80fb5aab7",
+    "lines": 146,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/apps/system/controls/MainMenu/css/MainMenuCtrl.css"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      186
+    ]
+  },
+  {
+    "script": "20_mainmenu-u.txt",
+    "source_blob_sha": "8e6aa069e439e02599b34040e8f97c4147b94397",
+    "source_sha256": "481d78d1e9c8117c0775897bae590dba83bf5c0cfd7c8d9d9a2ab166fca01aed",
+    "lines": 10,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "20_statusbar_tweaks-i.txt",
+    "source_blob_sha": "c1f04fcfd99074a3923397402cfb04b2f24c04e3",
+    "source_sha256": "02a32544332e9b8ffce142aef25ef3c6be2d527cd1309fb3510be3e3cc092d3a",
+    "lines": 52,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/common/controls/StatusBar/css/StatusBarCtrl.css"
+      },
+      {
+        "line": 2,
+        "argument": "/jci/gui/common/controls/Sbn/css/SbnCtrl.css"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "20_statusbar_tweaks-u.txt",
+    "source_blob_sha": "887b1eb0fd460ca31c4552c09b33cb29e1c05545",
+    "source_sha256": "5032b34c63f483f040cbd75525cb7fa33145863a04aa2ab990647561e85fe8f8",
+    "lines": 10,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "20_uistyle-i.txt",
+    "source_blob_sha": "ba93ee83a4dcc4a87c4539201059b51f38101cd7",
+    "source_sha256": "82d39f4b70cbb88b55095540875f6279a3ea3f3591d068a99106426fc1cf9c36",
+    "lines": 84,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/common/controls/List2/css/List2Ctrl.css"
+      },
+      {
+        "line": 2,
+        "argument": "/jci/gui/common/controls/NowPlaying4/css/NowPlaying4Ctrl.css"
+      },
+      {
+        "line": 3,
+        "argument": "/jci/gui/common/css/common.css"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      197,
+      198,
+      199
+    ],
+    "copy_commands": [
+      187,
+      188
+    ]
+  },
+  {
+    "script": "20_uistyle-u.txt",
+    "source_blob_sha": "fdeef5d080d5faf97ec5652aa6a4f7d294a593c1",
+    "source_sha256": "b74ece577603f56a000b71f37b61a0d6d443f871d7bc00974dac05f9b9378cb2",
+    "lines": 13,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      200
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "21_colors-i.txt",
+    "source_blob_sha": "88196b575106fb62f7c7d7daf65fb0d762134f26",
+    "source_sha256": "f111b312a4f196ccd0c1d39ba4b614827a7e8538e42bf1883593a666c6137329",
+    "lines": 16,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      189,
+      190
+    ]
+  },
+  {
+    "script": "21_colors-i1.txt",
+    "source_blob_sha": "28d59d0c8e661b633c9fd5c65a9562eb07641bf2",
+    "source_sha256": "7059b9f2058252bdf2295c12408863cba2c8a0be52b24beefca4adab35b3c90c",
+    "lines": 2,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "21_colors-i2.txt",
+    "source_blob_sha": "1283f15763643bb7067bc328cefe5d1f611a1094",
+    "source_sha256": "36f03f43cd24e7a74be27222e9963c5996e5b6763e2e11e89bb43ea72f0aac69",
+    "lines": 22,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      191,
+      192,
+      193,
+      194
+    ]
+  },
+  {
+    "script": "21_colors-u.txt",
+    "source_blob_sha": "33348e26962934e8518c0a7f467291baf2921119",
+    "source_sha256": "6425ec240715a3be0ad7db0193f75f9afc0b1ace9b9eb36f4dcb1c69c0341857",
+    "lines": 15,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      195
+    ]
+  },
+  {
+    "script": "21_theme-i.txt",
+    "source_blob_sha": "9da86b7b0be557dd3d413d3ecaecba6f38f5405e",
+    "source_sha256": "6db910f8705f3c7dba83fe8f59257977c8f49b29a30365efe0cf5edd05c30b4e",
+    "lines": 9,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      196
+    ]
+  },
+  {
+    "script": "22_fuel-i.txt",
+    "source_blob_sha": "c4e00d72154f1a790c0be045c5d1ba1605f53ed6",
+    "source_sha256": "d4acb14ea0d7bd3de2f91ba7caf64fa00ff3aaa1eb522fa66dd404bb1b1bb417",
+    "lines": 34,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css"
+      },
+      {
+        "line": 2,
+        "argument": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png"
+      },
+      {
+        "line": 3,
+        "argument": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      201,
+      202
+    ],
+    "copy_commands": [
+      197,
+      198,
+      199,
+      200,
+      201
+    ]
+  },
+  {
+    "script": "22_fuel-u.txt",
+    "source_blob_sha": "938ea85ec10bb63cef9380101bd8ec70a77efe10",
+    "source_sha256": "2543d5089924a0c201bc09943011cbae870986d36f876299924dde5e8e879641",
+    "lines": 25,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 5,
+        "argument": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css)"
+      },
+      {
+        "line": 9,
+        "argument": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js)"
+      },
+      {
+        "line": 13,
+        "argument": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      202,
+      203,
+      204
+    ]
+  },
+  {
+    "script": "22_fuelMPG-i.txt",
+    "source_blob_sha": "8cd35582e2327616cde4a7978c39714c5e28f18d",
+    "source_sha256": "8c185830f20fbf156c23a0679c8f5da8df8d277491e222900aa47327667d9a08",
+    "lines": 21,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/css/FuelConsumptionCtrl.css"
+      },
+      {
+        "line": 2,
+        "argument": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/images/FuelConsBG.png"
+      },
+      {
+        "line": 3,
+        "argument": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      205,
+      206,
+      207,
+      208,
+      209
+    ]
+  },
+  {
+    "script": "24_castscreen-i.txt",
+    "source_blob_sha": "6bdc18ef51ed390524373f51d905a34e045c7325",
+    "source_sha256": "3ee9ab705fa7fe7a3ac372ab510d21cab4137724707c7c0f71fa516cda5178d8",
+    "lines": 63,
+    "backup_calls": [
+      {
+        "line": 1,
+        "argument": "/jci/scripts/jci-fw.sh"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      203,
+      204,
+      205,
+      206,
+      207,
+      208
+    ],
+    "copy_commands": [
+      210,
+      211,
+      212,
+      213,
+      214
+    ]
+  },
+  {
+    "script": "24_castscreen-u.txt",
+    "source_blob_sha": "476237e927e979f98ffc9b0f3ff341561a342f6b",
+    "source_sha256": "1778f9d2954eae4c16d0a2c78310df824f4b095137bdc741191042fd0ea7cecf",
+    "lines": 26,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      209,
+      210
+    ],
+    "copy_commands": [
+      215,
+      216
+    ]
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "source_blob_sha": "b4acae2ce8d9f4d4d6b9ab0ce2a6628a85224677",
+    "source_sha256": "8c0310001499140d9de69b89a1eb818fed6b76c845794316a0af68f17a561cc6",
+    "lines": 108,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220
+    ],
+    "copy_commands": [
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223
+    ]
+  },
+  {
+    "script": "25_androidauto-u.txt",
+    "source_blob_sha": "3d7944ba93ecc89a16bf5670150e4f8e3210e2d8",
+    "source_sha256": "9df032559f3fe6ce9f999ef4716817524e9f43279ffdea1754e5bbba5c4cea2d",
+    "lines": 97,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      221,
+      222,
+      223,
+      224,
+      225,
+      226
+    ],
+    "copy_commands": [
+      224,
+      225,
+      226,
+      227
+    ]
+  },
+  {
+    "script": "25_androidautob-i.txt",
+    "source_blob_sha": "56f78f3b0783523fc5922ef45875e41bc6b18aaa",
+    "source_sha256": "46670f1cdd8ecb134cf2224702639faf8def9fe7bcccb87b186d492ff8d9104f",
+    "lines": 7,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      227
+    ],
+    "copy_commands": [
+      228
+    ]
+  },
+  {
+    "script": "25_androidautocargps.txt",
+    "source_blob_sha": "5ef5e30a816c795b9223bf908b9d05ae3279a016",
+    "source_sha256": "2795b5ff746ed8db78c46b5fdb837a561183cac8967a6204c6af7341c167350d",
+    "lines": 2,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      228
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "25_androidautohud-i.txt",
+    "source_blob_sha": "d1f843f6b1ef1c98103129950b07c48c607767c4",
+    "source_sha256": "98906007764d8e5c795f540bba1aa7a0b80e472ed14155a985955409d7fd8a5a",
+    "lines": 10,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      229
+    ],
+    "copy_commands": [
+      229
+    ]
+  },
+  {
+    "script": "25_androidautorevgps.txt",
+    "source_blob_sha": "3c1e371d7383df3c8d85686305c1e63d65190c1c",
+    "source_sha256": "981d626cf8501d5a42d85f286aa1cc3977d014f2d1169644e0e4e2b03389eb26",
+    "lines": 2,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      230
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "25_androidautowifi-i.txt",
+    "source_blob_sha": "a2224bcd7a5fc60662cfbe83ae4ad9528885fc71",
+    "source_sha256": "d1e5b56059595588ab2b6f82356daa94c65ec337b280b579366f801c83f60293",
+    "lines": 10,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      231
+    ],
+    "copy_commands": [
+      230
+    ]
+  },
+  {
+    "script": "26_usbaudiomod-i.txt",
+    "source_blob_sha": "a24284b31c1d9b2459dda4f52b659ba6824355b5",
+    "source_sha256": "c38e37e80bd63e16709ea2383a288a58168a79e844dfbb7ea7628556107005b6",
+    "lines": 27,
+    "backup_calls": [
+      {
+        "line": 3,
+        "argument": "/jci/gui/common/controls/NowPlaying4/js/NowPlaying4Ctrl.js"
+      },
+      {
+        "line": 4,
+        "argument": "/jci/gui/common/controls/NowPlaying4/css/NowPlaying4Ctrl.css"
+      },
+      {
+        "line": 5,
+        "argument": "/jci/gui/apps/usbaudio/js/usbaudioApp.js"
+      }
+    ],
+    "restore_calls": [],
+    "version_checks": [
+      {
+        "line": 1,
+        "condition": "if [ $COMPAT_GROUP -lt 5 ]"
+      }
+    ],
+    "sed_probes": [
+      232
+    ],
+    "copy_commands": [
+      231,
+      232,
+      233
+    ]
+  },
+  {
+    "script": "26_usbaudiomod-u.txt",
+    "source_blob_sha": "e32998c85b14a9cbf4218b041c1ab9b2f3072b65",
+    "source_sha256": "caf37b71dcf695c84925a98303c4d7bdf216a5d2924755d8cffe83428fc02a3b",
+    "lines": 23,
+    "backup_calls": [],
+    "restore_calls": [
+      {
+        "line": 6,
+        "argument": "/jci/gui/common/controls/NowPlaying4/js/NowPlaying4Ctrl.js)"
+      },
+      {
+        "line": 10,
+        "argument": "/jci/gui/apps/usbaudio/js/usbaudioApp.js)"
+      }
+    ],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "source_blob_sha": "7781ecd59be8458a869b42e7f19be1c2ebfa9209",
+    "source_sha256": "61435411c433ab7f309558fddf0cd0bee7d908431a752a5e06808b7f2f74c121",
+    "lines": 84,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241
+    ],
+    "copy_commands": [
+      234,
+      235,
+      236,
+      237,
+      238
+    ]
+  },
+  {
+    "script": "27_aioapp-screenoff.txt",
+    "source_blob_sha": "0039e430802428bdac938dcf513f9d2fe5a3b7e5",
+    "source_sha256": "c276ff4351626b435b2547f197fbe5d081a2ad55873e8cf6038f89530ac99875",
+    "lines": 2,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      242
+    ],
+    "copy_commands": []
+  },
+  {
+    "script": "27_aioapp-u.txt",
+    "source_blob_sha": "160f7af838f161d2fed32b2b4c12df447804466e",
+    "source_sha256": "a18ba23798bc4690a8fb31b43db5634a33b9eb0a7f538e615f159c839a3fb115",
+    "lines": 73,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      243,
+      244
+    ],
+    "copy_commands": [
+      239,
+      240
+    ]
+  },
+  {
+    "script": "28_mzdmeter-i.txt",
+    "source_blob_sha": "f0e4402404d458fd324d28f18fc2a7f737b75673",
+    "source_sha256": "2385267c099cebef739a4ca145d0e1491d12d79518979487f01db7c18645d1bf",
+    "lines": 49,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": [
+      241,
+      242,
+      243,
+      244
+    ]
+  },
+  {
+    "script": "28_mzdmeter-u.txt",
+    "source_blob_sha": "0d208ae91b906a0b379edaf4af1dba0230a0591c",
+    "source_sha256": "c071c0415bfaf4dc23137a49dd499ef6bf430d7ea3dcf43b1b8eedf30580b23e",
+    "lines": 59,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [
+      245,
+      246
+    ],
+    "copy_commands": [
+      245,
+      246
+    ]
+  },
+  {
+    "script": "99_self-destruct.txt",
+    "source_blob_sha": "6e3ecbdfaf0304d843b65f382195d6d4dbcd8e9f",
+    "source_sha256": "60d90c2e27832d38cd9c432fb49b4c21aab9922a1c89f4a341e12ed577c0db06",
+    "lines": 30,
+    "backup_calls": [],
+    "restore_calls": [],
+    "version_checks": [],
+    "sed_probes": [],
+    "copy_commands": []
+  }
+]

@@ -1,0 +1,2901 @@
+[
+  {
+    "script": "00___fullRestore.sh",
+    "line": 132,
+    "target": "/jci/gui/common/controls/StatusBar/css/StatusBarCtrl.js.org",
+    "expressions": [
+      "/this.date/d"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 143,
+    "target": "/jci/gui/common/controls/StatusBar/css/StatusBarCtrl.js",
+    "expressions": [
+      "/this.date/d"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "00___fullRestore.sh",
+    "line": 314,
+    "target": "/jci/sm/sm.conf",
+    "expressions": [
+      "/input_filter/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84",
+    "after_sha256": "fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84",
+    "stderr": ""
+  },
+  {
+    "script": "00__aioapp.txt",
+    "line": 5,
+    "target": "./aio.json",
+    "expressions": [
+      "s/\\}\\]/\\},\\n\\  {\\n    \"tweakName\": \"${1}\", \"inst\": ${2},\\n    \"AIOver\": \"${AIO_VER}\",\\n    \"instdate\": \"${AIO_DATE}\"\\n  \\}\\]/"
+    ],
+    "result": "unresolved_target"
+  },
+  {
+    "script": "00__aioapp.txt",
+    "line": 8,
+    "target": "./aio.json",
+    "expressions": [
+      "s/\"tweakName\": \"${1}\", \"inst\":.*,/\"tweakName\": \"${1}\", \"inst\": ${2},/"
+    ],
+    "result": "unresolved_target"
+  },
+  {
+    "script": "00__casdk-i.txt",
+    "line": 20,
+    "target": "/jci/opera/opera_home/opera.ini",
+    "expressions": [
+      "s/Console Error Log Enabled=0/Console Error Log Enabled=1/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "a6db0eb9a67198dd0c55cae34ad7459a42241392421710196acba6313a2a988e",
+    "after_sha256": "efb2ed7ede3f5766d02358a0a3998d84d1b92dbc47627ce2e3c7cdec99295d84",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-i.txt",
+    "line": 21,
+    "target": "/jci/opera/opera_home/opera.ini",
+    "expressions": [
+      "s/Console Error Log=$OPERA_HOME\\/error.log/Console Error Log=\\/tmp\\/root\\/casdk-error.log/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "00__casdk-i.txt",
+    "line": 43,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/vdt/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-i.txt",
+    "line": 44,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/CASDK Data/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-i.txt",
+    "line": 45,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/#!/ a\\### CASDK Data"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "c1f02791801a39c6755d520076ddb120a7345227d7bf85bfb298a5b1bd43227c",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-i.txt",
+    "line": 47,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/CASDK Data/ i\\ "
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-i.txt",
+    "line": 48,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/CASDK Data/ a\\sh /tmp/mnt/resources/aio/autorun/mzd-casdk.start &"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-u.txt",
+    "line": 51,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/# CASDK/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-u.txt",
+    "line": 52,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/casdk/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-u.txt",
+    "line": 53,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/vdt/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-u.txt",
+    "line": 54,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/################/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-u.txt",
+    "line": 55,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/# one time/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-u.txt",
+    "line": 56,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/# 1s update/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-u.txt",
+    "line": 57,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/# 60s update/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-u.txt",
+    "line": 58,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/# 300s update/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-u.txt",
+    "line": 59,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/mzd-casdk.start/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-u.txt",
+    "line": 71,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Terminal/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdk-u.txt",
+    "line": 72,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/terminal/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdkapps-i.txt",
+    "line": 68,
+    "target": "${MZD_APPS_JS}",
+    "expressions": [
+      "/];/d"
+    ],
+    "result": "unresolved_target"
+  },
+  {
+    "script": "00__casdkapps-u.txt",
+    "line": 20,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Terminal/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00__casdkapps-u.txt",
+    "line": 21,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/terminal.sh/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "00_bgrotator-i.txt",
+    "line": 8,
+    "target": "/jci/gui/common/css/common.css",
+    "expressions": [
+      "/.. MZD-AIO-TI CSS ../,/.. END AIO CSS ../d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "807d2215bf76c94978ce1e8aeb0f268665b14a6d326e89836ef641c79a8cc4d1",
+    "after_sha256": "807d2215bf76c94978ce1e8aeb0f268665b14a6d326e89836ef641c79a8cc4d1",
+    "stderr": ""
+  },
+  {
+    "script": "00_bgrotator-u.txt",
+    "line": 5,
+    "target": "/jci/gui/common/css/common.css",
+    "expressions": [
+      "/.. MZD-AIO-TI CSS ../,/.. END AIO CSS ../d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "807d2215bf76c94978ce1e8aeb0f268665b14a6d326e89836ef641c79a8cc4d1",
+    "after_sha256": "807d2215bf76c94978ce1e8aeb0f268665b14a6d326e89836ef641c79a8cc4d1",
+    "stderr": ""
+  },
+  {
+    "script": "00_reconnectmsg-i.txt",
+    "line": 9,
+    "target": "/jci/gui/apps/system/js/systemApp.js",
+    "expressions": [
+      "/this._currentContextTemplate.dialog3Ctrl.setText1Id(\"ReconnectFailedBTAudio\")/ a\\        framework.sendEventToMmui(\"common\", \"Global.Yes\"); // Disable_Reconnect_Msg"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "23106b04bd6bad514dd879b217a34a0f0289d58f86a0ae022488be6a022ca8e1",
+    "after_sha256": "4490099c05ba2e72fcd8b0ea2f4ea5ed4547c5d2500404023fad9e684c973b20",
+    "stderr": ""
+  },
+  {
+    "script": "00_start.txt",
+    "line": 54,
+    "target": "${MZD_APPS_JS}",
+    "expressions": [
+      "/${CASDK_APP}/d"
+    ],
+    "result": "unresolved_target"
+  },
+  {
+    "script": "00_start.txt",
+    "line": 67,
+    "target": "${MZD_APPS_JS}",
+    "expressions": [
+      "/${CASDK_APP}/d"
+    ],
+    "result": "unresolved_target"
+  },
+  {
+    "script": "00_start.txt",
+    "line": 122,
+    "target": "${1}",
+    "expressions": [
+      "/.. MZD-AIO-TI *${2} *CSS ../,/.. END AIO *${2} *CSS ../d"
+    ],
+    "result": "unresolved_target"
+  },
+  {
+    "script": "00_start.txt",
+    "line": 130,
+    "target": "${1}",
+    "expressions": [
+      "/.. MZD-AIO-TI.${2}.JS ../,/.. END AIO.${2}.JS ../d"
+    ],
+    "result": "unresolved_target"
+  },
+  {
+    "script": "00_start.txt",
+    "line": 458,
+    "target": "/jci/opera/opera_dir/userjs/additionalApps.json",
+    "expressions": [
+      "s/\"label\": \"${2}\" \\}/\"label\": \"${2}\", \"preload\": \"${3}\" \\}/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "00_start.txt",
+    "line": 498,
+    "target": "/jci/opera/opera_dir/userjs/additionalApps.json",
+    "expressions": [
+      "/${1}/d"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "00_start.txt",
+    "line": 517,
+    "target": "/jci/opera/opera_dir/userjs/additionalApps.json",
+    "expressions": [
+      "1s/^/[\\n/"
+    ],
+    "result": "not_executed_expression_not_whitelisted"
+  },
+  {
+    "script": "00_start.txt",
+    "line": 520,
+    "target": "/jci/opera/opera_dir/userjs/additionalApps.json",
+    "expressions": [
+      "1s/\\[/\\[\\n/"
+    ],
+    "result": "not_executed_expression_not_whitelisted"
+  },
+  {
+    "script": "00_start.txt",
+    "line": 656,
+    "target": "/jci/sm/sm.conf",
+    "expressions": [
+      "s/watchdog_enable=\"true\"/watchdog_enable=\"false\"/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84",
+    "after_sha256": "d987387a1da6dc4dd88a20bf5ca54e56af745c98c476eb71ade1e2e2205aa017",
+    "stderr": ""
+  },
+  {
+    "script": "00_start.txt",
+    "line": 657,
+    "target": "/jci/sm/sm.conf",
+    "expressions": [
+      "s|args=\"-u /jci/gui/index.html\"|args=\"-u /jci/gui/index.html --noWatchdogs\"|g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84",
+    "after_sha256": "eab5eecc627bbc1bfdee42045a9d32faeefdb7d90eea83d76d7ce103e0b57f53",
+    "stderr": ""
+  },
+  {
+    "script": "00_start.txt",
+    "line": 679,
+    "target": "/jci/opera/opera_home/opera.ini",
+    "expressions": [
+      "s/User JavaScript=0/User JavaScript=1/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "a6db0eb9a67198dd0c55cae34ad7459a42241392421710196acba6313a2a988e",
+    "after_sha256": "d17ff296a5e6e644bd35735a4a142dbc630d61f65558f79f29a0fa64f331f11d",
+    "stderr": ""
+  },
+  {
+    "script": "00_start.txt",
+    "line": 687,
+    "target": "/jci/opera/opera_home/opera.ini",
+    "expressions": [
+      "/User JavaScript=.*/a Allow File XMLHttpRequest=1"
+    ],
+    "result": "not_executed_expression_not_whitelisted"
+  },
+  {
+    "script": "00_start.txt",
+    "line": 689,
+    "target": "/jci/opera/opera_home/opera.ini",
+    "expressions": [
+      "s/Allow File XMLHttpRequest=.*/Allow File XMLHttpRequest=1/g"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "a6db0eb9a67198dd0c55cae34ad7459a42241392421710196acba6313a2a988e",
+    "after_sha256": "a6db0eb9a67198dd0c55cae34ad7459a42241392421710196acba6313a2a988e",
+    "stderr": ""
+  },
+  {
+    "script": "00_start.txt",
+    "line": 712,
+    "target": "/jci/opera/opera_dir/userjs/additionalApps.json",
+    "expressions": [
+      "s/,,/,/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "00_wifi.txt",
+    "line": 12,
+    "target": "/jci/gui/apps/syssettings/js/syssettingsApp.js",
+    "expressions": [
+      "/(framework.localize.REGIONS\\['NorthAmerica'\\]/c\\            if(true)"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "a83dd588b54531475024b7cd048be1d0e11556abd68bbbcc334cc5ede7534cd1",
+    "after_sha256": "a83dd588b54531475024b7cd048be1d0e11556abd68bbbcc334cc5ede7534cd1",
+    "stderr": ""
+  },
+  {
+    "script": "01_touchscreen-i.txt",
+    "line": 21,
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "s/ .Global.AtSpeed/ \\/\\/\"Global.AtSpeed/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "f13bc1298b44bff202449460a5b25eed57ef6254e21be54bd8027d4cf5478671",
+    "stderr": ""
+  },
+  {
+    "script": "01_touchscreen-u.txt",
+    "line": 12,
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "s/\\/\\/.Global.AtSpeed/\"Global.AtSpeed/g"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "stderr": ""
+  },
+  {
+    "script": "06_listloop-i.txt",
+    "line": 25,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier1Timeout :                1500,/autoscrollTier1Timeout :                150,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "a0c18f17d2ae1840010d88c01b331a6ca020c12301b20e06dd3599e7c6362788",
+    "stderr": ""
+  },
+  {
+    "script": "06_listloop-i.txt",
+    "line": 26,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier2Timeout :                5000,/autoscrollTier2Timeout :                300,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "848b540db03a41c5fb0fc1443b4d41ad09e8e6ed315ac213d19afbe0caacf4a7",
+    "stderr": ""
+  },
+  {
+    "script": "06_listloop-i.txt",
+    "line": 27,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier1Interval :               500,/autoscrollTier1Interval :               200,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "22af781bb930cee782761326ee9d1431169c04cc747bd310aa8388361fc790c2",
+    "stderr": ""
+  },
+  {
+    "script": "06_listloop-i.txt",
+    "line": 28,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier2Interval :               1000,/autoscrollTier2Interval :               300,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "ae8cb0606d6582d1ba140d05056609e5b656f8677215faa2ae6001982328fea1",
+    "stderr": ""
+  },
+  {
+    "script": "06_listloop-i.txt",
+    "line": 29,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "/autoscrollTier2Interval :               300,/ a\\        \\/\\/Shorter Delay Mod"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "stderr": ""
+  },
+  {
+    "script": "06_listloop-u.txt",
+    "line": 12,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier1Timeout :                1500,/autoscrollTier1Timeout :                150,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "a0c18f17d2ae1840010d88c01b331a6ca020c12301b20e06dd3599e7c6362788",
+    "stderr": ""
+  },
+  {
+    "script": "06_listloop-u.txt",
+    "line": 13,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier2Timeout :                5000,/autoscrollTier2Timeout :                300,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "848b540db03a41c5fb0fc1443b4d41ad09e8e6ed315ac213d19afbe0caacf4a7",
+    "stderr": ""
+  },
+  {
+    "script": "06_listloop-u.txt",
+    "line": 14,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier1Interval :               500,/autoscrollTier1Interval :               200,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "22af781bb930cee782761326ee9d1431169c04cc747bd310aa8388361fc790c2",
+    "stderr": ""
+  },
+  {
+    "script": "06_listloop-u.txt",
+    "line": 15,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier2Interval :               1000,/autoscrollTier2Interval :               300,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "ae8cb0606d6582d1ba140d05056609e5b656f8677215faa2ae6001982328fea1",
+    "stderr": ""
+  },
+  {
+    "script": "06_listloop-u.txt",
+    "line": 16,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "/autoscrollTier2Interval :               300,/ a\\        \\/\\/Shorter Delay Mod"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "stderr": ""
+  },
+  {
+    "script": "07_listbeep-i.txt",
+    "line": 7,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/    this._beep('Long', 'Multicontroller');/\\/\\/  this._beep('Long', 'Multicontroller');/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "f546e128996cdc42fb04b1cecacf768b8f4affe7362d8b498c349d794c558e59",
+    "stderr": ""
+  },
+  {
+    "script": "07_listbeep-u.txt",
+    "line": 6,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/\\/\\/  this._beep('Long', 'Multicontroller');/    this._beep('Long', 'Multicontroller');/g"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "stderr": ""
+  },
+  {
+    "script": "07_shorterdelay-i.txt",
+    "line": 7,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "/Shorter Delay Mod/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "stderr": ""
+  },
+  {
+    "script": "07_shorterdelay-i.txt",
+    "line": 9,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier1Timeout :                1500,/autoscrollTier1Timeout :                150,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "a0c18f17d2ae1840010d88c01b331a6ca020c12301b20e06dd3599e7c6362788",
+    "stderr": ""
+  },
+  {
+    "script": "07_shorterdelay-i.txt",
+    "line": 10,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier2Timeout :                5000,/autoscrollTier2Timeout :                300,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "848b540db03a41c5fb0fc1443b4d41ad09e8e6ed315ac213d19afbe0caacf4a7",
+    "stderr": ""
+  },
+  {
+    "script": "07_shorterdelay-i.txt",
+    "line": 11,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier1Interval :               500,/autoscrollTier1Interval :               200,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "22af781bb930cee782761326ee9d1431169c04cc747bd310aa8388361fc790c2",
+    "stderr": ""
+  },
+  {
+    "script": "07_shorterdelay-i.txt",
+    "line": 12,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier2Interval :               1000,/autoscrollTier2Interval :               300,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "ae8cb0606d6582d1ba140d05056609e5b656f8677215faa2ae6001982328fea1",
+    "stderr": ""
+  },
+  {
+    "script": "07_shorterdelay-i.txt",
+    "line": 13,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "/autoscrollTier2Interval :               300,/ a\\        \\/\\/Shorter Delay Mod"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "stderr": ""
+  },
+  {
+    "script": "07_shorterdelay-u.txt",
+    "line": 6,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier1Timeout :                150,/autoscrollTier1Timeout :                1500,/g"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "stderr": ""
+  },
+  {
+    "script": "07_shorterdelay-u.txt",
+    "line": 7,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier2Timeout :                300,/autoscrollTier2Timeout :                5000,/g"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "stderr": ""
+  },
+  {
+    "script": "07_shorterdelay-u.txt",
+    "line": 8,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier1Interval :               200,/autoscrollTier1Interval :               500,/g"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "stderr": ""
+  },
+  {
+    "script": "07_shorterdelay-u.txt",
+    "line": 9,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "s/autoscrollTier2Interval :               300,/autoscrollTier2Interval :               1000,/g"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "stderr": ""
+  },
+  {
+    "script": "07_shorterdelay-u.txt",
+    "line": 10,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "/Shorter Delay Mod/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "stderr": ""
+  },
+  {
+    "script": "08_sysbeep-i.txt",
+    "line": 11,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "/No More Beeps/ c\\        return framework.common.beep(pressType, eventCause);"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "stderr": ""
+  },
+  {
+    "script": "08_sysbeep-i.txt",
+    "line": 20,
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "s/    framework.sendEventToMmui(\"system\", \"PlayAudioBeep\", args);/    \\/\\/ framework.sendEventToMmui(\"system\", \"PlayAudioBeep\", args); \\/\\/ No More Beeps/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "b63812dcd3e839a676853c84036d54d71ce7f42e13818a767c27ae656862eeae",
+    "stderr": ""
+  },
+  {
+    "script": "08_sysbeep-i.txt",
+    "line": 24,
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "s/    framework.sendEventToMmui(\"audiosettings\", \"PlayAudioBeep\", args);/    \\/\\/ framework.sendEventToMmui(\"audiosettings\", \"PlayAudioBeep\", args); \\/\\/ No More Beeps/g"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "stderr": ""
+  },
+  {
+    "script": "08_sysbeep-u.txt",
+    "line": 7,
+    "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+    "expressions": [
+      "/No More Beeps/ c\\        return framework.common.beep(pressType, eventCause);"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "after_sha256": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "stderr": ""
+  },
+  {
+    "script": "08_sysbeep-u.txt",
+    "line": 14,
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "/No More Beeps/ c\\    framework.sendEventToMmui(\"audiosettings\", \"PlayAudioBeep\", args);"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "stderr": ""
+  },
+  {
+    "script": "08_sysbeep-u.txt",
+    "line": 16,
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "/No More Beeps/ c\\    framework.sendEventToMmui(\"system\", \"PlayAudioBeep\", args);"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "stderr": ""
+  },
+  {
+    "script": "10_pausemute-i.txt",
+    "line": 17,
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "/this._isMutedChanged();/ a\\            framework.sendEventToMmui(\"Common\", isMuted ? \"Global.Pause\" : \"Global.Resume\"); //AIO Pause on Mute ~Trez"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "252babb2d5f9b6e8ec8228c08e2720372fbc1cee7539c92323dd45b726a3a05f",
+    "stderr": ""
+  },
+  {
+    "script": "10_pausemute-u.txt",
+    "line": 8,
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "/.*Pause on Mute.*/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "stderr": ""
+  },
+  {
+    "script": "11_msgreplies-i.txt",
+    "line": 13,
+    "target": "/jci/sm/sm.conf",
+    "expressions": [
+      "/input_filter/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84",
+    "after_sha256": "fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84",
+    "stderr": ""
+  },
+  {
+    "script": "12_diag-i.txt",
+    "line": 14,
+    "target": "/jci/gui/apps/diag/js/diagApp.js",
+    "expressions": [
+      "s/\"settleTime\" : 20000,/\"settleTime\" : 1000,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "a1e127b245049fa0fccd6237b4f83e3861dad65e02a6853672aa02e6ea89e67e",
+    "after_sha256": "959ebd396b22695df9480527cfcaf6d343852510e45d8835dd3515c09dfdcf78",
+    "stderr": ""
+  },
+  {
+    "script": "12_diag-i.txt",
+    "line": 21,
+    "target": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js",
+    "expressions": [
+      "s/\"holdTimeout\" : 5000,/\"holdTimeout\" : 1000,/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "bd9e4e3deead409026951542d6424105fce2ef3186447e2efc0b43ca022873a7",
+    "after_sha256": "cc4d1becd2372df394d212a73833b04608771661b6fdbf697e403d18727d508e",
+    "stderr": ""
+  },
+  {
+    "script": "12_diag-i.txt",
+    "line": 28,
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "/this._diagEntrySequence = 1;/ a\\framework.sendEventToMmui(\"syssettings\", \"SelectDiagnostics\"); // Sumire Racing"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "d133f1ab80844762756006cd6de259b2adc8bd49ff35793a1c99b571f5814a6f",
+    "stderr": ""
+  },
+  {
+    "script": "12_diag-u.txt",
+    "line": 14,
+    "target": "/jci/gui/apps/diag/js/diagApp.js",
+    "expressions": [
+      "s/\"settleTime\" : 1000,/\"settleTime\" : 20000,/g"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "a1e127b245049fa0fccd6237b4f83e3861dad65e02a6853672aa02e6ea89e67e",
+    "after_sha256": "a1e127b245049fa0fccd6237b4f83e3861dad65e02a6853672aa02e6ea89e67e",
+    "stderr": ""
+  },
+  {
+    "script": "12_diag-u.txt",
+    "line": 21,
+    "target": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js",
+    "expressions": [
+      "s/\"holdTimeout\" : 1000,/\"holdTimeout\" : 5000,/g"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "bd9e4e3deead409026951542d6424105fce2ef3186447e2efc0b43ca022873a7",
+    "after_sha256": "bd9e4e3deead409026951542d6424105fce2ef3186447e2efc0b43ca022873a7",
+    "stderr": ""
+  },
+  {
+    "script": "12_diag-u.txt",
+    "line": 26,
+    "target": "/jci/gui/common/js/Common.js",
+    "expressions": [
+      "/Sumire Racing/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "after_sha256": "376b30a46366a543122956d7feb1b44f147425015837a4d83fedf12a67943351",
+    "stderr": ""
+  },
+  {
+    "script": "15_btnbackground-i.txt",
+    "line": 7,
+    "target": "/jci/gui/common/controls/Ump3/css/Ump3Ctrl.css",
+    "expressions": [
+      "/.. MZD-AIO-TI NO-BTN-BG ../,/.. END AIO CSS ../d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "995b63d57189f029afab6daa37a46911a7250524e01cc3d72018cb317a210d17",
+    "after_sha256": "995b63d57189f029afab6daa37a46911a7250524e01cc3d72018cb317a210d17",
+    "stderr": ""
+  },
+  {
+    "script": "15_btnbackground-u.txt",
+    "line": 22,
+    "target": "/jci/gui/common/controls/Ump3/css/Ump3Ctrl.css",
+    "expressions": [
+      "/.. MZD-AIO-TI NO-BTN-BG ../,/.. END AIO CSS ../d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "995b63d57189f029afab6daa37a46911a7250524e01cc3d72018cb317a210d17",
+    "after_sha256": "995b63d57189f029afab6daa37a46911a7250524e01cc3d72018cb317a210d17",
+    "stderr": ""
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 23,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Video/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 24,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/--port=9998/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 50,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/### Video player/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 51,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/55555/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 60,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/#!/ a\\### Video player"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "451a66087777ec1a21c09d0adb6812adf66e7c35d7f35c48498cfc200320cef2",
+    "stderr": ""
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 62,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Video player/ i\\ "
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 63,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Video player/ a\\/jci/gui/addon-common/websocketd --port=9998 sh &"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 81,
+    "target": "/jci/gui/apps/_videoplayer/js/videoplayer-v3.js",
+    "expressions": [
+      "s/var Repeat = (.*)[0-2];/var Repeat = \\1$VP_REPEAT;/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 82,
+    "target": "/jci/gui/apps/_videoplayer/js/videoplayer-v3.js",
+    "expressions": [
+      "s/var FullScreen = (.*)[0-2];/var FullScreen = \\1$VP_FULLSCRN;/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 83,
+    "target": "/jci/gui/apps/_videoplayer/js/videoplayer-v3.js",
+    "expressions": [
+      "s/var Shuffle = (.*)(true|false);/var Shuffle = \\1$VP_SHUFFLE;/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 86,
+    "target": "/jci/gui/apps/_videoplayer/js/videoplayer-v3.js",
+    "expressions": [
+      "s/var useisink = true/var useisink = false/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "17_videoplayer-i.txt",
+    "line": 100,
+    "target": "/etc/profile",
+    "expressions": [
+      "s/\\/imx-mm\\/parser/\\/imx-mm\\/parser:\\/usr\\/lib\\/imx-mm\\/video-codec/g"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "8ef2b68acd1392215455f78e627b95366e5d4970bcf400d6b92b4a0f6d78558f",
+    "after_sha256": "61b3cfd70e775e5ab580c3635872eec2504d0355dcf03e689640b82e1a99c642",
+    "stderr": ""
+  },
+  {
+    "script": "17_videoplayer-u.txt",
+    "line": 14,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Video/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "17_videoplayer-u.txt",
+    "line": 15,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/_videoplayer/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "17_videoplayer-u.txt",
+    "line": 16,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/--port=9998/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 18,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/swap file/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 19,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/for USB in/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 20,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/USBPATH/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 21,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/USBDRV/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 22,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/SWAPFILE/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 23,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/rw,remount/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 24,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tsleep 5/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 25,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tdo/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 26,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tthen/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 27,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tbreak/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 28,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tfi/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 29,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tdone/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-i.txt",
+    "line": 54,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/find swap file/ i\\ "
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 8,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/swap file/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 9,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/for USB in/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 10,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/USBPATH/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 11,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/USBDRV/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 12,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/SWAPFILE/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 13,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/rw,remount/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 14,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tsleep 5/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 15,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tdo/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 16,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tthen/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 17,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tbreak/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 18,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tfi/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile-u.txt",
+    "line": 19,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tdone/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 23,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/swap file/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 24,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/for USB in/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 25,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/USBPATH/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 26,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/USBDRV/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 27,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/SWAPFILE/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 28,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/rw,remount/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 29,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tsleep 5/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 30,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tdo/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 31,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tthen/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 32,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tbreak/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 33,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tfi/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 34,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/\tdone/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "18_swapfile2-i.txt",
+    "line": 60,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/find swap file/ i\\ "
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "19_sbfuelbar.txt",
+    "line": 1,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var sbFuelBar = .*;/var sbFuelBar = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_sbfuelbar.txt",
+    "line": 5,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var sbfbPos = '.*/var sbfbPos = '${SBFBPOS}';/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-analog.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var startAnalog = .*;/var startAnalog = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-digiclock.txt",
+    "line": 2,
+    "target": "/jci/gui/apps/_speedometer/css/StatusBarSpeedometer.css",
+    "expressions": [
+      "/Remove this/d"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-dutch.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var language = '.*;/var language = 'NL';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-english.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var language = '.*;/var language = 'EN';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-french.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var language = '.*;/var language = 'FR';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 30,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/55554/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 31,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/9969/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 32,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/## Speedometer/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 35,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/^ *$/ d"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 36,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/#!/ a\\ "
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "db9f061f7a152a2ff72dcb2440c41b4cad727097ffd48bf8b4530f960da458e1",
+    "stderr": ""
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 96,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/#!/ a\\### Speedometer"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "4771d753968a1efcf63ca2d083194f5460b5531bc21186a199ff683f23d78898",
+    "stderr": ""
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 98,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Speedometer/ i\\ "
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 99,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/### Speedometer/ a\\/jci/gui/addon-common/websocketd --port=9969 /jci/gui/apps/_speedometer/sh/speedometer.sh &"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 113,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var speedMod = false;/var speedMod = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 129,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var noNavSD = false;/var noNavSD = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 140,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var fuelBarColor_80to100 = '.*;/var fuelBarColor_80to100 = '${FBC100}';/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 141,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var fuelBarColor_60to80 = '.*;/var fuelBarColor_60to80 = '${FBC80}';/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 142,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var fuelBarColor_40to60 = '.*;/var fuelBarColor_40to60 = '${FBC60}';/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 143,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var fuelBarColor_20to40 = '.*;/var fuelBarColor_20to40 = '${FBC40}';/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 144,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var fuelBarColor_0to20 = '.*;/var fuelBarColor_0to20 = '${FBC20}';/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 150,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var speedometerTheme = 0;/var speedometerTheme = ${BTSTART};/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 162,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var analogColor = '.*;/var analogColor = 'Blue';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 168,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var analogColor = '.*;/var analogColor = 'Green';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 174,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var analogColor = '.*;/var analogColor = 'Orange';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 180,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var analogColor = '.*;/var analogColor = 'Pink';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 186,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var analogColor = '.*;/var analogColor = 'Purple';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 192,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var analogColor = '.*;/var analogColor = 'Silver';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i1.txt",
+    "line": 198,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var analogColor = '.*;/var analogColor = 'Yellow';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var SbMain = '.*/var SbMain = '${SBMAIN}';/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "line": 8,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var SbVal1 = '.*/var SbVal1 = '${SBVAL1}';/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "line": 13,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var SbVal2 = '.*/var SbVal2 = '${SBVAL2}';/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "line": 18,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer.js",
+    "expressions": [
+      "s/var sbInterval =.*/var sbInterval = '${SBINT}';/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "line": 23,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var fuelGaugeValueSuffix = \"%\";/var fuelGaugeValueSuffix = \"${SPD_XTRA_FUEL_SUFF}\";/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "line": 28,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var fuelGaugeFactor = 100;/var fuelGaugeFactor = ${SPD_XTRA_FUEL_FACT};/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "line": 33,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var engineSpeedBar = false;/var engineSpeedBar = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "line": 38,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var hideSpeedBar = false;/var hideSpeedBar = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "line": 43,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var speedAnimation = false;/var speedAnimation = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-i2.txt",
+    "line": 48,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var hideSbSpeedoSBN = false;/var hideSbSpeedoSBN = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-italian.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var language = '.*;/var language = 'IT';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-kml.txt",
+    "line": 2,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var fuelEffunit_kml = .*;/var fuelEffunit_kml = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-lrgtxt.txt",
+    "line": 2,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var spdLrgTxt = .*;/var spdLrgTxt = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-mph.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var isMPH = .*;/var isMPH = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-old_background.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var original_background_image = .*;/var original_background_image = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-own_background.txt",
+    "line": 6,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var black_background_opacity = .*;/var black_background_opacity = ${OPACITY};/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "19_speedo-polish.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var language = '.*;/var language = 'PL';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-sbdonthide.txt",
+    "line": 2,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var sbHideInApp = .*;/var sbHideInApp = false;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-sbhiderev.txt",
+    "line": 2,
+    "target": "/jci/gui/apps/_speedometer/css/StatusBarSpeedometer.css",
+    "expressions": [
+      "s/.*hide in reverse.*/#SbSpeedo.parking, #Sbfuel-bar-wrapper.parking{display:none!important}/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-slovak.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var language = '.*;/var language = 'SK';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-small_speedo_off.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var enableSmallSbSpeedo = .*;/var enableSmallSbSpeedo = false;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-spanish.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var language = '.*;/var language = 'ES';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-temp.txt",
+    "line": 2,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var tempIsF = .*;/var tempIsF = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-turkish.txt",
+    "line": 3,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var language = '.*;/var language = 'TR';/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "19_speedo-u.txt",
+    "line": 13,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/### Speedometer/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "19_speedo-u.txt",
+    "line": 14,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/9969/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "19_speedo-u.txt",
+    "line": 15,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/55554/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "19_speedo_bar.txt",
+    "line": 2,
+    "target": "/jci/gui/apps/_speedometer/js/speedometer-startup.js",
+    "expressions": [
+      "s/var barSpeedometerMod = .*;/var barSpeedometerMod = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "20_uistyle-i.txt",
+    "line": 13,
+    "target": "/jci/gui/common/controls/NowPlaying4/css/NowPlaying4Ctrl.css",
+    "expressions": [
+      "/.. MZD-AIO-TI CSS ../,/.. END AIO CSS ../d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "9bd8b0717b179e7d12867b7d3d54983c6a7ca11e837b02cd95d10e2191b689d0",
+    "after_sha256": "9bd8b0717b179e7d12867b7d3d54983c6a7ca11e837b02cd95d10e2191b689d0",
+    "stderr": ""
+  },
+  {
+    "script": "20_uistyle-i.txt",
+    "line": 71,
+    "target": "/jci/gui/common/controls/List2/css/List2Ctrl.css",
+    "expressions": [
+      "/-o-animation/d"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "b9bfd6b120a1984379a8d63a98c5bc0f347fd080c3f9f72c9376f10553ff74f8",
+    "after_sha256": "38ebf251e620314f09cc0cfaaa763a35a1180b55550382cfa2879a00172de7d9",
+    "stderr": ""
+  },
+  {
+    "script": "20_uistyle-i.txt",
+    "line": 72,
+    "target": "/jci/gui/common/controls/List2/css/List2Ctrl.css",
+    "expressions": [
+      "/-webkit-animation/d"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "b9bfd6b120a1984379a8d63a98c5bc0f347fd080c3f9f72c9376f10553ff74f8",
+    "after_sha256": "6ae0a29ee2877e28c3a5a7a58414a596715107b0e5f2cd44729701de9b14de23",
+    "stderr": ""
+  },
+  {
+    "script": "20_uistyle-u.txt",
+    "line": 10,
+    "target": "/jci/gui/common/controls/List2/css/List2Ctrl.css",
+    "expressions": [
+      "/.. MZD-AIO-TI CSS ../,/.. END AIO CSS ../d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "b9bfd6b120a1984379a8d63a98c5bc0f347fd080c3f9f72c9376f10553ff74f8",
+    "after_sha256": "b9bfd6b120a1984379a8d63a98c5bc0f347fd080c3f9f72c9376f10553ff74f8",
+    "stderr": ""
+  },
+  {
+    "script": "22_fuel-i.txt",
+    "line": 16,
+    "target": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js",
+    "expressions": [
+      "s/var newFuelEfficiencyUnitText = \"km\\/L\"/var newFuelEfficiencyUnitText = \"mpg\"/g"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "d21a2a959e0e574c56bffd87429d09e8c9c5b9e61c92223f9196f132cf41640e",
+    "after_sha256": "d21a2a959e0e574c56bffd87429d09e8c9c5b9e61c92223f9196f132cf41640e",
+    "stderr": ""
+  },
+  {
+    "script": "22_fuel-i.txt",
+    "line": 20,
+    "target": "/jci/gui/apps/ecoenergy/controls/FuelConsumption/js/FuelConsumptionCtrl.js",
+    "expressions": [
+      "s/var newFuelEfficiencyUnitText = \"km\\/L\"/var newFuelEfficiencyUnitText = \"L\\/100km\"/g"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "d21a2a959e0e574c56bffd87429d09e8c9c5b9e61c92223f9196f132cf41640e",
+    "after_sha256": "d21a2a959e0e574c56bffd87429d09e8c9c5b9e61c92223f9196f132cf41640e",
+    "stderr": ""
+  },
+  {
+    "script": "24_castscreen-i.txt",
+    "line": 28,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/mirroring.sh/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "24_castscreen-i.txt",
+    "line": 29,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/### Castscreen/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "24_castscreen-i.txt",
+    "line": 39,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/#!/ a\\#### Castscreen receiver"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "1c64e95eae93240495e2d5bd5128c993caf48733aab3cbde5fd4f9416765c4c1",
+    "stderr": ""
+  },
+  {
+    "script": "24_castscreen-i.txt",
+    "line": 41,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Castscreen receiver/ i\\ "
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "24_castscreen-i.txt",
+    "line": 42,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Castscreen receiver/ a\\watch /jci/scripts/mirroring.sh &"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "24_castscreen-i.txt",
+    "line": 53,
+    "target": "/jci/scripts/jci-fw.sh",
+    "expressions": [
+      "/\\$IPTABLES -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT/a \\\n\t\\\n\t\\# Allow ScreenCast rule \\\n\t\\$IPTABLES -A INPUT -p tcp --dport 53515 -m state --state NEW,ESTABLISHED -j ACCEPT"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "24_castscreen-u.txt",
+    "line": 16,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Castscreen/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "24_castscreen-u.txt",
+    "line": 17,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/mirroring.sh/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 28,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/9999/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 29,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/headunit/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 30,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Android Auto/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 31,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/check-usb/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 36,
+    "target": "/jci/sm/sm.conf",
+    "expressions": [
+      "/input_filter/ d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84",
+    "after_sha256": "fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 42,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/^ *$/ d"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 43,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/#!/ a\\ "
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "db9f061f7a152a2ff72dcb2440c41b4cad727097ffd48bf8b4530f960da458e1",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 51,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/#!/ a\\#### Android Auto start"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "65e82b2efb168d603e27a558a976241bf60ec5f89e9ec88138fd4818195cdbef",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 53,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Android Auto start/ i\\ "
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-i.txt",
+    "line": 54,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Android Auto start/ a\\headunit-wrapper &"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-u.txt",
+    "line": 64,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/Android Auto start/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-u.txt",
+    "line": 65,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/hwclock --hctosys/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-u.txt",
+    "line": 66,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/websocketd --port=9999 sh &/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-u.txt",
+    "line": 67,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/headunit-wrapper &/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-u.txt",
+    "line": 68,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/check-usb.sh &/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidauto-u.txt",
+    "line": 84,
+    "target": "/jci/sm/sm.conf",
+    "expressions": [
+      "/input_filter/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84",
+    "after_sha256": "fa3484d7c644393ab6cb083990e483201129a207e7755459296dde8ec82a4d84",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidautob-i.txt",
+    "line": 5,
+    "target": "/tmp/mnt/data_persist/dev/bin/headunit.json",
+    "expressions": [
+      "s.\"carGPS\": true.\"carGPS\": false.g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "25_androidautocargps.txt",
+    "line": 1,
+    "target": "/tmp/mnt/data_persist/dev/bin/headunit.json",
+    "expressions": [
+      "s/\"carGPS\": true/\"carGPS\": false/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "25_androidautohud-i.txt",
+    "line": 5,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/headunit-wrapper &/ a\\check-usb.sh &"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "25_androidautorevgps.txt",
+    "line": 1,
+    "target": "/tmp/mnt/data_persist/dev/bin/headunit.json",
+    "expressions": [
+      "s/\"reverseGPS\": false/\"reverseGPS\": true/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "25_androidautowifi-i.txt",
+    "line": 5,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/headunit-wrapper &/ a\\check-usb.sh &"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "26_usbaudiomod-i.txt",
+    "line": 15,
+    "target": "/jci/gui/apps/usbaudio/js/usbaudioApp.js",
+    "expressions": [
+      "s/GRACENOTETEXT/${GRACENOTE}/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 50,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/AIO/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 51,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/--port=9997/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 52,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/--passenv/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 56,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/#!/ a\\### AIO Tweaks App"
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "10e26fd095843786ba1635c170a822b098e4d08ceb973f7f024bf6f080374e7b",
+    "stderr": ""
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 58,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/AIO Tweaks/ i\\ "
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 59,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/AIO Tweaks/ a\\/jci/gui/addon-common/websocketd --passenv $(env | grep XDG_ | sed \"s/=.*$//g\" | tr \"\\\\n\" \",\")PATH,SHELL --port=9997 sh &"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 61,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/^ *$/ d"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 62,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/#!/ a\\ "
+    ],
+    "result": "changes_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "db9f061f7a152a2ff72dcb2440c41b4cad727097ffd48bf8b4530f960da458e1",
+    "stderr": ""
+  },
+  {
+    "script": "27_aioapp-i.txt",
+    "line": 81,
+    "target": "/jci/gui/apps/_aiotweaks/js/mzd.js",
+    "expressions": [
+      "s/var aioTweaksVer = .*;/var aioTweaksVer = ${AIO_TWKS_VER};/g"
+    ],
+    "result": "requires_option_expansion"
+  },
+  {
+    "script": "27_aioapp-screenoff.txt",
+    "line": 1,
+    "target": "/jci/gui/apps/_aiotweaks/js/AIO-startup.js",
+    "expressions": [
+      "s/var turnScreenOff = .*;/var turnScreenOff = true;/g"
+    ],
+    "result": "target_not_in_text_fixture"
+  },
+  {
+    "script": "27_aioapp-u.txt",
+    "line": 15,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/### AIO/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "27_aioapp-u.txt",
+    "line": 16,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/--port=9997/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "28_mzdmeter-u.txt",
+    "line": 13,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/### MZD Meter/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  },
+  {
+    "script": "28_mzdmeter-u.txt",
+    "line": 14,
+    "target": "/jci/scripts/stage_wifi.sh",
+    "expressions": [
+      "/mzdmonitor.sh/d"
+    ],
+    "result": "no_change_on_pristine_file",
+    "exit_code": 0,
+    "before_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "after_sha256": "2ec71fc955d0107a6e90d1ab4e6f00c9438b56d3e621ef018d57c8ef07bfae7f",
+    "stderr": ""
+  }
+]

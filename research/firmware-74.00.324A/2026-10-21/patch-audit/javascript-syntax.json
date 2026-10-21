@@ -1,0 +1,257 @@
+{
+  "engine": "Node.js vm.Script, syntax only; not a runtime test in Mazda Opera",
+  "checks": [
+    {
+      "script": "00_reconnectmsg-i.txt",
+      "line": 9,
+      "target": "/jci/gui/apps/system/js/systemApp.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "01_touchscreen-i.txt",
+      "line": 21,
+      "target": "/jci/gui/common/js/Common.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "06_listloop-i.txt",
+      "line": 25,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "06_listloop-i.txt",
+      "line": 26,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "06_listloop-i.txt",
+      "line": 27,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "06_listloop-i.txt",
+      "line": 28,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "06_listloop-u.txt",
+      "line": 12,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "06_listloop-u.txt",
+      "line": 13,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "06_listloop-u.txt",
+      "line": 14,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "06_listloop-u.txt",
+      "line": 15,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "07_listbeep-i.txt",
+      "line": 7,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "07_shorterdelay-i.txt",
+      "line": 9,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "07_shorterdelay-i.txt",
+      "line": 10,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "07_shorterdelay-i.txt",
+      "line": 11,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "07_shorterdelay-i.txt",
+      "line": 12,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "08_sysbeep-i.txt",
+      "line": 20,
+      "target": "/jci/gui/common/js/Common.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "10_pausemute-i.txt",
+      "line": 17,
+      "target": "/jci/gui/common/js/Common.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "12_diag-i.txt",
+      "line": 14,
+      "target": "/jci/gui/apps/diag/js/diagApp.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "12_diag-i.txt",
+      "line": 21,
+      "target": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "12_diag-i.txt",
+      "line": 28,
+      "target": "/jci/gui/common/js/Common.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "01_touchscreen-i.txt",
+      "line": null,
+      "target": "/jci/gui/common/js/Common.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "07_listbeep-i.txt",
+      "line": null,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "07_shorterdelay-i.txt",
+      "line": null,
+      "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "08_sysbeep-i.txt",
+      "line": null,
+      "target": "/jci/gui/common/js/Common.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "00_reconnectmsg-i.txt",
+      "line": null,
+      "target": "/jci/gui/apps/system/js/systemApp.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "12_diag-i.txt",
+      "line": null,
+      "target": "/jci/gui/apps/diag/js/diagApp.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "12_diag-i.txt",
+      "line": null,
+      "target": "/jci/gui/common/controls/StatusBar/js/StatusBarCtrl.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    },
+    {
+      "script": "12_diag-i.txt",
+      "line": null,
+      "target": "/jci/gui/common/js/Common.js",
+      "baseline_parses": true,
+      "modified_parses": true,
+      "before_error": null,
+      "after_error": null
+    }
+  ]
+}
