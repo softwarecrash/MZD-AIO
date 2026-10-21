@@ -67,14 +67,14 @@ if [ "$ACTION" != restore ]; then
         [ -n "$patch" ] || continue
         case "$patch" in -*|*[!a-z0-9-]*) fail 'Ungueltige Tweak-ID.' ;; esac
         grep -qxF "$patch" "$BASE/allowed.txt" || fail "Unbekannte Auswahl: $patch"
-        if [ "$ACTION" != preflight ] && [ "$patch" != list-beep ] && [ "$patch" != shorter-delay ]; then
+        if [ "$ACTION" != preflight ] && [ "$patch" != list-beep ] && [ "$patch" != shorter-delay ] && [ "$patch" != ssh-bringback ]; then
             fail 'Diese Auswahl ist noch nicht portiert. Keine Aenderung vorgenommen.'
         fi
     done < "$BASE/selected.txt"
     if [ "$ACTION" != preflight ]; then
-        grep -qEx "list-beep|shorter-delay" "$BASE/selected.txt" || fail 'Bitte mindestens einen portierten Tweak auswaehlen.'
+        grep -qEx "list-beep|shorter-delay|ssh-bringback" "$BASE/selected.txt" || fail 'Bitte mindestens einen portierten Tweak auswaehlen.'
     fi
 fi
 printf 'Aktion: %s\n' "$ACTION"
-[ -r "$BASE/installer.sh" ] || fail 'Installer fehlt.'
-. "$BASE/installer.sh"
+[ -r "$BASE/dispatch.sh" ] || fail 'Installer fehlt.'
+. "$BASE/dispatch.sh"

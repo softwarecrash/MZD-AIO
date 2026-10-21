@@ -1,12 +1,25 @@
 # Sourced ONLY by start.sh, after firmware/root checks and USB logging.
 # Shared file manager: immutable original + active patch list. New apps default to /resources; no apps yet.
+TARGET_ID=${MZD_TARGET_ID:-list2}
+case "$TARGET_ID" in
+list2)
 TARGET=/jci/gui/common/controls/List2/js/List2Ctrl.js
 RELATIVE=jci/gui/common/controls/List2/js/List2Ctrl.js
+FILE_PATCHES='list-beep shorter-delay'
+ORIGINAL=e111883b9dcbeb6bb154521826fcacac
+;;
+ssh)
+TARGET=/jci/scripts/stage_wifi.sh
+RELATIVE=jci/scripts/stage_wifi.sh
+FILE_PATCHES='ssh-bringback'
+ORIGINAL=d740449dea568696660a62fce0fb35bd
+;;
+*) fail 'Unbekannte Dateigruppe.' ;;
+esac
 RESOURCES=/tmp/mnt/resources
 ROOT_MOUNT=/
 MOUNTS=/proc/mounts
 LOCK=/tmp/mzd-aio-rework.lock
-ORIGINAL=e111883b9dcbeb6bb154521826fcacac
 LEGACY_BEEP=bb290d22840f82b1be14400ddb41f1b0
 BACKUP="$RESOURCES/aio-rework/backups/74.00.324A-EU/$RELATIVE.backup"
 ROOT_CHANGED=0

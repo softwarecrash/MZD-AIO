@@ -5,7 +5,7 @@ Statische HTML/CSS/JavaScript-Anwendung ohne Build-Schritt und ohne externe Brow
 ## Bedienung wie bei AIO
 
 - Pruefen / Auswahl planen: 41 Funktionsgruppen durchsuchen und Projekte als JSON speichern/oeffnen; keine Systemdateiaenderung.
-- Installieren / Install: Listenpiepsen und Listendelay, einzeln oder gemeinsam. Experimentell, offline geprueft, Fahrzeugtest offen.
+- Installieren / Install: Listenpiepsen, Listendelay und SSH, einzeln oder gemeinsam. Experimentell, offline geprueft, Fahrzeugtest offen.
 - Deinstallieren / Uninstall: den ausgewaehlten portierten Tweak entfernen.
 - Full System Restore: alle von diesem Rework unterstuetzten Systemdateien aus internen Originalen wiederherstellen, unabhaengig von der Auswahl. Derzeit List2Ctrl.js. Kein Werksreset und keine pauschale Ruecknahme fremder/alter AIO-Installationen.
 - Apps To Resources: Standard fuer kuenftige neue Apps. Bestehende Systemdateien bleiben an ihrem Originalpfad. Noch keine Zusatz-App portiert.
@@ -40,7 +40,7 @@ Ein schreibgeschuetzt eingebundener Start-USB wird fuer Berichte beschreibbar ei
 
 ## Entwicklung und Quellen
 
-catalog.js enthaelt die 41 Gruppen. Listenpiepsen und Listendelay sind experimental, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
+catalog.js enthaelt die 41 Gruppen. Listenpiepsen, Listendelay und SSH sind experimental, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
 
 Die MP3s stammen bytegleich vom zuvor eingelesenen Besitzer-USB. Verwandte Technik: https://github.com/naijamesz/mazda-connect-root-refactor . Keine Schluessel oder persoenlichen Konfigurationen.
 
@@ -68,3 +68,22 @@ state.txt liegt neben dem internen Original-Backup und enthaelt Formatversion, a
 Vor dem Dateiaustausch wird ein transaction-Verzeichnis mit vorherigem und gewuenschtem Zustand geschrieben. Erst nach erfolgreichem Austausch folgt die Zustandsdatei. Ein unterbrochener Vorgang wird beim naechsten schreibenden Aufruf anhand beider rekonstruierter Varianten abgeglichen; bei unbekanntem Inhalt wird keine Systemdatei ueberschrieben. Pruefen meldet einen offenen Vorgang und schreibt keine interne Zustandskorrektur. Das ist eine Wiederanlauflogik, kein Nachweis fuer die Stromausfallsicherheit des CMU-Dateisystems.
 
 Listendelay aendert die vier originalen List2-Zeitparameter von 1500/5000/500/1000 auf 150/300/200/300 ms. Der alte AIO-Kommentar-Marker ist fuer den Zustand nicht erforderlich. Die Kombinationen Original, nur Beep, nur Delay und beide werden separat auf Inhalt und moderne JS-Syntax geprueft; der Fahrzeugtest steht aus.
+
+
+## SSH Bringback auf v74
+
+Experimentell, kein Fahrzeugtest. Port 22, Benutzer cmu, Passwort jci. Port 36000 des OEM-Diensts bleibt unveraendert. Belegter fremder Port 22 fuehrt vor Einbau des SSH-Boot-Hooks zum Abbruch. Ein eigener vorhandener Dienst wird erkannt.
+
+Die ausgelesene v74-Kontendatei hat bereits cmu mit UID 0, aber ein anderes Passwort. Der neue Dienst setzt deshalb nur zur Laufzeit eine gepruefte RAM-Kopie ueber /config-mfg/passwd. Nur der cmu-Passworthash wird darin ersetzt. Die Flash-Konfiguration wird nicht neu gepackt oder beschrieben. Stop/Uninstall nehmen die Ueberlagerung zurueck; ein Neustart entfernt sie ebenfalls. Das erfordert den nativen bind-Mount und die Authentifizierung auf dem realen Geraet noch zu pruefen.
+
+Der Service nutzt den vorhandenen sshd und den geraeteeigenen RSA-Hostschluessel. Es werden weder persoenliche Client-Schluessel noch private Hostschluessel mitgeliefert/kopiert. SSH-Programme liegen unter /resources/aio-rework/services/ssh, der kleine Boot-Hook in stage_wifi.sh wird ueber dieselbe Original-/Zustandsverwaltung wie die Listen-Patches gesichert und entfernt. Die Firewall wird nur um eine eigene Port-22-Freigabe mit eigener Kette ergaenzt. Ein Hintergrundprozess setzt sie nach Firewall-Neustarts wieder; die OEM-Regeln werden nicht pauschal ersetzt.
+
+Der Dienst lauscht auf allen IPv4-Adressen, auch wenn WLAN erst spaeter verbunden wird. Er verbindet WLAN nicht selbst und aendert keine gespeicherten Netze. stage_wifi ist in der ausgelesenen Startkonfiguration von stage_3 und damit jciMMUI abhaengig. Der Zugang ist deshalb kein garantierter Rettungsweg bei fruehen Boot-/MMUI-Fehlern. Er kann nur starten, wenn diese Startkette, Speicher, SSH-Binary und Netzwerk funktionieren.
+
+Runtime-Ausgaben werden nur auf einen passenden beschreibbaren USB mit mzd/ssh-log-marker.txt geschrieben. Ohne USB oder bei nicht beschreibbarem USB werden sie verworfen; kein Log-Fallback im internen Speicher. PID-Dateien, Kontenueberlagerung und Firewall-Arbeitsdaten in /tmp sind temporaerer Betriebszustand. Entfernen des USB darf den SSH-Dienst nicht beenden.
+
+Verbindung nach Ermitteln der CMU-IP: ssh cmu@CMU_IP. Falls ein aktueller Client den alten RSA-Hostalgorithmus ablehnt: ssh -o HostKeyAlgorithms=+ssh-rsa cmu@CMU_IP. Passwort interaktiv eingeben; keine private Schluesseldatei noetig.
+
+Full System Restore bearbeitet jetzt Listen und SSH als getrennte Aufgaben. Eine Bestaetigung gilt fuer das Paket. Jede Aufgabe hat eigene Originale, Zustand und Vorgangsdatensaetze. Das Paket ist keine atomare Transaktion ueber alle Aufgaben; Fehler koennen bereits abgeschlossene Teilaufgaben zuruecklassen. summary.txt und die Teilberichte sagen dies ausdruecklich.
+
+Laufzeittest: python web-tools/test-ssh-service.py. Der echte Supervisor laeuft dort mit simulierten netstat/sshd/mount/iptables-Kommandos, ohne echten Netzwerk-Listener oder Kontenaenderung. Installer-Test: python web-tools/test-usb-installer.py --zip <ZIP> --original <List2Ctrl.js>; --ssh-only prueft die SSH-Orchestrierung mit vorhandenen Manager-Fixtures. Dort wird ausschliesslich fuer den Controller ein Dummy-Service benutzt; die Supervisor-Logik wird separat real ausgefuehrt, waehrend Kernel/Daemon-Befehle simuliert sind.

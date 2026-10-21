@@ -176,3 +176,4 @@ headunit binary
 docs/usb/mzd/originals.md5 text eol=lf
 docs/usb/mzd/*.sed text eol=lf
 docs/usb/mzd/patches/*.sed text eol=lf
+docs/usb/mzd/ssh/* text eol=lf

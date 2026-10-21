@@ -48,10 +48,11 @@ globalThis.MZD_CATALOG = [
     "id": "ssh-bringback",
     "title": "SSH-Zugang",
     "auditStatus": "NICHT_UNVERAENDERT",
-    "description": "Nicht nur Portfreigabe: kopiert alte Firewall-/SSH-Dateien und kann Herstellungs-/Kontenkonfiguration über weitere Skripte verändern. v74-WCP-Regeln erhalten; alte Variante nicht freigeben.",
+    "description": "Aktiviert einen eigenen SSH-Zugang auf Port 22 mit cmu / jci und richtet den Start nach dem Booten ein. WLAN muss durch die Firmware verbunden werden. Fremde Dienste bleiben erhalten.",
     "selectable": true,
-    "releaseStatus": "unported",
-    "category": "system"
+    "releaseStatus": "experimental",
+    "category": "system",
+    "vehicleTested": false
   },
   {
     "id": "storage",

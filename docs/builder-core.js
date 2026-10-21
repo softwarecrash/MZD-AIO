@@ -7,7 +7,7 @@
     if (typeof name !== "string" || !name.trim() || name.trim().length > 80) throw new Error("Bitte einen Projektnamen mit 1 bis 80 Zeichen eingeben.");
     if (!Array.isArray(ids) || ids.some(id => typeof id !== "string" || !catalog.some(p => p.id === id && p.selectable))) throw new Error("Das Projekt enthält unbekannte oder nicht auswählbare Tweaks.");
     if (!["preflight", "install", "uninstall", "restore"].includes(action)) throw new Error("Unbekannte Aktion.");
-    if (["install", "uninstall"].includes(action) && (ids.length === 0 || ids.some(id => !["list-beep", "shorter-delay"].includes(id)))) throw new Error("Bisher sind Listenpiepsen und Listendelay als experimentelle Patches verfügbar. Andere Tweaks können im Prüfmodus geplant werden.");
+    if (["install", "uninstall"].includes(action) && (ids.length === 0 || ids.some(id => !["list-beep", "shorter-delay", "ssh-bringback"].includes(id)))) throw new Error("Listenpiepsen, Listendelay und SSH sind experimentell verfügbar. Andere Tweaks können im Prüfmodus geplant werden.");
     return { format: "mzd-aio-web-project", version: 1, name: name.trim(), status: "draft", target: { ...target }, action, tweaks: action === "restore" ? [] : [...new Set(ids)] };
   }
   function parse(text) {
@@ -65,7 +65,10 @@
       + "4. Per USB-Tastatur eingeben: sh /mnt/sda1/tweaks.sh\n"
       + "   Falls Datei nicht gefunden: sda1 durch sdb1, sdc1 oder sdd1 ersetzen.\n"
       + "5. Berichte unter reports/<Zeit>-<PID>/ auf demselben Stick pruefen: run.log (Ausgabe und Fehler), status.txt (Exit-Code), preflight.txt (Dateivergleich, sofern erreicht). Auch fruehe Abbrueche werden protokolliert.\n\n"
-      + "Pruefen veraendert nichts. Install/Uninstall unterstuetzen Listenpiepsen und Listendelay, einzeln und gemeinsam. Experimentell; Fahrzeugtest offen. Vor Aenderungen im Terminal mit j bestaetigen.\n"
+      + "Pruefen veraendert nichts. Install/Uninstall unterstuetzen Listenpiepsen, Listendelay und SSH, einzeln und gemeinsam. Experimentell; Fahrzeugtest offen. Vor Aenderungen im Terminal mit j bestaetigen.\n"
+      + "SSH: Port 22, Benutzer cmu, Passwort jci. Der OEM-Dienst auf Port 36000 bleibt bestehen. Fremd belegter Port 22 fuehrt zum Abbruch. Kein zweiter eigener Listener. Der Start nach Neustart wird ueber stage_wifi eingerichtet. WLAN-Verbindung bleibt Aufgabe der Firmware.\n"
+      + "SSH verwendet eine temporaere Kontenueberlagerung im RAM, keine Flash-Aenderung an Konten. Uninstall/Full System Restore entfernen Boot-Hook, eigenen Dienst, eigene Firewallfreigabe und Kontenueberlagerung. Keine persoenlichen Schluessel erforderlich.\n"
+      + "SSH-Startberichte werden auf einen passenden beschreibbaren USB geschrieben. Ohne USB funktioniert der Zugang trotzdem; Laufzeitlogs werden dann verworfen, niemals intern gespeichert. Der Boot-Hook haengt von stage_3/jciMMUI ab: kein garantierter Rettungszugang bei fruehen Boot-/MMUI-Fehlern. WLAN muss funktionieren.\n"
       + "Install fuegt die Auswahl hinzu; Uninstall entfernt nur die Auswahl. Andere aktive Patches bleiben erhalten. Die Datei wird aus dem Original und der gespeicherten aktiven Patchliste neu erzeugt. Ihr zuletzt geschriebener Hash erkennt fremde Aenderungen.\n"
       + "Originale bleiben intern unter /resources/aio-rework/backups/74.00.324A-EU/ erhalten; zusaetzliche Kopie auf diesem USB unter backups/. Installiert/Original wird automatisch erkannt.\n"
       + "Full System Restore ignoriert die Tweak-Auswahl und stellt alle derzeit unterstuetzten, von uns verwalteten Systemdateien wieder her. Alternativ direkt: sh /mnt/sda1/restore.sh . Ein neuer Stick reicht; die Originale liegen intern. Keine Wiederherstellung fremder AIO-Installationen oder Werksreset.\n"

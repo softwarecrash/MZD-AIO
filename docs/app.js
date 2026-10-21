@@ -22,7 +22,7 @@
       const card = document.createElement("article"); card.className = "tweak-card" + (selected.has(patch.id) ? " chosen" : "");
       const label = document.createElement("label"), checkbox = document.createElement("input"), title = document.createElement("span");
       checkbox.type = "checkbox"; checkbox.checked = selected.has(patch.id);
-      checkbox.disabled = !patch.selectable || mode === "restore" || (mode !== "preflight" && !["list-beep", "shorter-delay"].includes(patch.id));
+      checkbox.disabled = !patch.selectable || mode === "restore" || (mode !== "preflight" && !["list-beep", "shorter-delay", "ssh-bringback"].includes(patch.id));
       title.textContent = patch.title; label.append(checkbox, title);
       checkbox.addEventListener("change", () => { if (checkbox.checked) selected.add(patch.id); else selected.delete(patch.id); status.textContent = ""; render(); });
       const badge = document.createElement("span"); badge.className = "patch-status";
@@ -36,7 +36,7 @@
     byId("release-info").textContent = mode === "restore"
       ? "Full System Restore stellt alle von diesem Rework verwalteten Systemdateien aus den internen Originalen wieder her. Die Tweak-Auswahl wird ignoriert."
       : mode === "preflight" ? "Prüfen verändert keine Systemdateien. Andere Tweaks können hier bereits geplant werden."
-      : "Ausführbar: Listenpiepsen und Listendelay, einzeln oder gemeinsam. Experimentell; Fahrzeugtest offen. Andere aktive Patches bleiben beim Installieren und Deinstallieren erhalten.";
+      : "Ausführbar: Listenpiepsen, Listendelay und SSH. Experimentell; Fahrzeugtest offen. Andere aktive Patches bleiben beim Installieren und Deinstallieren erhalten.";
     byId("selection-list").replaceChildren();
     for (const id of selected) { const li = document.createElement("li"); li.textContent = globalThis.MZD_CATALOG.find(p => p.id === id).title; byId("selection-list").append(li); }
   }
@@ -49,7 +49,11 @@
   byId("search").addEventListener("input", render); byId("filter").addEventListener("change", render);
   byId("action").addEventListener("change", () => {
     const mode = byId("action").value;
-    if (mode !== "preflight") { selected.clear(); if (mode !== "restore") selected.add("list-beep"); }
+    if (mode === "restore") selected.clear();
+    else if (mode !== "preflight") {
+      for (const id of selected) if (!["list-beep", "shorter-delay", "ssh-bringback"].includes(id)) selected.delete(id);
+      if (!selected.size) selected.add("list-beep");
+    }
     status.textContent = ""; render();
   });
   byId("export-json").addEventListener("click", () => action(() => { save(JSON.stringify(current(), null, 2) + "\n", "mzd-aio-projekt.json", "application/json"); status.textContent = "Projektdatei zum Download bereitgestellt."; }));

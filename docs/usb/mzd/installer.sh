@@ -1,11 +1,12 @@
 # One managed file may carry several independent patches. No diff/patch needed.
 . "$BASE/common.sh"
+SELECTED_FILE=${MZD_SELECTED_FILE:-$BASE/selected.txt}
 STATE_FILE="$BACKUP/state.txt"
 TRANSACTION="$BACKUP/transaction"
 has() { case " $2 " in *" $1 "*) return 0 ;; *) return 1 ;; esac; }
 write_state() {
     printf 'format=1\nmd5=%s\n' "$2" > "$3"
-    for ID in list-beep shorter-delay; do
+    for ID in $FILE_PATCHES; do
         if has "$ID" "$1"; then printf 'patch=%s\n' "$ID" >> "$3"; fi
     done
 }
@@ -15,7 +16,7 @@ rebuild() {
     cp "$SOURCE" "$BUILD_OUT.0"
     BUILD_INDEX=0
     BUILD_INPUT="$BUILD_OUT.0"
-    for BUILD_ID in list-beep shorter-delay; do
+    for BUILD_ID in $FILE_PATCHES; do
         if has "$BUILD_ID" "$BUILD_ACTIVE"; then
             BUILD_INDEX=$((BUILD_INDEX + 1))
             BUILD_NEXT="$BUILD_OUT.$BUILD_INDEX"
@@ -34,7 +35,7 @@ read_state() {
     case "$RECORD_HASH" in *[!0-9a-f]*) fail 'Ungueltige Zustandspruefsumme.' ;; esac
     RECORD_ACTIVE=''
     for RECORD_ID in $(sed -n 's/^patch=//p' "$RECORD"); do
-        case "$RECORD_ID" in list-beep|shorter-delay) ;; *) fail 'Unbekannter Patch im internen Zustand.' ;; esac
+        has "$RECORD_ID" "$FILE_PATCHES" || fail 'Unbekannter Patch im internen Zustand.'
         RECORD_ACTIVE="$RECORD_ACTIVE $RECORD_ID"
     done
     write_state "$RECORD_ACTIVE" "$RECORD_HASH" "$REPORT/state-canonical.txt"
@@ -59,7 +60,7 @@ clear_transaction() {
     sync
 }
 for tool in cmp; do command -v "$tool" >/dev/null || fail "Werkzeug fehlt: $tool"; done
-awk -v p="/$RELATIVE" '$2!=p' "$BASE/originals.md5" > "$REPORT/platform.md5"
+awk '$2!="/jci/gui/common/controls/List2/js/List2Ctrl.js" && $2!="/jci/scripts/stage_wifi.sh"' "$BASE/originals.md5" > "$REPORT/platform.md5"
 md5sum -c "$REPORT/platform.md5" || fail 'Der Konsolen-Dateistand ist unbekannt.'
 [ -f "$TARGET" ] && [ ! -L "$TARGET" ] || fail 'Systemdatei fehlt oder ist ein Link.'
 mkdir "$LOCK" || fail 'Ein anderer Installer laeuft bereits. Nach Abbruch ggf. CMU neu starten.'
@@ -95,7 +96,7 @@ if [ -e "$STATE_FILE" ]; then
     read_state "$STATE_FILE"
     [ "$CURRENT" = "$RECORD_HASH" ] || fail 'Systemdatei wurde ausserhalb des Installers geaendert. Keine Aenderung vorgenommen.'
     ACTIVE=$RECORD_ACTIVE
-elif [ "$CURRENT" = "$LEGACY_BEEP" ] && valid_backup; then
+elif [ "$TARGET_ID" = list2 ] && [ "$CURRENT" = "$LEGACY_BEEP" ] && valid_backup; then
     ACTIVE='list-beep'
     rebuild "$ACTIVE" "$REPORT/legacy-check.js"
     matches "$REPORT/legacy-check.js" "$CURRENT" || fail 'Bisheriger Patch konnte nicht zugeordnet werden.'
@@ -110,12 +111,12 @@ if [ "$ACTION" = preflight ]; then
     exit 0
 fi
 WANTED=''
-for ID in list-beep shorter-delay; do
+for ID in $FILE_PATCHES; do
     ENABLED=0
     if has "$ID" "$ACTIVE"; then ENABLED=1; fi
     case "$ACTION" in
-        install) if grep -qxF "$ID" "$BASE/selected.txt"; then ENABLED=1; fi ;;
-        uninstall) if grep -qxF "$ID" "$BASE/selected.txt"; then ENABLED=0; fi ;;
+        install) if grep -qxF "$ID" "$SELECTED_FILE"; then ENABLED=1; fi ;;
+        uninstall) if grep -qxF "$ID" "$SELECTED_FILE"; then ENABLED=0; fi ;;
         restore) ENABLED=0 ;;
     esac
     if [ "$ENABLED" = 1 ]; then WANTED="$WANTED $ID"; fi
@@ -125,11 +126,13 @@ if [ "$CURRENT" = "$ORIGINAL" ] && [ -z "$WANTED" ] && [ ! -e "$STATE_FILE" ]; t
     MESSAGE='Originalzustand bereits vorhanden. Keine Aenderung erforderlich.'
     exit 0
 fi
-printf '\nAktion: %s\nExperimentelle v74-Patches, Fahrzeugtest offen.\n' "$ACTION" >&3
-printf 'Fortfahren? j eingeben und Enter druecken (sonst Abbruch): ' >&3
-ANSWER=''
-IFS= read -r ANSWER || :
-case "$ANSWER" in j|J|y|Y) ;; *) MESSAGE='Abgebrochen. Keine Aenderung vorgenommen.'; exit 0 ;; esac
+if [ "${MZD_CONFIRMED:-0}" != 1 ]; then
+    printf '\nAktion: %s\nExperimentelle v74-Patches, Fahrzeugtest offen.\n' "$ACTION" >&3
+    printf 'Fortfahren? j eingeben und Enter druecken (sonst Abbruch): ' >&3
+    ANSWER=''
+    IFS= read -r ANSWER || :
+    case "$ANSWER" in j|J|y|Y) ;; *) MESSAGE='Abgebrochen. Keine Aenderung vorgenommen.'; exit 0 ;; esac
+fi
 space "$USB"
 . "$BASE/save-original.sh"
 SOURCE="$BACKUP/original"

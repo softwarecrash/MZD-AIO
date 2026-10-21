@@ -40,6 +40,9 @@ module.exports = async function test() {
   assert.equal(core.parse(JSON.stringify(project)).name, 'Test \u00e4');
   assert.equal(core.usbFiles(core.project('Install', ['list-beep'], 'install'))['mzd/action.txt'], 'install\n');
   assert.equal(core.usbFiles(core.project('Both', ['list-beep', 'shorter-delay'], 'install'))['mzd/selected.txt'], 'list-beep\nshorter-delay\n');
+  const sshFiles = core.usbFiles(core.project('SSH', ['ssh-bringback'], 'install'));
+  assert.equal(sshFiles['mzd/selected.txt'], 'ssh-bringback\n');
+  assert(sshFiles['mzd/ssh/service.sh'] instanceof Uint8Array);
   assert.equal(core.project('Restore', ['list-beep'], 'restore').tweaks.length, 0);
   assert.throws(() => core.project('Unsupported', ['background'], 'install'));
   assert.throws(() => core.project('Unknown action', ['list-beep'], 'unknown'));
@@ -89,6 +92,10 @@ module.exports = async function test() {
   assert.equal(cards()[0].children[0].children[0].disabled, true);
   ids['export-zip'].events.click();
   assert.equal(downloads.at(-1).type, 'application/zip');
+  await ids['import-file'].events.change({ target: { files: [{ size: 100, text: async () => JSON.stringify(core.project('SSH selection', ['ssh-bringback'])) }] } });
+  ids.action.value = 'install'; ids.action.events.change();
+  assert.equal(ids['selection-list'].children.length, 1);
+  assert.equal(ids['selection-list'].children[0].textContent, 'SSH-Zugang');
   const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'mzd-builder-test-'));
   const zipPath = path.join(temp, 'usb-test.zip');
   await fs.writeFile(zipPath, core.zip(files));
