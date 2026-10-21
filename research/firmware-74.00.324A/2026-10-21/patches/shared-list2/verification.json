@@ -1,0 +1,67 @@
+{
+  "firmware": "74.00.324A-EU",
+  "status": "experimental",
+  "vehicle_tested": false,
+  "patches": [
+    "list-beep",
+    "shorter-delay"
+  ],
+  "target": "/jci/gui/common/controls/List2/js/List2Ctrl.js",
+  "strategy": "immutable original + canonical active patch list + last generated hash",
+  "integration_runs_passed": 31,
+  "javascript_syntax_variants_passed": 4,
+  "actual_browser_rendering_test": false,
+  "mount_df_sync_mocked": true,
+  "implementation_commit": "2298831ce01a5af27858318bc907aa868f06ba00",
+  "sources": {
+    "docs/usb/mzd/installer.sh": {
+      "sha256": "9010e58464b53a8099eac11cddf91891b0918ebfab491cf3acc5ec5f537294aa",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/2298831ce01a5af27858318bc907aa868f06ba00/docs/usb/mzd/installer.sh"
+    },
+    "docs/usb/mzd/common.sh": {
+      "sha256": "10d8b21130144c87b9371e8d72a56520eb6fadda5786fa05733aff027725607b",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/2298831ce01a5af27858318bc907aa868f06ba00/docs/usb/mzd/common.sh"
+    },
+    "docs/usb/mzd/save-original.sh": {
+      "sha256": "8e41242f8f95c66de317b4a7db66a3d83be2483359858c2f8c9701fc13828cba",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/2298831ce01a5af27858318bc907aa868f06ba00/docs/usb/mzd/save-original.sh"
+    },
+    "docs/usb/mzd/patches/list-beep.sh": {
+      "sha256": "5b9d5ee0a8bd20bb0d70ed6afafeaba407b6a4b7cb39ca3a40197cc9522f9dd6",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/2298831ce01a5af27858318bc907aa868f06ba00/docs/usb/mzd/patches/list-beep.sh"
+    },
+    "docs/usb/mzd/patches/list-beep.sed": {
+      "sha256": "3a4b4eeaf9e69f0af266903867807638c007a57904f686954c687ab22e8bf124",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/2298831ce01a5af27858318bc907aa868f06ba00/docs/usb/mzd/patches/list-beep.sed"
+    },
+    "docs/usb/mzd/patches/shorter-delay.sh": {
+      "sha256": "2e6638370a7e2a1458b599fe6fd6aebe27263d19e3672a5b10039dfe1f02406e",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/2298831ce01a5af27858318bc907aa868f06ba00/docs/usb/mzd/patches/shorter-delay.sh"
+    },
+    "docs/usb/mzd/patches/shorter-delay.sed": {
+      "sha256": "57b34ec5294b7b940e4b1b9e0efd85726463dafbcde3d103f3dec57ff686897c",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/2298831ce01a5af27858318bc907aa868f06ba00/docs/usb/mzd/patches/shorter-delay.sed"
+    },
+    "web-tools/test-usb-installer.py": {
+      "sha256": "8c05b5829a35f2a3a89293b40a7af069e8fcd1414cb9b374f8a643061270a1e4",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/2298831ce01a5af27858318bc907aa868f06ba00/web-tools/test-usb-installer.py"
+    },
+    "web-tools/test-web-builder.js": {
+      "sha256": "6f074fa034134ae4e79f2bb917bbf83a7a86dece875f2e3ec8c7858e0ef0bb0a",
+      "url": "https://github.com/softwarecrash/MZD-AIO/blob/2298831ce01a5af27858318bc907aa868f06ba00/web-tools/test-web-builder.js"
+    }
+  },
+  "checks": [
+    "all four file variants: original, beep, delay, both",
+    "adding a patch preserves another active patch",
+    "uninstall either patch preserves the other",
+    "new-stick full restore independent of selection",
+    "first original backup remains immutable",
+    "post-target/pre-state interruption detected; next write reconciles state",
+    "pre-target interruption reconciles to previous state",
+    "unknown system edits and corrupt backups rejected",
+    "write error rollback",
+    "early error logs on source USB",
+    "no diff/patch/Git dependency on CMU"
+  ]
+}

@@ -56,3 +56,7 @@ Referenz für die AIO-Vergleiche: [Trevelopment/MZD-AIO](https://github.com/Trev
 ## Erster ausfuehrbarer Patch
 
 [Listenpiepsen fuer v74](patches/list-beep/README.md) ist mit automatischer interner Originalsicherung, USB-Kopie, Uninstall und Full System Restore implementiert. 21 isolierte Integrationslaeufe bestanden; experimentell, Fahrzeugtest offen. Die Implementierung des Web-Branches ist im Manifest fest verlinkt.
+
+## Kombinierbare List2-Patches
+
+[Gemeinsame Dateiverwaltung fuer Listenpiepsen und Listendelay](patches/shared-list2/README.md): Original plus aktive Patchliste, getrennter Uninstall, Wiederanlauf nach unterbrochenem Vorgang. 31 isolierte Integrationslaeufe bestanden; Fahrzeugtest offen. Der Builder gruppiert die 41 Funktionsgruppen nach Bedienung, Oberflaeche, Apps und System.
