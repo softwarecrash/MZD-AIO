@@ -31,7 +31,7 @@
   function action(fn) { try { fn(); } catch (error) { status.textContent = error.message; } }
   byId("search").addEventListener("input", render); byId("filter").addEventListener("change", render);
   byId("export-json").addEventListener("click", () => action(() => { save(JSON.stringify(current(), null, 2) + "\n", "mzd-aio-projekt.json", "application/json"); status.textContent = "Projektdatei zum Download bereitgestellt."; }));
-  byId("export-zip").addEventListener("click", () => action(() => { save(core.zip(core.draftFiles(current())), "mzd-aio-74.00.324A-EU-entwurf.zip", "application/zip"); status.textContent = "ZIP-Entwurf bereitgestellt. Enthält keine installierbaren Patches."; }));
+  byId("export-zip").addEventListener("click", () => action(() => { save(core.zip(core.usbFiles(current())), "mzd-aio-74.00.324A-EU-usb-test.zip", "application/zip"); status.textContent = "USB-Testpaket mit MP3 und Vorprüfung bereitgestellt. Startbefehl siehe README.txt; noch keine Tweak-Installation."; }));
   byId("import-file").addEventListener("change", async event => {
     const file = event.target.files[0]; if (!file) return;
     try {

@@ -171,3 +171,6 @@ mksquashfs binary
 adb binary
 headunit binary
 *.so.* binary
+
+# Browser USB assets require Unix line endings.
+docs/usb/mzd/originals.md5 text eol=lf

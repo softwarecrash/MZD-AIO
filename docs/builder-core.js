@@ -21,7 +21,7 @@
   function zip(files) {
     const encoder = new TextEncoder(), parts = [], directory = []; let offset = 0, size = 0;
     for (const [name, text] of Object.entries(files)) {
-      const filename = encoder.encode(name), data = encoder.encode(text), crc = crc32(data);
+      const filename = encoder.encode(name), data = text instanceof Uint8Array ? text : encoder.encode(text), crc = crc32(data);
       const header = new Uint8Array(30), h = new DataView(header.buffer);
       h.setUint32(0, 0x04034b50, true); h.setUint16(4, 20, true); h.setUint16(6, 0x800, true); h.setUint16(12, 0x21, true);
       h.setUint32(14, crc, true); h.setUint32(18, data.length, true); h.setUint32(22, data.length, true); h.setUint16(26, filename.length, true);
@@ -45,5 +45,31 @@
       "README.txt": "MZD-AIO WEB / PROJEKTENTWURF\nFirmware: 74.00.324A EU\n\nDieses ZIP ist kein Installationspaket. Es enthält keine Installer oder Fahrzeug-Payloads.\nAlle gewählten Tweaks benötigen noch eine v74-Portierung und einen Fahrzeugtest.\nProjekt über project.json im Web-Builder wieder öffnen.\n\nAuswahl:\n" + (selected.map(p => "- " + p.title).join("\n") || "Keine Tweaks ausgewählt.") + "\n"
     };
   }
-  root.MzdBuilder = Object.freeze({ target, project, parse, zip, draftFiles });
+  function usbFiles(value) {
+    const clean = project(value.name, value.tweaks), files = draftFiles(clean);
+    if (!root.MZD_USB_ASSETS) throw new Error("USB-Dateien fehlen. Bitte die Seite neu laden.");
+    for (const [path, asset] of Object.entries(root.MZD_USB_ASSETS)) {
+      const raw = atob(asset.base64), bytes = Uint8Array.from(raw, c => c.charCodeAt(0));
+      if (bytes.length !== asset.bytes) throw new Error("USB-Datei unvollständig: " + path);
+      files[path] = bytes;
+    }
+    files["mzd/selected.txt"] = clean.tweaks.join("\n") + (clean.tweaks.length ? "\n" : "");
+    files["mzd/allowed.txt"] = catalog.filter(p => p.selectable).map(p => p.id).join("\n") + "\n";
+    files["README.txt"] = "MZD-AIO WEB / MP3-KONSOLENSTART + VORPRUEFUNG\n74.00.324A EU\n\n"
+      + "1. ZIP vollstaendig ins Hauptverzeichnis eines FAT32-USB-Sticks entpacken.\n"
+      + "2. USB-Audio oeffnen und mp3/a.mp3 abspielen. Falls das Fenster nicht erscheint, b.mp3, c.mp3 oder d.mp3 versuchen. Diese verwenden sda1 bis sdd1.\n"
+      + "3. Im Fenster Konsole oeffnen druecken. Nach etwa 14 Sekunden erscheint das OEM-Testmenue; dort TERMINAL waehlen und auf die Shell warten.\n"
+      + "4. Per USB-Tastatur eingeben: sh /mnt/sda1/mzd/start.sh\n"
+      + "   Falls Datei nicht gefunden: sda1 durch sdb1, sdc1 oder sdd1 ersetzen.\n"
+      + "5. Ausgabe und reports/<Zeit>-<PID>/preflight.txt auf dem Stick pruefen.\n\n"
+      + "Dieser Stand startet nur die Vorpruefung: Firmware, Auswahl und drei OEM-Dateihashes. Keine Tweaks werden installiert. MD5 identifiziert bekannte Dateistaende und ist keine Signatur.\n"
+      + "Der MP3-Konsolenzugang mit Tastatur ist der vom Besitzer bestaetigte Weg; dieses neu zusammengestellte Paket ist noch nicht am Fahrzeug getestet.\n"
+      + "Kein automatischer Shellbefehl, kein RAM-Hook, keine SSH-Aktivierung, keine Aenderung von OEM-Dateien. Berichte werden auf USB geschrieben.\n\n"
+      + "Auswahl im Browser wieder oeffnen: project.json\n";
+    files["package-manifest.json"] = JSON.stringify({ format: "mzd-aio-usb-preflight", version: 1, target,
+      installable: false, mode: "preflight", entry: "mp3-console-keyboard", command: "sh /mnt/sda1/mzd/start.sh",
+      assets: Object.fromEntries(Object.entries(root.MZD_USB_ASSETS).map(([path, a]) => [path, { bytes: a.bytes, sha256: a.sha256 }])) }, null, 2) + "\n";
+    return files;
+  }
+  root.MzdBuilder = Object.freeze({ target, project, parse, zip, draftFiles, usbFiles });
 })(globalThis);

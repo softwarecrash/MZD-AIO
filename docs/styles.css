@@ -105,3 +105,9 @@ footer p { margin: 0; }
 input:focus-visible, select:focus-visible { outline: 3px solid #7ca77a; outline-offset: 2px; }
 @media (max-width: 900px) { .builder-layout { grid-template-columns: minmax(0, 1fr) 290px; gap: 22px; } }
 @media (max-width: 680px) { .builder-layout { grid-template-columns: 1fr; } .builder-summary { position: static; } .filters { grid-template-columns: 1fr; gap: 0; } .builder-intro { padding-top: 35px; } }
+
+.usb-instructions { margin-bottom: 45px; max-width: 800px; }
+.usb-instructions h2 { font-size: 26px; letter-spacing: -.8px; }
+.usb-instructions li { padding: 6px 0; font-size: 14px; line-height: 1.7; }
+.usb-instructions p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+code { font-size: .9em; overflow-wrap: anywhere; background: #e7eadf; padding: 2px 5px; border-radius: 3px; }
