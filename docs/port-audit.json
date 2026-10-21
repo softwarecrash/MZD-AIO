@@ -1,0 +1,43 @@
+{
+  "status": "offline_original_comparison_passed_download_still_blocked",
+  "mp3_reference_files": [
+    "dev.html",
+    "mp3title.txt",
+    "css/init.css",
+    "js/run.js",
+    "mp3/a.mp3",
+    "mp3/b.mp3",
+    "mp3/c.mp3",
+    "mp3/d.mp3"
+  ],
+  "mp3_archive_sha256": "5661e2a585f22c45e27a456a16d46419e78d7fb0ed2efbdc6473fe7790a75f81",
+  "list2_all_eight_variants_match_original_aio_changes_only": true,
+  "list2_added_prototype_methods": [],
+  "list2_variant_sha256": {
+    "0": "52195d55c6615b9d61e9b25f48f90382e8ebe671edb154daa08d8915eca6f96f",
+    "1": "f546e128996cdc42fb04b1cecacf768b8f4affe7362d8b498c349d794c558e59",
+    "2": "5a41a407f217a662d470611ec5ffe85a14a0ec2e5ace30e3329ae37b60d4e5bd",
+    "3": "28d28761d473b10388a4ac340f85029eb493cfc621408bd2ba8f3581940335f2",
+    "4": "fc5bdb4abdf6d8a7915a3ae68491124f30715912d45660030e46773ce1b9308e",
+    "5": "5247768a7fe179e1a37960189ebd8094b3ee5ed6c5445085b13a341b58f63d6f",
+    "6": "63ce05f8c8260ee554c05ccb253c42a66fe6cc57d4a26089a18901b6f7473ee3",
+    "7": "4a6a89d1914f7a0e4722d040a1d208faf8e2ddaea61ea42d9844a718c3cb7915"
+  },
+  "mainmenu_exactly_two_original_aio_boundary_changes": true,
+  "mainmenu_sha256": "a2c31e317753a5d6f479ece63c1d13fbc1999a40dcef92baf114f35b0edce540",
+  "delay_marker_note": "Original informational Shorter Delay Mod comment omitted; state is managed separately. No additional executable behavior.",
+  "ssh": "Explicitly permitted own implementation retained, not represented as original AIO port. Hardware login/boot not tested; CMU unreachable.",
+  "open_release_items": [
+    "Real SSH device test",
+    "Safe rollback of previously published rejected custom list-loop variants"
+  ],
+  "sources": {
+    "config\\list-loop\\jci\\gui\\common\\controls\\List2\\js\\List2Ctrl.js": "81eebc20dfcb6365c178a9483f854ad779bdf478fe95f88f0155e7d93cc928f9",
+    "07_shorterdelay-i.txt": "e61ef2f61bd650470aa5be63baa026d9241977a485ecf1d97722ce6114ac1230",
+    "07_listbeep-i.txt": "cde872dba6099ddf164ab6320b778a2608f3a054afa034c532a1639d67c7ee24",
+    "config\\main-menu-loop\\jci\\gui\\apps\\system\\controls\\MainMenu\\js\\MainMenuCtrl.js": "60852586c374a4994bc6f4672218354a57c99453f723dd3065d5d3f6a76068b7"
+  },
+  "current_behavior_cases": 232,
+  "current_targeted_installer_runs": 14,
+  "ssh_mocked_supervisor_suite": "passed; no real listener, mounts or firewall; no hardware functionality claim"
+}

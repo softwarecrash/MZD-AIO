@@ -1,3 +1,7 @@
+# Aktueller Freigabestatus
+
+USB-Download gesperrt seit dem Originaltreue-Audit. Fruehere Freigabeaussagen weiter unten sind historische Implementierungsbeschreibungen und keine aktuelle Paketfreigabe. SSH bleibt auf ausdruecklichen Wunsch als eigene Erweiterung im Quellstand; die CMU ist nicht erreichbar, daher keine bestaetigte Anmeldung oder Boot-Funktion. Der Katalog sperrt die neue Installation bis zum Geraetenachweis.
+
 # MZD-AIO Web-Builder / 74.00.324A EU
 
 Statische HTML/CSS/JavaScript-Anwendung ohne Build-Schritt und ohne externe Browser-Abhaengigkeiten. Funktioniert auch beim lokalen Oeffnen von index.html. Keine Telemetrie, kein Upload.
@@ -97,10 +101,10 @@ Die Original-Pruefsumme 40ccb293b8c6f80960f0b953dd2e173e und die Ergebnis-Pruefs
 
 Funktionstest: node web-tools/test-main-menu-loop.js <lokale MainMenuCtrl.js>. Prueft 20 Original-/Patch-Faelle fuer alle fuenf Positionen und beide Richtungen sowie exakt zwei geaenderte Zeilen. Fahrzeugtest bleibt offen.
 
-## Listen im Kreis
+## Listen im Kreis: Originalport nach Audit
 
-Der Patch ergaenzt die vier bestehenden Commander-Handler fuer Drehen und Kippen. Ein gemeinsamer ES5-Helfer springt nur dann zum gegenueberliegenden Ende, wenn in der bisherigen Richtung kein weiterer aktivierter Eintrag existiert. Deaktivierte Eintraege werden uebersprungen. Ein stehengebliebener Fokus am Rand des sichtbaren Ausschnitts loest weiterhin normales Scrollen aus. Leere oder unvollstaendige Listen, Buchstabenindex, Umsortieren, Touch und gesperrtes Laden loesen keinen Kreissprung aus.
+Die selbst erfundene Methode _aioWrapListFocus und ihre zusaetzlichen Regeln wurden entfernt. Es werden ausschliesslich die acht Einfuegungen in den vier Handlern _handleMCCW, _handleMCCCW, _handleMCDown und _handleMCUp aus der originalen AIO-Datei uebernommen. Alle vier resultierenden Funktionskoerper sind bytegleich zum alten Tweak. Andere Teile der Firmware-Datei bleiben abgesehen von ausdruecklich gewaehltem Beep/Delay unveraendert. Kein zusaetzlicher OEM-JavaScript-Handler.
 
-Die AIO-Ersatzdatei wird nicht kopiert. Original, Listenpiepsen, Delay und Loop werden in fester Reihenfolge mit der aktiven Patchliste aufgebaut. Bestehende Beep-/Delay-Zustaende bleiben kompatibel; Uninstall entfernt nur ausgewaehlte Patches. Neue gemeinsame Helfer und Handler-Ergaenzungen entstehen nur auf Arbeitskopien. Strukturpruefungen erwarten genau die vier bekannten Handler. Kein diff/patch auf dem Fahrzeug erforderlich.
+Die alten Grenzregeln werden dabei nicht still verbessert. Der alte Tweak kann bereits bei stehengebliebenem Fokus einen Kreissprung versuchen. Diese Eigenschaft wird als Altverhalten dokumentiert, nicht eigenmaechtig veraendert.
 
-Funktionstest: node web-tools/test-list-loop.js <lokale List2Ctrl.js>. Erzeugt acht Kombinationen und prueft 256 Faelle mit simulierten Fokus-/Scrollgrenzen. Die zurueckgemeldete fixtureDirectory kann an den Installer-Test mit --list-loop-only --list-loop-fixtures <Ordner> uebergeben werden (zusaetzlich zu ZIP und beiden Originaldateien). Dabei werden alle acht aktiven Zustaende, gezielte Ruecknahme, alte Beep-/Delay-Zustaende, Originalschutz und Restore von einem neuen Stick geprueft. Fahrzeugtest bleibt offen.
+232 Verhaltensfaelle fuer acht Kombinationen pruefen die Originalportierung. Die frueheren 256 Faelle und Freigabe fuer die eigene Hilfsfunktion sind zurueckgezogen. Bereits mit dem zurueckgezogenen eigenen Helfer gepatchte Dateistaende werden nicht als aktuelle Portierung akzeptiert. Der oeffentliche ZIP-Download bleibt gesperrt; Altstand-Ruecknahme und Fahrzeugpruefung sind vor einer neuen Paketfreigabe zu klaeren.

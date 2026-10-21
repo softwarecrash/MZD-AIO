@@ -1,28 +1,104 @@
-/^List2Ctrl.prototype._handleMCCW = function\(\)/ {
-    while ((getline line < helper) > 0) {print line; helperLines++;}
-    close(helper);
-    print "";
-    helpers++;
-}
-/^List2Ctrl.prototype._handleMC(CW|CCW|Down|Up) = function\(\)/ {
-    active=1;
-    direction=($0 ~ /_(handleMCCW|handleMCDown) =/ ? 1 : -1);
-    functions++;
-}
+# Exact insertions from the original AIO list-loop payload; no new JS logic.
+/^List2Ctrl.prototype._handleMC(CW|CCW|Down|Up) = function\(\)/ {name=$0; n=0; functions++;}
 {
+    if (name!="") n++;
     print;
-    if (active && $0 ~ /^[ ]*var rfi = this\._getRelativeFocussedIndex\(\);$/) {
-        match($0, /[^ ]/);
-        indent=substr($0,1,RSTART-1);
-        print indent "var aioPreviousIndex = this._getFocussedIndex();";
-        captures++;
+    if (name=="List2Ctrl.prototype._handleMCCW = function()" && n==61) {
+        if ($0!="") exit 1;
+        print "            var currentFocussedIndex = this._getFocussedIndex();";
+        print "";
+        insertions++;
     }
-    if (active && $0 ~ /^[ ]*rfi = this\._getRelativeFocussedIndex\(\);$/) {
-        match($0, /[^ ]/);
-        indent=substr($0,1,RSTART-1);
-        print indent "if (this._aioWrapListFocus(" direction ", aioPreviousIndex)) return 'consumed';";
-        calls++;
+    if (name=="List2Ctrl.prototype._handleMCCW = function()" && n==80) {
+        if ($0!="            rfi = this._getRelativeFocussedIndex();") exit 1;
+        print "";
+        print "            if (this._getFocussedIndex() == currentFocussedIndex) //didn't move";
+        print "            {";
+        print "                if (this.dataList && this.dataList.items)";
+        print "                {";
+        print "                    var index = 0;";
+        print "                    while (index < this.dataList.items.length && this.dataList.items[index].disabled) index++;";
+        print "                    if (index < this.dataList.items.length)";
+        print "                    {";
+        print "                        this._manageFocus(index);";
+        print "                        return 'consumed';";
+        print "                    }";
+        print "                }";
+        print "            }";
+        insertions++;
     }
-    if ($0 ~ /^};$/) active=0;
+    if (name=="List2Ctrl.prototype._handleMCCCW = function()" && n==56) {
+        if ($0!="") exit 1;
+        print "            var currentFocussedIndex = this._getFocussedIndex();";
+        print "";
+        insertions++;
+    }
+    if (name=="List2Ctrl.prototype._handleMCCCW = function()" && n==75) {
+        if ($0!="            rfi = this._getRelativeFocussedIndex();") exit 1;
+        print "";
+        print "            if (this._getFocussedIndex() == currentFocussedIndex) //didn't move";
+        print "            {";
+        print "                if (this.dataList && this.dataList.items)";
+        print "                {";
+        print "                    var index = this.dataList.items.length - 1;";
+        print "                    while (index >= 0 && this.dataList.items[index].disabled) index--;";
+        print "                    if (index >= 0)";
+        print "                    {";
+        print "                        this._manageFocus(index);";
+        print "                        return 'consumed';";
+        print "                    }";
+        print "                }";
+        print "            }";
+        insertions++;
+    }
+    if (name=="List2Ctrl.prototype._handleMCDown = function()" && n==52) {
+        if ($0!="") exit 1;
+        print "                var currentFocussedIndex = this._getFocussedIndex();";
+        print "";
+        insertions++;
+    }
+    if (name=="List2Ctrl.prototype._handleMCDown = function()" && n==71) {
+        if ($0!="                rfi = this._getRelativeFocussedIndex();") exit 1;
+        print "";
+        print "                if (this._getFocussedIndex() == currentFocussedIndex) //didn't move";
+        print "                {";
+        print "                    if (this.dataList && this.dataList.items)";
+        print "                    {";
+        print "                        var index = 0;";
+        print "                        while (index < this.dataList.items.length && this.dataList.items[index].disabled) index++;";
+        print "                        if (index < this.dataList.items.length)";
+        print "                        {";
+        print "                            this._manageFocus(index);";
+        print "                            return 'consumed';";
+        print "                        }";
+        print "                    }";
+        print "                }";
+        insertions++;
+    }
+    if (name=="List2Ctrl.prototype._handleMCUp = function()" && n==46) {
+        if ($0!="") exit 1;
+        print "                var currentFocussedIndex = this._getFocussedIndex();";
+        print "";
+        insertions++;
+    }
+    if (name=="List2Ctrl.prototype._handleMCUp = function()" && n==65) {
+        if ($0!="                rfi = this._getRelativeFocussedIndex();") exit 1;
+        print "";
+        print "                if (this._getFocussedIndex() == currentFocussedIndex) //didn't move";
+        print "                {";
+        print "                    if (this.dataList && this.dataList.items)";
+        print "                    {";
+        print "                        var index = this.dataList.items.length - 1;";
+        print "                        while (index >= 0 && this.dataList.items[index].disabled) index--;";
+        print "                        if (index >= 0)";
+        print "                        {";
+        print "                            this._manageFocus(index);";
+        print "                            return 'consumed';";
+        print "                        }";
+        print "                    }";
+        print "                }";
+        insertions++;
+    }
+    if ($0 ~ /^};$/) name="";
 }
-END {if (helpers!=1 || helperLines<30 || functions!=4 || captures!=8 || calls!=4) exit 1;}
+END {if (functions!=4 || insertions!=8) exit 1;}

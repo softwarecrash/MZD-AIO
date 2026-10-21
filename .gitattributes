@@ -178,3 +178,9 @@ docs/usb/mzd/*.sed text eol=lf
 docs/usb/mzd/patches/*.sed text eol=lf
 docs/usb/mzd/patches/*.awk text eol=lf
 docs/usb/mzd/ssh/* text eol=lf
+
+# Preserve the confirmed MP3 entry files byte-for-byte, including original CRLF.
+docs/usb/js/run.js -text -whitespace
+docs/usb/css/init.css -text -whitespace
+docs/usb/dev.html -text -whitespace
+docs/usb/mp3title.txt -text -whitespace

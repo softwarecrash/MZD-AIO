@@ -40,9 +40,7 @@ module.exports = async function test() {
   assert.equal(core.parse(JSON.stringify(project)).name, 'Test \u00e4');
   assert.equal(core.usbFiles(core.project('Install', ['list-beep'], 'install'))['mzd/action.txt'], 'install\n');
   assert.equal(core.usbFiles(core.project('Both', ['list-beep', 'shorter-delay'], 'install'))['mzd/selected.txt'], 'list-beep\nshorter-delay\n');
-  const sshFiles = core.usbFiles(core.project('SSH', ['ssh-bringback'], 'install'));
-  assert.equal(sshFiles['mzd/selected.txt'], 'ssh-bringback\n');
-  assert(sshFiles['mzd/ssh/service.sh'] instanceof Uint8Array);
+  assert.throws(() => core.project('SSH withdrawn pending hardware test', ['ssh-bringback'], 'install'));
   assert.equal(core.project('Restore', ['list-beep'], 'restore').tweaks.length, 0);
   assert.throws(() => core.project('Unsupported', ['background'], 'install'));
   assert.throws(() => core.project('Unported preflight', ['background'], 'preflight'));
@@ -61,12 +59,13 @@ module.exports = async function test() {
   const cards = () => ids.catalog.children.flatMap(group => group.children[1].children);
   assert.equal(ids.catalog.children.length, 4);
   assert.equal(cards().length, 41);
-  assert.equal(cards().filter(card => !card.children[0].children[0].disabled).length, 5);
+  assert.equal(cards().filter(card => !card.children[0].children[0].disabled).length, 4);
   const cb = cards().find(card => !card.children[0].children[0].disabled).children[0].children[0];
   cb.checked = true; cb.events.change();
   assert.equal(ids['selection-list'].children.length, 1);
   ids['export-zip'].events.click();
-  assert.equal(downloads[0].type, 'application/zip');
+  assert.equal(downloads.length, 0);
+  assert(ids['project-status'].textContent.includes('gesperrt'));
   ids.filter.value = 'selected'; ids.filter.events.change();
   assert.equal(cards().length, 1);
   ids.reset.events.click(); assert.equal(cards().length, 0);
@@ -75,40 +74,54 @@ module.exports = async function test() {
   await ids['import-file'].events.change({ target: { files: [{ size: 10, text: async () => '{invalid' }] } });
   assert.equal(ids['selection-list'].children.length, 1);
   // Device JS uses ES5 syntax; exercise the confirmed three-event sequence only.
-  const events = [], timers = [], device = { document, framework: { sendEventToMmui(...args) { events.push(args); } }, setTimeout(fn) { timers.push(fn); } };
-  vm.runInNewContext(await fs.readFile(path.join(root, 'docs/usb/js/run.js'), 'utf8'), { window: device, document });
-  const panel = document.body.children.at(-1);
-  assert.equal(events.length, 0); // no automatic diagnostic action
-  panel.children[2].events.click();
+  const events = [], timers = [], css = [], device = { document, framework: { sendEventToMmui(...args) { events.push(args); } }, log: {} };
+  const timer = fn => timers.push(fn);
+  vm.runInNewContext(await fs.readFile(path.join(root, 'docs/usb/js/run.js'), 'utf8'), { window: device, document, utility: { loadCss(name) { css.push(name); } }, setTimeout: timer });
+  assert.equal(events.length, 0);
+  assert.equal(css.length, 4);
+  assert(css.every(name => name.endsWith('/css/init.css')));
+  device.XSSwrapper.children[0].children[0].events.mousedown();
   while (timers.length) timers.shift()();
   assert.equal(events.length, 3);
   assert.equal(events[0][1], 'SelectDiagnostics');
   assert.equal(events[1][1], 'ActivateJCITest');
   assert.equal(events[2][2].payload.testId, 11);
+  // Independently captured reference must be complete in the actual package.
+  const reference = JSON.parse(await fs.readFile(path.join(root, 'docs/mp3-reference.json'), 'utf8'));
+  const { createHash } = require('node:crypto');
+  for (const [name, expected] of Object.entries(reference.files)) {
+    assert(files[name] instanceof Uint8Array);
+    assert.equal(files[name].length, expected.bytes);
+    assert.equal(createHash('sha256').update(files[name]).digest('hex'), expected.sha256);
+  }
+  const savedCss = ctx.MZD_USB_ASSETS['css/init.css'];
+  delete ctx.MZD_USB_ASSETS['css/init.css'];
+  assert.throws(() => core.usbFiles(project));
+  ctx.MZD_USB_ASSETS['css/init.css'] = savedCss;
   ids.filter.value = 'all'; ids.filter.events.change();
   ids.action.value = 'install'; ids.action.events.change();
-  assert.equal(ids['selection-list'].children.length, 5);
-  assert.equal(cards().filter(card => card.children[0].children[0].checked).length, 5);
-  assert.equal(cards().filter(card => !card.children[0].children[0].disabled).length, 5);
+  assert.equal(ids['selection-list'].children.length, 4);
+  assert.equal(cards().filter(card => card.children[0].children[0].checked).length, 4);
+  assert.equal(cards().filter(card => !card.children[0].children[0].disabled).length, 4);
   assert.equal(cards()[0].children[0].children[0].disabled, true);
   ids['export-json'].events.click();
   const allTests = JSON.parse(await downloads.at(-1).text());
-  assert.deepEqual([...allTests.tweaks].sort(), ['list-beep', 'shorter-delay', 'ssh-bringback', 'main-menu-loop', 'list-loop'].sort());
-  assert.equal(core.usbFiles(allTests)['mzd/selected.txt'].trim().split('\n').length, 5);
+  assert.deepEqual([...allTests.tweaks].sort(), ['list-beep', 'shorter-delay', 'main-menu-loop', 'list-loop'].sort());
+  assert.equal(core.usbFiles(allTests)['mzd/selected.txt'].trim().split('\n').length, 4);
   // Individual deselection remains possible; uninstall preserves that choice.
   const selectedCb = cards().find(card => card.children[0].children[0].checked).children[0].children[0];
   selectedCb.checked = false; selectedCb.events.change();
   ids.action.value = 'uninstall'; ids.action.events.change();
-  assert.equal(ids['selection-list'].children.length, 4);
+  assert.equal(ids['selection-list'].children.length, 3);
   ids.action.value = 'restore'; ids.action.events.change();
   assert.equal(ids['selection-list'].children.length, 0);
   assert.equal(cards()[0].children[0].children[0].disabled, true);
   ids['export-zip'].events.click();
-  assert.equal(downloads.at(-1).type, 'application/zip');
-  await ids['import-file'].events.change({ target: { files: [{ size: 100, text: async () => JSON.stringify(core.project('SSH selection', ['ssh-bringback'])) }] } });
+  assert(ids['project-status'].textContent.includes('gesperrt'));
+  await ids['import-file'].events.change({ target: { files: [{ size: 100, text: async () => JSON.stringify(core.project('Loop selection', ['list-loop'])) }] } });
   ids.action.value = 'install'; ids.action.events.change();
-  assert.equal(ids['selection-list'].children.length, 5);
-  assert(ids['selection-list'].children.some(item => item.textContent === 'SSH-Zugang'));
+  assert.equal(ids['selection-list'].children.length, 4);
+  assert(ids['selection-list'].children.some(item => item.textContent === 'Listen im Kreis'));
   const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'mzd-builder-test-'));
   const zipPath = path.join(temp, 'usb-test.zip');
   await fs.writeFile(zipPath, core.zip(files));

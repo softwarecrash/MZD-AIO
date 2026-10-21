@@ -40,7 +40,7 @@ with zipfile.ZipFile(args.zip) as z:
     assert manifest['mode'] == 'preflight'
     assert manifest['entry'] == 'mp3-console-keyboard'
     assert manifest['command'] == 'sh /mnt/sda1/tweaks.sh'
-    assert len(z.namelist()) == 36
+    assert len(z.namelist()) == 38
     for name, entry in manifest['assets'].items():
         data = z.read(name)
         assert data == (root / 'docs/usb' / name).read_bytes()

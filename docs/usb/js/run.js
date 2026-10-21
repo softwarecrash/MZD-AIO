@@ -1,48 +1,150 @@
-(function (window, document) {
-    "use strict";
-    if (window.mzdWebConsoleV1) { return; }
-    window.mzdWebConsoleV1 = true;
-    var running = false;
-    var panel = document.createElement("div");
-    panel.style.cssText = "position:fixed;left:15px;top:15px;width:580px;padding:14px;background:#fff;color:#111;font:20px sans-serif;z-index:9999999;border:3px solid #245b42;";
-    var title = document.createElement("div");
-    title.textContent = "MZD-AIO / 74.00.324A EU";
-    panel.appendChild(title);
-    var status = document.createElement("div");
-    status.style.cssText = "font-size:17px;margin:12px 0;white-space:pre-wrap;";
-    status.textContent = "Konsole oeffnen, im Testmenue TERMINAL waehlen und auf die Shell warten.\nDann per Tastatur eingeben:\nsh /mnt/sda1/tweaks.sh\nBei anderem USB-Pfad: sdb1, sdc1 oder sdd1.";
-    panel.appendChild(status);
-    var button = document.createElement("button");
-    button.textContent = "Konsole oeffnen";
-    button.style.cssText = "font-size:20px;padding:12px;margin:5px;";
-    button.addEventListener("click", function () {
-        if (running) { return; }
-        if (!window.framework || typeof window.framework.sendEventToMmui !== "function") {
-            status.textContent = "Keine CMU-Schnittstelle. Hier wird keine Konsole gestartet.";
-            return;
+(function (document, window, framework, log) {
+    function xssLog(view, msg, className) {
+        var msgBox = document.createElement("div");
+        msgBox.className = className
+        msgBox.innerHTML = msg
+        view.appendChild(msgBox)
+    }
+
+    function terminal(view) {
+        xssLog(view, 'opening terminal ~20sec')
+        framework.sendEventToMmui("syssettings", "SelectDiagnostics")
+        setTimeout(function () {
+            framework.sendEventToMmui("diag", "ActivateJCITest")
+            xssLog(view, 'ActivateJCITest')
+            setTimeout(function () {
+                framework.sendEventToMmui("diag", "ReadDTC", {"payload": {"testId": 11}})
+                xssLog(view, 'activate test 11 ReadDTC')
+            }, 7000)
+        }, 7000)
+    }
+
+    function UIxssLog(view) {
+
+        if (!log.xsspatched) {
+            var UIXssLogWrapper = document.createElement("div");
+            UIXssLogWrapper.className = 'xss-wrapper xss-ui-logger'
+            log.xsspatched = true
+            var originLogError = log.error
+            log.error = function (msg) {
+                xssLog(UIXssLogWrapper, msg, 'xss-ui-logger_error')
+                originLogError(msg)
+            }.bind(log)
+            var originLogWarn = log.warn
+            log.warn = function (msg) {
+                xssLog(UIXssLogWrapper, msg, 'xss-ui-logger_warn')
+                originLogWarn(msg)
+            }.bind(log)
+            var originLogInfo = log.info
+            log.info = function (msg) {
+                xssLog(UIXssLogWrapper, msg, 'xss-ui-logger_info')
+                originLogInfo(msg)
+            }.bind(log)
+
+            window.document.body.appendChild(UIXssLogWrapper)
+            xssLog(view, 'enable UI logs')
         }
-        running = true;
-        function failure(error) { running = false; status.textContent = "Diagnosezugang fehlgeschlagen: " + String(error); }
-        try {
-            window.framework.sendEventToMmui("syssettings", "SelectDiagnostics");
-            window.setTimeout(function () {
-                try {
-                    window.framework.sendEventToMmui("diag", "ActivateJCITest");
-                    window.setTimeout(function () {
-                        try {
-                            window.framework.sendEventToMmui("diag", "ReadDTC", { payload: { testId: 11 } });
-                            running = false;
-                        } catch (error) { failure(error); }
-                    }, 7000);
-                } catch (error) { failure(error); }
-            }, 7000);
-        } catch (error) { failure(error); }
-    }, false);
-    panel.appendChild(button);
-    var close = document.createElement("button");
-    close.textContent = "Anzeige schliessen";
-    close.style.cssText = button.style.cssText;
-    close.addEventListener("click", function () { panel.style.display = "none"; }, false);
-    panel.appendChild(close);
-    document.body.appendChild(panel);
-})(window, document);
+    }
+
+    function restart(view) {
+        xssLog(view, 'restart....')
+        framework._showFatalErrorWink('reboot', 'xss')
+        framework._restartCMU('XSS')
+    }
+
+    function xssDestroy() {
+        window.xssMounted = false
+        window.XSSwrapper.remove()
+        window.XSStoggle.remove()
+    }
+
+    function setXSSRegion(view) {
+        framework.localize._currentRegion = 'Region_Europe'
+        xssLog(view, 'region Region_Europe')
+    }
+
+    function action(parent, name, cb, view) {
+        var xActionBtn = document.createElement("div");
+        xActionBtn.innerHTML = name
+        xActionBtn.className = 'xss-action'
+        xActionBtn.addEventListener('mousedown', function () {
+            view.innerHTML = ""
+            cb(view)
+        }, false);
+        parent.appendChild(xActionBtn)
+    }
+
+    function createMenu() {
+        var XSSwrapper = document.createElement("div");
+        XSSwrapper.className = 'xss-wrapper'
+        var XSSactions = document.createElement("div");
+        XSSactions.className = 'xss-actions'
+        var view = document.createElement("div");
+        view.className = 'xss-view'
+        XSSwrapper.appendChild(XSSactions)
+        XSSwrapper.appendChild(view)
+
+        action(XSSactions, 'Open terminal', terminal, view)
+        action(XSSactions, 'Ui logs', UIxssLog, view)
+        action(XSSactions, 'Set UI region: EU', setXSSRegion, view)
+        action(XSSactions, 'Restart', restart, view)
+        action(XSSactions, 'Destroy', xssDestroy, view)
+
+        return XSSwrapper;
+
+    }
+
+    function mount() {
+        var wrapper = createMenu()
+
+
+        var toggle = document.createElement("div");
+        toggle.innerHTML = "^";
+        toggle.className = 'xss-toggle'
+        toggle.addEventListener('mousedown', function () {
+            window.XSSwrapper.classList.toggle('xss-collapse')
+        }, false);
+        window.document.body.appendChild(toggle)
+
+        window.document.body.appendChild(wrapper)
+        window.xssMounted = true
+        window.XSSwrapper = wrapper
+        window.XSStoggle = toggle
+    }
+
+
+    var isDevXss = !window.document.body
+    if (isDevXss) {
+        if (!window.framework) {
+            var framework = {}
+            framework.sendEventToMmui = function () {
+            };
+        }
+        if (!window.log) {
+            var log = {
+                error: function (msg) {
+                },
+                warn: function (msg) {
+                },
+                info: function (msg) {
+                }
+            }
+        }
+        window.onload = function run() {
+            mount()
+            window.xssCssReady = true
+        }
+    } else {
+        if (!window.xssCssReady) {
+            utility.loadCss('../../../mnt/sda1/css/init.css')
+            utility.loadCss('../../../mnt/sdb1/css/init.css')
+            utility.loadCss('../../../mnt/sdc1/css/init.css')
+            utility.loadCss('../../../mnt/sdd1/css/init.css')
+            window.xssCssReady = true
+        }
+        if (!window.xssMounted) {
+            mount()
+        }
+    }
+
+})(document, window, window.framework, window.log);

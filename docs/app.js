@@ -36,7 +36,7 @@
     byId("release-info").textContent = mode === "restore"
       ? "Full System Restore stellt alle von diesem Rework verwalteten Systemdateien aus den internen Originalen wieder her. Die Tweak-Auswahl wird ignoriert."
       : mode === "preflight" ? "Prüfen verändert keine Systemdateien. Noch nicht bearbeitete Tweaks sind gesperrt."
-      : "Ausführbar: Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH. Experimentell; Fahrzeugtest offen. Andere aktive Patches bleiben beim Installieren und Deinstallieren erhalten.";
+      : "Ausführbar: Listenpiepsen, Listendelay, Hauptmenü im Kreis und Listen im Kreis. Experimentell; Fahrzeugtest offen. Andere aktive Patches bleiben beim Installieren und Deinstallieren erhalten.";
     byId("selection-list").replaceChildren();
     for (const id of selected) { const li = document.createElement("li"); li.textContent = globalThis.MZD_CATALOG.find(p => p.id === id).title; byId("selection-list").append(li); }
   }
@@ -59,7 +59,7 @@
     status.textContent = ""; render();
   });
   byId("export-json").addEventListener("click", () => action(() => { save(JSON.stringify(current(), null, 2) + "\n", "mzd-aio-projekt.json", "application/json"); status.textContent = "Projektdatei zum Download bereitgestellt."; }));
-  byId("export-zip").addEventListener("click", () => action(() => { const project = current(); save(core.zip(core.usbFiles(project)), "mzd-aio-74.00.324A-EU-" + project.action + ".zip", "application/zip"); status.textContent = "USB-Paket bereitgestellt. Aktion: " + byId("action").selectedOptions[0].textContent + ". Start und Hinweise stehen in README.txt."; }));
+  byId("export-zip").addEventListener("click", () => action(() => { if (!core.releaseReady) throw new Error("USB-Download gesperrt: Originalvergleich und Freigabepruefung laufen."); const project = current(); save(core.zip(core.usbFiles(project)), "mzd-aio-74.00.324A-EU-" + project.action + ".zip", "application/zip"); status.textContent = "USB-Paket bereitgestellt. Aktion: " + byId("action").selectedOptions[0].textContent + ". Start und Hinweise stehen in README.txt."; }));
   byId("import-file").addEventListener("change", async event => {
     const file = event.target.files[0]; if (!file) return;
     try {

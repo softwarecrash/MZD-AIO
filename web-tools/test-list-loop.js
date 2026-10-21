@@ -27,15 +27,25 @@ module.exports = async function test(originalPath) {
     await fs.writeFile(path.join(dir, mask + '.js'), source);
     hashes[mask] = createHash('sha256').update(source).digest('hex');
   }
-  const helper = await fs.readFile(path.join(root, 'docs/usb/mzd/patches/list-loop-helper.js'), 'utf8');
+  const legacy = await fs.readFile(path.join(root, '../aio_reference/app/files/tweaks/config/list-loop/jci/gui/common/controls/List2/js/List2Ctrl.js'), 'utf8');
+  const legacyContext = { window: {}, log: { addSrcFile() {} }, framework: { registerCtrlLoaded() {} } };
+  vm.runInNewContext(legacy, legacyContext);
   let cases = 0;
   for (let mask = 0; mask < 8; mask++) {
     const context = { window: {}, log: { addSrcFile() {}, debug() {} }, framework: { registerCtrlLoaded() {} } };
     vm.runInNewContext(variants[mask], context);
     const proto = context.List2Ctrl.prototype, wraps = !!(mask & 4);
     if (wraps) {
-      assert.equal(variants[mask].replace(helper + '\n', '').replace(/^ *var aioPreviousIndex = this\._getFocussedIndex\(\);\n/gm, '')
-        .replace(/^ *if \(this\._aioWrapListFocus\(-?1, aioPreviousIndex\)\) return 'consumed';\n/gm, ''), variants[mask & 3]);
+      let stripped = variants[mask];
+      for (const name of ['_handleMCCW', '_handleMCCCW', '_handleMCDown', '_handleMCUp']) {
+        const actual = proto[name].toString();
+        assert.equal(actual, legacyContext.List2Ctrl.prototype[name].toString());
+        const baseline = { window: {}, log: { addSrcFile() {} }, framework: { registerCtrlLoaded() {} } };
+        vm.runInNewContext(variants[mask & 3], baseline);
+        stripped = stripped.replace(actual, baseline.List2Ctrl.prototype[name].toString());
+      }
+      assert.equal(stripped, variants[mask & 3]);
+      assert.equal(typeof proto._aioWrapListFocus, 'undefined');
     }
     function control(items, focus) {
       return Object.assign(Object.create(proto), {
@@ -74,16 +84,8 @@ module.exports = async function test(originalPath) {
       loading[method](); assert.equal(loading.jumps.length, 0); cases++;
     }
     const viewport = control(Array(12).fill(false), 4); viewport._handleMCCW();
-    assert.equal(viewport.focus, 5); assert.equal(viewport.jumps.length, 0); cases++;
-    if (wraps) {
-      for (const flags of [{ _inListReorder: true }, { _inLetterIndexMulticontroller: true },
-        { _hasFocus: false }, { _inputMode: 'touch' }, { _reorderTouchElt: {} }]) {
-        const c = Object.assign(control([false, false], 1), flags);
-        assert.equal(c._aioWrapListFocus(1, 1), false); assert.equal(c.jumps.length, 0); cases++;
-      }
-      const incomplete = control([false, false], 1); incomplete.dataList.itemCount = 8;
-      assert.equal(incomplete._aioWrapListFocus(1, 1), false); cases++;
-    }
+    assert.equal(viewport.focus, wraps ? 0 : 5); assert.equal(viewport.jumps.length, wraps ? 1 : 0); cases++;
+
   }
   // Already-patched and structurally incompatible input must fail closed.
   const script = bp(path.join(root, 'docs/usb/mzd/patches/list-loop.sh'));

@@ -50,9 +50,13 @@
     };
   }
   function usbFiles(value) {
-    throw new Error("USB-Download voruebergehend gesperrt: MP3-Paket und Patch-Portierung werden gegen die bestaetigten Originale korrigiert.");
     const clean = project(value.name, value.tweaks, value.action), files = draftFiles(clean);
     if (!root.MZD_USB_ASSETS) throw new Error("USB-Dateien fehlen. Bitte die Seite neu laden.");
+    if (!root.MZD_MP3_REFERENCE) throw new Error("Original-MP3-Referenz fehlt.");
+    for (const [path, expected] of Object.entries(root.MZD_MP3_REFERENCE.files)) {
+      const asset = root.MZD_USB_ASSETS[path];
+      if (!asset || asset.bytes !== expected.bytes || asset.sha256 !== expected.sha256) throw new Error("Original-MP3-Datei fehlt oder weicht ab: " + path);
+    }
     for (const [path, asset] of Object.entries(root.MZD_USB_ASSETS)) {
       const raw = atob(asset.base64), bytes = Uint8Array.from(raw, c => c.charCodeAt(0));
       if (bytes.length !== asset.bytes) throw new Error("USB-Datei unvollständig: " + path);
@@ -64,11 +68,11 @@
     files["README.txt"] = "MZD-AIO WEB / 74.00.324A EU\nAktion: " + clean.action + "\n\n"
       + "1. ZIP vollstaendig ins Hauptverzeichnis eines FAT32-USB-Sticks entpacken.\n"
       + "2. USB-Audio oeffnen und mp3/a.mp3 abspielen. Falls das Fenster nicht erscheint, b.mp3, c.mp3 oder d.mp3 versuchen. Diese verwenden sda1 bis sdd1.\n"
-      + "3. Im Fenster Konsole oeffnen druecken. Nach etwa 14 Sekunden erscheint das OEM-Testmenue; dort TERMINAL waehlen und auf die Shell warten.\n"
+      + "3. Im Originalfenster Open terminal druecken. Nach etwa 14 Sekunden erscheint das OEM-Testmenue; dort TERMINAL waehlen und auf die Shell warten.\n"
       + "4. Per USB-Tastatur eingeben: sh /mnt/sda1/tweaks.sh\n"
       + "   Falls Datei nicht gefunden: sda1 durch sdb1, sdc1 oder sdd1 ersetzen.\n"
       + "5. Berichte unter reports/<Zeit>-<PID>/ auf demselben Stick pruefen: run.log (Ausgabe und Fehler), status.txt (Exit-Code), preflight.txt (Dateivergleich, sofern erreicht). Auch fruehe Abbrueche werden protokolliert.\n\n"
-      + "Pruefen veraendert nichts. Install/Uninstall unterstuetzen Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH, einzeln und gemeinsam. Experimentell; Fahrzeugtest offen. Vor Aenderungen im Terminal mit j bestaetigen.\n"
+      + "Pruefen veraendert nichts. Install/Uninstall unterstuetzen Listenpiepsen, Listendelay, Hauptmenü im Kreis und Listen im Kreis, einzeln und gemeinsam. Experimentell; Fahrzeugtest offen. Vor Aenderungen im Terminal mit j bestaetigen.\n"
       + "SSH: Port 22, Benutzer cmu, Passwort jci. Der OEM-Dienst auf Port 36000 bleibt bestehen. Fremd belegter Port 22 fuehrt zum Abbruch. Kein zweiter eigener Listener. Der Start nach Neustart wird ueber stage_wifi eingerichtet. WLAN-Verbindung bleibt Aufgabe der Firmware.\n"
       + "SSH verwendet eine temporaere Kontenueberlagerung im RAM, keine Flash-Aenderung an Konten. Uninstall/Full System Restore entfernen Boot-Hook, eigenen Dienst, eigene Firewallfreigabe und Kontenueberlagerung. Keine persoenlichen Schluessel erforderlich.\n"
       + "SSH-Startberichte werden auf einen passenden beschreibbaren USB geschrieben. Ohne USB funktioniert der Zugang trotzdem; Laufzeitlogs werden dann verworfen, niemals intern gespeichert. Der Boot-Hook haengt von stage_3/jciMMUI ab: kein garantierter Rettungszugang bei fruehen Boot-/MMUI-Fehlern. WLAN muss funktionieren.\n"
@@ -85,5 +89,5 @@
       assets: Object.fromEntries(Object.entries(root.MZD_USB_ASSETS).map(([path, a]) => [path, { bytes: a.bytes, sha256: a.sha256 }])) }, null, 2) + "\n";
     return files;
   }
-  root.MzdBuilder = Object.freeze({ target, testableIds, project, parse, zip, draftFiles, usbFiles });
+  root.MzdBuilder = Object.freeze({ releaseReady: false, target, testableIds, project, parse, zip, draftFiles, usbFiles });
 })(globalThis);
