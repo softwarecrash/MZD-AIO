@@ -50,6 +50,7 @@
     };
   }
   function usbFiles(value) {
+    throw new Error("USB-Download voruebergehend gesperrt: MP3-Paket und Patch-Portierung werden gegen die bestaetigten Originale korrigiert.");
     const clean = project(value.name, value.tweaks, value.action), files = draftFiles(clean);
     if (!root.MZD_USB_ASSETS) throw new Error("USB-Dateien fehlen. Bitte die Seite neu laden.");
     for (const [path, asset] of Object.entries(root.MZD_USB_ASSETS)) {
