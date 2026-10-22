@@ -7,6 +7,7 @@
 - SSH ist auf ausdruecklichen Wunsch eine erlaubte eigene Erweiterung. Simulationen sind kein Nachweis einer funktionierenden Anmeldung oder eines funktionierenden Bootstarts auf der CMU. Solche Aussagen benoetigen einen Geraetetest.
 - Berichte und Protokolle gehoeren auf das Startmedium. Interne Original-Backups und gezielte Ruecknahme muessen erhalten bleiben.
 - Eigene Shell-Skripte verwenden Englisch fuer Meldungen, Rueckfragen, Logs und Kommentare. Die Sprache der Webseite ist davon unabhaengig.
+- Die reale CMU hat BusyBox grep ohne -x. Ganze Zeilen portabel mit awk vergleichen; Tests duerfen GNU-grep-Erweiterungen nicht als CMU-kompatibel voraussetzen.
 - Der Besitzer hat bestaetigt, dass kein vorheriges Paket installiert wurde, und die Downloadsperre ausdruecklich aufgehoben. Der korrigierte Stand ist ein experimentelles Testpaket fuer ihn. SSH darf enthalten sein; reale Verifikation folgt bei wieder erreichbarer CMU. Diese Freigabe ist kein Fahrzeug-Funktionsnachweis.
 
 Diese Vorgaben betreffen Fahrzeugdateien. Der HTML/JS-Web-Builder und notwendige Installer-Verwaltung bleiben eigene Projektsoftware.

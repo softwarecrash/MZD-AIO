@@ -3,6 +3,8 @@
 set -eu
 PATH=/usr/sbin:/usr/bin:/sbin:/bin
 export PATH
+# BusyBox grep on the CMU has no -x option; compare complete lines with awk.
+line_is() { awk -v expected="$1" '$0 == expected {found=1} END {exit !found}' "$2"; }
 SELF_DIR=$(CDPATH= cd "$(dirname "$0")" && pwd -P)
 SELF="$SELF_DIR/service.sh"
 RAM=/tmp/mzd-aio-ssh
@@ -122,7 +124,7 @@ trap 'exit 0' INT TERM
 LOG=/dev/null
 for U in "${2:-}" /tmp/mnt/sda1 /tmp/mnt/sdb1 /tmp/mnt/sdc1 /tmp/mnt/sdd1; do
     [ -n "$U" ] || continue
-    if [ -f "$U/mzd/ssh-log-marker.txt" ] && grep -qx 'MZD-AIO-SSH-v1' "$U/mzd/ssh-log-marker.txt"; then
+    if [ -f "$U/mzd/ssh-log-marker.txt" ] && line_is 'MZD-AIO-SSH-v1' "$U/mzd/ssh-log-marker.txt"; then
         D="$U/reports/ssh-$(date +%Y%m%d-%H%M%S)-$$"
         if mkdir -p "$D" && : > "$D/run.log"; then LOG="$D/run.log"; break; fi
     fi

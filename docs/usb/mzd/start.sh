@@ -4,6 +4,8 @@
 set -eu
 PATH=/usr/sbin:/usr/bin:/sbin:/bin
 export PATH
+# BusyBox grep on the CMU has no -x option; compare complete lines with awk.
+line_is() { awk -v expected="$1" '$0 == expected {found=1} END {exit !found}' "$2"; }
 umask 077
 BASE=$(CDPATH= cd "$(dirname "$0")" && pwd)
 USB=$(CDPATH= cd "$BASE/.." && pwd -P)
@@ -54,9 +56,9 @@ printf 'MZD-AIO / Startup medium: %s\n' "$USB"
 [ "$(id -u)" = 0 ] || fail 'Root shell required.'
 for tool in grep md5sum date mkdir cat; do command -v "$tool" >/dev/null || fail "Missing tool: $tool"; done
 [ -r "$BASE/originals.md5" ] || fail 'Original checksums are missing.'
-grep -qx 'JCI_SW_VER="MAZ_CMU-150_74.00.324"' /jci/version.ini || fail 'Firmware is not 74.00.324.'
-grep -qx 'JCI_SW_VER_PATCH="A"' /jci/version.ini || fail 'Patch level is not A.'
-grep -qx 'JCI_SW_FLAVOR="cmu150_EU"' /jci/version.ini || fail 'Region is not EU.'
+line_is 'JCI_SW_VER="MAZ_CMU-150_74.00.324"' /jci/version.ini || fail 'Firmware is not 74.00.324.'
+line_is 'JCI_SW_VER_PATCH="A"' /jci/version.ini || fail 'Patch level is not A.'
+line_is 'JCI_SW_FLAVOR="cmu150_EU"' /jci/version.ini || fail 'Region is not EU.'
 ACTION=preflight
 if [ -f "$BASE/action.txt" ]; then ACTION=$(cat "$BASE/action.txt"); fi
 case "${1:-}" in '') ;; --restore-all) ACTION=restore ;; *) fail 'Unknown startup argument.' ;; esac
@@ -66,13 +68,13 @@ if [ "$ACTION" != restore ]; then
     while IFS= read -r patch || [ -n "$patch" ]; do
         [ -n "$patch" ] || continue
         case "$patch" in -*|*[!a-z0-9-]*) fail 'Invalid tweak ID.' ;; esac
-        grep -qxF "$patch" "$BASE/allowed.txt" || fail "Unknown selection: $patch"
+        line_is "$patch" "$BASE/allowed.txt" || fail "Unknown selection: $patch"
         if [ "$ACTION" != preflight ] && [ "$patch" != list-beep ] && [ "$patch" != shorter-delay ] && [ "$patch" != ssh-bringback ] && [ "$patch" != main-menu-loop ] && [ "$patch" != list-loop ]; then
             fail 'This selection has not been ported yet. No changes made.'
         fi
     done < "$BASE/selected.txt"
     if [ "$ACTION" != preflight ]; then
-        grep -qEx "list-beep|shorter-delay|ssh-bringback|main-menu-loop|list-loop" "$BASE/selected.txt" || fail 'Select at least one ported tweak.'
+        grep -qE "^(list-beep|shorter-delay|ssh-bringback|main-menu-loop|list-loop)$" "$BASE/selected.txt" || fail 'Select at least one ported tweak.'
     fi
 fi
 printf 'Action: %s\n' "$ACTION"

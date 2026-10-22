@@ -63,7 +63,7 @@ fi
 MESSAGE='SSH task incomplete. Check the boot hook, state and individual reports.'
 sh "$BASE/file-job.sh" "$BASE" "$USB" "$REPORT/boot-hook" "$ACTION" ssh "$SELECTED" || fail 'Could not update the SSH startup file.'
 if [ "$ACTION" = preflight ]; then MESSAGE='SSH startup file checked; no service enabled.'; exit 0; fi
-if [ -f "$BACKUP/state.txt" ] && grep -qx 'patch=ssh-bringback' "$BACKUP/state.txt"; then
+if [ -f "$BACKUP/state.txt" ] && line_is 'patch=ssh-bringback' "$BACKUP/state.txt"; then
     [ -f "$SERVICE/service.sh" ] || fail 'SSH startup hook is active, but service files are missing.'
     ensure_rw "$RESOURCES"
     printf 'enabled\n' > "$SERVICE/enabled"

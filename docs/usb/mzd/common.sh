@@ -1,4 +1,6 @@
 # Sourced ONLY by start.sh, after firmware/root checks and USB logging.
+# BusyBox grep on the CMU has no -x option; compare complete lines with awk.
+line_is() { awk -v expected="$1" '$0 == expected {found=1} END {exit !found}' "$2"; }
 # Shared file manager: immutable original + active patch list. New apps default to /resources; no apps yet.
 TARGET_ID=${MZD_TARGET_ID:-list2}
 case "$TARGET_ID" in
@@ -71,9 +73,9 @@ cleanup() {
 }
 valid_backup() {
     matches "$BACKUP/original" "$ORIGINAL" && [ -f "$BACKUP/metadata.txt" ] &&
-        grep -qx 'firmware=74.00.324A-EU' "$BACKUP/metadata.txt" &&
-        grep -qxF "target=/$RELATIVE" "$BACKUP/metadata.txt" &&
-        grep -qx "md5=$ORIGINAL" "$BACKUP/metadata.txt"
+        line_is 'firmware=74.00.324A-EU' "$BACKUP/metadata.txt" &&
+        line_is "target=/$RELATIVE" "$BACKUP/metadata.txt" &&
+        line_is "md5=$ORIGINAL" "$BACKUP/metadata.txt"
 }
 space() {
     FREE=$(df -Pk "$1" | awk 'END {print $4}')

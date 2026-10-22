@@ -115,8 +115,8 @@ for ID in $FILE_PATCHES; do
     ENABLED=0
     if has "$ID" "$ACTIVE"; then ENABLED=1; fi
     case "$ACTION" in
-        install) if grep -qxF "$ID" "$SELECTED_FILE"; then ENABLED=1; fi ;;
-        uninstall) if grep -qxF "$ID" "$SELECTED_FILE"; then ENABLED=0; fi ;;
+        install) if line_is "$ID" "$SELECTED_FILE"; then ENABLED=1; fi ;;
+        uninstall) if line_is "$ID" "$SELECTED_FILE"; then ENABLED=0; fi ;;
         restore) ENABLED=0 ;;
     esac
     if [ "$ENABLED" = 1 ]; then WANTED="$WANTED $ID"; fi

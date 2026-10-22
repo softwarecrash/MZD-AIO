@@ -71,6 +71,26 @@ case "$1:$2" in
 esac
 ''')
     starts = temp / 'starts'
+    network = temp / 'network-state'
+    write(network, 'absent')
+    write(bins / 'ip', f'''#!/bin/sh
+case "$(cat {shlex.quote(bp(network))})" in
+absent) echo 'Device wlan0 does not exist' >&2; exit 1 ;;
+disabled) printf '2: wlan0: <BROADCAST> state DOWN\n' ;;
+disconnected) printf '2: wlan0: <NO-CARRIER,BROADCAST,UP> state DOWN\n' ;;
+connected) printf '2: wlan0: <BROADCAST,UP> state UP\n    inet 10.0.0.5/24 scope global wlan0\n' ;;
+*) exit 1 ;;
+esac
+''')
+    # Match the target grep limitation so GNU grep cannot hide another -x use.
+    write(bins / 'grep', '''#!/bin/sh
+for ARG in "$@"; do
+    case "$ARG" in --) break ;; -*x*) echo 'unsupported grep option -x' >&2; exit 2 ;; esac
+done
+exec /usr/bin/grep "$@"
+''')
+    assert 'ListenAddress 0.0.0.0' in config
+    assert 'BindToDevice' not in config
     write(bins / 'sshd', f'''#!/bin/sh
 if [ "$1" = -t ]; then exit 0; fi
 if [ -f {shlex.quote(bp(temp / 'fail-daemon'))} ]; then exit 1; fi
@@ -114,6 +134,11 @@ while [ "$N" -lt 60 ]; do sleep 1; N=$((N+1)); done
         run('check', 0, 'prerequisites checked')
         run('boot', 0, 'is already running')
         assert starts.read_text().splitlines() == ['start']
+        for state in ('absent', 'disabled', 'disconnected', 'connected', 'absent'):
+            write(network, state)
+            run('status', 0, 'SSH is running')
+            assert background.poll() is None, state
+            assert starts.read_text().splitlines() == ['start'], state
         chain.unlink(); jump.unlink()
         for _ in range(15):
             if chain.exists() and jump.exists(): break
@@ -133,4 +158,4 @@ while [ "$N" -lt 60 ]; do sleep 1; N=$((N+1)); done
         if background.poll() is None:
             subprocess.run([args.bash, str(service / 'service.sh'), 'stop'], capture_output=True, timeout=20)
             background.wait(timeout=10)
-print('Passed: OEM port 36000 coexistence, occupied port 22 rejection, duplicate start, RAM password overlay, failed-start rollback, firewall reset recovery, owned-process stop and USB-only logs. No real sshd, mounts or firewall used.')
+print('Passed: absent/disabled/disconnected WLAN, later address arrival/loss without service restart, target grep limitation, OEM port 36000 coexistence, occupied port 22 rejection, duplicate start, RAM password overlay, failed-start rollback, firewall reset recovery, owned-process stop and USB-only logs. No real sshd, mounts or firewall used.')
