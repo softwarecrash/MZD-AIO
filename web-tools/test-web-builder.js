@@ -60,6 +60,20 @@ module.exports = async function test() {
   assert.equal(ids.catalog.children.length, 4);
   assert.equal(cards().length, 41);
   assert.equal(cards().filter(card => !card.children[0].children[0].disabled).length, 5);
+  assert.equal(cards().filter(card => card.className.split(' ').includes('locked')).length, 36);
+  assert.equal(cards().filter(card => card.className.split(' ').includes('testing')).length, 5);
+  assert(cards().filter(card => !card.children[0].children[0].disabled)
+    .every(card => card.children[0].children[1].textContent.endsWith(' · Zu testen')));
+  // A confirmed vehicle test changes the visual status without disabling the patch.
+  const confirmed = ctx.MZD_CATALOG.find(patch => patch.id === 'list-beep');
+  confirmed.vehicleTested = true;
+  ids.filter.events.change();
+  const green = cards().find(card => card.className.split(' ').includes('tested'));
+  assert(green);
+  assert.equal(green.children[0].children[0].disabled, false);
+  assert.equal(green.children[0].children[1].textContent, confirmed.title + ' · Getestet');
+  confirmed.vehicleTested = false;
+  ids.filter.events.change();
   const cb = cards().find(card => !card.children[0].children[0].disabled).children[0].children[0];
   cb.checked = true; cb.events.change();
   assert.equal(ids['selection-list'].children.length, 1);
