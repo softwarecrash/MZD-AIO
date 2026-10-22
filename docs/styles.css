@@ -87,7 +87,18 @@ footer p { margin: 0; }
 .result-count { font-size: 12px; color: var(--muted); margin: 20px 0; }
 .catalog { display: grid; gap: 12px; }
 .tweak-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
-.tweak-card.chosen { border-color: var(--green); background: #f7fbf5; }
+.tweak-card.testing { border-color: #c78316; background: #fff3d6; }
+.tweak-card.tested { border-color: #488046; background: #eaf5e7; }
+.tweak-card.locked { border-color: #d3d6d9; background: #eceef0; color: #626870; }
+.tweak-card.locked label { cursor: default; }
+.tweak-card.chosen { box-shadow: inset 0 0 0 1px currentColor; }
+.tweak-card.testing input { accent-color: #9b620b; }
+.tweak-card.testing .patch-status { border-color: #c78316; color: #794b06; }
+.tweak-card.tested .patch-status { border-color: #488046; color: #315f30; }
+.status-legend { display: flex; flex-wrap: wrap; gap: 10px 20px; color: var(--muted); font-size: 12px; margin: 16px 0; }
+.status-legend span::before { content: ""; display: inline-block; width: 11px; height: 11px; border: 1px solid #a6abb1; background: #eceef0; border-radius: 3px; margin-right: 6px; }
+.status-legend .testing::before { background: #fff3d6; border-color: #c78316; }
+.status-legend .tested::before { background: #eaf5e7; border-color: #488046; }
 .tweak-card label { display: flex; align-items: center; gap: 12px; margin: 0; font-size: 15px; cursor: pointer; }
 .tweak-card input { width: 18px; height: 18px; margin: 0; padding: 0; accent-color: var(--green); flex-shrink: 0; }
 .tweak-card p { font-size: 12px; color: var(--muted); line-height: 1.7; margin: 10px 0 0; }

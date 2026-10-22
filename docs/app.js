@@ -19,14 +19,16 @@
       section.append(heading, list); byId("catalog").append(section); lists[id] = list;
     }
     for (const patch of rows) {
-      const card = document.createElement("article"); card.className = "tweak-card" + (selected.has(patch.id) ? " chosen" : "");
+      const available = core.testableIds.includes(patch.id);
+      const state = !available ? "locked" : patch.vehicleTested === true ? "tested" : "testing";
+      const card = document.createElement("article"); card.className = "tweak-card " + state + (selected.has(patch.id) ? " chosen" : "");
       const label = document.createElement("label"), checkbox = document.createElement("input"), title = document.createElement("span");
       checkbox.type = "checkbox"; checkbox.checked = selected.has(patch.id);
-      checkbox.disabled = mode === "restore" || !core.testableIds.includes(patch.id);
-      title.textContent = patch.title; label.append(checkbox, title);
+      checkbox.disabled = mode === "restore" || !available;
+      title.textContent = patch.title + (state === "testing" ? " · Zu testen" : state === "tested" ? " · Getestet" : ""); label.append(checkbox, title);
       checkbox.addEventListener("change", () => { if (checkbox.checked) selected.add(patch.id); else selected.delete(patch.id); status.textContent = ""; render(); });
       const badge = document.createElement("span"); badge.className = "patch-status";
-      badge.textContent = patch.releaseStatus === "experimental" ? "Zum Testen freigegeben · Fahrzeugtest offen" : "Gesperrt · In Planung · " + labels[patch.auditStatus];
+      badge.textContent = state === "tested" ? "Am Fahrzeug getestet" : state === "testing" ? "Zum Testen freigegeben · Fahrzeugtest offen" : "Gesperrt · In Planung · " + labels[patch.auditStatus];
       const description = document.createElement("p"); description.textContent = patch.description;
       card.append(label, badge, description); lists[patch.category].append(card);
     }
