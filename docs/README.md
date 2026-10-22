@@ -1,6 +1,6 @@
 # Aktueller Freigabestatus
 
-Der Besitzer hat keine bisherigen Pakete installiert und die Downloadsperre nach dem Originaltreue-Audit ausdruecklich aufgehoben. Der korrigierte Stand ist sein experimentelles Testpaket. SSH ist auf Wunsch enthalten; die CMU ist nicht erreichbar, daher sind Anmeldung und Bootstart weiterhin unbestaetigt.
+Am 22.10.2026 wurden SSH, Hauptmenue im Kreis sowie die drei Listen-Patches auf 74.00.324A EU am Fahrzeug bestaetigt. Die gruene Kennzeichnung gilt fuer diese Patch-Funktionen; Testumfang und verbleibende Grenzen stehen in [VEHICLE-TESTS.md](VEHICLE-TESTS.md).
 
 # MZD-AIO Web-Builder / 74.00.324A EU
 
@@ -10,7 +10,7 @@ Statische HTML/CSS/JavaScript-Anwendung ohne Build-Schritt und ohne externe Brow
 
 - Pruefen / Preflight: 38 Funktionsgruppen durchsuchen; nur zum Testen freigegebene Patches sind auswaehlbar. Keine Systemdateiaenderung.
 - Install markiert automatisch alle zum Testen freigegebenen Patches (aktuell Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH). Einzelne koennen abgewaehlt werden. Nicht bearbeitete Tweaks bleiben in allen Modi gesperrt, auch beim Projektimport.
-- Installieren / Install: Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH, einzeln oder gemeinsam. Experimentell, offline geprueft, Fahrzeugtest offen.
+- Installieren / Install: Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH, einzeln oder gemeinsam. Am Fahrzeug bestaetigte Patch-Funktionen; nicht jede Kombination und jeder Restore-Ablauf ist am Geraet getestet.
 - Deinstallieren / Uninstall: den ausgewaehlten portierten Tweak entfernen.
 - Full System Restore: alle von diesem Rework unterstuetzten Systemdateien aus internen Originalen wiederherstellen, unabhaengig von der Auswahl. Derzeit List2Ctrl.js. Kein Werksreset und keine pauschale Ruecknahme fremder/alter AIO-Installationen.
 - Apps To Resources: Standard fuer kuenftige neue Apps. Bestehende Systemdateien bleiben an ihrem Originalpfad. Noch keine Zusatz-App portiert.
@@ -27,7 +27,7 @@ Die 38 Gruppen fassen Install-/Uninstall-Snippets, Sprachen und Anzeigevarianten
 
 `sh /mnt/sda1/restore.sh` startet ebenfalls Full System Restore, ignoriert dabei Aktion und Auswahl im Paket. Ein neuer Stick genuegt; die Originale liegen intern auf der CMU.
 
-Der MP3-Konsolenzugang mit Tastatur ist vom Besitzer bestaetigt. Das neue Installerpaket ist noch nicht am Fahrzeug bestaetigt. SSH wird nur bei Auswahl aktiviert. Keine automatische Watchdog-/Opera-/Berechtigungsaenderung. Alte Anleitungen sind kein Firmware-Kompatibilitaetsnachweis.
+Der MP3-Konsolenzugang mit Tastatur ist vom Besitzer bestaetigt. Die fuenf Patch-Funktionen sind am Fahrzeug bestaetigt; Grenzen stehen in VEHICLE-TESTS.md. SSH wird nur bei Auswahl aktiviert. Keine automatische Watchdog-/Opera-/Berechtigungsaenderung. Alte Anleitungen sind kein Firmware-Kompatibilitaetsnachweis.
 
 ## Sicherungen
 
@@ -45,7 +45,7 @@ Ein schreibgeschuetzt eingebundener Start-USB wird fuer Berichte beschreibbar ei
 
 ## Entwicklung und Quellen
 
-catalog.js enthaelt die 38 Gruppen. Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH sind experimental, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
+catalog.js enthaelt die 38 Gruppen. Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH sind tested und vehicleTested, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
 
 Die MP3s stammen bytegleich vom zuvor eingelesenen Besitzer-USB. Verwandte Technik: https://github.com/naijamesz/mazda-connect-root-refactor . Keine Schluessel oder persoenlichen Konfigurationen.
 
@@ -72,7 +72,7 @@ state.txt liegt neben dem internen Original-Backup und enthaelt Formatversion, a
 
 Vor dem Dateiaustausch wird ein transaction-Verzeichnis mit vorherigem und gewuenschtem Zustand geschrieben. Erst nach erfolgreichem Austausch folgt die Zustandsdatei. Ein unterbrochener Vorgang wird beim naechsten schreibenden Aufruf anhand beider rekonstruierter Varianten abgeglichen; bei unbekanntem Inhalt wird keine Systemdatei ueberschrieben. Pruefen meldet einen offenen Vorgang und schreibt keine interne Zustandskorrektur. Das ist eine Wiederanlauflogik, kein Nachweis fuer die Stromausfallsicherheit des CMU-Dateisystems.
 
-Listendelay aendert die vier originalen List2-Zeitparameter von 1500/5000/500/1000 auf 150/300/200/300 ms. Der alte AIO-Kommentar-Marker ist fuer den Zustand nicht erforderlich. Die Kombinationen Original, nur Beep, nur Delay und beide werden separat auf Inhalt und moderne JS-Syntax geprueft; der Fahrzeugtest steht aus.
+Listendelay aendert die vier originalen List2-Zeitparameter von 1500/5000/500/1000 auf 150/300/200/300 ms. Der alte AIO-Kommentar-Marker ist fuer den Zustand nicht erforderlich. Die Kombinationen Original, nur Beep, nur Delay und beide werden separat auf Inhalt und moderne JS-Syntax geprueft; der Besitzer hat die drei Listen-Patches gemeinsam am Fahrzeug bestaetigt.
 
 
 ## SSH Bringback auf v74

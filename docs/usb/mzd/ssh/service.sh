@@ -31,11 +31,13 @@ account_mounted() { awk -v p="$ACCOUNT" '$2==p {f=1} END {exit !f}' "$MOUNTS"; }
 prerequisites() {
     [ "$(id -u)" = 0 ] || fail 'Root shell required.'
     for T in sshd awk grep sed tr cmp mount umount iptables netstat readlink; do command -v "$T" >/dev/null || fail "Missing tool: $T"; done
+    SSHD=$(command -v sshd) || fail 'SSH executable is missing.'
+    case "$SSHD" in /*) ;; *) fail 'SSH executable path is not absolute.' ;; esac
     [ "$(readlink "$PASSWD_LINK")" = "$ACCOUNT" ] || fail 'Unknown account file location.'
     awk -F: '$1=="cmu" {n++; if(NF!=7 || $3!=0 || $7!="/bin/sh") bad=1} END {exit !(n==1 && !bad)}' "$ACCOUNT" || fail 'cmu account does not match the verified layout.'
     [ -s /etc/ssh/ssh_host_rsa_key ] || fail 'OEM host key is missing.'
     [ -s "$SELF_DIR/password.hash" ] || fail 'Password definition is missing.'
-    sshd -t -f "$CONFIG" || fail 'SSH configuration is not valid.'
+    "$SSHD" -t -f "$CONFIG" || fail 'SSH configuration is not valid.'
     iptables -S INPUT >/dev/null || fail 'Could not inspect firewall.'
 }
 firewall() {
@@ -140,7 +142,7 @@ chmod 644 "$RAM/passwd"
 mount -o bind "$RAM/passwd" "$ACCOUNT" || fail 'Could not set up password in RAM.'
 cmp -s "$RAM/passwd" "$ACCOUNT" || fail 'Could not verify account overlay.'
 if command -v nscd >/dev/null; then nscd -i passwd 2>/dev/null || :; fi
-sshd -D -e -f "$CONFIG" 2>&1 | while IFS= read -r LINE; do write_log "$LINE"; done &
+"$SSHD" -D -e -f "$CONFIG" 2>&1 | while IFS= read -r LINE; do write_log "$LINE"; done &
 sleep 1
 [ -s "$RAM/sshd.pid" ] || fail 'SSH could not open port 22.'
 DAEMON=$(cat "$RAM/sshd.pid")

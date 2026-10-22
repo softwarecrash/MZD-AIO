@@ -4,7 +4,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const os = require('node:os');
-const { Blob } = require('node:buffer');
+const { Blob, Buffer } = require('node:buffer');
 
 module.exports = async function test() {
   const root = path.resolve(__dirname, '..');
@@ -42,6 +42,13 @@ module.exports = async function test() {
   assert.equal(core.usbFiles(core.project('Both', ['list-beep', 'shorter-delay'], 'install'))['mzd/selected.txt'], 'list-beep\nshorter-delay\n');
   assert.equal(core.project('SSH experimental', ['ssh-bringback'], 'install').tweaks[0], 'ssh-bringback');
   assert.equal(core.project('Restore', ['list-beep'], 'restore').tweaks.length, 0);
+  const testedPackage = core.usbFiles(core.project('Tested SSH', ['ssh-bringback'], 'install'));
+  assert.equal(JSON.parse(testedPackage['patch-status.json']).vehicleTested, true);
+  assert.equal(JSON.parse(testedPackage['package-manifest.json']).experimental, false);
+  const sshText = Buffer.from(testedPackage['mzd/ssh/service.sh']).toString('utf8');
+  assert(sshText.includes('"$SSHD" -D -e -f'));
+  assert(sshText.includes('SSHD=$(command -v sshd)'));
+
   assert.throws(() => core.project('Unsupported', ['background'], 'install'));
   assert.throws(() => core.project('Unported preflight', ['background'], 'preflight'));
   assert.throws(() => core.parse(JSON.stringify({ ...project, tweaks: ['background'] })));
@@ -65,18 +72,21 @@ module.exports = async function test() {
   }
   assert.equal(cards().filter(card => !card.children[0].children[0].disabled).length, 5);
   assert.equal(cards().filter(card => card.className.split(' ').includes('locked')).length, 33);
-  assert.equal(cards().filter(card => card.className.split(' ').includes('testing')).length, 5);
+  assert.equal(cards().filter(card => card.className.split(' ').includes('testing')).length, 0);
   assert(cards().filter(card => !card.children[0].children[0].disabled)
-    .every(card => card.children[0].children[1].textContent.endsWith(' · Zu testen')));
+    .every(card => card.children[0].children[1].textContent.endsWith(' · Getestet')));
   // A confirmed vehicle test changes the visual status without disabling the patch.
   const confirmed = ctx.MZD_CATALOG.find(patch => patch.id === 'list-beep');
   confirmed.vehicleTested = true;
   ids.filter.events.change();
-  const green = cards().find(card => card.className.split(' ').includes('tested'));
+  const green = cards().find(card => card.className.split(' ').includes('tested') && card.children[0].children[1].textContent.startsWith(confirmed.title));
   assert(green);
   assert.equal(green.children[0].children[0].disabled, false);
   assert.equal(green.children[0].children[1].textContent, confirmed.title + ' · Getestet');
   confirmed.vehicleTested = false;
+  ids.filter.events.change();
+  assert.equal(cards().filter(card => card.className.split(' ').includes('testing')).length, 1);
+  confirmed.vehicleTested = true;
   ids.filter.events.change();
   const cb = cards().find(card => !card.children[0].children[0].disabled).children[0].children[0];
   cb.checked = true; cb.events.change();

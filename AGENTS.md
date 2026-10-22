@@ -11,3 +11,5 @@
 - Der Besitzer hat bestaetigt, dass kein vorheriges Paket installiert wurde, und die Downloadsperre ausdruecklich aufgehoben. Der korrigierte Stand ist ein experimentelles Testpaket fuer ihn. SSH darf enthalten sein; reale Verifikation folgt bei wieder erreichbarer CMU. Diese Freigabe ist kein Fahrzeug-Funktionsnachweis.
 
 Diese Vorgaben betreffen Fahrzeugdateien. Der HTML/JS-Web-Builder und notwendige Installer-Verwaltung bleiben eigene Projektsoftware.
+
+Aktueller Fahrzeugnachweis vom 22.10.2026: Besitzer bestaetigt die fuenf freigegebenen Patch-Funktionen auf 74.00.324A EU. Details und Grenzen in docs/VEHICLE-TESTS.md. SSH-Pfadkorrektur ist Bestandteil des getesteten Stands. Opera-only Restart ist wegen schwarzem Display kein bestaetigter Reload-Weg; Full System Restore und WLAN-off-Boot nicht pauschal als getestet bezeichnen.

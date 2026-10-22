@@ -1,3 +1,7 @@
+# Historical preflight (superseded by vehicle tests)
+
+See [VEHICLE-TESTS.md](VEHICLE-TESTS.md) for the later successful installation, password authentication and reboot test. The preflight findings below describe the earlier state.
+
 # SSH device preflight — 2026-10-22
 
 Target: 74.00.324A EU, temporary owner SSH on port 2222. Only `ssh-bringback` selected on the USB at `/mnt/sdb1`.

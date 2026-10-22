@@ -48,11 +48,12 @@ globalThis.MZD_CATALOG = [
     "id": "ssh-bringback",
     "title": "SSH-Zugang",
     "auditStatus": "NICHT_UNVERAENDERT",
-    "description": "Aktiviert einen SSH-Zugang auf Port 22 für den Zugriff per Netzwerk, auch nach einem Neustart. Anmeldung: cmu / jci. Eigene Erweiterung; Anmeldung, Parallelbetrieb und Bootstart müssen noch an der CMU getestet werden.",
+    "description": "Aktiviert einen SSH-Zugang auf Port 22: Benutzer cmu, Passwort jci. Passwortanmeldung und automatischer Start nach vollständigem Neustart, auch ohne USB-Stick, am Fahrzeug bestätigt. WLAN muss verfügbar und verbunden sein.",
     "selectable": true,
-    "releaseStatus": "experimental",
+    "releaseStatus": "tested",
     "category": "system",
-    "vehicleTested": false
+    "vehicleTested": true,
+    "testedOn": "2026-10-22"
   },
   {
     "id": "storage",
@@ -132,9 +133,10 @@ globalThis.MZD_CATALOG = [
     "auditStatus": "ANPASSEN",
     "description": "Lässt die Auswahl im Hauptmenü vom letzten Symbol zum ersten und umgekehrt springen. Ändert gezielt nur die beiden Grenzen der Auswahl; normale Listen bleiben unverändert.",
     "selectable": true,
-    "releaseStatus": "experimental",
+    "releaseStatus": "tested",
     "category": "patches",
-    "vehicleTested": false
+    "vehicleTested": true,
+    "testedOn": "2026-10-22"
   },
   {
     "id": "list-loop",
@@ -142,9 +144,10 @@ globalThis.MZD_CATALOG = [
     "auditStatus": "ANPASSEN",
     "description": "Lässt die Auswahl in unterstützten Listen beim Drehen oder Kippen des Commanders vom letzten Eintrag zum ersten und umgekehrt springen. Mit Listenpiepsen und Listenverzögerung kombinierbar.",
     "selectable": true,
-    "releaseStatus": "experimental",
+    "releaseStatus": "tested",
     "category": "patches",
-    "vehicleTested": false
+    "vehicleTested": true,
+    "testedOn": "2026-10-22"
   },
   {
     "id": "list-beep",
@@ -152,9 +155,10 @@ globalThis.MZD_CATALOG = [
     "auditStatus": "TEXT_KANDIDAT",
     "description": "Schaltet den Signalton bei bestimmten langen Multicontroller-Aktionen in Listen aus. Andere Systemtöne bleiben erhalten.",
     "selectable": true,
-    "releaseStatus": "experimental",
-    "vehicleTested": false,
-    "category": "patches"
+    "releaseStatus": "tested",
+    "vehicleTested": true,
+    "category": "patches",
+    "testedOn": "2026-10-22"
   },
   {
     "id": "shorter-delay",
@@ -162,9 +166,10 @@ globalThis.MZD_CATALOG = [
     "auditStatus": "TEXT_KANDIDAT",
     "description": "Verkürzt Wartezeiten beim automatischen Scrollen in Listen. Kann zusammen mit dem Listenpiepsen-Patch verwendet und einzeln entfernt werden.",
     "selectable": true,
-    "releaseStatus": "experimental",
+    "releaseStatus": "tested",
     "category": "patches",
-    "vehicleTested": false
+    "vehicleTested": true,
+    "testedOn": "2026-10-22"
   },
   {
     "id": "system-beep",

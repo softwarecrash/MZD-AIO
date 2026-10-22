@@ -32,13 +32,13 @@
       const description = document.createElement("p"); description.textContent = patch.description;
       card.append(label, badge, description); lists[patch.category].append(card);
     }
-    byId("result-count").textContent = rows.length + " Tweaks · " + core.testableIds.length + " zum Testen freigegeben";
+    byId("result-count").textContent = rows.length + " Tweaks · " + core.testableIds.length + " freigegeben · " + globalThis.MZD_CATALOG.filter(p => core.testableIds.includes(p.id) && p.vehicleTested === true).length + " getestet";
     byId("empty").hidden = rows.length > 0;
     byId("selection-count").textContent = selected.size + " Tweaks ausgewählt";
     byId("release-info").textContent = mode === "restore"
       ? "Full System Restore stellt alle von diesem Rework verwalteten Systemdateien aus den internen Originalen wieder her. Die Tweak-Auswahl wird ignoriert."
       : mode === "preflight" ? "Prüfen verändert keine Systemdateien. Noch nicht bearbeitete Tweaks sind gesperrt."
-      : "Ausführbar: Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH. Experimentell; Fahrzeugtest offen. Andere aktive Patches bleiben beim Installieren und Deinstallieren erhalten.";
+      : "Ausführbar: Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH. Am Fahrzeug auf 74.00.324A EU bestätigt. Andere aktive Patches bleiben beim Installieren und Deinstallieren erhalten.";
     byId("selection-list").replaceChildren();
     for (const id of selected) { const li = document.createElement("li"); li.textContent = globalThis.MZD_CATALOG.find(p => p.id === id).title; byId("selection-list").append(li); }
   }

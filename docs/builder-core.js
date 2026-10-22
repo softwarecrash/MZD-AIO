@@ -3,7 +3,7 @@
   "use strict";
   const target = Object.freeze({ firmware: "74.00.324A", region: "EU" });
   const catalog = root.MZD_CATALOG;
-  const testableIds = Object.freeze(catalog.filter(p => p.selectable && p.releaseStatus === "experimental").map(p => p.id));
+  const testableIds = Object.freeze(catalog.filter(p => p.selectable && ["experimental", "tested"].includes(p.releaseStatus)).map(p => p.id));
   function project(name, ids, action = "preflight") {
     if (typeof name !== "string" || !name.trim() || name.trim().length > 80) throw new Error("Bitte einen Projektnamen mit 1 bis 80 Zeichen eingeben.");
     if (!Array.isArray(ids) || ids.some(id => typeof id !== "string" || !catalog.some(p => p.id === id && p.selectable))) throw new Error("Das Projekt enthält unbekannte oder nicht auswählbare Tweaks.");
@@ -72,19 +72,22 @@
       + "4. Per USB-Tastatur eingeben: sh /mnt/sda1/tweaks.sh\n"
       + "   Falls Datei nicht gefunden: sda1 durch sdb1, sdc1 oder sdd1 ersetzen.\n"
       + "5. Berichte unter reports/<Zeit>-<PID>/ auf demselben Stick pruefen: run.log (Ausgabe und Fehler), status.txt (Exit-Code), preflight.txt (Dateivergleich, sofern erreicht). Auch fruehe Abbrueche werden protokolliert.\n\n"
-      + "Pruefen veraendert nichts. Install/Uninstall unterstuetzen Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH, einzeln und gemeinsam. Experimentell; Fahrzeugtest offen. Vor Aenderungen im Terminal mit j bestaetigen.\n"
+      + "Pruefen veraendert nichts. Install/Uninstall unterstuetzen Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH, einzeln und gemeinsam. Diese fuenf Patches wurden am 22.10.2026 auf 74.00.324A EU am Fahrzeug bestaetigt; nicht jede Kombination oder Restore-Variante wurde am Fahrzeug getestet. Vor Aenderungen im Terminal mit y bestaetigen.\n"
       + "SSH: Port 22, Benutzer cmu, Passwort jci. Der OEM-Dienst auf Port 36000 bleibt bestehen. Fremd belegter Port 22 fuehrt zum Abbruch. Kein zweiter eigener Listener. Der Start nach Neustart wird ueber stage_wifi eingerichtet. WLAN-Verbindung bleibt Aufgabe der Firmware.\n"
       + "SSH verwendet eine temporaere Kontenueberlagerung im RAM, keine Flash-Aenderung an Konten. Uninstall/Full System Restore entfernen Boot-Hook, eigenen Dienst, eigene Firewallfreigabe und Kontenueberlagerung. Keine persoenlichen Schluessel erforderlich.\n"
       + "SSH-Startberichte werden auf einen passenden beschreibbaren USB geschrieben. Ohne USB funktioniert der Zugang trotzdem; Laufzeitlogs werden dann verworfen, niemals intern gespeichert. Der Boot-Hook haengt von stage_3/jciMMUI ab: kein garantierter Rettungszugang bei fruehen Boot-/MMUI-Fehlern. WLAN muss funktionieren.\n"
       + "Install fuegt die Auswahl hinzu; Uninstall entfernt nur die Auswahl. Andere aktive Patches bleiben erhalten. Die Datei wird aus dem Original und der gespeicherten aktiven Patchliste neu erzeugt. Ihr zuletzt geschriebener Hash erkennt fremde Aenderungen.\n"
       + "Originale bleiben intern unter /resources/aio-rework/backups/74.00.324A-EU/ erhalten; zusaetzliche Kopie auf diesem USB unter backups/. Installiert/Original wird automatisch erkannt.\n"
       + "Full System Restore ignoriert die Tweak-Auswahl und stellt alle derzeit unterstuetzten, von uns verwalteten Systemdateien wieder her. Alternativ direkt: sh /mnt/sda1/restore.sh . Ein neuer Stick reicht; die Originale liegen intern. Keine Wiederherstellung fremder AIO-Installationen oder Werksreset.\n"
-      + "Der MP3-Konsolenzugang mit Tastatur ist der vom Besitzer bestaetigte Weg; dieses neu zusammengestellte Paket ist noch nicht am Fahrzeug getestet.\n"
-      + "SSH wird nur bei entsprechender Auswahl installiert und gestartet. Kein automatischer CMU-Neustart; nach erfolgreicher Aenderung selbst neu starten. Logs bleiben auf dem Start-USB.\n\n"
+      + "Der MP3-Konsolenzugang mit Tastatur ist der vom Besitzer bestaetigte Weg; die einzelnen freigegebenen Patches sind am Zielgeraet bestaetigt. Pruefumfang: siehe VEHICLE-TESTS.md auf der Webseite.\n"
+      + "SSH wird nur bei entsprechender Auswahl installiert und gestartet. Kein automatischer CMU-Neustart; nach erfolgreicher Aenderung vollstaendig neu starten, z.B. mit reboot ueber SSH. Ein isolierter Opera-Neustart hinterliess im Test ein schwarzes Display. Logs bleiben auf dem Start-USB.\n\n"
       + "Auswahl im Browser wieder oeffnen: project.json\n";
-    files["patch-status.json"] = JSON.stringify({ target, action: clean.action, experimental: true, vehicleTested: false, patches: clean.tweaks }, null, 2) + "\n";
+    const vehicleTested = clean.tweaks.length > 0 && clean.tweaks.every(id => catalog.find(p => p.id === id).vehicleTested === true);
+    const experimental = !vehicleTested;
+    const testScope = "Selected patch functions on 74.00.324A EU; not every combination or restore path.";
+    files["patch-status.json"] = JSON.stringify({ target, action: clean.action, experimental, vehicleTested, testScope, patches: clean.tweaks }, null, 2) + "\n";
     files["package-manifest.json"] = JSON.stringify({ format: "mzd-aio-usb", version: 1, target,
-      installable: clean.action !== "preflight", mode: clean.action, experimental: true, vehicleTested: false,
+      installable: clean.action !== "preflight", mode: clean.action, experimental, vehicleTested, testScope,
       entry: "mp3-console-keyboard", command: "sh /mnt/sda1/tweaks.sh", appsToResources: true,
       assets: Object.fromEntries(Object.entries(root.MZD_USB_ASSETS).map(([path, a]) => [path, { bytes: a.bytes, sha256: a.sha256 }])) }, null, 2) + "\n";
     return files;

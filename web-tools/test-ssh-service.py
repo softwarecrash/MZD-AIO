@@ -92,6 +92,7 @@ exec /usr/bin/grep "$@"
     assert 'ListenAddress 0.0.0.0' in config
     assert 'BindToDevice' not in config
     write(bins / 'sshd', f'''#!/bin/sh
+case "$0" in /*) ;; *) echo 'sshd re-exec requires execution with an absolute path' >&2; exit 1 ;; esac
 if [ "$1" = -t ]; then exit 0; fi
 if [ -f {shlex.quote(bp(temp / 'fail-daemon'))} ]; then exit 1; fi
 CFG=$4

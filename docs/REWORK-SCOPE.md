@@ -1,6 +1,6 @@
 # Rework scope: 74.00.324A EU
 
-The web catalog contains 38 tweaks. Five are available for owner testing; 33 remain locked.
+The web catalog contains 38 tweaks. Five have owner-confirmed vehicle tests on 74.00.324A EU and remain available; 33 remain locked.
 
 The following legacy tweaks are retired and are not porting tasks:
 
