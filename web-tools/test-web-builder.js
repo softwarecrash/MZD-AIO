@@ -58,9 +58,13 @@ module.exports = async function test() {
   }
   const cards = () => ids.catalog.children.flatMap(group => group.children[1].children);
   assert.equal(ids.catalog.children.length, 4);
-  assert.equal(cards().length, 41);
+  assert.equal(cards().length, 38);
+  for (const id of ['legacy-usb-audio', 'legacy-flac-order', 'pause-on-mute']) {
+    assert(!ctx.MZD_CATALOG.some(patch => patch.id === id));
+    assert.throws(() => core.project('Retired', [id], 'install'));
+  }
   assert.equal(cards().filter(card => !card.children[0].children[0].disabled).length, 5);
-  assert.equal(cards().filter(card => card.className.split(' ').includes('locked')).length, 36);
+  assert.equal(cards().filter(card => card.className.split(' ').includes('locked')).length, 33);
   assert.equal(cards().filter(card => card.className.split(' ').includes('testing')).length, 5);
   assert(cards().filter(card => !card.children[0].children[0].disabled)
     .every(card => card.children[0].children[1].textContent.endsWith(' · Zu testen')));

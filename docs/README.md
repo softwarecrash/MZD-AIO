@@ -8,14 +8,14 @@ Statische HTML/CSS/JavaScript-Anwendung ohne Build-Schritt und ohne externe Brow
 
 ## Bedienung wie bei AIO
 
-- Pruefen / Preflight: 41 Funktionsgruppen durchsuchen; nur zum Testen freigegebene Patches sind auswaehlbar. Keine Systemdateiaenderung.
+- Pruefen / Preflight: 38 Funktionsgruppen durchsuchen; nur zum Testen freigegebene Patches sind auswaehlbar. Keine Systemdateiaenderung.
 - Install markiert automatisch alle zum Testen freigegebenen Patches (aktuell Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH). Einzelne koennen abgewaehlt werden. Nicht bearbeitete Tweaks bleiben in allen Modi gesperrt, auch beim Projektimport.
 - Installieren / Install: Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH, einzeln oder gemeinsam. Experimentell, offline geprueft, Fahrzeugtest offen.
 - Deinstallieren / Uninstall: den ausgewaehlten portierten Tweak entfernen.
 - Full System Restore: alle von diesem Rework unterstuetzten Systemdateien aus internen Originalen wiederherstellen, unabhaengig von der Auswahl. Derzeit List2Ctrl.js. Kein Werksreset und keine pauschale Ruecknahme fremder/alter AIO-Installationen.
 - Apps To Resources: Standard fuer kuenftige neue Apps. Bestehende Systemdateien bleiben an ihrem Originalpfad. Noch keine Zusatz-App portiert.
 
-Die 41 Gruppen fassen Install-/Uninstall-Snippets, Sprachen und Anzeigevarianten der 125 alten Skriptdateien zusammen. Drei interne Pruefbereiche sind keine Tweaks. Noch nicht portierte Tweaks sind nur im Pruef-/Planungsmodus auswaehlbar.
+Die 38 Gruppen fassen Install-/Uninstall-Snippets, Sprachen und Anzeigevarianten der verbleibenden alten Skriptdateien zusammen. Drei interne Pruefbereiche sind keine Tweaks. Noch nicht portierte Tweaks sind gesperrt.
 
 ## USB-Start mit Tastatur
 
@@ -45,7 +45,7 @@ Ein schreibgeschuetzt eingebundener Start-USB wird fuer Berichte beschreibbar ei
 
 ## Entwicklung und Quellen
 
-catalog.js enthaelt die 41 Gruppen. Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH sind experimental, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
+catalog.js enthaelt die 38 Gruppen. Listenpiepsen, Listendelay, Hauptmenü im Kreis, Listen im Kreis und SSH sind experimental, die uebrigen sind unported. builder-core.js validiert Projekte/Aktionen und erzeugt ZIPs mit binaeren MP3s. app.js, index.html und styles.css bilden die Oberflaeche. usb/ enthaelt alle Paketquellen.
 
 Die MP3s stammen bytegleich vom zuvor eingelesenen Besitzer-USB. Verwandte Technik: https://github.com/naijamesz/mazda-connect-root-refactor . Keine Schluessel oder persoenlichen Konfigurationen.
 
@@ -108,3 +108,7 @@ Die selbst erfundene Methode _aioWrapListFocus und ihre zusaetzlichen Regeln wur
 Die alten Grenzregeln werden dabei nicht still verbessert. Der alte Tweak kann bereits bei stehengebliebenem Fokus einen Kreissprung versuchen. Diese Eigenschaft wird als Altverhalten dokumentiert, nicht eigenmaechtig veraendert.
 
 232 Verhaltensfaelle fuer acht Kombinationen pruefen die Originalportierung. Die frueheren 256 Faelle und Freigabe fuer die eigene Hilfsfunktion sind zurueckgezogen. Bereits mit dem zurueckgezogenen eigenen Helfer gepatchte Dateistaende werden nicht als aktuelle Portierung akzeptiert. Der Besitzer bestaetigt, dass kein verworfener Altstand installiert wurde. Fuer sein korrigiertes Testpaket ist deshalb keine Altstandmigration erforderlich. Fahrzeugpruefung bleibt offen.
+
+## Nicht mehr im Rework
+
+Alter USB-Audio-Mod, alte FLAC-Sortierung und Pause beim Stummschalten sind aus dem Katalog und der Portierungsplanung entfernt. Die alten AIO-Versionsgrenzen beziehungsweise die bereits integrierte Funktion machen diese Alt-Tweaks fuer das Zielprofil entbehrlich. Siehe [Scope](REWORK-SCOPE.md).

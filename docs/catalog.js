@@ -167,15 +167,6 @@ globalThis.MZD_CATALOG = [
     "vehicleTested": false
   },
   {
-    "id": "legacy-flac-order",
-    "title": "Alte FLAC-Sortierung",
-    "auditStatus": "NICHT_UNVERAENDERT",
-    "description": "Explizit für alte Firmware (< Gruppe 5) und versionsgebundene libmc_user.so. Gruppe 0 würde diese alte Bedingung ebenfalls erfüllen. Keine Altbibliothek auf v74 übernehmen.",
-    "selectable": true,
-    "releaseStatus": "unported",
-    "category": "patches"
-  },
-  {
     "id": "system-beep",
     "title": "Systemtöne deaktivieren",
     "auditStatus": "TEXT_KANDIDAT",
@@ -190,15 +181,6 @@ globalThis.MZD_CATALOG = [
     "auditStatus": "NICHT_UNVERAENDERT",
     "description": "cat-Zusammenbau ersetzt systemApp aus 59/70-Vorlagen, einschließlich kombinierter Disclaimer-Varianten. Neue WCP-Einträge und Ereignisse müssen erhalten bleiben.",
     "selectable": true,
-    "releaseStatus": "unported",
-    "category": "patches"
-  },
-  {
-    "id": "pause-on-mute",
-    "title": "Pause beim Stummschalten",
-    "auditStatus": "ALTEN_TWEAK_WEGLASSEN",
-    "description": "AIO sperrt diesen Tweak selbst oberhalb Gruppe 5 und nennt ihn ab 59.00.502 integriert. Nicht erneut in die geänderte AndroidAutoVolumeOff-Logik injizieren.",
-    "selectable": false,
     "releaseStatus": "unported",
     "category": "patches"
   },
@@ -354,15 +336,6 @@ globalThis.MZD_CATALOG = [
     "selectable": true,
     "releaseStatus": "unported",
     "category": "apps"
-  },
-  {
-    "id": "legacy-usb-audio",
-    "title": "Alter USB-Audio-Mod",
-    "auditStatus": "NICHT_UNVERAENDERT",
-    "description": "AIO sperrt bereits >=59.00.502. Die alte usbaudioApp.js-Payload entfernt 56 erkannte OEM-Methoden, NowPlaying4Ctrl.js zwei. Nicht als v74-Patch übernehmen.",
-    "selectable": true,
-    "releaseStatus": "unported",
-    "category": "patches"
   },
   {
     "id": "mzd-meter",
