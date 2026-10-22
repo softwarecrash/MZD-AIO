@@ -1,5 +1,7 @@
 # Arbeitsreihenfolge
 
+Aktueller v74-Umfang: [REWORK-SCOPE.md](REWORK-SCOPE.md). Die dort ausgeschiedenen Alt-Tweaks sind keine offenen Aufgaben.
+
 Diese Liste ist ein Arbeitsvorschlag aus der Recherche. Noch keine Umsetzung und kein CMU-Test.
 
 ## 1. Desktop-Basis reproduzierbar machen

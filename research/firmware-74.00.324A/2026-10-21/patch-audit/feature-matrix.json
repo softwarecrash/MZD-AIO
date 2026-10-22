@@ -213,16 +213,6 @@
     "vehicle_tested": false
   },
   {
-    "feature": "legacy-flac-order",
-    "status": "NICHT_UNVERAENDERT",
-    "scripts": [
-      "08_orderflac-i.txt",
-      "08_orderflac-u.txt"
-    ],
-    "finding": "Explizit für alte Firmware (< Gruppe 5) und versionsgebundene libmc_user.so. Gruppe 0 würde diese alte Bedingung ebenfalls erfüllen. Keine Altbibliothek auf v74 übernehmen.",
-    "vehicle_tested": false
-  },
-  {
     "feature": "system-beep",
     "status": "TEXT_KANDIDAT",
     "scripts": [
@@ -240,16 +230,6 @@
       "09_audioorder-u.txt"
     ],
     "finding": "cat-Zusammenbau ersetzt systemApp aus 59/70-Vorlagen, einschließlich kombinierter Disclaimer-Varianten. Neue WCP-Einträge und Ereignisse müssen erhalten bleiben.",
-    "vehicle_tested": false
-  },
-  {
-    "feature": "pause-on-mute",
-    "status": "ALTEN_TWEAK_WEGLASSEN",
-    "scripts": [
-      "10_pausemute-i.txt",
-      "10_pausemute-u.txt"
-    ],
-    "finding": "AIO sperrt diesen Tweak selbst oberhalb Gruppe 5 und nennt ihn ab 59.00.502 integriert. Nicht erneut in die geänderte AndroidAutoVolumeOff-Logik injizieren.",
     "vehicle_tested": false
   },
   {
@@ -454,16 +434,6 @@
       "25_androidautowifi-i.txt"
     ],
     "finding": "Alte headunit-/Audio-/Startintegration zusätzlich zur vorhandenen OEM-AA-Implementierung. Keine Laufzeit-/Audio-/USB-Freigabe allein aus Dateiproben ableiten.",
-    "vehicle_tested": false
-  },
-  {
-    "feature": "legacy-usb-audio",
-    "status": "NICHT_UNVERAENDERT",
-    "scripts": [
-      "26_usbaudiomod-i.txt",
-      "26_usbaudiomod-u.txt"
-    ],
-    "finding": "AIO sperrt bereits >=59.00.502. Die alte usbaudioApp.js-Payload entfernt 56 erkannte OEM-Methoden, NowPlaying4Ctrl.js zwei. Nicht als v74-Patch übernehmen.",
     "vehicle_tested": false
   },
   {

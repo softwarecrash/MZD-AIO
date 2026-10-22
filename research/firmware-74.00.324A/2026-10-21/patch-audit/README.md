@@ -5,7 +5,7 @@ Statische Prüfung des Fork-Stands einschließlich lokaler Textproben. **Keine F
 ## Ergebnis in Zahlen
 
 - Alle 125 Skriptdateien stimmen per Git-Blob-SHA mit dem geprüften Fork überein.
-- Alle Dateien sind 44 Prüfbereichen zugeordnet; siehe Matrix unten.
+- 41 Prüfbereiche bleiben in der Matrix; drei veraltete Bereiche stehen in `retired-features.json` und sind keine Portierungsaufgaben.
 - 247 direkte `cp`-Anweisungen inventarisiert; 369 existierende Dateiziele über alle statisch auflösbaren Kopierzweige gefunden. Das sind keine 369 eindeutigen Dateien und keine Aussage darüber, welche Zweige zur Laufzeit laufen.
 - 247 sed-Zielproben: 169 tatsächlich an lesbaren Originalen untersucht (36 verändern die Originaldatei, 133 nicht); 78 wegen fehlender Textfixture, Variablen oder nicht freigegebener Ausdrucksform nicht ausgeführt.
 - Acht ausgewählte Textkomponenten: alle verändern ihre Zielstelle und bleiben bei zweiter, guard-modellierter Anwendung unverändert. Drei direkte Text-Rücknahmen liefern bytegenau das Original.
@@ -48,10 +48,8 @@ Statische Prüfung des Fork-Stands einschließlich lokaler Textproben. **Keine F
 | list-loop | ANPASSEN | `06_listloop-i.txt`, `06_listloop-u.txt` | v74-List2Ctrl.js ist bytegleich zur v70-Vorlage; alte Auswahl <=6 und Wechselwirkung mit Delay-Mod beachten. Gesamtdateiersetzung nicht pauschal freigeben. |
 | list-beep | TEXT_KANDIDAT | `07_listbeep-i.txt`, `07_listbeep-u.txt` | Textänderung trifft, ist wiederholbar ohne weitere Änderung und mit den direkten Uninstall-Ausdrücken bytegenau rücknehmbar. JavaScript-Syntax geprüft; Fahrzeugtest offen. |
 | shorter-delay | TEXT_KANDIDAT | `07_shorterdelay-i.txt`, `07_shorterdelay-u.txt` | Vier Zeitparameter und Markierung wurden gemeinsam offline angewendet. Zweite Anwendung identisch; direkte Text-Rücknahme ergibt exakt das Original; JavaScript-Syntax geprüft. |
-| legacy-flac-order | NICHT_UNVERAENDERT | `08_orderflac-i.txt`, `08_orderflac-u.txt` | Explizit für alte Firmware (< Gruppe 5) und versionsgebundene libmc_user.so. Gruppe 0 würde diese alte Bedingung ebenfalls erfüllen. Keine Altbibliothek auf v74 übernehmen. |
 | system-beep | TEXT_KANDIDAT | `08_sysbeep-i.txt`, `08_sysbeep-u.txt` | Die system/PlayAudioBeep-Zielstelle trifft, audiosettings-Alternative trifft nicht und ist eine alternative Verzweigung. Markierungs-Guard ist idempotent; Syntax geprüft. Kompletter Uninstall noch nicht simuliert. |
 | audio-source-order | NICHT_UNVERAENDERT | `09_audioorder-i.txt`, `09_audioorder-u.txt` | cat-Zusammenbau ersetzt systemApp aus 59/70-Vorlagen, einschließlich kombinierter Disclaimer-Varianten. Neue WCP-Einträge und Ereignisse müssen erhalten bleiben. |
-| pause-on-mute | ALTEN_TWEAK_WEGLASSEN | `10_pausemute-i.txt`, `10_pausemute-u.txt` | AIO sperrt diesen Tweak selbst oberhalb Gruppe 5 und nennt ihn ab 59.00.502 integriert. Nicht erneut in die geänderte AndroidAutoVolumeOff-Logik injizieren. |
 | message-replies | ANPASSEN | `11_msgreplies-i.txt`, `11_msgreplies-u.txt` | Ersetzt Konfigurations-XML und verlangt Factory Reset; entfernt ggf. input_filter aus sm.conf ohne backup_org für sm.conf in diesem Snippet. Einstellungs-/Datenreset ist kein durch Text-Rollback vollständig rücknehmbarer Schritt. |
 | diagnostic-entry | ANPASSEN | `12_diag-i.txt`, `12_diag-u.txt` | Die drei kleinen Eingriffsstellen treffen und sind guard-modelliert idempotent/syntaktisch gültig. Anschließendes Kopieren der alten Test-Steuerelemente entfernt aber setUblox aus dem v74-TestCtrl.js. |
 | boot-animation | ASSET_PRUEFUNG | `13_boot-i.txt`, `13_boot-u.txt` | Variantenabhängige IVF-Dateiersetzungen mit Loop-/Transition-Zielen; Dateien vorhanden, Decoder-/Auflösungsprüfung und Fahrzeugstarttest nicht ausgeführt. |
@@ -69,7 +67,6 @@ Statische Prüfung des Fork-Stands einschließlich lokaler Textproben. **Keine F
 | fuel-consumption | ANPASSEN | `22_fuel-i.txt`, `22_fuel-u.txt`, `22_fuelMPG-i.txt` | JS/CSS der v74-Verbrauchsanzeige sind bytegleich zu AIO-v70. Die Tweak-Payload entfernt keine erkannten Methoden, ersetzt aber ganze Dateien und Bild; Einheiten und Sicherung aller drei Ziele gezielt portieren. |
 | castscreen | LAUFZEIT_OFFEN | `24_castscreen-i.txt`, `24_castscreen-u.txt` | Native Empfangs-/Startprogramme und ggf. Bibliotheken; ABI, Smartphone-/USB-Verbindung und Laufzeit nicht getestet. |
 | legacy-android-auto | LAUFZEIT_OFFEN | `25_androidauto-i.txt`, `25_androidauto-u.txt`, `25_androidautob-i.txt`, `25_androidautocargps.txt`, `25_androidautohud-i.txt`, `25_androidautorevgps.txt`, `25_androidautowifi-i.txt` | Alte headunit-/Audio-/Startintegration zusätzlich zur vorhandenen OEM-AA-Implementierung. Keine Laufzeit-/Audio-/USB-Freigabe allein aus Dateiproben ableiten. |
-| legacy-usb-audio | NICHT_UNVERAENDERT | `26_usbaudiomod-i.txt`, `26_usbaudiomod-u.txt` | AIO sperrt bereits >=59.00.502. Die alte usbaudioApp.js-Payload entfernt 56 erkannte OEM-Methoden, NowPlaying4Ctrl.js zwei. Nicht als v74-Patch übernehmen. |
 | mzd-meter | LAUFZEIT_OFFEN | `28_mzdmeter-i.txt`, `28_mzdmeter-u.txt` | Zusätzliche App, native Dateien und watch-/Shell-Startpfad; Schnittstellen und Laufzeit noch nicht validiert. |
 
 ## Reproduzierbare Belege
@@ -81,7 +78,7 @@ Statische Prüfung des Fork-Stands einschließlich lokaler Textproben. **Keine F
 - `component-checks.json`: Acht ausdrücklich begrenzte Textkomponenten, Wiederholungs- und drei Text-Rücknahmetests.
 - `version-checks.json`: Ausführung ausschließlich der originalen Versionsfunktion an lokalen synthetischen Versionsdateien.
 - `javascript-syntax.json`: Syntaktische Prüfung, ausdrücklich kein Gerätesimulator.
-- `feature-matrix.json`: Maschinenlesbare Zuordnung aller 125 Skripte.
+- `feature-matrix.json`: Maschinenlesbare Zuordnung der verbleibenden Bereiche; ausgeschiedene Bereiche in `retired-features.json`.
 
 ## Grenzen und nächste Umsetzung
 
@@ -90,3 +87,7 @@ Die automatisierte Inventarisierung analysiert direkte sed/cp-Zeilen. Dynamische
 Die sed-Proben verwenden GNU sed mit exakten Ausdrucksdateien und Daten über stdin/stdout. Nur eine kleine, I/O-freie Befehlsmenge ist zugelassen. Es findet kein `sed -i` auf den Sicherungen statt. BusyBox-spezifische Details und Opera-Laufzeit müssen später zusätzlich geprüft werden.
 
 Als nächste Implementierung bieten sich eine eigene v74-Kompatibilitätsgruppe, pfad- und hashgebundene Backups sowie kleine, explizite Patches für Listenpiepsen und Listendelay an. Erst danach vollständige Installations-/Rücknahmeabläufe auf einem isolierten Dateibaum testen und einen getrennten Fahrzeugtest planen.
+
+## Bereinigung am 22.10.2026
+
+Die drei veralteten Tweaks sind aus der Arbeitsmatrix entfernt; verbindlicher Umfang: [REWORK-SCOPE.md](../../../REWORK-SCOPE.md). Historische Rohbefunde bleiben als Referenz erhalten.

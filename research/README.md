@@ -1,5 +1,7 @@
 # MZD-AIO Rework – Recherche
 
+Aktueller v74-Umfang: [REWORK-SCOPE.md](REWORK-SCOPE.md). Die dort ausgeschiedenen Alt-Tweaks sind keine offenen Aufgaben.
+
 Stand: 21.10.2026. Ziel: AIO auf einen ausdrücklich benannten aktuellen Gen-6-Firmwarestand portieren und die Anwendung vereinfachen. Laut Nutzerfund in einer E-Mail ist **74.00.311 EU N** der vermutete Iststand (noch nicht am Gerät abgelesen). **74.00.324 EU N** ist der spätere, öffentlich belegte reguläre EU-Zielstand; beide Profile werden getrennt behandelt. Andere Regionen, CMU-Revisionen und insbesondere 74.00.331 werden getrennt behandelt. „v74“ ist keine allgemeine Kompatibilitätszusage.
 
 ## Einstieg
