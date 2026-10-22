@@ -9,7 +9,7 @@ const { Blob, Buffer } = require('node:buffer');
 module.exports = async function test() {
   const root = path.resolve(__dirname, '..');
   const html = await fs.readFile(path.join(root, 'docs/index.html'), 'utf8');
-  assert(html.includes('USB-Paket mit MP3 herunterladen'));
+  assert(html.includes('id="export-zip" type="button">Download</button>'));
   assert(html.includes('sh /mnt/sda1/tweaks.sh'));
   assert(html.includes('usb-assets.js'));
   class Element {
