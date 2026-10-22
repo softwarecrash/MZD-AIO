@@ -22,19 +22,19 @@ owned_alive() {
     [ "$PID" -gt 1 ] && kill -0 "$PID" 2>/dev/null && tr '\000' ' ' < "$PROC/$PID/cmdline" | grep -qF "$2"
 }
 port_busy() {
-    PORTS=$(netstat -lnt) || fail 'Belegte Ports konnten nicht geprueft werden.'
+    PORTS=$(netstat -lnt) || fail 'Could not check listening ports.'
     printf '%s\n' "$PORTS" | awk '$1 ~ /^tcp/ {n=split($4,a,":"); if(a[n]==22) found=1} END {exit !found}'
 }
 account_mounted() { awk -v p="$ACCOUNT" '$2==p {f=1} END {exit !f}' "$MOUNTS"; }
 prerequisites() {
-    [ "$(id -u)" = 0 ] || fail 'Root-Konsole erforderlich.'
-    for T in sshd awk grep sed tr cmp mount umount iptables netstat readlink; do command -v "$T" >/dev/null || fail "Werkzeug fehlt: $T"; done
-    [ "$(readlink "$PASSWD_LINK")" = "$ACCOUNT" ] || fail 'Unbekannte Kontenablage.'
-    awk -F: '$1=="cmu" {n++; if(NF!=7 || $3!=0 || $7!="/bin/sh") bad=1} END {exit !(n==1 && !bad)}' "$ACCOUNT" || fail 'cmu-Konto entspricht nicht dem geprueften Aufbau.'
-    [ -s /etc/ssh/ssh_host_rsa_key ] || fail 'OEM-Hostschluessel fehlt.'
-    [ -s "$SELF_DIR/password.hash" ] || fail 'Passwortdefinition fehlt.'
-    sshd -t -f "$CONFIG" || fail 'SSH-Konfiguration ist nicht verwendbar.'
-    iptables -S INPUT >/dev/null || fail 'Firewall kann nicht geprueft werden.'
+    [ "$(id -u)" = 0 ] || fail 'Root shell required.'
+    for T in sshd awk grep sed tr cmp mount umount iptables netstat readlink; do command -v "$T" >/dev/null || fail "Missing tool: $T"; done
+    [ "$(readlink "$PASSWD_LINK")" = "$ACCOUNT" ] || fail 'Unknown account file location.'
+    awk -F: '$1=="cmu" {n++; if(NF!=7 || $3!=0 || $7!="/bin/sh") bad=1} END {exit !(n==1 && !bad)}' "$ACCOUNT" || fail 'cmu account does not match the verified layout.'
+    [ -s /etc/ssh/ssh_host_rsa_key ] || fail 'OEM host key is missing.'
+    [ -s "$SELF_DIR/password.hash" ] || fail 'Password definition is missing.'
+    sshd -t -f "$CONFIG" || fail 'SSH configuration is not valid.'
+    iptables -S INPUT >/dev/null || fail 'Could not inspect firewall.'
 }
 firewall() {
     if ! iptables -S "$CHAIN" >/dev/null 2>&1; then
@@ -61,7 +61,7 @@ teardown() {
             umount "$ACCOUNT" || RESULT=1
             if command -v nscd >/dev/null; then nscd -i passwd 2>/dev/null || :; fi
         else
-            echo 'SSH: Fremde Kontenueberlagerung bleibt unveraendert.' >&2
+            echo 'SSH: Account overlay owned by another process is left unchanged.' >&2
             RESULT=1
         fi
     fi
@@ -78,35 +78,35 @@ stop_service() {
         kill "$STOP_PID"
         N=0
         while kill -0 "$STOP_PID" 2>/dev/null && [ "$N" -lt 10 ]; do sleep 1; N=$((N+1)); done
-        if kill -0 "$STOP_PID" 2>/dev/null; then fail 'Eigener SSH-Startprozess beendet sich nicht.'; fi
+        if kill -0 "$STOP_PID" 2>/dev/null; then fail 'Managed SSH startup process did not terminate.'; fi
     fi
-    if [ -d "$RAM" ]; then teardown || fail 'SSH konnte nicht vollstaendig beendet werden.'; fi
-    echo 'SSH beendet; urspruengliche Konten und Firewallfreigabe wiederhergestellt.'
+    if [ -d "$RAM" ]; then teardown || fail 'Could not fully stop SSH.'; fi
+    echo 'SSH stopped; original accounts and firewall access restored.'
 }
 case "${1:-}" in
 check)
     prerequisites
-    if ! owned_alive "$RAM/supervisor.pid" "$SELF boot" && port_busy; then fail 'Port 22 ist bereits belegt. Fremder Dienst bleibt unveraendert.'; fi
-    echo 'SSH-Voraussetzungen geprueft.'; exit 0 ;;
+    if ! owned_alive "$RAM/supervisor.pid" "$SELF boot" && port_busy; then fail 'Port 22 is already in use. Existing service is left unchanged.'; fi
+    echo 'SSH prerequisites checked.'; exit 0 ;;
 status)
     if owned_alive "$RAM/supervisor.pid" "$SELF boot" && owned_alive "$RAM/daemon.pid" "$CONFIG"; then
-        echo 'SSH laeuft: Port 22, Benutzer cmu.'
+        echo 'SSH is running: port 22, user cmu.'
         if command -v ip >/dev/null; then
-            ip addr show 2>/dev/null | awk '/inet / {split($2,a,"/"); if(a[1]!="127.0.0.1") print "Verbinden: ssh cmu@" a[1]}' || :
+            ip addr show 2>/dev/null | awk '/inet / {split($2,a,"/"); if(a[1]!="127.0.0.1") print "Connect: ssh cmu@" a[1]}' || :
         fi
-        echo 'Falls noch keine Adresse angezeigt wird: WLAN-Verbindung pruefen.'
+        echo 'If no address is shown yet, check the Wi-Fi connection.'
         exit 0
     fi
-    echo 'Eigener SSH-Dienst laeuft nicht.'; exit 1 ;;
+    echo 'Managed SSH service is not running.'; exit 1 ;;
 stop) stop_service; exit 0 ;;
 boot) ;;
-*) fail 'Aufruf: service.sh check|boot|status|stop' ;;
+*) fail 'Usage: service.sh check|boot|status|stop' ;;
 esac
 [ -f "$SELF_DIR/enabled" ] || exit 0
-if owned_alive "$RAM/supervisor.pid" "$SELF boot"; then echo 'Eigener SSH-Dienst laeuft bereits.'; exit 0; fi
+if owned_alive "$RAM/supervisor.pid" "$SELF boot"; then echo 'Managed SSH service is already running.'; exit 0; fi
 if [ -d "$RAM" ]; then stop_service; fi
 umask 077
-mkdir "$RAM" || fail 'SSH-Zustandsordner kann nicht angelegt werden.'
+mkdir "$RAM" || fail 'Could not create SSH state directory.'
 printf '%s\n' "$SELF" > "$RAM/owner"
 printf '%s\n' "$$" > "$RAM/supervisor.pid"
 finish() {
@@ -128,28 +128,28 @@ for U in "${2:-}" /tmp/mnt/sda1 /tmp/mnt/sdb1 /tmp/mnt/sdc1 /tmp/mnt/sdd1; do
     fi
 done
 prerequisites
-if port_busy; then fail 'Port 22 ist bereits belegt. Fremder Dienst bleibt unveraendert.'; fi
-account_mounted && fail 'Kontendatei ist bereits ueberlagert. Keine zweite Ueberlagerung.'
+if port_busy; then fail 'Port 22 is already in use. Existing service is left unchanged.'; fi
+account_mounted && fail 'Account file already has an overlay. Refusing a second overlay.'
 PASSWORD_HASH=$(cat "$SELF_DIR/password.hash")
-case "$PASSWORD_HASH" in '$5$'*) ;; *) fail 'Unbekanntes Passwortformat.' ;; esac
+case "$PASSWORD_HASH" in '$5$'*) ;; *) fail 'Unknown password format.' ;; esac
 awk -F: -v h="$PASSWORD_HASH" 'BEGIN {OFS=":"} $1=="cmu" {$2=h} {print}' "$ACCOUNT" > "$RAM/passwd"
 unset PASSWORD_HASH
 chmod 644 "$RAM/passwd"
-mount -o bind "$RAM/passwd" "$ACCOUNT" || fail 'Passwort konnte nicht im RAM eingerichtet werden.'
-cmp -s "$RAM/passwd" "$ACCOUNT" || fail 'Kontenueberlagerung konnte nicht bestaetigt werden.'
+mount -o bind "$RAM/passwd" "$ACCOUNT" || fail 'Could not set up password in RAM.'
+cmp -s "$RAM/passwd" "$ACCOUNT" || fail 'Could not verify account overlay.'
 if command -v nscd >/dev/null; then nscd -i passwd 2>/dev/null || :; fi
 sshd -D -e -f "$CONFIG" 2>&1 | while IFS= read -r LINE; do write_log "$LINE"; done &
 sleep 1
-[ -s "$RAM/sshd.pid" ] || fail 'SSH konnte Port 22 nicht oeffnen.'
+[ -s "$RAM/sshd.pid" ] || fail 'SSH could not open port 22.'
 DAEMON=$(cat "$RAM/sshd.pid")
-case "$DAEMON" in ''|*[!0-9]*) fail 'SSH lieferte keine gueltige Prozessnummer.' ;; esac
+case "$DAEMON" in ''|*[!0-9]*) fail 'SSH returned an invalid process ID.' ;; esac
 printf '%s\n' "$DAEMON" > "$RAM/daemon.pid"
-owned_alive "$RAM/daemon.pid" "$CONFIG" || fail 'SSH konnte Port 22 nicht oeffnen.'
-firewall || fail 'Port 22 konnte nicht freigegeben werden.'
-write_log 'SSH gestartet: Port 22, Benutzer cmu. Anmeldung mit dem vereinbarten Standardpasswort.'
+owned_alive "$RAM/daemon.pid" "$CONFIG" || fail 'SSH could not open port 22.'
+firewall || fail 'Could not allow port 22 through the firewall.'
+write_log 'SSH started: port 22, user cmu. Log in with the agreed default password.'
 while kill -0 "$DAEMON" 2>/dev/null; do
-    firewall || write_log 'Firewall wird beim naechsten Durchlauf erneut geprueft.'
+    firewall || write_log 'Firewall will be checked again on the next iteration.'
     sleep 5 &
     wait $! || :
 done
-fail 'SSH-Prozess wurde beendet.'
+fail 'SSH process exited.'

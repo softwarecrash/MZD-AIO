@@ -89,16 +89,16 @@ while [ "$N" -lt 60 ]; do sleep 1; N=$((N+1)); done
         r = subprocess.run([args.bash, str(service / 'service.sh'), command, str(usb)], capture_output=True, text=True, timeout=20)
         assert r.returncode == expected, r.stdout + r.stderr
         assert text in r.stdout + r.stderr, r.stdout + r.stderr
-    run('check', 0, 'Voraussetzungen geprueft')
+    run('check', 0, 'prerequisites checked')
     assert not ram.exists() and account.read_text() == original
     write(temp / 'foreign-port', 'busy')
-    run('check', 1, 'Port 22 ist bereits belegt')
+    run('check', 1, 'Port 22 is already in use')
     assert not ram.exists() and account.read_text() == original
-    run('boot', 1, 'Port 22 ist bereits belegt')
+    run('boot', 1, 'Port 22 is already in use')
     assert not ram.exists() and account.read_text() == original
     (temp / 'foreign-port').unlink()
     write(temp / 'fail-daemon', 'fail')
-    run('boot', 1, 'SSH konnte Port 22 nicht oeffnen')
+    run('boot', 1, 'SSH could not open port 22')
     assert not ram.exists() and account.read_text() == original
     (temp / 'fail-daemon').unlink()
     background = subprocess.Popen([args.bash, str(service / 'service.sh'), 'boot', str(usb)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -111,8 +111,8 @@ while [ "$N" -lt 60 ]; do sleep 1; N=$((N+1)); done
         expected_hash = (service / 'password.hash').read_text().strip()
         assert account.read_text().splitlines()[0].split(':')[1] == expected_hash
         assert account.read_text().splitlines()[1] == original.splitlines()[1]
-        run('check', 0, 'Voraussetzungen geprueft')
-        run('boot', 0, 'laeuft bereits')
+        run('check', 0, 'prerequisites checked')
+        run('boot', 0, 'is already running')
         assert starts.read_text().splitlines() == ['start']
         chain.unlink(); jump.unlink()
         for _ in range(15):

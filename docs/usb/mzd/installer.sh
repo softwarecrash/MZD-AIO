@@ -20,7 +20,7 @@ rebuild() {
         if has "$BUILD_ID" "$BUILD_ACTIVE"; then
             BUILD_INDEX=$((BUILD_INDEX + 1))
             BUILD_NEXT="$BUILD_OUT.$BUILD_INDEX"
-            sh "$BASE/patches/$BUILD_ID.sh" apply "$BUILD_INPUT" "$BUILD_NEXT" || fail "Patchdefinition passt nicht: $BUILD_ID"
+            sh "$BASE/patches/$BUILD_ID.sh" apply "$BUILD_INPUT" "$BUILD_NEXT" || fail "Patch definition does not match: $BUILD_ID"
             rm -f "$BUILD_INPUT"
             BUILD_INPUT=$BUILD_NEXT
         fi
@@ -29,54 +29,54 @@ rebuild() {
 }
 read_state() {
     RECORD=$1
-    [ -f "$RECORD" ] && [ ! -L "$RECORD" ] || fail 'Zustandsdatei fehlt oder ist ein Link.'
+    [ -f "$RECORD" ] && [ ! -L "$RECORD" ] || fail 'State file is missing or is a symbolic link.'
     RECORD_HASH=$(sed -n 's/^md5=//p' "$RECORD")
-    [ "${#RECORD_HASH}" = 32 ] || fail 'Zustandsdatei ist beschaedigt.'
-    case "$RECORD_HASH" in *[!0-9a-f]*) fail 'Ungueltige Zustandspruefsumme.' ;; esac
+    [ "${#RECORD_HASH}" = 32 ] || fail 'State file is corrupted.'
+    case "$RECORD_HASH" in *[!0-9a-f]*) fail 'Invalid state checksum.' ;; esac
     RECORD_ACTIVE=''
     for RECORD_ID in $(sed -n 's/^patch=//p' "$RECORD"); do
-        has "$RECORD_ID" "$FILE_PATCHES" || fail 'Unbekannter Patch im internen Zustand.'
+        has "$RECORD_ID" "$FILE_PATCHES" || fail 'Unknown patch in internal state.'
         RECORD_ACTIVE="$RECORD_ACTIVE $RECORD_ID"
     done
     write_state "$RECORD_ACTIVE" "$RECORD_HASH" "$REPORT/state-canonical.txt"
-    cmp -s "$RECORD" "$REPORT/state-canonical.txt" || fail 'Zustandsdatei ist unvollstaendig oder doppelt.'
+    cmp -s "$RECORD" "$REPORT/state-canonical.txt" || fail 'State file is incomplete or contains duplicate entries.'
     rebuild "$RECORD_ACTIVE" "$REPORT/state-check.js"
-    matches "$REPORT/state-check.js" "$RECORD_HASH" || fail 'Gespeicherter Zustand passt nicht zu den Patchdefinitionen.'
+    matches "$REPORT/state-check.js" "$RECORD_HASH" || fail 'Saved state does not match the patch definitions.'
 }
 publish_state() {
     ensure_rw "$RESOURCES"
     STATE_STAGE="$STATE_FILE.new-$$"
-    if [ -e "$STATE_STAGE" ] || [ -L "$STATE_STAGE" ]; then STATE_STAGE=''; fail 'Zustands-Arbeitsdatei existiert bereits.'; fi
-    cp "$1" "$STATE_STAGE" && cmp -s "$1" "$STATE_STAGE" || fail 'Zustand konnte nicht vorbereitet werden.'
-    mv -f "$STATE_STAGE" "$STATE_FILE" || fail 'Zustand konnte nicht gespeichert werden. Vorgang beim naechsten Start abgleichen.'
+    if [ -e "$STATE_STAGE" ] || [ -L "$STATE_STAGE" ]; then STATE_STAGE=''; fail 'Temporary state file already exists.'; fi
+    cp "$1" "$STATE_STAGE" && cmp -s "$1" "$STATE_STAGE" || fail 'Could not prepare state.'
+    mv -f "$STATE_STAGE" "$STATE_FILE" || fail 'Could not save state. Reconcile the operation on the next run.'
     STATE_STAGE=''
     sync
 }
 clear_transaction() {
     DONE_TXN="$TRANSACTION.done-$$"
-    [ ! -e "$DONE_TXN" ] || fail 'Abschlussverzeichnis existiert bereits.'
-    mv "$TRANSACTION" "$DONE_TXN" || fail 'Vorgangsabschluss fehlgeschlagen.'
-    rm -f "$DONE_TXN/before.state" "$DONE_TXN/after.state" && rmdir "$DONE_TXN" || fail 'Vorgangsabschluss fehlgeschlagen.'
+    [ ! -e "$DONE_TXN" ] || fail 'Transaction completion directory already exists.'
+    mv "$TRANSACTION" "$DONE_TXN" || fail 'Could not finalize the transaction.'
+    rm -f "$DONE_TXN/before.state" "$DONE_TXN/after.state" && rmdir "$DONE_TXN" || fail 'Could not finalize the transaction.'
     sync
 }
-for tool in cmp; do command -v "$tool" >/dev/null || fail "Werkzeug fehlt: $tool"; done
+for tool in cmp; do command -v "$tool" >/dev/null || fail "Missing tool: $tool"; done
 awk '$2!="/jci/gui/common/controls/List2/js/List2Ctrl.js" && $2!="/jci/scripts/stage_wifi.sh"' "$BASE/originals.md5" > "$REPORT/platform.md5"
-md5sum -c "$REPORT/platform.md5" || fail 'Der Konsolen-Dateistand ist unbekannt.'
-[ -f "$TARGET" ] && [ ! -L "$TARGET" ] || fail 'Systemdatei fehlt oder ist ein Link.'
-mkdir "$LOCK" || fail 'Ein anderer Installer laeuft bereits. Nach Abbruch ggf. CMU neu starten.'
+md5sum -c "$REPORT/platform.md5" || fail 'Console files do not match the known versions.'
+[ -f "$TARGET" ] && [ ! -L "$TARGET" ] || fail 'System file is missing or is a symbolic link.'
+mkdir "$LOCK" || fail 'Another installer is already running. If a previous run was interrupted, restart the CMU if necessary.'
 LOCKED=1
 CURRENT=$(hash "$TARGET")
 SOURCE=$TARGET
 if [ -e "$BACKUP" ]; then
-    [ ! -L "$BACKUP" ] && valid_backup || fail 'Interne Originalsicherung ist beschaedigt oder unpassend.'
+    [ ! -L "$BACKUP" ] && valid_backup || fail 'Internal original backup is corrupted or does not match.'
     SOURCE="$BACKUP/original"
 elif [ "$CURRENT" != "$ORIGINAL" ]; then
-    fail 'Die passende interne Originalsicherung fehlt. Keine Aenderung vorgenommen.'
+    fail 'Matching internal original backup is missing. No changes made.'
 fi
 # An intent record remains until both target and state have been committed.
 if [ -e "$TRANSACTION" ]; then
-    [ "$ACTION" != preflight ] || fail 'Unterbrochener Vorgang erkannt. Install/Uninstall oder Full System Restore zum Abgleich starten.'
-    [ -d "$TRANSACTION" ] && [ ! -L "$TRANSACTION" ] || fail 'Vorgangsprotokoll ist ungueltig.'
+    [ "$ACTION" != preflight ] || fail 'Interrupted transaction detected. Run Install/Uninstall or Full System Restore to reconcile it.'
+    [ -d "$TRANSACTION" ] && [ ! -L "$TRANSACTION" ] || fail 'Transaction journal is invalid.'
     read_state "$TRANSACTION/before.state"
     BEFORE_HASH=$RECORD_HASH
     read_state "$TRANSACTION/after.state"
@@ -86,28 +86,28 @@ if [ -e "$TRANSACTION" ]; then
     elif [ "$CURRENT" = "$BEFORE_HASH" ]; then
         publish_state "$TRANSACTION/before.state"
     else
-        fail 'Unterbrochener Vorgang mit unbekannter Systemdatei. Keine Datei ueberschrieben.'
+        fail 'Interrupted transaction with an unknown system file. No files overwritten.'
     fi
     clear_transaction
-    echo 'Unterbrochener Vorgang wurde mit dem vorhandenen Dateistand abgeglichen.'
+    echo 'Interrupted transaction reconciled with the current files.'
 fi
 ACTIVE=''
 if [ -e "$STATE_FILE" ]; then
     read_state "$STATE_FILE"
-    [ "$CURRENT" = "$RECORD_HASH" ] || fail 'Systemdatei wurde ausserhalb des Installers geaendert. Keine Aenderung vorgenommen.'
+    [ "$CURRENT" = "$RECORD_HASH" ] || fail 'System file was changed outside the installer. No changes made.'
     ACTIVE=$RECORD_ACTIVE
 elif [ "$TARGET_ID" = list2 ] && [ "$CURRENT" = "$LEGACY_BEEP" ] && valid_backup; then
     ACTIVE='list-beep'
     rebuild "$ACTIVE" "$REPORT/legacy-check.js"
-    matches "$REPORT/legacy-check.js" "$CURRENT" || fail 'Bisheriger Patch konnte nicht zugeordnet werden.'
+    matches "$REPORT/legacy-check.js" "$CURRENT" || fail 'Could not identify the existing patch.'
 elif [ "$CURRENT" != "$ORIGINAL" ]; then
-    fail 'Unbekannter Dateistand ohne passenden gespeicherten Zustand.'
+    fail 'Unknown file version without matching saved state.'
 fi
-printf 'Aktive Patches:%s\n' "${ACTIVE:- keine}"
+printf 'Active patches:%s\n' "${ACTIVE:- none}"
 write_state "$ACTIVE" "$CURRENT" "$REPORT/before.state"
 if [ "$ACTION" = preflight ]; then
     cp "$REPORT/before.state" "$REPORT/preflight.txt"
-    MESSAGE='Pruefung abgeschlossen. Keine Aenderung vorgenommen.'
+    MESSAGE='Checks completed. No changes made.'
     exit 0
 fi
 WANTED=''
@@ -121,17 +121,17 @@ for ID in $FILE_PATCHES; do
     esac
     if [ "$ENABLED" = 1 ]; then WANTED="$WANTED $ID"; fi
 done
-printf 'Gewuenschte Patches:%s\n' "${WANTED:- keine}"
+printf 'Requested patches:%s\n' "${WANTED:- none}"
 if [ "$CURRENT" = "$ORIGINAL" ] && [ -z "$WANTED" ] && [ ! -e "$STATE_FILE" ]; then
-    MESSAGE='Originalzustand bereits vorhanden. Keine Aenderung erforderlich.'
+    MESSAGE='Original state already present. No changes required.'
     exit 0
 fi
 if [ "${MZD_CONFIRMED:-0}" != 1 ]; then
-    printf '\nAktion: %s\nExperimentelle v74-Patches, Fahrzeugtest offen.\n' "$ACTION" >&3
-    printf 'Fortfahren? j eingeben und Enter druecken (sonst Abbruch): ' >&3
+    printf '\nAction: %s\nExperimental v74 patches; vehicle testing pending.\n' "$ACTION" >&3
+    printf 'Continue? Type y and press Enter (otherwise cancel): ' >&3
     ANSWER=''
     IFS= read -r ANSWER || :
-    case "$ANSWER" in j|J|y|Y) ;; *) MESSAGE='Abgebrochen. Keine Aenderung vorgenommen.'; exit 0 ;; esac
+    case "$ANSWER" in j|J|y|Y) ;; *) MESSAGE='Cancelled. No changes made.'; exit 0 ;; esac
 fi
 space "$USB"
 . "$BASE/save-original.sh"
@@ -141,50 +141,50 @@ DESIRED=$(hash "$REPORT/desired.js")
 write_state "$WANTED" "$DESIRED" "$REPORT/after.state"
 if [ "$CURRENT" = "$DESIRED" ]; then
     publish_state "$REPORT/after.state"
-    MESSAGE='Gewuenschter Zustand bereits vorhanden. Sicherungen und aktive Patches geprueft.'
+    MESSAGE='Requested state already present. Backups and active patches verified.'
     exit 0
 fi
 space "$ROOT_MOUNT"
 space "$RESOURCES"
 cp "$TARGET" "$REPORT/before.js"
-matches "$REPORT/before.js" "$CURRENT" || fail 'Rueckfallsicherung unvollstaendig.'
+matches "$REPORT/before.js" "$CURRENT" || fail 'Rollback backup is incomplete.'
 ensure_rw "$RESOURCES"
 TXN_STAGE="$TRANSACTION.new-$$"
 mkdir "$TXN_STAGE"
 cp "$REPORT/before.state" "$TXN_STAGE/before.state"
 cp "$REPORT/after.state" "$TXN_STAGE/after.state"
-cmp -s "$REPORT/before.state" "$TXN_STAGE/before.state" && cmp -s "$REPORT/after.state" "$TXN_STAGE/after.state" || fail 'Vorgangsprotokoll unvollstaendig.'
+cmp -s "$REPORT/before.state" "$TXN_STAGE/before.state" && cmp -s "$REPORT/after.state" "$TXN_STAGE/after.state" || fail 'Transaction journal is incomplete.'
 sync
 mv "$TXN_STAGE" "$TRANSACTION"
 TXN_STAGE=''
 sync
 ensure_rw "$ROOT_MOUNT"
 STAGE="$(dirname "$TARGET")/.mzd-aio-$$.new"
-if [ -e "$STAGE" ] || [ -L "$STAGE" ]; then STAGE=''; fail 'Temporaeres Dateiziel ist bereits vorhanden.'; fi
+if [ -e "$STAGE" ] || [ -L "$STAGE" ]; then STAGE=''; fail 'Temporary destination file already exists.'; fi
 cp -p "$BACKUP/original" "$STAGE"
 cat "$REPORT/desired.js" > "$STAGE"
-matches "$STAGE" "$DESIRED" || fail 'Ergebnis passt nicht zum vorbereiteten Dateistand.'
+matches "$STAGE" "$DESIRED" || fail 'Result does not match the prepared file.'
 sync
-matches "$TARGET" "$CURRENT" || fail 'Systemdatei hat sich waehrend der Installation geaendert.'
+matches "$TARGET" "$CURRENT" || fail 'System file changed during installation.'
 mv -f "$STAGE" "$TARGET"
 STAGE=''
-MESSAGE='Datei wurde geaendert; Vorgangsabschluss steht aus. Naechster Start erkennt den Vorgang.'
+MESSAGE='File changed; transaction finalization pending. The next run will detect this transaction.'
 sync
 if ! matches "$TARGET" "$DESIRED"; then
     STAGE="$(dirname "$TARGET")/.mzd-aio-$$.rollback"
-    if [ -e "$STAGE" ] || [ -L "$STAGE" ]; then STAGE=''; fail 'Ruecknahme-Dateiziel ist bereits vorhanden.'; fi
-    cp -p "$BACKUP/original" "$STAGE" && cat "$REPORT/before.js" > "$STAGE" && matches "$STAGE" "$CURRENT" && mv -f "$STAGE" "$TARGET" && sync && matches "$TARGET" "$CURRENT" || fail 'Ruecknahme nach Schreibfehler fehlgeschlagen. CMU nicht neu starten; run.log auswerten.'
+    if [ -e "$STAGE" ] || [ -L "$STAGE" ]; then STAGE=''; fail 'Rollback destination file already exists.'; fi
+    cp -p "$BACKUP/original" "$STAGE" && cat "$REPORT/before.js" > "$STAGE" && matches "$STAGE" "$CURRENT" && mv -f "$STAGE" "$TARGET" && sync && matches "$TARGET" "$CURRENT" || fail 'Rollback after write failure failed. Do not restart the CMU; inspect run.log.'
     STAGE=''
     publish_state "$REPORT/before.state"
     clear_transaction
-    MESSAGE='Schreibpruefung fehlgeschlagen. Vorheriger Dateistand wurde wiederhergestellt.'
+    MESSAGE='Write verification failed. Previous file restored.'
     fail "$MESSAGE"
 fi
 publish_state "$REPORT/after.state"
 clear_transaction
 case "$ACTION" in
-    restore) MESSAGE='Original erfolgreich wiederhergestellt. CMU bitte selbst neu starten.' ;;
-    uninstall) MESSAGE='Ausgewaehlte Patches entfernt. Andere Patches bleiben erhalten. CMU bitte selbst neu starten.' ;;
-    *) MESSAGE='Erfolgreich installiert. Andere Patches bleiben erhalten. CMU bitte selbst neu starten.' ;;
+    restore) MESSAGE='Original restored successfully. Restart the CMU manually.' ;;
+    uninstall) MESSAGE='Selected patches removed. Other patches are preserved. Restart the CMU manually.' ;;
+    *) MESSAGE='Installed successfully. Other patches are preserved. Restart the CMU manually.' ;;
 esac
 exit 0

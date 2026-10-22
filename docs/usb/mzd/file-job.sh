@@ -9,14 +9,14 @@ MZD_TARGET_ID=$5
 MZD_SELECTED_FILE=$6
 export MZD_TARGET_ID MZD_SELECTED_FILE
 mkdir -p "$REPORT"
-fail() { echo "ABBRUCH: $*" >&2; exit 1; }
+fail() { echo "ERROR: $*" >&2; exit 1; }
 cleanup() { return 0; }
-MESSAGE='Keine Aenderung vorgenommen. Details stehen im run.log.'
+MESSAGE='No changes made. See run.log for details.'
 finish_job() {
     CODE=$?
     trap - 0
     set +e
-    if ! cleanup; then CODE=1; MESSAGE='Abschluss fehlgeschlagen. Bitte run.log pruefen.'; fi
+    if ! cleanup; then CODE=1; MESSAGE='Cleanup failed. Check run.log.'; fi
     printf '%s\n' "$MESSAGE" > "$REPORT/summary.txt"
     printf 'exit_code=%s\n' "$CODE" > "$REPORT/status.txt"
     printf '%s\n' "$MESSAGE"

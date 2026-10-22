@@ -20,7 +20,7 @@ RELATIVE=jci/scripts/stage_wifi.sh
 FILE_PATCHES='ssh-bringback'
 ORIGINAL=d740449dea568696660a62fce0fb35bd
 ;;
-*) fail 'Unbekannte Dateigruppe.' ;;
+*) fail 'Unknown file group.' ;;
 esac
 RESOURCES=/tmp/mnt/resources
 ROOT_MOUNT=/
@@ -35,7 +35,7 @@ STATE_STAGE=''
 TXN_STAGE=''
 STAGE=''
 BACKUP_STAGE=''
-for tool in awk cp mv rm rmdir sed sync mount df dirname; do command -v "$tool" >/dev/null || fail "Werkzeug fehlt: $tool"; done
+for tool in awk cp mv rm rmdir sed sync mount df dirname; do command -v "$tool" >/dev/null || fail "Missing tool: $tool"; done
 hash() { md5sum "$1" | awk '{print $1}'; }
 matches() { [ -f "$1" ] && [ ! -L "$1" ] && [ "$(hash "$1")" = "$2" ]; }
 readonly_mount() {
@@ -44,13 +44,13 @@ readonly_mount() {
 ensure_rw() {
     POINT=$1
     if readonly_mount "$POINT"; then
-        mount -o remount,rw "$POINT" || fail "Partition nicht beschreibbar: $POINT"
+        mount -o remount,rw "$POINT" || fail "Partition is not writable: $POINT"
         if [ "$POINT" = "$ROOT_MOUNT" ]; then ROOT_CHANGED=1; else RES_CHANGED=1; fi
     else
         RC=$?
-        [ "$RC" = 1 ] || fail "Mountpunkt nicht eindeutig: $POINT"
+        [ "$RC" = 1 ] || fail "Mount point is ambiguous: $POINT"
     fi
-    if readonly_mount "$POINT"; then fail "Partition blieb schreibgeschuetzt: $POINT"; else [ "$?" = 1 ] || fail 'Mountpruefung fehlgeschlagen.'; fi
+    if readonly_mount "$POINT"; then fail "Partition remains read-only: $POINT"; else [ "$?" = 1 ] || fail 'Mount check failed.'; fi
 }
 cleanup() {
     CLEANUP_FAILED=0
@@ -77,6 +77,6 @@ valid_backup() {
 }
 space() {
     FREE=$(df -Pk "$1" | awk 'END {print $4}')
-    case "$FREE" in ''|*[!0-9]*) fail 'Freier Speicher konnte nicht bestimmt werden.' ;; esac
-    [ "$FREE" -ge 4096 ] || fail "Weniger als 4 MiB frei auf $1. Keine Installation."
+    case "$FREE" in ''|*[!0-9]*) fail 'Could not determine available disk space.' ;; esac
+    [ "$FREE" -ge 4096 ] || fail "Less than 4 MiB available on $1. Installation cancelled."
 }

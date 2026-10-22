@@ -167,7 +167,7 @@ fi
         assert variants[0] == original and variants[1] == patched and variants[2] == delay and variants[3] == combined
         names = ['list-beep', 'shorter-delay', 'list-loop']
         write(usb / 'mzd/selected.txt', 'list-loop\n')
-        run('preflight', 0, 'Pruefung abgeschlossen')
+        run('preflight', 0, 'Checks completed')
         assert target.read_bytes() == original and not backup.exists()
         new_usb = package('USB stick B')
         (new_usb / 'mzd/selected.txt').unlink()
@@ -176,13 +176,13 @@ fi
         steps = [3, 7, 3, 2, 6, 7, 5, 4, 0, 1, 5, 0]
         for step, wanted in enumerate(steps):
             if step == len(steps) - 1:
-                run('restore', 0, 'Original erfolgreich wiederhergestellt', stick=new_usb, restore=True)
+                run('restore', 0, 'Original restored successfully', stick=new_usb, restore=True)
             else:
                 changed = current ^ wanted
                 chosen = [name for bit, name in enumerate(names) if changed & (1 << bit)]
                 write(usb / 'mzd/selected.txt', '\n'.join(chosen) + '\n')
                 action = 'install' if wanted & ~current else 'uninstall'
-                run(action, 0, 'Erfolgreich installiert' if action == 'install' else 'Ausgewaehlte Patches entfernt')
+                run(action, 0, 'Installed successfully' if action == 'install' else 'Selected patches removed')
             assert target.read_bytes() == variants[wanted], (current, wanted)
             assert (backup / 'original').read_bytes() == original
             stamp = (backup / 'original').stat().st_mtime_ns
@@ -196,105 +196,105 @@ fi
         assert (new_usb / 'backups/74.00.324A-EU/jci/gui/common/controls/List2/js/List2Ctrl.js.backup/original').read_bytes() == original
         target.write_bytes(original + b'// foreign change\n')
         write(usb / 'mzd/selected.txt', 'list-loop\n')
-        run('install', 1, 'ausserhalb des Installers geaendert')
+        run('install', 1, 'changed outside the installer')
         assert target.read_bytes() == original + b'// foreign change\n'
         print('Passed', len(checks), 'list-loop installer runs: all eight states, selective removal, existing beep/delay state, immutable originals, new-stick restore and foreign-change rejection.')
         raise SystemExit(0)
 
     if not args.ssh_only:
-        run('preflight', 0, 'Pruefung abgeschlossen')
+        run('preflight', 0, 'Checks completed')
         assert not backup.exists()
-        run('install', 0, 'Abgebrochen', answer='n\n')
+        run('install', 0, 'Cancelled', answer='n\n')
         assert target.read_bytes() == original and not backup.exists()
-        run('install', 0, 'Erfolgreich installiert')
+        run('install', 0, 'Installed successfully')
         assert target.read_bytes() == patched
         assert (backup / 'original').read_bytes() == original
         usb_backup = usb / 'backups/74.00.324A-EU/jci/gui/common/controls/List2/js/List2Ctrl.js.backup/original'
         assert usb_backup.read_bytes() == original
         mtime = (backup / 'original').stat().st_mtime_ns
-        run('install', 0, 'bereits vorhanden')
+        run('install', 0, 'already present')
         assert (backup / 'original').stat().st_mtime_ns == mtime
         new_usb = package('USB stick B')
         (new_usb / 'mzd/selected.txt').unlink()
         (new_usb / 'mzd/allowed.txt').unlink()
-        run('nonsense ignored', 0, 'Original erfolgreich wiederhergestellt', stick=new_usb, restore=True)
+        run('nonsense ignored', 0, 'Original restored successfully', stick=new_usb, restore=True)
         assert target.read_bytes() == original
         assert (new_usb / 'backups/74.00.324A-EU/jci/gui/common/controls/List2/js/List2Ctrl.js.backup/original').read_bytes() == original
-        run('restore', 0, 'bereits vorhanden', stick=new_usb, restore=True)
-        run('install', 0, 'Erfolgreich installiert')
-        run('uninstall', 0, 'Ausgewaehlte Patches entfernt')
+        run('restore', 0, 'already present', stick=new_usb, restore=True)
+        run('install', 0, 'Installed successfully')
+        run('uninstall', 0, 'Selected patches removed')
         assert target.read_bytes() == original
         write(usb / 'mzd/selected.txt', 'shorter-delay\n')
-        run('install', 0, 'Erfolgreich installiert')
+        run('install', 0, 'Installed successfully')
         assert target.read_bytes() == delay
         write(usb / 'mzd/selected.txt', 'list-beep\n')
-        run('install', 0, 'Erfolgreich installiert')
+        run('install', 0, 'Installed successfully')
         assert target.read_bytes() == combined
-        run('uninstall', 0, 'Ausgewaehlte Patches entfernt')
+        run('uninstall', 0, 'Selected patches removed')
         assert target.read_bytes() == delay
         assert 'patch=shorter-delay' in (backup / 'state.txt').read_text()
         write(usb / 'mzd/selected.txt', 'list-beep\nshorter-delay\n')
-        run('install', 0, 'Erfolgreich installiert')
+        run('install', 0, 'Installed successfully')
         assert target.read_bytes() == combined
         write(usb / 'mzd/selected.txt', 'shorter-delay\n')
-        run('uninstall', 0, 'Ausgewaehlte Patches entfernt')
+        run('uninstall', 0, 'Selected patches removed')
         assert target.read_bytes() == patched
         assert (backup / 'original').stat().st_mtime_ns == mtime
-        run('restore', 0, 'Original erfolgreich wiederhergestellt', stick=new_usb, restore=True)
+        run('restore', 0, 'Original restored successfully', stick=new_usb, restore=True)
         assert target.read_bytes() == original
         # The file commit may succeed while its state publication is interrupted.
         write(usb / 'mzd/selected.txt', 'shorter-delay\n')
         write(temp / 'fail-state', 'interrupt publication')
-        run('install', 1, 'Zustand konnte nicht gespeichert werden')
+        run('install', 1, 'Could not save state')
         assert target.read_bytes() == delay and (backup / 'transaction').is_dir()
         (temp / 'fail-state').unlink()
-        run('preflight', 1, 'Unterbrochener Vorgang erkannt')
-        run('install', 0, 'bereits vorhanden')
+        run('preflight', 1, 'Interrupted transaction detected')
+        run('install', 0, 'already present')
         assert target.read_bytes() == delay and not (backup / 'transaction').exists()
-        run('restore', 0, 'Original erfolgreich wiederhergestellt', stick=new_usb, restore=True)
+        run('restore', 0, 'Original restored successfully', stick=new_usb, restore=True)
         write(usb / 'mzd/selected.txt', 'list-beep\n')
         (backup / 'original').write_bytes(b'corrupt backup')
-        run('install', 1, 'ist beschaedigt')
+        run('install', 1, 'is corrupted')
         assert target.read_bytes() == original
         assert (backup / 'original').read_bytes() == b'corrupt backup'
         (backup / 'original').write_bytes(original)
         target.write_bytes(b'unknown system state')
-        run('install', 1, 'ausserhalb des Installers geaendert')
+        run('install', 1, 'changed outside the installer')
         assert target.read_bytes() == b'unknown system state'
         target.write_bytes(original)
         # A USB initially mounted ro must also return to ro after its log is written.
         ro_usb = package('USB-C')
         physical = subprocess.run([args.bash, '-c', 'cd ' + shlex.quote(bp(ro_usb)) + ' && pwd -P'], capture_output=True, text=True, check=True).stdout.strip()
         write(mounts, mounts.read_text() + f'/dev/usb {physical} vfat ro 0 0\n')
-        run('preflight', 0, 'Pruefung abgeschlossen', stick=ro_usb)
+        run('preflight', 0, 'Checks completed', stick=ro_usb)
         write(version, good_version.replace('74.00.324', '70.00.100'))
-        run('preflight', 1, 'Nicht Firmware')
+        run('preflight', 1, 'Firmware is not')
         write(version, good_version.replace('PATCH="A"', 'PATCH="B"'))
-        run('preflight', 1, 'Nicht Patchstand')
+        run('preflight', 1, 'Patch level is not')
         write(version, good_version.replace('cmu150_EU', 'cmu150_NA'))
-        run('preflight', 1, 'Nicht Region')
+        run('preflight', 1, 'Region is not')
         write(version, good_version)
         write(usb / 'mzd/selected.txt', '$(touch bad)\n')
-        run('install', 1, 'Ungueltige Tweak-ID')
+        run('install', 1, 'Invalid tweak ID')
         write(usb / 'mzd/selected.txt', 'background\n')
-        run('install', 1, 'noch nicht portiert')
+        run('install', 1, 'has not been ported yet')
         write(usb / 'mzd/selected.txt', 'list-beep\n')
         lock.mkdir()
-        run('install', 1, 'anderer Installer')
+        run('install', 1, 'Another installer')
         assert lock.exists()
         lock.rmdir()
         good_sed = (usb / 'mzd/patches/list-beep.sed').read_bytes()
         write(usb / 'mzd/patches/list-beep.sed', 's/does-not-exist/unchanged/\n')
-        run('install', 1, 'Patchdefinition passt nicht')
+        run('install', 1, 'Patch definition does not match')
         assert target.read_bytes() == original
         assert not list(target.parent.glob('.mzd-aio-*'))
         (usb / 'mzd/patches/list-beep.sed').write_bytes(good_sed)
         write(temp / 'fail-mount', 'fail')
-        run('install', 1, 'Partition nicht beschreibbar')
+        run('install', 1, 'Partition is not writable')
         assert target.read_bytes() == original
         (temp / 'fail-mount').unlink()
         write(temp / 'corrupt-commit', 'inject post-commit corruption')
-        run('install', 1, 'Vorheriger Dateistand wurde wiederhergestellt')
+        run('install', 1, 'Previous file restored')
         assert target.read_bytes() == original
         (temp / 'corrupt-commit').unlink()
     else:
@@ -308,26 +308,26 @@ fi
     # Main-menu boundaries are a separate managed file, not a List2 replacement.
     menu_backup = resources / 'aio-rework/backups/74.00.324A-EU/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js.backup'
     write(usb / 'mzd/selected.txt', 'main-menu-loop\n')
-    run('preflight', 0, 'Pruefung abgeschlossen')
+    run('preflight', 0, 'Checks completed')
     assert menu_target.read_bytes() == menu_original and not menu_backup.exists()
-    run('install', 0, 'Erfolgreich installiert')
+    run('install', 0, 'Installed successfully')
     assert menu_target.read_bytes() == menu_patched and target.read_bytes() == original
     assert (menu_backup / 'original').read_bytes() == menu_original
     assert (usb / 'backups/74.00.324A-EU/jci/gui/apps/system/controls/MainMenu/js/MainMenuCtrl.js.backup/original').read_bytes() == menu_original
     menu_time = (menu_backup / 'original').stat().st_mtime_ns
-    run('install', 0, 'bereits vorhanden')
+    run('install', 0, 'already present')
     assert (menu_backup / 'original').stat().st_mtime_ns == menu_time
     write(usb / 'mzd/selected.txt', 'main-menu-loop\nlist-beep\nshorter-delay\n')
-    run('install', 0, 'Erfolgreich installiert')
+    run('install', 0, 'Installed successfully')
     assert menu_target.read_bytes() == menu_patched and target.read_bytes() == combined
     write(usb / 'mzd/selected.txt', 'main-menu-loop\n')
-    run('uninstall', 0, 'Ausgewaehlte Patches entfernt')
+    run('uninstall', 0, 'Selected patches removed')
     assert menu_target.read_bytes() == menu_original and target.read_bytes() == combined
-    run('install', 0, 'Erfolgreich installiert')
-    run('restore', 0, 'Original erfolgreich wiederhergestellt', stick=new_usb, restore=True)
+    run('install', 0, 'Installed successfully')
+    run('restore', 0, 'Original restored successfully', stick=new_usb, restore=True)
     assert menu_target.read_bytes() == menu_original and target.read_bytes() == original
     menu_target.write_bytes(menu_original + b'// foreign change\n')
-    run('install', 1, 'ausserhalb des Installers geaendert')
+    run('install', 1, 'changed outside the installer')
     assert menu_target.read_bytes() == menu_original + b'// foreign change\n'
     menu_target.write_bytes(menu_original)
     # Controller integration uses a fake service; the real supervisor has its
@@ -336,9 +336,9 @@ fi
     write(usb / 'mzd/ssh/service.sh', f'''#!/bin/sh
 D=$(CDPATH= cd "$(dirname "$0")" && pwd)
 case "$1" in
-check) printf '%s\n' "$D" >> {shlex.quote(bp(temp / "ssh-check-sources"))}; if [ -f {shlex.quote(bp(ssh_fault))} ]; then echo 'Port 22 ist bereits belegt'; exit 1; fi ;;
+check) printf '%s\n' "$D" >> {shlex.quote(bp(temp / "ssh-check-sources"))}; if [ -f {shlex.quote(bp(ssh_fault))} ]; then echo 'Port 22 is already in use'; exit 1; fi ;;
 boot) [ -f "$D/enabled" ] && printf running > "$D/test-running" ;;
-status) [ -f "$D/test-running" ] || exit 1; echo 'SSH laeuft: Port 22, Benutzer cmu.' ;;
+status) [ -f "$D/test-running" ] || exit 1; echo 'SSH is running: port 22, user cmu.' ;;
 stop) rm -f "$D/test-running"; echo 'SSH beendet' ;;
 *) exit 1 ;;
 esac
@@ -347,29 +347,29 @@ esac
     ssh_backup = resources / 'aio-rework/backups/74.00.324A-EU/jci/scripts/stage_wifi.sh.backup'
     write(usb / 'mzd/selected.txt', 'ssh-bringback\n')
     write(ssh_fault, 'busy')
-    run('install', 1, 'Port 22 ist bereits belegt')
+    run('install', 1, 'Port 22 is already in use')
     assert ssh_stage.read_bytes() == b'#!/bin/sh\n\n' and not service_dir.exists()
     ssh_fault.unlink()
     target.write_bytes(b'broken GUI file must not block independent SSH install')
-    run('install', 0, 'SSH installiert')
+    run('install', 0, 'SSH installed')
     assert target.read_bytes() == b'broken GUI file must not block independent SSH install'
     assert b'service.sh boot' in ssh_stage.read_bytes()
     assert (service_dir / 'enabled').exists()
     ssh_original_time = (ssh_backup / 'original').stat().st_mtime_ns
-    run('install', 0, 'SSH installiert')
+    run('install', 0, 'SSH installed')
     assert (ssh_backup / 'original').stat().st_mtime_ns == ssh_original_time
     assert (temp / 'ssh-check-sources').read_text().splitlines()[-1].endswith('/aio-rework/services/ssh')
-    run('uninstall', 0, 'SSH entfernt')
+    run('uninstall', 0, 'SSH removed')
     assert ssh_stage.read_bytes() == b'#!/bin/sh\n\n'
     assert not (service_dir / 'enabled').exists()
     target.write_bytes(original)
     write(usb / 'mzd/selected.txt', 'list-beep\nssh-bringback\n')
-    run('install', 0, 'SSH installiert')
+    run('install', 0, 'SSH installed')
     assert target.read_bytes() == patched and (service_dir / 'enabled').exists()
     write(usb / 'mzd/selected.txt', 'list-beep\n')
-    run('uninstall', 0, 'Ausgewaehlte Patches entfernt')
+    run('uninstall', 0, 'Selected patches removed')
     assert target.read_bytes() == original and (service_dir / 'enabled').exists()
-    run('restore', 0, 'SSH entfernt', stick=new_usb, restore=True)
+    run('restore', 0, 'SSH removed', stick=new_usb, restore=True)
     assert target.read_bytes() == original and ssh_stage.read_bytes() == b'#!/bin/sh\n\n'
     assert not (service_dir / 'enabled').exists() and not (service_dir / 'test-running').exists()
     (backup / 'original').unlink()
@@ -377,14 +377,14 @@ esac
     (backup / 'state.txt').unlink()
     backup.rmdir()
     target.write_bytes(patched)
-    run('uninstall', 1, 'Originalsicherung fehlt')
+    run('uninstall', 1, 'original backup is missing')
     assert target.read_bytes() == patched
     target.write_bytes(original)
     # No writable report directory: fail before any target/backup work.
     (usb / 'reports').rename(usb / 'saved-reports')
     write(usb / 'reports', 'blocked')
     result = subprocess.run([args.bash, str(usb / 'tweaks.sh')], capture_output=True, text=True)
-    assert result.returncode == 1 and 'Kein interner Ersatzspeicher' in result.stderr
+    assert result.returncode == 1 and 'No internal storage fallback' in result.stderr
     assert target.read_bytes() == original
     assert not backup.exists()
 print('Passed', len(checks), 'isolated runs: install/uninstall/new-stick full restore, immutable backups, early logs, original hashes, write preparation/mount failures, firmware gates, locks and source-relative paths.')
